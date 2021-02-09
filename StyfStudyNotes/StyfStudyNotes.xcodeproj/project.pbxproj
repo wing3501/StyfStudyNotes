@@ -16,6 +16,11 @@
 		92A8D7DE25D288DD0008EFAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7DD25D288DD0008EFAA /* main.m */; };
 		92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7E725D28BA40008EFAA /* JianZhiOffer.swift */; };
 		92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7EB25D28C020008EFAA /* Leetcode.m */; };
+		92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7EF25D28D880008EFAA /* 动态规划.swift */; };
+		92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F325D28DC30008EFAA /* 回溯.swift */; };
+		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
+		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
+		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,11 @@
 		92A8D7E725D28BA40008EFAA /* JianZhiOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JianZhiOffer.swift; sourceTree = "<group>"; };
 		92A8D7EA25D28C020008EFAA /* Leetcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leetcode.h; sourceTree = "<group>"; };
 		92A8D7EB25D28C020008EFAA /* Leetcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Leetcode.m; sourceTree = "<group>"; };
+		92A8D7EF25D28D880008EFAA /* 动态规划.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "动态规划.swift"; sourceTree = "<group>"; };
+		92A8D7F325D28DC30008EFAA /* 回溯.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "回溯.swift"; sourceTree = "<group>"; };
+		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
+		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
+		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,11 @@
 			isa = PBXGroup;
 			children = (
 				92A8D7E725D28BA40008EFAA /* JianZhiOffer.swift */,
+				92A8D7EF25D28D880008EFAA /* 动态规划.swift */,
+				92A8D7F325D28DC30008EFAA /* 回溯.swift */,
+				92A8D7F625D28DFD0008EFAA /* BFS.swift */,
+				92A8D7F925D28E1A0008EFAA /* 二分查找.swift */,
+				92A8D7FC25D28E7A0008EFAA /* 双指针.swift */,
 				92A8D7E625D28BA40008EFAA /* StyfStudyNotes-Bridging-Header.h */,
 				92A8D7EA25D28C020008EFAA /* Leetcode.h */,
 				92A8D7EB25D28C020008EFAA /* Leetcode.m */,
@@ -164,11 +179,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
+				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
+				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
+				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
+				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
