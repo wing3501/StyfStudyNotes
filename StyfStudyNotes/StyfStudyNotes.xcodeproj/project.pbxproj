@@ -21,6 +21,8 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
+		92A8D94225D28FB80008EFAA /* AttributeSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D94125D28FB80008EFAA /* AttributeSection.m */; };
+		92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D94625D28FF60008EFAA /* CustomSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,10 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		92A8D94025D28FB80008EFAA /* AttributeSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttributeSection.h; sourceTree = "<group>"; };
+		92A8D94125D28FB80008EFAA /* AttributeSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttributeSection.m; sourceTree = "<group>"; };
+		92A8D94525D28FF60008EFAA /* CustomSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSection.h; sourceTree = "<group>"; };
+		92A8D94625D28FF60008EFAA /* CustomSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92A8D93F25D28F8C0008EFAA /* __attribute__ */,
 				92A8D7E525D28A030008EFAA /* leetcode */,
 				92A8D7D425D288DA0008EFAA /* Main.storyboard */,
 				92A8D7D725D288DD0008EFAA /* Assets.xcassets */,
@@ -107,6 +114,17 @@
 				92A8D7EB25D28C020008EFAA /* Leetcode.m */,
 			);
 			path = leetcode;
+			sourceTree = "<group>";
+		};
+		92A8D93F25D28F8C0008EFAA /* __attribute__ */ = {
+			isa = PBXGroup;
+			children = (
+				92A8D94025D28FB80008EFAA /* AttributeSection.h */,
+				92A8D94125D28FB80008EFAA /* AttributeSection.m */,
+				92A8D94525D28FF60008EFAA /* CustomSection.h */,
+				92A8D94625D28FF60008EFAA /* CustomSection.m */,
+			);
+			path = __attribute__;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +207,8 @@
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
+				92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */,
+				92A8D94225D28FB80008EFAA /* AttributeSection.m in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
