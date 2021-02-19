@@ -19,6 +19,12 @@
 		920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0625DFBDCF0098B1BA /* Circle.m */; };
 		920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0A25DFBDFB0098B1BA /* ShapeDecorator.m */; };
 		920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0E25DFBE900098B1BA /* RedShapeDecorator.m */; };
+		920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1225DFC0BD0098B1BA /* MediaPlayer.m */; };
+		920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1625DFC1070098B1BA /* AdvancedMediaPlayer.m */; };
+		920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1A25DFC16E0098B1BA /* VlcPlayer.m */; };
+		920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1E25DFC1AA0098B1BA /* Mp4Player.m */; };
+		920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2225DFC2180098B1BA /* MediaAdapter.m */; };
+		920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2625DFC3590098B1BA /* AudioPlayer.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -62,6 +68,18 @@
 		920B9C0A25DFBDFB0098B1BA /* ShapeDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeDecorator.m; sourceTree = "<group>"; };
 		920B9C0D25DFBE900098B1BA /* RedShapeDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedShapeDecorator.h; sourceTree = "<group>"; };
 		920B9C0E25DFBE900098B1BA /* RedShapeDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedShapeDecorator.m; sourceTree = "<group>"; };
+		920B9C1125DFC0BD0098B1BA /* MediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayer.h; sourceTree = "<group>"; };
+		920B9C1225DFC0BD0098B1BA /* MediaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaPlayer.m; sourceTree = "<group>"; };
+		920B9C1525DFC1070098B1BA /* AdvancedMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedMediaPlayer.h; sourceTree = "<group>"; };
+		920B9C1625DFC1070098B1BA /* AdvancedMediaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedMediaPlayer.m; sourceTree = "<group>"; };
+		920B9C1925DFC16E0098B1BA /* VlcPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VlcPlayer.h; sourceTree = "<group>"; };
+		920B9C1A25DFC16E0098B1BA /* VlcPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VlcPlayer.m; sourceTree = "<group>"; };
+		920B9C1D25DFC1A90098B1BA /* Mp4Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mp4Player.h; sourceTree = "<group>"; };
+		920B9C1E25DFC1AA0098B1BA /* Mp4Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mp4Player.m; sourceTree = "<group>"; };
+		920B9C2125DFC2180098B1BA /* MediaAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaAdapter.h; sourceTree = "<group>"; };
+		920B9C2225DFC2180098B1BA /* MediaAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaAdapter.m; sourceTree = "<group>"; };
+		920B9C2525DFC3590098B1BA /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		920B9C2625DFC3590098B1BA /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +175,18 @@
 		920B9BFA25DFBD460098B1BA /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
+				920B9C1125DFC0BD0098B1BA /* MediaPlayer.h */,
+				920B9C1225DFC0BD0098B1BA /* MediaPlayer.m */,
+				920B9C1525DFC1070098B1BA /* AdvancedMediaPlayer.h */,
+				920B9C1625DFC1070098B1BA /* AdvancedMediaPlayer.m */,
+				920B9C1925DFC16E0098B1BA /* VlcPlayer.h */,
+				920B9C1A25DFC16E0098B1BA /* VlcPlayer.m */,
+				920B9C1D25DFC1A90098B1BA /* Mp4Player.h */,
+				920B9C1E25DFC1AA0098B1BA /* Mp4Player.m */,
+				920B9C2125DFC2180098B1BA /* MediaAdapter.h */,
+				920B9C2225DFC2180098B1BA /* MediaAdapter.m */,
+				920B9C2525DFC3590098B1BA /* AudioPlayer.h */,
+				920B9C2625DFC3590098B1BA /* AudioPlayer.m */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -314,10 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
+				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
@@ -330,6 +363,7 @@
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
+				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */,
@@ -337,6 +371,8 @@
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
