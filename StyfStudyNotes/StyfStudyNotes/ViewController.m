@@ -20,6 +20,8 @@
     [super viewDidLoad];
     _dataArray = @[@{@"title":@"Leetcode",@"class":@"Leetcode"},
                    @{@"title":@"__attribute__",@"class":@"AttributeSection"},
+                   @{@"title":@"DesignPatten",@"class":@"DesignPatten"},
+                   @{@"title":@"Other",@"class":@"Other"},
     ];
     [self.view addSubview:self.tableView];
 }

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
+		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
+		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
+		920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE925DFB0FE0098B1BA /* SingleInstanceObj.m */; };
+		920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BEE25DFB4610098B1BA /* CommandManager.m */; };
+		920B9BF325DFB4610098B1BA /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BEF25DFB4610098B1BA /* Command.m */; };
+		920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BF625DFB6280098B1BA /* BusinessObject.m */; };
+		920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BFD25DFBD7E0098B1BA /* Shape.m */; };
+		920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0225DFBD970098B1BA /* Rectangle.m */; };
+		920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0625DFBDCF0098B1BA /* Circle.m */; };
+		920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0A25DFBDFB0098B1BA /* ShapeDecorator.m */; };
+		920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C0E25DFBE900098B1BA /* RedShapeDecorator.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -26,6 +38,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
+		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
+		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
+		920B9BDD25DF5FF80098B1BA /* Other.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Other.m; sourceTree = "<group>"; };
+		920B9BE325DFB0640098B1BA /* DesignPatten.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignPatten.h; sourceTree = "<group>"; };
+		920B9BE425DFB0640098B1BA /* DesignPatten.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignPatten.m; sourceTree = "<group>"; };
+		920B9BE825DFB0FE0098B1BA /* SingleInstanceObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleInstanceObj.h; sourceTree = "<group>"; };
+		920B9BE925DFB0FE0098B1BA /* SingleInstanceObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleInstanceObj.m; sourceTree = "<group>"; };
+		920B9BEE25DFB4610098B1BA /* CommandManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandManager.m; sourceTree = "<group>"; };
+		920B9BEF25DFB4610098B1BA /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
+		920B9BF025DFB4610098B1BA /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		920B9BF125DFB4610098B1BA /* CommandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandManager.h; sourceTree = "<group>"; };
+		920B9BF625DFB6280098B1BA /* BusinessObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessObject.m; sourceTree = "<group>"; };
+		920B9BF725DFB6280098B1BA /* BusinessObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessObject.h; sourceTree = "<group>"; };
+		920B9BFC25DFBD7E0098B1BA /* Shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		920B9BFD25DFBD7E0098B1BA /* Shape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shape.m; sourceTree = "<group>"; };
+		920B9C0125DFBD970098B1BA /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		920B9C0225DFBD970098B1BA /* Rectangle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
+		920B9C0525DFBDCF0098B1BA /* Circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		920B9C0625DFBDCF0098B1BA /* Circle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		920B9C0925DFBDFB0098B1BA /* ShapeDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeDecorator.h; sourceTree = "<group>"; };
+		920B9C0A25DFBDFB0098B1BA /* ShapeDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeDecorator.m; sourceTree = "<group>"; };
+		920B9C0D25DFBE900098B1BA /* RedShapeDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedShapeDecorator.h; sourceTree = "<group>"; };
+		920B9C0E25DFBE900098B1BA /* RedShapeDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedShapeDecorator.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +100,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920B9BD625DF59A40098B1BA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */,
+				920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */,
+				920B9BDC25DF5FF80098B1BA /* Other.h */,
+				920B9BDD25DF5FF80098B1BA /* Other.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		920B9BE225DFAFED0098B1BA /* DesignPatten */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BFB25DFBD530098B1BA /* Decorator */,
+				920B9BFA25DFBD460098B1BA /* Adapter */,
+				920B9BF525DFB6280098B1BA /* Responder */,
+				920B9BEC25DFB4460098B1BA /* SingleInstance */,
+				920B9BED25DFB4610098B1BA /* Command */,
+				920B9BE325DFB0640098B1BA /* DesignPatten.h */,
+				920B9BE425DFB0640098B1BA /* DesignPatten.m */,
+			);
+			path = DesignPatten;
+			sourceTree = "<group>";
+		};
+		920B9BEC25DFB4460098B1BA /* SingleInstance */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BE825DFB0FE0098B1BA /* SingleInstanceObj.h */,
+				920B9BE925DFB0FE0098B1BA /* SingleInstanceObj.m */,
+			);
+			path = SingleInstance;
+			sourceTree = "<group>";
+		};
+		920B9BED25DFB4610098B1BA /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BF125DFB4610098B1BA /* CommandManager.h */,
+				920B9BEE25DFB4610098B1BA /* CommandManager.m */,
+				920B9BF025DFB4610098B1BA /* Command.h */,
+				920B9BEF25DFB4610098B1BA /* Command.m */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		920B9BF525DFB6280098B1BA /* Responder */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BF725DFB6280098B1BA /* BusinessObject.h */,
+				920B9BF625DFB6280098B1BA /* BusinessObject.m */,
+			);
+			path = Responder;
+			sourceTree = "<group>";
+		};
+		920B9BFA25DFBD460098B1BA /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		920B9BFB25DFBD530098B1BA /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				920B9BFC25DFBD7E0098B1BA /* Shape.h */,
+				920B9BFD25DFBD7E0098B1BA /* Shape.m */,
+				920B9C0125DFBD970098B1BA /* Rectangle.h */,
+				920B9C0225DFBD970098B1BA /* Rectangle.m */,
+				920B9C0525DFBDCF0098B1BA /* Circle.h */,
+				920B9C0625DFBDCF0098B1BA /* Circle.m */,
+				920B9C0925DFBDFB0098B1BA /* ShapeDecorator.h */,
+				920B9C0A25DFBDFB0098B1BA /* ShapeDecorator.m */,
+				920B9C0D25DFBE900098B1BA /* RedShapeDecorator.h */,
+				920B9C0E25DFBE900098B1BA /* RedShapeDecorator.m */,
+			);
+			path = Decorator;
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +203,8 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				920B9BE225DFAFED0098B1BA /* DesignPatten */,
+				920B9BD625DF59A40098B1BA /* Other */,
 				92A8D93F25D28F8C0008EFAA /* __attribute__ */,
 				92A8D7E525D28A030008EFAA /* leetcode */,
 				92A8D7D425D288DA0008EFAA /* Main.storyboard */,
@@ -198,18 +314,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
+				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
+				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
+				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
+				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
+				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
+				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
+				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
+				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */,
 				92A8D94225D28FB80008EFAA /* AttributeSection.m in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
+				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
+				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
