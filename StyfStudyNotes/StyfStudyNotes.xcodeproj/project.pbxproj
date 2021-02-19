@@ -80,6 +80,7 @@
 		920B9C2225DFC2180098B1BA /* MediaAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaAdapter.m; sourceTree = "<group>"; };
 		920B9C2525DFC3590098B1BA /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		920B9C2625DFC3590098B1BA /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
+		920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -208,6 +209,14 @@
 			path = Decorator;
 			sourceTree = "<group>";
 		};
+		920B9C2925DFD51A0098B1BA /* SwiftNote */ = {
+			isa = PBXGroup;
+			children = (
+				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
+			);
+			path = SwiftNote;
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +242,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				920B9C2925DFD51A0098B1BA /* SwiftNote */,
 				920B9BE225DFAFED0098B1BA /* DesignPatten */,
 				920B9BD625DF59A40098B1BA /* Other */,
 				92A8D93F25D28F8C0008EFAA /* __attribute__ */,
