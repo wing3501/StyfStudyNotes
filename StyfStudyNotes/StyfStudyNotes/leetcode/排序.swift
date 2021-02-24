@@ -15,6 +15,8 @@ import Foundation
         print(selectionSort(array: array))
         print(heapSort(array: array))
         print(insertionSort(array: array))
+        print(mergeSort(array: array))
+        print(quickSort(array: array))
     }
     
     /// 冒泡排序，两两比较，交换，每一轮确定一个最大的(可优化，提前结束)
@@ -136,5 +138,90 @@ import Foundation
             i += 1
         }
         return arr
+    }
+    //归并排序
+    class func mergeSort(array: [Int]) -> [Int] {
+        var arr = array
+        mergeSort(array: &arr, begin: 0, end: arr.count)
+        return arr
+    }
+    
+    class func mergeSort(array: inout [Int],begin: Int, end: Int) {
+        if end - begin < 2{
+            return
+        }
+        let mid = (begin + end) / 2
+        mergeSort(array: &array, begin: begin, end: mid)
+        mergeSort(array: &array, begin: mid, end: end)
+        mergeArray(array: &array, begin: begin, mid: mid, end: end)
+    }
+    class func mergeArray(array: inout [Int],begin: Int,mid: Int, end: Int) {
+        let leftArray = Array(array[begin...(mid - 1)])
+        var leftArrayIndex = 0
+        var rightArrayIndex = mid
+        var index = begin
+        while leftArrayIndex < leftArray.count && rightArrayIndex < end {
+            if leftArray[leftArrayIndex] < array[rightArrayIndex] {
+                array[index] = leftArray[leftArrayIndex]
+                leftArrayIndex += 1
+            }else {
+                array[index] = array[rightArrayIndex]
+                rightArrayIndex += 1
+            }
+            index += 1
+        }
+        while leftArrayIndex < leftArray.count {
+            array[index] = leftArray[leftArrayIndex]
+            leftArrayIndex += 1
+            index += 1
+        }
+        while rightArrayIndex < end {
+            array[index] = array[rightArrayIndex]
+            rightArrayIndex += 1
+            index += 1
+        }
+    }
+    
+    class func quickSort(array: [Int]) -> [Int] {
+        var arr = array
+        quickSort(array: &arr, begin: 0, end: arr.count)
+        return arr
+    }
+    
+    class func quickSort(array: inout [Int],begin: Int,end: Int) {
+        if end - begin < 2 {
+            return;
+        }
+        //随机选一个点和begin的点交换 [begin,end)
+        let randomIndex = begin + Int.random(in: 0..<(end - begin))
+        array.swapAt(randomIndex, begin)
+        //快排一遍
+        let point = array[begin]
+        var left = begin
+        var right = end - 1
+        while left < right {
+            while left < right {
+                if array[right] > point {
+                    right -= 1
+                }else {
+                    array[left] = array[right]
+                    left += 1
+                    break;
+                }
+            }
+            while left < right {
+                if array[left] < point {
+                    left += 1
+                }else {
+                    array[right] = array[left]
+                    right -= 1
+                    break
+                }
+            }
+        }
+        array[left] = point
+        //对轴点元素分割的两个序列再次快排
+        quickSort(array: &array, begin: begin, end: left)
+        quickSort(array: &array, begin: left + 1, end: end)
     }
 }
