@@ -242,3 +242,26 @@ let num3: Int! = 10
 //类
 //如果类的所有成员都在定义的时候指定了初始值，编译器会为类生成无参的初始化器
 
+//尾随闭包
+//为了增加最后参数是闭包时的可读性
+func exec(v1: Int,fn: (Int, Int)-> Int) {
+    
+}
+
+exec(v1: 1) { (a, b) -> Int in
+    return 1
+}
+
+//闭包定义
+//一个函数和它所捕获的变量组合起来，称为闭包
+//捕获一个Int变量后，申请了24字节空间
+//8 类型信息
+//8 引用计数
+//8 变量值
+
+//自动闭包
+func getFirstPositive(_ v1: Int,_ v2: @autoclosure () -> Int) -> Int {
+    return v1 > 0 ? v1 : v2()
+}
+
+getFirstPositive(1, 2)
