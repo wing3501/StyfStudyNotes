@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _dataArray = @[@{@"title":@"Leetcode",@"class":@"Leetcode"},
                    @{@"title":@"__attribute__",@"class":@"AttributeSection"},
                    @{@"title":@"DesignPatten",@"class":@"DesignPatten"},

@@ -22,7 +22,7 @@ import Foundation
 //        print(firstUniqChar("z"))
 //        51. 数组中的逆序对
 //        print(reversePairs([7,5,6,4]))//5
-//        print(reversePairs([233,2000000001,234,2000000006,235,2000000003,236,2000000007,237,2000000002,2000000005,233,233,233,233,233,2000000004]))//69
+        print(reversePairs([233,2000000001,234,2000000006,235,2000000003,236,2000000007,237,2000000002,2000000005,233,233,233,233,233,2000000004]))//69
         
         
     }
@@ -35,6 +35,56 @@ import Foundation
 //    0 <= 数组长度 <= 50000
 //    链接：https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof
     class func reversePairs(_ nums: [Int]) -> Int {
+        guard nums.count > 1 else {
+            return 0
+        }
+        var array = nums
+        var result = 0
+        reversePairsHelper(&array, &result, 0, array.count)
+        return result
+    }
+    
+    class func reversePairsHelper(_ nums: inout [Int],_ result: inout Int,_ begin: Int,_ end: Int) {
+        if end - begin < 2{
+            return
+        }
+        let mid = (begin + end) / 2
+        reversePairsHelper(&nums, &result, begin, mid)
+        reversePairsHelper(&nums, &result, mid, end)
+        mergeHelper(&nums, &result, begin, mid, end)
+    }
+    
+    class func mergeHelper(_ nums: inout [Int],_ result: inout Int,_ begin: Int,_ mid: Int,_ end: Int) {
+        let leftArray = Array(nums[begin..<mid])
+        var left = 0
+        var right = mid
+        var index = begin
+        while left < leftArray.count && right < end {
+            if leftArray[left] <= nums[right] {
+                nums[index] = leftArray[left]
+                left += 1
+                result += (right - mid)
+            }else {
+                nums[index] = nums[right]
+                right += 1
+            }
+            index += 1
+        }
+        while left < leftArray.count {
+            nums[index] = leftArray[left]
+            left += 1
+            index += 1
+            result += (right - mid)
+        }
+        while right < end  {
+            nums[index] = nums[right]
+            right += 1
+            index += 1
+        }
+    }
+    
+    class func reversePairs1(_ nums: [Int]) -> Int {
+        //超时
         if nums.count > 1 {
 //            [7,5,6,4]
 //            [(_,1 + 1 + 1),(6,1),(_,1),(_,0)]   (后面比自己大的最大的数,后面比自己小的数的个数)
@@ -91,6 +141,7 @@ import Foundation
         }
         return 0
     }
+    
 //    50. 第一个只出现一次的字符
 //    在字符串 s 中找出第一个只出现一次的字符。如果没有，返回一个单空格。 s 只包含小写字母。
 //    示例:

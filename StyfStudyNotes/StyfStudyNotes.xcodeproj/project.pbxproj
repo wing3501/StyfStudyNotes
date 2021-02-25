@@ -26,6 +26,19 @@
 		920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2225DFC2180098B1BA /* MediaAdapter.m */; };
 		920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2625DFC3590098B1BA /* AudioPlayer.m */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
+		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
+		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
+		9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */; };
+		9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01D25E63DA00008D6BB /* MutexDemo.m */; };
+		9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01E25E63DA00008D6BB /* SynchronizedDemo.m */; };
+		9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F02025E63DA00008D6BB /* NSConditionDemo.m */; };
+		9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F02125E63DA00008D6BB /* NSConditionLockDemo.m */; };
+		9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F02225E63DA00008D6BB /* NSLockDemo.m */; };
+		9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F02625E63DA00008D6BB /* OSUnfairLockDemo.m */; };
+		9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F02E25E63DA00008D6BB /* OSSpinLockDemo.m */; };
+		9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03025E63DA00008D6BB /* SerialQueueDemo.m */; };
+		9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03125E63DA00008D6BB /* MutexDemo2.m */; };
+		9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -83,6 +96,32 @@
 		920B9C2625DFC3590098B1BA /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
+		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
+		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
+		9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
+		9244F01D25E63DA00008D6BB /* MutexDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo.m; sourceTree = "<group>"; };
+		9244F01E25E63DA00008D6BB /* SynchronizedDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizedDemo.m; sourceTree = "<group>"; };
+		9244F01F25E63DA00008D6BB /* OSSpinLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSpinLockDemo.h; sourceTree = "<group>"; };
+		9244F02025E63DA00008D6BB /* NSConditionDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSConditionDemo.m; sourceTree = "<group>"; };
+		9244F02125E63DA00008D6BB /* NSConditionLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSConditionLockDemo.m; sourceTree = "<group>"; };
+		9244F02225E63DA00008D6BB /* NSLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLockDemo.m; sourceTree = "<group>"; };
+		9244F02325E63DA00008D6BB /* OSSpinLockDemo2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSpinLockDemo2.h; sourceTree = "<group>"; };
+		9244F02425E63DA00008D6BB /* MutexDemo2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexDemo2.h; sourceTree = "<group>"; };
+		9244F02525E63DA00008D6BB /* SerialQueueDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialQueueDemo.h; sourceTree = "<group>"; };
+		9244F02625E63DA00008D6BB /* OSUnfairLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSUnfairLockDemo.m; sourceTree = "<group>"; };
+		9244F02725E63DA00008D6BB /* MJBaseDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJBaseDemo.h; sourceTree = "<group>"; };
+		9244F02825E63DA00008D6BB /* SynchronizedDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizedDemo.h; sourceTree = "<group>"; };
+		9244F02925E63DA00008D6BB /* MutexDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexDemo.h; sourceTree = "<group>"; };
+		9244F02A25E63DA00008D6BB /* SemaphoreDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemaphoreDemo.h; sourceTree = "<group>"; };
+		9244F02B25E63DA00008D6BB /* MutexDemo3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutexDemo3.h; sourceTree = "<group>"; };
+		9244F02C25E63DA00008D6BB /* NSConditionLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSConditionLockDemo.h; sourceTree = "<group>"; };
+		9244F02D25E63DA00008D6BB /* NSConditionDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSConditionDemo.h; sourceTree = "<group>"; };
+		9244F02E25E63DA00008D6BB /* OSSpinLockDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo.m; sourceTree = "<group>"; };
+		9244F02F25E63DA00008D6BB /* OSUnfairLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSUnfairLockDemo.h; sourceTree = "<group>"; };
+		9244F03025E63DA00008D6BB /* SerialQueueDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialQueueDemo.m; sourceTree = "<group>"; };
+		9244F03125E63DA00008D6BB /* MutexDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
+		9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo2.m; sourceTree = "<group>"; };
+		9244F03325E63DA00008D6BB /* NSLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -219,6 +258,39 @@
 			path = SwiftNote;
 			sourceTree = "<group>";
 		};
+		9244F01925E63DA00008D6BB /* Locks */ = {
+			isa = PBXGroup;
+			children = (
+				9244F02725E63DA00008D6BB /* MJBaseDemo.h */,
+				9244F01A25E63DA00008D6BB /* MJBaseDemo.m */,
+				9244F02925E63DA00008D6BB /* MutexDemo.h */,
+				9244F01D25E63DA00008D6BB /* MutexDemo.m */,
+				9244F02425E63DA00008D6BB /* MutexDemo2.h */,
+				9244F03125E63DA00008D6BB /* MutexDemo2.m */,
+				9244F02B25E63DA00008D6BB /* MutexDemo3.h */,
+				9244F01B25E63DA00008D6BB /* MutexDemo3.m */,
+				9244F02825E63DA00008D6BB /* SynchronizedDemo.h */,
+				9244F01E25E63DA00008D6BB /* SynchronizedDemo.m */,
+				9244F02A25E63DA00008D6BB /* SemaphoreDemo.h */,
+				9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */,
+				9244F01F25E63DA00008D6BB /* OSSpinLockDemo.h */,
+				9244F02E25E63DA00008D6BB /* OSSpinLockDemo.m */,
+				9244F02325E63DA00008D6BB /* OSSpinLockDemo2.h */,
+				9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */,
+				9244F02525E63DA00008D6BB /* SerialQueueDemo.h */,
+				9244F03025E63DA00008D6BB /* SerialQueueDemo.m */,
+				9244F02F25E63DA00008D6BB /* OSUnfairLockDemo.h */,
+				9244F02625E63DA00008D6BB /* OSUnfairLockDemo.m */,
+				9244F03325E63DA00008D6BB /* NSLockDemo.h */,
+				9244F02225E63DA00008D6BB /* NSLockDemo.m */,
+				9244F02D25E63DA00008D6BB /* NSConditionDemo.h */,
+				9244F02025E63DA00008D6BB /* NSConditionDemo.m */,
+				9244F02C25E63DA00008D6BB /* NSConditionLockDemo.h */,
+				9244F02125E63DA00008D6BB /* NSConditionLockDemo.m */,
+			);
+			path = Locks;
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +316,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				9244F01925E63DA00008D6BB /* Locks */,
 				920B9C2925DFD51A0098B1BA /* SwiftNote */,
 				920B9BE225DFAFED0098B1BA /* DesignPatten */,
 				920B9BD625DF59A40098B1BA /* Other */,
@@ -358,18 +431,27 @@
 			files = (
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
+				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
+				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
+				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
+				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
+				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
+				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
+				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
+				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
+				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
@@ -378,6 +460,7 @@
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
+				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */,
@@ -385,9 +468,12 @@
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
+				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
