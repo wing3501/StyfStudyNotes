@@ -23,212 +23,101 @@ import Foundation
 //        51. 数组中的逆序对
 //        print(reversePairs([7,5,6,4]))//5
 //        print(reversePairs([233,2000000001,234,2000000006,235,2000000003,236,2000000007,237,2000000002,2000000005,233,233,233,233,233,2000000004]))//69
-        
-//        146. LRU 缓存机制
-//        let lRUCache = LRUCache(2)
-//        lRUCache.put(1, 1); // 缓存是 {1=1}
-//        lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
-//        print(lRUCache.get(1))   // 返回 1
-//        lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
-//        print(lRUCache.get(2))    // 返回 -1 (未找到)
-//        lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
-//        print(lRUCache.get(1))    // 返回 -1 (未找到)
-//        print(lRUCache.get(3))    // 返回 3
-//        print(lRUCache.get(4))    // 返回 4
-        
-//        let lRUCache = LRUCache(2)
-//        print(lRUCache.get(2))//-1
-//        lRUCache.put(2, 6) //[2,6]
-//        print(lRUCache.get(1))//-1
-//        lRUCache.put(1, 5)
-//        lRUCache.put(1, 2)//[1,2]
-//        print(lRUCache.get(1))//2
-//        print(lRUCache.get(2))//6
-////        ["LRUCache","get","put","get","put","put","get","get"]
-////        [null,-1,null,-1,null,null,2,6]
-        
-        
-        
-        
-        testCache(["put","put","put","put","put","get","put","get","get","put","get","put","put","put","get","put","get","get","get","get","put","put","get","get","get","put","put","get","put","get","put","get","get","get","put","put","put","get","put","get","get","put","put","get","put","put","put","put","get","put","put","get","put","put","get","put","put","put","put","put","get","put","put","get","put","get","get","get","put","get","get","put","put","put","put","get","put","put","put","put","get","get","get","put","put","put","get","put","put","put","get","put","put","put","get","get","get","put","put","put","put","get","put","put","put","put","put","put","put"], [[10,13],[3,17],[6,11],[10,5],[9,10],[13],[2,19],[2],[3],[5,25],[8],[9,22],[5,5],[1,30],[11],[9,12],[7],[5],[8],[9],[4,30],[9,3],[9],[10],[10],[6,14],[3,1],[3],[10,11],[8],[2,14],[1],[5],[4],[11,4],[12,24],[5,18],[13],[7,23],[8],[12],[3,27],[2,12],[5],[2,9],[13,4],[8,18],[1,7],[6],[9,29],[8,21],[5],[6,30],[1,12],[10],[4,15],[7,22],[11,26],[8,17],[9,29],[5],[3,4],[11,30],[12],[4,29],[3],[9],[6],[3,4],[1],[10],[3,29],[10,28],[1,20],[11,13],[3],[3,12],[3,8],[10,9],[3,26],[8],[7],[5],[13,17],[2,27],[11,15],[12],[9,19],[2,15],[3,16],[1],[12,17],[9,1],[6,19],[4],[5],[5],[8,1],[11,7],[5,2],[9,28],[1],[2,2],[7,4],[4,22],[7,24],[9,26],[13,28],[11,26]])
-//        [null,null,null,null,null,-1,null,19,17,null,-1,null,null,null,-1,null,-1,5,-1,12,null,null,3,5,5,null,null,1,null,-1,null,30,5,30,null,null,null,-1,null,-1,24,null,null,18,null,null,null,null,14,null,null,18,null,null,11,null,null,null,null,null,18,null,null,24,null,4,29,30,null,12,11,null,null,null,null,29,null,null,null,null,17,22,18,null,null,null,24,null,null,null,20,null,null,null,29,18,18,null,null,null,null,20,null,null,null,null,null,null,null]
-//        [null,null,null,null,null,-1,null,19,17,null,-1,null,null,null,-1,null,-1,5,-1,12,null,null,3,5,5,null,null,1,null,-1,null,30,5,30,null,null,null,-1,null,-1,24,null,null,18,null,null,null,null,-1,null,null,18,null,null,-1,null,null,null,null,null,18,null,null,-1,null,4,29,30,null,12,-1,null,null,null,null,29,null,null,null,null,17,22,18,null,null,null,-1,null,null,null,20,null,null,null,-1,18,18,null,null,null,null,20,null,null,null,null,null,null,null]
+//        53 - I. 在排序数组中查找数字 I
+//        print(search([5,7,7,8,8,10], 8))
+//        print(search([5,7,7,8,8,10], 6))
+//        53 - II. 0～n-1中缺失的数字
+//        print(missingNumber([0,1,3]))
+//        print(missingNumber([0,1,2,3,4,5,6,7,9]))
+//        print(missingNumber([0,1]))
+        print(missingNumber([1,2]))
     }
-    
-    class func testCache(_ array: [String],_ array1: [[Int]]) {
-        let lRUCache = LRUCache(10)
-        var i = 0
-        while i < array.count {
-            let str = array[i]
-            let tuple = array1[i]
-            
-            if str == "put" {
-                print("操作---\(i + 1) put[\(tuple[0]),\(tuple[1])]")
-                lRUCache.put(tuple[0], tuple[1])
+//    53 - II. 0～n-1中缺失的数字
+//    一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。
+//    示例 1:
+//    输入: [0,1,3]
+//    输出: 2
+//    示例 2:
+//    输入: [0,1,2,3,4,5,6,7,9]
+//    输出: 8
+//    限制：
+//    1 <= 数组长度 <= 10000
+//    链接：https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof
+    class func missingNumber(_ nums: [Int]) -> Int {
+        if nums[0] != 0 {
+            return 0
+        }
+        var left = 0
+        var right = nums.count - 1
+        while left < right - 1 {
+            let mid = left + (right - left) / 2
+            let num = nums[mid]
+            if num > mid {
+                right = mid
             }else {
-                print("操作---\(i + 1) get[\(tuple[0])]")
-                _ = lRUCache.get(tuple[0])
+                left = mid
             }
-            i += 1
         }
+        if nums[left] + 1 == nums[right] {
+            return right + 1
+        }
+        return left + 1
     }
     
-//    146. LRU 缓存机制
-//    运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制 。
-//    实现 LRUCache 类：
-//    LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存
-//    int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
-//    void put(int key, int value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
-//    进阶：你是否可以在 O(1) 时间复杂度内完成这两种操作？
-//    示例：
-//    输入
-//    ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
-//    [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
-//    输出
-//    [null, null, null, 1, null, -1, null, -1, 3, 4]
-//
-//    解释
-//    LRUCache lRUCache = new LRUCache(2);
-//    lRUCache.put(1, 1); // 缓存是 {1=1}
-//    lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
-//    lRUCache.get(1);    // 返回 1
-//    lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
-//    lRUCache.get(2);    // 返回 -1 (未找到)
-//    lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
-//    lRUCache.get(1);    // 返回 -1 (未找到)
-//    lRUCache.get(3);    // 返回 3
-//    lRUCache.get(4);    // 返回 4
-//    提示：
-//    1 <= capacity <= 3000
-//    0 <= key <= 3000
-//    0 <= value <= 104
-//    最多调用 3 * 104 次 get 和 put
-//    链接：https://leetcode-cn.com/problems/lru-cache
-    class LRUCache {
-        class LRUNode {
-            var key: Int
-            var val: Int
-            var next: LRUNode?
-            var prev: LRUNode?
-            init(_ key: Int, _ value: Int) {
-                self.key = key
-                self.val = value
+//    53 - I. 在排序数组中查找数字 I
+//    统计一个数字在排序数组中出现的次数。
+//    示例 1:
+//    输入: nums = [5,7,7,8,8,10], target = 8
+//    输出: 2
+//    示例 2:
+//    输入: nums = [5,7,7,8,8,10], target = 6
+//    输出: 0
+//    限制：
+//    0 <= 数组长度 <= 50000
+//    注意：本题与主站 34 题相同（仅返回值不同）：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+//    链接：https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof
+    class func search(_ nums: [Int], _ target: Int) -> Int {
+        guard nums.count > 0 else {
+            return 0
+        }
+        var left = 0
+        var right = nums.count - 1
+        while left <= right {
+            let mid = left + (right - left) / 2
+            let num = nums[mid]
+            if num > target {
+                right = mid - 1
+            }else if num < target {
+                left = mid + 1
+            }else if num == target {
+                right = mid - 1
             }
         }
-        class LRULinkedHashMap {
-            var hashmap: Dictionary<Int, LRUNode> = [:]
-            var head: LRUNode?
-            var tail: LRUNode?
-            var size: Int = 0
-            
-            func get(_ key: Int) -> Int {
-                if let node = hashmap[key] {
-                    return node.val
-                }
-                return -1
-            }
-            
-            func add(_ key: Int, _ value: Int) {
-                if let node = hashmap[key] {
-                    //已经存在，更新
-                    node.val = value
-                    bringToTail(node)
-                }else {
-                    let node = LRUNode(key, value)
-                    if tail == nil {
-                        head = node
-                        tail = node
-                    }else {
-                        bringToTail(node)
-                    }
-                    hashmap[key] = node
-                    size += 1
-                }
-            }
-            
-            func bringToTail(_ key: Int) {
-                if let node = hashmap[key] {
-                    bringToTail(node)
-                }
-            }
-            
-            func bringToTail(_ node: LRUNode) {
-                if node.key != tail?.key {
-                    if node.key == head?.key {
-                        node.next?.prev = nil
-                        head = node.next
-                    }
-                    node.prev?.next = node.next
-                    node.next?.prev = node.prev
-                    tail?.next = node
-                    node.prev = tail
-                    node.next = nil
-                    tail = node
-                }
-            }
-            
-            func deleteHeadIfNeeded(_ key: Int) {
-                guard hashmap[key] == nil else {
-                    return
-                }
-                if let node = head {
-                    delete(node.key)
-                }
-            }
-            
-            func delete(_ key: Int) {
-                if let node = hashmap[key] {
-                    if node.key == head?.key {
-                        head = node.next
-                        if node.key == tail?.key {
-                            tail = node.prev
-                        }
-                    }else {
-                        if node.key == tail?.key {
-                            tail = node.prev
-                        }else {
-                            node.prev?.next = node.next
-                        }
-                    }
-                    hashmap.removeValue(forKey: key)
-                    size -= 1
-                }
-            }
-            func printNode() {
-                var node = head
-                var str = ""
-                while node != nil {
-                    str += "[\(node!.key),\(node!.val)]"
-                    node = node?.next
-                }
-                print(str)
-            }
+        if left >= nums.count || nums[left] != target {
+            return 0
         }
+        let leftBound = left
         
-        var capacity: Int
-        var linkedHashMap: LRULinkedHashMap = LRULinkedHashMap()
-
-        init(_ capacity: Int) {
-            self.capacity = capacity
-        }
-        
-        func get(_ key: Int) -> Int {
-            let val = linkedHashMap.get(key)
-            linkedHashMap.bringToTail(key)
-//            linkedHashMap.printNode()
-            return val
-        }
-        
-        func put(_ key: Int, _ value: Int) {
-            if linkedHashMap.size == capacity {
-                //删除最老的
-                linkedHashMap.deleteHeadIfNeeded(key)
+        left = 0
+        right = nums.count - 1
+        while left <= right {
+            let mid = left + (right - left) / 2
+            let num = nums[mid]
+            if num > target {
+                right = mid - 1
+            }else if num < target {
+                left = mid + 1
+            }else if num == target {
+                left = mid + 1
             }
-            linkedHashMap.add(key, value)
-//            linkedHashMap.printNode()
         }
+        if right < 0 || nums[right] != target {
+            return 0
+        }
+        let rightBound = right
+        
+        return rightBound - leftBound + 1
     }
-    
 //    51. 数组中的逆序对
 //    在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
 //    示例 1:
