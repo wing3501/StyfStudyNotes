@@ -30,6 +30,8 @@
 		920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0525E8A4A700DE2990 /* FFileTool.m */; };
 		920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0725E8A4A700DE2990 /* FDownLoader.m */; };
 		920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0925E8A4A700DE2990 /* NSString+MD5.m */; };
+		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
+		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
 		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
 		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
@@ -110,6 +112,8 @@
 		920E3F0825E8A4A700DE2990 /* FDownLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDownLoaderManager.h; sourceTree = "<group>"; };
 		920E3F0925E8A4A700DE2990 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		920E3F0A25E8A4A700DE2990 /* FFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFileTool.h; sourceTree = "<group>"; };
+		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
+		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
 		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
 		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				92A8D7E725D28BA40008EFAA /* JianZhiOffer.swift */,
+				920E41B125E8DDC700DE2990 /* 其他.swift */,
+				920E41B425E8DDF000DE2990 /* 二进制.swift */,
 				92A8D7EF25D28D880008EFAA /* 动态规划.swift */,
 				92A8D7F325D28DC30008EFAA /* 回溯.swift */,
 				92A8D7F625D28DFD0008EFAA /* BFS.swift */,
@@ -499,6 +505,7 @@
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
+				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
@@ -518,6 +525,7 @@
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
+				920E41B225E8DDC700DE2990 /* 其他.swift in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 			);
