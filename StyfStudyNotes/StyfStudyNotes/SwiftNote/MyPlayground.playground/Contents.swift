@@ -265,3 +265,46 @@ func getFirstPositive(_ v1: Int,_ v2: @autoclosure () -> Int) -> Int {
 }
 
 getFirstPositive(1, 2)
+
+//属性
+struct Circle {
+    //存储属性
+    var radius: Double {
+        //属性观察期 也可以用在全局变量、局部变量
+        willSet {
+            print(newValue)
+        }
+        didSet {
+            print(oldValue, radius)
+        }
+    }
+    //延迟存储属性 必须是var
+    lazy var radius1: Double = 1
+    //计算属性
+    var diameter: Double {
+        set {
+            radius = newValue / 2
+        }
+        get {
+            radius * 2
+        }
+    }
+}
+
+//inout本质
+//如果实参有物理内存地址，且没有设置属性观察器-->直接引用传递
+//如果实参是计算属性 或 设置了属性观察器-->先复制实参的值，到一个局部变量，把局部变量的地址传入函数 函数返回后，将局部变量的值传给实参（Copy In Copy Out）
+
+//类型属性 默认就是lazy，且线程安全(初始化时dispatch_once) 可以是let 枚举里也可以
+struct Shape1 {
+    static var count: Int = 0//不存在实例内存中
+    static var count1: Int {
+        return 10
+    }
+//    static var count: Int = 0  如果是类也可以用class
+}
+
+class FileManager {
+    public static let shared = FileManager()
+    private init() { }
+}

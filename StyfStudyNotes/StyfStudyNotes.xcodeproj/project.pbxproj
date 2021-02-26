@@ -25,6 +25,11 @@
 		920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1E25DFC1AA0098B1BA /* Mp4Player.m */; };
 		920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2225DFC2180098B1BA /* MediaAdapter.m */; };
 		920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2625DFC3590098B1BA /* AudioPlayer.m */; };
+		920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3EFF25E8A4A000DE2990 /* TestViewController.m */; };
+		920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */; };
+		920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0525E8A4A700DE2990 /* FFileTool.m */; };
+		920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0725E8A4A700DE2990 /* FDownLoader.m */; };
+		920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0925E8A4A700DE2990 /* NSString+MD5.m */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
 		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
 		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
@@ -95,6 +100,16 @@
 		920B9C2525DFC3590098B1BA /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		920B9C2625DFC3590098B1BA /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		920E3EFE25E8A4A000DE2990 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		920E3EFF25E8A4A000DE2990 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		920E3F0325E8A4A700DE2990 /* FDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDownLoader.h; sourceTree = "<group>"; };
+		920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDownLoaderManager.m; sourceTree = "<group>"; };
+		920E3F0525E8A4A700DE2990 /* FFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFileTool.m; sourceTree = "<group>"; };
+		920E3F0625E8A4A700DE2990 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		920E3F0725E8A4A700DE2990 /* FDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDownLoader.m; sourceTree = "<group>"; };
+		920E3F0825E8A4A700DE2990 /* FDownLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDownLoaderManager.h; sourceTree = "<group>"; };
+		920E3F0925E8A4A700DE2990 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		920E3F0A25E8A4A700DE2990 /* FFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFileTool.h; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
 		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
 		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
@@ -258,6 +273,31 @@
 			path = SwiftNote;
 			sourceTree = "<group>";
 		};
+		920E3EFD25E8A46200DE2990 /* 断点续传案例 */ = {
+			isa = PBXGroup;
+			children = (
+				920E3F0225E8A4A700DE2990 /* Tools */,
+				920E3EFE25E8A4A000DE2990 /* TestViewController.h */,
+				920E3EFF25E8A4A000DE2990 /* TestViewController.m */,
+			);
+			path = "断点续传案例";
+			sourceTree = "<group>";
+		};
+		920E3F0225E8A4A700DE2990 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				920E3F0325E8A4A700DE2990 /* FDownLoader.h */,
+				920E3F0725E8A4A700DE2990 /* FDownLoader.m */,
+				920E3F0825E8A4A700DE2990 /* FDownLoaderManager.h */,
+				920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */,
+				920E3F0A25E8A4A700DE2990 /* FFileTool.h */,
+				920E3F0525E8A4A700DE2990 /* FFileTool.m */,
+				920E3F0625E8A4A700DE2990 /* NSString+MD5.h */,
+				920E3F0925E8A4A700DE2990 /* NSString+MD5.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		9244F01925E63DA00008D6BB /* Locks */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +356,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				920E3EFD25E8A46200DE2990 /* 断点续传案例 */,
 				9244F01925E63DA00008D6BB /* Locks */,
 				920B9C2925DFD51A0098B1BA /* SwiftNote */,
 				920B9BE225DFAFED0098B1BA /* DesignPatten */,
@@ -431,6 +472,7 @@
 			files = (
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
+				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
@@ -451,6 +493,7 @@
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
+				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
@@ -470,8 +513,11 @@
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
+				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
+				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 			);
