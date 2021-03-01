@@ -20,6 +20,7 @@
     
     [JianZhiOffer test];
 //    [SortTest test];
+//    [TreeTest test];
 }
 
 

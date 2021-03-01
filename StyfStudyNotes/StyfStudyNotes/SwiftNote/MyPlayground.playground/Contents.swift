@@ -301,10 +301,63 @@ struct Shape1 {
     static var count1: Int {
         return 10
     }
-//    static var count: Int = 0  如果是类也可以用class
+//    static var count: Int = 0  如果是类也可以用class  
 }
 
 class FileManager {
     public static let shared = FileManager()
     private init() { }
 }
+
+//self
+//实例方法中代表实例对象
+//类型方法中代表类型
+
+//mutating 结构体和枚举，默认情况下不允许在方法中修改属性
+struct Point {
+    var x = 0.0, y = 0.0
+    mutating func moveby(_ xx: Double,_ yy: Double) {
+        x += xx
+        y += yy
+    }
+    //@discardableResult消除返回值未使用的警告
+    @discardableResult mutating func moveby1(_ xx: Double,_ yy: Double) -> Double {
+        x += xx
+        y += yy
+        return x
+    }
+}
+
+//下标 subscript给任意类型增加下标功能
+//细节 可以没有set,必须要有get  如果只有get,可以省略get
+class Point2 {
+    var x = 0.0, y = 0.0
+    subscript(index: Int) ->Double {//返回值类型决定了，get的返回值，set的newValue
+        set {
+            if index == 0 {
+                x = newValue
+            }else if index == 1 {
+                y = newValue
+            }
+        }
+        get {
+            if index == 0 {
+                return x
+            }else if index == 1 {
+                return y
+            }
+            return 0
+        }
+    }
+    //可以是类型方法
+    static subscript(v1: Int, v2: Int) -> Int {
+        return v1 + v2
+    }
+}
+var p2 = Point2()
+p2[0] = 11.1
+print(p2[1])
+
+//继承 只有类支持继承
+//子类重写父类的 下标、方法、属性 加上override关键字
+

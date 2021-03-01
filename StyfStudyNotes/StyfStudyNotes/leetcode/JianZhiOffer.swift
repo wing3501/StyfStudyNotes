@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 @objcMembers class JianZhiOffer: NSObject {
     class func test()  {
         //47. 礼物的最大价值
@@ -30,8 +32,73 @@ import Foundation
 //        print(missingNumber([0,1,3]))
 //        print(missingNumber([0,1,2,3,4,5,6,7,9]))
 //        print(missingNumber([0,1]))
-        print(missingNumber([1,2]))
+//        print(missingNumber([1,2]))
+        
+//        54. 二叉搜索树的第k大节点
+//        let node = TreeTest.deserialize("[41,37,44,24,39,42,48,1,35,38,40,null,43,46,49,0,2,30,36,null,null,null,null,null,null,45,47,null,null,null,null,null,4,29,32,null,null,null,null,null,null,3,9,26,null,31,34,null,null,7,11,25,27,null,null,33,null,6,8,10,16,null,null,null,28,null,null,5,null,null,null,null,null,15,19,null,null,null,null,12,null,18,20,null,13,17,null,null,22,null,14,null,null,21,23]")
+//        print(kthLargest(node, 25))//25
+        
     }
+    
+//    54. 二叉搜索树的第k大节点
+//    给定一棵二叉搜索树，请找出其中第k大的节点。
+//    示例 1:
+//    输入: root = [3,1,4,null,2], k = 1
+//       3
+//      / \
+//     1   4
+//      \
+//       2
+//    输出: 4
+//    示例 2:
+//    输入: root = [5,3,6,2,4,null,null,1], k = 3
+//           5
+//          / \
+//         3   6
+//        / \
+//       2   4
+//      /
+//     1
+//    输出: 4
+//    链接：https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof。
+    class func kthLargest(_ root: TreeNode?, _ k: Int) -> Int {
+        //中序遍历
+        var stack: [TreeNode?] = []
+        var node: TreeNode? = root
+        var kk = 0
+        while true {
+            if node != nil {
+                stack.append(node)
+                node = node?.right
+            }else {
+                if stack.count == 0 {
+                    break
+                }else {
+                    node = stack.removeLast()
+                    print("\(node!.val),")
+                    kk += 1
+                    if kk == k {
+                        return node!.val
+                    }
+                    node = node?.left
+                }
+            }
+        }
+        return 0
+    }
+    
+    class func fanzhuan(_ node: TreeNode?) {
+        if let left = node?.left {
+            fanzhuan(left)
+        }
+        if let right = node?.right {
+            fanzhuan(right)
+        }
+        let left = node?.left
+        node?.left = node?.right
+        node?.right = left
+    }
+    
 //    53 - II. 0～n-1中缺失的数字
 //    一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。
 //    示例 1:
