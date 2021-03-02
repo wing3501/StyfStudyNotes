@@ -38,6 +38,113 @@ import Foundation
 //        let node = TreeTest.deserialize("[41,37,44,24,39,42,48,1,35,38,40,null,43,46,49,0,2,30,36,null,null,null,null,null,null,45,47,null,null,null,null,null,4,29,32,null,null,null,null,null,null,3,9,26,null,31,34,null,null,7,11,25,27,null,null,33,null,6,8,10,16,null,null,null,28,null,null,5,null,null,null,null,null,15,19,null,null,null,null,12,null,18,20,null,13,17,null,null,22,null,14,null,null,21,23]")
 //        print(kthLargest(node, 25))//25
         
+//        56 - I. 数组中数字出现的次数
+        print(singleNumbers([4,1,4,6]))//[1,6]
+        print(singleNumbers([1,2,10,4,1,4,3,3]))//[2,10]
+    }
+//    56 - I. 数组中数字出现的次数
+//    一个整型数组 nums 里除两个数字之外，其他数字都出现了两次。请写程序找出这两个只出现一次的数字。要求时间复杂度是O(n)，空间复杂度是O(1)。
+//    示例 1：
+//    输入：nums = [4,1,4,6]
+//    输出：[1,6] 或 [6,1]
+//    示例 2：
+//    输入：nums = [1,2,10,4,1,4,3,3]
+//    输出：[2,10] 或 [10,2]
+//    限制：
+//    2 <= nums.length <= 10000
+//    链接：https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof
+    class func singleNumbers(_ nums: [Int]) -> [Int] {
+//        先对所有数字进行一次异或，得到两个出现一次的数字的异或值。
+//        在异或结果中找到任意为 1 的位。
+//        根据这一位对所有的数字进行分组。
+//        在每个组内进行异或操作，得到两个数字。
+        var x = nums[0]
+        var i = 1
+        while i < nums.count {
+            x ^= nums[i]
+            i += 1
+        }
+        var wei = 1
+        while x & wei == 0 {
+            wei = wei << 1
+        }
+        var x0 = 0
+        var x1 = 0
+        i = 0
+        while i < nums.count {
+            if nums[i] & wei == 0 {
+                x0 ^= nums[i]
+            }else {
+                x1 ^= nums[i]
+            }
+            i += 1
+        }
+        return [x0,x1]
+    }
+//    55 - II. 平衡二叉树
+//    输入一棵二叉树的根节点，判断该树是不是平衡二叉树。如果某二叉树中任意节点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
+//    示例 1:
+//    给定二叉树 [3,9,20,null,null,15,7]
+//        3
+//       / \
+//      9  20
+//        /  \
+//       15   7
+//    返回 true 。
+//    示例 2:
+//    给定二叉树 [1,2,2,3,3,null,null,4,4]
+//           1
+//          / \
+//         2   2
+//        / \
+//       3   3
+//      / \
+//     4   4
+//    返回 false 。
+//    限制：
+//    0 <= 树的结点个数 <= 10000
+//    注意：本题与主站 110 题相同：https://leetcode-cn.com/problems/balanced-binary-tree/
+//    链接：https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof
+    class func isBalanced(_ root: TreeNode?) -> Bool {
+        return isBalancedHelper(root).1
+    }
+    class func isBalancedHelper(_ node: TreeNode?) -> (Int,Bool) {
+        if node == nil {
+            return (0, true)
+        }
+        if node?.left == nil && node?.right == nil {
+            return (1, true)
+        }
+        let left = isBalancedHelper(node?.left)
+        let right = isBalancedHelper(node?.right)
+        if !left.1 || !right.1  {
+            return (max(left.0, right.0) + 1, false)
+        }
+        return (max(left.0, right.0) + 1, fabs(Double(left.0 - right.0)) <= 1.0)
+    }
+//    I. 二叉树的深度
+//    输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。
+//    例如：
+//    给定二叉树 [3,9,20,null,null,15,7]，
+//
+//        3
+//       / \
+//      9  20
+//        /  \
+//       15   7
+//    返回它的最大深度 3 。
+//    提示：
+//    节点总数 <= 10000
+//    注意：本题与主站 104 题相同：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+//    链接：https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof
+    class func maxDepth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        }
+        if root?.left == nil && root?.right == nil {
+            return 1
+        }
+        return max(maxDepth(root?.left), maxDepth(root?.right)) + 1
     }
     
 //    54. 二叉搜索树的第k大节点
