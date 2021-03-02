@@ -353,6 +353,12 @@ class Point2 {
     static subscript(v1: Int, v2: Int) -> Int {
         return v1 + v2
     }
+    func test() {
+        
+    }
+    class func test1() {
+        
+    }
 }
 var p2 = Point2()
 p2[0] = 11.1
@@ -361,3 +367,78 @@ print(p2[1])
 //继承 只有类支持继承
 //子类重写父类的 下标、方法、属性 加上override关键字
 
+//内存结构 前16个字节  类型 引用计数
+
+//重写方法
+class Point3:Point2 {
+    var age = 0
+    
+    //重写实例方法
+    override func test() {
+        
+    }
+    //override 重写下标
+    override subscript(index: Int) ->Double {
+        set {
+        }
+        get {
+            return 0
+        }
+    }
+    //被class修饰的类型方法可以被子类重写，static不可以  用class和static取决于想不想让子类重写
+    override class func test1() {
+        
+    }
+}
+
+//重写属性 子类可以将父类的属性（存储、计算），重写为计算属性
+//只能重写var 属性，不能重写let
+//子类重写后的权限不能小于父类属性的权限， 比如 父类只读，子类读写
+class Point4: Point3 {
+    override var age: Int {
+        set {
+            super.age = newValue
+        }
+        get {
+            return super.age
+        }
+    }
+}
+//重写类型属性
+//被class修饰的计算类型属性，可以重写
+//被static修饰的类型属性（存储，计算），不可以
+class Point5 {
+    static var age = 1
+    var age2 = 2
+    class var age1: Int {
+        set {
+            age = newValue
+        }
+        get {
+            return age
+        }
+    }
+}
+
+//属性观察器
+//可以在子类中为父类属性（存储、计算），增加属性观察器，除了只读计算属性、let属性
+//如果父类属性已经存在属性观察期，则父类子类的属性观察器都会起作用
+class Point6: Point5 {
+    override var age2: Int {
+        willSet {
+            
+        }
+        didSet {
+            print(age2)//这里不会死循环
+        }
+    }
+}
+
+//final 修饰类。不能被继承
+//final 修饰方法、属性、下标，不能被重写
+
+
+//Swift的多态原理
+//虚表
+
+ 
