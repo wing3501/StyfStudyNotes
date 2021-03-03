@@ -270,7 +270,8 @@ getFirstPositive(1, 2)
 struct Circle {
     //存储属性
     var radius: Double {
-        //属性观察期 也可以用在全局变量、局部变量
+        //属性观察器 也可以用在全局变量、局部变量
+        //父类的属性在自己的初始化器中赋值不会触发观察器，在子类的初始化器中会
         willSet {
             print(newValue)
         }
@@ -439,6 +440,156 @@ class Point6: Point5 {
 
 
 //Swift的多态原理
-//虚表
+//类似虚表，子类的类型信息内存里，有父类继承下来的函数指针
 
- 
+//初始化器
+//类：
+//指定初始化器:类至少有一个
+//便捷初始化器:必须要调自己类中的指定初始化器
+class Size {
+    var width: Int = 0
+    var height: Int = 0
+    init(width: Int, height: Int) {
+        self.width = width
+        self.height = height
+    }
+    convenience init(width: Int) {
+        self.init(width:width, height: 0)//必须放最前面
+    }
+    convenience init(height: Int) {
+        self.init(width: 0,height: height)
+    }
+}
+//子类的指定初始化器，一定要调用直系父类的指定初始化器
+//init(width: Int, height: Int) {
+//    super.init(width: width)
+//    self.height = height
+//}
+
+//便捷初始化器也可以调用自己的其他便捷初始化器，但是最终必须要调指定初始化器
+//指定初始化器不能调指定初始化器
+
+//两段式初始化
+//第一阶段：初始化所有存储属性 由下往上
+//第二阶段：设置新的存储属性 由上往下
+
+//安全检查
+//指定初始化器要保证自己的属性初始化完，再调用父类的指定初始化器
+//指定初始化器必须先调用父类的初始化器，才能为继承的属性设值
+//便捷初始化器必须先调用同类的其他初始化器，然后再为任意属性设新值
+//初始化器在第一阶段完成前，不能调用任何实例方法、不能读取实例属性，不能引用self
+
+//重写初始化器
+//子类可以将父类的指定初始化器重写为 指定初始化器、便捷初始化器 ，必须加上override
+//如果子类写了一个匹配父类便捷初始化器的初始化器，不用加上override，严格来讲，子类无法重写父类的便捷初始化器
+
+//自动继承
+//如果子类没有写任何指定初始化器，会自动继承父类所有指定初始化器
+//如果子类实现了父类所有指定初始化器（继承、重写），会自动继承父类所有便捷初始化器
+
+//required 修饰指定初始化器 希望子类必须实现这个初始化器
+class Person {
+    required init() {
+        
+    }
+    init(age: Int) {
+        
+    }
+}
+class Student: Person {
+    //自动继承了
+}
+
+//可失败初始化器
+
+class Man {
+//    init?() {
+//
+//    }
+    init!(){
+        //可以用init!定义隐式解包的可失败初始化器
+        //可失败可以调用可失败，非可失败调用可失败需要解包
+        //初始化器调用一个可失败初始化器导致失败了，后面不执行了
+        //用一个非可失败 重写 可失败
+    }
+    deinit {
+        //反初始化器
+        //类似析构 dealloc
+        //没有参数 没有小括号
+        //先执行子类的，再执行父类
+        //父类的deinit能被子类继承
+    }
+    
+}
+
+//可选链
+//如果可选项为nil，调用方法、下标、属性失败，结果为nil
+//如果可选项不为nil。调用方法、下标、属性成功，结果会被包装成可选项
+//如果结果本来就是可选项，不会进行再次包装
+
+//判断方法有没有调用成功
+//if let _ = person?.eat()
+
+//协议
+//可以被枚举、结构体、类遵守
+//协议中定义方法不能有默认参数值
+//默认情况下，协议中定义的内容必须全部实现
+protocol Drawable {
+    func draw()
+    var x: Int { get set } //可以实现为存储属性、计算属性
+    var y: Int { get }// 协议中定义属性必须用var,实现的属性权限不可小于协议
+    subscript(index: Int) -> Int { get set }
+    static func draw1()//为了保持通用，类型方法用static
+    mutating func draw2()//设置mutating，才允许结构体、枚举具体实现修改自身变量
+    init(x: Int,y: Int)//非final类实现，必须加上required
+}
+
+//协议中的 init init? init!
+//协议中的init? init! 可以用 init init? init!去实现
+//协议中的init 可以用 init init!去实现
+
+//一个协议可以继承另一个协议
+
+//协议组合
+//func fn3(obj: Person & Livable & Runnable)
+//typealias realPerson = Person & Livable & Runnabl
+
+//CaseIterable 让枚举遵守，可以遍历枚举
+//CustomStringConvertible 类似OC的description,自定义打印
+
+//Any AnyObject
+//Any:可以代表任意类型（枚举、结构体、类、函数类型）
+//AnyObject:可以代表任意类类型
+protocol Runnable: AnyObject {//只有类才能遵守这个协议
+}
+var array1 = Array<Any>()//可以放任意类型
+
+//is 、 as? 、as! 、as
+//is用来判断是否为某种类型
+//as用来做强制类型转换
+var stu: Any = 10
+print(stu is Int)
+stu as? Person
+
+var dd = 10 as Double//百分百可以转的用as就可以
+
+//X.self X.type AnyClass
+//X.self 元类型的指针，存放着类型相关信息 X.self属于X.type类型   类似iOS 类对象
+//X.type
+var p: Person = Person()
+var pType: Person.Type = Person.self
+pType = type(of: p)//从p取出前8个字节
+
+//元类型的使用
+var t = Person.self
+var p3 = t.init()
+
+//Self 一般用作返回值类型，限定返回值跟方法调用者必须是同一类型，也可以作为参数类型
+
+
+
+
+
+
+
+
