@@ -659,5 +659,85 @@ func swapVal1<T1,T2>(_ a: inout T1,_ b: inout T2) {
     
 }
 
+class Stack<T> {
+    var elements = [T]()
+}
+//存在继承
+class SubStack<T> : Stack<T> {
+    
+}
+struct Stack1<T> {
+    var elements = [T]()
+    mutating func push(_ elememt: T) {//结构体使用细节
+        elements.append(elememt)
+    }
+}
+enum Score<T> {
+    case point(T)
+    case grade(String)
+}
+let s = Score.point(1)
+//泛型原理：调的是同一个函数，参数里还传了元类型信息
+
+//关联类型：给协议中用到的类定义一个占位名称
+//协议想实现泛型，就用关联类型
+protocol Stackable {
+    associatedtype Element
+//    associatedtype Element2
+    mutating func push(_ element: Element)
+    mutating func pop() -> Element
+}
+class StringStack : Stackable {
+//    typealias Element = String //可以省略
+    func push(_ element: String) {
+        
+    }
+    func pop() -> String {
+        return ""
+    }
+}
+
+//类型约束
+protocol Stackable1 {
+    associatedtype Element : Equatable
+}
+class Stack2<E : Equatable> : Stackable1 {
+    typealias Element = E
+}
+func equal<S1: Stackable1, S2: Stackable1>(_ s1: S1, _ s2: S2) -> Bool where S1.Element == S2.Element , S1.Element : Hashable {
+    return false
+}
+
+//协议类型的注意点
+protocol Runnable1 {
+    associatedtype Speed
+    var speed: Speed { get }
+}
+class Person1 : Runnable1 {
+    var speed: Int { 0 }
+}
+class Car1 : Runnable1 {
+    var speed: Double { 0.1 }
+}
+//func get123() -> Runnable1 { //报错
+//    return Person1()
+//}
+func get123(_ type: Int) -> some Runnable1 {//不透明类型，想返回某个遵守某协议的对象
+//    if type == 1 {  限制只能返回一种类型
+//        return Car1()
+//    }
+    return Person1()
+}
+//不透明类型还可以用在属性类型上
+//var pet: some Runnable1 {
+//    return Car1()
+//}
+
+//String Array原理
+//1、一个字符串，16个字节，15个字节存内容，1个字节分开看，是存储类型和字符串长度
+//2、字符串长度超过15，后8个字节 = 字符串真实地址 + 0x7fffffffffffe0（或者 真实地址 = 后8个字节 + 0x20）   常量区__TEXT,__cstring  前8个字节 是存储类型和字符串长度
+//3、字面量，就算小于16个字节，在常量区也有
+//4、str.append  如果16个字节放的下，还是直接放在变量内存里   放不下，后8个字节 = 字符串真实地址（堆地址） + 0x7fffffffffffe0
+//    append内部会申请堆内存空间
 
 
