@@ -586,10 +586,78 @@ var p3 = t.init()
 
 //Self 一般用作返回值类型，限定返回值跟方法调用者必须是同一类型，也可以作为参数类型
 
+//错误处理
 
+struct MyError: Error {
+    var msg: String
+}
 
+func divide(_ num1: Int,_ num2: Int) throws -> Int {
+    if num2 == 0 {
+        throw MyError(msg: "除数为0")
+    }
+    return num1 / num2
+}
+enum SomeError: Error {
+    case illegalArg(String)
+    case outOfBounds(Int,Int)
+    case outOfMemory
+}
 
+var result = try divide(1, 0)//尝试调用
+//print(result) 还是系统处理，闪退
 
+//使用do catch
+
+do {
+    try divide(20, 0)
+    print("1")//一旦抛出异常，这句不执行
+} catch let SomeError.illegalArg(msg) {
+    print(msg)
+} catch SomeError.outOfMemory {
+    
+} catch let err as SomeError {
+    
+} catch is SomeError {
+    
+} catch {
+    
+}
+//往上抛
+func testError() throws {
+    try divide(200, 0)
+}
+
+//try? try!
+let result1 = try? divide(20, 10) //成功是Int? 失败是nil
+let result2 = try! divide(20, 0) //成功是Int 失败nil
+
+//rethrows 函数本身不会抛出错误，但是调用闭包参数抛出错误，那么它会将错误向上抛
+func exec1(_ fn:(Int, Int) throws -> Int, _ num1: Int) rethrows {
+    try fn(num1,1)
+}
+
+//defer 用来定义以任何方式（抛错误\return等）离开代码块前必须执行的代码
+func testdefer() {
+    defer {
+        //延迟到函数结束之前执行
+    }
+    defer {
+        //执行顺序和定义顺序相反，会执行这个
+    }
+    try? divide(1, 1)
+}
+
+//泛型
+func swapVal<T>(_ a: inout T,_ b: inout T) {
+    (a, b) = (b, a)
+}
+
+var fn1: (inout Int,inout Int) -> () = swapVal
+
+func swapVal1<T1,T2>(_ a: inout T1,_ b: inout T2) {
+    
+}
 
 
 

@@ -39,9 +39,148 @@ import Foundation
 //        print(kthLargest(node, 25))//25
         
 //        56 - I. 数组中数字出现的次数
-        print(singleNumbers([4,1,4,6]))//[1,6]
-        print(singleNumbers([1,2,10,4,1,4,3,3]))//[2,10]
+//        print(singleNumbers([4,1,4,6]))//[1,6]
+//        print(singleNumbers([1,2,10,4,1,4,3,3]))//[2,10]
+        
+//        57 - II. 和为s的连续正数序列
+        print(findContinuousSequence(9))
     }
+    
+//    57 - II. 和为s的连续正数序列
+//    输入一个正整数 target ，输出所有和为 target 的连续正整数序列（至少含有两个数）。
+//    序列内的数字由小到大排列，不同序列按照首个数字从小到大排列。
+//    示例 1：
+//    输入：target = 9
+//    输出：[[2,3,4],[4,5]]
+//    示例 2：
+//    输入：target = 15
+//    输出：[[1,2,3,4,5],[4,5,6],[7,8]]
+//    限制：
+//    1 <= target <= 10^5
+//    链接：https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof
+    class func findContinuousSequence(_ target: Int) -> [[Int]] {
+        var array = [Int]()
+        for num in 1..<target {
+            array.append(num)
+        }
+        var left = 0
+        var right = 0
+        var sum = 0
+        var result = [[Int]]()
+        while right < array.count {
+            sum += array[right]
+            right += 1
+            
+            while sum > target {
+                sum -= array[left]
+                left += 1
+            }
+            if sum == target && left != right {
+                result.append(Array(array[left..<right]))
+            }
+        }
+        return result
+        
+//        var i = 1
+//        var result = [[Int]]()
+//        var temp = [Int]()
+//        while i < target {
+//            var sum = 0
+//            var k = i
+//            temp = [Int]()
+//            while sum < target {
+//                sum += k
+//                temp.append(k)
+//                k += 1
+//            }
+//            if sum == target {
+//                result.append(temp)
+//            }
+//            i += 1
+//        }
+//        return result
+    }
+    
+//    57. 和为s的两个数字
+//    输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。
+//    示例 1：
+//    输入：nums = [2,7,11,15], target = 9
+//    输出：[2,7] 或者 [7,2]
+//    示例 2：
+//    输入：nums = [10,26,30,31,47,60], target = 40
+//    输出：[10,30] 或者 [30,10]
+//    限制：
+//    1 <= nums.length <= 10^5
+//    1 <= nums[i] <= 10^6
+//    链接：https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof
+    class func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var left = 0
+        var right = nums.count - 1
+        while left < right {
+            if nums[left] + nums[right] < target {
+                left += 1
+            }else if nums[left] + nums[right] > target {
+                right -= 1
+            }else {
+                return [nums[left],nums[right]]
+            }
+        }
+        return []
+        
+//        let set = Set(nums);
+//        for item in nums {
+//            if set.contains(target - item) {
+//                return [item,(target - item)]
+//            }
+//        }
+//        return []
+    }
+    
+//    56 - II. 数组中数字出现的次数 II
+//    在一个数组 nums 中除一个数字只出现一次之外，其他数字都出现了三次。请找出那个只出现一次的数字。
+//    示例 1：
+//    输入：nums = [3,4,3,3]
+//    输出：4
+//    示例 2：
+//    输入：nums = [9,1,7,9,7,9,7]
+//    输出：1
+//    限制：
+//    1 <= nums.length <= 10000
+//    1 <= nums[i] < 2^31
+//    链接：https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof
+    class func singleNumber(_ nums: [Int]) -> Int {
+        
+        //官方思路
+//        int[] counts = new int[32];
+//                for(int num : nums) {
+//                    for(int j = 0; j < 32; j++) {
+//                        counts[j] += num & 1;
+//                        num >>>= 1;
+//                    }
+//                }
+//                int res = 0, m = 3;
+//                for(int i = 0; i < 32; i++) {
+//                    res <<= 1;
+//                    res |= counts[31 - i] % m;
+//                }
+//                return res;
+
+        
+        var oneSet = Set<Int>()
+        var moreSet = Set<Int>()
+        for num in nums {
+            if !moreSet.contains(num) {
+                if oneSet.contains(num) {
+                    oneSet.remove(num)
+                    moreSet.insert(num)
+                }else {
+                    oneSet.insert(num)
+                }
+            }
+        }
+        return oneSet.randomElement()!
+    }
+    
 //    56 - I. 数组中数字出现的次数
 //    一个整型数组 nums 里除两个数字之外，其他数字都出现了两次。请写程序找出这两个只出现一次的数字。要求时间复杂度是O(n)，空间复杂度是O(1)。
 //    示例 1：
