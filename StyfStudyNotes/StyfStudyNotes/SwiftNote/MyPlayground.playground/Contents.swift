@@ -850,7 +850,47 @@ extension Stack : Equatable where T : Equatable {
 //fileprivate:只允许定义实体的模块中
 //private:只允许在定义实体的封闭声明中访问
 
-//一个实体不可以被更低访问级别的实体定义，比如
+//一个实体不可以被更低访问级别的实体定义，比如person不能被更低级别的Person定义
+//元组类型的访问级别是所有成员类型最低的那个
+//泛型类型的访问级别是 类型的访问级别 以及 所有泛型类型参数的访问级别 中最低的那个 fileprivate var p = Person<Car, Dog>() Person、Car、Dog中最低
+//类型的访问级别会影响成员(属性、方法、初始化器、下标)  并不是直接继承访问级别，而是成员的private和类型的private一样。如果给成员写private就不一样
+//private/fileprivate ---> private/fileprivate
+//public/internal ---> internal
+//getter、setter默认自动接收他们所属环境的访问级别
+//可以给setter单独设置一个比getter更低的访问级别，用以限制写的权限 private(set) var age = 0
+
+//初始化器
+//如果一个public类想在另一个模块调用编译生成的无参初始化器，必须显式提供public的无参初始化器
+//如果结构体有private的存储属性，那么成员初始化器也是private
+//枚举不允许给每个case单独设置
+//协议里自动继承协议的访问级别 。 协议实现的级别要>= 本身类型的级别、协议方法的级别 两个中最小的
+
+//扩展
+//如果有显示设置扩展的访问级别，扩展添加的成员自动接收扩展的访问级别  如果没有写，就跟原来一样
+//不能给遵守协议的扩展，添加访问级别
+//在原本的声明中声明一个私有成员，可以在同一个文件的扩展中访问他
+
+//内存管理
+//弱引用必须是可选类型，必须是var,自动置为nil不会触发属性观察器
+//无主引用 unowned类似unsafe_unretained
+
+//weak、unowned的使用限制
+//weak、unowned只能用在类实例上面
+
+//Autoreleasepool
+autoreleasepool {
+    
+}
+
+//闭包的循环引用
+//闭包表达式默认对外层对象进行retain
+//捕获列表
+//let p = Person()
+//p.fn = {
+//    [weak p,unowned wp = p,a = 10 + 20 ](age) in
+//    p?.run()
+//}
+
 
 
 
