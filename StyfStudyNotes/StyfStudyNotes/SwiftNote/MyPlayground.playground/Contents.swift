@@ -740,4 +740,118 @@ func get123(_ type: Int) -> some Runnable1 {//不透明类型，想返回某个�
 //4、str.append  如果16个字节放的下，还是直接放在变量内存里   放不下，后8个字节 = 字符串真实地址（堆地址） + 0x7fffffffffffe0
 //    append内部会申请堆内存空间
 
+//Array原理
+//一个Array对象占多少字节？数组中的元素放在哪里？？   8个字节 堆空间地址值
+//8 未知？
+//16 引用计数
+//24 元素数量
+//32 数组容量？
+//1 元素内容
+//...
+
+//可选项的本质 ：enum类型
+//用switch判断可选类型
+var age2: Int? = 20
+switch age2 {
+case let v?://如果有值，解包
+    print(v)
+case nil:
+    print("2")
+}
+
+//高级运算符
+//溢出运算符（&+ &- &*）
+var v1 = UInt8.max
+var v2 = v1 &+ 1 //0
+
+//运算符重载
+struct Point8 {
+    var x = 0, y = 0
+    
+    static func + (p1: Point8, p2: Point8) -> Point8 {
+        return Point8(x: p1.x + p2.x, y: p1.y + p2.y)
+    }
+    //prefix前缀
+    static prefix func - (p1: Point8) -> Point8 {
+        return Point8(x: -p1.x, y: -p1.y)
+    }
+    static func += (p1: inout Point8, p2: Point8) {
+        p1 = p1 + p2
+    }
+}
+var pp1 = Point8(x: 1, y: 1)
+var pp2 = Point8(x: 2, y: 2)
+
+//func + (p1: Point8, p2: Point8) -> Point8 {
+//    return Point8(x: p1.x + p2.x, y: p1.y + p2.y)
+//}
+//前缀
+
+//Equatable 一般要比较两个对象是否相等。实现Equatable协议，重载==
+class Person3 : Equatable {
+    var age = 0
+    static func == (lhs: Person3, rhs: Person3) -> Bool {
+        lhs.age == rhs.age
+    }
+}
+//没有关联类型的枚举，自动实现Equatable
+//就算有关联类型，如果关联类型遵守了Equatable，协议要写，实现可以不写
+//结构体的存储属性全部遵守Equatable，协议要写，实现可以不写
+
+//引用类型 比较地址用恒等于 === !==
+
+//Comparable
+
+//自定义运算符
+prefix operator +++
+prefix func +++ (_ i: inout Int) {
+    i += 2
+}
+infix operator +- : PlusMinusPrecedence
+precedencegroup PlusMinusPrecedence {
+    associativity: none //结合性
+    higherThan: AdditionPrecedence //比谁优先级高
+    lowerThan: MultiplicationPrecedence
+    assignment: true //代表在可选链操作中拥有跟赋值运算符一样的优先级
+}
+
+//扩展
+//为枚举、结构体、类、协议添加新功能
+//可以添加方法、计算属性、下标、便捷初始化器、嵌套类型、遵守协议等等
+//办不到的事情
+//不能覆盖原有的功能
+//不能添加存储属性，不能向已有的属性添加属性观察器
+//不能添加父类
+//不能添加指定初始化器，不能添加反初始化器
+
+//扩展里面可以用原有类中的泛型
+//可以给协议扩展方法实现
+//可以给协议提供默认实现，间接实现“可选协议”的效果
+
+//符合条件才扩展
+//class Stack<T> {
+//    var elements = [T]()
+//}
+extension Stack : Equatable where T : Equatable {
+    static func == (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
+        lhs.elements == rhs.elements
+    }
+}
+
+//assert 断言  不能捕捉
+//assert(v1 != 0,"除数不能为0")
+
+//fatalError 抛出错误，不可捕捉，release也有效    不得不实现，但是不希望外界使用的时候，也可以用
+
+//访问控制 5个级别
+//open:允许定义实体的模块中、其他模块中访问，允许其他模块进行继承、重写（只能用在类、类成员）
+//public:允许定义实体的模块中、其他模块中访问.不允许其他模块进行继承、重写
+//internal:允许定义实体的模块中,不允许其他模块访问  （绝大部分默认）
+//fileprivate:只允许定义实体的模块中
+//private:只允许在定义实体的封闭声明中访问
+
+//一个实体不可以被更低访问级别的实体定义，比如
+
+
+
 
