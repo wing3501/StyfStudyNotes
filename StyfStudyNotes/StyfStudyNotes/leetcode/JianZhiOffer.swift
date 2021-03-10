@@ -45,7 +45,216 @@ import Foundation
         
 //        59 - I. 滑动窗口的最大值
 //        print(maxSlidingWindow([1,3,1,2,0,5], 3))
+        
+//        59 - II. 队列的最大值
+//        let maxQueue = MaxQueue()
+//        maxQueue.push_back(1)
+//        maxQueue.push_back(2)
+//        print(maxQueue.max_value())
+//        print(maxQueue.pop_front())
+//        print(maxQueue.max_value())
+        
+//        let maxQueue = MaxQueue()
+//        print(maxQueue.pop_front())
+//        print(maxQueue.max_value())
+        
+//        60. n个骰子的点数
+        print(dicesProbability(1))
+        print(dicesProbability(2))
     }
+//    60. n个骰子的点数
+//    把n个骰子扔在地上，所有骰子朝上一面的点数之和为s。输入n，打印出s的所有可能的值出现的概率。
+//    你需要用一个浮点数数组返回答案，其中第 i 个元素代表这 n 个骰子所能掷出的点数集合中第 i 小的那个的概率。
+//    示例 1:
+//    输入: 1
+//    输出: [0.16667,0.16667,0.16667,0.16667,0.16667,0.16667]
+//    示例 2:
+//    输入: 2
+//    输出: [0.02778,0.05556,0.08333,0.11111,0.13889,0.16667,0.13889,0.11111,0.08333,0.05556,0.02778]
+//    限制：
+//    1 <= n <= 11
+//    链接：https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof
+    class func dicesProbability(_ n: Int) -> [Double] {
+        //动态规划
+//        for (第n枚骰子的点数 i = 1; i <= 6; i ++) {
+//            dp[n][j] += dp[n-1][j - i]
+//        }
+        //投掷n个骰子，点数j出现的次数
+        var dp: [[Int]] = []
+        for _ in 0...n {
+            let array = Array(repeating: 0, count: 6 * n + 1)
+            dp.append(array)
+        }
+        for i in 1...6 {
+            dp[1][i] = 1
+        }
+        
+        var i = 2
+        while i <= n {
+            var j = i
+            while j <= 6 * i {
+                var k = 1
+                while k <= 6 && j - k >= 1 {
+                    dp[i][j] += dp[i - 1][j - k]
+                    k += 1
+                }
+                j += 1
+            }
+            i += 1
+        }
+        
+        var result = [Double]()
+        var total = 0.0
+        var k = 1
+        while k <= 6 * n {
+            if dp[n][k] > 0 {
+                let val = Double(dp[n][k])
+                result.append(val)
+                total += val
+            }
+            k += 1
+        }
+        result = result.map {
+            $0 / total
+        }
+        
+        return result
+        
+        
+        //超时
+//        var dic: [Int:Int] = [:]
+//        dicesProbabilityHelper(&dic, n, 1, 0)
+//        var array: [(Int,Int)] = []
+//        var totalVal = 0
+//        for (key,val) in dic {
+//            array.append((key,val))
+//            totalVal += val
+//        }
+//        array.sort { (t1, t2) -> Bool in
+//            return t1.0 > t2.0
+//        }
+//        var result: [Double] = []
+//        for item in array {
+//            result.append(Double(item.1) / Double(totalVal))
+//        }
+//        return result
+    }
+    class func dicesProbabilityHelper(_ dic: inout [Int:Int],_ n: Int,_ cur: Int,_ sum: Int) {
+        if cur == n {
+            var i = 1
+            while i <= 6 {
+                if let val = dic[sum + i] {
+                    dic[sum + i] = val + 1
+                }else {
+                    dic[sum + i] = 1
+                }
+                i += 1
+            }
+            return
+        }
+        
+        var i = 1
+        while i <= 6 {
+            dicesProbabilityHelper(&dic, n, cur + 1, sum + i)
+            i += 1
+        }
+    }
+    
+//    59 - II. 队列的最大值
+//    请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。
+//    若队列为空，pop_front 和 max_value 需要返回 -1
+//    示例 1：
+//    输入:
+//    ["MaxQueue","push_back","push_back","max_value","pop_front","max_value"]
+//    [[],[1],[2],[],[],[]]
+//    输出: [null,null,null,2,1,2]
+//    示例 2：
+//    输入:
+//    ["MaxQueue","pop_front","max_value"]
+//    [[],[],[]]
+//    输出: [null,-1,-1]
+//    限制：
+//    1 <= push_back,pop_front,max_value的总操作数 <= 10000
+//    1 <= value <= 10^5
+//    链接：https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof
+    class MaxQueue {
+        class MaxQueueNode {
+            var val: Int
+            var next: MaxQueueNode?
+            init(_ value: Int) {
+                val = value
+            }
+        }
+        class MaxQueuelinkedList {
+            var head: MaxQueueNode?
+            var tail: MaxQueueNode?
+            var size = 0
+            
+            func push(_ val: Int) {
+                let node = MaxQueueNode(val)
+                if size == 0 {
+                    head = node
+                    tail = node
+                }else {
+                    tail?.next = node
+                    tail = node
+                }
+                size += 1
+            }
+            
+            func pop() -> Int {
+                if let node = head {
+                    if size == 1 {
+                        head = nil
+                        tail = nil
+                    }else {
+                        head = head?.next
+                    }
+                    size -= 1
+                    return node.val
+                }
+                return -1
+            }
+        }
+        
+        var queue: MaxQueuelinkedList = MaxQueuelinkedList()
+        var dequeue = [Int]()
+        init() {
+
+        }
+        
+        func max_value() -> Int {
+            if queue.size > 0 {
+                return dequeue[0]
+            }
+            return -1
+        }
+        
+        func push_back(_ value: Int) {
+            queue.push(value)
+            while dequeue.count > 0{
+                let val = dequeue[dequeue.count - 1]
+                if val < value {
+                    dequeue.removeLast()
+                }else {
+                    break
+                }
+            }
+            dequeue.append(value)
+        }
+        
+        func pop_front() -> Int {
+            if queue.size > 0 {
+                let val = queue.pop()
+                if val == dequeue[0] {
+                    dequeue.removeFirst()
+                }
+                return val
+            }
+            return -1
+        }
+    }
+    
 //    59 - I. 滑动窗口的最大值
 //    给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
 //    示例:

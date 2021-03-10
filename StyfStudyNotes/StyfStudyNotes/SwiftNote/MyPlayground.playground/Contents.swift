@@ -859,11 +859,11 @@ extension Stack : Equatable where T : Equatable {
 //getter、setter默认自动接收他们所属环境的访问级别
 //可以给setter单独设置一个比getter更低的访问级别，用以限制写的权限 private(set) var age = 0
 
-//初始化器
 //如果一个public类想在另一个模块调用编译生成的无参初始化器，必须显式提供public的无参初始化器
 //如果结构体有private的存储属性，那么成员初始化器也是private
 //枚举不允许给每个case单独设置
 //协议里自动继承协议的访问级别 。 协议实现的级别要>= 本身类型的级别、协议方法的级别 两个中最小的
+//子类重写父类属性，访问级别要大于本类或者父类属性 两个中最小的
 
 //扩展
 //如果有显示设置扩展的访问级别，扩展添加的成员自动接收扩展的访问级别  如果没有写，就跟原来一样
@@ -891,7 +891,217 @@ autoreleasepool {
 //    p?.run()
 //}
 
+//如果lazy属性是闭包调用的结果，就不用考虑循环引用的(因为闭包调用后，闭包的生命周期就结束了)
+//lazy var getAge: Int {
+//    self.age
+//}()
+
+//@escaping
+//非逃逸闭包：闭包调用在函数返回前
+//逃逸闭包：闭包有可能在函数结束后调用，需要用@escaping
+//逃逸闭包不可捕获inout参数
+
+//局部作用域
+//do {
+//    var a = 1
+//}
+
+//内存访问冲突
+//满足两个条件：
+//1.至少一个是写才做
+//2.访问同一块内存
+//3.访问时间重叠
+
+//指针
+//UnsafePointer<Pointee> 类似 const Pointee *
+//UnsafeMutablePointer<Pointee> 类似 Pointee *  可以访问内存。也可以修改内存
+//UnsafeRawPointer 类似 const void *
+//UnsafeMutableRawPointer 类似 void *
+
+var age = 10
+func test1(_ ptr: UnsafeMutablePointer<Int>) {
+    ptr.pointee = 20//修改
+}
+func test2(_ ptr: UnsafePointer<Int>) {
+    print(ptr.pointee)//取出
+}
+func test3(_ ptr: UnsafeRawPointer) {
+    var a = ptr.load(as: Int.self)//取出
+}
+func test4(_ ptr: UnsafeMutableRawPointer) {
+    ptr.storeBytes(of: 30, as: Int.self)//写入
+}
+test1(&age)
+test2(&age)
+
+var arr = NSArray(objects: 11,22)
+arr.enumerateObjects { (element, idx, stop) in
+    stop.pointee = true
+}
+
+for (idx,element) in arr.enumerated() {
+    break
+}
+
+//获得某个变量的指针
+var ptr1 = withUnsafePointer(to: &age) { $0 }
+var ptr2 = withUnsafeMutablePointer(to: &age) { $0 }
+var ptr3 = withUnsafePointer(to: &age) { (p) -> Int in
+    return 20   //这个闭包返回什么，ptr3就是什么
+}
+var ptr4 = withUnsafePointer(to: &age) {
+    return UnsafeRawPointer($0)
+}
+//获得指向堆空间实例的指针
+var person = Person(age: 21)
+var ptr5 = withUnsafePointer(to: &person) { UnsafeRawPointer($0)}
+var personAddress = ptr5.load(as: UInt.self)
+var ptr6 = UnsafeMutableRawPointer(bitPattern: personAddress)
+
+//创建指针
+var ptr7 = malloc(16)
+ptr7?.storeBytes(of: 10, as: Int.self)
+ptr7?.storeBytes(of: 20, toByteOffset: 8, as: Int.self)
+ptr7?.load(as: Int.self)
+ptr7?.load(fromByteOffset: 8, as: Int.self)
+free(ptr7)
+
+var ptr8 = UnsafeMutableRawPointer.allocate(byteCount: 16, alignment: 1)
+ptr8.storeBytes(of: 11, as: Int.self)
+var ptr9 = ptr8.advanced(by: 8)//返回指向后8个字节的指针
+ptr8.deallocate()
+
+var ptr10 = UnsafeMutablePointer<Int>.allocate(capacity: 3)
+ptr10.initialize(to: 10)//初始化前8个字节
+ptr10.initialize(repeating: 10, count: 2)//初始化16个字节
+ptr10.pointee = 10
+ptr10.successor()//后继 指向下一个Int
+print((ptr10 + 1).pointee)
+print(ptr10[0])
+
+ptr10.deinitialize(count: 3)//不写会内存泄漏
+ptr10.deallocate()
+
+//RawPointer转Pointer
+ptr8.assumingMemoryBound(to: Int.self)
+(ptr8 + 8).assumingMemoryBound(to: Int.self)
+
+var ptr11 = unsafeBitCast(ptr8, to: UnsafeMutablePointer<Int>.self)
+
+//字面量
+extension Int : ExpressibleByBooleanLiteral {
+    public init(booleanLiteral value: Bool) {
+        self = value ? 1 : 0
+    }
+}
+//ExpressibleByArrayLiteral
+//ExpressibleByDictionaryLiteral
+
+//模式
+//_ 匹配任何值
+//_? 匹配非nil值
+enum Life {
+    case human(name: String, age: Int?)
+    case animal(name: String, age: Int?)
+}
+func check(_ life: Life) {
+    switch life {
+    case .human(let name, _):
+        print(name)
+    case .animal(let name, _?):
+        print(name)
+    case .human(_ as String, _?):
+        print("")
+    default:
+        print("other")
+    }
+}
+
+//if case 等价于只有一个case的switch
+var num20 = 1
+if case 0...9 = age {
+}
+//guard case 0...9 = age else {
+//}
+
+let ages: [Int?] = [2, 3, nil, 5]
+for case nil in ages {
+    print("有nil")
+}
+
+let points = [(1, 0),(2, 1)]
+for case let (x, 0) in points {
+    
+}
+
+//可选模式
+var age20: Int? = 42
+if case .some(let x) = age20 { print(x) }
+if case let x? = age20 { print(x) }
+func check1(_ num: Int?) {
+    switch num {
+    case 2?:
+        print("2")
+    default:
+        print("other")
+    }
+}
+
+//类型转换模式
+let num21: Any = 6
+switch num21 {
+case is Int:
+    print("is Int")
+case let num22 as Double:
+    print(num22)
+default:
+    break
+}
+
+//表达式模式 主要用在case
+//重载 ~=
 
 
+//where
+//switch、for循环、协议关联类型、函数泛型、扩展
 
+// MARK: 类似#pragma mark
+// MARK:- <#name#>  类似#pragma mark -
+// TODO: 用于标记未完成的任务
+// FIXME: 用于标记待修复的问题
+
+//条件编译
+#if os(macOS) || os(iOS)
+
+#elseif arch(x86_64) || arch(arm64)
+
+#elseif swift(<5) && swift(>=3)
+
+#elseif targetEnvironment(simulator)
+
+#elseif canImport(Foundation)
+
+#else
+#endif
+
+print(#file,#line,#function)
+
+
+if #available(iOS 10, *) {
+    
+}
+
+@available(iOS 10, *)
+class Person11 {
+    @available(*,unavailable,renamed: "study")
+    func study_() {
+        
+    }
+    func study() {
+        
+    }
+    @available(iOS, deprecated: 11)
+    func run() {
+    }
+}
 
