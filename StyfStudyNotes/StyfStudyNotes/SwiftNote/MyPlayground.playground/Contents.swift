@@ -564,6 +564,19 @@ protocol Runnable: AnyObject {//只有类才能遵守这个协议
 }
 var array1 = Array<Any>()//可以放任意类型
 
+//只能被类遵守的协议 3种方式
+protocol Runnable3: AnyObject {}
+protocol Runnable4: class {}
+@objc protocol Runnable5 {} //还能暴露给OC去遵守
+
+//可选协议
+//第一个方式：给协议增加扩展，扩展里给默认实现
+//第二种方式：
+@objc protocol Runnable6 {
+    @objc optional func run1()
+}
+
+
 //is 、 as? 、as! 、as
 //is用来判断是否为某种类型
 //as用来做强制类型转换
@@ -621,7 +634,7 @@ do {
 } catch is SomeError {
     
 } catch {
-    
+//    error默认有
 }
 //往上抛
 func testError() throws {
@@ -1070,6 +1083,12 @@ default:
 // TODO: 用于标记未完成的任务
 // FIXME: 用于标记待修复的问题
 
+#warning("todo")
+
+func zhanwei() -> Person {
+    fatalError()
+}
+
 //条件编译
 #if os(macOS) || os(iOS)
 
@@ -1105,3 +1124,117 @@ class Person11 {
     }
 }
 
+//程序入口
+//@UIApplicationMain 自动设AppDeleagete为代理
+//也可以自己建 main.swift
+
+//swift 调用 OC
+//新建桥接头文件  {TargetName}-Bridging-Header.h   (创建一个OC文件，会提示是否创建)
+//OC里面哪些要暴露给swift的头文件
+
+//如果C语言暴露的函数名和swift函数名冲突了,会优先调用swift
+//可以在swfit中使用 @_silgen_name 修改C函数名
+//@_silgen_name("sum") func swift_sum() {
+//
+//}
+//可以使用这种方式去调系统函数
+
+//OC 调用 swift
+//头文件  {targetName}-Swift.h
+
+//可以用通过@objc 重命名Swift暴露给OC的符号名（类名、属性名、函数名等）
+//@objc(MJMyCar)
+//@objcMembers class MyCar: NSObject {
+//    @objc(exec:v2:)
+//    func test() {
+//
+//    }
+//}
+
+//选择器
+//#selector(name)  #selector(run)   必须是被@objc修饰的
+func run() {
+//    perform(@selector(test1))
+//    perform(@selector(test1(v1:)))
+//    perform(@selector(test1(_:_:)))
+//    perform(@selector(test1 as (Double, Double) -> Void))
+}
+
+//1.为什么Swift暴露给OC的类最终要继承自NSObject?
+//需要isa指针 需要消息机制
+
+//2.OC的类Person p.run()底层是怎么调用的？反过来，OC调用Swift底层是如何调用？
+//OC暴露给swift走的还是消息发送机制    反过来也是消息发送
+
+//3.虽然是@objcMembers，但仍然在swift里调
+//走的虚表
+
+//4.强制希望走消息发送机制
+//@objc dynamic func run()
+
+//String
+var str1 = "1_2"
+str1.append("_3")
+str1.insert("_", at: str1.endIndex)
+str1.insert(contentsOf: "666", at: str.index(after: str.startIndex))
+
+str1.remove(at: str1.firstIndex(of: "_")!)
+str1.removeAll { $0 == "6"}
+//Substring 与它的base共享字符串数据，发生修改时或转为String时，会分配新的内存存储字符串数据
+var str2 = str1.prefix(3)
+str2.base
+
+//多行字符串
+var str3 = """
+s1
+  w2
+"""//以后一个"""对齐
+
+//String 和 NSSring
+var str4 = str3 as NSString
+var str5 = str4 as String
+
+//String比较 ==
+//String和NSString无缝桥接，String不能桥接转换成NSMutableString 
+
+//swift支持KVC/KVO,要求属性所在类，监听器 要继承自NSObject,用@objc dynamic修饰属性
+
+//block方式的KVO
+class Person6: NSObject {
+    @objc dynamic var age6: Int = 0
+    var observation: NSKeyValueObservation?
+    override init() {
+        super.init()
+        observation = observe(\Person6.age6, options: .new, changeHandler: { (person, change) in
+            print(change.newValue)
+        })
+    }
+}
+
+//关联对象 ,class依然可以
+//默认情况extension,不能添加存储属性
+
+class Person7 {
+    
+}
+extension Person7 {
+    private static var AGE_KEY: Void?//只占一个字节
+    var age: Int {
+        get {
+            objc_getAssociatedObject(self, &Self.AGE_KEY) as! Int
+        }
+        set {
+            objc_setAssociatedObject(self, &Self.AGE_KEY, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+}
+
+//资源名管理 第三方库 R SwiftGen
+enum R {
+    enum string: String {
+        case add = "添加"
+    }
+    enum image: String {
+        case logo //没有值，默认一样
+    }
+}
