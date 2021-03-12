@@ -63,8 +63,208 @@ import Foundation
 //        print(dicesProbability(2))
         
 //        61. 扑克牌中的顺子
-        print(isStraight([0,0,2,2,5]))
+//        print(isStraight([0,0,2,2,5]))
+        
+//        62. 圆圈中最后剩下的数字
+//        print(lastRemaining(5, 3))//3
+//        print(lastRemaining(10, 17))//2
+//        print(lastRemaining(70866, 116922))
+        
+//        63. 股票的最大利润
+        print(maxProfit([7,1,5,3,6,4]))
+        print(maxProfit([7,6,4,3,1]))
     }
+//    63. 股票的最大利润
+//    假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
+//    示例 1:
+//    输入: [7,1,5,3,6,4]
+//    输出: 5
+//    解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+//         注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+//    示例 2:
+//    输入: [7,6,4,3,1]
+//    输出: 0
+//    解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+//    限制：
+//    0 <= 数组长度 <= 10^5
+//    注意：本题与主站 121 题相同：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+//    链接：https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof
+    class func maxProfit(_ prices: [Int]) -> Int {
+//        dp[i][0] = max(dp[i-1][0],dp[i-1][1] + prices[i])
+//        dp[i][1] = max(dp[i-1][1],-prices[i])
+        if prices.count < 2{
+            return 0
+        }
+        var i0 = 0
+        var i1 = -prices[0]
+        var i = 1
+        while i < prices.count {
+            i0 = max(i0, i1 + prices[i])
+            i1 = max(i1, -prices[i])
+            i += 1
+        }
+        return i0
+    }
+    
+//    62. 圆圈中最后剩下的数字
+//    0,1,···,n-1这n个数字排成一个圆圈，从数字0开始，每次从这个圆圈里删除第m个数字（删除后从下一个数字开始计数）。求出这个圆圈里剩下的最后一个数字。
+//    例如，0、1、2、3、4这5个数字组成一个圆圈，从数字0开始每次删除第3个数字，则删除的前4个数字依次是2、0、4、1，因此最后剩下的数字是3。
+//    示例 1：
+//    输入: n = 5, m = 3
+//    输出: 3
+//    示例 2：
+//    输入: n = 10, m = 17
+//    输出: 2
+//    限制：
+//    1 <= n <= 10^5
+//    1 <= m <= 10^6
+//    链接：https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof
+    class MyNode {
+        var val: Int
+        var next: MyNode?
+        var prev: MyNode?
+        init(_ value: Int) {
+            val = value
+        }
+    }
+    class MyNodeList {
+        var size = 0
+        var head: MyNode?
+        var tail: MyNode?
+        
+        func append(_ val: Int) {
+            let node = MyNode(val)
+            if size == 0 {
+                head = node
+                tail = node
+                
+            }else {
+                tail?.next = node
+                node.prev = tail
+                node.next = head
+                tail = node
+            }
+            size += 1
+        }
+        
+        func delete(_ node: MyNode) {
+            if node.val == head?.val {
+                head = node.next
+                tail?.next = head
+            }else if node.val == tail?.val {
+                tail = tail?.prev
+                tail?.next = head
+            }else {
+                let prev = node.prev
+                let next = node.next
+                prev?.next = next
+                next?.prev = prev
+            }
+            size -= 1
+        }
+        func walk(_ node: MyNode,_ m: Int) -> MyNode {
+            var node1 = node
+            var i = 1
+            while i < m {
+                node1 = node1.next!
+                i += 1
+            }
+            let next = node1.next
+            delete(node1)
+            return next!
+        }
+    }
+    
+    class func lastRemaining(_ n: Int, _ m: Int) -> Int {
+//        最后剩下的 3 的下标是 0。
+//
+//        第四轮反推，补上 m 个位置，然后模上当时的数组大小 22，位置是(0 + 3) % 2 = 1。
+//
+//        第三轮反推，补上 m 个位置，然后模上当时的数组大小 33，位置是(1 + 3) % 3 = 1。
+//
+//        第二轮反推，补上 m 个位置，然后模上当时的数组大小 44，位置是(1 + 3) % 4 = 0。
+//
+//        第一轮反推，补上 m 个位置，然后模上当时的数组大小 55，位置是(0 + 3) % 5 = 3。
+//
+//        所以最终剩下的数字的下标就是3。因为数组是从0开始的，所以最终的答案就是3。
+//
+//        总结一下反推的过程，就是 (当前index + m) % 上一轮剩余数字的个数。
+
+        var i = 2
+        var index = 0
+        while i <= n {
+            index = (index + m) % i
+            i += 1
+        }
+        
+        return index
+        //递归
+//        public int lastRemaining(int n, int m) {
+//               return f(n, m);
+//           }
+//
+//           public int f(int n, int m) {
+//               if (n == 1) {
+//                   return 0;
+//               }
+//               int x = f(n - 1, m);
+//               return (m + x) % n;
+//           }
+
+        //数学
+//                int f = 0;
+//                for (int i = 2; i != n + 1; ++i) {
+//                    f = (m + f) % i;
+//                }
+//                return f;
+
+        
+        
+        
+//        let list = MyNodeList()
+//        var i = 0
+//        while i < n {
+//            list.append(i)
+//            i += 1
+//        }
+//        var node = list.head
+//        while list.size > 1 {
+//            node = list.walk(node!, m)
+//        }
+//        return list.head!.val
+        
+//        var i = 0
+//        var array = [Int]()
+//        while i < n {
+//            array.append(i)
+//            i += 1
+//        }
+//        //0、1、2、3、4
+//        var deadSet = Set<Int>()
+//        var index = -1
+//        while array.count - deadSet.count > 1 {
+//            var k = 0
+//            while k < m {
+//                index += 1
+//                if index == array.count {
+//                    index = 0
+//                }
+//                let cur = array[index]
+//                if !deadSet.contains(cur) {
+//                    k += 1
+//                }
+//            }
+//            let num = array[index]
+//            deadSet.insert(num)
+//        }
+//        for num in array {
+//            if !deadSet.contains(num) {
+//                return num
+//            }
+//        }
+//        return 0
+    }
+    
 //    61. 扑克牌中的顺子
 //    从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的。2～10为数字本身，A为1，J为11，Q为12，K为13，而大、小王为 0 ，可以看成任意数字。A 不能视为 14。
 //    示例 1:

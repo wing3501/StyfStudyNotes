@@ -1238,3 +1238,64 @@ enum R {
         case logo //没有值，默认一样
     }
 }
+
+//多线程
+DispatchQueue.global().async {
+    
+}
+
+let item = DispatchWorkItem {
+  print("1")
+}
+DispatchQueue.global().async(execute: item)
+item.notify(queue: DispatchQueue.main) {
+    print("异步完成后，切回主线程")
+}
+item.cancel()//封装成item，可以取消
+
+//延迟
+let time = DispatchTime.now() + 3
+DispatchQueue.main.asyncAfter(deadline: time) {
+    
+}
+
+//once
+//static var age123: Int = {
+//    return 0
+//}()
+
+//锁
+//信号量
+//var lock = DispatchSemaphore(value: 1)
+//lock.wait()//加锁
+//lock.signal()
+
+//var lock = NSLock()
+//var lock = NSRecursiveLock()
+
+//数组常见操作
+var arr123 = [1, 2, 3, 4]
+var arr2 = arr123.reduce(0) { (result, element) -> Int in
+    return result + element //result从初始值开始，第二次result是上一次的返回值
+}//累加结果
+//[1,2,2,3,3,3]
+//arr123.flatMap { (Int) -> Sequence in
+//
+//}
+//如果是nil就过滤
+//arr123.compactMap { (Int) -> ElementOfResult? in
+//
+//}
+    
+//lazy的优化
+//let result = arr123.lazy.map { (Int) -> T in
+//
+//}
+
+//Optional的map和flatMap
+var num111: Int? = 10
+var num222 = num111.map { $0 * 2 }//Optional(20)
+var num333: Int? = nil
+var num444 = num333.map { $0 * 2 }//nil
+var num555 = num111.map {Optional.some($0 * 2)}//Optional(Optional(20))
+var num666 = num111.flatMap { Optional.some($0 * 2) }//Optional(20)
