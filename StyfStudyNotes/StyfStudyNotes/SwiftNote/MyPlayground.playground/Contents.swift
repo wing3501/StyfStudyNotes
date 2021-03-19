@@ -1299,3 +1299,30 @@ var num333: Int? = nil
 var num444 = num333.map { $0 * 2 }//nil
 var num555 = num111.map {Optional.some($0 * 2)}//Optional(Optional(20))
 var num666 = num111.flatMap { Optional.some($0 * 2) }//Optional(20)
+
+//利用协议实现前缀效果
+
+
+//利用协议来实现类型判断
+func isArray(_ value: Any) -> Bool {
+    value is [Any]
+}
+
+protocol ArrayType{}
+extension Array: ArrayType {}
+extension NSArray: ArrayType {}
+func isArrayType(_ type: Any.Type) -> Bool {
+    type is ArrayType.Type
+}
+
+
+//TypeMetadata 看源码
+
+//反射 Mirror
+let mirror = Mirror(reflecting: Person(age: 10))
+print(mirror.displayStyle)
+print(mirror.subjectType)
+print(mirror.superclassMirror as Any)
+for case let (label?, value) in mirror.children {
+    print(label, value)
+}

@@ -71,9 +71,231 @@ import Foundation
 //        print(lastRemaining(70866, 116922))
         
 //        63. 股票的最大利润
-        print(maxProfit([7,1,5,3,6,4]))
-        print(maxProfit([7,6,4,3,1]))
+//        print(maxProfit([7,1,5,3,6,4]))
+//        print(maxProfit([7,6,4,3,1]))
+        
+//        64. 求1+2+…+n
+//        print(sumNums(3))//6
+//        print(sumNums(9))//45
+        
+//        65. 不用加减乘除做加法
+//        print(add(1, 2))//3
+//        print(add(111, 899))//1010
+//        print(add(1, -2))//-1
+        
+//        66. 构建乘积数组
+//        print(constructArr([1,2,3,4,5]))//[120,60,40,30,24]
+//        print(constructArr([7, 2, 2, 4, 2, 1, 8, 8, 9, 6, 8, 9, 6, 3, 2, 1]))//
+        
+//        67. 把字符串转换成整数
+//        print(strToInt("42"))//42
+//        print(strToInt("   -42"))//-42
+//        print(strToInt("4193 with words"))//4193
+//        print(strToInt("words and 987"))//0
+//        print(strToInt("-91283472332"))//-2147483648
+//        print(strToInt("20000000000000000000"))//-2147483648
+        
     }
+    
+//    67. 把字符串转换成整数
+//    写一个函数 StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。
+//    首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
+//    当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+//    该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。
+//    注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。
+//    在任何情况下，若函数不能进行有效的转换时，请返回 0。
+//    说明：
+//    假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−231,  231 − 1]。如果数值超过这个范围，请返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。
+//    示例 1:
+//    输入: "42"
+//    输出: 42
+//    示例 2:
+//    输入: "   -42"
+//    输出: -42
+//    解释: 第一个非空白字符为 '-', 它是一个负号。
+//         我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 -42 。
+//    示例 3
+//    输入: "4193 with words"
+//    输出: 4193
+//    解释: 转换截止于数字 '3' ，因为它的下一个字符不为数字。
+//    示例 4
+//    输入: "words and 987"
+//    输出: 0
+//    解释: 第一个非空字符是 'w', 但它不是数字或正、负号。
+//         因此无法执行有效的转换。
+//    示例 5:
+//    输入: "-91283472332"
+//    输出: -2147483648
+//    解释: 数字 "-91283472332" 超过 32 位有符号整数范围。
+//         因此返回 INT_MIN (−231) 。
+//    注意：本题与主站 8 题相同：https://leetcode-cn.com/problems/string-to-integer-atoi/
+//    链接：https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof
+    class func strToInt(_ str: String) -> Int {
+        let maxVal = 2147483647
+        let array = Array(str)
+        var result = [Character]()
+        strToInt(array, 0, &result)
+        if result.count > 0 {
+            var index = 0
+            var fu = false
+            while index < result.count {
+                if result[index] == "+" || result[index] == "0" {
+                    index += 1
+                }else if result[index] == "-" {
+                    index += 1
+                    fu = true
+                }else {
+                    break
+                }
+            }
+            
+            var i = result.count - 1
+            var count = 1
+            var num = 0
+            while i >= index {
+                let ch = result[i]
+                if !fu && num + Int(String(ch))! * count > maxVal {
+                    return Int(maxVal)
+                }
+                if fu && num + Int(String(ch))! * count - 1 > maxVal {
+                    return -Int(maxVal)-1
+                }
+                num += Int(String(ch))! * count
+                
+                if count * 10 > maxVal {
+                    if i > index {
+                        return fu ? -Int(maxVal)-1 : Int(maxVal)
+                    }
+                    break
+                }
+                count *= 10
+                i -= 1
+            }
+            
+            return fu ? -num : num
+        }
+        return 0
+    }
+    class func strToInt(_ array: [Character],_ index: Int,_ result: inout [Character]) {
+        if index == array.count {
+            return
+        }
+        let ch = array[index]
+        if result.count > 0 {
+            if let _ = Int(String(ch)) {
+                result.append(ch)
+                strToInt(array, index + 1, &result)
+            }
+            return
+        }else {
+            if ch == "+" || ch == "-" || Int(String(ch)) != nil {
+                result.append(ch)
+                strToInt(array, index + 1, &result)
+            }else if ch == " " {
+                strToInt(array, index + 1, &result)
+            }
+            return
+        }
+    }
+    
+//    66. 构建乘积数组
+//    给定一个数组 A[0,1,…,n-1]，请构建一个数组 B[0,1,…,n-1]，其中 B[i] 的值是数组 A 中除了下标 i 以外的元素的积, 即 B[i]=A[0]×A[1]×…×A[i-1]×A[i+1]×…×A[n-1]。不能使用除法。
+//    示例:
+//    输入: [1,2,3,4,5]
+//    输出: [120,60,40,30,24]
+//    提示：
+//    所有元素乘积之和不会溢出 32 位整数
+//    a.length <= 100000
+//    链接：https://leetcode-cn.com/problems/gou-jian-cheng-ji-shu-zu-lcof
+    class func constructArr(_ a: [Int]) -> [Int] {
+        guard a.count > 1 else {
+            return []
+        }
+        var dic: [String : Int] = [:]
+        var i = 0
+        var sum = 0
+        while i <= a.count - 1 {
+            if i == 0 {
+                sum = a[i]
+                dic["0_0"] = sum
+            }else {
+                sum *= a[i]
+                dic["0_\(i)"] = sum
+            }
+            i += 1
+        }
+        i -= 1
+        dic["\(i)_\(i)"] = a[i]
+        var resultArray = [Int]()
+        while i >= 0 {
+            var leftSum = 1
+            if i - 1 >= 0 {
+                leftSum = dic["0_\(i - 1)"]!
+            }
+            var rightSum = 1
+            if i < a.count - 1 {
+                let key = "\(i + 1)_\(a.count - 1)"
+                rightSum = dic[key]!
+                dic["\(i)_\(a.count - 1)"] = rightSum * a[i]
+            }
+            resultArray.append(leftSum * rightSum)
+            i -= 1
+        }
+        
+        return resultArray.reversed()
+    }
+    
+//    65. 不用加减乘除做加法
+//    写一个函数，求两个整数之和，要求在函数体内不得使用 “+”、“-”、“*”、“/” 四则运算符号。
+//    示例:
+//    输入: a = 1, b = 1
+//    输出: 2
+//    提示：
+//    a, b 均可能是负数或 0
+//    结果不会溢出 32 位整数
+//    链接：https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof
+    class func add(_ a: Int, _ b: Int) -> Int {
+        //无进位n = a ^ b
+        //进位c = a & b << 1
+        //和s = a + b ===> s = n + c
+//        public int add(int a, int b) {
+//                while(b != 0) { // 当进位为 0 时跳出
+//                    int c = (a & b) << 1;  // c = 进位
+//                    a ^= b; // a = 非进位和
+//                    b = c; // b = 进位
+//                }
+//                return a;
+//            }
+        var aa = a
+        var bb = b
+        while bb != 0 {
+            let c = (aa & bb) << 1
+            aa ^= bb
+            bb = c
+        }
+        return aa
+    }
+//    Offer 64. 求1+2+…+n
+//    求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+//    示例 1：
+//    输入: n = 3
+//    输出: 6
+//    示例 2：
+//    输入: n = 9
+//    输出: 45
+//    限制：
+//    1 <= n <= 10000
+//    链接：https://leetcode-cn.com/problems/qiu-12n-lcof
+    class func sumNums(_ n: Int) -> Int {
+        var sum = 0
+        var _ = n > 0 && sumNumsHelper(n, &sum)
+        return sum
+    }
+    class func sumNumsHelper(_ n: Int,_ sum: inout Int) -> Bool {
+        sum = n + (sumNums(n - 1))
+        return true
+    }
+    
 //    63. 股票的最大利润
 //    假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
 //    示例 1:
