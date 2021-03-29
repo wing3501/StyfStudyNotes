@@ -18,10 +18,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [JianZhiOffer test];
+//    [JianZhiOffer test];
 //    [SortTest test];
 //    [TreeTest test];
-//    [Other test];
+    [Other test];
 }
 
 

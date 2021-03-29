@@ -42,8 +42,116 @@ import Foundation
         //    [null, null, null, 1, null, -1, 3, null, -1, 3, 4]
 //        testLFU(["put", "put", "get", "put", "get", "get", "put", "get", "get", "get"], [ [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]])
         
-        testLFU(["put","get"], [[0,0],[0]])
+//        testLFU(["put","get"], [[0,0],[0]])
         
+//        494. 目标和
+//        print(findTargetSumWays([1, 1, 1, 1, 1], 3))
+        print(findTargetSumWays([0,0,0,0,0,0,0,0,1], 1))//256
+    }
+//    494. 目标和
+//    给定一个非负整数数组，a1, a2, ..., an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。
+//    返回可以使最终数组和为目标数 S 的所有添加符号的方法数。
+//    示例：
+//    输入：nums: [1, 1, 1, 1, 1], S: 3
+//    输出：5
+//    解释：
+//    -1+1+1+1+1 = 3
+//    +1-1+1+1+1 = 3
+//    +1+1-1+1+1 = 3
+//    +1+1+1-1+1 = 3
+//    +1+1+1+1-1 = 3
+//    一共有5种方法让最终目标和为3。
+//    提示：
+//    数组非空，且长度不会超过 20 。
+//    初始的数组的和不会超过 1000 。
+//    保证返回的最终结果能被 32 位整数存下。
+//    链接：https://leetcode-cn.com/problems/target-sum
+    class func findTargetSumWays(_ nums: [Int], _ S: Int) -> Int {
+        //f(i,S) = f(i-1,S-num[i]) + f(i-1,S+num[i])
+//           0  1  2  3  4 5 6 7 8 9 10
+//          -5 -4 -3 -2 -1 0 1 2 3 4 5
+//        0  0             2         0
+//        1  0           1   1       0
+//        2  0  0  0  1  0 2 0 1
+//        3  0  0  1  0  3 0 3 0 1 0 0
+//        4  0  1  0  4  0 6 0 4 0 1 0
+//        5  1  0  5  0 10 0 100 5 0  1
+        
+//        [0,0,0,0,0,0,0,0,1], 1
+//           0 1 2
+//          -1 0 1
+//        0  0 2 0
+//        1  0 4 0
+//        2
+//        3
+//        4
+//        5
+//        6
+//        7
+//        8
+//        9
+        if nums.count == 1 {
+            return nums[0] == S || nums[0] == -S ? 1 : 0
+        }
+        
+        var maxLen = 0
+        for num in nums {
+            maxLen += num
+        }
+        if maxLen < S || -maxLen > -S {
+            return 0
+        }
+        
+        let len = maxLen * 2 + 1
+        var dp = Array(repeating: Array(repeating: 0, count: len), count: nums.count + 1)
+        dp[0][maxLen] = 2
+        if nums[0] == 0 {
+            dp[1][maxLen] = 2
+        }else {
+            dp[1][maxLen - nums[0]] = 1
+            dp[1][maxLen + nums[0]] = 1
+        }
+        
+        var i = 2
+        while i <= nums.count {
+            let num = nums[i - 1]
+            var j = 0
+            while j < len {
+                let s = -maxLen + j
+                var left = 0
+                if s - num >= -maxLen  {
+                    let leftIndex = (s - num) + maxLen
+                    left = dp[i - 1][leftIndex]
+                }
+                var right = 0
+                if s + num <= maxLen {
+                    let rightIndex = (s + num) + maxLen
+                    right = dp[i - 1][rightIndex]
+                }
+                dp[i][j] = left + right
+                j += 1
+            }
+            i += 1
+        }
+        return dp[nums.count][S + maxLen]
+        
+        
+        //超时
+//        var count = 0
+//        findTargetSumWays(nums, S, 0, 0, &count)
+//        return count
+    }
+    
+    class func findTargetSumWays(_ nums: [Int], _ S: Int,_ index: Int,_ result: Int,_ count: inout Int) {
+        if index == nums.count {
+            if result == S {
+                count += 1
+            }
+            return
+        }
+        let num = nums[index]
+        findTargetSumWays(nums, S, index + 1, result + num, &count)
+        findTargetSumWays(nums, S, index + 1, result - num, &count)
     }
     
     class func testLFU(_ array: [String],_ array1: [[Int]]) {
