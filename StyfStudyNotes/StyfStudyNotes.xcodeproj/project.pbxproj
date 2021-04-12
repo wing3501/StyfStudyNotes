@@ -34,6 +34,10 @@
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
+		92426DDA26246289002062B7 /* LeaksDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DD926246288002062B7 /* LeaksDemo.m */; };
+		92426DDF262464EA002062B7 /* LeaksObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DDE262464EA002062B7 /* LeaksObj.m */; };
+		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
+		92426F2F26246C77002062B7 /* RAMExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F2E26246C77002062B7 /* RAMExport.m */; };
 		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
 		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
 		9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */; };
@@ -61,8 +65,6 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
-		92A8D94225D28FB80008EFAA /* AttributeSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D94125D28FB80008EFAA /* AttributeSection.m */; };
-		92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D94625D28FF60008EFAA /* CustomSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,14 @@
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
+		92426DD826246288002062B7 /* LeaksDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksDemo.h; sourceTree = "<group>"; };
+		92426DD926246288002062B7 /* LeaksDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksDemo.m; sourceTree = "<group>"; };
+		92426DDD262464E9002062B7 /* LeaksObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksObj.h; sourceTree = "<group>"; };
+		92426DDE262464EA002062B7 /* LeaksObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksObj.m; sourceTree = "<group>"; };
+		92426F1D26246BFD002062B7 /* ShowDebugBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowDebugBlock.h; sourceTree = "<group>"; };
+		92426F1E26246BFD002062B7 /* ShowDebugBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowDebugBlock.m; sourceTree = "<group>"; };
+		92426F2D26246C77002062B7 /* RAMExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAMExport.h; sourceTree = "<group>"; };
+		92426F2E26246C77002062B7 /* RAMExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAMExport.m; sourceTree = "<group>"; };
 		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
 		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
 		9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
@@ -164,10 +174,6 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
-		92A8D94025D28FB80008EFAA /* AttributeSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttributeSection.h; sourceTree = "<group>"; };
-		92A8D94125D28FB80008EFAA /* AttributeSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttributeSection.m; sourceTree = "<group>"; };
-		92A8D94525D28FF60008EFAA /* CustomSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSection.h; sourceTree = "<group>"; };
-		92A8D94625D28FF60008EFAA /* CustomSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,14 +285,14 @@
 			path = SwiftNote;
 			sourceTree = "<group>";
 		};
-		920E3EFD25E8A46200DE2990 /* 断点续传案例 */ = {
+		920E3EFD25E8A46200DE2990 /* 断点续传 */ = {
 			isa = PBXGroup;
 			children = (
 				920E3F0225E8A4A700DE2990 /* Tools */,
 				920E3EFE25E8A4A000DE2990 /* TestViewController.h */,
 				920E3EFF25E8A4A000DE2990 /* TestViewController.m */,
 			);
-			path = "断点续传案例";
+			path = "断点续传";
 			sourceTree = "<group>";
 		};
 		920E3F0225E8A4A700DE2990 /* Tools */ = {
@@ -302,6 +308,19 @@
 				920E3F0925E8A4A700DE2990 /* NSString+MD5.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		92426DD726246238002062B7 /* 内存泄漏 */ = {
+			isa = PBXGroup;
+			children = (
+				92426DD826246288002062B7 /* LeaksDemo.h */,
+				92426DD926246288002062B7 /* LeaksDemo.m */,
+				92426DDD262464E9002062B7 /* LeaksObj.h */,
+				92426DDE262464EA002062B7 /* LeaksObj.m */,
+				92426F1D26246BFD002062B7 /* ShowDebugBlock.h */,
+				92426F1E26246BFD002062B7 /* ShowDebugBlock.m */,
+			);
+			path = "内存泄漏";
 			sourceTree = "<group>";
 		};
 		9244F01925E63DA00008D6BB /* Locks */ = {
@@ -362,7 +381,8 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
-				920E3EFD25E8A46200DE2990 /* 断点续传案例 */,
+				92426DD726246238002062B7 /* 内存泄漏 */,
+				920E3EFD25E8A46200DE2990 /* 断点续传 */,
 				9244F01925E63DA00008D6BB /* Locks */,
 				920B9C2925DFD51A0098B1BA /* SwiftNote */,
 				920B9BE225DFAFED0098B1BA /* DesignPatten */,
@@ -401,10 +421,8 @@
 		92A8D93F25D28F8C0008EFAA /* __attribute__ */ = {
 			isa = PBXGroup;
 			children = (
-				92A8D94025D28FB80008EFAA /* AttributeSection.h */,
-				92A8D94125D28FB80008EFAA /* AttributeSection.m */,
-				92A8D94525D28FF60008EFAA /* CustomSection.h */,
-				92A8D94625D28FF60008EFAA /* CustomSection.m */,
+				92426F2D26246C77002062B7 /* RAMExport.h */,
+				92426F2E26246C77002062B7 /* RAMExport.m */,
 			);
 			path = __attribute__;
 			sourceTree = "<group>";
@@ -493,6 +511,7 @@
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
@@ -502,8 +521,10 @@
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
+				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
+				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
@@ -517,8 +538,6 @@
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
-				92A8D94725D28FF60008EFAA /* CustomSection.m in Sources */,
-				92A8D94225D28FB80008EFAA /* AttributeSection.m in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
@@ -532,6 +551,7 @@
 				920E41B225E8DDC700DE2990 /* 其他.swift in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
+				92426DDA26246289002062B7 /* LeaksDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

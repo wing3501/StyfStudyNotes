@@ -1,15 +1,15 @@
 //
-//  AttributeSection.h
+//  LeaksDemo.h
 //  StyfStudyNotes
 //
-//  Created by styf on 2021/2/9.
+//  Created by styf on 2021/4/12.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AttributeSection : UIViewController
+@interface LeaksDemo : UIViewController
 
 @end
 

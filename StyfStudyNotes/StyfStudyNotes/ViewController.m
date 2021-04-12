@@ -23,6 +23,7 @@
                    @{@"title":@"__attribute__",@"class":@"AttributeSection"},
                    @{@"title":@"DesignPatten",@"class":@"DesignPatten"},
                    @{@"title":@"Other",@"class":@"Other"},
+                   @{@"title":@"内存泄漏",@"class":@"LeaksDemo"},
     ];
     [self.view addSubview:self.tableView];
 }
