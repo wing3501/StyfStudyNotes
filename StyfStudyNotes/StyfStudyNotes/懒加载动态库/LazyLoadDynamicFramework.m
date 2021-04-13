@@ -10,6 +10,16 @@
 #include <dlfcn.h>
 //#import <SDWebImage/SDWebImage.h>
 
+typedef void(^MySDImageLoaderProgressBlock)(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL);
+typedef void(^MySDInternalCompletionBlock)(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, NSInteger cacheType, BOOL finished, NSURL * _Nullable imageURL);
+
+@protocol MySDWebImageManager <NSObject>
+
+- (id)loadImageWithURL:(NSURL *)url options:(NSUInteger)options progress:(MySDImageLoaderProgressBlock)progressBlock completed:(MySDInternalCompletionBlock)completedBlock;
+
++ (nonnull instancetype)sharedManager;
+@end
+
 @interface LazyLoadDynamicFramework ()
 ///
 @property (nonatomic, strong) UIImageView *imageView;
@@ -23,7 +33,7 @@ static void _rebind_symbols_for_image(const struct mach_header *header,
     if (dladdr(header, &info) == 0) {
       return;
     }
-//    printf("image: %s",info.dli_fname);
+    printf("image: %s",info.dli_fname);
 }
 
 + (void)load {
@@ -52,8 +62,24 @@ static void _rebind_symbols_for_image(const struct mach_header *header,
 }
 
 - (void)loadImage2 {
-    
+    //删除 OTHER_LDFLAGS = -framework "SDWebImage"
+    Class class = NSClassFromString(@"SDWebImageManager");
+    if (!class) {
+        NSLog(@"SDWebImageManager 不存在");
+        [self lazyLoadFrameWork:@"SDWebImage"];
+    }else {
+        NSLog(@"SDWebImageManager 已存在");
+        Class<MySDWebImageManager> myClass = class;
+        [[myClass sharedManager] loadImageWithURL:[NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3153405721,1524067674&fm=26&gp=0.jpg"] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, NSInteger cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+            self.imageView.image = image;
+        }];
+    }
 }
 
+- (void *)lazyLoadFrameWork:(NSString *)frameworkName{
+    NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingFormat:@"/Frameworks/%@.framework/%@",frameworkName,frameworkName];
+    void *rest = dlopen([path UTF8String], RTLD_LAZY);
+    return rest;
+}
 
 @end
