@@ -3,7 +3,7 @@
 //  StyfStudyNotes
 //
 //  Created by styf on 2021/4/12.
-//
+//  参考资料：https://www.jianshu.com/p/3063053a6114
 
 #import "LazyLoadDynamicFramework.h"
 #include <mach-o/dyld.h>
@@ -33,7 +33,7 @@ static void _rebind_symbols_for_image(const struct mach_header *header,
     if (dladdr(header, &info) == 0) {
       return;
     }
-    printf("image: %s",info.dli_fname);
+//    printf("image: %s",info.dli_fname);
 }
 
 + (void)load {
