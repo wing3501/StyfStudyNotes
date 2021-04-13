@@ -6,26 +6,54 @@
 //
 
 #import "LazyLoadDynamicFramework.h"
+#include <mach-o/dyld.h>
+#include <dlfcn.h>
+//#import <SDWebImage/SDWebImage.h>
 
 @interface LazyLoadDynamicFramework ()
-
+///
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation LazyLoadDynamicFramework
 
+static void _rebind_symbols_for_image(const struct mach_header *header,
+                                      intptr_t slide) {
+    Dl_info info;
+    if (dladdr(header, &info) == 0) {
+      return;
+    }
+//    printf("image: %s",info.dli_fname);
+}
+
++ (void)load {
+    _dyld_register_func_for_add_image(_rebind_symbols_for_image);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.whiteColor;
+    _imageView = [[UIImageView alloc]init];
+    _imageView.frame = CGRectMake(100, 100, 200, 200);
+    _imageView.backgroundColor = UIColor.yellowColor;
+    [self.view addSubview:_imageView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self loadImage1];
+    
+    [self loadImage2];
 }
-*/
+
+- (void)loadImage1 {
+//    [[SDWebImageManager sharedManager]loadImageWithURL:[NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3153405721,1524067674&fm=26&gp=0.jpg"] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+//        self.imageView.image = image;
+//    }];
+}
+
+- (void)loadImage2 {
+    
+}
+
 
 @end

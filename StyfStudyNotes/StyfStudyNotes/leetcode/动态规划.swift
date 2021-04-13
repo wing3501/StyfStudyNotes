@@ -25,6 +25,80 @@ import Foundation
 //        354. 俄罗斯套娃信封问题
 //        print(maxEnvelopes([[5,4],[6,4],[6,7],[2,3]]))
 //        print(maxEnvelopes([[1,1],[1,1],[1,1]]))
+        
+//        53. 最大子序和
+//        print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))//6
+//        print(maxSubArray([1]))//1
+//        print(maxSubArray([0]))//0
+//        print(maxSubArray([-1]))//-1
+//        print(maxSubArray([-100000]))//-100000
+    }
+//    712. 两个字符串的最小ASCII删除和
+//    给定两个字符串s1, s2，找到使两个字符串相等所需删除字符的ASCII值的最小和。
+//    示例 1:
+//    输入: s1 = "sea", s2 = "eat"
+//    输出: 231
+//    解释: 在 "sea" 中删除 "s" 并将 "s" 的值(115)加入总和。
+//    在 "eat" 中删除 "t" 并将 116 加入总和。
+//    结束时，两个字符串相等，115 + 116 = 231 就是符合条件的最小和。
+//    示例 2:
+//    输入: s1 = "delete", s2 = "leet"
+//    输出: 403
+//    解释: 在 "delete" 中删除 "dee" 字符串变成 "let"，
+//    将 100[d]+101[e]+101[e] 加入总和。在 "leet" 中删除 "e" 将 101[e] 加入总和。
+//    结束时，两个字符串都等于 "let"，结果即为 100+101+101+101 = 403 。
+//    如果改为将两个字符串转换为 "lee" 或 "eet"，我们会得到 433 或 417 的结果，比答案更大。
+//    注意:
+//    0 < s1.length, s2.length <= 1000。
+//    所有字符串中的字符ASCII值在[97, 122]之间。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minimumDeleteSum(_ s1: String, _ s2: String) -> Int {
+        return 1
+    }
+    
+//    583. 两个字符串的删除操作
+//    给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。
+//    示例：
+//    输入: "sea", "eat"
+//    输出: 2
+//    解释: 第一步将"sea"变为"ea"，第二步将"eat"变为"ea"
+//    提示：
+//    给定单词的长度不超过500。
+//    给定单词中的字符只含有小写字母。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/delete-operation-for-two-strings
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minDistance(_ word1: String, _ word2: String) -> Int {
+        return 1
+    }
+//    1143. 最长公共子序列
+//    给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
+//    一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+//    例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。
+//    两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
+//    示例 1：
+//    输入：text1 = "abcde", text2 = "ace"
+//    输出：3
+//    解释：最长公共子序列是 "ace" ，它的长度为 3 。
+//    示例 2：
+//    输入：text1 = "abc", text2 = "abc"
+//    输出：3
+//    解释：最长公共子序列是 "abc" ，它的长度为 3 。
+//    示例 3：
+//    输入：text1 = "abc", text2 = "def"
+//    输出：0
+//    解释：两个字符串没有公共子序列，返回 0 。
+//    提示：
+//    1 <= text1.length, text2.length <= 1000
+//    text1 和 text2 仅由小写英文字符组成。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/longest-common-subsequence
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
+        
+        return 1
     }
 //    53. 最大子序和
 //    给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
@@ -52,7 +126,17 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/maximum-subarray
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func maxSubArray(_ nums: [Int]) -> Int {
-        return 1
+        var dp = Array(repeating: 0, count: nums.count)
+        dp[0] = nums[0]
+        var maxSum = nums[0]
+        var i = 1
+        while i < nums.count {
+            let num = nums[i]
+            dp[i] = dp[i - 1] > 0 ? dp[i - 1] + num : num
+            maxSum = max(maxSum, dp[i])
+            i += 1
+        }
+        return maxSum
     }
     
 //    354. 俄罗斯套娃信封问题

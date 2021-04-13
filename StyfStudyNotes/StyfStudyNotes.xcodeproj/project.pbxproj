@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40E4B697AAC8C7951ECD2CB0 /* Pods_StyfStudyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -69,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyfStudyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,12 +188,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E4B697AAC8C7951ECD2CB0 /* Pods_StyfStudyNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68CC14C85F7CE063169348C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		920B9BD625DF59A40098B1BA /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +386,8 @@
 			children = (
 				92A8D7CA25D288DA0008EFAA /* StyfStudyNotes */,
 				92A8D7C925D288DA0008EFAA /* Products */,
+				E79A4B88C018268A4AA9ED07 /* Pods */,
+				68CC14C85F7CE063169348C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,6 +455,16 @@
 			path = __attribute__;
 			sourceTree = "<group>";
 		};
+		E79A4B88C018268A4AA9ED07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */,
+				4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,9 +472,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92A8D7E125D288DD0008EFAA /* Build configuration list for PBXNativeTarget "StyfStudyNotes" */;
 			buildPhases = (
+				AFC630EEB1FEE6F4E3D0288F /* [CP] Check Pods Manifest.lock */,
 				92A8D7C425D288DA0008EFAA /* Sources */,
 				92A8D7C525D288DA0008EFAA /* Frameworks */,
 				92A8D7C625D288DA0008EFAA /* Resources */,
+				9E01535837DE6A32D4579B30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -504,6 +531,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E01535837DE6A32D4579B30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC630EEB1FEE6F4E3D0288F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StyfStudyNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92A8D7C425D288DA0008EFAA /* Sources */ = {
@@ -705,6 +774,7 @@
 		};
 		92A8D7E225D288DD0008EFAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -728,6 +798,7 @@
 		};
 		92A8D7E325D288DD0008EFAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
