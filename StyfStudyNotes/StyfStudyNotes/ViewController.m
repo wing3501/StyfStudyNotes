@@ -24,6 +24,7 @@
                    @{@"title":@"DesignPatten",@"class":@"DesignPatten"},
                    @{@"title":@"Other",@"class":@"Other"},
                    @{@"title":@"内存泄漏",@"class":@"LeaksDemo"},
+                   @{@"title":@"懒加载动态库",@"class":@"LazyLoadDynamicFramework"},
     ];
     [self.view addSubview:self.tableView];
 }

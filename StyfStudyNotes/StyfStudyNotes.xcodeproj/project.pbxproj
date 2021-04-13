@@ -38,6 +38,7 @@
 		92426DDF262464EA002062B7 /* LeaksObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DDE262464EA002062B7 /* LeaksObj.m */; };
 		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
 		92426F2F26246C77002062B7 /* RAMExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F2E26246C77002062B7 /* RAMExport.m */; };
+		92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F342624745E002062B7 /* LazyLoadDynamicFramework.m */; };
 		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
 		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
 		9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */; };
@@ -127,6 +128,8 @@
 		92426F1E26246BFD002062B7 /* ShowDebugBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowDebugBlock.m; sourceTree = "<group>"; };
 		92426F2D26246C77002062B7 /* RAMExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAMExport.h; sourceTree = "<group>"; };
 		92426F2E26246C77002062B7 /* RAMExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAMExport.m; sourceTree = "<group>"; };
+		92426F332624745E002062B7 /* LazyLoadDynamicFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyLoadDynamicFramework.h; sourceTree = "<group>"; };
+		92426F342624745E002062B7 /* LazyLoadDynamicFramework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyLoadDynamicFramework.m; sourceTree = "<group>"; };
 		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
 		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
 		9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
@@ -323,6 +326,15 @@
 			path = "内存泄漏";
 			sourceTree = "<group>";
 		};
+		92426F32262473BE002062B7 /* 懒加载动态库 */ = {
+			isa = PBXGroup;
+			children = (
+				92426F332624745E002062B7 /* LazyLoadDynamicFramework.h */,
+				92426F342624745E002062B7 /* LazyLoadDynamicFramework.m */,
+			);
+			path = "懒加载动态库";
+			sourceTree = "<group>";
+		};
 		9244F01925E63DA00008D6BB /* Locks */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +393,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92426F32262473BE002062B7 /* 懒加载动态库 */,
 				92426DD726246238002062B7 /* 内存泄漏 */,
 				920E3EFD25E8A46200DE2990 /* 断点续传 */,
 				9244F01925E63DA00008D6BB /* Locks */,
@@ -505,6 +518,7 @@
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
+				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
