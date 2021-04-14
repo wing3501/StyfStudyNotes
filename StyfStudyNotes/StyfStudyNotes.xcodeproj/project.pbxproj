@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,6 +53,7 @@
 		9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03025E63DA00008D6BB /* SerialQueueDemo.m */; };
 		9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03125E63DA00008D6BB /* MutexDemo2.m */; };
 		9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */; };
+		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -159,6 +160,8 @@
 		9244F03125E63DA00008D6BB /* MutexDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
 		9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo2.m; sourceTree = "<group>"; };
 		9244F03325E63DA00008D6BB /* NSLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
+		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
+		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -381,6 +384,15 @@
 			path = Locks;
 			sourceTree = "<group>";
 		};
+		926EE2532626B8270008F924 /* Mach-O */ = {
+			isa = PBXGroup;
+			children = (
+				926EE2542626B84A0008F924 /* MachO_Note.h */,
+				926EE2552626B84A0008F924 /* MachO_Note.m */,
+			);
+			path = "Mach-O";
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +420,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				926EE2532626B8270008F924 /* Mach-O */,
 				92426F32262473BE002062B7 /* 懒加载动态库 */,
 				92426DD726246238002062B7 /* 内存泄漏 */,
 				920E3EFD25E8A46200DE2990 /* 断点续传 */,
@@ -461,7 +474,6 @@
 				C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */,
 				4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -600,6 +612,7 @@
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
+				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,

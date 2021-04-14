@@ -97,8 +97,15 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/longest-common-subsequence
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
+        //  0 1 2 3 4
+        //0 1 1 1 1 1
+        //1 1 1 2 2 2
+        //2 1 1 2 2 3
+        var array1 = Array(text1.count > text2.count ? text1 : text2);
+        var array2 = Array(text1.count > text2.count ? text2 : text1);
         
-        return 1
+        
+        return 0
     }
 //    53. 最大子序和
 //    给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
