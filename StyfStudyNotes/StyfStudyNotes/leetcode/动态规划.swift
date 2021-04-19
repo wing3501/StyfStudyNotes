@@ -42,7 +42,8 @@ import Foundation
 //        print(minDistance("sea", "eat"))//2
         
 //        712. 两个字符串的最小ASCII删除和
-        print(minimumDeleteSum("delete", "leet"))
+        print(minimumDeleteSum("sea", "eat"))//231
+        print(minimumDeleteSum("delete", "leet"))//403
     }
 //    712. 两个字符串的最小ASCII删除和
 //    给定两个字符串s1, s2，找到使两个字符串相等所需删除字符的ASCII值的最小和。
@@ -68,23 +69,44 @@ import Foundation
     class func minimumDeleteSum(_ s1: String, _ s2: String) -> Int {
         let array1 = Array(s1)
         let array2 = Array(s2)
-        var memo = Array(repeating: Array(repeating: -1, count: array2.count), count: array1.count)
+        var memo = Array(repeating: Array(repeating: -1, count: array2.count + 1), count: array1.count + 1)
         let lcs = minimumDeleteSumDP(array1, array2, 0, 0, &memo)
         return lcs
     }
     class func minimumDeleteSumDP(_ s1: [Character],_ s2: [Character],_ idx1: Int,_ idx2: Int,_ memo: inout [[Int]]) -> Int {
-        if idx1 == s1.count || idx2 == s2.count {
-            return 0
-        }
+        
         if memo[idx1][idx2] != -1 {
             return memo[idx1][idx2]
         }
+        
+        if idx1 == s1.count || idx2 == s2.count {
+            if idx1 == s1.count {
+                var sum = 0
+                var i = idx2
+                while i < s2.count {
+                    sum += Int(s2[i].asciiValue!)
+                    i += 1
+                }
+                return sum
+            }else {
+                var sum = 0
+                var i = idx1
+                while i < s1.count {
+                    sum += Int(s1[i].asciiValue!)
+                    i += 1
+                }
+                return sum
+            }
+        }
+        
         if s1[idx1] == s2[idx2] {
-            let lcs = minimumDeleteSumDP(s1, s2, idx1 + 1, idx2 + 1, &memo) + 1
+            let lcs = minimumDeleteSumDP(s1, s2, idx1 + 1, idx2 + 1, &memo)
             memo[idx1][idx2] = lcs
             return lcs
         }else {
-            let lcs = max(minimumDeleteSumDP(s1, s2, idx1 + 1, idx2, &memo), minimumDeleteSumDP(s1, s2, idx1, idx2 + 1, &memo))
+            let asc1 = Int(s1[idx1].asciiValue!)
+            let asc2 = Int(s2[idx2].asciiValue!)
+            let lcs = min(minimumDeleteSumDP(s1, s2, idx1 + 1, idx2, &memo) + asc1, minimumDeleteSumDP(s1, s2, idx1, idx2 + 1, &memo) + asc2)
             memo[idx1][idx2] = lcs
             return lcs
         }
