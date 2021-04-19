@@ -32,6 +32,17 @@ import Foundation
 //        print(maxSubArray([0]))//0
 //        print(maxSubArray([-1]))//-1
 //        print(maxSubArray([-100000]))//-100000
+        
+//        1143. 最长公共子序列
+//        print(longestCommonSubsequence("abcde", "ace"))//3
+//        print(longestCommonSubsequence("abc", "abc"))//3
+//        print(longestCommonSubsequence("abc", "def"))//0
+        
+//        583. 两个字符串的删除操作
+//        print(minDistance("sea", "eat"))//2
+        
+//        712. 两个字符串的最小ASCII删除和
+        print(minimumDeleteSum("delete", "leet"))
     }
 //    712. 两个字符串的最小ASCII删除和
 //    给定两个字符串s1, s2，找到使两个字符串相等所需删除字符的ASCII值的最小和。
@@ -55,7 +66,28 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func minimumDeleteSum(_ s1: String, _ s2: String) -> Int {
-        return 1
+        let array1 = Array(s1)
+        let array2 = Array(s2)
+        var memo = Array(repeating: Array(repeating: -1, count: array2.count), count: array1.count)
+        let lcs = minimumDeleteSumDP(array1, array2, 0, 0, &memo)
+        return lcs
+    }
+    class func minimumDeleteSumDP(_ s1: [Character],_ s2: [Character],_ idx1: Int,_ idx2: Int,_ memo: inout [[Int]]) -> Int {
+        if idx1 == s1.count || idx2 == s2.count {
+            return 0
+        }
+        if memo[idx1][idx2] != -1 {
+            return memo[idx1][idx2]
+        }
+        if s1[idx1] == s2[idx2] {
+            let lcs = minimumDeleteSumDP(s1, s2, idx1 + 1, idx2 + 1, &memo) + 1
+            memo[idx1][idx2] = lcs
+            return lcs
+        }else {
+            let lcs = max(minimumDeleteSumDP(s1, s2, idx1 + 1, idx2, &memo), minimumDeleteSumDP(s1, s2, idx1, idx2 + 1, &memo))
+            memo[idx1][idx2] = lcs
+            return lcs
+        }
     }
     
 //    583. 两个字符串的删除操作
@@ -71,7 +103,8 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/delete-operation-for-two-strings
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func minDistance(_ word1: String, _ word2: String) -> Int {
-        return 1
+        let lcs = longestCommonSubsequence(word1, word2)
+        return word1.count - lcs + word2.count - lcs
     }
 //    1143. 最长公共子序列
 //    给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
@@ -97,16 +130,30 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/longest-common-subsequence
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
-        //  0 1 2 3 4
-        //0 1 1 1 1 1
-        //1 1 1 2 2 2
-        //2 1 1 2 2 3
-        var array1 = Array(text1.count > text2.count ? text1 : text2);
-        var array2 = Array(text1.count > text2.count ? text2 : text1);
-        
-        
-        return 0
+        var memo = Array(repeating: Array(repeating: -1, count: text2.count), count: text1.count)
+        return longestCommonSubsequenceDP(Array(text1), 0, Array(text2), 0, &memo)
     }
+    //从idx开始的字符串的最长公共子序列长度
+    class func longestCommonSubsequenceDP(_ text1: Array<Character>,_ idx1: Int,_ text2: Array<Character>,_ idx2: Int,_ memo: inout [[Int]]) -> Int {
+        if idx1 == text1.count || idx2 == text2.count {
+            return 0
+        }
+        if memo[idx1][idx2] != -1 {
+            return memo[idx1][idx2]
+        }else {
+            if text1[idx1] == text2[idx2] {
+                let len = 1 + longestCommonSubsequenceDP(text1, idx1 + 1, text2, idx2 + 1, &memo)
+                memo[idx1][idx2] = len
+                return len
+            }else {
+                //不相同，两个字符中必定有一个不在最长公共子序列
+                let len = max(longestCommonSubsequenceDP(text1, idx1, text2, idx2 + 1, &memo), longestCommonSubsequenceDP(text1, idx1 + 1, text2, idx2, &memo))
+                memo[idx1][idx2] = len
+                return len
+            }
+        }
+    }
+    
 //    53. 最大子序和
 //    给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 //    示例 1：
