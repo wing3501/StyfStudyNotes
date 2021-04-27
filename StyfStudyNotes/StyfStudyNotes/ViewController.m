@@ -25,7 +25,11 @@
                    @{@"title":@"Other",@"class":@"Other"},
                    @{@"title":@"内存泄漏",@"class":@"LeaksDemo"},
                    @{@"title":@"懒加载动态库",@"class":@"LazyLoadDynamicFramework"},
-                   @{@"title":@"Mach-O",@"class":@"MachO_Note"},   
+                   @{@"title":@"Mach-O",@"class":@"MachO_Note"},
+                   @{@"title":@"系统通知库",@"class":@"SystemNotify"},
+                   @{@"title":@"__builtin_",@"class":@"Builtin"},
+                   @{@"title":@"mmap",@"class":@"MMAPNote"},
+                   
     ];
     [self.view addSubview:self.tableView];
 }

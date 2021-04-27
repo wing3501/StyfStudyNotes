@@ -64,7 +64,40 @@ import Foundation
 //    s 只包含小写英文字母
 //    链接：https://leetcode-cn.com/problems/longest-palindromic-subsequence
     class func longestPalindromeSubseq(_ s: String) -> Int {
-
+        //在子数组array[i..j]中，我们要求的子序列（最长回文子序列）的长度为dp[i][j]。
+        //        bbbab
+//                  0 1 2 3 4
+//                0 1       x
+//                1   1
+//                2     1
+//                3       1
+//                4         1
+//        dp[0][4] dp[1][3]
+//        dp[1][3] dp[2][2]
+//        dp[0][3] dp[1][2]
+        
+        let array = Array(s)
+        var dp = Array(repeating: Array(repeating: 1, count: array.count), count: array.count)
+        var i = array.count - 1
+        while i >= 0 {
+            var j = i
+            while j < array.count {
+                if j - i == 0 {
+                    dp[i][j] = 1
+                }else if j - i == 1 {
+                    dp[i][j] = array[i] == array[j] ? 2 : 1
+                }else {
+                    if array[i] == array[j] {
+                        dp[i][j] = dp[i + 1][j - 1] + 2
+                    }else {
+                        dp[i][j] = max(dp[i][j - 1], dp[i + 1][j])
+                    }
+                }
+                j += 1
+            }
+            i -= 1
+        }
+        return dp[0][array.count - 1]
     }
     
 //    712. 两个字符串的最小ASCII删除和

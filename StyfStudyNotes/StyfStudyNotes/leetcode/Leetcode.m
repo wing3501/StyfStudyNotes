@@ -23,6 +23,7 @@
 //    [TreeTest test];
 //    [Other test];
     [DongTaiGuiHua test];
+//    [TwoPtr test];
 }
 
 

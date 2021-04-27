@@ -40,7 +40,11 @@ import Foundation
 
 @objcMembers class TwoPtr: NSObject {
     class func test()  {
-        print("123")
+//        5. 最长回文子串
+        print(longestPalindrome("babad"))//"bab"
+        print(longestPalindrome("cbbd"))//"bb"
+        print(longestPalindrome("a"))//"a"
+        print(longestPalindrome("ac"))//"a"
     }
     
 //    5. 最长回文子串
@@ -65,6 +69,38 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/longest-palindromic-substring
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func longestPalindrome(_ s: String) -> String {
-            
+        let array = Array(s);
+        var i = 0
+        var left = 0
+        var right = 0
+        while i < array.count {
+            let tuple1 = checkLongestPalindrome(array, i - 1, i)
+            if tuple1.1 - tuple1.0 > (right - left) {
+                left = tuple1.0
+                right = tuple1.1
+            }
+            let tuple2 = checkLongestPalindrome(array, i, i)
+            if tuple2.1 - tuple2.0 > (right - left) {
+                left = tuple2.0
+                right = tuple2.1
+            }
+            i += 1
+        }
+        return String(array[left...right])
+    }
+    class func checkLongestPalindrome(_ array: Array<Character>,_ left: Int,_ right: Int) -> (Int, Int) {
+        if left < 0 {
+            return (right, right)
+        }
+        if right == array.count {
+            return (left, left)
+        }
+        var l = left
+        var r = right
+        while l >= 0 && r < array.count && array[l] == array[r] {
+            l -= 1
+            r += 1
+        }
+        return (l + 1, r - 1)
     }
 }
