@@ -1,0 +1,48 @@
+//
+//  TaskService.h
+//  StyfStudyNotes
+//
+//  Created by styf on 2021/4/29.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TaskService : NSObject
+
++ (instancetype)sharedInstance;
+
+
+/// 添加异步任务到主队列
+/// @param name 任务名称
+/// @param delay 延迟添加时间
+/// @param block 任务操作
+- (void)addAsyncTaskOnMainQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void(^doneBlock)(void)))block;
+- (void)addAsyncTaskOnMainQueue:(NSString *)name executionBlock:(void(^)(void(^doneBlock)(void)))block;
+
+/// 添加同步任务到主队列
+/// @param name 任务名称
+/// @param delay 延迟添加时间
+/// @param block 任务操作
+- (void)addSyncTaskOnMainQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block;
+- (void)addSyncTaskOnMainQueue:(NSString *)name executionBlock:(void(^)(void))block;
+
+/// 添加异步串行队列
+/// @param name 任务名称
+/// @param delay 延迟添加时间
+/// @param block 任务操作
+- (void)addTaskOnSerialQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block;
+- (void)addTaskOnSerialQueue:(NSString *)name executionBlock:(void(^)(void))block;
+
+/// 添加任务到异步并发任务
+/// @param name 任务名称
+/// @param delay 延迟添加时间
+/// @param block 任务操作
+- (void)addTaskOnConcurrentQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block;
+- (void)addTaskOnConcurrentQueue:(NSString *)name executionBlock:(void(^)(void))block;
+
+
+@end
+
+NS_ASSUME_NONNULL_END

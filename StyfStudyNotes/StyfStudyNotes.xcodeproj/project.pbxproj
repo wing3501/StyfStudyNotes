@@ -56,6 +56,9 @@
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
+		928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */; };
+		928934FA263A4B2900BAF8E2 /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F9263A4B2900BAF8E2 /* TaskService.m */; };
+		928934FE263A514200BAF8E2 /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934FD263A514200BAF8E2 /* OperationTask.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -169,6 +172,12 @@
 		9273F4E826365D8800B78638 /* MMAPNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAPNote.h; sourceTree = "<group>"; };
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
+		928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNSOperation.h; sourceTree = "<group>"; };
+		928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNSOperation.m; sourceTree = "<group>"; };
+		928934F8263A4B2900BAF8E2 /* TaskService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
+		928934F9263A4B2900BAF8E2 /* TaskService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
+		928934FC263A514200BAF8E2 /* OperationTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationTask.h; sourceTree = "<group>"; };
+		928934FD263A514200BAF8E2 /* OperationTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -414,6 +423,19 @@
 			path = mmap;
 			sourceTree = "<group>";
 		};
+		928934F2263A4A9900BAF8E2 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */,
+				928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */,
+				928934F8263A4B2900BAF8E2 /* TaskService.h */,
+				928934F9263A4B2900BAF8E2 /* TaskService.m */,
+				928934FC263A514200BAF8E2 /* OperationTask.h */,
+				928934FD263A514200BAF8E2 /* OperationTask.m */,
+			);
+			path = NSOperation;
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +463,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				928934F2263A4A9900BAF8E2 /* NSOperation */,
 				9273F4E726365D5600B78638 /* mmap */,
 				92B265A62635469E00C4D16D /* Builtin */,
 				92B2659F26353B9E00C4D16D /* 系统通知库 */,
@@ -638,6 +661,7 @@
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
+				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
@@ -668,6 +692,7 @@
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
+				928934FA263A4B2900BAF8E2 /* TaskService.m in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
@@ -677,6 +702,7 @@
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
+				928934FE263A514200BAF8E2 /* OperationTask.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,

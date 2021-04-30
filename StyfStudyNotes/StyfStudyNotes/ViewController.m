@@ -29,6 +29,7 @@
                    @{@"title":@"系统通知库",@"class":@"SystemNotify"},
                    @{@"title":@"__builtin_",@"class":@"Builtin"},
                    @{@"title":@"mmap",@"class":@"MMAPNote"},
+                   @{@"title":@"NSOperation",@"class":@"DemoNSOperation"},
                    
     ];
     [self.view addSubview:self.tableView];
