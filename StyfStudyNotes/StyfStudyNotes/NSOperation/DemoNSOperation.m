@@ -9,6 +9,7 @@
 #import "DemoNSOperation.h"
 #import "OperationTask.h"
 #import "TaskService.h"
+#import <QuartzCore/QuartzCore.h>
 @interface DemoNSOperation ()
 
 @end
@@ -22,9 +23,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     [self serviceTest];
-    
 }
 
 - (void)serviceTest {
@@ -34,21 +33,33 @@
         sleep(2);
         NSLog(@"微博SDK--初始化end");
     }];
-//
-//    [[TaskService sharedInstance] addAsyncTaskOnMainQueue:@"友盟SDK" afterDelay:0 executionBlock:^(void (^ _Nonnull doneBlock)(void)) {
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            NSLog(@"友盟SDK--初始化start %@",[NSThread currentThread]);
-//            sleep(2);
-//            NSLog(@"友盟SDK--初始化end");
-//            doneBlock();
-//        });
-//    }];
     
     [[TaskService sharedInstance] addSyncTaskOnMainQueue:@"友盟SDK" afterDelay:2.1 executionBlock:^{
         NSLog(@"友盟SDK--初始化start");
         sleep(2);
         NSLog(@"友盟SDK--初始化end");
     }];
+    
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"微信SDK" executionBlock:^{
+        NSLog(@"微信SDK--初始化start");
+        sleep(1);
+        NSLog(@"微信SDK--初始化end");
+    }];
+    
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"支付宝SDK" executionBlock:^{
+        NSLog(@"支付宝SDK--初始化start");
+        sleep(1);
+        NSLog(@"支付宝SDK--初始化end");
+    }];
+    
+    for (NSInteger i = 0; i < 10; i++) {
+        NSString *name = [NSString stringWithFormat:@"请求%ld",(long)i];
+        [[TaskService sharedInstance]addTaskOnConcurrentQueue:name executionBlock:^{
+            NSLog(@"%@--初始化start",name);
+            sleep(1);
+            NSLog(@"%@--初始化end",name);
+        }];
+    }
 }
 
 - (void)test {
