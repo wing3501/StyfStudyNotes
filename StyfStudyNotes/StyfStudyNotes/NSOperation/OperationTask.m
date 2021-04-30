@@ -48,7 +48,9 @@
         
         self.finished = NO;
         self.executing = YES;
+#ifdef DEBUG
         NSLog(@"任务:%@ 开始执行 %@",self.name,[NSThread currentThread]);
+#endif
         
         if (self.syncTaskBlock) {
             self.syncTaskBlock();
@@ -67,7 +69,9 @@
 - (void)done {
     @synchronized (self) {
         if (self.isExecuting) {
+#ifdef DEBUG
             NSLog(@"任务:%@ 执行结束,耗时：%f",self.name,(CACurrentMediaTime() - _now) * 1000.0);
+#endif
             self.executing = NO;
             self.finished = YES;
         }
