@@ -52,6 +52,15 @@
         NSLog(@"支付宝SDK--初始化end");
     }];
     
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"极光SDK" executionBlock:^{
+        NSLog(@"极光SDK--初始化start");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            sleep(1);
+            NSLog(@"极光SDK--do");
+        });
+        NSLog(@"极光SDK--初始化end");
+    }];
+    
     for (NSInteger i = 0; i < 10; i++) {
         NSString *name = [NSString stringWithFormat:@"请求%ld",(long)i];
         [[TaskService sharedInstance]addTaskOnConcurrentQueue:name executionBlock:^{
@@ -60,6 +69,21 @@
             NSLog(@"%@--初始化end",name);
         }];
     }
+    
+    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求99" executionBlock:^{
+        NSLog(@"请求99--初始化start");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            sleep(3);
+            NSLog(@"请求99--do");
+        });
+        NSLog(@"请求99--初始化end");
+    }];
+    
+    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求100" afterDelay:6 executionBlock:^{
+        NSLog(@"请求100--初始化start");
+        sleep(1);
+        NSLog(@"请求100--初始化end");
+    }];
     
     
     [[TaskService sharedInstance]start];
