@@ -115,12 +115,14 @@
         NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
     }];
     
+    NSLog(@"\n");
     NSLog(@"串行队列任务：%ld",(long)self.taskArray[1].count);
      [self.taskArray[1] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
          NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
      }];
     
-    NSLog(@"并行队列任务：%ld",(long)self.taskArray[2].count);
+    NSLog(@"\n");
+    NSLog(@"并发队列任务：%ld",(long)self.taskArray[2].count);
       [self.taskArray[2] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
           NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
       }];
@@ -157,12 +159,12 @@
 @property (nonatomic, strong) NSOperationQueue *serialQueue;
 /// 自定义并发队列 
 @property (nonatomic, strong) NSOperationQueue *concurrentQueue;
-/// 是否是第一个任务开始执行
-@property (nonatomic, assign) BOOL isFirstTaskExecute;
 /// 任务名称集合 打印日志用 非线程安全
 @property (nonatomic, strong) TaskCollection *taskCollection;
 /// 任务执行总时间
 @property (nonatomic, assign) CFTimeInterval now;
+/// 等待一起添加到队列里的任务操作
+@property (nonatomic, strong) NSMutableArray<dispatch_block_t> *waitToAddArray;
 @end
 
 @implementation TaskService
@@ -203,7 +205,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _isFirstTaskExecute = YES;
+        
     }
     return self;
 }
@@ -245,16 +247,9 @@
     [self addObserverForTask:task];
 #ifdef DEBUG
     [self.taskCollection addTaskToMainQueue:delay == 0 ? name : [NSString stringWithFormat:@"延迟%.1fs_%@",delay,name] taskID:[NSString stringWithFormat:@"%p",task]];
+    NSLog(@"%@", delay == 0 ? [NSString stringWithFormat:@"任务:%@ 添加到主队列",name] : [NSString stringWithFormat:@"任务:%@ 延迟%.1fs添加到主队列",name,delay]);
 #endif
-    if (delay == 0) {
-        [self.mainQueue addOperation:task];
-        NSLog(@"任务:%@ 添加到主队列",name);
-    }else {
-        NSLog(@"任务:%@ 延迟%.1fs添加到主队列",name,delay);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.mainQueue addOperation:task];
-        });
-    }
+    [self addTask:task toWaitArrayForQuque:self.mainQueue afterDelay:delay];
 }
 
 
@@ -269,16 +264,9 @@
     [self addObserverForTask:task];
 #ifdef DEBUG
     [self.taskCollection addTaskToSerialQueue:delay == 0 ? name : [NSString stringWithFormat:@"延迟%.1fs_%@",delay,name] taskID:[NSString stringWithFormat:@"%p",task]];
+    NSLog(@"%@", delay == 0 ? [NSString stringWithFormat:@"任务:%@ 添加到异步串行队列",name] : [NSString stringWithFormat:@"任务:%@ 延迟%.1fs添加到异步串行队列",name,delay]);
 #endif
-    if (delay == 0) {
-        [self.serialQueue addOperation:task];
-        NSLog(@"任务:%@ 添加到异步串行队列",name);
-    }else {
-        NSLog(@"任务:%@ 延迟%.1fs添加到异步串行队列",name,delay);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.serialQueue addOperation:task];
-        });
-    }
+    [self addTask:task toWaitArrayForQuque:self.serialQueue afterDelay:delay];
 }
 
 - (void)addTaskOnSerialQueue:(NSString *)name executionBlock:(void(^)(void))block {
@@ -296,20 +284,25 @@
     [self addObserverForTask:task];
 #ifdef DEBUG
     [self.taskCollection addTaskToConcurrentQueue:delay == 0 ? name : [NSString stringWithFormat:@"延迟%.1fs_%@",delay,name] taskID:[NSString stringWithFormat:@"%p",task]];
+    NSLog(@"%@", delay == 0 ? [NSString stringWithFormat:@"任务:%@ 添加到异步并发队列",name] : [NSString stringWithFormat:@"任务:%@ 延迟%.1fs添加到异步并发队列",name,delay]);
 #endif
-    if (delay == 0) {
-        [self.concurrentQueue addOperation:task];
-        NSLog(@"任务:%@ 添加到异步并发队列",name);
-    }else {
-        NSLog(@"任务:%@ 延迟%.1fs添加到异步并发队列",name,delay);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.concurrentQueue addOperation:task];
-        });
-    }
+    [self addTask:task toWaitArrayForQuque:self.concurrentQueue afterDelay:delay];
 }
 
 - (void)addTaskOnConcurrentQueue:(NSString *)name executionBlock:(void(^)(void))block {
     [self addTaskOnConcurrentQueue:name afterDelay:0 executionBlock:block];
+}
+
+/// 开始处理任务
+- (void)start {
+#ifdef DEBUG
+            _now = CACurrentMediaTime();
+            [self printAllTask];
+#endif
+    //添加到队列里就会开始执行
+    for (dispatch_block_t block in self.waitToAddArray) {
+        block();
+    }
 }
 
 #pragma mark - private
@@ -329,19 +322,22 @@
     NSLog(@"------------------------------------------------");
 }
 
+/// 添加任务到等待数组中
+- (void)addTask:(OperationTask *)task toWaitArrayForQuque:(NSOperationQueue *)quque afterDelay:(NSTimeInterval)delay {
+    [self.waitToAddArray addObject:^{
+        if (delay == 0) {
+            [quque addOperation:task];
+        }else {
+            [quque performSelector:@selector(addOperation:) withObject:task afterDelay:delay];
+        }
+    }];
+}
+
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"isExecuting"]) {
-        BOOL isExecuting = [change[NSKeyValueChangeNewKey] boolValue];
-        if (_isFirstTaskExecute && isExecuting) {
-            _isFirstTaskExecute = NO;
-#ifdef DEBUG
-            _now = CACurrentMediaTime();
-            //执行第一个任务前，打印一下本次所有的任务信息
-            [self printAllTask];
-#endif
-        }
+//        BOOL isExecuting = [change[NSKeyValueChangeNewKey] boolValue];
         
     }else if([keyPath isEqualToString:@"isFinished"]) {
         BOOL isFinished = [change[NSKeyValueChangeNewKey] boolValue];
@@ -352,9 +348,6 @@
                 NSLog(@"任务全部结束，总耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
             }
 #endif
-            if ([self.taskCollection isEmpty]) {
-                _isFirstTaskExecute = YES;//所有任务结束后重置
-            }
         }
     }
 }
@@ -389,5 +382,12 @@
         _taskCollection = [[TaskCollection alloc]init];
     }
     return _taskCollection;
+}
+
+- (NSMutableArray<dispatch_block_t> *)waitToAddArray {
+    if (!_waitToAddArray) {
+        _waitToAddArray = [NSMutableArray array];
+    }
+    return _waitToAddArray;
 }
 @end

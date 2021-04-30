@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTaskOnConcurrentQueue:(NSString *)name executionBlock:(void(^)(void))block;
 
 
+/// 开始处理任务
+- (void)start;
 @end
 
 NS_ASSUME_NONNULL_END

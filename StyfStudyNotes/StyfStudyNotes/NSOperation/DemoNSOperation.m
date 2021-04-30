@@ -60,6 +60,9 @@
             NSLog(@"%@--初始化end",name);
         }];
     }
+    
+    
+    [[TaskService sharedInstance]start];
 }
 
 - (void)test {
