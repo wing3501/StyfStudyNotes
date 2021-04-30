@@ -138,7 +138,7 @@
     return _taskIDtoArrayIndex;
 }
 
-- (NSMutableArray<NSMutableArray<NSString *> *> *)taskArray {
+- (NSMutableArray<NSMutableArray<TaskCollectionModel *> *> *)taskArray {
     if (!_taskArray) {
         _taskArray = [NSMutableArray array];
         for (NSInteger i = 0; i < 3; i++) {
@@ -215,22 +215,8 @@
 /// @param delay 延迟添加时间
 /// @param block 任务操作
 - (void)addAsyncTaskOnMainQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void(^doneBlock)(void)))block {
-    NSAssert(name.length != 0, @"必须填写任务名称!");
     OperationTask *task = [[OperationTask alloc]initWithAsyncTaskBlock:block];
-    task.name = name;
-    [self addObserverForTask:task];
-#ifdef DEBUG
-            [self.taskCollection addTaskToMainQueue:name taskID:[NSString stringWithFormat:@"%p",task]];
-#endif
-    if (delay == 0) {
-        [self.mainQueue addOperation:task];
-        NSLog(@"任务:%@ 添加到主队列",name);
-    }else {
-        NSLog(@"任务:%@ 延迟%.1fs添加到主队列",name,delay);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.mainQueue addOperation:task];
-        });
-    }
+    [self addTaskOnMainQueue:task name:name afterDelay:delay];
 }
 - (void)addAsyncTaskOnMainQueue:(NSString *)name executionBlock:(void(^)(void(^doneBlock)(void)))block {
     [self addAsyncTaskOnMainQueue:name afterDelay:0 executionBlock:block];
@@ -241,8 +227,20 @@
 /// @param delay 延迟添加时间
 /// @param block 任务操作
 - (void)addSyncTaskOnMainQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block {
-    NSAssert(name.length != 0, @"必须填写任务名称!");
     OperationTask *task = [[OperationTask alloc]initWithSyncTaskBlock:block];
+    [self addTaskOnMainQueue:task name:name afterDelay:delay];
+}
+
+- (void)addSyncTaskOnMainQueue:(NSString *)name executionBlock:(void(^)(void))block {
+    [self addSyncTaskOnMainQueue:name afterDelay:0 executionBlock:block];
+}
+
+/// 添加任务到主队列
+/// @param task 任务
+/// @param name 任务名称
+/// @param delay 延迟添加时间
+- (void)addTaskOnMainQueue:(OperationTask *)task name:(NSString *)name afterDelay:(NSTimeInterval)delay  {
+    NSAssert(name.length != 0, @"必须填写任务名称!");
     task.name = name;
     [self addObserverForTask:task];
 #ifdef DEBUG
@@ -259,9 +257,6 @@
     }
 }
 
-- (void)addSyncTaskOnMainQueue:(NSString *)name executionBlock:(void(^)(void))block {
-    [self addSyncTaskOnMainQueue:name afterDelay:0 executionBlock:block];
-}
 
 /// 添加异步串行队列
 /// @param name 任务名称
@@ -269,18 +264,48 @@
 /// @param block 任务操作
 - (void)addTaskOnSerialQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block {
     NSAssert(name.length != 0, @"必须填写任务名称!");
+    OperationTask *task = [[OperationTask alloc]initWithSyncTaskBlock:block];
+    task.name = name;
+    [self addObserverForTask:task];
+#ifdef DEBUG
+    [self.taskCollection addTaskToSerialQueue:delay == 0 ? name : [NSString stringWithFormat:@"延迟%.1fs_%@",delay,name] taskID:[NSString stringWithFormat:@"%p",task]];
+#endif
+    if (delay == 0) {
+        [self.serialQueue addOperation:task];
+        NSLog(@"任务:%@ 添加到异步串行队列",name);
+    }else {
+        NSLog(@"任务:%@ 延迟%.1fs添加到异步串行队列",name,delay);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.serialQueue addOperation:task];
+        });
+    }
 }
 
 - (void)addTaskOnSerialQueue:(NSString *)name executionBlock:(void(^)(void))block {
     [self addTaskOnSerialQueue:name afterDelay:0 executionBlock:block];
 }
 
-/// 添加任务到异步并发任务
+/// 添加任务到异步并发队列
 /// @param name 任务名称
 /// @param delay 延迟添加时间
 /// @param block 任务操作
 - (void)addTaskOnConcurrentQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block {
     NSAssert(name.length != 0, @"必须填写任务名称!");
+    OperationTask *task = [[OperationTask alloc]initWithSyncTaskBlock:block];
+    task.name = name;
+    [self addObserverForTask:task];
+#ifdef DEBUG
+    [self.taskCollection addTaskToConcurrentQueue:delay == 0 ? name : [NSString stringWithFormat:@"延迟%.1fs_%@",delay,name] taskID:[NSString stringWithFormat:@"%p",task]];
+#endif
+    if (delay == 0) {
+        [self.concurrentQueue addOperation:task];
+        NSLog(@"任务:%@ 添加到异步并发队列",name);
+    }else {
+        NSLog(@"任务:%@ 延迟%.1fs添加到异步并发队列",name,delay);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.concurrentQueue addOperation:task];
+        });
+    }
 }
 
 - (void)addTaskOnConcurrentQueue:(NSString *)name executionBlock:(void(^)(void))block {

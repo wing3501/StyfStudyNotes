@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTaskOnSerialQueue:(NSString *)name afterDelay:(NSTimeInterval)delay executionBlock:(void(^)(void))block;
 - (void)addTaskOnSerialQueue:(NSString *)name executionBlock:(void(^)(void))block;
 
-/// 添加任务到异步并发任务
+/// 添加任务到异步并发队列
 /// @param name 任务名称
 /// @param delay 延迟添加时间
 /// @param block 任务操作
