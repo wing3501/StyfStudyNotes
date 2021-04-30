@@ -9,13 +9,35 @@
 #import "OperationTask.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface TaskCollectionModel : NSObject
+/// 任务标识
+@property (nonatomic, copy) NSString *taskID;
+/// 任务名称
+@property (nonatomic, copy) NSString *taskName;
+@end
+
+@implementation TaskCollectionModel
+
+- (instancetype)initWithTaskID:(NSString *)taskID taskName:(NSString *)taskName {
+    self = [super init];
+    if (self) {
+        _taskID = taskID;
+        _taskName = taskName;
+    }
+    return self;
+}
+
++ (instancetype)modelWithTaskID:(NSString *)taskID taskName:(NSString *)taskName {
+    return [[self alloc]initWithTaskID:taskID taskName:taskName];
+}
+
+@end
+
 @interface TaskCollection : NSObject
 /// 任务ID-->所在组下标
 @property (nonatomic, strong) NSMutableDictionary<NSString *,NSNumber *> *taskIDtoArrayIndex;
-/// 任务ID-->组内位置下标
-@property (nonatomic, strong) NSMutableDictionary<NSString *,NSNumber *> *taskIDtoIndex;
 /// 任务名称数组
-@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSString *> *> *taskArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<TaskCollectionModel *> *> *taskArray;
 @end
 
 @implementation TaskCollection
@@ -46,8 +68,7 @@
 - (void)addTask:(NSString *)taskName taskID:(NSString *)taskID toArrayIndex:(NSInteger)index {
     [self.taskIDtoArrayIndex setObject:@(index) forKey:taskID];
     NSMutableArray *array = self.taskArray[index];
-    [array addObject:taskName];
-    [self.taskIDtoIndex setObject:@(array.count - 1) forKey:taskID];
+    [array addObject:[TaskCollectionModel modelWithTaskID:taskID taskName:taskName]];
 }
 
 /// 移除任务
@@ -56,11 +77,17 @@
     NSNumber *arrayIndex = [self.taskIDtoArrayIndex objectForKey:taskID];
     if (arrayIndex) {
         [self.taskIDtoArrayIndex removeObjectForKey:taskID];
-        NSNumber *index = [self.taskIDtoIndex objectForKey:taskID];
-        if (index) {
-            [self.taskIDtoIndex removeObjectForKey:taskID];
-            NSMutableArray *array = self.taskArray[arrayIndex.unsignedIntegerValue];
-            [array removeObjectAtIndex:index.unsignedIntegerValue];
+        NSMutableArray *array = self.taskArray[arrayIndex.unsignedIntegerValue];
+        NSInteger index = -1;
+        for (NSInteger i = 0; i < array.count; i++) {
+            TaskCollectionModel *model = array[i];
+            if ([model.taskID isEqualToString:taskID]) {
+                index = i;
+                break;
+            }
+        }
+        if (index > -1) {
+            [array removeObjectAtIndex:index];
         }
     }
 }
@@ -70,9 +97,12 @@
 - (NSString *)taskNameForTaskID:(NSString *)taskID {
     NSNumber *arrayIndex = [self.taskIDtoArrayIndex objectForKey:taskID];
     if (arrayIndex) {
-        NSNumber *index = [self.taskIDtoIndex objectForKey:taskID];
-        if (index) {
-            return self.taskArray[arrayIndex.unsignedIntegerValue][index.unsignedIntegerValue];
+        NSMutableArray *array = self.taskArray[arrayIndex.unsignedIntegerValue];
+        for (NSInteger i = 0; i < array.count; i++) {
+            TaskCollectionModel *model = array[i];
+            if ([model.taskID isEqualToString:taskID]) {
+                return model.taskName;
+            }
         }
     }
     return nil;
@@ -81,19 +111,19 @@
 /// 打印所有任务名称
 - (void)printAllTaskName {
     NSLog(@"主队列任务：%ld",(long)self.taskArray[0].count);
-    [self.taskArray[0] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"任务%ld:%@",(long)(idx + 1),obj);
+    [self.taskArray[0] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
     }];
     
     NSLog(@"串行队列任务：%ld",(long)self.taskArray[1].count);
-    [self.taskArray[1] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"任务%ld:%@",(long)(idx + 1),obj);
-    }];
+     [self.taskArray[1] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
+     }];
     
     NSLog(@"并行队列任务：%ld",(long)self.taskArray[2].count);
-    [self.taskArray[2] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"任务%ld:%@",(long)(idx + 1),obj);
-    }];
+      [self.taskArray[2] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+          NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
+      }];
 }
 
 /// 集合是否为空
@@ -106,13 +136,6 @@
         _taskIDtoArrayIndex = [NSMutableDictionary dictionary];
     }
     return _taskIDtoArrayIndex;
-}
-
-- (NSMutableDictionary<NSString *,NSNumber *> *)taskIDtoIndex {
-    if (!_taskIDtoIndex) {
-        _taskIDtoIndex = [NSMutableDictionary dictionary];
-    }
-    return _taskIDtoIndex;
 }
 
 - (NSMutableArray<NSMutableArray<NSString *> *> *)taskArray {
