@@ -103,4 +103,8 @@
 - (BOOL)isAsynchronous {
     return YES;
 }
+
+- (void)dealloc {
+//    NSLog(@"%@ --- dealloc",self.name);
+}
 @end

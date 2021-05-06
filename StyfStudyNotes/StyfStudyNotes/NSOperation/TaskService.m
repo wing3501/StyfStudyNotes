@@ -353,6 +353,7 @@
     for (dispatch_block_t block in self.waitToAddArray) {
         block();
     }
+    [self.waitToAddArray removeAllObjects];
 }
 
 #pragma mark - private
@@ -362,6 +363,13 @@
 - (void)addObserverForTask:(id)task {
     [task addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:nil];
     [task addObserver:self forKeyPath:@"isExecuting" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+/// 移除任务状态监听
+/// @param task 任务
+- (void)removeObserverForTask:(id)task {
+    [task removeObserver:self forKeyPath:@"isFinished"];
+    [task removeObserver:self forKeyPath:@"isExecuting"];
 }
 
 /// 打印所有任务
@@ -392,6 +400,7 @@
     }else if([keyPath isEqualToString:@"isFinished"]) {
         BOOL isFinished = [change[NSKeyValueChangeNewKey] boolValue];
         if (isFinished) {
+            [self removeObserverForTask:object];
 #ifdef DEBUG
             [self.taskCollection removeTask:[NSString stringWithFormat:@"%p",object]];
             if ([self.taskCollection isMainThreadTaskEmpty]) {
@@ -402,6 +411,7 @@
             }
 #endif
         }
+        
     }
 }
 
