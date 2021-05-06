@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
+/// 添加主线程阻塞任务
+/// @param name 任务名称
+/// @param block 任务操作
+- (void)addSyncTaskOnMainThread:(NSString *)name executionBlock:(void(^)(void))block;
 
 /// 添加异步任务到主队列
 /// @param name 任务名称

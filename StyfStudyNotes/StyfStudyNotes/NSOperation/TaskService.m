@@ -42,23 +42,30 @@
 
 @implementation TaskCollection
 
+/// 添加阻塞任务到主线程
+/// @param taskName 任务名称
+/// @param taskID 任务标识
+- (void)addTaskToMainThread:(NSString *)taskName taskID:(NSString *)taskID {
+    [self addTask:taskName taskID:taskID toArrayIndex:0];
+}
+
 /// 添加任务到主队列
 /// @param taskName 任务名称
 /// @param taskID 任务标识
 - (void)addTaskToMainQueue:(NSString *)taskName taskID:(NSString *)taskID {
-    [self addTask:taskName taskID:taskID toArrayIndex:0];
+    [self addTask:taskName taskID:taskID toArrayIndex:1];
 }
 /// 添加任务到串行队列
 /// @param taskName 任务名称
 /// @param taskID 任务标识
 - (void)addTaskToSerialQueue:(NSString *)taskName taskID:(NSString *)taskID {
-    [self addTask:taskName taskID:taskID toArrayIndex:1];
+    [self addTask:taskName taskID:taskID toArrayIndex:2];
 }
 /// 添加任务到并发队列
 /// @param taskName 任务名称
 /// @param taskID 任务标识
 - (void)addTaskToConcurrentQueue:(NSString *)taskName taskID:(NSString *)taskID {
-    [self addTask:taskName taskID:taskID toArrayIndex:2];
+    [self addTask:taskName taskID:taskID toArrayIndex:3];
 }
 
 /// 添加任务
@@ -110,27 +117,38 @@
 
 /// 打印所有任务名称
 - (void)printAllTaskName {
-    NSLog(@"主队列任务：%ld",(long)self.taskArray[0].count);
+    NSLog(@"主线程阻塞任务：%ld",(long)self.taskArray[0].count);
     [self.taskArray[0] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
     }];
     
     NSLog(@"\n");
-    NSLog(@"串行队列任务：%ld",(long)self.taskArray[1].count);
-     [self.taskArray[1] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@"主队列任务：%ld",(long)self.taskArray[1].count);
+    [self.taskArray[1] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
+    }];
+    
+    NSLog(@"\n");
+    NSLog(@"串行队列任务：%ld",(long)self.taskArray[2].count);
+     [self.taskArray[2] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
          NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
      }];
     
     NSLog(@"\n");
-    NSLog(@"并发队列任务：%ld",(long)self.taskArray[2].count);
-      [self.taskArray[2] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@"并发队列任务：%ld",(long)self.taskArray[3].count);
+      [self.taskArray[3] enumerateObjectsUsingBlock:^(TaskCollectionModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
           NSLog(@"任务%ld:%@",(long)(idx + 1),obj.taskName);
       }];
 }
 
 /// 集合是否为空
 - (BOOL)isEmpty {
-    return self.taskArray[0].count == 0 && self.taskArray[1].count == 0 && self.taskArray[2].count == 0;
+    return self.taskArray[0].count == 0 && self.taskArray[1].count == 0 && self.taskArray[2].count == 0 && self.taskArray[3].count == 0;
+}
+
+/// 需要在主线程执行的任务为空
+- (BOOL)isMainThreadTaskEmpty {
+    return self.taskArray[0].count == 0 && self.taskArray[1].count == 0;
 }
 
 - (NSMutableDictionary<NSString *,NSNumber *> *)taskIDtoArrayIndex {
@@ -143,7 +161,7 @@
 - (NSMutableArray<NSMutableArray<TaskCollectionModel *> *> *)taskArray {
     if (!_taskArray) {
         _taskArray = [NSMutableArray array];
-        for (NSInteger i = 0; i < 3; i++) {
+        for (NSInteger i = 0; i < 4; i++) {
             [_taskArray addObject:[NSMutableArray array]];
         }
     }
@@ -211,6 +229,23 @@
 }
 
 #pragma mark - public
+
+/// 添加主线程阻塞任务
+/// @param name 任务名称
+/// @param block 任务操作
+- (void)addSyncTaskOnMainThread:(NSString *)name executionBlock:(void(^)(void))block {
+    NSAssert(name.length != 0, @"必须填写任务名称!");
+    OperationTask *task = [[OperationTask alloc]initWithSyncTaskBlock:block];
+    task.name = name;
+    [self addObserverForTask:task];
+#ifdef DEBUG
+    [self.taskCollection addTaskToMainThread:name taskID:[NSString stringWithFormat:@"%p",task]];
+    NSLog(@"任务:%@ 添加到主线程阻塞任务",name);
+#endif
+    [self.waitToAddArray addObject:^{
+        [task start];
+    }];
+}
 
 /// 添加异步任务到主队列
 /// @param name 任务名称
@@ -295,12 +330,24 @@
 
 /// 开始处理任务
 - (void)start {
+#ifndef dispatch_main_async_safe
+#define dispatch_main_async_safe(block)\
+    if (dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL) == dispatch_queue_get_label(dispatch_get_main_queue())) {\
+        block();\
+    } else {\
+        dispatch_async(dispatch_get_main_queue(), block);\
+    }
+#endif
+    
+    dispatch_main_async_safe(^{
+        [self startTask];
+    });
+}
+
+- (void)startTask {
 #ifdef DEBUG
     _now = CACurrentMediaTime();
     [self printAllTask];
-    [self addSyncTaskOnMainQueue:@"主线程耗时" executionBlock:^{
-        NSLog(@"主线程耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
-    }];
 #endif
     //添加到队列里就会开始执行
     for (dispatch_block_t block in self.waitToAddArray) {
@@ -347,6 +394,9 @@
         if (isFinished) {
 #ifdef DEBUG
             [self.taskCollection removeTask:[NSString stringWithFormat:@"%p",object]];
+            if ([self.taskCollection isMainThreadTaskEmpty]) {
+                NSLog(@"主线程任务结束，耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
+            }
             if ([self.taskCollection isEmpty]) {
                 NSLog(@"任务全部结束，总耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
             }
