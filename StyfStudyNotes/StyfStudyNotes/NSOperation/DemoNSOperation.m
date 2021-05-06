@@ -28,62 +28,62 @@
 
 - (void)serviceTest {
     
-//    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"微博SDK" executionBlock:^{
-//        NSLog(@"微博SDK--初始化start");
-//        sleep(2);
-//        NSLog(@"微博SDK--初始化end");
-//    }];
-//
-//    [[TaskService sharedInstance] addSyncTaskOnMainQueue:@"友盟SDK" afterDelay:2.1 executionBlock:^{
-//        NSLog(@"友盟SDK--初始化start");
-//        sleep(2);
-//        NSLog(@"友盟SDK--初始化end");
-//    }];
-//
-//    [[TaskService sharedInstance]addTaskOnSerialQueue:@"微信SDK" executionBlock:^{
-//        NSLog(@"微信SDK--初始化start");
-//        sleep(1);
-//        NSLog(@"微信SDK--初始化end");
-//    }];
-//
-//    [[TaskService sharedInstance]addTaskOnSerialQueue:@"支付宝SDK" executionBlock:^{
-//        NSLog(@"支付宝SDK--初始化start");
-//        sleep(1);
-//        NSLog(@"支付宝SDK--初始化end");
-//    }];
-//
-//    [[TaskService sharedInstance]addTaskOnSerialQueue:@"极光SDK" executionBlock:^{
-//        NSLog(@"极光SDK--初始化start");
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            sleep(1);
-//            NSLog(@"极光SDK--do");
-//        });
-//        NSLog(@"极光SDK--初始化end");
-//    }];
-//
-//    for (NSInteger i = 0; i < 10; i++) {
-//        NSString *name = [NSString stringWithFormat:@"请求%ld",(long)i];
-//        [[TaskService sharedInstance]addTaskOnConcurrentQueue:name executionBlock:^{
-//            NSLog(@"%@--初始化start",name);
-//            sleep(1);
-//            NSLog(@"%@--初始化end",name);
-//        }];
-//    }
-//
-//    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求99" executionBlock:^{
-//        NSLog(@"请求99--初始化start");
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            sleep(3);
-//            NSLog(@"请求99--do");
-//        });
-//        NSLog(@"请求99--初始化end");
-//    }];
-//
-//    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求100" afterDelay:6 executionBlock:^{
-//        NSLog(@"请求100--初始化start");
-//        sleep(1);
-//        NSLog(@"请求100--初始化end");
-//    }];
+    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"微博SDK" executionBlock:^{
+        NSLog(@"微博SDK--初始化start");
+        sleep(2);
+        NSLog(@"微博SDK--初始化end");
+    }];
+
+    [[TaskService sharedInstance] addSyncTaskOnMainQueue:@"友盟SDK" afterDelay:2.1 executionBlock:^{
+        NSLog(@"友盟SDK--初始化start");
+        sleep(2);
+        NSLog(@"友盟SDK--初始化end");
+    }];
+
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"微信SDK" executionBlock:^{
+        NSLog(@"微信SDK--初始化start");
+        sleep(1);
+        NSLog(@"微信SDK--初始化end");
+    }];
+
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"支付宝SDK" executionBlock:^{
+        NSLog(@"支付宝SDK--初始化start");
+        sleep(1);
+        NSLog(@"支付宝SDK--初始化end");
+    }];
+
+    [[TaskService sharedInstance]addTaskOnSerialQueue:@"极光SDK" executionBlock:^{
+        NSLog(@"极光SDK--初始化start");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            sleep(1);
+            NSLog(@"极光SDK--do");
+        });
+        NSLog(@"极光SDK--初始化end");
+    }];
+
+    for (NSInteger i = 0; i < 10; i++) {
+        NSString *name = [NSString stringWithFormat:@"请求%ld",(long)i];
+        [[TaskService sharedInstance]addTaskOnConcurrentQueue:name executionBlock:^{
+            NSLog(@"%@--初始化start",name);
+            sleep(1);
+            NSLog(@"%@--初始化end",name);
+        }];
+    }
+
+    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求99" executionBlock:^{
+        NSLog(@"请求99--初始化start");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            sleep(3);
+            NSLog(@"请求99--do");
+        });
+        NSLog(@"请求99--初始化end");
+    }];
+
+    [[TaskService sharedInstance]addTaskOnConcurrentQueue:@"请求100" afterDelay:6 executionBlock:^{
+        NSLog(@"请求100--初始化start");
+        sleep(1);
+        NSLog(@"请求100--初始化end");
+    }];
     
     [[TaskService sharedInstance]addAsyncTaskOnMainQueue:@"xxx" executionBlock:^(void (^ _Nonnull doneBlock)(void)) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

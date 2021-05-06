@@ -296,8 +296,11 @@
 /// 开始处理任务
 - (void)start {
 #ifdef DEBUG
-            _now = CACurrentMediaTime();
-            [self printAllTask];
+    _now = CACurrentMediaTime();
+    [self printAllTask];
+    [self addSyncTaskOnMainQueue:@"主线程耗时" executionBlock:^{
+        NSLog(@"主线程耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
+    }];
 #endif
     //添加到队列里就会开始执行
     for (dispatch_block_t block in self.waitToAddArray) {
