@@ -22,44 +22,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self remap1];
+//    [self remap1];
 }
 
-extern void *thunktemplate;   //声明使用thunk模板符号，注意不要带下划线
-
-- (void)remap1 {
-    vm_address_t thunkaddr = 0;
-    vm_size_t page_size = 0;
-    host_page_size(mach_host_self(), &page_size);
-    //分配2页虚拟内存，
-    kern_return_t ret = vm_allocate(mach_task_self(), &thunkaddr, page_size * 2, VM_FLAGS_ANYWHERE);
-    if (ret == KERN_SUCCESS)
-    {
-        //第一页用来重映射到thunktemplate地址处。
-        vm_prot_t cur,max;
-        ret = vm_remap(mach_task_self(), &thunkaddr, page_size, 0, VM_FLAGS_FIXED | VM_FLAGS_OVERWRITE, mach_task_self(), (vm_address_t)&thunktemplate, false, &cur, &max, VM_INHERIT_SHARE);
-        if (ret == KERN_SUCCESS)
-        {
-            student_t students[5] = {{20,"Tom"},{15,"Jack"},{30,"Bob"},{10,"Lily"},{30,"Joe"}};
-            int idxs[5] = {0,1,2,3,4};
-            
-            //第二页的对应位置填充数据。
-            void **p = (void**)(thunkaddr + page_size);
-            p[0] = students;
-            p[1] = ageidxcomparfn;
-            
-            //将thunkaddr作为回调函数的地址。
-            qsort(idxs, 5, sizeof(int), (int (*)(const void*, const void*))thunkaddr);
-            for (int i = 0; i < 5; i++)
-            {
-                printf("student:[age:%d, name:%s]\n", students[idxs[i]].age, students[idxs[i]].name);
-            }
-        }
-        
-        vm_deallocate(mach_task_self(), thunkaddr, page_size * 2);
-    }
-    
-}
+//extern void *thunktemplate;   //声明使用thunk模板符号，注意不要带下划线
+//
+//- (void)remap1 {
+//    vm_address_t thunkaddr = 0;
+//    vm_size_t page_size = 0;
+//    host_page_size(mach_host_self(), &page_size);
+//    //分配2页虚拟内存，
+//    kern_return_t ret = vm_allocate(mach_task_self(), &thunkaddr, page_size * 2, VM_FLAGS_ANYWHERE);
+//    if (ret == KERN_SUCCESS)
+//    {
+//        //第一页用来重映射到thunktemplate地址处。
+//        vm_prot_t cur,max;
+//        ret = vm_remap(mach_task_self(), &thunkaddr, page_size, 0, VM_FLAGS_FIXED | VM_FLAGS_OVERWRITE, mach_task_self(), (vm_address_t)&thunktemplate, false, &cur, &max, VM_INHERIT_SHARE);
+//        if (ret == KERN_SUCCESS)
+//        {
+//            student_t students[5] = {{20,"Tom"},{15,"Jack"},{30,"Bob"},{10,"Lily"},{30,"Joe"}};
+//            int idxs[5] = {0,1,2,3,4};
+//
+//            //第二页的对应位置填充数据。
+//            void **p = (void**)(thunkaddr + page_size);
+//            p[0] = students;
+//            p[1] = ageidxcomparfn;
+//
+//            //将thunkaddr作为回调函数的地址。
+//            qsort(idxs, 5, sizeof(int), (int (*)(const void*, const void*))thunkaddr);
+//            for (int i = 0; i < 5; i++)
+//            {
+//                printf("student:[age:%d, name:%s]\n", students[idxs[i]].age, students[idxs[i]].name);
+//            }
+//        }
+//
+//        vm_deallocate(mach_task_self(), thunkaddr, page_size * 2);
+//    }
+//
+//}
 
 //因为新分配的虚拟内存是以页为单位的，所以要被映射的内存也要页对齐，所以这里的函数起始地址是以页为单位对齐的。
 int __attribute__ ((aligned (PAGE_MAX_SIZE))) testfn(int a, int b)

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40E4B697AAC8C7951ECD2CB0 /* Pods_StyfStudyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -59,6 +58,7 @@
 		928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */; };
 		928934FA263A4B2900BAF8E2 /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F9263A4B2900BAF8E2 /* TaskService.m */; };
 		928934FE263A514200BAF8E2 /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934FD263A514200BAF8E2 /* OperationTask.m */; };
+		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -75,11 +75,11 @@
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
+		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
-		573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyfStudyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -178,6 +178,8 @@
 		928934F9263A4B2900BAF8E2 /* TaskService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
 		928934FC263A514200BAF8E2 /* OperationTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationTask.h; sourceTree = "<group>"; };
 		928934FD263A514200BAF8E2 /* OperationTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
+		928D8B032644CA0900B3E4AE /* WebViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewDemo.h; sourceTree = "<group>"; };
+		928D8B042644CA0900B3E4AE /* WebViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewDemo.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		92B265A126353BE500C4D16D /* SystemNotify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNotify.m; sourceTree = "<group>"; };
 		92B265A7263546D400C4D16D /* Builtin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builtin.h; sourceTree = "<group>"; };
 		92B265A8263546D400C4D16D /* Builtin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Builtin.m; sourceTree = "<group>"; };
+		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,7 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4B697AAC8C7951ECD2CB0 /* Pods_StyfStudyNotes.framework in Frameworks */,
+				9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +224,7 @@
 		68CC14C85F7CE063169348C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				573A40482394D859082EED5B /* Pods_StyfStudyNotes.framework */,
+				B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -436,6 +439,15 @@
 			path = NSOperation;
 			sourceTree = "<group>";
 		};
+		928D8B022644C99200B3E4AE /* Webview */ = {
+			isa = PBXGroup;
+			children = (
+				928D8B032644CA0900B3E4AE /* WebViewDemo.h */,
+				928D8B042644CA0900B3E4AE /* WebViewDemo.m */,
+			);
+			path = Webview;
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +475,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				928D8B022644C99200B3E4AE /* Webview */,
 				928934F2263A4A9900BAF8E2 /* NSOperation */,
 				9273F4E726365D5600B78638 /* mmap */,
 				92B265A62635469E00C4D16D /* Builtin */,
@@ -553,7 +566,6 @@
 				92A8D7C425D288DA0008EFAA /* Sources */,
 				92A8D7C525D288DA0008EFAA /* Frameworks */,
 				92A8D7C625D288DA0008EFAA /* Resources */,
-				9E01535837DE6A32D4579B30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -610,23 +622,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9E01535837DE6A32D4579B30 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AFC630EEB1FEE6F4E3D0288F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,6 +700,7 @@
 				928934FE263A514200BAF8E2 /* OperationTask.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
+				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,

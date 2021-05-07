@@ -30,7 +30,7 @@
                    @{@"title":@"__builtin_",@"class":@"Builtin"},
                    @{@"title":@"mmap",@"class":@"MMAPNote"},
                    @{@"title":@"NSOperation",@"class":@"DemoNSOperation"},
-                   
+                   @{@"title":@"WebView",@"class":@"WebViewDemo"},
     ];
     [self.view addSubview:self.tableView];
 }
