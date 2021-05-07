@@ -8,6 +8,25 @@
 #import "OperationTask.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface OperationTaskDoneBlockChecker : NSObject
+/// block已经被执行过了
+@property (nonatomic, readonly, assign) BOOL hasBeenCalled;
+@end
+
+@implementation OperationTaskDoneBlockChecker
+
+- (void)dealloc {
+    if (_hasBeenCalled)
+        return;
+    [NSException raise:NSInternalInconsistencyException format:@"doneBlock not called!"];
+}
+
+- (void)didCalled {
+    _hasBeenCalled = YES;
+}
+
+@end
+
 @interface OperationTask()
 /// 同步任务block
 @property (nonatomic, copy) SyncTaskBlock syncTaskBlock;
@@ -56,7 +75,12 @@
             self.syncTaskBlock();
             [self done];
         }else if (self.asyncTaskBlock) {
+            OperationTaskDoneBlockChecker *checker = [[OperationTaskDoneBlockChecker alloc]init];
             self.asyncTaskBlock(^{
+                if (checker.hasBeenCalled) {
+                    return;
+                }
+                [checker didCalled];
                 [self done];
             });
         }else {
@@ -105,6 +129,6 @@
 }
 
 - (void)dealloc {
-//    NSLog(@"%@ --- dealloc",self.name);
+    NSLog(@"%@ --- dealloc",self.name);
 }
 @end
