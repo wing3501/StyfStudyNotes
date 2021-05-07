@@ -22,6 +22,17 @@
     self.view.backgroundColor = [UIColor yellowColor];
     _data = 1;
     _concurrentQueue = dispatch_queue_create("readwriteQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+}
+
+- (void)safeKeyPath {
+#define MZKeyPath(OBJ, PATH) \
+(((void)(NO && ((void)(((typeof(OBJ))nil).PATH), NO)), @# PATH))
+
+    MZKeyPath(NSString *, lowercaseString.uppercaseString.length);
+    MZKeyPath(self, title.lowercaseString.uppercaseString.UTF8String);
+    
+    (((void)(NO && ((void)(((typeof(self))nil).title.lowercaseString), NO)), @"title.lowercaseString"));
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
