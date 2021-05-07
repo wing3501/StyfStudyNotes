@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define SyncTask(name,block) [[TaskService sharedInstance] addSyncTaskOnMainThread:name executionBlock:block];
+#define AsyncTask(name,block) [[TaskService sharedInstance] addTaskOnConcurrentQueue:name executionBlock:block];
+
 @interface TaskService : NSObject
 
 + (instancetype)sharedInstance;

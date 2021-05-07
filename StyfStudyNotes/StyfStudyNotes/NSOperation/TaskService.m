@@ -183,6 +183,8 @@
 @property (nonatomic, assign) CFTimeInterval now;
 /// 等待一起添加到队列里的任务操作
 @property (nonatomic, strong) NSMutableArray<dispatch_block_t> *waitToAddArray;
+/// 主线程任务都结束了
+@property (nonatomic, assign) BOOL mainThreadTaskIsOver;
 @end
 
 @implementation TaskService
@@ -348,6 +350,7 @@
 #ifdef DEBUG
     _now = CACurrentMediaTime();
     [self printAllTask];
+    _mainThreadTaskIsOver = [self.taskCollection isMainThreadTaskEmpty];
 #endif
     //添加到队列里就会开始执行
     for (dispatch_block_t block in self.waitToAddArray) {
@@ -402,12 +405,30 @@
         if (isFinished) {
             [self removeObserverForTask:object];
 #ifdef DEBUG
+            static NSMutableArray *sortLogArray = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                sortLogArray = [NSMutableArray array];
+            });
+            OperationTask *task = object;
+            [sortLogArray addObject:@{@"log":[NSString stringWithFormat:@"%@ 耗时 %f",task.name,task.cost],@"cost":@(task.cost)}];
+            
             [self.taskCollection removeTask:[NSString stringWithFormat:@"%p",object]];
-            if ([self.taskCollection isMainThreadTaskEmpty]) {
+            if (!_mainThreadTaskIsOver && [self.taskCollection isMainThreadTaskEmpty]) {
+                _mainThreadTaskIsOver = YES;
                 NSLog(@"主线程任务结束，耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
             }
             if ([self.taskCollection isEmpty]) {
                 NSLog(@"任务全部结束，总耗时：%f",(CACurrentMediaTime() - self.now) * 1000.0);
+                NSLog(@"------------------------------------------------");
+                NSLog(@"任务耗时排行");
+                [sortLogArray sortUsingComparator:^NSComparisonResult(NSDictionary *  _Nonnull obj1, NSDictionary * _Nonnull obj2) {
+                    return [obj1[@"cost"] doubleValue] < [obj2[@"cost"] doubleValue];
+                }];
+                for (NSDictionary *dic in sortLogArray) {
+                    NSLog(@"%@",dic[@"log"]);
+                }
+                [sortLogArray removeAllObjects];
             }
 #endif
         }

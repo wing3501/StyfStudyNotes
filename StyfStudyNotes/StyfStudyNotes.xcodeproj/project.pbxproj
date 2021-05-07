@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,9 +56,9 @@
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */; };
-		928934FA263A4B2900BAF8E2 /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F9263A4B2900BAF8E2 /* TaskService.m */; };
-		928934FE263A514200BAF8E2 /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934FD263A514200BAF8E2 /* OperationTask.m */; };
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
+		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
+		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
@@ -174,12 +174,12 @@
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
 		928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNSOperation.h; sourceTree = "<group>"; };
 		928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNSOperation.m; sourceTree = "<group>"; };
-		928934F8263A4B2900BAF8E2 /* TaskService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
-		928934F9263A4B2900BAF8E2 /* TaskService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
-		928934FC263A514200BAF8E2 /* OperationTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationTask.h; sourceTree = "<group>"; };
-		928934FD263A514200BAF8E2 /* OperationTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
 		928D8B032644CA0900B3E4AE /* WebViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewDemo.h; sourceTree = "<group>"; };
 		928D8B042644CA0900B3E4AE /* WebViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewDemo.m; sourceTree = "<group>"; };
+		928D8B2A264535FE00B3E4AE /* OperationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTask.h; sourceTree = "<group>"; };
+		928D8B2B264535FE00B3E4AE /* TaskService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
+		928D8B2C264535FE00B3E4AE /* TaskService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
+		928D8B2D264535FF00B3E4AE /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -431,10 +431,10 @@
 			children = (
 				928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */,
 				928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */,
-				928934F8263A4B2900BAF8E2 /* TaskService.h */,
-				928934F9263A4B2900BAF8E2 /* TaskService.m */,
-				928934FC263A514200BAF8E2 /* OperationTask.h */,
-				928934FD263A514200BAF8E2 /* OperationTask.m */,
+				928D8B2A264535FE00B3E4AE /* OperationTask.h */,
+				928D8B2D264535FF00B3E4AE /* OperationTask.m */,
+				928D8B2B264535FE00B3E4AE /* TaskService.h */,
+				928D8B2C264535FE00B3E4AE /* TaskService.m */,
 			);
 			path = NSOperation;
 			sourceTree = "<group>";
@@ -663,6 +663,7 @@
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
+				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
@@ -687,17 +688,16 @@
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
-				928934FA263A4B2900BAF8E2 /* TaskService.m in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
+				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
-				928934FE263A514200BAF8E2 /* OperationTask.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,

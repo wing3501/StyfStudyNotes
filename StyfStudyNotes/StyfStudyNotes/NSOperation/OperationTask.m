@@ -32,8 +32,7 @@
 @property (nonatomic, copy) SyncTaskBlock syncTaskBlock;
 /// 异步任务block
 @property (nonatomic, copy) AsyncTaskBlock asyncTaskBlock;
-/// 执行时间
-@property (nonatomic, assign) CFTimeInterval now;
+
 @end
 
 @implementation OperationTask
@@ -58,7 +57,7 @@
 }
 
 - (void)start {
-    _now = CACurrentMediaTime();
+    _cost = CACurrentMediaTime();
     @synchronized (self) {
         if (self.isCancelled) {
             self.finished = YES;
@@ -94,7 +93,8 @@
     @synchronized (self) {
         if (self.isExecuting) {
 #ifdef DEBUG
-            NSLog(@"任务:%@ 执行结束,耗时：%f",self.name,(CACurrentMediaTime() - _now) * 1000.0);
+            _cost = (CACurrentMediaTime() - _cost) * 1000.0;
+            NSLog(@"任务:%@ 执行结束,耗时：%f %@",self.name,_cost,[NSThread currentThread]);
 #endif
             self.executing = NO;
             self.finished = YES;
@@ -129,6 +129,6 @@
 }
 
 - (void)dealloc {
-    NSLog(@"%@ --- dealloc",self.name);
+//    NSLog(@"%@ --- dealloc",self.name);
 }
 @end

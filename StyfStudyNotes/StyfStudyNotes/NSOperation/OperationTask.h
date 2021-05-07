@@ -15,6 +15,9 @@ typedef void (^AsyncTaskBlock)(void(^doneBlock)(void));
 
 @interface OperationTask : NSOperation
 
+/// 执行时间
+@property (nonatomic, readonly, assign) CFTimeInterval cost;
+
 - (instancetype)initWithSyncTaskBlock:(SyncTaskBlock)syncTaskBlock;
 - (instancetype)initWithAsyncTaskBlock:(AsyncTaskBlock)asyncTaskBlock;
 @end
