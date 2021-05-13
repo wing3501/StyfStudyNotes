@@ -31,6 +31,7 @@
                    @{@"title":@"mmap",@"class":@"MMAPNote"},
                    @{@"title":@"NSOperation",@"class":@"DemoNSOperation"},
                    @{@"title":@"WebView",@"class":@"WebViewDemo"},
+                   @{@"title":@"网络拦截",@"class":@"NetworkDemo"},
     ];
     [self.view addSubview:self.tableView];
 }

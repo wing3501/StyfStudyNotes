@@ -39,6 +39,7 @@
 		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
 		92426F2F26246C77002062B7 /* RAMExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F2E26246C77002062B7 /* RAMExport.m */; };
 		92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F342624745E002062B7 /* LazyLoadDynamicFramework.m */; };
+		924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 924278BE264CC1C900B518AA /* NetworkDemo.m */; };
 		9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01A25E63DA00008D6BB /* MJBaseDemo.m */; };
 		9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01B25E63DA00008D6BB /* MutexDemo3.m */; };
 		9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */; };
@@ -75,6 +76,7 @@
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
+		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +143,8 @@
 		92426F2E26246C77002062B7 /* RAMExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAMExport.m; sourceTree = "<group>"; };
 		92426F332624745E002062B7 /* LazyLoadDynamicFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyLoadDynamicFramework.h; sourceTree = "<group>"; };
 		92426F342624745E002062B7 /* LazyLoadDynamicFramework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LazyLoadDynamicFramework.m; sourceTree = "<group>"; };
+		924278BD264CC1C900B518AA /* NetworkDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkDemo.h; sourceTree = "<group>"; };
+		924278BE264CC1C900B518AA /* NetworkDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkDemo.m; sourceTree = "<group>"; };
 		9244F01A25E63DA00008D6BB /* MJBaseDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJBaseDemo.m; sourceTree = "<group>"; };
 		9244F01B25E63DA00008D6BB /* MutexDemo3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
 		9244F01C25E63DA00008D6BB /* SemaphoreDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 		92B265A126353BE500C4D16D /* SystemNotify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNotify.m; sourceTree = "<group>"; };
 		92B265A7263546D400C4D16D /* Builtin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builtin.h; sourceTree = "<group>"; };
 		92B265A8263546D400C4D16D /* Builtin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Builtin.m; sourceTree = "<group>"; };
+		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
+		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
 		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,6 +380,17 @@
 			path = "懒加载动态库";
 			sourceTree = "<group>";
 		};
+		924278BC264CC16C00B518AA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92E1A5E8264CC815007D63D5 /* SessionDelegate.h */,
+				92E1A5E9264CC815007D63D5 /* SessionDelegate.m */,
+				924278BD264CC1C900B518AA /* NetworkDemo.h */,
+				924278BE264CC1C900B518AA /* NetworkDemo.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		9244F01925E63DA00008D6BB /* Locks */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +492,7 @@
 				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				924278BC264CC16C00B518AA /* Network */,
 				928D8B022644C99200B3E4AE /* Webview */,
 				928934F2263A4A9900BAF8E2 /* NSOperation */,
 				9273F4E726365D5600B78638 /* mmap */,
@@ -662,6 +680,7 @@
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
+				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
@@ -694,6 +713,7 @@
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
+				92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */,
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
