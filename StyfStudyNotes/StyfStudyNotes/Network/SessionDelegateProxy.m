@@ -1,41 +1,59 @@
 //
-//  SessionDelegate.m
-//  WeiPaiTangClient
+//  SessionDelegateProxy.m
+//  StyfStudyNotes
 //
-//  Created by styf on 2021/5/12.
-//  Copyright © 2021 杭州微拍堂文化创意有限公司. All rights reserved.
+//  Created by styf on 2021/5/13.
 //
 
-#import "SessionDelegate.h"
+#import "SessionDelegateProxy.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-#define MakeSureRespodsTo if (![self.forwardToDelegate respondsToSelector:_cmd]) { return ;}
-
-@interface SessionDelegate()<NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate,NSURLSessionDownloadDelegate,NSURLSessionStreamDelegate,NSURLSessionWebSocketDelegate>
-/// 原代理
-@property (nonatomic, weak) id<NSURLSessionDelegate> forwardToDelegate;
+@interface SessionDelegateProxyHandle : NSObject
+///
+@property (nonatomic, weak) id target;
 @end
 
-@implementation SessionDelegate
+@implementation SessionDelegateProxyHandle
+- (instancetype)initWithTarget:(id)target {
+    self = [super init];
+    if (self) {
+        _target = target;
+    }
+    return self;
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+                                 didReceiveResponse:(NSURLResponse *)response
+ completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
+    NSLog(@"拦截11111----request:%@",dataTask.currentRequest);
+    NSLog(@"拦截11111----response:%@",response);
+    
+    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSURLResponse *, id))objc_msgSend)(self.target, _cmd, session, dataTask, response, completionHandler);
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data {
+    
+    NSString *str = [[NSString alloc]initWithData:data encoding:4];
+    NSLog(@"拦截22222----%@ data:%@",dataTask.currentRequest.URL,str);
+    
+    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSData *))objc_msgSend)(self.target, _cmd, session, dataTask, data);
+}
+@end
+
+@interface SessionDelegateProxy ()<NSURLSessionDelegate>
+///
+@property (nonatomic, strong) SessionDelegateProxyHandle *handle;
+@end
+
+@implementation SessionDelegateProxy
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self swizzleSessionWithConfiguration];
     });
-}
-
-+ (instancetype)proxyWithSessionDelegate:(id<NSURLSessionDelegate>)delegate {
-    return [[self alloc]initWithSessionDelegate:delegate];
-}
-
-- (instancetype)initWithSessionDelegate:(id<NSURLSessionDelegate>)delegate {
-    self = [super init];
-    if (self) {
-        _forwardToDelegate = delegate;
-    }
-    return self;
 }
 
 + (void)swizzleSessionWithConfiguration {
@@ -54,152 +72,84 @@
 }
 
 + (NSURLSession *)mySessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(nullable id <NSURLSessionDelegate>)delegate delegateQueue:(nullable NSOperationQueue *)queue {
-    return [self mySessionWithConfiguration:configuration delegate:[SessionDelegate proxyWithSessionDelegate:delegate] delegateQueue:queue];
+    return [self mySessionWithConfiguration:configuration delegate:[SessionDelegateProxy proxyWithTarget:delegate] delegateQueue:queue];
+}
+
+- (instancetype)initWithTarget:(id)target {
+    _handle = [[SessionDelegateProxyHandle alloc]initWithTarget:target];
+    return self;
+}
+
++ (instancetype)proxyWithTarget:(id)target {
+    return [[self alloc] initWithTarget:target];
+}
+
+- (id)forwardingTargetForSelector:(SEL)selector {
+    static NSArray<NSString *> *whiteNames = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        whiteNames = @[
+            NSStringFromSelector(@selector(URLSession:dataTask:didReceiveResponse:completionHandler:)),
+            NSStringFromSelector(@selector(URLSession:dataTask:didReceiveData:))
+        ];
+    });
+    if ([whiteNames containsObject:NSStringFromSelector(selector)]) {
+        return _handle;
+    }
+    return _handle.target;
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation {
+    void *null = NULL;
+    [invocation setReturnValue:&null];
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
+    return [NSObject instanceMethodSignatureForSelector:@selector(init)];
 }
 
 - (BOOL)respondsToSelector:(SEL)aSelector {
-    return [self.forwardToDelegate respondsToSelector:aSelector];
+    return [_handle.target respondsToSelector:aSelector];
 }
 
-#pragma mark - NSURLSessionDelegate
-
-- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error {
-    MakeSureRespodsTo
-    [self.forwardToDelegate URLSession:session didBecomeInvalidWithError:error];
+- (BOOL)isEqual:(id)object {
+    return [_handle.target isEqual:object];
 }
 
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
- completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
-    MakeSureRespodsTo
-    [self.forwardToDelegate URLSession:session didReceiveChallenge:challenge completionHandler:completionHandler];
+- (NSUInteger)hash {
+    return [_handle.target hash];
 }
 
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session {
-    MakeSureRespodsTo
-    [self.forwardToDelegate URLSessionDidFinishEventsForBackgroundURLSession:session];
+- (Class)superclass {
+    return [_handle.target superclass];
 }
 
-#pragma mark - NSURLSessionTaskDelegate
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-                        willBeginDelayedRequest:(NSURLRequest *)request
- completionHandler:(void (^)(NSURLSessionDelayedRequestDisposition disposition, NSURLRequest * _Nullable newRequest))completionHandler API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0)) {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession *, NSURLSessionTask *, NSURLRequest *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, request, completionHandler);
+- (Class)class {
+    return [_handle.target class];
 }
 
-- (void)URLSession:(NSURLSession *)session taskIsWaitingForConnectivity:(NSURLSessionTask *)task
-API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0)) {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession *, NSURLSessionTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, task);
+- (BOOL)isKindOfClass:(Class)aClass {
+    return [_handle.target isKindOfClass:aClass];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-                     willPerformHTTPRedirection:(NSHTTPURLResponse *)response
-                                     newRequest:(NSURLRequest *)request
- completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, NSHTTPURLResponse *,NSURLRequest *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, response, request, completionHandler);
+- (BOOL)isMemberOfClass:(Class)aClass {
+    return [_handle.target isMemberOfClass:aClass];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-                            didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
- completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, NSURLAuthenticationChallenge *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, challenge, completionHandler);
+- (BOOL)conformsToProtocol:(Protocol *)aProtocol {
+    return [_handle.target conformsToProtocol:aProtocol];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
- needNewBodyStream:(void (^)(NSInputStream * _Nullable bodyStream))completionHandler {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, completionHandler);
+- (BOOL)isProxy {
+    return YES;
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-                                didSendBodyData:(int64_t)bytesSent
-                                 totalBytesSent:(int64_t)totalBytesSent
-totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, int64_t, int64_t, int64_t))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, bytesSent, totalBytesSent, totalBytesExpectedToSend);
+- (NSString *)description {
+    return [_handle.target description];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didFinishCollectingMetrics:(NSURLSessionTaskMetrics *)metrics API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0)) {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, NSURLSessionTaskMetrics *))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, metrics);
+- (NSString *)debugDescription {
+    return [_handle.target debugDescription];
 }
 
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
-didCompleteWithError:(nullable NSError *)error {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionTask *, NSError *))objc_msgSend)(self.forwardToDelegate, _cmd, session, task, error);
-}
-
-#pragma mark - NSURLSessionDataDelegate
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-                                 didReceiveResponse:(NSURLResponse *)response
- completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
-    NSLog(@"拦截1111----request:%@",dataTask.currentRequest);
-    NSLog(@"拦截1111----response:%@",response);
-    
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSURLResponse *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, dataTask, response, completionHandler);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSURLSessionDownloadTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, dataTask, downloadTask);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-                                didBecomeStreamTask:(NSURLSessionStreamTask *)streamTask
-API_AVAILABLE(macos(10.11), ios(9.0), watchos(2.0), tvos(9.0)) {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSURLSessionStreamTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, dataTask, streamTask);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-    didReceiveData:(NSData *)data {
-    
-    NSString *str = [[NSString alloc]initWithData:data encoding:4];
-    NSLog(@"拦截2222----%@ data:%@",dataTask.currentRequest.URL,str);
-    
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSData *))objc_msgSend)(self.forwardToDelegate, _cmd, session, dataTask, data);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
-                                  willCacheResponse:(NSCachedURLResponse *)proposedResponse
- completionHandler:(void (^)(NSCachedURLResponse * _Nullable cachedResponse))completionHandler {
-    MakeSureRespodsTo
-    ((void (*)(id, SEL, NSURLSession*, NSURLSessionDataTask *, NSCachedURLResponse *, id))objc_msgSend)(self.forwardToDelegate, _cmd, session, dataTask, proposedResponse, completionHandler);
-}
-
-#pragma mark - NSURLSessionDownloadDelegate
-
-#pragma mark - NSURLSessionStreamDelegate
-//
-//- (void)URLSession:(NSURLSession *)session readClosedForStreamTask:(NSURLSessionStreamTask *)streamTask {
-//    MakeSureRespodsTo
-//    ((void (*)(id, SEL, NSURLSession*, NSURLSessionStreamTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, streamTask);
-//}
-//
-//- (void)URLSession:(NSURLSession *)session writeClosedForStreamTask:(NSURLSessionStreamTask *)streamTask {
-//    MakeSureRespodsTo
-//    ((void (*)(id, SEL, NSURLSession*, NSURLSessionStreamTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, streamTask);
-//}
-//
-//- (void)URLSession:(NSURLSession *)session betterRouteDiscoveredForStreamTask:(NSURLSessionStreamTask *)streamTask {
-//    MakeSureRespodsTo
-//    ((void (*)(id, SEL, NSURLSession*, NSURLSessionStreamTask *))objc_msgSend)(self.forwardToDelegate, _cmd, session, streamTask);
-//}
-//
-//- (void)URLSession:(NSURLSession *)session streamTask:(NSURLSessionStreamTask *)streamTask
-//                                 didBecomeInputStream:(NSInputStream *)inputStream
-//      outputStream:(NSOutputStream *)outputStream {
-//    MakeSureRespodsTo
-//    ((void (*)(id, SEL, NSURLSession*, NSURLSessionStreamTask *, NSInputStream *, NSOutputStream *))objc_msgSend)(self.forwardToDelegate, _cmd, session, streamTask, inputStream, outputStream);
-//}
-
-#pragma mark - NSURLSessionWebSocketDelegate
 @end
