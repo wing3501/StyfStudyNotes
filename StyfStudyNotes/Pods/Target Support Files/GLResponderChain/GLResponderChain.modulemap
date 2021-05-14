@@ -1,0 +1,6 @@
+module GLResponderChain {
+  umbrella header "GLResponderChain-umbrella.h"
+
+  export *
+  module * { export * }
+}

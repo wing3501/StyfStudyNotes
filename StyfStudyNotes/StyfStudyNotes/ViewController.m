@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "StyfStudyNotes-Swift.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 ///
@@ -32,8 +33,11 @@
                    @{@"title":@"NSOperation",@"class":@"DemoNSOperation"},
                    @{@"title":@"WebView",@"class":@"WebViewDemo"},
                    @{@"title":@"网络拦截",@"class":@"NetworkDemo"},
+                   @{@"title":@"Swift",@"class":@"_TtC14StyfStudyNotes9SwiftDemo"},
     ];
     [self.view addSubview:self.tableView];
+    
+    
 }
 
 #pragma mark - UITableViewDelegate

@@ -8,4 +8,7 @@ target 'StyfStudyNotes' do
   pod 'SDWebImage'
   pod 'Masonry'
   pod 'AFNetworking'
+  
+  
+  pod 'GLResponderChain', '~> 1.0.3'
 end

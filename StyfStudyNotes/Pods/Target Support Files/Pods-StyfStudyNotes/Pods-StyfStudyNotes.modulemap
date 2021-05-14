@@ -1,4 +1,4 @@
-framework module Pods_StyfStudyNotes {
+module Pods_StyfStudyNotes {
   umbrella header "Pods-StyfStudyNotes-umbrella.h"
 
   export *
