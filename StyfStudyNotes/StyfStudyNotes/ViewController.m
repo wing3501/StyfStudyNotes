@@ -35,6 +35,7 @@
                    @{@"title":@"网络拦截",@"class":@"NetworkDemo"},
                    @{@"title":@"Swift",@"class":@"_TtC14StyfStudyNotes9SwiftDemo"},
                    @{@"title":@"打开设置",@"class":@"OpenSetting"},
+                   @{@"title":@"Flutter",@"class":@"OpenFlutter"},
     ];
     [self.view addSubview:self.tableView];
     

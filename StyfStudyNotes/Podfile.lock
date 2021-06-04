@@ -14,16 +14,24 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - GLResponderChain (1.0.3)
   - Masonry (1.1.0)
+  - my_flutter (0.0.1):
+    - Flutter
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - Flutter (from `my_flutter/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - GLResponderChain (~> 1.0.3)
   - Masonry
+  - my_flutter (from `my_flutter/.ios/Flutter`)
   - SDWebImage
 
 SPEC REPOS:
@@ -33,12 +41,23 @@ SPEC REPOS:
     - Masonry
     - SDWebImage
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: my_flutter/.ios/Flutter/engine
+  FlutterPluginRegistrant:
+    :path: my_flutter/.ios/Flutter/FlutterPluginRegistrant
+  my_flutter:
+    :path: my_flutter/.ios/Flutter
+
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
+  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
   GLResponderChain: 474af23e6458fcfc6ff9a193c7c98a441a5a05c9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  my_flutter: 5f71a42a61a499a9f322f2c0f62fc185a5807c9b
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 5fd3a52518b1a008b37952877b3feda95e17eee0
+PODFILE CHECKSUM: 640dd28f11203fb23fb18f019ddd033bd1c17214
 
 COCOAPODS: 1.10.0
