@@ -34,6 +34,7 @@
                    @{@"title":@"WebView",@"class":@"WebViewDemo"},
                    @{@"title":@"网络拦截",@"class":@"NetworkDemo"},
                    @{@"title":@"Swift",@"class":@"_TtC14StyfStudyNotes9SwiftDemo"},
+                   @{@"title":@"打开设置",@"class":@"OpenSetting"},
     ];
     [self.view addSubview:self.tableView];
     
