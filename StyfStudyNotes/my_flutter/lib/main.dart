@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/utils/color_utils.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,12 @@ class MyHomePage extends StatelessWidget {
         title: Text('Title'),
       ),
       body: Center(
-        child: Text("这是文字"),
+        child: Container(
+          width: 100,
+          height: 100,
+          child: Text("这是文字"),
+          color: ColorUtils.randomColor(),
+        ),
       ),
     );
   }
