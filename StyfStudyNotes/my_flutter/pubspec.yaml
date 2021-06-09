@@ -77,7 +77,19 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-
+  fonts: # 配置字体，可配置多个，支持ttf和otf,ttc等字体资源
+    - family: 阿里惠普体 #字体名
+      fonts:
+        - asset: assets/fonts/Alibaba-PuHuiTi-Medium.otf
+    - family: Menlo #字体名
+      fonts:
+        - asset: assets/fonts/Menlo.ttc
+    - family: TolyIcon #字体名
+      fonts: # 字体文件
+        - asset: assets/fonts/iconfont/iconfont.ttf
+    - family: TodoIcon #字体名
+      fonts: # 字体文件
+        - asset: assets/fonts/iconfont/todo_icon.ttf
   # This section identifies your Flutter project as a module meant for
   # embedding in a native host app.  These identifiers should _not_ ordinarily
   # be changed after generation - they are used to ensure that the tooling can

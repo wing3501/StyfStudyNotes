@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'circle_image_demo.dart';
 
+/// 一个聊天列表的布局案例
+
 void main() => runApp(App());
 
 class App extends StatelessWidget {
