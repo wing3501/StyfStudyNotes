@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:my_flutter/utils/color_utils.dart';
 
-import '../appdemo/appdemo1/views/home/home_menu.dart';
+import '../app_demo/appdemo1/views/home/home_menu.dart';
 import 'poem_item_demo.dart';
 
 void main() => runApp(MyApp());

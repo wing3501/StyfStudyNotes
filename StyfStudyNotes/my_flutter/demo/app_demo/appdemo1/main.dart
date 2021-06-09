@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'views/pages/nav_page.dart';
+
 void main() => runApp(App());
 
 class App extends StatelessWidget {
