@@ -1,0 +1,1 @@
+../../../../my_flutter/.ios/.symlinks/plugins/sqflite/ios/Classes/SqflitePlugin.h

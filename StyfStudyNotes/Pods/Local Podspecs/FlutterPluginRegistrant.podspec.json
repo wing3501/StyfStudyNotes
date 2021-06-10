@@ -28,6 +28,33 @@
   "dependencies": {
     "Flutter": [
 
+    ],
+    "audioplayers": [
+
+    ],
+    "flutter_inappwebview": [
+
+    ],
+    "image_picker": [
+
+    ],
+    "path_provider": [
+
+    ],
+    "permission_handler": [
+
+    ],
+    "shared_preferences": [
+
+    ],
+    "sqflite": [
+
+    ],
+    "video_player": [
+
+    ],
+    "webview_flutter": [
+
     ]
   }
 }

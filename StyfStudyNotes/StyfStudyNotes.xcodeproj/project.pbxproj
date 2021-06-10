@@ -631,6 +631,7 @@
 				92A8D7C525D288DA0008EFAA /* Frameworks */,
 				92A8D7C625D288DA0008EFAA /* Resources */,
 				8A32DCF55F4E38B71F1B0F9B /* [CP] Embed Pods Frameworks */,
+				57E00693B58410392DED3771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -696,6 +697,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		57E00693B58410392DED3771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		8A32DCF55F4E38B71F1B0F9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
