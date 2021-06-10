@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_flutter/utils/color_utils.dart';
+import 'package:my_flutter/utils/fancy_icon_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    FancyIcon.createIconDataFile();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -39,7 +41,7 @@ class MyHomePage extends StatelessWidget {
         child: Container(
           width: 100,
           height: 100,
-          child: Text("这是文字"),
+          child: Icon(FancyIcon("ic_bottombar_order_n")),
           color: ColorUtils.randomColor(),
         ),
       ),

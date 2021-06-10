@@ -65,6 +65,7 @@ flutter:
     - assets/images/
     - images/
     - assets/data/data.json
+    - assets/data/fancy-font.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -107,6 +108,9 @@ flutter:
     - family: TodoIcon #字体名
       fonts: # 字体文件
         - asset: assets/fonts/iconfont/todo_icon.ttf
+    - family: fancy-font #字体名
+      fonts: # 字体文件
+        - asset: assets/fonts/iconfont/fancy-font.ttf
   # This section identifies your Flutter project as a module meant for
   # embedding in a native host app.  These identifiers should _not_ ordinarily
   # be changed after generation - they are used to ensure that the tooling can
