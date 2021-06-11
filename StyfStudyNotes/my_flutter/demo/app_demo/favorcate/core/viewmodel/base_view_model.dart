@@ -1,6 +1,6 @@
-import 'package:favorcate/core/model/meal_model.dart';
 import 'package:flutter/material.dart';
 
+import '../model/meal_model.dart';
 import 'filter_view_model.dart';
 
 class YFBaseMealViewModel extends ChangeNotifier {

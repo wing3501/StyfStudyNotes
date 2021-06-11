@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../model/category_model.dart';
+
 class JsonParse {
   static Future<List<YFCategoryModel>> getCategoryData() async {
     final jsonString = await rootBundle.loadString("assets/json/category.json");

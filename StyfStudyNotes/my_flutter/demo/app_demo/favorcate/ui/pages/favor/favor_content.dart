@@ -1,7 +1,8 @@
-import 'package:favorcate/core/viewmodel/favor_view_model.dart';
-import 'package:favorcate/ui/widgets/meal_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/viewmodel/favor_view_model.dart';
+import '../../widgets/meal_item.dart';
 
 class YFFavorContent extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
-import 'package:favorcate/ui/pages/filter/filter.dart';
 import 'package:flutter/material.dart';
-import 'package:favorcate/core/extension/int_extension.dart';
+import '../../../core/extension/int_extension.dart';
+import '../filter/filter.dart';
 
 class YFHomeDrawer extends StatelessWidget {
   @override

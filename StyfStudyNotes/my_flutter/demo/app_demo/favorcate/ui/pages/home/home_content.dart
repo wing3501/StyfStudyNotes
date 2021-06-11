@@ -1,8 +1,8 @@
-import 'package:favorcate/core/model/category_model.dart';
-import 'package:favorcate/core/services/json_parse.dart';
-import 'package:favorcate/ui/pages/home/home_category_item.dart';
 import 'package:flutter/material.dart';
-import 'package:favorcate/core/extension/int_extension.dart';
+import '../../../core/extension/int_extension.dart';
+import '../../../core/model/category_model.dart';
+import '../../../core/services/json_parse.dart';
+import 'home_category_item.dart';
 
 class YFHomeContent extends StatelessWidget {
   @override

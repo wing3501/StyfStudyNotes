@@ -1,7 +1,8 @@
-import 'package:favorcate/core/viewmodel/filter_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:favorcate/core/extension/int_extension.dart';
+import '../../../core/extension/int_extension.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/viewmodel/filter_view_model.dart';
 
 class YFFilterContent extends StatelessWidget {
   @override

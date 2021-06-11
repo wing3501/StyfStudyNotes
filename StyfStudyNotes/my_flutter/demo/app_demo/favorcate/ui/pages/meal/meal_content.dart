@@ -1,10 +1,11 @@
-import 'package:favorcate/core/model/category_model.dart';
-import 'package:favorcate/core/model/meal_model.dart';
-import 'package:favorcate/core/viewmodel/meal_view_model.dart';
-import 'package:favorcate/ui/widgets/meal_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:collection/collection.dart';
+
+import '../../../core/model/category_model.dart';
+import '../../../core/model/meal_model.dart';
+import '../../../core/viewmodel/meal_view_model.dart';
+import '../../widgets/meal_item.dart';
 
 class YFMealContent extends StatelessWidget {
   @override

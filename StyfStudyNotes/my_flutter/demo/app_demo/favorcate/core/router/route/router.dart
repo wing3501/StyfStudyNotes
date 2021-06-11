@@ -1,8 +1,9 @@
-import 'package:favorcate/ui/pages/detail/detail.dart';
-import 'package:favorcate/ui/pages/filter/filter.dart';
-import 'package:favorcate/ui/pages/main/main_screen.dart';
-import 'package:favorcate/ui/pages/meal/meal.dart';
 import 'package:flutter/material.dart';
+
+import '../../../ui/pages/detail/detail.dart';
+import '../../../ui/pages/filter/filter.dart';
+import '../../../ui/pages/main/main_screen.dart';
+import '../../../ui/pages/meal/meal.dart';
 
 class YFRouter {
   static final String initialRoute = YFMainSceen.routeName;

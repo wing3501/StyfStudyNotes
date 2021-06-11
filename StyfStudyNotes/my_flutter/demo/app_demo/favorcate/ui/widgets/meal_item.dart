@@ -1,10 +1,11 @@
-import 'package:favorcate/core/model/meal_model.dart';
-import 'package:favorcate/core/viewmodel/favor_view_model.dart';
-import 'package:favorcate/ui/pages/detail/detail.dart';
-import 'package:favorcate/ui/widgets/operation_item.dart';
 import 'package:flutter/material.dart';
-import 'package:favorcate/core/extension/int_extension.dart';
+import '../../core/extension/int_extension.dart';
 import 'package:provider/provider.dart';
+
+import '../../core/model/meal_model.dart';
+import '../../core/viewmodel/favor_view_model.dart';
+import '../pages/detail/detail.dart';
+import 'operation_item.dart';
 
 class YFMealItem extends StatelessWidget {
   final YFMealModel _meal;

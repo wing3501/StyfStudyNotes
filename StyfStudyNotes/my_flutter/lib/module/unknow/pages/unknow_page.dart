@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'favor_content.dart';
-
-class YFFavorScreen extends StatelessWidget {
+class UnknowPage extends StatelessWidget {
+  static const String routeName = "/unknow";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("我的收藏"),
+        title: Text('未知路由'),
       ),
-      body: YFFavorContent(),
+      body: Container(),
     );
   }
 }

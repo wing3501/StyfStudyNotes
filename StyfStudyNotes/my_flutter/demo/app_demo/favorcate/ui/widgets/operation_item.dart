@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:favorcate/core/extension/int_extension.dart';
+import '../../core/extension/int_extension.dart';
 
 class YFOperationItem extends StatelessWidget {
   final Widget _icon;

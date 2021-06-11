@@ -1,7 +1,7 @@
-import 'package:favorcate/core/model/meal_model.dart';
-import 'package:favorcate/ui/pages/detail/detail_content.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/model/meal_model.dart';
+import 'detail_content.dart';
 import 'detail_floating_button.dart';
 
 class YFDetailScreen extends StatelessWidget {

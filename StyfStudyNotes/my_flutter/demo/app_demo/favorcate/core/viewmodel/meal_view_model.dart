@@ -1,5 +1,5 @@
-import 'package:favorcate/core/services/meal_request.dart';
-import 'package:favorcate/core/viewmodel/base_view_model.dart';
+import '../services/meal_request.dart';
+import 'base_view_model.dart';
 
 class YFMealViewModel extends YFBaseMealViewModel {
   YFMealViewModel() {

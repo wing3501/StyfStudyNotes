@@ -1,5 +1,5 @@
-import 'package:favorcate/core/model/meal_model.dart';
-import 'package:favorcate/core/services/http_request.dart';
+import '../model/meal_model.dart';
+import 'http_request.dart';
 
 class YFMealRequest {
   static Future<List<YFMealModel>> getMealData() async {
