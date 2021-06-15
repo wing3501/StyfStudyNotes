@@ -37,7 +37,8 @@ class YFRouter {
     UnknowPage.routeName: (settings, uniqueId) => PageRouteBuilder(
         settings: settings, pageBuilder: (_, __, ___) => UnknowPage()),
     CallNativePage.routeName: (settings, uniqueId) => PageRouteBuilder(
-        settings: settings, pageBuilder: (_, __, ___) => CallNativePage()),
+        settings: settings,
+        pageBuilder: (_, __, ___) => CallNativePage(uniqueId)),
   };
 
   static final Map<String, WidgetBuilder> routes = {
@@ -47,7 +48,7 @@ class YFRouter {
     MessagePage.routeName: (ctx) => MessagePage(),
     MyPage.routeName: (ctx) => MyPage(),
     UnknowPage.routeName: (ctx) => UnknowPage(),
-    CallNativePage.routeName: (ctx) => CallNativePage()
+    CallNativePage.routeName: (ctx) => CallNativePage("CallNativePage")
   };
 
   static final RouteFactory generateRoute = (settings) {
