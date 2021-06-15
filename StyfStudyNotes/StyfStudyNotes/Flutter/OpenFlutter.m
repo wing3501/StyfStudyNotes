@@ -37,11 +37,12 @@
 //    FlutterViewController *flutterVC = [[FlutterViewController alloc]initWithEngine:self.flutterEngine nibName:nil bundle:nil];
 //    flutterVC.modalPresentationStyle = UIModalPresentationFullScreen;
 //    [self presentViewController:flutterVC animated:YES completion:nil];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"present":@(YES),@"animated":@(YES)} completion:nil];
-    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"animated":@(YES)} completion:nil];
+    [[FlutterBoost instance]open:@"/" arguments:@{@"present":@(YES),@"animated":@(YES)} completion:nil];
+//    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"animated":@(YES)} completion:nil];
 }
 
 /*

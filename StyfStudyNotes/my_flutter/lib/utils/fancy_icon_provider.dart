@@ -207,7 +207,11 @@ class FancyIcon extends IconData {
 
   final String iconName;
 
-  FancyIcon(this.iconName) : super(unicode(iconName), fontFamily: "fancy-font");
+  FancyIcon(this.iconName)
+      : super(
+          unicode(iconName),
+          fontFamily: "fancy-font",
+        );
 
   static int unicode(String iconName) {
     return _iconUnicodeDic[iconName];
