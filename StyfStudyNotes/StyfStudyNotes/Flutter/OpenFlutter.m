@@ -7,6 +7,7 @@
 
 #import "OpenFlutter.h"
 #import <Flutter/Flutter.h>
+#import <flutter_boost/FlutterBoost.h>
 
 @interface OpenFlutter ()
 /// <#name#>
@@ -19,14 +20,28 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.brownColor;
     
-    NSLog(@"初始化flutter");
-    self.flutterEngine = [[FlutterEngine alloc]initWithName:@"styf"];
-    [self.flutterEngine run];
-    NSLog(@"flutter初始化完毕");
     
-    FlutterViewController *flutterVC = [[FlutterViewController alloc]initWithEngine:self.flutterEngine nibName:nil bundle:nil];
-    flutterVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:flutterVC animated:YES completion:nil];
+    //FlutterBoost 原生打开Flutter页面
+//    [[FlutterBoost instance] open:@"flutterPage" arguments:@{@"animated":@(YES)}  ];
+//    [[FlutterBoost instance] open:@"secondStateful" arguments:@{@"present":@(YES)}];
+    
+    
+    
+    
+    //普通混编方式
+//    NSLog(@"初始化flutter");
+//    self.flutterEngine = [[FlutterEngine alloc]initWithName:@"styf"];
+//    [self.flutterEngine run];
+//    NSLog(@"flutter初始化完毕");
+//    
+//    FlutterViewController *flutterVC = [[FlutterViewController alloc]initWithEngine:self.flutterEngine nibName:nil bundle:nil];
+//    flutterVC.modalPresentationStyle = UIModalPresentationFullScreen;
+//    [self presentViewController:flutterVC animated:YES completion:nil];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"present":@(YES),@"animated":@(YES)} completion:nil];
+    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"animated":@(YES)} completion:nil];
 }
 
 /*

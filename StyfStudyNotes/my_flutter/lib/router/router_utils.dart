@@ -61,9 +61,14 @@ class Right2LeftRouter<T> extends PageRouteBuilder<T> {
   final Widget child;
   final int durationMs;
   final Curve curve;
+  RouteSettings settings;
   Right2LeftRouter(
-      {this.child, this.durationMs = 500, this.curve = Curves.fastOutSlowIn})
+      {this.child,
+      this.durationMs = 500,
+      this.curve = Curves.fastOutSlowIn,
+      this.settings})
       : super(
+            settings: settings,
             transitionDuration: Duration(milliseconds: durationMs),
             pageBuilder: (ctx, a1, a2) => child,
             transitionsBuilder: (

@@ -17,6 +17,8 @@ PODS:
   - audioplayers (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_boost (0.0.2):
+    - Flutter
   - flutter_inappwebview (0.0.1):
     - Flutter
     - flutter_inappwebview/Core (= 0.0.1)
@@ -27,6 +29,7 @@ PODS:
   - FlutterPluginRegistrant (0.0.1):
     - audioplayers
     - Flutter
+    - flutter_boost
     - flutter_inappwebview
     - image_picker
     - path_provider
@@ -66,6 +69,7 @@ DEPENDENCIES:
   - AFNetworking
   - audioplayers (from `my_flutter/.ios/.symlinks/plugins/audioplayers/ios`)
   - Flutter (from `my_flutter/.ios/Flutter/engine`)
+  - flutter_boost (from `my_flutter/.ios/.symlinks/plugins/flutter_boost/ios`)
   - flutter_inappwebview (from `my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios`)
   - FlutterPluginRegistrant (from `my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - GLResponderChain (~> 1.0.3)
@@ -94,6 +98,8 @@ EXTERNAL SOURCES:
     :path: my_flutter/.ios/.symlinks/plugins/audioplayers/ios
   Flutter:
     :path: my_flutter/.ios/Flutter/engine
+  flutter_boost:
+    :path: my_flutter/.ios/.symlinks/plugins/flutter_boost/ios
   flutter_inappwebview:
     :path: my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios
   FlutterPluginRegistrant:
@@ -119,8 +125,9 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
   Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
+  flutter_boost: 1002395f7c6ec9459d293417e6524ecd29ecdffb
   flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
-  FlutterPluginRegistrant: 7603c5aa2025135f176bfb0196746fb33b441567
+  FlutterPluginRegistrant: 5ae35a80abdc76ce8877c523bd2ab7636709bcb7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GLResponderChain: 474af23e6458fcfc6ff9a193c7c98a441a5a05c9
   image_picker: e06f7a68f000bd36f552c1847e33cda96ed31f1f

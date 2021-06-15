@@ -63,9 +63,7 @@
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
 		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
-		92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
-		92A8D7D625D288DA0008EFAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D425D288DA0008EFAA /* Main.storyboard */; };
 		92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D725D288DD0008EFAA /* Assets.xcassets */; };
 		92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D925D288DD0008EFAA /* LaunchScreen.storyboard */; };
 		92A8D7DE25D288DD0008EFAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7DD25D288DD0008EFAA /* main.m */; };
@@ -79,6 +77,7 @@
 		92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1AFDB265B3A2E0029C502 /* OpenSetting.m */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
+		92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
@@ -195,11 +194,8 @@
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		92A8D7CE25D288DA0008EFAA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		92A8D7D125D288DA0008EFAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		92A8D7D225D288DA0008EFAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		92A8D7D525D288DA0008EFAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92A8D7D725D288DD0008EFAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A8D7DA25D288DD0008EFAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92A8D7DC25D288DD0008EFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +215,8 @@
 		92B265A126353BE500C4D16D /* SystemNotify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNotify.m; sourceTree = "<group>"; };
 		92B265A7263546D400C4D16D /* Builtin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builtin.h; sourceTree = "<group>"; };
 		92B265A8263546D400C4D16D /* Builtin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Builtin.m; sourceTree = "<group>"; };
+		92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlutterBoostDelegate.m; sourceTree = "<group>"; };
+		92C84BC926735C3C002C2387 /* MyFlutterBoostDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlutterBoostDelegate.h; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
 		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
 		92E1A5ED264CD2ED007D63D5 /* SessionDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDelegateProxy.h; sourceTree = "<group>"; };
@@ -376,6 +374,8 @@
 			children = (
 				9218C2E02669D2DE00A932E6 /* OpenFlutter.h */,
 				9218C2E12669D2DE00A932E6 /* OpenFlutter.m */,
+				92C84BC926735C3C002C2387 /* MyFlutterBoostDelegate.h */,
+				92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */,
 			);
 			path = Flutter;
 			sourceTree = "<group>";
@@ -512,8 +512,6 @@
 			children = (
 				92A8D7CB25D288DA0008EFAA /* AppDelegate.h */,
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
-				92A8D7CE25D288DA0008EFAA /* SceneDelegate.h */,
-				92A8D7CF25D288DA0008EFAA /* SceneDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
 				9218C2DF2669D2B200A932E6 /* Flutter */,
@@ -535,7 +533,6 @@
 				920B9BD625DF59A40098B1BA /* Other */,
 				92A8D93F25D28F8C0008EFAA /* __attribute__ */,
 				92A8D7E525D28A030008EFAA /* leetcode */,
-				92A8D7D425D288DA0008EFAA /* Main.storyboard */,
 				92A8D7D725D288DD0008EFAA /* Assets.xcassets */,
 				92A8D7D925D288DD0008EFAA /* LaunchScreen.storyboard */,
 				92A8D7DC25D288DD0008EFAA /* Info.plist */,
@@ -681,7 +678,6 @@
 			files = (
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
-				92A8D7D625D288DA0008EFAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +780,7 @@
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
+				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
@@ -816,7 +813,6 @@
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
-				92A8D7D025D288DA0008EFAA /* SceneDelegate.m in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
@@ -839,14 +835,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		92A8D7D425D288DA0008EFAA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92A8D7D525D288DA0008EFAA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92A8D7D925D288DD0008EFAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
