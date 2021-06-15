@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:my_flutter/module/main/pages/main_page.dart';
+import 'app/app_theme.dart';
 import 'app/custom_interceptor.dart';
 import 'app/global_page_visibility_observer.dart';
 import 'router/router.dart';
@@ -32,11 +33,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterBoostApp(
-      routeFactory,
-      interceptors: [CustomInterceptor()],
-      appBuilder: appBuilder,
-      initialRoute: MainPage.routeName,
+    // return FlutterBoostApp(
+    //   routeFactory,
+    //   interceptors: [CustomInterceptor()],
+    //   appBuilder: appBuilder,
+    //   initialRoute: MainPage.routeName,
+    // );
+
+    return MaterialApp(
+      title: 'styf',
+      theme: appTheme,
+      routes: YFRouter.routes,
+      initialRoute: YFRouter.initialRoute,
     );
   }
 }
