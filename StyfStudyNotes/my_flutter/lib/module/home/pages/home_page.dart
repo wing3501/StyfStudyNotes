@@ -6,9 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
-      ),
+      appBar: AppBar(title: Text('首页'), elevation: 0.0),
       body: Container(
           child: Row(
         children: [
