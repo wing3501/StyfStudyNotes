@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/main_page.dart';
+import 'package:learn_flutter/douban/pages/main_page.dart';
 
 void main() => runApp(MyApp());
 

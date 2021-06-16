@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'bottom_bar_item.dart';
-import 'home/home_page.dart';
-import 'subject/subject_page.dart';
-
 List<YFBottomBarItem> items = [
   YFBottomBarItem("home", "首页"),
   YFBottomBarItem("subject", "书影音"),

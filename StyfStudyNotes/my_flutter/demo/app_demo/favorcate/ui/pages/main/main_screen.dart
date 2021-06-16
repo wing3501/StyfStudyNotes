@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../douban/pages/initialize_items.dart';
 import '../home/home_drawer.dart';
+import 'initialize_items.dart';
 
 class YFMainSceen extends StatefulWidget {
   static const String routeName = "/";
