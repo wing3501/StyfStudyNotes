@@ -7,8 +7,8 @@ import 'app/global_page_visibility_observer.dart';
 import 'router/router.dart';
 
 void main() {
-  PageVisibilityBinding.instance
-      .addGlobalObserver(AppGlobalPageVisibilityObserver());
+  // PageVisibilityBinding.instance
+  //     .addGlobalObserver(AppGlobalPageVisibilityObserver());
   runApp(MyApp());
 }
 

@@ -15,8 +15,6 @@ class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final a = FancyIcon("ic_bottombar_shouye_n");
-    print(a);
     return Scaffold(
       body: IndexedStack(
         children: pages,
