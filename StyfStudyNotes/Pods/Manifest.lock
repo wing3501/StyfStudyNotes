@@ -16,6 +16,11 @@ PODS:
     - AFNetworking/NSURLSession
   - audioplayers (0.0.1):
     - Flutter
+  - camera (0.0.1):
+    - Flutter
+  - connectivity (0.0.1):
+    - Flutter
+    - Reachability
   - Flutter (1.0.0)
   - flutter_boost (0.0.2):
     - Flutter
@@ -28,12 +33,15 @@ PODS:
     - OrderedSet (~> 5.0)
   - FlutterPluginRegistrant (0.0.1):
     - audioplayers
+    - camera
+    - connectivity
     - Flutter
     - flutter_boost
     - flutter_inappwebview
     - image_picker
     - path_provider
     - permission_handler
+    - photo_manager
     - shared_preferences
     - sqflite
     - video_player
@@ -52,6 +60,10 @@ PODS:
     - Flutter
   - "permission_handler (5.1.0+2)":
     - Flutter
+  - photo_manager (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - Reachability (3.2)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -68,6 +80,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - audioplayers (from `my_flutter/.ios/.symlinks/plugins/audioplayers/ios`)
+  - camera (from `my_flutter/.ios/.symlinks/plugins/camera/ios`)
+  - connectivity (from `my_flutter/.ios/.symlinks/plugins/connectivity/ios`)
   - Flutter (from `my_flutter/.ios/Flutter/engine`)
   - flutter_boost (from `my_flutter/.ios/.symlinks/plugins/flutter_boost/ios`)
   - flutter_inappwebview (from `my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios`)
@@ -78,6 +92,7 @@ DEPENDENCIES:
   - my_flutter (from `my_flutter/.ios/Flutter`)
   - path_provider (from `my_flutter/.ios/.symlinks/plugins/path_provider/ios`)
   - permission_handler (from `my_flutter/.ios/.symlinks/plugins/permission_handler/ios`)
+  - photo_manager (from `my_flutter/.ios/.symlinks/plugins/photo_manager/ios`)
   - SDWebImage
   - shared_preferences (from `my_flutter/.ios/.symlinks/plugins/shared_preferences/ios`)
   - sqflite (from `my_flutter/.ios/.symlinks/plugins/sqflite/ios`)
@@ -91,11 +106,16 @@ SPEC REPOS:
     - GLResponderChain
     - Masonry
     - OrderedSet
+    - Reachability
     - SDWebImage
 
 EXTERNAL SOURCES:
   audioplayers:
     :path: my_flutter/.ios/.symlinks/plugins/audioplayers/ios
+  camera:
+    :path: my_flutter/.ios/.symlinks/plugins/camera/ios
+  connectivity:
+    :path: my_flutter/.ios/.symlinks/plugins/connectivity/ios
   Flutter:
     :path: my_flutter/.ios/Flutter/engine
   flutter_boost:
@@ -112,6 +132,8 @@ EXTERNAL SOURCES:
     :path: my_flutter/.ios/.symlinks/plugins/path_provider/ios
   permission_handler:
     :path: my_flutter/.ios/.symlinks/plugins/permission_handler/ios
+  photo_manager:
+    :path: my_flutter/.ios/.symlinks/plugins/photo_manager/ios
   shared_preferences:
     :path: my_flutter/.ios/.symlinks/plugins/shared_preferences/ios
   sqflite:
@@ -124,10 +146,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
+  camera: 3164201dc344383e62282964016528c4f5a9ad50
+  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
   flutter_boost: 1002395f7c6ec9459d293417e6524ecd29ecdffb
   flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
-  FlutterPluginRegistrant: 5ae35a80abdc76ce8877c523bd2ab7636709bcb7
+  FlutterPluginRegistrant: c77b7cb5c683012fa27e37271cee71386603732e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GLResponderChain: 474af23e6458fcfc6ff9a193c7c98a441a5a05c9
   image_picker: e06f7a68f000bd36f552c1847e33cda96ed31f1f
@@ -136,6 +160,8 @@ SPEC CHECKSUMS:
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
+  photo_manager: 61cdd6835af271b9ad1bb533fccf71d5db02fff3
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904

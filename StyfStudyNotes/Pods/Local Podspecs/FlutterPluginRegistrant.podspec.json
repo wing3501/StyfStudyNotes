@@ -32,6 +32,12 @@
     "audioplayers": [
 
     ],
+    "camera": [
+
+    ],
+    "connectivity": [
+
+    ],
     "flutter_boost": [
 
     ],
@@ -45,6 +51,9 @@
 
     ],
     "permission_handler": [
+
+    ],
+    "photo_manager": [
 
     ],
     "shared_preferences": [

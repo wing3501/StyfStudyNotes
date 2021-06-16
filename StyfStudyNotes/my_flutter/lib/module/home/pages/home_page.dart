@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../utils/fancy_icon_provider.dart';
+import '../widget/pubu_all.dart';
+import '../widget/jingang_qu.dart';
+import '../widget/baozhang_qu.dart';
 
 class HomePage extends StatelessWidget {
   static const String routeName = "/home";
@@ -7,17 +10,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('首页'), elevation: 0.0),
-      body: Container(
-          child: Row(
-        children: [
-          Text("data"),
-          Icon(
-            Icons.add,
-            color: Color(0xFF333333),
-            size: 30,
-          )
-        ],
-      )),
+      body: Stack(
+        children: [PuBuAll()],
+      ),
     );
   }
 }
