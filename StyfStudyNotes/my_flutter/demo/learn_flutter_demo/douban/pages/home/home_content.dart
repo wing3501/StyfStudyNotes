@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../service/home_request.dart';
+import '../../model/home_model.dart';
 import 'home_movie_item.dart';
 
 class YFHomeContent extends StatefulWidget {

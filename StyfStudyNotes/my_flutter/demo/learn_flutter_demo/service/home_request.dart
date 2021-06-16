@@ -1,4 +1,5 @@
 import '../douban/model/home_model.dart';
+import 'config.dart';
 import 'http_request.dart';
 
 class YFHomeRequest {

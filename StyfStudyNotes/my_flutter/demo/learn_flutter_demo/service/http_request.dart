@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import 'config.dart';
+
 class HttpRequest {
   static final BaseOptions baseOptions = BaseOptions(
       baseUrl: HttpConfig.baseURL, connectTimeout: HttpConfig.timeout);

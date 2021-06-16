@@ -4,6 +4,8 @@ import 'package:event_bus/event_bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../app_demo/favorcate/ui/shared/size_fit.dart';
+
 void main() {
   runApp(MyApp());
 }

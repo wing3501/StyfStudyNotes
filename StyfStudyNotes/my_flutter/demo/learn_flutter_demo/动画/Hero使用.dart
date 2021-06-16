@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 
+import 'image_detail.dart';
+
 final eventbus = EventBus();
 
 void main() {

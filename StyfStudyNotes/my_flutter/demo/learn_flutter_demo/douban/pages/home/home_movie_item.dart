@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../model/home_model.dart';
+import '../../widgets/dashed_line.dart';
+import '../../widgets/star_rating.dart';
+
 class YFHomeMovieItem extends StatelessWidget {
   final MovieItem movie;
 

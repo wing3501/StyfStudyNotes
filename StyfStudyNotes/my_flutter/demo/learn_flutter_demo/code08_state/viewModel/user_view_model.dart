@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Model/userinfo.dart';
+
 class UserViewModel extends ChangeNotifier {
   UserInfo _user;
 

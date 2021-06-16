@@ -1,7 +1,9 @@
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 
+import 'about.dart';
 import 'detail.dart';
+import 'unknow.dart';
 
 final eventbus = EventBus();
 
