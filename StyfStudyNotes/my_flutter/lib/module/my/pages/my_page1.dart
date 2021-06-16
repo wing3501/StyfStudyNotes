@@ -28,13 +28,10 @@ class _MyPageState extends State<MyPage> {
     controller = ScrollController(initialScrollOffset: distance);
     controller.addListener(() {
       offsetY = controller.offset;
-      // print("-------$offsetY");
+
       if (offsetY <= 0) {
-        // controller.jumpTo(0);
-        // _resetWithAnimation(true);
-        setState(() {
-          maxHeight = 350 - offsetY;
-        });
+        controller.jumpTo(0);
+        _resetWithAnimation(true);
       }
     });
   }
@@ -73,7 +70,6 @@ class _MyPageState extends State<MyPage> {
           _resetWithAnimation(false);
         },
         child: CustomScrollView(
-          physics: ClampingScrollPhysics(),
           controller: controller,
           slivers: [_buildBigImageHeader(context), _buildSliverList()],
         ));
@@ -81,12 +77,10 @@ class _MyPageState extends State<MyPage> {
 
   Widget _buildBigImageHeader(BuildContext context) {
     // return SliverPersistentHeader(
-    //   delegate: MyPersistentHeaderDelegate(
-    //       max: maxHeight,
-    //       min: defaultHeight,
-    //       builder: (ctx, offset) =>
-    //           SizedBox.expand(child: _buildImageWidget())),
-    // );
+    //     delegate: MyPersistentHeaderDelegate(
+    //         min: defaultHeight,
+    //         max: maxHeight,
+    //         child: _buildImageWidget()));
 
     return SliverPersistentHeader(
       delegate: MyPersistentHeaderDelegate(
@@ -104,6 +98,22 @@ class _MyPageState extends State<MyPage> {
         'https://pic4.zhimg.com/80/v2-b02e601349241df0e3f25fd1ec622155_1440w.jpg',
         fit: BoxFit.cover,
       ),
+    );
+  }
+
+  Widget _buildPresistentHeader() {
+    return SliverPersistentHeader(
+      delegate: MyPersistentHeaderDelegate(
+        builder: (ctx, offset) => Container(
+            alignment: Alignment.center,
+            color: Colors.orangeAccent,
+            child: Text(
+              "shrinkOffset:${offset.toStringAsFixed(1)}",
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            )),
+      ),
+      pinned: true,
+      floating: false,
     );
   }
 

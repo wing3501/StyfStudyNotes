@@ -22,8 +22,11 @@ class MyPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   double get minExtent => min;
 
   @override
-  bool shouldRebuild(covariant MyPersistentHeaderDelegate oldDelegate) =>
-      max != oldDelegate.max ||
-      min != oldDelegate.min ||
-      builder != oldDelegate.builder;
+  bool shouldRebuild(covariant MyPersistentHeaderDelegate oldDelegate) {
+    bool flag = max != oldDelegate.max ||
+        min != oldDelegate.min ||
+        builder != oldDelegate.builder;
+    print("-------$flag");
+    return flag;
+  }
 }
