@@ -25,6 +25,7 @@ class _PuBuAllState extends State<PuBuAll> {
   @override
   Widget build(BuildContext context) {
     return StaggeredGridView.countBuilder(
+      physics: NeverScrollableScrollPhysics(),
       primary: false,
       crossAxisCount: 4,
       mainAxisSpacing: 4,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/module/home/widget/pubu_qu.dart';
 import '../../../utils/fancy_icon_provider.dart';
 import '../widget/pubu_all.dart';
 import '../widget/jingang_qu.dart';
@@ -14,11 +15,8 @@ class HomePage extends StatelessWidget {
         color: Colors.green,
         child: Stack(
           children: [
-            SingleChildScrollView(
-              physics: AlwaysScrollableScrollPhysics(),
-              child: Column(
-                children: [JinGangQu(), BaoZhangQu()],
-              ),
+            ListView(
+              children: [JinGangQu(), BaoZhangQu(), PuBuQu()],
             )
           ],
         ),

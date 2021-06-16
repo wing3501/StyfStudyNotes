@@ -62,6 +62,13 @@
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
 		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
+		92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */; };
+		92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */; };
+		92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20F2679EE5300A88F19 /* WPTSlidingViewController.m */; };
+		92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D2102679EE5400A88F19 /* WPTSlidingDemoViewController.m */; };
+		92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D36C2679F03300A88F19 /* ScrollViewDemo.m */; };
+		92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D3702679F18A00A88F19 /* UIView+Ext.m */; };
+		92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D3742679F1C700A88F19 /* UIColor+Ext.m */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
 		92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D725D288DD0008EFAA /* Assets.xcassets */; };
@@ -191,6 +198,20 @@
 		928D8B2B264535FE00B3E4AE /* TaskService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
 		928D8B2C264535FE00B3E4AE /* TaskService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
 		928D8B2D264535FF00B3E4AE /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
+		92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingDemoViewController.h; sourceTree = "<group>"; };
+		92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHomeViewController.m; sourceTree = "<group>"; };
+		92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHeaderViewController.m; sourceTree = "<group>"; };
+		92A2D20C2679EE5300A88F19 /* WPTSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingViewController.h; sourceTree = "<group>"; };
+		92A2D20D2679EE5300A88F19 /* WPTSlidingHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingHomeViewController.h; sourceTree = "<group>"; };
+		92A2D20E2679EE5300A88F19 /* WPTSlidingHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingHeaderViewController.h; sourceTree = "<group>"; };
+		92A2D20F2679EE5300A88F19 /* WPTSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingViewController.m; sourceTree = "<group>"; };
+		92A2D2102679EE5400A88F19 /* WPTSlidingDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingDemoViewController.m; sourceTree = "<group>"; };
+		92A2D36B2679F03300A88F19 /* ScrollViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewDemo.h; sourceTree = "<group>"; };
+		92A2D36C2679F03300A88F19 /* ScrollViewDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewDemo.m; sourceTree = "<group>"; };
+		92A2D36F2679F18A00A88F19 /* UIView+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Ext.h"; sourceTree = "<group>"; };
+		92A2D3702679F18A00A88F19 /* UIView+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ext.m"; sourceTree = "<group>"; };
+		92A2D3732679F1C700A88F19 /* UIColor+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Ext.h"; sourceTree = "<group>"; };
+		92A2D3742679F1C700A88F19 /* UIColor+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Ext.m"; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -489,6 +510,27 @@
 			path = Webview;
 			sourceTree = "<group>";
 		};
+		92A2D2082679EE4400A88F19 /* 嵌套滚动 */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */,
+				92A2D2102679EE5400A88F19 /* WPTSlidingDemoViewController.m */,
+				92A2D20E2679EE5300A88F19 /* WPTSlidingHeaderViewController.h */,
+				92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */,
+				92A2D20D2679EE5300A88F19 /* WPTSlidingHomeViewController.h */,
+				92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */,
+				92A2D20C2679EE5300A88F19 /* WPTSlidingViewController.h */,
+				92A2D20F2679EE5300A88F19 /* WPTSlidingViewController.m */,
+				92A2D36B2679F03300A88F19 /* ScrollViewDemo.h */,
+				92A2D36C2679F03300A88F19 /* ScrollViewDemo.m */,
+				92A2D36F2679F18A00A88F19 /* UIView+Ext.h */,
+				92A2D3702679F18A00A88F19 /* UIView+Ext.m */,
+				92A2D3732679F1C700A88F19 /* UIColor+Ext.h */,
+				92A2D3742679F1C700A88F19 /* UIColor+Ext.m */,
+			);
+			path = "嵌套滚动";
+			sourceTree = "<group>";
+		};
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +556,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92A2D2082679EE4400A88F19 /* 嵌套滚动 */,
 				9218C2DF2669D2B200A932E6 /* Flutter */,
 				92B1AFD9265B3A1A0029C502 /* 打开设置 */,
 				92E1A91B264D2B17007D63D5 /* SwiftDemo */,
@@ -758,16 +801,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
+				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
+				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
+				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
+				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
@@ -779,6 +826,7 @@
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
+				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
@@ -796,6 +844,7 @@
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
+				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
@@ -806,6 +855,7 @@
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
+				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */,
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,

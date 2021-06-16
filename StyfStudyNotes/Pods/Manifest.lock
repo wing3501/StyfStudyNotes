@@ -52,6 +52,8 @@ PODS:
   - GLResponderChain (1.0.3)
   - image_picker (0.0.1):
     - Flutter
+  - JXCategoryView (1.5.9)
+  - KVOController (1.2.0)
   - Masonry (1.1.0)
   - my_flutter (0.0.1):
     - Flutter
@@ -88,6 +90,8 @@ DEPENDENCIES:
   - FlutterPluginRegistrant (from `my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - GLResponderChain (~> 1.0.3)
   - image_picker (from `my_flutter/.ios/.symlinks/plugins/image_picker/ios`)
+  - JXCategoryView
+  - KVOController
   - Masonry
   - my_flutter (from `my_flutter/.ios/Flutter`)
   - path_provider (from `my_flutter/.ios/.symlinks/plugins/path_provider/ios`)
@@ -104,6 +108,8 @@ SPEC REPOS:
     - AFNetworking
     - FMDB
     - GLResponderChain
+    - JXCategoryView
+    - KVOController
     - Masonry
     - OrderedSet
     - Reachability
@@ -155,6 +161,8 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GLResponderChain: 474af23e6458fcfc6ff9a193c7c98a441a5a05c9
   image_picker: e06f7a68f000bd36f552c1847e33cda96ed31f1f
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   my_flutter: 5f71a42a61a499a9f322f2c0f62fc185a5807c9b
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
@@ -168,6 +176,6 @@ SPEC CHECKSUMS:
   video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
   webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
 
-PODFILE CHECKSUM: 640dd28f11203fb23fb18f019ddd033bd1c17214
+PODFILE CHECKSUM: 6d20db34f41a8c9f47433f95622293fd35b2b948
 
 COCOAPODS: 1.10.0

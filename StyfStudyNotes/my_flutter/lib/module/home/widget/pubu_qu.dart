@@ -37,6 +37,7 @@ class _PuBuQuState extends State<PuBuQu> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 667,
       child: PageView(
         controller: _pageController,
         children: pubuPages,
