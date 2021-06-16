@@ -26,7 +26,6 @@ class MyPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool flag = max != oldDelegate.max ||
         min != oldDelegate.min ||
         builder != oldDelegate.builder;
-    print("-------$flag");
     return flag;
   }
 }

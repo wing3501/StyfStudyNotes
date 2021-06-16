@@ -10,8 +10,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('首页'), elevation: 0.0),
-      body: Stack(
-        children: [PuBuAll()],
+      body: Container(
+        color: Colors.green,
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              physics: AlwaysScrollableScrollPhysics(),
+              child: Column(
+                children: [JinGangQu(), BaoZhangQu()],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
