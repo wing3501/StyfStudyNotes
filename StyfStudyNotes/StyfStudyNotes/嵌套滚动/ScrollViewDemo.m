@@ -19,7 +19,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        WPTSlidingHomeViewController *vc = [[WPTSlidingHomeViewController alloc]initWithHeaderHeight:450 categoryViewHeight:45 suspendContentOffsetY:(450-45) subVCArray:@[[[WPTSlidingDemoViewController alloc]init],[[WPTSlidingDemoViewController alloc]init],[[WPTSlidingDemoViewController alloc]init]] titles:@[@"作品",@"转发",@"喜欢"]];
+        WPTSlidingHomeViewController *vc = [[WPTSlidingHomeViewController alloc]initWithHeaderHeight:450 categoryViewHeight:45 suspendContentOffsetY:(450-45) subVCArray:@[[[WPTSlidingDemoViewController alloc]initWithHeaderHeight:450],[[WPTSlidingDemoViewController alloc]initWithHeaderHeight:450],[[WPTSlidingDemoViewController alloc]initWithHeaderHeight:450]] titles:@[@"作品",@"转发",@"喜欢"]];
         [self presentViewController:vc animated:YES completion:nil];
     });
 }

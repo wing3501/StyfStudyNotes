@@ -12,6 +12,8 @@
 #import "UIColor+Ext.h"
 
 @interface WPTSlidingHeaderViewController ()
+/// <#name#>
+@property (nonatomic, strong) UIImageView *imageView;
 /// 视图高度
 @property (nonatomic, assign) CGFloat viewHeight;
 /// 悬停时的contentOffsetY
@@ -49,6 +51,7 @@
 - (void)setupUI {
     self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.categoryView];
+    [self.view addSubview:self.imageView];
 }
 
 /// 自动布局
@@ -56,6 +59,11 @@
     [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.equalTo(@(self.categoryViewHeight > 0 ? self.categoryViewHeight : 45));
+    }];
+    
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self.view);
+        make.bottom.equalTo(self.categoryView.mas_top);
     }];
 }
 #pragma mark - overwrite
@@ -112,5 +120,14 @@
         _categoryView.indicators = @[lineView];
     }
     return _categoryView;
+}
+
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc]init];
+        _imageView.image = [UIImage imageNamed:@"header"];
+        _imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+    return _imageView;
 }
 @end
