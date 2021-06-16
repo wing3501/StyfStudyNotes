@@ -28,27 +28,28 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  cached_network_image: ^3.0.0
+  cached_network_image: ^3.0.0 #网络图片缓存
   gbk_codec: ^0.3.2
   dio: ^4.0.0
   http: ^0.13.3
-  flutter_bloc: ^7.0.1
-  flutter_redux: ^0.8.2
+  flutter_bloc: ^7.0.1 #bloc状态管理
+  flutter_redux: ^0.8.2 #redux状态管理
   localstorage: ^4.0.0+1
   shared_preferences: ^2.0.6
   equatable: ^2.0.2
-  image_picker: ^0.8.0+3
-  audioplayers: ^0.19.0
-  permission_handler: ^8.0.1
-  video_player: ^2.1.5
-  webview_flutter: ^2.0.8
+  image_picker: ^0.8.0+3 #图片拾取器
+  audioplayers: ^0.19.0 #音频播放器
+  permission_handler: ^8.0.1 #权限访问
+  video_player: ^2.1.5 #视频播放器
+  webview_flutter: ^2.0.8 #WebView 插件
   flutter_inappwebview: ^5.3.2
-  flutter_staggered_grid_view: ^0.4.0
+  flutter_staggered_grid_view: ^0.4.0 #瀑布流
   event_bus: ^2.0.0
   flutter_boost:
     git:
         url: 'https://github.com/alibaba/flutter_boost.git'
         ref: 'v3.0-beta.11'
+  flutter_swiper: ^1.1.6 #轮播图
 dev_dependencies:
   flutter_test:
     sdk: flutter
