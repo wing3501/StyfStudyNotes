@@ -4,7 +4,7 @@ class JinGangQu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 250,
       alignment: Alignment.center,
       color: Colors.orangeAccent,
       child: Text("金刚区"),

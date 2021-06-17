@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:my_flutter/module/home/model/int_size.dart';
+import 'package:my_flutter/utils/event_bus_utils.dart';
+import 'package:my_flutter/utils/log_utils.dart';
 
 import 'pubu_item.dart';
 
@@ -17,6 +19,7 @@ class _PuBuAllState extends State<PuBuAll> {
   @override
   void initState() {
     super.initState();
+
     final rd = Random();
     _data = List.generate(
         200, (index) => IntSize(rd.nextInt(100) + 200, rd.nextInt(150) + 200));
@@ -26,7 +29,6 @@ class _PuBuAllState extends State<PuBuAll> {
   Widget build(BuildContext context) {
     return StaggeredGridView.countBuilder(
       physics: NeverScrollableScrollPhysics(),
-      primary: false,
       crossAxisCount: 4,
       mainAxisSpacing: 4,
       crossAxisSpacing: 4,
@@ -35,6 +37,7 @@ class _PuBuAllState extends State<PuBuAll> {
         size: _data[index],
       ),
       staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
+      itemCount: _data.length,
     );
   }
 }
