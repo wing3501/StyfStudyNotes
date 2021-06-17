@@ -45,6 +45,12 @@ class _HomePageState extends State<HomePage>
   }
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('首页'), elevation: 0.0),
