@@ -19,8 +19,9 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   final _scrollController = ScrollController();
   List<Tab> _tabs = [];
-  TabController _controller;
-  int currentIndex = 0;
+  TabController _tabController;
+  int _currentIndex = 0;
+  bool _showTabbar = false;
 
   @override
   void initState() {
@@ -32,20 +33,23 @@ class _HomePageState extends State<HomePage>
               icon: Icon(Icons.email),
             ))
         .toList();
-    _controller = TabController(
-        length: _tabs.length, vsync: this, initialIndex: currentIndex);
+    _tabController = TabController(
+        length: _tabs.length, vsync: this, initialIndex: _currentIndex);
 
     _scrollController.addListener(() {
       double offsetY = _scrollController.offset;
-      if (offsetY >= 450) {
-      } else {}
 
-      // hyLog("offsetY:$offsetY", StackTrace.current);
+      // hyLog("---------$offsetY", StackTrace.current);
+
+      setState(() {
+        _showTabbar = offsetY >= 300;
+      });
     });
   }
 
   @override
   void dispose() {
+    _tabController.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -59,8 +63,9 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget _buildHomeContent(BuildContext context) {
-    return NestedScrollView(
+    var nestedScrollView = NestedScrollView(
         physics: BouncingScrollPhysics(),
+        controller: _scrollController,
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverOverlapAbsorber(
@@ -71,26 +76,42 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
             ),
-            SliverPersistentHeader(
-              delegate: MyPersistentHeaderDelegate(
-                  builder: (BuildContext context, double offset) {
-                    return Container(
-                      color: Colors.white,
-                      child: TabBar(
-                        tabs: _tabs,
-                        controller: _controller,
-                      ),
-                    );
-                  },
-                  max: 60,
-                  min: 60),
-              pinned: true,
-            )
+            // SliverPersistentHeader(
+            //   delegate: MyPersistentHeaderDelegate(
+            //       builder: (BuildContext context, double offset) {
+            //         return Container(
+            //           color: Colors.white,
+            //           child: _showTabbar
+            //               ? TabBar(
+            //                   tabs: _tabs,
+            //                   controller: _tabController,
+            //                 )
+            //               : Container(),
+            //         );
+            //       },
+            //       max: _showTabbar ? 60 : 0,
+            //       min: _showTabbar ? 60 : 0),
+            //   pinned: true,
+            // )
           ];
         },
         body: TabBarView(
-          controller: _controller,
+          controller: _tabController,
           children: [PuBuAll(), PuBuAll(), PuBuAll(), PuBuAll(), PuBuAll()],
         ));
+
+    var tabbar = _showTabbar
+        ? Container(
+            color: Colors.white,
+            child: TabBar(
+              tabs: _tabs,
+              controller: _tabController,
+            ),
+          )
+        : Container();
+
+    return Stack(
+      children: [nestedScrollView, tabbar],
+    );
   }
 }
