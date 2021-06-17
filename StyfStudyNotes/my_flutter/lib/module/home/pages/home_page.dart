@@ -60,14 +60,16 @@ class _HomePageState extends State<HomePage>
 
   Widget _buildHomeContent(BuildContext context) {
     return NestedScrollView(
-        // physics: BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            SliverToBoxAdapter(
-              child: JinGangQu(),
-            ),
-            SliverToBoxAdapter(
-              child: BaoZhangQu(),
+            SliverOverlapAbsorber(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  children: [JinGangQu(), BaoZhangQu()],
+                ),
+              ),
             ),
             SliverPersistentHeader(
               delegate: MyPersistentHeaderDelegate(
