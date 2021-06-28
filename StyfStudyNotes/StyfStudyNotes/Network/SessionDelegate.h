@@ -1,6 +1,6 @@
 //
 //  SessionDelegate.h
-//  WeiPaiTangClient
+//   
 //
 //  Created by styf on 2021/5/12.
 //  Copyright © 2021 styf. All rights reserved.

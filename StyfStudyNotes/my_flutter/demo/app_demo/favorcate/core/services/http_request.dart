@@ -1,3 +1,9 @@
+/*
+ * @Author: styf
+ * @Date: 2021-06-11 10:39:40
+ * @Description: 
+ * @FilePath: /my_flutter/demo/app_demo/favorcate/core/services/http_request.dart
+ */
 import 'package:dio/dio.dart';
 
 import 'config.dart';

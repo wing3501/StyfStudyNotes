@@ -1,9 +1,9 @@
 //
 //  WPTSlidingDemoViewController.h
-//  WeiPaiTangClient
+//
 //
 //  Created by styf on 2020/6/30.
-//  Copyright © 2020 杭州微拍堂文化创意有限公司. All rights reserved.
+//  Copyright © 2020  . All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
