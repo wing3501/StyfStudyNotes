@@ -37,6 +37,7 @@
                    @{@"title":@"Swift",@"class":@"_TtC14StyfStudyNotes9SwiftDemo"},
                    @{@"title":@"打开设置",@"class":@"OpenSetting"},
                    @{@"title":@"Flutter",@"class":@"OpenFlutter"},
+                   @{@"title":@"DiffableDataSource",@"class":@"DiffableDataSourceDemo"},
     ];
     [self.view addSubview:self.tableView];
     
