@@ -22,8 +22,9 @@
 //    [SortTest test];
 //    [TreeTest test];
 //    [Other test];
-    [DongTaiGuiHua test];
+//    [DongTaiGuiHua test];
 //    [TwoPtr test];
+    [BFS test];
 }
 
 
