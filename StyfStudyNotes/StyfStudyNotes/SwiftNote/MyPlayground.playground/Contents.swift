@@ -2,6 +2,13 @@ import UIKit
 
 var str = "Hello, playground"
 
+var namesOfIntegers = [Int: String]()
+var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+for (airportCode, airportName) in airports {
+    print("\(airportCode): \(airportName)")
+}
+//person["name", default: "Anonymous"]
+
 //元组
 let http404Error = (404, "Not Found")
 print(http404Error.1)
