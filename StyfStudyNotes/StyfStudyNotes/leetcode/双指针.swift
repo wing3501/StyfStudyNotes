@@ -61,8 +61,257 @@ import Foundation
 //        print(minWindow("ADOBECODEBANC", "ABC"))
 //        print(minWindow("a", "a"))
 //        print(minWindow("a", "aa"))
-        print(minWindow("a", "b"))
+//        print(minWindow("a", "b"))
+        
+//        567. 字符串的排列
+//        print(checkInclusion("ab", "eidbaooo"))
+//        print(checkInclusion("ab", "eidboaoo"))
+//        print(checkInclusion("hello", "ooolleoooleh"))
+//        print(checkInclusion("h", "jrfrspuz"))
+//        print(checkInclusion("ky", "ainwkckifykxlribaypk"))
+//        print(checkInclusion("ab", "dacbd"))
+        
+//        438. 找到字符串中所有字母异位词
+//        print(findAnagrams("cbaebabacd", "abc"))//[0,6]
+//        print(findAnagrams("abab", "ab"))//[0,1,2]
+//        print(findAnagrams("baa", "aa"))
+        
+//        3. 无重复字符的最长子串
+        print(lengthOfLongestSubstring("abcabcbb"))//3
+        print(lengthOfLongestSubstring("bbbbb"))//1
+        print(lengthOfLongestSubstring("pwwkew"))//3
+        print(lengthOfLongestSubstring(""))//0
+        print(lengthOfLongestSubstring(" "))//1
+        print(lengthOfLongestSubstring("au"))//2
+        print(lengthOfLongestSubstring("abba"))//2
+        
     }
+    
+//    3. 无重复字符的最长子串
+//    给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+//    示例 1:
+//    输入: s = "abcabcbb"
+//    输出: 3
+//    解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+//    示例 2:
+//    输入: s = "bbbbb"
+//    输出: 1
+//    解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+//    示例 3:
+//    输入: s = "pwwkew"
+//    输出: 3
+//    解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+//         请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+//    示例 4:
+//    输入: s = ""
+//    输出: 0
+//    提示：
+//    0 <= s.length <= 5 * 104
+//    s 由英文字母、数字、符号和空格组成
+    class func lengthOfLongestSubstring(_ s: String) -> Int {
+        var window = [Character: Int]()
+        var left = 0
+        var right = 0
+        var maxLen = 0
+        let array = Array(s)
+        while right < array.count {
+            let ch = array[right]
+            right += 1
+            window[ch,default: 0] += 1
+            
+            while window[ch,default: 0] > 1 {
+                let leftch = array[left]
+                left += 1
+                window[leftch,default: 0] -= 1
+            }
+            maxLen = max(maxLen, right - left)
+        }
+        
+//        var window = [Character: Int]()
+//        var left = 0
+//        var right = 0
+//        var maxLen = 0
+//        let array = Array(s)
+//        while right < array.count {
+//            let ch = array[right]
+//            if let index = window[ch] {
+//                maxLen = max(maxLen, right - left)
+//                while left <= index {
+//                    let leftch = array[left]
+//                    window[leftch] = nil
+//                    left += 1
+//                }
+//            }
+//            window[ch] = right
+//            right += 1
+//        }
+//        maxLen = max(maxLen, right - left)
+        return maxLen
+    }
+    
+//    438. 找到字符串中所有字母异位词
+//    给定两个字符串 s 和 p，找到 s 中所有 p 的 异位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+//    异位词 指字母相同，但排列不同的字符串。
+//    示例 1:
+//    输入: s = "cbaebabacd", p = "abc"
+//    输出: [0,6]
+//    解释:
+//    起始索引等于 0 的子串是 "cba", 它是 "abc" 的异位词。
+//    起始索引等于 6 的子串是 "bac", 它是 "abc" 的异位词。
+//     示例 2:
+//    输入: s = "abab", p = "ab"
+//    输出: [0,1,2]
+//    解释:
+//    起始索引等于 0 的子串是 "ab", 它是 "ab" 的异位词。
+//    起始索引等于 1 的子串是 "ba", 它是 "ab" 的异位词。
+//    起始索引等于 2 的子串是 "ab", 它是 "ab" 的异位词。
+//    提示:
+//    1 <= s.length, p.length <= 3 * 104
+//    s 和 p 仅包含小写字母
+    class func findAnagrams(_ s: String, _ p: String) -> [Int] {
+        var need = [Character: Int]()
+        var window = [Character: Int]()
+        for ch in p {
+            need[ch,default: 0] += 1
+        }
+        var left = 0
+        var right = 0
+        var valid = 0
+        let array = Array(s)
+        let len = p.count
+        var result = [Int]()
+        while right < array.count {
+            let ch = array[right]
+            right += 1
+            if need[ch,default: 0] > 0 {
+                window[ch,default: 0] += 1
+                if need[ch,default: 0] == window[ch,default: 0] {
+                    valid += 1
+                }
+            }
+            while right - left >= len {
+                if valid == need.count {
+                    result.append(left)
+                }
+                let leftch = array[left]
+                left += 1
+                if window[leftch,default: 0] > 0 {
+                    if need[leftch,default: 0] == window[leftch,default: 0] {
+                        valid -= 1
+                    }
+                    window[leftch,default: 0] -= 1
+                }
+            }
+        }
+        return result
+    }
+    
+//    567. 字符串的排列
+//    给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。
+//    换句话说，s1 的排列之一是 s2 的 子串 。
+//    示例 1：
+//    输入：s1 = "ab" s2 = "eidbaooo"
+//    输出：true
+//    解释：s2 包含 s1 的排列之一 ("ba").
+//    示例 2：
+//    输入：s1= "ab" s2 = "eidboaoo"
+//    输出：false
+//    提示：
+//    1 <= s1.length, s2.length <= 104
+//    s1 和 s2 仅包含小写字母
+    class func checkInclusion(_ s1: String, _ s2: String) -> Bool {
+        let len = s1.count
+        var need = [Character : Int]()
+        for ch in s1 {
+            need[ch, default:0] += 1
+        }
+        let array = Array(s2)
+        var left = 0
+        var right = 0
+        var window = [Character : Int]()
+        var valid = 0
+        while right < array.count {
+            let ch = array[right]
+            right += 1
+            if need[ch,default: 0] > 0 {
+                window[ch, default: 0] += 1
+                if window[ch]! == need[ch]! {
+                    valid += 1
+                }
+            }
+            
+            while right - left >= len {
+                if valid == need.count {
+                    return true
+                }
+                let leftch = array[left]
+                left += 1
+                if window[leftch,default: 0] > 0 {
+                    if window[leftch]! == need[leftch]! {
+                        valid -= 1
+                    }
+                    window[leftch, default: 0] -= 1
+                }
+            }
+        }
+        return false
+        
+//        var need = [Character : Int]()
+//        for ch in s1 {
+//            need[ch, default:0] += 1
+//        }
+//        let array = Array(s2)
+//        var left = 0
+//        var right = 0
+//        var window = [Character : Int]()
+//        var valid = 0
+//        while right < array.count {
+//            let ch = array[right]
+//            right += 1
+//            if need[ch,default: 0] > 0 {
+//                print("添加\(ch)")
+//                window[ch, default: 0] += 1
+//                if window[ch]! == need[ch]! {
+//                    valid += 1
+//                }
+//            }else {
+//                if window.count > 0 {
+//                    print("移除所有")
+//                    window.removeAll()
+//                    valid = 0
+//                    left = right
+//                    continue
+//                }
+//            }
+//
+//
+//
+//            var leftCh = array[left]
+//            while left < right && (need[leftCh,default: 0] == 0 || window[leftCh,default: 0] > need[leftCh,default: 0]) {
+//                left += 1
+//                if window[leftCh,default: 0] > need[leftCh,default: 0] {
+//                    print("移除\(leftCh)")
+//                    window[leftCh,default: 0] -= 1
+//                }else {
+//                    print("跳过\(leftCh)")
+//                }
+//
+//                if left < array.count {
+//                    leftCh = array[left]
+//                }else {
+//                    break
+//                }
+//            }
+//
+//            if valid == need.count {
+//                if right - left == s1.count {
+//                    return true
+//                }
+//            }
+//        }
+//        return false
+    }
+    
     
 //    76. 最小覆盖子串
 //    给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
