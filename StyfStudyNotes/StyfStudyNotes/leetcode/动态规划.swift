@@ -83,8 +83,18 @@ import Foundation
 //        print(rob1([1,2,3,1]))//4
 //        print(rob1([0]))//0
         
+//        337. 打家劫舍 III
+//        let node = TreeTest.deserialize("[3,2,3,null,3,null,1]")
+//        print(rob2(node))
+//        let node1 = TreeTest.deserialize("[3,4,5,1,3,null,1]")
+//        print(rob2(node1))
+        
+
+        
         
     }
+
+    
     //    337. 打家劫舍 III
     //    在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
     //
@@ -116,7 +126,29 @@ import Foundation
     //    解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9.
     //    https://leetcode-cn.com/problems/house-robber-iii/
     class func rob2(_ root: TreeNode?) -> Int {
-        return 0
+        //rob(root)[0] = max(rob(left)[0],rob(left)[1]) + max(rob(right)[0],rob(right)[1])
+        //rob(root)[1] = rob(left)[0] + rob(right)[0] + rootVal
+        var book = [String: Int]()
+        return max(robHelper(root, true, &book),robHelper(root, false, &book))
+    }
+    
+    class func robHelper(_ root: TreeNode?,_ isRob:Bool,_ book: inout [String: Int]) -> Int {
+        guard let node = root else { return 0 }
+        var node1 = node
+        let ptr = withUnsafePointer(to: &node1) { UnsafeRawPointer($0)}
+        let nodeAddress = ptr.load(as: UInt.self)
+        let key = "\(nodeAddress)_\(isRob)"
+        if let val = book[key] {
+            return val
+        }
+        var val = 0
+        if isRob {
+            val = robHelper (node.left, false, &book) + robHelper(node.right, false, &book) + node.val
+        }else {
+            val = max(robHelper(node.left, true, &book),robHelper(node.left, false, &book)) + max(robHelper(node.right, true, &book),robHelper(node.right, false, &book))
+        }
+        book[key] = val
+        return val
     }
         
     //    213. 打家劫舍 II
@@ -139,6 +171,7 @@ import Foundation
     //    0 <= nums[i] <= 1000
     //    https://leetcode-cn.com/problems/house-robber-ii/
         class func rob1(_ nums: [Int]) -> Int {
+            //三种情况：只考虑1-(len-1) 0-(len-2)两种情况
             if nums.count == 1 {
                 return nums[0]
             }
@@ -194,6 +227,8 @@ import Foundation
     //    0 <= nums[i] <= 400
     //    https://leetcode-cn.com/problems/house-robber/
         class func rob(_ nums: [Int]) -> Int {
+            //其他：用一组数组解，从i开始抢的最大金额
+            
             if nums.count == 1 {
                 return nums[0]
             }

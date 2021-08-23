@@ -19,10 +19,10 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
 //    [JianZhiOffer test];
-//    [SortTest test];
+    [SortTest test];
 //    [TreeTest test];
 //    [Other test];
-    [DongTaiGuiHua test];
+//    [DongTaiGuiHua test];
 //    [TwoPtr test];
 //    [BFS test];
 }

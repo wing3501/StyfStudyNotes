@@ -9,6 +9,31 @@ for (airportCode, airportName) in airports {
 }
 //person["name", default: "Anonymous"]
 
+//数组
+
+//推荐:
+//
+//var names: [String] = []
+//var lookup: [String: Int] = [:]
+//不推荐:
+//
+//var names = [String]()
+//var lookup = [String: Int]()
+
+var someStrs = [String]()
+someStrs.append("Apple")
+someStrs.append("Amazon")
+someStrs.append("Runoob")
+someStrs += ["Google"]
+for (index, item) in someStrs.enumerated() {
+    print("在 index = \(index) 位置上的值为 \(item)")
+}
+//合并
+var intsA = [Int](repeating: 2, count:2)
+var intsB = [Int](repeating: 1, count:3)
+
+var intsC = intsA + intsB
+
 //元组
 let http404Error = (404, "Not Found")
 print(http404Error.1)
