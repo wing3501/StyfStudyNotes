@@ -77,14 +77,210 @@ import Foundation
 //        print(findAnagrams("baa", "aa"))
         
 //        3. 无重复字符的最长子串
-        print(lengthOfLongestSubstring("abcabcbb"))//3
-        print(lengthOfLongestSubstring("bbbbb"))//1
-        print(lengthOfLongestSubstring("pwwkew"))//3
-        print(lengthOfLongestSubstring(""))//0
-        print(lengthOfLongestSubstring(" "))//1
-        print(lengthOfLongestSubstring("au"))//2
-        print(lengthOfLongestSubstring("abba"))//2
+//        print(lengthOfLongestSubstring("abcabcbb"))//3
+//        print(lengthOfLongestSubstring("bbbbb"))//1
+//        print(lengthOfLongestSubstring("pwwkew"))//3
+//        print(lengthOfLongestSubstring(""))//0
+//        print(lengthOfLongestSubstring(" "))//1
+//        print(lengthOfLongestSubstring("au"))//2
+//        print(lengthOfLongestSubstring("abba"))//2
         
+//        1. 两数之和
+//        print(twoSum([2,7,11,15], 9))//[0,1]
+//        print(twoSum([3,2,4], 6))//[1,2]
+//        print(twoSum([3,3], 6))//[0,1]
+        
+        //    15. 三数之和
+//        print(threeSum([-1,0,1,2,-1,-4]))//[[-1,-1,2],[-1,0,1]]
+//        print(threeSum([]))
+//        print(threeSum([0]))
+//        print(threeSum([0,0,0]))
+        
+//        18. 四数之和
+        print(fourSum([1,0,-1,0,-2,2], 0))
+        print(fourSum([2,2,2,2,2], 8))
+    }
+    
+//    18. 四数之和
+//    给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] ：
+//    0 <= a, b, c, d < n
+//    a、b、c 和 d 互不相同
+//    nums[a] + nums[b] + nums[c] + nums[d] == target
+//    你可以按 任意顺序 返回答案 。
+//    示例 1：
+//    输入：nums = [1,0,-1,0,-2,2], target = 0
+//    输出：[[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+//    示例 2：
+//    输入：nums = [2,2,2,2,2], target = 8
+//    输出：[[2,2,2,2]]
+//    提示：
+//    1 <= nums.length <= 200
+//    -109 <= nums[i] <= 109
+//    -109 <= target <= 109
+//    https://leetcode-cn.com/problems/4sum/
+    class func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
+        if nums.count < 4 {
+            return []
+        }
+        let array = nums.sorted()
+        var set = Set<[Int]>()
+        for (index,item) in array.enumerated() {
+            let t1 = target - item
+            if index < array.count - 3 {
+                let l = index + 1
+                let r = array.count - 1
+                var set1 = Set<[Int]>()
+                var i = l
+                while i <= r {
+                    let num = array[i]
+                    let t2 = t1 - num
+                    if i < array.count - 2 {
+                        var left = i + 1
+                        var right = r
+                        while left < right {
+                            let leftNum = array[left]
+                            let rightNum = array[right]
+                            if leftNum + rightNum < t2 {
+                                while left < nums.count && leftNum == array[left] {
+                                    left += 1
+                                }
+                            }else if leftNum + rightNum > t2 {
+                                while right >= 0 && rightNum == array[right] {
+                                    right -= 1
+                                }
+                            }else {
+                                set1.insert([leftNum,rightNum,num])
+                                while left < nums.count && leftNum == array[left] {
+                                    left += 1
+                                }
+                                while right >= 0 && rightNum == array[right] {
+                                    right -= 1
+                                }
+                            }
+                        }
+                    }
+                    i += 1
+                }
+                for item1 in set1 {
+                    var arr = item1
+                    arr.append(item)
+                    set.insert(arr)
+                }
+            }
+        }
+        
+        return Array(set)
+    }
+    
+//    15. 三数之和
+//    给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+//    注意：答案中不可以包含重复的三元组。
+//    示例 1：
+//    输入：nums = [-1,0,1,2,-1,-4]
+//    输出：[[-1,-1,2],[-1,0,1]]
+//    示例 2：
+//    输入：nums = []
+//    输出：[]
+//    示例 3：
+//    输入：nums = [0]
+//    输出：[]
+//    提示：
+//    0 <= nums.length <= 3000
+//    -105 <= nums[i] <= 105
+//    https://leetcode-cn.com/problems/3sum/
+    class func threeSum(_ nums: [Int]) -> [[Int]] {
+        if nums.count < 3 {
+            return []
+        }
+        let array = nums.sorted()
+        var set = Set<[Int]>()
+        for (index,target) in array.enumerated() {
+            if index < array.count - 2 {
+                var left = index + 1
+                var right = array.count - 1
+                while left < right {
+                    let leftNum = array[left]
+                    let rightNum = array[right]
+                    if leftNum + rightNum > -target {
+                        while right >= 0 && array[right] == rightNum {
+                            right -= 1
+                        }
+                    }else if leftNum + rightNum < -target {
+                        while left < array.count && array[left] == leftNum {
+                            left += 1
+                        }
+                    }else {
+                        set.insert([leftNum,rightNum,target])
+                        while left < array.count && array[left] == leftNum {
+                            left += 1
+                        }
+                        while right >= 0 && array[right] == rightNum {
+                            right -= 1
+                        }
+                    }
+                }
+            }
+        }
+        return Array(set)
+    }
+    
+//    1. 两数之和
+//    给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+//    你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+//    你可以按任意顺序返回答案。
+//    示例 1：
+//    输入：nums = [2,7,11,15], target = 9
+//    输出：[0,1]
+//    解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+//    示例 2：
+//    输入：nums = [3,2,4], target = 6
+//    输出：[1,2]
+//    示例 3：
+//    输入：nums = [3,3], target = 6
+//    输出：[0,1]
+//    提示：
+//    2 <= nums.length <= 104
+//    -109 <= nums[i] <= 109
+//    -109 <= target <= 109
+//    只会存在一个有效答案
+//    进阶：你可以想出一个时间复杂度小于 O(n2) 的算法吗？
+//    https://leetcode-cn.com/problems/two-sum/
+    class func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var array: [[Int]] = []
+        for (index,item) in nums.enumerated() {
+            array.append([item,index])
+        }
+        array.sort { (arr1, arr2) -> Bool in
+            return arr1[0] < arr2[0]
+        }
+        
+        var left = 0
+        var right = array.count - 1
+//        var result: [Int] = []
+        while left < right {
+            let leftE = array[left]
+            let rightE = array[right]
+            if leftE[0] + rightE[0] < target {
+                while leftE[0] == array[left][0] {
+                    left += 1
+                }
+            }else if leftE[0] + rightE[0] > target {
+                while rightE[0] == array[right][0] {
+                    right -= 1
+                }
+            }else {
+//                result.append([leftNum,rightNum])
+                return [leftE[1],rightE[1]]
+//                while leftNum == array[left] {
+//                    left += 1
+//                }
+//                while rightNum == array[right] {
+//                    right -= 1
+//                }
+            }
+        }
+
+        return []
     }
     
 //    3. 无重复字符的最长子串
