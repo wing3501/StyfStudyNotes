@@ -20,11 +20,12 @@
     
 //    [JianZhiOffer test];
 //    [SortTest test];
-//    [TreeTest test];
+    [TreeTest test];
 //    [Other test];
 //    [DongTaiGuiHua test];
-    [TwoPtr test];
+//    [TwoPtr test];
 //    [BFS test];
+//    [LinkListTest test];
 }
 
 

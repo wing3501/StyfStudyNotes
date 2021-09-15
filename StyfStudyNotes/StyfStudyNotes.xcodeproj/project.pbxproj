@@ -67,6 +67,7 @@
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
 		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
+		929B470526D86EB100931956 /* 链表.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B470426D86EB100931956 /* 链表.swift */; };
 		92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */; };
 		92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */; };
 		92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20F2679EE5300A88F19 /* WPTSlidingViewController.m */; };
@@ -213,6 +214,7 @@
 		928D8B2B264535FE00B3E4AE /* TaskService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
 		928D8B2C264535FE00B3E4AE /* TaskService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
 		928D8B2D264535FF00B3E4AE /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
+		929B470426D86EB100931956 /* 链表.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "链表.swift"; sourceTree = "<group>"; };
 		92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingDemoViewController.h; sourceTree = "<group>"; };
 		92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHomeViewController.m; sourceTree = "<group>"; };
 		92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHeaderViewController.m; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 				92A8D7F925D28E1A0008EFAA /* 二分查找.swift */,
 				92A8D7FC25D28E7A0008EFAA /* 双指针.swift */,
 				9229790C25E5DCF800618FDF /* 排序.swift */,
+				929B470426D86EB100931956 /* 链表.swift */,
 				92A8D7E625D28BA40008EFAA /* StyfStudyNotes-Bridging-Header.h */,
 				92A8D7EA25D28C020008EFAA /* Leetcode.h */,
 				92A8D7EB25D28C020008EFAA /* Leetcode.m */,
@@ -901,6 +904,7 @@
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
+				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
