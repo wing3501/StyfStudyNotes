@@ -45,23 +45,358 @@ public class TreeNode {
 //        print(str)
         
 //        652. 寻找重复的子树
-        let node = deserialize("[1,2,3,4,null,2,4,null,null,4,null,null,null]")
-//        let node = deserialize("[0,0,0,0,null,null,0,null,null,null,0]")
-        let array = findDuplicateSubtrees(node)
-        for n in array {
-            let str = serialize(n)
-            print(str)
-        }
+//        let node = deserialize("[1,2,3,4,null,2,4,null,null,4,null,null,null]")
+////        let node = deserialize("[0,0,0,0,null,null,0,null,null,null,0]")
+//        let array = findDuplicateSubtrees(node)
+//        for n in array {
+//            let str = serialize(n)
+//            print(str)
+//        }
         
-//        [0,0,0,0,null,null,0,null,null,null,0]
-        //            0
-        //           / \
-        //          0   0
-        //         /     \
-        //        0       0
-        //                 \
-        //                  0
+        //    230. 二叉搜索树中第K小的元素
+//        let node = deserialize("[3,1,4,null,2]")
+//        print(kthSmallest(node, 1))
+        
+        
+//        450. 删除二叉搜索树中的节点
+//        var node = deserialize("[5,3,6,2,4,null,7]")
+        var node = deserialize("[3,1,4,null,2]")
+        node = deleteNode(node, 1)
+        print("")
+        
     }
+//    98. 验证二叉搜索树
+//    给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
+//    有效 二叉搜索树定义如下：
+//    节点的左子树只包含 小于 当前节点的数。
+//    节点的右子树只包含 大于 当前节点的数。
+//    所有左子树和右子树自身必须也是二叉搜索树。
+//    示例 1：
+//    输入：root = [2,1,3]
+//    输出：true
+//    示例 2：
+//    输入：root = [5,1,4,null,null,3,6]
+//    输出：false
+//    解释：根节点的值是 5 ，但是右子节点的值是 4 。
+//    提示：
+//    树中节点数目范围在[1, 104] 内
+//    -231 <= Node.val <= 231 - 1
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/validate-binary-search-tree
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+//            5
+//           4  6
+//         _ _  3 7
+    class func isValidBST(_ root: TreeNode?) -> Bool {
+        guard let node = root else { return true }
+        let t = isValidBSTHelper(node)
+        return t.0
+    }
+    
+    class func isValidBSTHelper(_ root: TreeNode) -> (Bool,Int,Int) {
+        var tuple = (true,root.val,root.val)
+        if let left = root.left {
+            let leftT = isValidBSTHelper(left)
+            if !leftT.0 || root.val <= leftT.2 {
+                return (false,0,0)
+            }
+            tuple.1 = leftT.1
+        }
+        if let right = root.right {
+            let rightT = isValidBSTHelper(right)
+            if !rightT.0 || root.val >= rightT.1 {
+                return (false,0,0)
+            }
+            tuple.2 = rightT.2
+        }
+        return tuple
+    }
+    
+//    700. 二叉搜索树中的搜索
+//    给定二叉搜索树（BST）的根节点和一个值。 你需要在BST中找到节点值等于给定值的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 NULL。
+//
+//    例如，
+//
+//    给定二叉搜索树:
+//
+//            4
+//           / \
+//          2   7
+//         / \
+//        1   3
+//
+//    和值: 2
+//    你应该返回如下子树:
+//
+//          2
+//         / \
+//        1   3
+//    在上述示例中，如果要找的值是 5，但因为没有节点值为 5，我们应该返回 NULL。
+//
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/search-in-a-binary-search-tree
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func searchBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        var node = root
+        while node != nil {
+            if node!.val == val {
+                return node
+            }else if node!.val > val {
+                if let left = node?.left {
+                    node = left
+                }else {
+                    break
+                }
+            }else {
+                if let right = node?.right {
+                    node = right
+                }else {
+                    break
+                }
+            }
+        }
+        return nil
+    }
+    
+//    701. 二叉搜索树中的插入操作
+//    给定二叉搜索树（BST）的根节点和要插入树中的值，将值插入二叉搜索树。 返回插入后二叉搜索树的根节点。 输入数据 保证 ，新值和原始二叉搜索树中的任意节点值都不同。
+//
+//    注意，可能存在多种有效的插入方式，只要树在插入后仍保持为二叉搜索树即可。 你可以返回 任意有效的结果 。
+//    示例 1：
+//    输入：root = [4,2,7,1,3], val = 5
+//    输出：[4,2,7,1,3,5]
+//    解释：另一个满足题目要求可以通过的树是：
+//    示例 2：
+//    输入：root = [40,20,60,10,30,50,70], val = 25
+//    输出：[40,20,60,10,30,50,70,null,null,25]
+//    示例 3：
+//    输入：root = [4,2,7,1,3,null,null,null,null,null,null], val = 5
+//    输出：[4,2,7,1,3,5]
+//    提示：
+//    给定的树上的节点数介于 0 和 10^4 之间
+//    每个节点都有一个唯一整数值，取值范围从 0 到 10^8
+//    -10^8 <= val <= 10^8
+//    新值和原始二叉搜索树中的任意节点值都不同
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/insert-into-a-binary-search-tree
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func insertIntoBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        let node = TreeNode(val)
+        
+        if var cur = root {
+            while true {
+                if val > cur.val {
+                    if let right = cur.right {
+                        cur = right
+                    }else {
+                        cur.right = node
+                        break
+                    }
+                }else {
+                    if let left = cur.left {
+                        cur = left
+                    }else {
+                        cur.left = node
+                        break
+                    }
+                }
+            }
+        }else {
+            return node
+        }
+        return root
+    }
+    
+//    450. 删除二叉搜索树中的节点
+//    给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。
+//
+//    一般来说，删除节点可分为两个步骤：
+//
+//    首先找到需要删除的节点；
+//    如果找到了，删除它。
+//    说明： 要求算法时间复杂度为 O(h)，h 为树的高度。
+//
+//    示例:
+//
+//    root = [5,3,6,2,4,null,7]
+//    key = 3
+//
+//        5
+//       / \
+//      3   6
+//     / \   \
+//    2   4   7
+//
+//    给定需要删除的节点值是 3，所以我们首先找到 3 这个节点，然后删除它。
+//
+//    一个正确的答案是 [5,4,6,2,null,null,7], 如下图所示。
+//
+//        5
+//       / \
+//      4   6
+//     /     \
+//    2       7
+//
+//    另一个正确答案是 [5,2,6,null,4,null,7]。
+//
+//        5
+//       / \
+//      2   6
+//       \   \
+//        4   7
+//
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/delete-node-in-a-bst
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func deleteNode(_ root: TreeNode?, _ key: Int) -> TreeNode? {
+        guard var node = root else { return nil }
+        var parent: TreeNode? = nil
+        var isLeftChild = false
+        while node.val != key {
+            parent = node
+            if node.val > key {
+                if let left = node.left {
+                    node = left
+                    isLeftChild = true
+                }else {
+                    return root
+                }
+            }else if node.val < key {
+                if let right = node.right {
+                    node = right
+                    isLeftChild = false
+                }else {
+                    return root
+                }
+            }
+        }
+        //是否叶子节点
+        if node.left == nil && node.right == nil {
+            if let p = parent {
+                if isLeftChild {
+                    p.left = nil
+                }else {
+                    p.right = nil
+                }
+            }else {
+                return nil
+            }
+        }else {
+            //找前续
+            var preNode: TreeNode? = nil
+            if let left = node.left {
+                preNode = left
+                while preNode?.right != nil {
+                    preNode = preNode?.right
+                }
+            }else if let right = node.right {
+                preNode = right
+                while preNode?.left != nil {
+                    preNode = preNode?.left
+                }
+            }
+            
+            if preNode == nil {
+                if parent != nil {
+                    preNode = parent
+                }
+            }
+            
+            if let pre = preNode {
+                let val = pre.val
+                _ = deleteNode(root, val)
+                node.val = val
+            }
+        }
+        return root
+    }
+    
+//    538. 把二叉搜索树转换为累加树
+//    给出二叉 搜索 树的根节点，该树的节点值各不相同，请你将其转换为累加树（Greater Sum Tree），使每个节点 node 的新值等于原树中大于或等于 node.val 的值之和。
+//    提醒一下，二叉搜索树满足下列约束条件：
+//
+//    节点的左子树仅包含键 小于 节点键的节点。
+//    节点的右子树仅包含键 大于 节点键的节点。
+//    左右子树也必须是二叉搜索树。
+//    注意：本题和 1038: https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/ 相同
+//    示例 1：
+//    输入：[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+//    输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]
+//    示例 2：
+//    输入：root = [0,null,1]
+//    输出：[1,null,1]
+//    示例 3：
+//    输入：root = [1,0,2]
+//    输出：[3,3,2]
+//    示例 4：
+//    输入：root = [3,2,4,1]
+//    输出：[7,9,4,10]
+//    提示：
+//    树中的节点数介于 0 和 104 之间。
+//    每个节点的值介于 -104 和 104 之间。
+//    树中的所有值 互不相同 。
+//    给定的树为二叉搜索树。
+//    https://leetcode-cn.com/problems/convert-bst-to-greater-tree/
+    class func convertBST(_ root: TreeNode?) -> TreeNode? {
+        var sum = 0
+        convertBSTHelper(root,&sum)
+        return root
+    }
+    class func convertBSTHelper(_ node: TreeNode?, _ sum: inout Int) {
+        guard let root = node else { return }
+        
+        if let right = root.right {
+            convertBSTHelper(right,&sum)
+        }
+        sum += root.val
+        root.val = sum
+        if let left = root.left {
+            convertBSTHelper(left, &sum)
+        }
+    }
+    
+//    230. 二叉搜索树中第K小的元素
+//    给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
+//    示例 1：
+//    输入：root = [3,1,4,null,2], k = 1
+//    输出：1
+//    示例 2：
+//    输入：root = [5,3,6,2,4,null,null,1], k = 3
+//    输出：3
+//    提示：
+//    树中的节点数为 n 。
+//    1 <= k <= n <= 104
+//    0 <= Node.val <= 104
+//    进阶：如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？
+//    https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
+    class func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+        var kk = k
+        var res: Int?
+        
+        kthSmallestHelper(root, &kk, &res)
+        
+        return res!
+    }
+    class func kthSmallestHelper(_ root: TreeNode?, _ k: inout Int,_ res: inout Int?) {
+        if let _ = res {
+            return
+        }
+        if let left = root?.left {
+            kthSmallestHelper(left, &k, &res)
+        }
+        if let _ = res {
+            return
+        }
+        if k == 1 {
+            res = root?.val
+            return
+        }
+        k -= 1
+        if let right = root?.right {
+            kthSmallestHelper(right, &k, &res)
+        }
+    }
+    
 //    652. 寻找重复的子树
 //    给定一棵二叉树，返回所有重复的子树。对于同一类的重复子树，你只需要返回其中任意一棵的根结点即可。
 //    两棵树重复是指它们具有相同的结构以及相同的结点值。
