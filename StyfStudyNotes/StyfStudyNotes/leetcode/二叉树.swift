@@ -60,11 +60,299 @@ public class TreeNode {
         
 //        450. 删除二叉搜索树中的节点
 //        var node = deserialize("[5,3,6,2,4,null,7]")
-        var node = deserialize("[3,1,4,null,2]")
-        node = deleteNode(node, 1)
-        print("")
+//        var node = deserialize("[3,1,4,null,2]")
+//        node = deleteNode(node, 1)
+//        print("")
+        
+//        96. 不同的二叉搜索树
+//        print(numTrees(3))
+        
+        
+//        1373. 二叉搜索子树的最大键值和
+//        let node = deserialize("[4,3,null,1,2]")
+//        print(maxSumBST(node))
+        
+//        let node = deserialize("[-4,-2,-5]")
+//        print(maxSumBST(node))
+        
+//        let node1 = deserialize("[2,1,3]")
+//        print(maxSumBST(node1))
+        
+//        let node2 = deserialize("[5,4,8,3,null,6,3]")
+//        print(maxSumBST(node2))
+        
+//        let node3 = deserialize("[4,-3,6,-5,-2,5,9]")
+//        print(maxSumBST(node3))
+        
+//        let node4 = deserialize("[4,3,8,3,null,null,7,1,4,null,6,null,null,null,5,10]")
+//        print(maxSumBST(node4))
         
     }
+    
+    
+//    341. 扁平化嵌套列表迭代器
+//    给你一个嵌套的整数列表 nestedList 。每个元素要么是一个整数，要么是一个列表；该列表的元素也可能是整数或者是其他列表。请你实现一个迭代器将其扁平化，使之能够遍历这个列表中的所有整数。
+//    实现扁平迭代器类 NestedIterator ：
+//    NestedIterator(List<NestedInteger> nestedList) 用嵌套列表 nestedList 初始化迭代器。
+//    int next() 返回嵌套列表的下一个整数。
+//    boolean hasNext() 如果仍然存在待迭代的整数，返回 true ；否则，返回 false 。
+//    你的代码将会用下述伪代码检测：
+//    initialize iterator with nestedList
+//    res = []
+//    while iterator.hasNext()
+//        append iterator.next() to the end of res
+//    return res
+//    如果 res 与预期的扁平化列表匹配，那么你的代码将会被判为正确。
+//    示例 1：
+//    输入：nestedList = [[1,1],2,[1,1]]
+//    输出：[1,1,2,1,1]
+//    解释：通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,1,2,1,1]。
+//    示例 2：
+//    输入：nestedList = [1,[4,[6]]]
+//    输出：[1,4,6]
+//    解释：通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,4,6]。
+//    提示：
+//    1 <= nestedList.length <= 500
+//    嵌套列表中的整数值在范围 [-106, 106] 内
+//    https://leetcode-cn.com/problems/flatten-nested-list-iterator/
+    
+//       This is the interface that allows for creating nested lists.
+//       You should not implement it, or speculate about its implementation
+      class NestedInteger {
+//           Return true if this NestedInteger holds a single integer, rather than a nested list.
+          public func isInteger() -> Bool {return false}
+//           Return the single integer that this NestedInteger holds, if it holds a single integer
+//           The result is undefined if this NestedInteger holds a nested list
+          public func getInteger() -> Int {return 0}
+     
+//           Set this NestedInteger to hold a single integer.
+          public func setInteger(value: Int) {}
+     
+//           Set this NestedInteger to hold a nested list and adds a nested integer to it.
+          public func add(elem: NestedInteger) {}
+     
+//           Return the nested list that this NestedInteger holds, if it holds a nested list
+//           The result is undefined if this NestedInteger holds a single integer
+          public func getList() -> [NestedInteger] {return []}
+      }
+     
+    class NestedIterator {
+        var queue: [Int] = []
+        var index: Int = 0
+        
+        init(_ nestedList: [NestedInteger]) {
+            addnum(nestedList)
+        }
+        
+        func addnum(_ list: [NestedInteger]) {
+            for item in list {
+                if item.isInteger() {
+                    queue.append(item.getInteger())
+                }else {
+                    addnum(item.getList())
+                }
+            }
+        }
+        
+        func next() -> Int {
+            let val = queue[index]
+            index += 1
+            return val
+        }
+        
+        func hasNext() -> Bool {
+            return index != queue.count
+        }
+    }
+                                  
+    
+    
+//    1373. 二叉搜索子树的最大键值和
+//    给你一棵以 root 为根的 二叉树 ，请你返回 任意 二叉搜索子树的最大键值和。
+//    二叉搜索树的定义如下：
+//    任意节点的左子树中的键值都 小于 此节点的键值。
+//    任意节点的右子树中的键值都 大于 此节点的键值。
+//    任意节点的左子树和右子树都是二叉搜索树。
+//    示例 1：
+//    输入：root = [1,4,3,2,4,2,5,null,null,null,null,null,null,4,6]
+//    输出：20
+//    解释：键值为 3 的子树是和最大的二叉搜索树。
+//    示例 2：
+//    输入：root = [4,3,null,1,2]
+//    输出：2
+//    解释：键值为 2 的单节点子树是和最大的二叉搜索树。
+//    示例 3：
+//    输入：root = [-4,-2,-5]
+//    输出：0
+//    解释：所有节点键值都为负数，和最大的二叉搜索树为空。
+//    示例 4：
+//    输入：root = [2,1,3]
+//    输出：6
+//    示例 5：
+//    输入：root = [5,4,8,3,null,6,3]
+//    输出：7
+//    提示：
+//    每棵树有 1 到 40000 个节点。
+//    每个节点的键值在 [-4 * 10^4 , 4 * 10^4] 之间。
+//    链接：https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree
+    //       5
+    //     4   8
+    //   3  _ 6  3
+//    [4,-3,6,-5,-2,5,9]
+//            4
+//         -3   6
+//      -5  -2  5  9
+//    [4,3,8,3,null,null,7,1,4,null,6,null,null,null,5,10]
+//                 4
+//              3     8
+//           3   _  _     7
+//          1 4 _ _ _ _ 6 _
+//        _ _ 5 10
+    class func maxSumBST(_ root: TreeNode?) -> Int {
+        var maxRes = 0
+        _ = maxSumBSTHelper(root, &maxRes)
+        return maxRes
+    }
+    class func maxSumBSTHelper(_ root: TreeNode?, _ maxRes: inout Int) -> (Bool,Int,Int,Int) {
+        guard let rootNode = root else { return (true, 0, 0, 0) }
+        if rootNode.left == nil && rootNode.right == nil {
+            maxRes = max(maxRes, rootNode.val)
+            return (true, rootNode.val, rootNode.val, rootNode.val)
+        }
+        
+        let leftTuple = maxSumBSTHelper(rootNode.left, &maxRes)
+        let rightTuple = maxSumBSTHelper(rootNode.right, &maxRes)
+        
+        //左右是BST
+        if leftTuple.0 && rightTuple.0 && ((rootNode.left == nil || (rootNode.left != nil && rootNode.val > leftTuple.2)) && (rootNode.right == nil || (rootNode.right != nil && rootNode.val < rightTuple.3))) {
+            //当前是BST
+            let val = rootNode.val + leftTuple.1 + rightTuple.1
+            maxRes = max(maxRes, val)
+            return (true,val, rootNode.right != nil ? rightTuple.2 : rootNode.val, rootNode.left != nil ? leftTuple.3 : rootNode.val)
+        }else {
+            return (false,0,0,0)
+        }
+    }
+//    95. 不同的二叉搜索树 II
+//    给你一个整数 n ，请你生成并返回所有由 n 个节点组成且节点值从 1 到 n 互不相同的不同 二叉搜索树 。可以按 任意顺序 返回答案。
+//    示例 1：
+//    输入：n = 3
+//    输出：[[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]]
+//    示例 2：
+//    输入：n = 1
+//    输出：[[1]]
+//    提示：
+//    1 <= n <= 8
+//https://leetcode-cn.com/problems/unique-binary-search-trees-ii/
+    class func generateTrees(_ n: Int) -> [TreeNode?] {
+        let array = Array(1...n)
+        var book: [String:[TreeNode?]] = [:]
+        return generateTreesHelper(array,0,array.count - 1,&book)
+    }
+    
+    class func generateTreesHelper(_ array: [Int],_ start: Int,_ end: Int,_ book: inout [String:[TreeNode?]]) -> [TreeNode?] {
+        if start == end {
+            return [TreeNode(array[start])]
+        }
+        var index = start
+        var resArray: [TreeNode?] = []
+        while index <= end {
+            var curArray: [TreeNode?] = []
+            var leftArray: [TreeNode?] = []
+            var rightArray: [TreeNode?] = []
+            if index > start {
+                var valArray = book["\(start)_\(index - 1)"]
+                if valArray == nil {
+                    valArray = generateTreesHelper(array,start,index - 1,&book)
+                    book["\(start)_\(index - 1)"] = valArray
+                }
+                leftArray = valArray!
+            }
+            if index < end {
+                var valArray = book["\(index + 1)_\(end)"]
+                if valArray == nil {
+                    valArray = generateTreesHelper(array, index + 1, end,&book)
+                    book["\(index + 1)_\(end)"] = valArray
+                }
+                rightArray = valArray!
+            }
+            if leftArray.count == 0 {
+                for node in rightArray {
+                    let root = TreeNode(array[index])
+                    root.right = node
+                    curArray.append(root)
+                }
+            }else if rightArray.count == 0 {
+                for node in leftArray {
+                    let root = TreeNode(array[index])
+                    root.left = node
+                    curArray.append(root)
+                }
+            }else {
+                for leftNode in leftArray {
+                    for rightNode in rightArray {
+                        let root = TreeNode(array[index])
+                        root.left = leftNode
+                        root.right = rightNode
+                        curArray.append(root)
+                    }
+                }
+            }
+            resArray.append(contentsOf: curArray)
+            index += 1
+        }
+        return resArray
+    }
+    
+//    96. 不同的二叉搜索树
+//    给你一个整数 n ，求恰由 n 个节点组成且节点值从 1 到 n 互不相同的 二叉搜索树 有多少种？返回满足题意的二叉搜索树的种数。
+//    示例 1：
+//    输入：n = 3
+//    输出：5
+//    示例 2：
+//    输入：n = 1
+//    输出：1
+//    提示：
+//    1 <= n <= 19
+//https://leetcode-cn.com/problems/unique-binary-search-trees/
+    class func numTrees(_ n: Int) -> Int {
+        let array = Array(1...n)
+        var book: [String:Int] = [:]
+        return numTreesHelper(array,0,array.count - 1,&book)
+    }
+    class func numTreesHelper(_ array: [Int],_ start: Int,_ end: Int,_ book: inout [String:Int]) -> Int {
+        if array.count == 1 {
+            return 1
+        }
+        var index = start
+        var count = 0
+        while index <= end {
+            var cur = 1
+            if index > start + 1 {
+                if let val = book["\(start)_\(index - 1)"] {
+                    cur = cur * val
+                }else {
+                    let val = numTreesHelper(array,start,index - 1,&book)
+                    book["\(start)_\(index - 1)"] = val
+                    cur = cur * val
+                }
+            }
+            if index < end - 1 {
+                if let val = book["\(index + 1)_\(end)"] {
+                    cur = cur * val
+                }else {
+                    let val = numTreesHelper(array, index + 1, end,&book)
+                    book["\(index + 1)_\(end)"] = val
+                    cur = cur * val
+                }
+            }
+            count += cur
+            index += 1
+        }
+        return count
+    }
+    
+    
 //    98. 验证二叉搜索树
 //    给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
 //    有效 二叉搜索树定义如下：
@@ -752,4 +1040,8 @@ public class TreeNode {
         }
         return nil
     }
+    
+    
+
+    
 }

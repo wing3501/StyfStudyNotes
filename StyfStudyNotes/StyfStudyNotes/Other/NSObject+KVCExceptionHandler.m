@@ -10,11 +10,14 @@
 @implementation NSObject (KVCExceptionHandler)
 
 - (nullable id)valueForUndefinedKey:(NSString *)key {
+    NSString *errorMsg = [NSString stringWithFormat:@"⚠️KVC: %@ 不存在 key: %@",NSStringFromClass(self.class),key];
+    NSAssert(NO, @"\n%@\n%@\n%@\n",errorMsg,errorMsg,errorMsg);
     return nil;
 }
 
 - (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
-    NSAssert(YES, @"KVO:%@ 不存在key: %@",NSStringFromClass(self.class),key);
+    NSString *errorMsg = [NSString stringWithFormat:@"⚠️KVC: %@ 不存在 key: %@",NSStringFromClass(self.class),key];
+    NSAssert(NO, @"\n%@\n%@\n%@\n",errorMsg,errorMsg,errorMsg);
 }
 
 @end

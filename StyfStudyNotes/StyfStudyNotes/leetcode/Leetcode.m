@@ -20,8 +20,8 @@
     
 //    [JianZhiOffer test];
 //    [SortTest test];
-    [TreeTest test];
-//    [Other test];
+//    [TreeTest test];
+    [Other test];
 //    [DongTaiGuiHua test];
 //    [TwoPtr test];
 //    [BFS test];
