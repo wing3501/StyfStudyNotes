@@ -46,8 +46,89 @@ import Foundation
         
 //        494. 目标和
 //        print(findTargetSumWays([1, 1, 1, 1, 1], 3))
-        print(findTargetSumWays([0,0,0,0,0,0,0,0,1], 1))//256
+//        print(findTargetSumWays([0,0,0,0,0,0,0,0,1], 1))//256
+        
+        
+//        797. 所有可能的路径
+//        print(allPathsSourceTarget([[1,2],[3],[3],[]]))//[[0,1,3],[0,2,3]]
+//        print(allPathsSourceTarget([[4,3,1],[3,2,4],[3],[4],[]]))//[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
+//        print(allPathsSourceTarget([[1],[]]))//[[0,1]]
+//        print(allPathsSourceTarget([[1,2,3],[2],[3],[]]))//[[0,1,2,3],[0,2,3],[0,3]]
+//        print(allPathsSourceTarget([[1,3],[2],[3],[]]))//[[0,1,2,3],[0,3]]
+        print(allPathsSourceTarget([[3,1],[4,6,7,2,5],[4,6,3],[6,4],[7,6,5],[6],[7],[]]))
+        
+//        [[0,3,6,7],[0,3,4,7],[0,3,4,6,7],[0,3,4,5,6,7],[0,1,4,7],[0,1,4,6,7],[0,1,4,5,6,7],[0,1,6,7],[0,1,7],[0,1,2,4,7],[0,1,2,4,6,7],[0,1,2,4,5,6,7],[0,1,2,6,7],[0,1,2,3,4,5,6,7],[0,1,5,6,7]]
+//        [[0,3,6,7],[0,3,4,7],[0,3,4,6,7],[0,3,4,5,6,7],[0,1,4,7],[0,1,4,6,7],[0,1,4,5,6,7],[0,1,6,7],[0,1,7],[0,1,2,4,7],[0,1,2,4,6,7],[0,1,2,4,5,6,7],[0,1,2,6,7],[0,1,2,3,6,7],[0,1,2,3,4,7],[0,1,2,3,4,6,7],[0,1,2,3,4,5,6,7],[0,1,5,6,7]]
     }
+    
+//    797. 所有可能的路径
+//    给你一个有 n 个节点的 有向无环图（DAG），请你找出所有从节点 0 到节点 n-1 的路径并输出（不要求按特定顺序）
+//    二维数组的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些节点，空就是没有下一个结点了。
+//    译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a 。
+//    示例 1：
+//    输入：graph = [[1,2],[3],[3],[]]
+//    输出：[[0,1,3],[0,2,3]]
+//    解释：有两条路径 0 -> 1 -> 3 和 0 -> 2 -> 3
+//    示例 2：
+//    输入：graph = [[4,3,1],[3,2,4],[3],[4],[]]
+//    输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
+//    示例 3：
+//    输入：graph = [[1],[]]
+//    输出：[[0,1]]
+//    示例 4：
+//    输入：graph = [[1,2,3],[2],[3],[]]
+//    输出：[[0,1,2,3],[0,2,3],[0,3]]
+//    示例 5：
+//    输入：graph = [[1,3],[2],[3],[]]
+//    输出：[[0,1,2,3],[0,3]]
+//    提示：
+//    n == graph.length
+//    2 <= n <= 15
+//    0 <= graph[i][j] < n
+//    graph[i][j] != i（即，不存在自环）
+//    graph[i] 中的所有元素 互不相同
+//    保证输入为 有向无环图（DAG）
+//    链接：https://leetcode-cn.com/problems/all-paths-from-source-to-target
+    class func allPathsSourceTarget(_ graph: [[Int]]) -> [[Int]] {
+        if graph.count <= 1 {
+            return graph
+        }
+        var result: [[Int]] = []
+        var dic: [Int:[Int]] = [:]
+        let firstArr = graph[0]
+        var stack: [Int] = []
+        allPathsSourceTargetHelper(&stack, graph, firstArr, &result, &dic)
+        return result
+    }
+    
+    class func allPathsSourceTargetHelper(_ stack: inout [Int],_ graph: [[Int]],_ array: [Int],_ result: inout [[Int]],_ dic: inout [Int:[Int]]) {
+        for item in array {
+            if item == graph.count - 1 {
+                stack.append(item)
+                var res = [0]
+                res.append(contentsOf: stack)
+                result.append(res)
+                dic[stack[0]] = stack
+                stack.removeLast()
+            }else {
+                if let cacheArray = dic[item] {
+                    var res = [0]
+                    res.append(contentsOf: stack)
+                    res.append(contentsOf: cacheArray)
+                    result.append(res)
+                    dic[stack[0]] = res
+                }else {
+                    let indexArray = graph[item]
+                    if !indexArray.isEmpty {
+                        stack.append(item)
+                        allPathsSourceTargetHelper(&stack, graph, indexArray, &result, &dic)
+                        stack.removeLast()
+                    }
+                }
+            }
+        }
+    }
+    
 //    494. 目标和
 //    给定一个非负整数数组，a1, a2, ..., an, 和一个目标数，S。现在你有两个符号 + 和 -。对于数组中的任意一个整数，你都可以从 + 或 -中选择一个符号添加在前面。
 //    返回可以使最终数组和为目标数 S 的所有添加符号的方法数。
