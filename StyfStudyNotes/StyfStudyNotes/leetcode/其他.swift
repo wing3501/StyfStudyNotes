@@ -112,17 +112,36 @@ import Foundation
 //    prerequisites[i] 中的所有课程对 互不相同
 //    https://leetcode-cn.com/problems/course-schedule/
     class func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
-        var linjie: [Set<Int>] = Array(repeating: [], count: numCourses)
-        var visited: Set<Int> = []
+        var graph: [[Int]] = Array(repeating: [], count: numCourses)
+        var visited: [Bool] = Array(repeating: false, count: numCourses)
+        var path: [Bool] = Array(repeating: false, count: numCourses)
         for array in prerequisites {
             let from = array[1]
             let to = array[0]
-            visited.insert(from)
-            visited.insert(to)
-            
+            graph[from].append(to)
         }
-        return visited.count == numCourses
+        
+        //遍历
+        var hasCircle = false
+        var s = 0
+        while s < graph.count {
+            bianli(graph, s: s, visited: &visited, path: &path, hasCircle: &hasCircle)
+            s += 1
+        }
+        
+        
+        return  false
     }
+    
+    class func bianli(_ graph: [[Int]],s : Int ,visited: inout [Bool], path: inout [Bool], hasCircle: inout Bool) {
+        if path[s] {
+            hasCircle = true
+        }
+        if hasCircle || visited[s] {
+            return
+        }
+    }
+    
     
 //    797. 所有可能的路径
 //    给你一个有 n 个节点的 有向无环图（DAG），请你找出所有从节点 0 到节点 n-1 的路径并输出（不要求按特定顺序）
