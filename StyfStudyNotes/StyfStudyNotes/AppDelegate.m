@@ -21,10 +21,10 @@
 
 - (void)setupFlutterBoostWithApp:(UIApplication *)application {
     //默认方法
-    MyFlutterBoostDelegate* delegate = [[MyFlutterBoostDelegate alloc ] init];
-    [[FlutterBoost instance] setup:application delegate:delegate callback:^(FlutterEngine *engine) {
-
-    }];
+//    MyFlutterBoostDelegate* delegate = [[MyFlutterBoostDelegate alloc ] init];
+//    [[FlutterBoost instance] setup:application delegate:delegate callback:^(FlutterEngine *engine) {
+//
+//    }];
     
     //下面是自定义参数的方法
 //    FlutterBoostOptionsBuilder* builder = [[FlutterBoostOptionsBuilder alloc] init];
@@ -62,12 +62,12 @@
     ViewController *nativeVC = [[ViewController alloc]init];
     nativeVC.title = @"nativeVC";
     UINavigationController *nativeNav = [[UINavigationController alloc] initWithRootViewController:nativeVC];
-    
-    FBFlutterViewContainer *fluterVC = FBFlutterViewContainer.new ;
-    [fluterVC setName:@"/" uniqueId:@"main123" params:@{@"参数1":@"走你"}];
-    delegate.navigationController = nativeNav;
-    delegate.fluterVC = fluterVC;
-    [nativeVC addChildViewController:fluterVC];//解决
+//
+//    FBFlutterViewContainer *fluterVC = FBFlutterViewContainer.new ;
+//    [fluterVC setName:@"/" uniqueId:@"main123" params:@{@"参数1":@"走你"}];
+//    delegate.navigationController = nativeNav;
+//    delegate.fluterVC = fluterVC;
+//    [nativeVC addChildViewController:fluterVC];//解决
     
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
     self.window.rootViewController = nativeNav;

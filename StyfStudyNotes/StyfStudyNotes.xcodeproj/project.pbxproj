@@ -90,6 +90,8 @@
 		92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1AFDB265B3A2E0029C502 /* OpenSetting.m */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
+		92C1D92727293C8300FF3398 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92627293C8300FF3398 /* Question.m */; };
+		92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92A27293D6F00FF3398 /* CrashHelper.m */; };
 		92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
@@ -253,6 +255,10 @@
 		92B265A126353BE500C4D16D /* SystemNotify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNotify.m; sourceTree = "<group>"; };
 		92B265A7263546D400C4D16D /* Builtin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builtin.h; sourceTree = "<group>"; };
 		92B265A8263546D400C4D16D /* Builtin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Builtin.m; sourceTree = "<group>"; };
+		92C1D92527293C8300FF3398 /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		92C1D92627293C8300FF3398 /* Question.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		92C1D92927293D6F00FF3398 /* CrashHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashHelper.h; sourceTree = "<group>"; };
+		92C1D92A27293D6F00FF3398 /* CrashHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashHelper.m; sourceTree = "<group>"; };
 		92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlutterBoostDelegate.m; sourceTree = "<group>"; };
 		92C84BC926735C3C002C2387 /* MyFlutterBoostDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlutterBoostDelegate.h; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
@@ -590,6 +596,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92C1D92427293C6500FF3398 /* 问题 */,
 				9220D57F26AA91FF007E8B6A /* DiffableDataSource */,
 				92A2D2082679EE4400A88F19 /* 嵌套滚动 */,
 				9218C2DF2669D2B200A932E6 /* Flutter */,
@@ -674,6 +681,25 @@
 				92B265A8263546D400C4D16D /* Builtin.m */,
 			);
 			path = Builtin;
+			sourceTree = "<group>";
+		};
+		92C1D92427293C6500FF3398 /* 问题 */ = {
+			isa = PBXGroup;
+			children = (
+				92C1D92527293C8300FF3398 /* Question.h */,
+				92C1D92627293C8300FF3398 /* Question.m */,
+				92C1D92827293D5900FF3398 /* Crash收集 */,
+			);
+			path = "问题";
+			sourceTree = "<group>";
+		};
+		92C1D92827293D5900FF3398 /* Crash收集 */ = {
+			isa = PBXGroup;
+			children = (
+				92C1D92927293D6F00FF3398 /* CrashHelper.h */,
+				92C1D92A27293D6F00FF3398 /* CrashHelper.m */,
+			);
+			path = "Crash收集";
 			sourceTree = "<group>";
 		};
 		92E1A91B264D2B17007D63D5 /* SwiftDemo */ = {
@@ -841,6 +867,7 @@
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
+				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
@@ -888,6 +915,7 @@
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
+				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,

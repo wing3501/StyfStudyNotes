@@ -38,6 +38,7 @@
                    @{@"title":@"打开设置",@"class":@"OpenSetting"},
                    @{@"title":@"Flutter",@"class":@"OpenFlutter"},
                    @{@"title":@"DiffableDataSource",@"class":@"DiffableDataSourceDemo"},
+                   @{@"title":@"问题",@"class":@"Question"}
     ];
     [self.view addSubview:self.tableView];
     
