@@ -57,7 +57,14 @@ import Foundation
 //        print(allPathsSourceTarget([[1,3],[2],[3],[]]))//[[0,1,2,3],[0,3]]
 //        print(allPathsSourceTarget([[3,1],[4,6,7,2,5],[4,6,3],[6,4],[7,6,5],[6],[7],[]]))
 //        print(allPathsSourceTarget([[5,4,1,2,3],[2,5],[4,5,3],[6,5,4],[5,6],[6],[]]))
-   
+        
+//        207. 课程表
+//        print(canFinish(2, [[1,0]]))//true
+//        print(canFinish(2, [[1,0],[0,1]]))//false
+//        210. 课程表 II
+//        print(findOrder(2, [[1,0]]))//[0,1]
+        print(findOrder(4, [[1,0],[2,0],[3,1],[3,2]]))//[0,2,1,3]
+//        print(findOrder(1, []))//[0]
     }
 //    210. 课程表 II
 //    现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] = [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。
@@ -89,8 +96,75 @@ import Foundation
 //    拓扑排序也可以通过 BFS 完成。
 //    链接：https://leetcode-cn.com/problems/course-schedule-ii
     class func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
+        var graph: [[Int]] = Array(repeating: [], count: numCourses)
+        var visited: [(Bool,Int,Int)] = Array(repeating: (false,-1,-1), count: numCourses)
+        var path: [Bool] = Array(repeating: false, count: numCourses)
+        for array in prerequisites {
+            let from = array[1]
+            let to = array[0]
+            graph[from].append(to)
+        }
+        
+        
         return []
+        
+        
+//        var graph: [[Int]] = Array(repeating: [], count: numCourses)
+//        var visited: [(Bool,Int,Int)] = Array(repeating: (false,-1,-1), count: numCourses)
+//        var path: [Bool] = Array(repeating: false, count: numCourses)
+//        for array in prerequisites {
+//            let from = array[1]
+//            let to = array[0]
+//            graph[from].append(to)
+//        }
+//
+//        //遍历
+//        var hasCircle = false
+//        var s = 0
+//        var visitIndex = 0
+//        while s < graph.count {
+//            bianli1(graph, s: s, visited: &visited, path: &path, hasCircle: &hasCircle,visitIndex: &visitIndex)
+//            s += 1
+//        }
+//        if hasCircle {
+//            return []
+//        }else {
+//            for item in visited {
+//                if !item.0 {
+//                    return []
+//                }
+//            }
+//            let arr = visited.sorted { t1, t2 in
+//                t1.2 < t2.2
+//            }
+//            var result: [Int] = []
+//            for item in arr {
+//                result.append(item.1)
+//            }
+//
+//            return result
+//        }
     }
+    
+    class func bianli1(_ graph: [[Int]],s : Int ,visited: inout [(Bool,Int,Int)], path: inout [Bool], hasCircle: inout Bool, visitIndex: inout Int) {
+        if path[s] {
+            hasCircle = true
+        }
+        if hasCircle || visited[s].0 {
+            return
+        }
+        path[s] = true
+        visited[s] = (true,s,visitIndex)
+        visitIndex += 1
+        let arr = graph[s]
+        for item in arr {
+            bianli1(graph, s: item, visited: &visited, path: &path, hasCircle: &hasCircle,visitIndex: &visitIndex)
+        }
+        path[s] = false
+    }
+    
+    
+    
 //    207. 课程表
 //    你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。
 //    在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。
@@ -128,9 +202,16 @@ import Foundation
             bianli(graph, s: s, visited: &visited, path: &path, hasCircle: &hasCircle)
             s += 1
         }
-        
-        
-        return  false
+        if hasCircle {
+            return false
+        }else {
+            for item in visited {
+                if !item {
+                    return false
+                }
+            }
+            return true
+        }
     }
     
     class func bianli(_ graph: [[Int]],s : Int ,visited: inout [Bool], path: inout [Bool], hasCircle: inout Bool) {
@@ -140,6 +221,13 @@ import Foundation
         if hasCircle || visited[s] {
             return
         }
+        path[s] = true
+        visited[s] = true
+        let arr = graph[s]
+        for item in arr {
+            bianli(graph, s: item, visited: &visited, path: &path, hasCircle: &hasCircle)
+        }
+        path[s] = false
     }
     
     
