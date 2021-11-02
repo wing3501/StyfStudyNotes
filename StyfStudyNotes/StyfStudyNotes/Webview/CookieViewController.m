@@ -1,21 +1,20 @@
 //
-//  WebViewDemo.m
+//  CookieViewController.m
 //  StyfStudyNotes
 //
-//  Created by styf on 2021/5/7.
+//  Created by styf on 2021/11/2.
 //
 
-#import "WebViewDemo.h"
+#import "CookieViewController.h"
 #import <WebKit/WebKit.h>
 #import <Masonry/Masonry.h>
-
-@interface WebViewDemo ()<WKHTTPCookieStoreObserver, WKNavigationDelegate, WKUIDelegate>
+@interface CookieViewController ()<WKHTTPCookieStoreObserver, WKNavigationDelegate, WKUIDelegate>
 /// webview
 @property (nonatomic, strong) WKWebView *webView;
+
 @end
 
-@implementation WebViewDemo
-
+@implementation CookieViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +40,7 @@
     }];
     self.webView.navigationDelegate = self;
 
-    NSString *urlString = @"https://w.weipaitang.com/home";
+    NSString *urlString = @"http://mytest.com";
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
@@ -49,7 +48,7 @@
     [request setHTTPShouldHandleCookies:YES];
 //    [request setValue:[NSString stringWithFormat:@"%@=%@;",@"name", @"lisi"] forHTTPHeaderField:@"Cookie"];
 
-    NSHTTPCookie *cookie = [WebViewDemo cookieWithDomain:url.host name:@"name" value:@"lisi2"];
+    NSHTTPCookie *cookie = [CookieViewController cookieWithDomain:url.host name:@"name" value:@"lisi2"];
     [request setValue:[NSString stringWithFormat:@"%@;",[self _getCookieString:cookie]] forHTTPHeaderField:@"Cookie"];
 
 //    [NSHTTPCookieStorage.sharedHTTPCookieStorage setCookie:cookie];
@@ -70,7 +69,7 @@
 //        [weakSelf.webView loadRequest:request];
 //    }];
     
-    [self.wkHttpCookieStore addObserver:self]; //监听 wkhttpCookieStore
+
 }
 
 
@@ -114,7 +113,7 @@
 }
 
 
-
+/*
 //设cookie
 - (void)setCookie {
 
@@ -147,28 +146,28 @@
     return jsScript;
 }
 
-#pragma mark - WKNavigationDelegate
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
-    NSArray *cookies =[NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:response.URL];
-    //方式1 读取wkwebview中的cookie
-    for (NSHTTPCookie *cookie in cookies) {
-        NSLog(@"方式1 wkwebview 中取出的cookie:%@", cookie);
-//        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
-    }
-
-    //方式2 读取Set-Cookie字段
-    NSString *cookieString = [[response allHeaderFields] valueForKey:@"Set-Cookie"];
-    NSLog(@"方式2 wkwebview 中取出的cookie:%@", cookieString);
-
-    //打印 NSHTTPCookieStorage 没有
-    NSHTTPCookieStorage *cookieJar2 = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in cookieJar2.cookies) {
-        NSLog(@"NSHTTPCookieStorage 中的cookie%@", cookie);
-    }
-    decisionHandler(WKNavigationResponsePolicyAllow);
-}
+//#pragma mark - WKNavigationDelegate
+//
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+//    NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
+//    NSArray *cookies =[NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:response.URL];
+//    //方式1 读取wkwebview中的cookie
+//    for (NSHTTPCookie *cookie in cookies) {
+//        NSLog(@"wkwebview 中取出的cookie:%@", cookie);
+////        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+//    }
+//
+//    //方式2 读取Set-Cookie字段
+//    NSString *cookieString = [[response allHeaderFields] valueForKey:@"Set-Cookie"];
+//    NSLog(@"wkwebview 中取出的cookie:%@", cookieString);
+//
+//    //打印 NSHTTPCookieStorage 没有
+//    NSHTTPCookieStorage *cookieJar2 = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+//    for (NSHTTPCookie *cookie in cookieJar2.cookies) {
+//        NSLog(@"NSHTTPCookieStorage 中的cookie%@", cookie);
+//    }
+//    decisionHandler(WKNavigationResponsePolicyAllow);
+//}
 
 #pragma mark - WKHTTPCookieStoreObserver
 
@@ -177,7 +176,7 @@
     NSLog(@" %s ==== cookie 监听到发生了变化 ...", __func__);
 
 //    //取 cookie
-    [self getCookie];
+//    [self getCookie];
 }
 
 //取cookie
@@ -188,10 +187,10 @@
 
         NSString *cookieText = @"";
         for (NSHTTPCookie *cookie in cookies) {
-//            BOOL containDomain = [cookie.domain containsString:@"mytest.com"];
-//            if (!containDomain) {  //判断是否是当前域
-//                continue;
-//            }
+            BOOL containDomain = [cookie.domain containsString:@"mytest.com"];
+            if (!containDomain) {  //判断是否是当前域
+                continue;
+            }
 
             cookieText = [NSString stringWithFormat:@"%@=%@;", cookie.name, cookie.value];
         }
@@ -207,5 +206,5 @@
 
 
 }
-
+*/
 @end

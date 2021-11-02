@@ -87,6 +87,7 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
+		92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF2F89273134E200C5C379 /* CookieViewController.m */; };
 		92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1AFDB265B3A2E0029C502 /* OpenSetting.m */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
@@ -249,6 +250,8 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		92AF2F88273134E200C5C379 /* CookieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieViewController.h; sourceTree = "<group>"; };
+		92AF2F89273134E200C5C379 /* CookieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieViewController.m; sourceTree = "<group>"; };
 		92B1AFDA265B3A2E0029C502 /* OpenSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSetting.h; sourceTree = "<group>"; };
 		92B1AFDB265B3A2E0029C502 /* OpenSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenSetting.m; sourceTree = "<group>"; };
 		92B265A026353BE500C4D16D /* SystemNotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemNotify.h; sourceTree = "<group>"; };
@@ -546,6 +549,8 @@
 			children = (
 				928D8B032644CA0900B3E4AE /* WebViewDemo.h */,
 				928D8B042644CA0900B3E4AE /* WebViewDemo.m */,
+				92AF2F88273134E200C5C379 /* CookieViewController.h */,
+				92AF2F89273134E200C5C379 /* CookieViewController.m */,
 			);
 			path = Webview;
 			sourceTree = "<group>";
@@ -880,6 +885,7 @@
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
+				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,

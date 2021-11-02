@@ -45,6 +45,33 @@
 - (void)commonInit {
     [self setupUI];
     [self autoLayout];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UICollectionView *v = self.view.superview.subviews[0].subviews[0].subviews[0].subviews[0];
+//        NSLog(@"%@",v.gestureRecognizers);
+        
+        self.imageView.userInteractionEnabled = YES;
+        NSArray<UIGestureRecognizer *> *array = v.gestureRecognizers;
+        for (UIGestureRecognizer *ges in v.gestureRecognizers) {
+            
+            [self.imageView addGestureRecognizer:ges];
+        }
+        
+        
+        
+//        "<UIScrollViewDelayedTouchesBeganGestureRecognizer: 0x11f50d4d0; state = Possible; delaysTouchesBegan = YES; view = <UICollectionView 0x120818c00>; target= <(action=delayed:, target=<UICollectionView 0x120818c00>)>>",
+//        "<UIScrollViewPanGestureRecognizer: 0x11f510630; state = Possible; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=handlePan:, target=<UICollectionView 0x120818c00>)>>",
+//        "<UIScrollViewKnobLongPressGestureRecognizer: 0x11f510830; state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_handleKnobLongPressGesture:, target=<UICollectionView 0x120818c00>)>; numberOfTapsRequired = 0; minimumPressDuration = 0.1>",
+//        "<UIScrollViewKnobLongPressGestureRecognizer: 0x11f510a10; state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_handleKnobLongPressGesture:, target=<UICollectionView 0x120818c00>)>; numberOfTapsRequired = 0>",
+//        "<UIHoverGestureRecognizer: 0x11f510bf0; state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_handleKnobHoverGesture:, target=<UICollectionView 0x120818c00>)>>",
+//        "<_UIDragAutoScrollGestureRecognizer: 0x280bc1200; state = Possible; cancelsTouchesInView = NO; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handleAutoScroll:, target=<UICollectionView 0x120818c00>)>>",
+//        "<_UIMultiSelectOneFingerPanGesture: 0x11f5115d0 (multi-select.singleFingerPanGesture); state = Possible; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handleCommonPanGestureStateChanged:, target=<UIMultiSelectInteraction 0x2819c6d00>)>>",
+//        "<UITapGestureRecognizer: 0x11f511930 (multi-select.multiFingerTapGesture); state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_multiFingerTapGesture:, target=<UIMultiSelectInteraction 0x2819c6d00>)>; numberOfTouchesRequired = 2; must-fail = {\n        <UIPanGestureRecognizer: 0x11f511790 (multi-select.multiFingerPanGesture); state = Possible; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handleCommonPanGestureStateChanged:, target=<UIMultiSelectInteraction 0x2819c6d00>)>>\n    }>",
+//        "<UIPanGestureRecognizer: 0x11f511790 (multi-select.multiFingerPanGesture); state = Possible; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handleCommonPanGestureStateChanged:, target=<UIMultiSelectInteraction 0x2819c6d00>)>; must-fail-for = {\n        <UITapGestureRecognizer: 0x11f511930 (multi-select.multiFingerTapGesture); state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_multiFingerTapGesture:, target=<UIMultiSelectInteraction 0x2819c6d00>)>; numberOfTouchesRequired = 2>\n    }>",
+//        "<_UISingleFingerTapExtensionGesture: 0x11f511a50 (multi-select.singleFingerExtension); state = Possible; view = <UICollectionView 0x120818c00>; target= <(action=_handleSelectionExtensionTapGesture:, target=<UIMultiSelectInteraction 0x2819c6d00>)>>",
+//        "<UIHoverGestureRecognizer: 0x11f511db0 (com.apple.UIKit.bandSelectionHover); state = Possible; enabled = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handleHoverGesture:, target=<UIBandSelectionInteraction 0x281cc0fc0>)>>",
+//        "<UILongPressGestureRecognizer: 0x11f511ed0 (com.apple.UIKit.bandSelectionInitiationPress); state = Possible; enabled = NO; cancelsTouchesInView = NO; delaysTouchesEnded = NO; view = <UICollectionView 0x120818c00>; target= <(action=_handlePressGesture:, target=<UIBandSelectionInteraction 0x281cc0fc0>)>; numberOfTapsRequired = 0>"
+    });
 }
 
 /// 设置视图
