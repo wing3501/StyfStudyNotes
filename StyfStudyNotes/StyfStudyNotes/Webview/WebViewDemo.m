@@ -34,6 +34,7 @@
     [self addCookieWithDict:cookieDict forHost:@".3dmgame.com"];
     [self createCookieScript:cookieDict];
     
+   
 
     WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
     configuration.processPool = [SingleWKProcessPool sharedInstance];
@@ -49,12 +50,12 @@
     NSString *urlString = @"https://www.3dmgame.com/";
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
 //    通过iOS8推出的WKUserContentController来管理webView的cookie，通过NSHTTPCookieStorage来管理网络请求的cookie，例如H5发出的请求。通过NSURLSession、NSURLConnection发出的请求，都会默认带上NSHTTPCookieStorage中的cookie，H5内部的请求也会被系统交给NSURLSession处理。
     
     request.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    [self.webView loadRequest:request];
+    
     [self.webView.configuration.websiteDataStore.httpCookieStore addObserver:self]; //监听 wkhttpCookieStore
+    [self.webView loadRequest:request];
 }
 
 

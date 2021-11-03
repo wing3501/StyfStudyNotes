@@ -26,6 +26,9 @@
 		920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2225DFC2180098B1BA /* MediaAdapter.m */; };
 		920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2625DFC3590098B1BA /* AudioPlayer.m */; };
 		920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FE92732303C0091487B /* SingleWKProcessPool.m */; };
+		920C4FEE273276140091487B /* KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FED273276140091487B /* KVO.m */; };
+		920C4FF1273276480091487B /* KVODemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FF0273276480091487B /* KVODemoViewController.m */; };
+		920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FF3273278140091487B /* UIViewController+KVO.m */; };
 		920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */; };
 		920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3EFF25E8A4A000DE2990 /* TestViewController.m */; };
 		920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */; };
@@ -142,6 +145,12 @@
 		920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		920C4FE82732303C0091487B /* SingleWKProcessPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleWKProcessPool.h; sourceTree = "<group>"; };
 		920C4FE92732303C0091487B /* SingleWKProcessPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleWKProcessPool.m; sourceTree = "<group>"; };
+		920C4FEC273276140091487B /* KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVO.h; sourceTree = "<group>"; };
+		920C4FED273276140091487B /* KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVO.m; sourceTree = "<group>"; };
+		920C4FEF273276480091487B /* KVODemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVODemoViewController.h; sourceTree = "<group>"; };
+		920C4FF0273276480091487B /* KVODemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVODemoViewController.m; sourceTree = "<group>"; };
+		920C4FF2273278140091487B /* UIViewController+KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KVO.h"; sourceTree = "<group>"; };
+		920C4FF3273278140091487B /* UIViewController+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KVO.m"; sourceTree = "<group>"; };
 		920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperViewController.swift; sourceTree = "<group>"; };
 		920E3EFE25E8A4A000DE2990 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		920E3EFF25E8A4A000DE2990 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -394,6 +403,19 @@
 			path = SwiftNote;
 			sourceTree = "<group>";
 		};
+		920C4FEB273275F90091487B /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				920C4FEC273276140091487B /* KVO.h */,
+				920C4FED273276140091487B /* KVO.m */,
+				920C4FF2273278140091487B /* UIViewController+KVO.h */,
+				920C4FF3273278140091487B /* UIViewController+KVO.m */,
+				920C4FEF273276480091487B /* KVODemoViewController.h */,
+				920C4FF0273276480091487B /* KVODemoViewController.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		920E3EFD25E8A46200DE2990 /* 断点续传 */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +628,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				920C4FEB273275F90091487B /* KVO */,
 				92C1D92427293C6500FF3398 /* 问题 */,
 				9220D57F26AA91FF007E8B6A /* DiffableDataSource */,
 				92A2D2082679EE4400A88F19 /* 嵌套滚动 */,
@@ -878,6 +901,7 @@
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
+				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
@@ -902,6 +926,7 @@
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				920C4FEE273276140091487B /* KVO.m in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
@@ -911,6 +936,7 @@
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
+				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
