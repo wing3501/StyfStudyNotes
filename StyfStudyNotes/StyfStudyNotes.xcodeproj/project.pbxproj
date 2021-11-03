@@ -25,6 +25,7 @@
 		920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C1E25DFC1AA0098B1BA /* Mp4Player.m */; };
 		920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2225DFC2180098B1BA /* MediaAdapter.m */; };
 		920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9C2625DFC3590098B1BA /* AudioPlayer.m */; };
+		920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FE92732303C0091487B /* SingleWKProcessPool.m */; };
 		920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */; };
 		920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3EFF25E8A4A000DE2990 /* TestViewController.m */; };
 		920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */; };
@@ -139,6 +140,8 @@
 		920B9C2525DFC3590098B1BA /* AudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		920B9C2625DFC3590098B1BA /* AudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		920C4FE82732303C0091487B /* SingleWKProcessPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleWKProcessPool.h; sourceTree = "<group>"; };
+		920C4FE92732303C0091487B /* SingleWKProcessPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleWKProcessPool.m; sourceTree = "<group>"; };
 		920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperViewController.swift; sourceTree = "<group>"; };
 		920E3EFE25E8A4A000DE2990 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		920E3EFF25E8A4A000DE2990 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 			children = (
 				928D8B032644CA0900B3E4AE /* WebViewDemo.h */,
 				928D8B042644CA0900B3E4AE /* WebViewDemo.m */,
+				920C4FE82732303C0091487B /* SingleWKProcessPool.h */,
+				920C4FE92732303C0091487B /* SingleWKProcessPool.m */,
 				92AF2F88273134E200C5C379 /* CookieViewController.h */,
 				92AF2F89273134E200C5C379 /* CookieViewController.m */,
 			);
@@ -936,6 +941,7 @@
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
+				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,

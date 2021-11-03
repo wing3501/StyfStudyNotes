@@ -7,6 +7,53 @@
 
 import Foundation
 
+class UnionFind {
+    var count: Int//联通分量个数
+    var parent: [Int] //存储树
+    var size: [Int] //树中节点个数
+    init(n: Int) {
+        count = n
+        parent = []
+        size = []
+        for i in 0..<n {
+            parent[i] = i //初始化，每个节点指向自己
+            size[i] = 1
+        }
+    }
+    //联通节点 p 和 q
+    func union(p: Int,q: Int) {
+        let rootP = find(p: p)
+        let rootQ = find(p: q)
+        if rootP == rootQ {
+            return
+        }
+        if size[rootP] > size[rootQ] {
+            parent[rootQ] = rootP
+            size[rootP] += size[rootQ]
+        }else {
+            parent[rootP] = rootQ
+            size[rootQ] += size[rootP]
+        }
+        count -= 1
+    }
+    //两个节点是否联通
+    func connected(p: Int,q: Int) -> Bool {
+        let rootP = find(p: p)
+        let rootQ = find(p: q)
+        return rootP == rootQ
+    }
+    
+    //找到根节点
+    func find(p: Int) -> Int {
+        var x = p
+        while(parent[x] != x) {
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        }
+        return x
+    }
+}
+
 @objcMembers class Other : NSObject {
     class func test() {
         
@@ -62,10 +109,61 @@ import Foundation
 //        print(canFinish(2, [[1,0]]))//true
 //        print(canFinish(2, [[1,0],[0,1]]))//false
 //        210. 课程表 II
-        print(findOrder(2, [[1,0]]))//[0,1]
-        print(findOrder(4, [[1,0],[2,0],[3,1],[3,2]]))//[0,2,1,3]
-        print(findOrder(1, []))//[0]
+//        print(findOrder(2, [[1,0]]))//[0,1]
+//        print(findOrder(4, [[1,0],[2,0],[3,1],[3,2]]))//[0,2,1,3]
+//        print(findOrder(1, []))//[0]
     }
+//    130. 被围绕的区域
+//    给你一个 m x n 的矩阵 board ，由若干字符 'X' 和 'O' ，找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。
+//    示例 1：
+//    输入：board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+//    输出：[["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+//    解释：被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。
+//    示例 2：
+//    输入：board = [["X"]]
+//    输出：[["X"]]
+//    提示：
+//    m == board.length
+//    n == board[i].length
+//    1 <= m, n <= 200
+//    board[i][j] 为 'X' 或 'O'
+//    链接：https://leetcode-cn.com/problems/surrounded-regions
+    class func solve(_ board: inout [[Character]]) {
+        //一般做法
+        guard board.count > 2 else {
+            return
+        }
+        guard board[0].count > 2 else {
+            return
+        }
+        var needDealArray: [(Int,Int)] = []
+        var i = 0
+        while i < board[0].count {
+            //上下两行
+            var up = board[0][i]
+            if up == "O" {
+//                solveBFS(&board, &needDealArray, (0,i))
+            }
+            
+            var down = board[board.count - 1][i]
+            
+            
+            
+            i += 1
+        }
+    }
+    
+    class func solveDFS(_ board: inout [[Character]],_ needDealArray: inout [(Int,Int)] ,_ location: (Int,Int)) {
+        var stack: [(Int,Int)] = [location]
+        while stack.count > 0 {
+            let item = stack.removeLast()
+            board[item.0][item.1] = "#"
+            needDealArray.append(item)
+            
+            
+        }
+    }
+    
 //    210. 课程表 II
 //    现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] = [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。
 //    例如，想要学习课程 0 ，你需要先完成课程 1 ，我们用一个匹配来表示：[0,1] 。
