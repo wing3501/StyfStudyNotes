@@ -112,7 +112,64 @@ class UnionFind {
 //        print(findOrder(2, [[1,0]]))//[0,1]
 //        print(findOrder(4, [[1,0],[2,0],[3,1],[3,2]]))//[0,2,1,3]
 //        print(findOrder(1, []))//[0]
+        
+//        130. 被围绕的区域
+//        var board: [[Character]] = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+//        var board: [[Character]] = [["X","O","X","O","X","O"],
+//                                    ["O","X","O","X","O","X"],
+//                                    ["X","O","X","O","X","O"],
+//                                    ["O","X","O","X","O","X"]]
+//        solve(&board)
+//        print(board)
     }
+    
+//    895. 最大频率栈
+//    实现 FreqStack，模拟类似栈的数据结构的操作的一个类。
+//
+//    FreqStack 有两个函数：
+//
+//    push(int x)，将整数 x 推入栈中。
+//    pop()，它移除并返回栈中出现最频繁的元素。
+//    如果最频繁的元素不只一个，则移除并返回最接近栈顶的元素。
+//    示例：
+//
+//    输入：
+//    ["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
+//    [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
+//    输出：[null,null,null,null,null,null,null,5,7,5,4]
+//    解释：
+//    执行六次 .push 操作后，栈自底向上为 [5,7,5,7,4,5]。然后：
+//    pop() -> 返回 5，因为 5 是出现频率最高的。
+//    栈变成 [5,7,5,7,4]。
+//    pop() -> 返回 7，因为 5 和 7 都是频率最高的，但 7 最接近栈顶。
+//    栈变成 [5,7,5,4]。
+//    pop() -> 返回 5 。
+//    栈变成 [5,7,4]。
+//    pop() -> 返回 4 。
+//    栈变成 [5,7]。
+//    提示：
+//
+//    对 FreqStack.push(int x) 的调用中 0 <= x <= 10^9。
+//    如果栈的元素数目为零，则保证不会调用  FreqStack.pop()。
+//    单个测试样例中，对 FreqStack.push 的总调用次数不会超过 10000。
+//    单个测试样例中，对 FreqStack.pop 的总调用次数不会超过 10000。
+//    所有测试样例中，对 FreqStack.push 和 FreqStack.pop 的总调用次数不会超过 150000。
+//    链接：https://leetcode-cn.com/problems/maximum-frequency-stack
+    class FreqStack {
+
+        init() {
+
+        }
+        
+        func push(_ val: Int) {
+
+        }
+        
+        func pop() -> Int {
+            return 0
+        }
+    }
+    
 //    130. 被围绕的区域
 //    给你一个 m x n 的矩阵 board ，由若干字符 'X' 和 'O' ，找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。
 //    示例 1：
@@ -129,6 +186,11 @@ class UnionFind {
 //    board[i][j] 为 'X' 或 'O'
 //    链接：https://leetcode-cn.com/problems/surrounded-regions
     class func solve(_ board: inout [[Character]]) {
+        //连接表
+        
+        
+        
+        return
         //一般做法
         guard board.count > 2 else {
             return
@@ -140,27 +202,64 @@ class UnionFind {
         var i = 0
         while i < board[0].count {
             //上下两行
-            var up = board[0][i]
-            if up == "O" {
-//                solveBFS(&board, &needDealArray, (0,i))
+            if board[0][i] == "O" {
+                solveDFS(&board, &needDealArray, (0,i))
             }
             
-            var down = board[board.count - 1][i]
-            
-            
-            
+            if board[board.count - 1][i] == "O" {
+                solveDFS(&board, &needDealArray, (board.count - 1,i))
+            }
             i += 1
+        }
+        i = 0
+        while i < board.count {
+            if board[i][0] == "O" {
+                solveDFS(&board, &needDealArray, (i,0))
+            }
+            
+            if board[i][board[0].count - 1] == "O" {
+                solveDFS(&board, &needDealArray, (i,board[0].count - 1))
+            }
+            i += 1
+        }
+        
+        var y = 1
+        while y < board.count {
+            var x = 1
+            while x < board[0].count {
+                if board[y][x] == "O" {
+                    board[y][x] = "X"
+                }
+                x += 1
+            }
+            y += 1
+        }
+        
+        for item in needDealArray {
+            board[item.0][item.1] = "O"
         }
     }
     
     class func solveDFS(_ board: inout [[Character]],_ needDealArray: inout [(Int,Int)] ,_ location: (Int,Int)) {
         var stack: [(Int,Int)] = [location]
+        var visited: Set<[Int]> = Set(arrayLiteral: [location.0,location.1])
+        let goArray = [[0,-1],[0,1],[-1,0],[1,0]]
         while stack.count > 0 {
             let item = stack.removeLast()
             board[item.0][item.1] = "#"
             needDealArray.append(item)
             
-            
+            for go in goArray {
+                let x = item.0 + go[0]
+                let y = item.1 + go[1]
+                if x >= 0 && x < board.count && y >= 0 && y < board[0].count{
+                    let ch = board[x][y]
+                    if !visited.contains([x,y]) && ch == "O" {
+                        stack.append((x,y))
+                        visited.insert([x,y])
+                    }
+                }
+            }
         }
     }
     
