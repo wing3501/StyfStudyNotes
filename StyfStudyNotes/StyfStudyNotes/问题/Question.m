@@ -19,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = @[@{@"title":@"Crash收集",@"class":@"CrashHelper"},
-                   
+    _dataArray = @[
+        @{@"title":@"Crash收集",@"class":@"CrashHelper"},
+        
     ];
     [self.view addSubview:self.tableView];
 }

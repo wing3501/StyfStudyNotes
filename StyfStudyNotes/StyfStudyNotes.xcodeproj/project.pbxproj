@@ -102,6 +102,10 @@
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
+		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
+		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
+		92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368522733AE8E0013FB92 /* SMCPUMonitor.m */; };
+		92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368542733AE8F0013FB92 /* SMLagMonitor.m */; };
 		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +288,14 @@
 		92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo.swift; sourceTree = "<group>"; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
 		92F36645273381A20013FB92 /* UIImage+scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+scale.m"; sourceTree = "<group>"; };
+		92F3684E2733AE8E0013FB92 /* SMCPUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCPUMonitor.h; sourceTree = "<group>"; };
+		92F3684F2733AE8E0013FB92 /* SMCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCallStack.m; sourceTree = "<group>"; };
+		92F368502733AE8E0013FB92 /* SMCallLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCallLib.m; sourceTree = "<group>"; };
+		92F368512733AE8E0013FB92 /* SMCallLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallLib.h; sourceTree = "<group>"; };
+		92F368522733AE8E0013FB92 /* SMCPUMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCPUMonitor.m; sourceTree = "<group>"; };
+		92F368532733AE8E0013FB92 /* SMLagMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLagMonitor.h; sourceTree = "<group>"; };
+		92F368542733AE8F0013FB92 /* SMLagMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLagMonitor.m; sourceTree = "<group>"; };
+		92F368552733AE8F0013FB92 /* SMCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallStack.h; sourceTree = "<group>"; };
 		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -726,6 +738,7 @@
 			children = (
 				92C1D92527293C8300FF3398 /* Question.h */,
 				92C1D92627293C8300FF3398 /* Question.m */,
+				92F3684D2733AE7D0013FB92 /* SMLagMonitor */,
 				92C1D92827293D5900FF3398 /* Crash收集 */,
 			);
 			path = "问题";
@@ -747,6 +760,21 @@
 				920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */,
 			);
 			path = SwiftDemo;
+			sourceTree = "<group>";
+		};
+		92F3684D2733AE7D0013FB92 /* SMLagMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				92F368512733AE8E0013FB92 /* SMCallLib.h */,
+				92F368502733AE8E0013FB92 /* SMCallLib.m */,
+				92F368552733AE8F0013FB92 /* SMCallStack.h */,
+				92F3684F2733AE8E0013FB92 /* SMCallStack.m */,
+				92F3684E2733AE8E0013FB92 /* SMCPUMonitor.h */,
+				92F368522733AE8E0013FB92 /* SMCPUMonitor.m */,
+				92F368532733AE8E0013FB92 /* SMLagMonitor.h */,
+				92F368542733AE8F0013FB92 /* SMLagMonitor.m */,
+			);
+			path = SMLagMonitor;
 			sourceTree = "<group>";
 		};
 		E79A4B88C018268A4AA9ED07 /* Pods */ = {
@@ -924,6 +952,7 @@
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
+				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */,
@@ -932,6 +961,7 @@
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */,
 				920C4FEE273276140091487B /* KVO.m in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
@@ -955,6 +985,7 @@
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
+				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
@@ -979,6 +1010,7 @@
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
