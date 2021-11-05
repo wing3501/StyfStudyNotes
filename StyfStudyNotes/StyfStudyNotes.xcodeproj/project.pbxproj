@@ -738,6 +738,7 @@
 			children = (
 				92C1D92527293C8300FF3398 /* Question.h */,
 				92C1D92627293C8300FF3398 /* Question.m */,
+				92D796DC2734CF720073D9B3 /* LeakChecker */,
 				92F3684D2733AE7D0013FB92 /* SMLagMonitor */,
 				92C1D92827293D5900FF3398 /* Crash收集 */,
 			);
@@ -751,6 +752,13 @@
 				92C1D92A27293D6F00FF3398 /* CrashHelper.m */,
 			);
 			path = "Crash收集";
+			sourceTree = "<group>";
+		};
+		92D796DC2734CF720073D9B3 /* LeakChecker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeakChecker;
 			sourceTree = "<group>";
 		};
 		92E1A91B264D2B17007D63D5 /* SwiftDemo */ = {

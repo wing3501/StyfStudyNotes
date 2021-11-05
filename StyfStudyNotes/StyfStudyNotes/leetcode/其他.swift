@@ -156,7 +156,13 @@ class UnionFind {
 //    所有测试样例中，对 FreqStack.push 和 FreqStack.pop 的总调用次数不会超过 150000。
 //    链接：https://leetcode-cn.com/problems/maximum-frequency-stack
     class FreqStack {
-
+        // 最大频次 maxFreg
+        var maxFreg = 0;
+        // val->频次
+        var valToFreg: [Int: Int] = [:]
+        // 频次->stack
+        var fregToVal: [Int: [Int]] = [:]
+        
         init() {
 
         }
