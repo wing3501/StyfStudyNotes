@@ -21,7 +21,7 @@
     [super viewDidLoad];
     _dataArray = @[
         @{@"title":@"Crash收集",@"class":@"CrashHelper"},
-        
+        @{@"title":@"内存",@"class":@"MemoryHelper"},
     ];
     [self.view addSubview:self.tableView];
 }

@@ -97,6 +97,7 @@
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
 		92C1D92727293C8300FF3398 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92627293C8300FF3398 /* Question.m */; };
 		92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92A27293D6F00FF3398 /* CrashHelper.m */; };
+		92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C374792738F8A00026BC15 /* MemoryHelper.m */; };
 		92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
@@ -279,6 +280,8 @@
 		92C1D92627293C8300FF3398 /* Question.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		92C1D92927293D6F00FF3398 /* CrashHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashHelper.h; sourceTree = "<group>"; };
 		92C1D92A27293D6F00FF3398 /* CrashHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashHelper.m; sourceTree = "<group>"; };
+		92C374782738F8A00026BC15 /* MemoryHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryHelper.h; sourceTree = "<group>"; };
+		92C374792738F8A00026BC15 /* MemoryHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHelper.m; sourceTree = "<group>"; };
 		92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlutterBoostDelegate.m; sourceTree = "<group>"; };
 		92C84BC926735C3C002C2387 /* MyFlutterBoostDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlutterBoostDelegate.h; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
@@ -738,7 +741,7 @@
 			children = (
 				92C1D92527293C8300FF3398 /* Question.h */,
 				92C1D92627293C8300FF3398 /* Question.m */,
-				92D796DC2734CF720073D9B3 /* LeakChecker */,
+				92C374772738F8730026BC15 /* MemoryHelper */,
 				92F3684D2733AE7D0013FB92 /* SMLagMonitor */,
 				92C1D92827293D5900FF3398 /* Crash收集 */,
 			);
@@ -754,11 +757,13 @@
 			path = "Crash收集";
 			sourceTree = "<group>";
 		};
-		92D796DC2734CF720073D9B3 /* LeakChecker */ = {
+		92C374772738F8730026BC15 /* MemoryHelper */ = {
 			isa = PBXGroup;
 			children = (
+				92C374782738F8A00026BC15 /* MemoryHelper.h */,
+				92C374792738F8A00026BC15 /* MemoryHelper.m */,
 			);
-			path = LeakChecker;
+			path = MemoryHelper;
 			sourceTree = "<group>";
 		};
 		92E1A91B264D2B17007D63D5 /* SwiftDemo */ = {
@@ -1032,6 +1037,7 @@
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				92B265A226353BE500C4D16D /* SystemNotify.m in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
+				92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */,
 				92426DDA26246289002062B7 /* LeaksDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

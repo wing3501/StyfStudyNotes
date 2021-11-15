@@ -42,8 +42,6 @@
                    @{@"title":@"KVO",@"class":@"KVO"}
     ];
     [self.view addSubview:self.tableView];
-    
-    
 }
 
 #pragma mark - UITableViewDelegate

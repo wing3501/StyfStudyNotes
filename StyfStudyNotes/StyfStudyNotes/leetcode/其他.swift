@@ -54,6 +54,91 @@ class UnionFind {
     }
 }
 
+class Aheap {
+    private let bigHeap: Bool
+    private var array: [Int]
+    var count: Int {
+        return array.count
+    }
+    var top: Int {
+        if let num = array.first {
+            return num
+        }
+        return 0
+    }
+    init(_ bigHeap: Bool) {
+        self.bigHeap = bigHeap
+        array = []
+    }
+    func addNum(_ num: Int) {
+        array.append(num)
+        siftUp(i: array.count - 1)
+    }
+    func pop() -> Int {
+        guard count > 0 else {
+            return 0
+        }
+        let topNum = top
+        array[0] = array[count - 1]
+        array.removeLast()
+        if count > 0 {
+            siftDown(i: 0)
+        }
+        return topNum
+    }
+    
+    //对i位置元素下滤
+    private func siftDown(i: Int) {
+        var index = i
+        let element = array[index]
+        let half = array.count / 2
+        while index < half {
+            var childIndex = index * 2 + 1
+            let rightIndex = childIndex + 1
+            
+            if bigHeap {
+                if rightIndex < array.count && array[rightIndex] > array[childIndex] {
+                    childIndex = rightIndex
+                }
+                
+                if array[childIndex] <= element {
+                    break
+                }
+            }else {
+                if rightIndex < array.count && array[rightIndex] < array[childIndex] {
+                    childIndex = rightIndex
+                }
+                
+                if array[childIndex] >= element {
+                    break
+                }
+            }
+            array[index] = array[childIndex]
+            index = childIndex
+        }
+        array[index] = element
+    }
+    //对i位置元素上滤
+    private func siftUp(i: Int) {
+        var index = i
+        let element = array[index]
+        while index > 0 {
+            let parentIndex = (index - 1) / 2
+            let parent = array[parentIndex]
+            if bigHeap && parent >= element {
+                break
+            }else if !bigHeap && parent <= element {
+                break
+            }
+    
+            array[index] = parent
+            index = parentIndex
+        }
+        array[index] = element
+    }
+}
+
+
 @objcMembers class Other : NSObject {
     class func test() {
         
@@ -121,6 +206,113 @@ class UnionFind {
 //                                    ["O","X","O","X","O","X"]]
 //        solve(&board)
 //        print(board)
+        
+//        895. 最大频率栈
+//        let s = FreqStack()
+//        s.push(5)
+//        s.push(7)
+//        s.push(5)
+//        s.push(7)
+//        s.push(4)
+//        s.push(5)
+//        print(s.pop())
+//        print(s.pop())
+//        print(s.pop())
+//        print(s.pop())
+        
+//        295. 数据流的中位数
+        let s = MedianFinder()
+//        s.addNum(1)
+//        s.addNum(2)
+//        print(s.findMedian())
+//        s.addNum(3)
+//        print(s.findMedian())
+        
+        s.addNum(1)
+        s.addNum(2)
+        s.addNum(3)
+        print(s.findMedian())
+        s.addNum(4)
+        print(s.findMedian())
+//        ["MedianFinder","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian"]
+//        [[],[1],[],[2],[],[3],[],[4],[],[5],[],[6],[],[7],[],[8],[],[9],[],[10],[]]
+//
+//        [null,null,1.00000,null,1.50000,null,2.00000,null,3.00000,null,4.00000,null,5.00000,null,6.00000,null,7.00000,null,8.00000,null,9.00000]
+//        [null,null,1.0,null,1.5,null,2.0,null,2.5,null,3.0,null,3.5,null,4.0,null,4.5,null,5.0,null,5.5]
+    }
+//    295. 数据流的中位数
+//    中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+//    例如，
+//    [2,3,4] 的中位数是 3
+//    [2,3] 的中位数是 (2 + 3) / 2 = 2.5
+//    设计一个支持以下两种操作的数据结构：
+//    void addNum(int num) - 从数据流中添加一个整数到数据结构中。
+//    double findMedian() - 返回目前所有元素的中位数。
+//    示例：
+//    addNum(1)
+//    addNum(2)
+//    findMedian() -> 1.5
+//    addNum(3)
+//    findMedian() -> 2
+//    进阶:
+//    如果数据流中所有整数都在 0 到 100 范围内，你将如何优化你的算法？
+//    如果数据流中 99% 的整数都在 0 到 100 范围内，你将如何优化你的算法？
+//    https://leetcode-cn.com/problems/find-median-from-data-stream/
+    class MedianFinder {
+        var leftHeap: Aheap //大顶堆
+        var rightHeap: Aheap //小顶堆
+
+        init() {
+            leftHeap = Aheap(true)
+            rightHeap = Aheap(false)
+        }
+        
+        func addNum(_ num: Int) {
+            if leftHeap.count == 0 {
+                leftHeap.addNum(num)
+            }else if rightHeap.count == 0 {
+                let leftMax = leftHeap.top
+                if leftMax <= num {
+                    rightHeap.addNum(num)
+                }else {
+                    rightHeap.addNum(leftHeap.pop())
+                    leftHeap.addNum(num)
+                }
+            }else {
+                let leftMax = leftHeap.top
+                let rightMin = rightHeap.top
+                if leftHeap.count <= rightHeap.count {
+                    //左边
+                    if num > rightMin {
+                        leftHeap.addNum(rightHeap.pop())
+                        rightHeap.addNum(num)
+                    }else {
+                        leftHeap.addNum(num)
+                    }
+                }else {
+                    if num < leftMax {
+                        rightHeap.addNum(leftHeap.pop())
+                        leftHeap.addNum(num)
+                    }else {
+                        rightHeap.addNum(num)
+                    }
+                }
+            }
+        }
+        
+        func findMedian() -> Double {
+            if leftHeap.count == 0 && rightHeap.count == 0 {
+                return 0
+            }
+            if leftHeap.count == rightHeap.count {
+                return Double((leftHeap.top + rightHeap.top)) * 0.5
+            }else {
+                if leftHeap.count > rightHeap.count {
+                    return Double(leftHeap.top)
+                }
+                return Double(rightHeap.top)
+            }
+        }
     }
     
 //    895. 最大频率栈
@@ -168,11 +360,27 @@ class UnionFind {
         }
         
         func push(_ val: Int) {
-
+            var freg = valToFreg[val, default: 0]
+            freg += 1
+            valToFreg[val] = freg
+            if freg > maxFreg {
+                maxFreg = freg
+            }
+            var stack = fregToVal[freg, default: []]
+            stack.append(val)
+            fregToVal[freg] = stack
         }
         
         func pop() -> Int {
-            return 0
+            var stack = fregToVal[maxFreg]!
+            let val = stack.removeLast()
+            fregToVal[maxFreg] = stack
+            let freg = valToFreg[val]!
+            valToFreg[val] = freg - 1
+            if stack.count == 0 {
+                maxFreg -= 1
+            }
+            return val
         }
     }
     
