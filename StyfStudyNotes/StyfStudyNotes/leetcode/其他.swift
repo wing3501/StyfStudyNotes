@@ -220,26 +220,181 @@ class Aheap {
 //        print(s.pop())
 //        print(s.pop())
         
-//        295. 数据流的中位数
-        let s = MedianFinder()
+////        295. 数据流的中位数
+//        let s = MedianFinder()
+////        s.addNum(1)
+////        s.addNum(2)
+////        print(s.findMedian())
+////        s.addNum(3)
+////        print(s.findMedian())
+//
 //        s.addNum(1)
 //        s.addNum(2)
-//        print(s.findMedian())
 //        s.addNum(3)
 //        print(s.findMedian())
+//        s.addNum(4)
+//        print(s.findMedian())
+
+//        496. 下一个更大元素 I
+//        print(nextGreaterElement([4,1,2], [1,3,4,2]))//[-1,3,-1]
+//        503. 下一个更大元素 II
+//        print(nextGreaterElements([1,2,1]))//[2,-1,2]
         
-        s.addNum(1)
-        s.addNum(2)
-        s.addNum(3)
-        print(s.findMedian())
-        s.addNum(4)
-        print(s.findMedian())
-//        ["MedianFinder","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian"]
-//        [[],[1],[],[2],[],[3],[],[4],[],[5],[],[6],[],[7],[],[8],[],[9],[],[10],[]]
-//
-//        [null,null,1.00000,null,1.50000,null,2.00000,null,3.00000,null,4.00000,null,5.00000,null,6.00000,null,7.00000,null,8.00000,null,9.00000]
-//        [null,null,1.0,null,1.5,null,2.0,null,2.5,null,3.0,null,3.5,null,4.0,null,4.5,null,5.0,null,5.5]
+//        239. 滑动窗口最大值
+        print(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
     }
+    
+    
+    class MonotonicQueue {
+        var linkedList: LinkedList
+        init() {
+            linkedList = LinkedList()
+        }
+        // 在队尾添加
+        func push(_ val:Int) {
+            while let last = linkedList.last,last < val {
+                linkedList.removeLast()
+            }
+            linkedList.push(val)
+        }
+        //返回当前队伍中最大值
+        func max() -> Int {
+            if let top = linkedList.top {
+                return top
+            }
+            return -1
+        }
+        //如果队头是val就移除
+        func pop(_ val: Int) {
+            if let top = linkedList.top,top == val {
+                linkedList.removeTop()
+            }
+        }
+    }
+//    239. 滑动窗口最大值
+//    给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+//    返回滑动窗口中的最大值。
+//    示例 1：
+//    输入：nums = [1,3,-1,-3,5,3,6,7], k = 3
+//    输出：[3,3,5,5,6,7]
+//    解释：
+//    滑动窗口的位置                最大值
+//    ---------------               -----
+//    [1  3  -1] -3  5  3  6  7       3
+//     1 [3  -1  -3] 5  3  6  7       3
+//     1  3 [-1  -3  5] 3  6  7       5
+//     1  3  -1 [-3  5  3] 6  7       5
+//     1  3  -1  -3 [5  3  6] 7       6
+//     1  3  -1  -3  5 [3  6  7]      7
+//    示例 2：
+//    输入：nums = [1], k = 1
+//    输出：[1]
+//    示例 3：
+//    输入：nums = [1,-1], k = 1
+//    输出：[1,-1]
+//    示例 4：
+//    输入：nums = [9,11], k = 2
+//    输出：[11]
+//    示例 5：
+//    输入：nums = [4,-2], k = 2
+//    输出：[4]
+//    提示：
+//    1 <= nums.length <= 105
+//    -104 <= nums[i] <= 104
+//    1 <= k <= nums.length
+//    链接：https://leetcode-cn.com/problems/sliding-window-maximum
+    class func maxSlidingWindow(_ nums: [Int], _ k: Int) -> [Int] {
+        let monotonicQueue = MonotonicQueue()
+        var result: [Int] = []
+        var i = 0
+        while i < nums.count {
+            let num = nums[i]
+            if i < k - 1 {
+                monotonicQueue.push(num)
+            }else {
+                monotonicQueue.push(num)
+                result.append(monotonicQueue.max())
+                monotonicQueue.pop(nums[i - (k - 1)])
+            }
+            i += 1
+        }
+        return result
+    }
+    
+//    503. 下一个更大元素 II
+//    给定一个循环数组（最后一个元素的下一个元素是数组的第一个元素），输出每个元素的下一个更大元素。数字 x 的下一个更大的元素是按数组遍历顺序，这个数字之后的第一个比它更大的数，这意味着你应该循环地搜索它的下一个更大的数。如果不存在，则输出 -1。
+//    示例 1:
+//    输入: [1,2,1]
+//    输出: [2,-1,2]
+//    解释: 第一个 1 的下一个更大的数是 2；
+//    数字 2 找不到下一个更大的数；
+//    第二个 1 的下一个最大的数需要循环搜索，结果也是 2。
+//    注意: 输入数组的长度不会超过 10000。
+//    链接：https://leetcode-cn.com/problems/next-greater-element-ii
+    class func nextGreaterElements(_ nums: [Int]) -> [Int] {
+//        1,2,1 1,2,1
+        var i = nums.count - 1
+        var stack: [Int] = []
+        while i >= 0 {
+            stack.append(nums[i])
+            i -= 1
+        }
+        i = nums.count - 1
+        var res = Array(repeating: -1, count: nums.count)
+        while i >= 0 {
+            let item = nums[i]
+            while !stack.isEmpty && item >= stack.last! {
+                stack.removeLast()
+            }
+            res[i] = stack.isEmpty ? -1 : stack.last!
+            stack.append(item)
+            i -= 1
+        }
+        return res
+    }
+//    496. 下一个更大元素 I
+//    给你两个 没有重复元素 的数组 nums1 和 nums2 ，其中nums1 是 nums2 的子集。
+//    请你找出 nums1 中每个元素在 nums2 中的下一个比其大的值。
+//    nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位置的右边的第一个比 x 大的元素。如果不存在，对应位置输出 -1 。
+//    示例 1:
+//    输入: nums1 = [4,1,2], nums2 = [1,3,4,2].
+//    输出: [-1,3,-1]
+//    解释:
+//        对于 num1 中的数字 4 ，你无法在第二个数组中找到下一个更大的数字，因此输出 -1 。
+//        对于 num1 中的数字 1 ，第二个数组中数字1右边的下一个较大数字是 3 。
+//        对于 num1 中的数字 2 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
+//    示例 2:
+//    输入: nums1 = [2,4], nums2 = [1,2,3,4].
+//    输出: [3,-1]
+//    解释:
+//        对于 num1 中的数字 2 ，第二个数组中的下一个较大数字是 3 。
+//        对于 num1 中的数字 4 ，第二个数组中没有下一个更大的数字，因此输出 -1 。
+//    提示：
+//    1 <= nums1.length <= nums2.length <= 1000
+//    0 <= nums1[i], nums2[i] <= 104
+//    nums1和nums2中所有整数 互不相同
+//    nums1 中的所有整数同样出现在 nums2 中
+//    进阶：你可以设计一个时间复杂度为 O(nums1.length + nums2.length) 的解决方案吗？
+//    链接：https://leetcode-cn.com/problems/next-greater-element-i
+    class func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var stack: [Int] = []
+        var dic: [Int : Int] = [:]
+        var i = nums2.count - 1
+        while i >= 0 {
+            let item = nums2[i]
+            while !stack.isEmpty && stack.last! <= item {
+                stack.removeLast()
+            }
+            dic[item] = stack.isEmpty ? -1 : stack.last!
+            stack.append(item)
+            i -= 1
+        }
+        let result: [Int] = nums1.map {
+            dic[$0]!
+        }
+        return result
+    }
+    
 //    295. 数据流的中位数
 //    中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
 //    例如，

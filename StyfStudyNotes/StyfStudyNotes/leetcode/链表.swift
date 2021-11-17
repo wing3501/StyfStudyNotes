@@ -7,6 +7,67 @@
 
 import Foundation
 
+public class LinkedList {
+    private class LinkedListNode {
+        var val: Int;
+        var next: LinkedListNode?
+        var prev: LinkedListNode?
+        init(_ val: Int) {
+            self.val = val
+        }
+    }
+    private var head: LinkedListNode?
+    private var tail: LinkedListNode?
+    public var count: Int = 0
+    var top: Int? {
+        head?.val
+    }
+    var last: Int? {
+        tail?.val
+    }
+    
+    func push(_ val: Int) {
+        let node = LinkedListNode(val)
+        if let tailNode = tail {
+            tailNode.next = node
+            node.prev = tailNode
+            tail = node
+        }else {
+            head = node
+            tail = node
+        }
+        count += 1
+    }
+    
+    func removeLast() {
+        if count == 1 {
+            head = nil
+            tail = nil
+        }else {
+            let prev = tail?.prev
+            tail?.prev?.next = nil
+            tail?.prev = nil
+            tail = prev
+        }
+        count -= 1
+    }
+    
+    func removeTop() {
+        if count == 1 {
+            head = nil
+            tail = nil
+        }else {
+            let next = head?.next
+            head?.next?.prev = nil
+            head?.next = nil
+            head = next
+        }
+        count -= 1
+    }
+    
+    
+}
+
 @objcMembers class LinkListTest: NSObject {
     class func test() {
 //        25. K 个一组翻转链表
