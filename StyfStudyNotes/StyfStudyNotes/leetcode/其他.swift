@@ -53,7 +53,7 @@ class UnionFind {
         return x
     }
 }
-
+// 不空首位的二叉堆
 class Aheap {
     private let bigHeap: Bool
     private var array: [Int]
@@ -87,14 +87,26 @@ class Aheap {
         return topNum
     }
     
+    private func left(_ i: Int) -> Int {
+        return i * 2 + 1
+    }
+    
+    private func right(_ i: Int) -> Int {
+        return left(i) + 1
+    }
+    
+    private func parent(_ i: Int) -> Int {
+        return (i - 1) / 2
+    }
+    
     //对i位置元素下滤
     private func siftDown(i: Int) {
         var index = i
         let element = array[index]
         let half = array.count / 2
         while index < half {
-            var childIndex = index * 2 + 1
-            let rightIndex = childIndex + 1
+            var childIndex = left(index)
+            let rightIndex = right(index)
             
             if bigHeap {
                 if rightIndex < array.count && array[rightIndex] > array[childIndex] {
@@ -123,7 +135,7 @@ class Aheap {
         var index = i
         let element = array[index]
         while index > 0 {
-            let parentIndex = (index - 1) / 2
+            let parentIndex = parent(index)
             let parent = array[parentIndex]
             if bigHeap && parent >= element {
                 break
@@ -135,6 +147,81 @@ class Aheap {
             index = parentIndex
         }
         array[index] = element
+    }
+}
+
+/// 空出首位的二叉堆
+///
+///
+class BinaryHeap<E:Comparable> {
+    private let bigHeap: Bool
+    private var array: [E]
+    var top: E {
+        return array[1]
+    }
+    var count: Int {
+        array.count - 1
+    }
+    init(_ bigHeap: Bool) {
+        self.bigHeap = bigHeap
+        array = []
+    }
+    // 比较：
+    // 大顶堆：i < j
+    // 小顶堆：i > j
+    private func comp(_ i:Int,_ j:Int) -> Bool {
+        return bigHeap ? (array[i] < array[j]) : (array[i] > array[j])
+    }
+    // 上滤
+    private func siftUp(_ k: Int) {
+        var i = k
+        while i > 1 && comp(parent(i), i) {
+            array.swapAt(parent(i), i)
+            i = parent(i)
+        }
+    }
+    // 下滤
+    private func siftDown(_ k: Int) {
+        var i = k
+        while left(i) <= count {
+            var older = left(i)
+            if right(i) <= count && comp(older, right(i)) {
+                older = right(i)
+            }
+            if comp(older, i) {
+                break
+            }
+            array.swapAt(older, i)
+            i = older
+        }
+    }
+    func push(_ val: E) {
+        if count == 0 {
+            array.append(val)//首个占位
+        }
+        array.append(val)
+        siftUp(count)
+    }
+    
+    func delTop() -> E {
+        let val = top
+        array.swapAt(1, count)
+        array.removeLast()
+        siftDown(1)
+        return val
+    }
+    
+    // 父节点索引
+    private func parent(_ root: Int) -> Int {
+        return root / 2
+    }
+    // 左子节点索引
+    private func left(_ root: Int) -> Int {
+        return root * 2
+    }
+    // 右子节点索引
+    private func right(_ root: Int) -> Int {
+        return root * 2 + 1
     }
 }
 
@@ -241,7 +328,7 @@ class Aheap {
 //        print(nextGreaterElements([1,2,1]))//[2,-1,2]
         
 //        239. 滑动窗口最大值
-        print(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
+//        print(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
     }
     
     
