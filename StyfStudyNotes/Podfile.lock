@@ -49,10 +49,72 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GLResponderChain (1.0.3)
   - image_picker (0.0.1):
     - Flutter
   - JXCategoryView (1.5.9)
+  - KSCrash (1.15.25):
+    - KSCrash/Installations (= 1.15.25)
+  - KSCrash/Installations (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting
+  - KSCrash/Recording (1.15.25):
+    - KSCrash/Recording/Tools (= 1.15.25)
+  - KSCrash/Recording/Tools (1.15.25)
+  - KSCrash/Reporting (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters (= 1.15.25)
+    - KSCrash/Reporting/MessageUI (= 1.15.25)
+    - KSCrash/Reporting/Sinks (= 1.15.25)
+    - KSCrash/Reporting/Tools (= 1.15.25)
+  - KSCrash/Reporting/Filters (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Alert (= 1.15.25)
+    - KSCrash/Reporting/Filters/AppleFmt (= 1.15.25)
+    - KSCrash/Reporting/Filters/Base (= 1.15.25)
+    - KSCrash/Reporting/Filters/Basic (= 1.15.25)
+    - KSCrash/Reporting/Filters/GZip (= 1.15.25)
+    - KSCrash/Reporting/Filters/JSON (= 1.15.25)
+    - KSCrash/Reporting/Filters/Sets (= 1.15.25)
+    - KSCrash/Reporting/Filters/Stringify (= 1.15.25)
+    - KSCrash/Reporting/Filters/Tools (= 1.15.25)
+  - KSCrash/Reporting/Filters/Alert (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/AppleFmt (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Base (1.15.25):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/GZip (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/JSON (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Sets (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/AppleFmt
+    - KSCrash/Reporting/Filters/Base
+    - KSCrash/Reporting/Filters/Basic
+    - KSCrash/Reporting/Filters/GZip
+    - KSCrash/Reporting/Filters/JSON
+    - KSCrash/Reporting/Filters/Stringify
+  - KSCrash/Reporting/Filters/Stringify (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Tools (1.15.25):
+    - KSCrash/Recording
+  - KSCrash/Reporting/MessageUI (1.15.25):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Sinks (1.15.25):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters
+    - KSCrash/Reporting/Tools
+  - KSCrash/Reporting/Tools (1.15.25):
+    - KSCrash/Recording
   - KVOController (1.2.0)
   - Masonry (1.1.0)
   - my_flutter (0.0.1):
@@ -88,9 +150,9 @@ DEPENDENCIES:
   - flutter_boost (from `my_flutter/.ios/.symlinks/plugins/flutter_boost/ios`)
   - flutter_inappwebview (from `my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios`)
   - FlutterPluginRegistrant (from `my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - GLResponderChain (~> 1.0.3)
   - image_picker (from `my_flutter/.ios/.symlinks/plugins/image_picker/ios`)
   - JXCategoryView
+  - KSCrash
   - KVOController
   - Masonry
   - my_flutter (from `my_flutter/.ios/Flutter`)
@@ -107,8 +169,8 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - FMDB
-    - GLResponderChain
     - JXCategoryView
+    - KSCrash
     - KVOController
     - Masonry
     - OrderedSet
@@ -159,9 +221,9 @@ SPEC CHECKSUMS:
   flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
   FlutterPluginRegistrant: c77b7cb5c683012fa27e37271cee71386603732e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GLResponderChain: 474af23e6458fcfc6ff9a193c7c98a441a5a05c9
   image_picker: e06f7a68f000bd36f552c1847e33cda96ed31f1f
   JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
+  KSCrash: 6689ba5c43800f831b68928ccdbcc8b201d4dd86
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   my_flutter: 5f71a42a61a499a9f322f2c0f62fc185a5807c9b
@@ -176,6 +238,6 @@ SPEC CHECKSUMS:
   video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
   webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
 
-PODFILE CHECKSUM: 6d20db34f41a8c9f47433f95622293fd35b2b948
+PODFILE CHECKSUM: caaeded9a2e65a6d0ff87def2928766594c82e9d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.2
