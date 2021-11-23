@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// 联查表
 class UnionFind {
     var count: Int//联通分量个数
     var parent: [Int] //存储树
@@ -54,30 +54,24 @@ class UnionFind {
     }
 }
 // 不空首位的二叉堆
-class Aheap {
+class Aheap<E: Comparable> {
     private let bigHeap: Bool
-    private var array: [Int]
+    private var array: [E]
     var count: Int {
         return array.count
     }
-    var top: Int {
-        if let num = array.first {
-            return num
-        }
-        return 0
+    var top: E {
+        array[0]
     }
     init(_ bigHeap: Bool) {
         self.bigHeap = bigHeap
         array = []
     }
-    func addNum(_ num: Int) {
+    func push(_ num: E) {
         array.append(num)
         siftUp(i: array.count - 1)
     }
-    func pop() -> Int {
-        guard count > 0 else {
-            return 0
-        }
+    func pop() -> E {
         let topNum = top
         array[0] = array[count - 1]
         array.removeLast()
@@ -149,10 +143,7 @@ class Aheap {
         array[index] = element
     }
 }
-
 /// 空出首位的二叉堆
-///
-///
 class BinaryHeap<E:Comparable> {
     private let bigHeap: Bool
     private var array: [E]
@@ -222,6 +213,68 @@ class BinaryHeap<E:Comparable> {
     // 右子节点索引
     private func right(_ root: Int) -> Int {
         return root * 2 + 1
+    }
+}
+// 单调队列
+class MonotonicQueue {
+    var linkedList: LinkedList
+    init() {
+        linkedList = LinkedList()
+    }
+    // 在队尾添加
+    func push(_ val:Int) {
+        while let last = linkedList.last,last < val {
+            linkedList.removeLast()
+        }
+        linkedList.push(val)
+    }
+    //返回当前队伍中最大值
+    func max() -> Int {
+        if let top = linkedList.top {
+            return top
+        }
+        return -1
+    }
+    //如果队头是val就移除
+    func pop(_ val: Int) {
+        if let top = linkedList.top,top == val {
+            linkedList.removeTop()
+        }
+    }
+}
+// Dijkstra 框架
+class DijkstraDemo {
+    class State {
+        var id: Int;
+        var disFromStart: Int;
+        init(_ id: Int,_ disFromStart: Int) {
+            self.id = id;
+            self.disFromStart = disFromStart;
+        }
+    }
+    
+    var graph: [[Int]] = []
+    
+    // 输入一个起点和一个图，计算start到其他节点的最短距离
+    func dijkstra(start: Int,graph: [[Int]]) -> [Int] {
+        self.graph = graph
+        // 节点个数
+        let V = graph.count
+        // distTo[i] 表示start到i的最短路径权重
+        var distTo = Array(repeating: Int.max, count: V)
+        // base case
+        distTo[start] = 0
+        //
+        
+        return []
+    }
+    // 返回节点from 到节点to的边权重
+    func weight(from: Int,to: Int) -> Int {
+        return graph[from][to]
+    }
+    // 返回节点s的相邻节点
+    func adj(s: Int) -> [Int] {
+        return graph[s]
     }
 }
 
@@ -332,32 +385,6 @@ class BinaryHeap<E:Comparable> {
     }
     
     
-    class MonotonicQueue {
-        var linkedList: LinkedList
-        init() {
-            linkedList = LinkedList()
-        }
-        // 在队尾添加
-        func push(_ val:Int) {
-            while let last = linkedList.last,last < val {
-                linkedList.removeLast()
-            }
-            linkedList.push(val)
-        }
-        //返回当前队伍中最大值
-        func max() -> Int {
-            if let top = linkedList.top {
-                return top
-            }
-            return -1
-        }
-        //如果队头是val就移除
-        func pop(_ val: Int) {
-            if let top = linkedList.top,top == val {
-                linkedList.removeTop()
-            }
-        }
-    }
 //    239. 滑动窗口最大值
 //    给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
 //    返回滑动窗口中的最大值。
@@ -501,8 +528,8 @@ class BinaryHeap<E:Comparable> {
 //    如果数据流中 99% 的整数都在 0 到 100 范围内，你将如何优化你的算法？
 //    https://leetcode-cn.com/problems/find-median-from-data-stream/
     class MedianFinder {
-        var leftHeap: Aheap //大顶堆
-        var rightHeap: Aheap //小顶堆
+        var leftHeap: Aheap<Int> //大顶堆
+        var rightHeap: Aheap<Int> //小顶堆
 
         init() {
             leftHeap = Aheap(true)
@@ -511,14 +538,14 @@ class BinaryHeap<E:Comparable> {
         
         func addNum(_ num: Int) {
             if leftHeap.count == 0 {
-                leftHeap.addNum(num)
+                leftHeap.push(num)
             }else if rightHeap.count == 0 {
                 let leftMax = leftHeap.top
                 if leftMax <= num {
-                    rightHeap.addNum(num)
+                    rightHeap.push(num)
                 }else {
-                    rightHeap.addNum(leftHeap.pop())
-                    leftHeap.addNum(num)
+                    rightHeap.push(leftHeap.pop())
+                    leftHeap.push(num)
                 }
             }else {
                 let leftMax = leftHeap.top
@@ -526,17 +553,17 @@ class BinaryHeap<E:Comparable> {
                 if leftHeap.count <= rightHeap.count {
                     //左边
                     if num > rightMin {
-                        leftHeap.addNum(rightHeap.pop())
-                        rightHeap.addNum(num)
+                        leftHeap.push(rightHeap.pop())
+                        rightHeap.push(num)
                     }else {
-                        leftHeap.addNum(num)
+                        leftHeap.push(num)
                     }
                 }else {
                     if num < leftMax {
-                        rightHeap.addNum(leftHeap.pop())
-                        leftHeap.addNum(num)
+                        rightHeap.push(leftHeap.pop())
+                        leftHeap.push(num)
                     }else {
-                        rightHeap.addNum(num)
+                        rightHeap.push(num)
                     }
                 }
             }
