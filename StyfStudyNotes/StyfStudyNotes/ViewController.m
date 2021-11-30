@@ -39,7 +39,8 @@
                    @{@"title":@"Flutter",@"class":@"OpenFlutter"},
                    @{@"title":@"DiffableDataSource",@"class":@"DiffableDataSourceDemo"},
                    @{@"title":@"问题",@"class":@"Question"},
-                   @{@"title":@"KVO",@"class":@"KVO"}
+                   @{@"title":@"KVO",@"class":@"KVO"},
+                   @{@"title":@"UserDump",@"class":@"UserDump"}
     ];
     [self.view addSubview:self.tableView];
 }

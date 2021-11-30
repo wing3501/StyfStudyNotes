@@ -7,26 +7,26 @@
 
 import Foundation
 
-public class LinkedList {
+public class LinkedList<E: Comparable> {
     private class LinkedListNode {
-        var val: Int;
+        var val: E;
         var next: LinkedListNode?
         var prev: LinkedListNode?
-        init(_ val: Int) {
+        init(_ val: E) {
             self.val = val
         }
     }
     private var head: LinkedListNode?
     private var tail: LinkedListNode?
     public var count: Int = 0
-    var top: Int? {
+    var top: E? {
         head?.val
     }
-    var last: Int? {
+    var last: E? {
         tail?.val
     }
     
-    func push(_ val: Int) {
+    func push(_ val: E) {
         let node = LinkedListNode(val)
         if let tailNode = tail {
             tailNode.next = node
@@ -39,10 +39,12 @@ public class LinkedList {
         count += 1
     }
     
-    func removeLast() {
+    func removeLast() -> E? {
+        let val = tail?.val
         if count == 1 {
             head = nil
             tail = nil
+            return val
         }else {
             let prev = tail?.prev
             tail?.prev?.next = nil
@@ -50,9 +52,11 @@ public class LinkedList {
             tail = prev
         }
         count -= 1
+        return val
     }
     
-    func removeTop() {
+    func removeTop() -> E? {
+        let val = head?.val
         if count == 1 {
             head = nil
             tail = nil
@@ -63,9 +67,8 @@ public class LinkedList {
             head = next
         }
         count -= 1
+        return val
     }
-    
-    
 }
 
 @objcMembers class LinkListTest: NSObject {

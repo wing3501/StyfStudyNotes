@@ -217,7 +217,7 @@ class BinaryHeap<E:Comparable> {
 }
 // 单调队列
 class MonotonicQueue {
-    var linkedList: LinkedList
+    var linkedList: LinkedList<Int>
     init() {
         linkedList = LinkedList()
     }
@@ -244,7 +244,16 @@ class MonotonicQueue {
 }
 // Dijkstra 框架
 class DijkstraDemo {
-    class State {
+    class State : Comparable{
+        
+        static func == (lhs: DijkstraDemo.State, rhs: DijkstraDemo.State) -> Bool {
+            return lhs.id == rhs.id && lhs.disFromStart == rhs.disFromStart
+        }
+        
+        static func < (lhs: DijkstraDemo.State, rhs: DijkstraDemo.State) -> Bool {
+            return lhs.disFromStart < rhs.disFromStart
+        }
+        
         var id: Int;
         var disFromStart: Int;
         init(_ id: Int,_ disFromStart: Int) {
@@ -264,9 +273,31 @@ class DijkstraDemo {
         var distTo = Array(repeating: Int.max, count: V)
         // base case
         distTo[start] = 0
-        //
+        //优先级队列 distFromStart 小的排前面
+        let queue: Aheap<State> = Aheap(false)
+        queue.push(State(start, 0))
+        while queue.count != 0 {
+            let curState = queue.pop()
+            let curNodeID = curState.id
+            let curDistFromStart = curState.disFromStart
+            
+            if curDistFromStart > distTo[curNodeID] {
+                //已经有一条更短的路径到达curNode节点的路径了
+                continue
+            }
+            // 将curNode的相邻节点放入队列
+            for nextNodeID in adj(s: curNodeID) {
+                //看看从curNode到nextNode的距离
+                let distToNextNode = distTo[curNodeID] + weight(from: curNodeID, to: nextNodeID)
+                if distTo[nextNodeID] > distToNextNode {
+                    //更新
+                    distTo[nextNodeID] = distToNextNode
+                    queue.push(State(nextNodeID,distToNextNode))
+                }
+            }
+        }
         
-        return []
+        return distTo
     }
     // 返回节点from 到节点to的边权重
     func weight(from: Int,to: Int) -> Int {
@@ -382,8 +413,273 @@ class DijkstraDemo {
         
 //        239. 滑动窗口最大值
 //        print(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
+        
+//        743. 网络延迟时间
+//        print(networkDelayTime([[2,1,1],[2,3,1],[3,4,1]], 4, 2))//2
+//        print(networkDelayTime([[1,2,1]], 2, 1))//1
+//        print(networkDelayTime([[1,2,1]], 2, 2))//-1
+        
+//        1631. 最小体力消耗路径
+//        print(minimumEffortPath([[1,2,2],[3,8,2],[5,3,5]]))//2
+//        print(minimumEffortPath([[1,2,3],[3,8,4],[5,3,5]]))//1
+//        print(minimumEffortPath([[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]))//0
+        
+//        1514. 概率最大的路径
+        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.2], 0, 2))//0.25
+        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.3], 0, 2))//0.3
+        print(maxProbability(3, [[0,1]], [0.5], 0, 2))//0.0
+    }
+//    1514. 概率最大的路径
+//    给你一个由 n 个节点（下标从 0 开始）组成的无向加权图，该图由一个描述边的列表组成，其中 edges[i] = [a, b] 表示连接节点 a 和 b 的一条无向边，且该边遍历成功的概率为 succProb[i] 。
+//    指定两个节点分别作为起点 start 和终点 end ，请你找出从起点到终点成功概率最大的路径，并返回其成功概率。
+//    如果不存在从 start 到 end 的路径，请 返回 0 。只要答案与标准答案的误差不超过 1e-5 ，就会被视作正确答案。
+//    示例 1：
+//    输入：n = 3, edges = [[0,1],[1,2],[0,2]], succProb = [0.5,0.5,0.2], start = 0, end = 2
+//    输出：0.25000
+//    解释：从起点到终点有两条路径，其中一条的成功概率为 0.2 ，而另一条为 0.5 * 0.5 = 0.25
+//    示例 2：
+//    输入：n = 3, edges = [[0,1],[1,2],[0,2]], succProb = [0.5,0.5,0.3], start = 0, end = 2
+//    输出：0.30000
+//    示例 3：
+//    输入：n = 3, edges = [[0,1]], succProb = [0.5], start = 0, end = 2
+//    输出：0.00000
+//    解释：节点 0 和 节点 2 之间不存在路径
+//    提示：
+//    2 <= n <= 10^4
+//    0 <= start, end < n
+//    start != end
+//    0 <= a, b < n
+//    a != b
+//    0 <= succProb.length == edges.length <= 2*10^4
+//    0 <= succProb[i] <= 1
+//    每两个节点之间最多有一条边
+//    链接：https://leetcode-cn.com/problems/path-with-maximum-probability
+    class ProbabilityNode : Comparable{
+        static func < (lhs: Other.ProbabilityNode, rhs: Other.ProbabilityNode) -> Bool {
+            return lhs.val < rhs.val
+        }
+        
+        static func == (lhs: Other.ProbabilityNode, rhs: Other.ProbabilityNode) -> Bool {
+            return lhs.index == rhs.index
+        }
+        
+        var index: Int
+        var val: Double
+        init(index:Int,val: Double) {
+            self.index = index
+            self.val = val
+        }
+        
+    }
+    class func maxProbability(_ n: Int, _ edges: [[Int]], _ succProb: [Double], _ start: Int, _ end: Int) -> Double {
+        var graph: [Int:[(Int,Double)]] = [:]
+        var i = 0
+        while i < edges.count {
+            let edge = edges[i]
+            let p1 = edge[0]
+            let p2 = edge[1]
+            let val = succProb[i]
+            var array1 = graph[p1, default: []]
+            array1.append((p2, val))
+            graph[p1] = array1;
+            var array2 = graph[p2, default: []]
+            array2.append((p1,val))
+            graph[p2] = array2;
+            i += 1
+        }
+        var toVals = Array(repeating: 0.0, count: n)
+        toVals[start] = 1
+        let queue = LinkedList<ProbabilityNode>()
+        queue.push(ProbabilityNode(index: start, val: 1))
+        while queue.count != 0 {
+            let node = queue.removeTop()!
+            if toVals[node.index] > node.val {
+                continue
+            }
+
+            if let nexts = graph[node.index] {
+                for nextItem in nexts {
+                    let nextIndex = nextItem.0
+                    let nodeToNextVal = nextItem.1
+                    let startToNextVal = toVals[node.index] * nodeToNextVal;
+                    if startToNextVal > toVals[nextIndex] {
+                        toVals[nextIndex] = startToNextVal
+                        queue.push(ProbabilityNode(index: nextIndex, val: startToNextVal))
+                    }
+                }
+            }
+        }
+        return toVals[end]
     }
     
+//    1631. 最小体力消耗路径
+//    你准备参加一场远足活动。给你一个二维 rows x columns 的地图 heights ，其中 heights[row][col] 表示格子 (row, col) 的高度。一开始你在最左上角的格子 (0, 0) ，且你希望去最右下角的格子 (rows-1, columns-1) （注意下标从 0 开始编号）。你每次可以往 上，下，左，右 四个方向之一移动，你想要找到耗费 体力 最小的一条路径。
+//
+//    一条路径耗费的 体力值 是路径上相邻格子之间 高度差绝对值 的 最大值 决定的。
+//
+//    请你返回从左上角走到右下角的最小 体力消耗值 。
+//    示例 1：
+//    输入：heights = [[1,2,2],[3,8,2],[5,3,5]]
+//    输出：2
+//    解释：路径 [1,3,5,3,5] 连续格子的差值绝对值最大为 2 。
+//    这条路径比路径 [1,2,2,2,5] 更优，因为另一条路径差值最大值为 3 。
+//    示例 2：
+//    输入：heights = [[1,2,3],[3,8,4],[5,3,5]]
+//    输出：1
+//    解释：路径 [1,2,3,4,5] 的相邻格子差值绝对值最大为 1 ，比路径 [1,3,5,3,5] 更优。
+//    示例 3：
+//    输入：heights = [[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]
+//    输出：0
+//    解释：上图所示路径不需要消耗任何体力。
+//    提示：
+//    rows == heights.length
+//    columns == heights[i].length
+//    1 <= rows, columns <= 100
+//    1 <= heights[i][j] <= 106
+//    链接：https://leetcode-cn.com/problems/path-with-minimum-effort
+    class PathClass : Comparable {
+        static func < (lhs: Other.PathClass, rhs: Other.PathClass) -> Bool {
+            return lhs.disFromStart < rhs.disFromStart
+        }
+        
+        static func == (lhs: Other.PathClass, rhs: Other.PathClass) -> Bool {
+            return lhs.x == rhs.x && lhs.y == rhs.y && lhs.disFromStart == rhs.disFromStart
+        }
+        
+        var x: Int
+        var y: Int
+        var disFromStart: Int
+        init(_ i :Int,_ j :Int,_ disFromStart: Int) {
+            self.x = i
+            y = j
+            self.disFromStart = disFromStart
+        }
+    }
+    class func minimumEffortPath(_ heights: [[Int]]) -> Int {
+        let w = heights.count
+        let h = heights[0].count
+        var dist = Array(repeating: Array(repeating: -1, count: h), count: w)
+        dist[0][0] = 0
+        let queue = LinkedList<PathClass>()
+        let move = [[0,-1],[0,1],[-1,0],[1,0]]
+        queue.push(PathClass(0,0, dist[0][0]))
+        while queue.count != 0 {
+            let path = queue.removeTop()!
+            let x = path.x
+            let y = path.y
+            let dis = path.disFromStart
+            
+            if dist[x][y] != -1 && dist[x][y] < dis {
+                continue
+            }
+            for item in move {
+                let nextX = x + item[0]
+                let nextY = y + item[1]
+                if nextX >= 0 && nextX < w && nextY >= 0 && nextY < h {
+                    var  nextDis = abs((heights[x][y] - heights[nextX][nextY]))
+                    nextDis = max(nextDis, dist[x][y])
+                    if dist[nextX][nextY] == -1 || dist[nextX][nextY] > nextDis  {
+                        dist[nextX][nextY] = nextDis
+                        queue.push(PathClass(nextX, nextY, nextDis))
+                    }
+                }
+            }
+        }
+        return dist[w - 1][h - 1]
+    }
+    
+//    743. 网络延迟时间
+//    有 n 个网络节点，标记为 1 到 n。
+//    给你一个列表 times，表示信号经过 有向 边的传递时间。 times[i] = (ui, vi, wi)，其中 ui 是源节点，vi 是目标节点， wi 是一个信号从源节点传递到目标节点的时间。
+//    现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1
+//    示例 1：
+//    输入：times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+//    输出：2
+//    示例 2：
+//    输入：times = [[1,2,1]], n = 2, k = 1
+//    输出：1
+//    示例 3：
+//    输入：times = [[1,2,1]], n = 2, k = 2
+//    输出：-1
+//    提示：
+//    1 <= k <= n <= 100
+//    1 <= times.length <= 6000
+//    times[i].length == 3
+//    1 <= ui, vi <= n
+//    ui != vi
+//    0 <= wi <= 100
+//    所有 (ui, vi) 对都 互不相同（即，不含重复边）
+//    链接：https://leetcode-cn.com/problems/network-delay-time
+    class TimeState : Comparable{
+        
+        static func == (lhs: TimeState, rhs: TimeState) -> Bool {
+            return lhs.id == rhs.id && lhs.disFromStart == rhs.disFromStart
+        }
+        
+        static func < (lhs: TimeState, rhs: TimeState) -> Bool {
+            return lhs.disFromStart < rhs.disFromStart
+        }
+        
+        var id: Int;
+        var disFromStart: Int;
+        init(_ id: Int,_ disFromStart: Int) {
+            self.id = id;
+            self.disFromStart = disFromStart;
+        }
+    }
+    
+    class func networkDelayTime(_ times: [[Int]], _ n: Int, _ k: Int) -> Int {
+        var distFromStart = Array(repeating: -1, count: n + 1)
+        distFromStart[k] = 0
+        var canGoDic:[Int : [[Int]]] = [:]
+        for item in times {
+            let from = item[0]
+            let to = item[1]
+            let time = item[2]
+            if var array = canGoDic[from] {
+                array.append([to,time])
+                canGoDic[from] = array
+            }else {
+                canGoDic[from] = [[to,time]]
+            }
+        }
+        
+        let quque: LinkedList<TimeState> = LinkedList()
+        quque.push(TimeState(k, 0))
+        while quque.count != 0 {
+            let item = quque.removeTop()!
+            let index = item.id
+            let time = item.disFromStart
+            
+            let dist = distFromStart[index]
+            if dist != -1 && dist < time {
+                continue
+            }
+            distFromStart[index] = time
+            if let array = canGoDic[index] {
+                for item in array {
+                    let to = item[0]
+                    let time1 = item[1]
+                    let distToNext = distFromStart[index] + time1
+                    let toTime = distFromStart[to]
+                    if toTime > distToNext || toTime == -1 {
+                        quque.push(TimeState(to,distToNext))
+                    }
+                }
+            }
+        }
+        var maxTime = -1
+        var i = 1
+        while i <= n {
+            let time = distFromStart[i]
+            if time == -1 {
+                return -1
+            }
+            maxTime = max(maxTime, time)
+            i += 1
+        }
+        return maxTime
+    }
     
 //    239. 滑动窗口最大值
 //    给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。

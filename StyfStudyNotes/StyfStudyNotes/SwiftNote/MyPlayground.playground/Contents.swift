@@ -1358,3 +1358,65 @@ print(mirror.superclassMirror as Any)
 for case let (label?, value) in mirror.children {
     print(label, value)
 }
+
+
+//convention  https://www.jianshu.com/p/f4dd6397ae86
+//用来修饰闭包的。他后面需要跟一个参数：
+//@convention(swift) : 表明这个是一个swift的闭包
+//@convention(block) ：表明这个是一个兼容oc的block的闭包
+//@convention(c) : 表明这个是兼容c的函数指针的闭包。
+class PersonObj:NSObject {
+
+    func doAction(action: @convention(swift) (String)->Void, arg:String){
+        action(arg)
+    }
+}
+
+let saySomething_c : @convention(c) (String)->Void = {
+    print("i said: \($0)")
+}
+
+let saySomething_oc : @convention(block) (String)->Void = {
+    print("i said: \($0)")
+}
+
+let saySomething_swift : @convention(swift) (String)->Void = {
+    print("i said: \($0)")
+}
+
+let personobj = PersonObj()
+personobj.doAction(action: saySomething_c, arg: "helloworld")
+personobj.doAction(action: saySomething_oc, arg: "helloworld")
+personobj.doAction(action: saySomething_swift, arg: "helloworld")
+
+// 使用场景
+class PersonObject:NSObject {
+    //数  数字
+    @objc dynamic func countNumber(toValue:Int){
+        for value in 0...toValue{
+            print(value)
+        }
+    }
+}
+//现在我们要替换数数函数的实现，给他之前和之后加上点广告语。
+
+//拿到method
+let methond = class_getInstanceMethod(Person.self, #selector(PersonObject.countNumber(toValue:)))
+//通过method拿到imp， imp实际上就是一个函数指针
+let oldImp = method_getImplementation(methond!)
+//由于IMP是函数指针，所以接收时需要指定@convention(c)
+typealias Imp  = @convention(c) (PersonObject,Selector,NSNumber)->Void
+//将函数指针强转为兼容函数指针的闭包
+let oldImpBlock = unsafeBitCast(oldImp, to: Imp.self)
+
+//imp_implementationWithBlock的参数需要的是一个oc的block，所以需要指定convention(block)
+let newFunc:@convention(block) (PersonObject, NSNumber)->Void = {
+    (sself,  toValue) in
+    print("数之前， 祝大家新年快乐")
+    oldImpBlock(sself, #selector(PersonObject.countNumber(toValue:)), toValue)
+    print("数之后， 祝大家新年快乐")
+}
+let imp = imp_implementationWithBlock(unsafeBitCast(newFunc, to: AnyObject.self))
+method_setImplementation(methond!, imp)
+let person123 = PersonObject()
+person123.countNumber(toValue: 50)
