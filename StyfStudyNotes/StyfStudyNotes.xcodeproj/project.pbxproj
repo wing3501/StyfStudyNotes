@@ -104,6 +104,7 @@
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
+		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
 		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
 		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
@@ -295,6 +296,7 @@
 		92E1A5ED264CD2ED007D63D5 /* SessionDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDelegateProxy.h; sourceTree = "<group>"; };
 		92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDelegateProxy.m; sourceTree = "<group>"; };
 		92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo.swift; sourceTree = "<group>"; };
+		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
 		92F36645273381A20013FB92 /* UIImage+scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+scale.m"; sourceTree = "<group>"; };
 		92F3684E2733AE8E0013FB92 /* SMCPUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCPUMonitor.h; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92E2359027671CF7003B7C85 /* CPPNote */,
 				920D2C1D274CD6C600246B1C /* UserDump */,
 				920C4FEB273275F90091487B /* KVO */,
 				92C1D92427293C6500FF3398 /* 问题 */,
@@ -807,6 +810,14 @@
 				920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */,
 			);
 			path = SwiftDemo;
+			sourceTree = "<group>";
+		};
+		92E2359027671CF7003B7C85 /* CPPNote */ = {
+			isa = PBXGroup;
+			children = (
+				92E2359127671D17003B7C85 /* myCpp.cpp */,
+			);
+			path = CPPNote;
 			sourceTree = "<group>";
 		};
 		92F3684D2733AE7D0013FB92 /* SMLagMonitor */ = {
@@ -1046,6 +1057,7 @@
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				920D2C24274CD7FC00246B1C /* KSUserDump.m in Sources */,
+				92E2359227671D17003B7C85 /* myCpp.cpp in Sources */,
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */,
 				92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */,

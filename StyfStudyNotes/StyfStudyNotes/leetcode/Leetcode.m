@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
+//    [BinarySearch test];
 //    [JianZhiOffer test];
 //    [SortTest test];
 //    [TreeTest test];

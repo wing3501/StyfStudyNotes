@@ -308,7 +308,7 @@ class DijkstraDemo {
         return graph[s]
     }
 }
-
+// 拓扑排序：后续遍历的反转结果
 
 @objcMembers class Other : NSObject {
     class func test() {
@@ -425,10 +425,158 @@ class DijkstraDemo {
 //        print(minimumEffortPath([[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]))//0
         
 //        1514. 概率最大的路径
-        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.2], 0, 2))//0.25
-        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.3], 0, 2))//0.3
-        print(maxProbability(3, [[0,1]], [0.5], 0, 2))//0.0
+//        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.2], 0, 2))//0.25
+//        print(maxProbability(3, [[0,1],[1,2],[0,2]], [0.5,0.5,0.3], 0, 2))//0.3
+//        print(maxProbability(3, [[0,1]], [0.5], 0, 2))//0.0
+        
+//        710. 黑名单中的随机数
+        let a = Solution123(2, [0])
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
+        a.pick()
     }
+    
+//    710. 黑名单中的随机数
+//    给定一个包含 [0，n) 中不重复整数的黑名单 blacklist ，写一个函数从 [0, n) 中返回一个不在 blacklist 中的随机整数。
+//    对它进行优化使其尽量少调用系统方法 Math.random() 。
+//    提示:
+//    1 <= n <= 1000000000
+//    0 <= blacklist.length < min(100000, N)
+//    [0, n) 不包含 n ，详细参见 interval notation 。
+//    示例 1：
+//    输入：
+//    ["Solution","pick","pick","pick"]
+//    [[1,[]],[],[],[]]
+//    输出：[null,0,0,0]
+//    示例 2：
+//    输入：
+//    ["Solution","pick","pick","pick"]
+//    [[2,[]],[],[],[]]
+//    输出：[null,1,1,1]
+//    示例 3：
+//    输入：
+//    ["Solution","pick","pick","pick"]
+//    [[3,[1]],[],[],[]]
+//    输出：[null,0,0,2]
+//    示例 4：
+//    输入：
+//    ["Solution","pick","pick","pick"]
+//    [[4,[2]],[],[],[]]
+//    输出：[null,1,3,1]
+//    输入语法说明：
+//    输入是两个列表：调用成员函数名和调用的参数。Solution的构造函数有两个参数，n 和黑名单 blacklist。pick 没有参数，输入参数是一个列表，即使参数为空，也会输入一个 [] 空列表。
+//     链接：https://leetcode-cn.com/problems/random-pick-with-blacklist
+    class Solution123 {
+        //我的思路：每次pick的时候，如果随机数是一个黑名单数，就对 [0,n)区间进行拆分
+        //另一个思路：在初始化的时候，建立黑名单的映射，映射到正常的数。两个问题：1.映射过去的还是黑名单数 2.超过(N - blacklist.count)的黑名单数不用管
+        var qujians: [[Int]]
+        var blackSet: Set<Int>
+        init(_ n: Int, _ blacklist: [Int]) {
+            qujians = [[0,n]]
+            blackSet = Set(blacklist)
+        }
+        
+        func pick() -> Int {
+            var quijanIndex = 0
+            var qujian = qujians[quijanIndex]
+            if qujians.count > 1 { //先随机出一个区间
+                quijanIndex = Int.random(in: 0..<qujians.count)
+                qujian = qujians[quijanIndex]
+            }
+            let left = qujian[0]
+            let right = qujian[1]
+            let randomNum = Int.random(in: left..<right)
+            if blackSet.contains(randomNum) {//是个黑名单数，需要再拆分
+                if quijanIndex != qujians.count - 1 {
+                    //不是最后一个就交换到最后一个
+                    qujians.swapAt(quijanIndex, qujians.count - 1)
+                }
+                qujians.removeLast()
+                if left != randomNum {
+                    qujians.append([left,randomNum])
+                }
+                if randomNum + 1 != right {
+                    qujians.append([randomNum + 1,right])
+                }
+                blackSet.remove(randomNum)
+                return pick()
+            }else {
+               return randomNum
+            }
+        }
+    }
+    
+//    380. O(1) 时间插入、删除和获取随机元素
+//    实现RandomizedSet 类：
+//    RandomizedSet() 初始化 RandomizedSet 对象
+//    bool insert(int val) 当元素 val 不存在时，向集合中插入该项，并返回 true ；否则，返回 false 。
+//    bool remove(int val) 当元素 val 存在时，从集合中移除该项，并返回 true ；否则，返回 false 。
+//    int getRandom() 随机返回现有集合中的一项（测试用例保证调用此方法时集合中至少存在一个元素）。每个元素应该有 相同的概率 被返回。
+//    你必须实现类的所有函数，并满足每个函数的 平均 时间复杂度为 O(1) 。
+//    示例：
+//    输入
+//    ["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+//    [[], [1], [2], [2], [], [1], [2], []]
+//    输出
+//    [null, true, false, true, 2, true, false, 2]
+//    解释
+//    RandomizedSet randomizedSet = new RandomizedSet();
+//    randomizedSet.insert(1); // 向集合中插入 1 。返回 true 表示 1 被成功地插入。
+//    randomizedSet.remove(2); // 返回 false ，表示集合中不存在 2 。
+//    randomizedSet.insert(2); // 向集合中插入 2 。返回 true 。集合现在包含 [1,2] 。
+//    randomizedSet.getRandom(); // getRandom 应随机返回 1 或 2 。
+//    randomizedSet.remove(1); // 从集合中移除 1 ，返回 true 。集合现在包含 [2] 。
+//    randomizedSet.insert(2); // 2 已在集合中，所以返回 false 。
+//    randomizedSet.getRandom(); // 由于 2 是集合中唯一的数字，getRandom 总是返回 2 。
+//    提示：
+//    -231 <= val <= 231 - 1
+//    最多调用 insert、remove 和 getRandom 函数 2 * 105 次
+//    在调用 getRandom 方法时，数据结构中 至少存在一个 元素。
+//    链接：https://leetcode-cn.com/problems/insert-delete-getrandom-o1
+    class RandomizedSet {
+        private var valToIndex: [Int: Int] //存下标
+        private var array: [Int]
+        init() {
+            valToIndex = [:]
+            array = []
+        }
+        
+        func insert(_ val: Int) -> Bool {
+            if let _ = valToIndex[val] {
+                return false
+            }
+            array.append(val)
+            valToIndex[val] = array.count - 1
+            return true
+        }
+        
+        func remove(_ val: Int) -> Bool {
+            guard let index = valToIndex[val] else { return false }
+            //核心：交换到数组最后再删
+            valToIndex.removeValue(forKey: val)
+            if index != array.count - 1 {
+                let lastVal = array[array.count - 1]
+                valToIndex[lastVal] = index
+                array.swapAt(index, array.count - 1)
+            }
+            array.removeLast()
+            return true
+        }
+        
+        func getRandom() -> Int {
+            let index = Int.random(in: 0..<array.count)
+            return array[index]
+        }
+    }
+    
 //    1514. 概率最大的路径
 //    给你一个由 n 个节点（下标从 0 开始）组成的无向加权图，该图由一个描述边的列表组成，其中 edges[i] = [a, b] 表示连接节点 a 和 b 的一条无向边，且该边遍历成功的概率为 succProb[i] 。
 //    指定两个节点分别作为起点 start 和终点 end ，请你找出从起点到终点成功概率最大的路径，并返回其成功概率。
