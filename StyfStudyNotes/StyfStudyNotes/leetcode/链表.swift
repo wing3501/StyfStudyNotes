@@ -7,7 +7,82 @@
 
 import Foundation
 
-public class LinkedList<E: Comparable> {
+
+public class LinkedHashMap<E: Hashable> {
+    public class LinkedHashMapNode {
+        var val: E
+        var next: LinkedHashMapNode?
+        var prev: LinkedHashMapNode?
+        init(_ val: E) {
+            self.val = val
+        }
+    }
+    public class LinkedList {
+        var head: LinkedHashMapNode?
+        var tail: LinkedHashMapNode?
+        var count: Int = 0
+        
+        func append(_ val: E) -> LinkedHashMapNode {
+            return append(LinkedHashMapNode(val))
+        }
+        
+        func append(_ node: LinkedHashMapNode) -> LinkedHashMapNode {
+            if head == nil {
+                head = node
+                tail = node
+            }else {
+                node.prev = tail
+                tail?.next = node
+                tail = node
+            }
+            return node
+        }
+        
+        func remove(_ node: LinkedHashMapNode) {
+            let isHead = node.val == head?.val
+            let isTail = node.val == tail?.val
+            let prev = node.prev
+            let next = node.next
+            prev?.next = next
+            next?.prev = prev
+            count -= 1
+            if count == 0 {
+                head = nil
+                tail = nil
+            }else if isHead {
+                head = next
+            }else if isTail {
+                tail = prev
+            }
+        }
+    }
+    private var linkedlist: LinkedList = LinkedList()
+    private var map: [E:LinkedHashMapNode] = [:]
+    public var count: Int {
+        linkedlist.count
+    }
+    public var head: LinkedHashMapNode? {
+        linkedlist.head
+    }
+    public var tail: LinkedHashMapNode? {
+        linkedlist.tail
+    }
+    func append(_ val: E) {
+        let node = linkedlist.append(val)
+        map[val] = node
+    }
+    func remove(_ val: E) {
+        if let node = map[val] {
+            linkedlist.remove(node)
+            map.removeValue(forKey: val)
+        }
+    }
+    func getNode(_ val: E) -> LinkedHashMapNode? {
+        return map[val]
+    }
+}
+
+public class LinkedList<E> {
     private class LinkedListNode {
         var val: E;
         var next: LinkedListNode?

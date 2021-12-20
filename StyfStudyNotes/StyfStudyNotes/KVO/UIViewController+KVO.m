@@ -90,6 +90,8 @@ static void swizzleMethod(Class class,SEL origSel,SEL swizSel) {
 //    class_addMethod(kvoCls, @selector(viewDidAppear:), (IMP)kvo_viewDidAppear, originViewDidAppearEncoding);
 //    class_addMethod(kvoCls, @selector(viewWillAppear:), (IMP)kvo_viewWillAppear, originViewWillAppearEncoding);
     
+    //instance ---- NSKVONotifying_KVODemoViewController ---- DemoViewController
+    //               kvo_viewDidLoad                     ----     真正的viewDidLoad
 }
 
 static void kvo_viewDidLoad(UIViewController *kvo_self, SEL _sel)

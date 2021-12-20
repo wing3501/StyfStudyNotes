@@ -17,9 +17,11 @@
 @implementation KVO
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.yellowColor;
     [self swizzleVCinitMethod];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
