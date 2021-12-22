@@ -97,8 +97,210 @@ import Foundation
 //        print(threeSum([0,0,0]))
         
 //        18. 四数之和
-        print(fourSum([1,0,-1,0,-2,2], 0))
-        print(fourSum([2,2,2,2,2], 8))
+//        print(fourSum([1,0,-1,0,-2,2], 0))
+//        print(fourSum([2,2,2,2,2], 8))
+        
+//        26. 删除有序数组中的重复项
+//        var array1: [Int] = [1,2]//[0,0,0,0,3]
+//        let count1 = removeDuplicates(&array1)
+//        print("\(array1) \(count1)")//[1,2]
+//        var array2 = [0,0,1,1,1,2,2,3,3,4]
+//        let count2 = removeDuplicates(&array2)
+//        print("\(array2) \(count2)")//[1,2]
+        
+//        27. 移除元素
+//        var arr1 = [3,2,2,3]
+//        var count1 = removeElement(&arr1, 3)
+//        print("\(arr1) \(count1)")
+//
+//        arr1 = [0,1,2,2,3,0,4,2]
+//        count1 = removeElement(&arr1, 2)
+//        print("\(arr1) \(count1)")
+        
+        //    283. 移动零
+        var arr = [0,1,0,3,12]
+        moveZeroes(&arr)
+        print(arr)
+    }
+    
+//    283. 移动零
+//    给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+//    示例:
+//    输入: [0,1,0,3,12]
+//    输出: [1,3,12,0,0]
+//    说明:
+//    必须在原数组上操作，不能拷贝额外的数组。
+//    尽量减少操作次数。
+//    链接：https://leetcode-cn.com/problems/move-zeroes
+    class func moveZeroes(_ nums: inout [Int]) {
+        //或者直接removeElement 移除0，然后把后面的元素设置为0
+        var slow = 0
+        var fast = 0
+        while fast < nums.count {
+            if nums[fast] == 0 {
+                fast += 1
+            }else {
+                if fast > slow {
+                    nums.swapAt(slow, fast)
+                }
+                fast += 1
+                slow += 1
+            }
+        }
+    }
+    
+//    27. 移除元素
+//    给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+//    不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
+//    元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+//    说明:
+//    为什么返回数值是整数，但输出的答案是数组呢?
+//    请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+//    你可以想象内部操作如下:
+//    // nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
+//    int len = removeElement(nums, val);
+//    // 在函数里修改输入数组对于调用者是可见的。
+//    // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+//    for (int i = 0; i < len; i++) {
+//        print(nums[i]);
+//    }
+//    示例 1：
+//    输入：nums = [3,2,2,3], val = 3
+//    输出：2, nums = [2,2]
+//    解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。
+//    示例 2：
+//    输入：nums = [0,1,2,2,3,0,4,2], val = 2
+//    输出：5, nums = [0,1,4,0,3]
+//    解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
+//    提示：
+//    0 <= nums.length <= 100
+//    0 <= nums[i] <= 50
+//    0 <= val <= 100
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/remove-element
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+        var slow = 0
+        var fast = 0
+        while fast < nums.count {
+            if nums[fast] == val {
+                fast += 1
+            }else {
+                nums.swapAt(slow, fast)
+                slow += 1
+                fast += 1
+            }
+        }
+        return slow
+    }
+    
+//    83. 删除排序链表中的重复元素
+//    存在一个按升序排列的链表，给你这个链表的头节点 head ，请你删除所有重复的元素，使每个元素 只出现一次 。
+//    返回同样按升序排列的结果链表。
+//    示例 1：
+//    输入：head = [1,1,2]
+//    输出：[1,2]
+//    示例 2：
+//    输入：head = [1,1,2,3,3]
+//    输出：[1,2,3]
+//    提示：
+//    链表中节点数目在范围 [0, 300] 内
+//    -100 <= Node.val <= 100
+//    题目数据保证链表已经按升序排列
+//    https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+//      Definition for singly-linked list.
+      public class ListNode {
+          public var val: Int
+          public var next: ListNode?
+          public init() { self.val = 0; self.next = nil; }
+          public init(_ val: Int) { self.val = val; self.next = nil; }
+         public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+      }
+     
+    class func deleteDuplicates(_ head: ListNode?) -> ListNode? {
+        guard var slow = head,var fast = head?.next else { return head }
+        if let _ = fast.next {
+            var val = slow.val
+            while true {
+                if fast.val == val {
+                    if let next = fast.next {
+                        fast = next
+                    }else {
+                        slow.next = nil
+                        break
+                    }
+                }else {
+                    slow.next = fast
+                    slow = fast
+                    val = fast.val
+                    if let next = fast.next {
+                        fast = next
+                    }else {
+                        break
+                    }
+                }
+            }
+            return head
+        }else {
+            if slow.val == fast.val {
+                slow.next = nil
+                return slow
+            }else {
+                return head
+            }
+        }
+    }
+    
+//    26. 删除有序数组中的重复项
+//    给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
+//    不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+//    说明:
+//    为什么返回数值是整数，但输出的答案是数组呢?
+//    请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+//    你可以想象内部操作如下:
+//    // nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+//    int len = removeDuplicates(nums);
+//    // 在函数里修改输入数组对于调用者是可见的。
+//    // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+//    for (int i = 0; i < len; i++) {
+//        print(nums[i]);
+//    }
+//    示例 1：
+//    输入：nums = [1,1,2]
+//    输出：2, nums = [1,2]
+//    解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+//    示例 2：
+//    输入：nums = [0,0,1,1,1,2,2,3,3,4]
+//    输出：5, nums = [0,1,2,3,4]
+//    解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
+//    提示：
+//    0 <= nums.length <= 3 * 104
+//    -104 <= nums[i] <= 104
+//    nums 已按升序排列
+//    链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array
+    class func removeDuplicates(_ nums: inout [Int]) -> Int {
+        guard nums.count > 1 else { return nums.count }
+        var slow = 0
+        var fast = 1
+        var val = nums[slow]
+        while fast < nums.count {
+            let fastVal = nums[fast]
+            if val == fastVal {
+                fast += 1
+            }else {
+                if fast - slow > 1 {
+                    slow += 1
+                    nums[slow] = fastVal
+                    val = fastVal
+                }else {
+                    slow += 1
+                    val = fastVal
+                    fast += 1
+                }
+            }
+        }
+        return slow + 1
+
     }
     
 //    18. 四数之和
