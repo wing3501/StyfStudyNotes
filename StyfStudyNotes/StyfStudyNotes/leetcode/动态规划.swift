@@ -90,10 +90,313 @@ import Foundation
 //        print(rob2(node1))
         
 
+        //    931. 下降路径最小和
+//        print(minFallingPathSum([[2,1,3],[6,5,4],[7,8,9]]))//13
+//        print(minFallingPathSum([[-19,57],[-40,-5]]))//-59
+//        print(minFallingPathSum([[-48]]))
         
+        //    494. 目标和
+//        print(findTargetSumWays([1,1,1,1,1], 3))
+//        print(findTargetSumWays([1], 1))
         
+//        416. 分割等和子集
+//        print(canPartition([1,5,11,5]))//true
+//        print(canPartition([1,2,3,5]))//false
+//        print(canPartition([100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,99,97]))
+        
+        //    518. 零钱兑换 II
+//        print(change(5, [1, 2, 5]))//4
+//        print(change(3, [2]))//0
+//        print(change(10, [10]))//1
+        
+        //    64. 最小路径和
+//        print(minPathSum([[1,3,1], [1,5,1],[4,2,1]]))//7
+//        print(minPathSum([[1,2,3], [4,5,6]]))//12
+//        print(minPathSum([[1,2,3]]))//6
     }
-
+//    174. 地下城游戏
+//    一些恶魔抓住了公主（P）并将她关在了地下城的右下角。地下城是由 M x N 个房间组成的二维网格。我们英勇的骑士（K）最初被安置在左上角的房间里，他必须穿过地下城并通过对抗恶魔来拯救公主。
+//    骑士的初始健康点数为一个正整数。如果他的健康点数在某一时刻降至 0 或以下，他会立即死亡。
+//    有些房间由恶魔守卫，因此骑士在进入这些房间时会失去健康点数（若房间里的值为负整数，则表示骑士将损失健康点数）；其他房间要么是空的（房间里的值为 0），要么包含增加骑士健康点数的魔法球（若房间里的值为正整数，则表示骑士将增加健康点数）。
+//    为了尽快到达公主，骑士决定每次只向右或向下移动一步。
+//    编写一个函数来计算确保骑士能够拯救到公主所需的最低初始健康点数。
+//    例如，考虑到如下布局的地下城，如果骑士遵循最佳路径 右 -> 右 -> 下 -> 下，则骑士的初始健康点数至少为 7。
+//    -2 (K) -3    3
+//    -5    -10    1
+//    10    30    -5 (P)
+//    说明:
+//    骑士的健康点数没有上限。
+//    任何房间都可能对骑士的健康点数造成威胁，也可能增加骑士的健康点数，包括骑士进入的左上角房间以及公主被监禁的右下角房间。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/dungeon-game
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func calculateMinimumHP(_ dungeon: [[Int]]) -> Int {
+        return 0
+    }
+//    64. 最小路径和
+//    给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+//    说明：每次只能向下或者向右移动一步。
+//    示例 1：
+//    输入：grid = [[1,3,1],
+//                [1,5,1],
+//                [4,2,1]]
+//    输出：7
+//    解释：因为路径 1→3→1→1→1 的总和最小。
+//    示例 2：
+//    输入：grid = [[1,2,3],
+//                [4,5,6]]
+//    输出：12
+//    提示：
+//    m == grid.length
+//    n == grid[i].length
+//    1 <= m, n <= 200
+//    0 <= grid[i][j] <= 100
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/minimum-path-sum
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minPathSum(_ grid: [[Int]]) -> Int {
+        // dp[m][n] 到mn的最小路径和
+        // 状态转移 dp[m][n] = min(dp[m][n - 1] + dp[m - 1][n]) + grid[m][n]
+        // base case  第一行累加
+        // 降维打击  一维解决
+        
+        var dp: [Int] = []
+        var sum = 0
+        for item in grid[0] {
+            sum += item
+            dp.append(sum)
+        }
+        var m = 1
+        while m < grid.count {
+            var n = 0
+            while n < grid[0].count {
+                if n - 1 >= 0 {
+                    dp[n] = min(dp[n], dp[n - 1])
+                }
+                dp[n] += grid[m][n]
+                n += 1
+            }
+            m += 1
+        }
+        return dp.last!
+    }
+    
+//    518. 零钱兑换 II
+//    给你一个整数数组 coins 表示不同面额的硬币，另给一个整数 amount 表示总金额。
+//    请你计算并返回可以凑成总金额的硬币组合数。如果任何硬币组合都无法凑出总金额，返回 0 。
+//    假设每一种面额的硬币有无限个。
+//    题目数据保证结果符合 32 位带符号整数。
+//    示例 1：
+//    输入：amount = 5, coins = [1, 2, 5]
+//    输出：4
+//    解释：有四种方式可以凑成总金额：
+//    5=5
+//    5=2+2+1
+//    5=2+1+1+1
+//    5=1+1+1+1+1
+//    示例 2：
+//    输入：amount = 3, coins = [2]
+//    输出：0
+//    解释：只用面额 2 的硬币不能凑成总金额 3 。
+//    示例 3：
+//    输入：amount = 10, coins = [10]
+//    输出：1
+//    提示：
+//    1 <= coins.length <= 300
+//    1 <= coins[i] <= 5000
+//    coins 中的所有值 互不相同
+//    0 <= amount <= 5000
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/coin-change-2
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func change(_ amount: Int, _ coins: [Int]) -> Int {
+        //dp[i][j]  容量为j时，只使用前i种物品，有多少种方法可以装满
+        //dp[i - 1][j] 前i-1件可以装满的次数
+        //dp[i - 1][j - num] ... dp[i - 1][j - num * n]
+        
+//        var dp = Array(repeating: 0, count: amount + 1)
+//        dp[0] = 1
+//        var i = 1
+//        while i <= coins.count {
+//            let num = coins[i - 1]
+//            var j = amount
+//            while j >= 0 {
+//                if j - num >= 0 {
+//                    dp[j] = dp[j]
+//                    var k = 1
+//                    while j - num * k >= 0 {
+//                        dp[j] += dp[j - num * k]
+//                        k += 1
+//                    }
+//                }else {
+//                    dp[j] = dp[j]
+//                }
+//                j -= 1
+//            }
+//            i += 1
+//        }
+//        return dp[amount]
+        
+        
+        //不放入i dp[i][j] = dp[i - 1][j]
+        //放入i   dp[i][j] = dp[i - 1][j] + dp[i][j - num]
+        
+        var dp = Array(repeating: 0, count: amount + 1)
+        dp[0] = 1
+        var i = 1
+        while i <= coins.count {
+            let num = coins[i - 1]
+            var j = 1
+            while j <= amount {
+                if j - num >= 0 {
+                    dp[j] = dp[j] + dp[j - num]
+                }else {
+                    dp[j] = dp[j]
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return dp[amount]
+    }
+    
+//    494. 目标和
+//    给你一个整数数组 nums 和一个整数 target 。
+//    向数组中的每个整数前添加 '+' 或 '-' ，然后串联起所有整数，可以构造一个 表达式 ：
+//    例如，nums = [2, 1] ，可以在 2 之前添加 '+' ，在 1 之前添加 '-' ，然后串联起来得到表达式 "+2-1" 。
+//    返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+//    示例 1：
+//    输入：nums = [1,1,1,1,1], target = 3
+//    输出：5
+//    解释：一共有 5 种方法让最终目标和为 3 。
+//    -1 + 1 + 1 + 1 + 1 = 3
+//    +1 - 1 + 1 + 1 + 1 = 3
+//    +1 + 1 - 1 + 1 + 1 = 3
+//    +1 + 1 + 1 - 1 + 1 = 3
+//    +1 + 1 + 1 + 1 - 1 = 3
+//    示例 2：
+//    输入：nums = [1], target = 1
+//    输出：1
+//    提示：
+//    1 <= nums.length <= 20
+//    0 <= nums[i] <= 1000
+//    0 <= sum(nums[i]) <= 1000
+//    -1000 <= target <= 1000
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/target-sum
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findTargetSumWays(_ nums: [Int], _ target: Int) -> Int {
+        // 把nums分成A B 两组，表示 + 的数 和 -的数
+        // A - B = sum(nums)
+        // A + B = target
+        //------------------
+        // 2A = sum(nums) + target
+        // A = (sum(nums) + target) / 2
+        // nums中有几种和为A的方式
+        
+        var sum = 0
+        for item in nums {
+            sum += item
+        }
+        if sum < target || (sum + target) % 2 == 1 || -sum > target {
+            return 0
+        }
+        
+        let A = (sum + target) / 2
+        // 转换为背包问题 dp[i][j] 当容量为j时，前i个元素有几种方式装满 求dp[nums.count][A]
+        // 状态转移 dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]]
+        // base case
+        // dp[0][...] = 0  dp[...][0] = 1 //表示容量为0只有一种方式就是 不装
+        // i = 0...nums.count    j = 0...A
+        
+        var dp = Array(repeating: 0, count: A + 1)//存上一行
+        dp[0] = 1 //base case
+        var dp1 = Array(repeating: 0, count: A + 1)
+        var i = 1
+        while i <= nums.count {
+            var j = 0
+            let num = nums[i - 1]
+            while j <= A{
+                dp1[j] = dp[j]
+                if j - num >= 0 {
+                    dp1[j] += dp[j - num]
+                }
+                j += 1
+            }
+            dp = dp1
+            dp1[0] = 1
+            i += 1
+        }
+        return dp[A]
+    }
+//    931. 下降路径最小和
+//    给你一个 n x n 的 方形 整数数组 matrix ，请你找出并返回通过 matrix 的下降路径 的 最小和 。
+//    下降路径 可以从第一行中的任何元素开始，并从每一行中选择一个元素。在下一行选择的元素和当前行所选元素最多相隔一列（即位于正下方或者沿对角线向左或者向右的第一个元素）。具体来说，位置 (row, col) 的下一个元素应当是 (row + 1, col - 1)、(row + 1, col) 或者 (row + 1, col + 1) 。
+//    示例 1：
+//    输入：matrix = [[2,1,3],[6,5,4],[7,8,9]]
+//    输出：13
+//    解释：下面是两条和最小的下降路径，用加粗+斜体标注：
+//    [[2,1,3],  1    [[2,1,3], 1
+//     [6,5,4],   5    [6,5,4], 4
+//     [7,8,9]]    7   [7,8,9]]  8
+//    示例 2：
+//    输入：matrix = [[-19,57],[-40,-5]]
+//    输出：-59
+//    解释：下面是一条和最小的下降路径，用加粗+斜体标注：
+//    [[-19,57],  -19
+//     [-40,-5]] -40
+//    示例 3：
+//    输入：matrix = [[-48]]
+//    输出：-48
+//    提示：
+//    n == matrix.length
+//    n == matrix[i].length
+//    1 <= n <= 100
+//    -100 <= matrix[i][j] <= 100
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/minimum-falling-path-sum
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minFallingPathSum(_ matrix: [[Int]]) -> Int {
+        //dp[i][j]   第i行j列的最小和+
+        // dp[i][j] = min(dp[i-1][j]，dp[i-1][j - 1]，dp[i-1][j + 1]) + matrix[i][j]
+        // base case 就是第一行
+        // 结果 result min(dp[i][j])
+        
+        if matrix.count == 1 {
+            return matrix[0][0]
+        }
+        var dp = Array(repeating: Array(repeating: 100, count: matrix.count), count: matrix.count)
+        // base case
+        var i = 0
+        while i < matrix.count {
+            dp[0][i] = matrix[0][i]
+            i += 1
+        }
+        i = 1
+        while i < matrix.count {
+            var j = 0
+            while j < matrix.count {
+                dp[i][j] = dp[i - 1][j]
+                if j - 1 >= 0 {
+                    dp[i][j] = min(dp[i][j], dp[i - 1][j - 1])
+                }
+                if j + 1 < matrix.count {
+                    dp[i][j] = min(dp[i][j], dp[i - 1][j + 1])
+                }
+                dp[i][j] += matrix[i][j]
+                j += 1
+            }
+            i += 1
+        }
+        
+        i = 0
+        var minSum = dp[matrix.count - 1][0]
+        while i < matrix.count {
+            minSum = min(minSum, dp[matrix.count - 1][i])
+            i += 1
+        }
+        return minSum
+    }
     
     //    337. 打家劫舍 III
     //    在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。
@@ -520,7 +823,30 @@ import Foundation
         }
         if sum % 2 == 0 {
             sum = sum / 2
-            
+            // 转化为背包问题
+            //dp[i][j]  当容量为j时，前i个元素有多少种方式装满 求dp[n][sum]
+            //i = 0...n  j = 0...sum
+            //dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i - 1]]
+            //base case dp[0][...] = 0  dp[...][0] = 1
+            var dp = Array(repeating: false, count: sum + 1)//上一行
+            dp[0] = true
+            var dp1 = Array(repeating: false, count: sum + 1)
+            var i = 1
+            while i <= nums.count {
+                let num = nums[i - 1]
+                var j = 0
+                while j <= sum {
+                    dp1[j] = dp[j]//i-1个数是否已经能装满了
+                    if j - num >= 0 && !dp1[j] {
+                        dp1[j] = dp[j - num]
+                    }
+                    j += 1
+                }
+                dp = dp1
+                dp1[0] = true
+                i += 1
+            }
+            return dp[sum]
         }
         return false
     }
@@ -822,6 +1148,11 @@ import Foundation
 //    你能将算法的时间复杂度降低到 O(n log(n)) 吗?
 //    链接：https://leetcode-cn.com/problems/longest-increasing-subsequence
     class func lengthOfLIS(_ nums: [Int]) -> Int {
+        //纸牌分堆
+        //每张牌，只能接在比它大的牌下面
+        //没有比它大的，就新开一个牌堆
+        //牌堆数就是最长个数
+        
         //dp[i] 以下标i结尾的数组的最长子序列长度
         //求dp[5],找出前面比nums[5]小的dp[i]，然后+1
         var dp = Array(repeating: 1, count: nums.count)
