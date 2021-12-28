@@ -66,7 +66,11 @@ public class KMP {
     }
 }
 
+// 贪心算法 最多能找到多少个不重叠
+// 按end 排序
+
 // 前缀和技巧 累加成N+1的新数组，可以得知 nums[i..j] = sum[j+1] - sum[i]  场景：原数组不变，频繁查询某个区间累加和
+
 // 差分数组技巧  diff[i] = nums[i]-nums[i-1]         场景：频繁对原数组的某个区间元素进行增减
 //       原数组 res[i] = res[i - 1] + diff[i]
 //       想要num[i..j]全部加3  需要diff[i] += 3   diff[j+1]-=3
@@ -276,8 +280,102 @@ import Foundation
 //        print(huiyishi2([[7,10],[2,4]]))
         
         //    1109. 航班预订统计
-        print(corpFlightBookings([[1,2,10],[2,3,20],[2,5,25]], 5))
+//        print(corpFlightBookings([[1,2,10],[2,3,20],[2,5,25]], 5))
+        
+        //    1024. 视频拼接
+        print(videoStitching([[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], 10))//3
+        print(videoStitching([[0,1],[1,2]], 5))//-1
+        print(videoStitching([[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], 9))//3
+        print(videoStitching([[0,4],[2,8]], 5))//2
+        print(videoStitching([[0,2],[1,6],[3,10]], 10))//3
+        print(videoStitching([[3,12],[7,14],[9,14],[12,15],[0,9],[4,14],[2,7],[1,11]], 10))//2
     }
+    
+//    1024. 视频拼接
+//    你将会获得一系列视频片段，这些片段来自于一项持续时长为 time 秒的体育赛事。这些片段可能有所重叠，也可能长度不一。
+//    使用数组 clips 描述所有的视频片段，其中 clips[i] = [starti, endi] 表示：某个视频片段开始于 starti 并于 endi 结束。
+//    甚至可以对这些片段自由地再剪辑：
+//    例如，片段 [0, 7] 可以剪切成 [0, 1] + [1, 3] + [3, 7] 三部分。
+//    我们需要将这些片段进行再剪辑，并将剪辑后的内容拼接成覆盖整个运动过程的片段（[0, time]）。返回所需片段的最小数目，如果无法完成该任务，则返回 -1 。
+//    示例 1：
+//    输入：clips = [[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], time = 10
+//    输出：3
+//    解释：
+//    选中 [0,2], [8,10], [1,9] 这三个片段。
+//    然后，按下面的方案重制比赛片段：
+//    将 [1,9] 再剪辑为 [1,2] + [2,8] + [8,9] 。
+//    现在手上的片段为 [0,2] + [2,8] + [8,10]，而这些覆盖了整场比赛 [0, 10]。
+//    示例 2：
+//    输入：clips = [[0,1],[1,2]], time = 5
+//    输出：-1
+//    解释：
+//    无法只用 [0,1] 和 [1,2] 覆盖 [0,5] 的整个过程。
+//    示例 3：
+//    输入：clips = [[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], time = 9
+//    输出：3
+//    解释：
+//    选取片段 [0,4], [4,7] 和 [6,9] 。
+//    示例 4：
+//    输入：clips = [[0,4],[2,8]], time = 5
+//    输出：2
+//    解释：
+//    注意，你可能录制超过比赛结束时间的视频。
+//    提示：
+//    1 <= clips.length <= 100
+//    0 <= starti <= endi <= 100
+//    1 <= time <= 100
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/video-stitching
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func videoStitching(_ clips: [[Int]], _ time: Int) -> Int {
+        let array = clips.sorted { a, b in
+            //按 start 升序  end降序
+            a[0] == b[0] ? a[1] > b[1] : a[0] < b[0]
+        }
+        //得出第一个肯定是要的
+        var cur = array[0]
+        if cur[0] != 0 {
+            return -1
+        }
+        var count = 1
+        if cur[1] >= time {
+            return 1//已经达标了
+        }
+        var i = 1
+        
+        while i < array.count {
+            var j = i
+            var choose: [Int]?
+            while j < array.count {
+                let next = array[j]
+                if array[j][0] <= cur[1] {
+                    if choose == nil {
+                        choose = next
+                    }else {
+                        //哪个end更大就要哪个
+                        choose = next[1] > choose![1] ? next : choose
+                    }
+                }else {
+                    break
+                }
+                j += 1
+            }
+            if choose == nil {
+                return -1
+            }
+            count += 1
+            cur = choose!
+            if cur[1] >= time {
+                break//提前达标
+            }
+            i = j
+        }
+        if cur[1] < time {
+            return -1
+        }
+        return count
+    }
+    
 //    1109. 航班预订统计
 //    这里有 n 个航班，它们分别从 1 到 n 进行编号。
 //    有一份航班预订表 bookings ，表中第 i 条预订记录 bookings[i] = [firsti, lasti, seatsi] 意味着在从 firsti 到 lasti （包含 firsti 和 lasti ）的 每个航班 上预订了 seatsi 个座位。
@@ -327,34 +425,95 @@ import Foundation
 //    输入: [[7,10],[2,4]]
 //    输出: 1
     class func huiyishi2(_ array:[[Int]]) -> Int {
+        //扫描线解法
         guard array.count > 0 else { return 0 }
-        let arr = array.sorted { a, b in
-            return a[1] < b[1]
-        }
-        var holdRooms: [[Int]] = [arr[0]]
-        var maxCount = 1
-        var i = 1
-        while i < arr.count {
-            let cur = arr[i]
-            var find: [Int]?
-            var j = 0
-            while j < holdRooms.count {
-                let item = holdRooms[j]
-                if cur[0] >= item[1] {
-                    find = item
-                    holdRooms[j] = cur
-                    break
-                }
-                j += 1
-            }
-            
-            if find == nil {
-                holdRooms.append(cur)
-                maxCount = max(maxCount, holdRooms.count)
-            }
+        var start: [Int] = []
+        var end: [Int] = []
+        var i = 0
+        while i < array.count {
+            start.append(array[i][0])
+            end.append(array[i][1])
             i += 1
         }
-        return maxCount
+        start.sort()
+        end.sort()
+        var ptr1 = 0
+        var ptr2 = 0
+        var count = 0
+        var result = 0
+        while ptr1 < start.count && ptr2 < end.count {
+            if ptr1 == start.count {
+                //剩下的都是结束点了
+                ptr2 += 1
+                count -= 1
+            }else {
+                let s = start[ptr1]
+                let e = end[ptr2]
+                if e > s {
+                    count += 1
+                    ptr1 += 1
+                    result = max(result, count)
+                }else {
+                    count -= 1
+                    ptr2 += 1
+                }
+            }
+        }
+        return result
+        
+        
+        //差分数组解法
+//        guard array.count > 0 else { return 0 }
+//        var start = Int.max
+//        var end = -1
+//        for item in array {
+//            start = min(start, item[0])
+//            end = max(end, item[1])
+//        }
+////        1 5
+//        let n = end - start + 1
+//        let arr = Array(repeating: 0, count: n)
+//        let diff = Difference(arr)
+//        for item in array {
+//            diff.add(1, item[0] - start, item[1] - start)
+//        }
+//
+//        let result = diff.result
+//        var maxRoom = 0
+//        for item in result {
+//            maxRoom = max(maxRoom,item)
+//        }
+//        return maxRoom
+        
+        //效率低
+//        guard array.count > 0 else { return 0 }
+//        let arr = array.sorted { a, b in
+//            return a[1] < b[1]
+//        }
+//        var holdRooms: [[Int]] = [arr[0]]
+//        var maxCount = 1
+//        var i = 1
+//        while i < arr.count {
+//            let cur = arr[i]
+//            var find: [Int]?
+//            var j = 0
+//            while j < holdRooms.count {
+//                let item = holdRooms[j]
+//                if cur[0] >= item[1] {
+//                    find = item
+//                    holdRooms[j] = cur
+//                    break
+//                }
+//                j += 1
+//            }
+//
+//            if find == nil {
+//                holdRooms.append(cur)
+//                maxCount = max(maxCount, holdRooms.count)
+//            }
+//            i += 1
+//        }
+//        return maxCount
     }
     
 //    252 会议室
