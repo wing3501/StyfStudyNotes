@@ -283,13 +283,234 @@ import Foundation
 //        print(corpFlightBookings([[1,2,10],[2,3,20],[2,5,25]], 5))
         
         //    1024. 视频拼接
-        print(videoStitching([[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], 10))//3
-        print(videoStitching([[0,1],[1,2]], 5))//-1
-        print(videoStitching([[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], 9))//3
-        print(videoStitching([[0,4],[2,8]], 5))//2
-        print(videoStitching([[0,2],[1,6],[3,10]], 10))//3
-        print(videoStitching([[3,12],[7,14],[9,14],[12,15],[0,9],[4,14],[2,7],[1,11]], 10))//2
+//        print(videoStitching([[0,2],[4,6],[8,10],[1,9],[1,5],[5,9]], 10))//3
+//        print(videoStitching([[0,1],[1,2]], 5))//-1
+//        print(videoStitching([[0,1],[6,8],[0,2],[5,6],[0,4],[0,3],[6,7],[1,3],[4,7],[1,4],[2,5],[2,6],[3,4],[4,5],[5,7],[6,9]], 9))//3
+//        print(videoStitching([[0,4],[2,8]], 5))//2
+//        print(videoStitching([[0,2],[1,6],[3,10]], 10))//3
+//        print(videoStitching([[3,12],[7,14],[9,14],[12,15],[0,9],[4,14],[2,7],[1,11]], 10))//2
+        
+        //    55. 跳跃游戏
+//        print(canJump([2,3,1,1,4]))
+//        print(canJump([3,2,1,0,4]))
+//        print(canJump([2,0,0]))
+        
+        //    134. 加油站
+        print(canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]))//3
+        print(canCompleteCircuit([2,3,4], [3,4,3]))
     }
+//    134. 加油站
+//    在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。
+//    你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。你从其中的一个加油站出发，开始时油箱为空。
+//    如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。
+//    说明:
+//    如果题目有解，该答案即为唯一答案。
+//    输入数组均为非空数组，且长度相同。
+//    输入数组中的元素均为非负数。
+//    示例 1:
+//    输入:
+//    gas  = [1,2,3,4,5]
+//    cost = [3,4,5,1,2]
+//    输出: 3
+//    解释:
+//    从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油
+//    开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油
+//    开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油
+//    开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油
+//    开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油
+//    开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。
+//    因此，3 可为起始索引。
+//    示例 2:
+//    输入:
+//    gas  = [2,3,4]
+//    cost = [3,4,3]
+//    输出: -1
+//    解释:
+//    你不能从 0 号或 1 号加油站出发，因为没有足够的汽油可以让你行驶到下一个加油站。
+//    我们从 2 号加油站出发，可以获得 4 升汽油。 此时油箱有 = 0 + 4 = 4 升汽油
+//    开往 0 号加油站，此时油箱有 4 - 3 + 2 = 3 升汽油
+//    开往 1 号加油站，此时油箱有 3 - 3 + 3 = 3 升汽油
+//    你无法返回 2 号加油站，因为返程需要消耗 4 升汽油，但是你的油箱只有 3 升汽油。
+//    因此，无论怎样，你都不可能绕环路行驶一周。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/gas-station
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func canCompleteCircuit(_ gas: [Int], _ cost: [Int]) -> Int {
+        // 贪心解法
+        // 如果i无法走到j，那么i---j之间的任何位置都无法走到j
+        
+        
+        // 图解法
+        // 想象成环图，每个节点就是 gas[i] - cost[i] （到达下一站的状态）
+        // 问题转换为： 从哪个节点开始，能让累加和一直保持>=0
+        // 在坐标系上，就是寻找最低点
+        var sum = 0
+        var minSum = 0
+        var i = 0
+        var j = 0
+        while i < gas.count {
+            sum += gas[i] - cost[i]
+            if sum < minSum {//经过这个点，会到达一个最低点
+                minSum = sum
+                j = i + 1
+            }
+            i += 1
+        }
+        if sum < 0 {
+            return -1
+        }
+        return j == gas.count ? 0 : j
+        // 勉强能过
+//        guard gas.count > 1 else { return gas[0] >= cost[0] ? 0 : -1 }
+//        var i = 0
+//        var sumGas = 0
+//        var sumCost = 0
+//        var canTrys: [[Int]] = []
+//        while i < gas.count {
+//            let g = gas[i]
+//            let c = cost[i]
+//            sumGas += g
+//            sumCost += c
+//            if g > c {
+//                canTrys.append([i,g,c])
+//            }
+//            i += 1
+//        }
+//        if sumGas < sumCost {
+//            return -1
+//        }
+//        canTrys.sort { a, b in
+//            return a[1]-a[2] > b[1]-b[2]
+//        }
+//        var gas1 = gas
+//        gas1.append(contentsOf: gas)
+//        var cost1 = cost
+//        cost1.append(contentsOf: cost)
+//        for item in canTrys {
+//            i = item[0]
+//            var left = 0
+//            while i < item[0] + gas.count {
+//                left += gas1[i]
+//                left -= cost1[i]
+//                if left < 0 {
+//                    break
+//                }
+//                i += 1
+//            }
+//            if i == item[0] + gas.count {
+//                return item[0]
+//            }
+//        }
+//        return -1
+    }
+//    45. 跳跃游戏 II
+//    给你一个非负整数数组 nums ，你最初位于数组的第一个位置。
+//    数组中的每个元素代表你在该位置可以跳跃的最大长度。
+//    你的目标是使用最少的跳跃次数到达数组的最后一个位置。
+//    假设你总是可以到达数组的最后一个位置。
+//    示例 1:
+//    输入: nums = [2,3,1,1,4]
+//    输出: 2
+//    解释: 跳到最后一个位置的最小跳跃数是 2。
+//         从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。
+//    示例 2:
+//    输入: nums = [2,3,0,1,4]
+//    输出: 2
+//    提示:
+//    1 <= nums.length <= 104
+//    0 <= nums[i] <= 1000
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/jump-game-ii
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func jump(_ nums: [Int]) -> Int {
+        //动态规划超时
+        
+        //贪心算法
+//        [5,....]
+        //如果最远能跳5，那无论这次选择跳1234，之后必经过5，所以i = 5的时候 step
+        //也因为无论选择1-5，最远的是far,后面也必经过far
+        var step = 0
+        var end = 0
+        var far = 0
+        var i = 0
+        while i < nums.count - 1 {
+            far = max(far, i + nums[i])//能跳的最远的地方
+            if end == i {
+                end = far
+                step += 1
+            }
+            i += 1
+        }
+        return step
+    }
+//    55. 跳跃游戏
+//    给定一个非负整数数组 nums ，你最初位于数组的 第一个下标 。
+//    数组中的每个元素代表你在该位置可以跳跃的最大长度。
+//    判断你是否能够到达最后一个下标。
+//    示例 1：
+//    输入：nums = [2,3,1,1,4]
+//    输出：true
+//    解释：可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。
+//    示例 2：
+//    输入：nums = [3,2,1,0,4]
+//    输出：false
+//    解释：无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。
+//    提示：
+//    1 <= nums.length <= 3 * 104
+//    0 <= nums[i] <= 105
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/jump-game
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func canJump(_ nums: [Int]) -> Bool {
+        //贪心算法
+        var i = 0
+        var long = 0
+        while i < nums.count - 1 {
+            long = max(long,i + nums[i])//不断计算能到的最远位置
+            if long <= i {//当前是0，之前的也没能跳过i这个位置
+                return false
+            }
+            i += 1
+        }
+        return long >= nums.count - 1
+        
+        //dp[i][j] = dp[i][i + 1] && dp[i + 1][j] ...   dp[0][1] dp[1][5]
+        // dp[3][4] = nums[3] > 0
+        //  0 1 2 3 4 5
+        //0 1 x a   b
+        //1   1       x
+        //2     1     a
+        //3       1
+        //4         1 b
+        //5           1
+        // base base dp[0][0] = true
+        // 超时
+//        var dp = Array(repeating: Array(repeating: false, count: nums.count), count: nums.count)
+//        var i = nums.count - 1
+//        while i >= 0 {
+//            var j = i
+//            while j < nums.count {
+//                let steps = nums[i]
+//                if j - i <= steps {
+//                    dp[i][j] = true
+//                }else {
+//                    var s = 1
+//                    while s <= steps {
+//                        dp[i][j] = dp[i][i + s] && dp[i + s][j]
+//                        if dp[i][j] {
+//                            break
+//                        }
+//                        s += 1
+//                    }
+//                }
+//                j += 1
+//            }
+//            i -= 1
+//        }
+//        return dp[0][nums.count - 1]
+    }
+    
+    
     
 //    1024. 视频拼接
 //    你将会获得一系列视频片段，这些片段来自于一项持续时长为 time 秒的体育赛事。这些片段可能有所重叠，也可能长度不一。
