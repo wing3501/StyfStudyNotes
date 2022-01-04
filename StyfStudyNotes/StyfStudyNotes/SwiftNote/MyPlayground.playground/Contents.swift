@@ -530,6 +530,15 @@ class Person {
 }
 class Student: Person {
     //自动继承了
+    var name: String
+    init(age: Int,name: String) {
+        self.name = name
+        super.init(age: age)
+    }
+    
+    required init() {
+        fatalError("init() has not been implemented")
+    }
 }
 
 //可失败初始化器

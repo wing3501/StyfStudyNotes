@@ -8,6 +8,17 @@
 import Foundation
 
 @objcMembers class SortTest: NSObject {
+    // 洗牌算法
+    func shuffle(_ arr: inout [Int]) {
+        let n = arr.count
+        var i = 0
+        while i < n {
+            let rand = Int.random(in: i...n-1)
+            arr.swapAt(i, rand)
+            i += 1
+        }
+    }
+    
     
     class func test() {
 //        let array = [88, 44, 53, 41, 16, 6, 70]
@@ -28,11 +39,11 @@ import Foundation
 //        print(merge([[1,4],[4,5]]))
         
 //        986. 区间列表的交集
-        print(intervalIntersection([[0,2],[5,10],[13,23],[24,25]], [[1,5],[8,12],[15,24],[25,26]]))
-        print(intervalIntersection([[1,3],[5,9]], []))
-        print(intervalIntersection([], [[4,8],[10,12]]))
-        print(intervalIntersection([[1,7]], [[3,10]]))
-        print(intervalIntersection([[3,5],[9,20]], [[4,5],[7,10],[11,12],[14,15],[16,20]])) //[[4,5],[9,10],[11,12],[14,15],[16,20]]
+//        print(intervalIntersection([[0,2],[5,10],[13,23],[24,25]], [[1,5],[8,12],[15,24],[25,26]]))
+//        print(intervalIntersection([[1,3],[5,9]], []))
+//        print(intervalIntersection([], [[4,8],[10,12]]))
+//        print(intervalIntersection([[1,7]], [[3,10]]))
+//        print(intervalIntersection([[3,5],[9,20]], [[4,5],[7,10],[11,12],[14,15],[16,20]])) //[[4,5],[9,10],[11,12],[14,15],[16,20]]
         
         
         
