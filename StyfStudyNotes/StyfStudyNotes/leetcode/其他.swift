@@ -444,11 +444,656 @@ class DijkstraDemo {
 //        a.pick()
         
 //        316. 去除重复字母
-        print(removeDuplicateLetters("bcabc"))//"abc"
-        print(removeDuplicateLetters("cbacdcbc"))//"acdb"
-        print(removeDuplicateLetters("abacb"))//"abc"
+//        print(removeDuplicateLetters("bcabc"))//"abc"
+//        print(removeDuplicateLetters("cbacdcbc"))//"acdb"
+//        print(removeDuplicateLetters("abacb"))//"abc"
      
+        //    215. 数组中的第K个最大元素
+//        print(findKthLargest([3,2,1,5,6,4], 2))//5
+//        print(findKthLargest([3,2,3,1,2,4,5,5,6], 4))//4
+//        print(findKthLargest([-1,-1], 2))//-1
+        
+//        241. 为运算表达式设计优先级
+//        print(diffWaysToCompute("2-1-1"))
+//        print(diffWaysToCompute("2*3-4*5"))
+        
+        //    659. 分割数组为连续子序列
+//        print(isPossible([1,2,3,3,4,5]))//True
+//        print(isPossible([1,2,3,3,4,4,5,5]))//True
+//        print(isPossible([1,2,3,4,4,5]))//False
+//        print(isPossible([1,2,3,5,5,6,7]))//False
+        
+        //    42. 接雨水
+//        print(trap([0,1,0,2,1,0,1,3,2,1,2,1]))//6
+//        print(trap([4,2,0,3,2,5]))//9
+        
+//        921. 使括号有效的最少添加
+//        print(minAddToMakeValid("())"))//1
+//        print(minAddToMakeValid("((("))//3
+//        print(minAddToMakeValid("()"))//0
+//        print(minAddToMakeValid("()))(("))//4
+        
+        //    1541. 平衡括号字符串的最少插入次数
+//        print(minInsertions("(()))"))//1
+//        print(minInsertions("())"))//0
+//        print(minInsertions("))())("))//3
+//        print(minInsertions("(((((("))//12
+//        print(minInsertions(")))))))"))//5
+//        print(minInsertions("(()))(()))()())))"))//4
+//        print(minInsertions("))(()()))()))))))()())()(())()))))()())(()())))()("))//16
+
+        //    391. 完美矩形
+        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[3,2,4,4],[1,3,2,4],[2,3,3,4]]))//true
+        print(isRectangleCover([[1,1,2,3],[1,3,2,4],[3,1,4,2],[3,2,4,4]]))
+        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[3,2,4,4]]))
+        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[2,2,4,4]]))
+        print(isRectangleCover([[0,0,4,1],[7,0,8,2],[6,2,8,3],[5,1,6,3],[4,0,5,1],[6,0,7,2],[4,2,5,3],[2,1,4,3],[0,1,2,2],[0,2,2,3],[4,1,5,2],[5,0,6,1]]))//true
+        print(isRectangleCover([[0,0,3,3],[1,1,2,2],[1,1,2,2]]))//重复区域问题
+        print(isRectangleCover([[0,0,1,1],[0,2,1,3],[1,1,2,2],[2,0,3,1],[2,2,3,3],[1,0,2,3],[0,1,3,2]]))
+        print(isRectangleCover([[0,0,2,1],[0,1,2,2],[0,2,1,3],[1,0,2,1]]))
+//        3
+//        2 x x
+//        1 x   x
+//        x 1 2 3
     }
+//    391. 完美矩形
+//    给你一个数组 rectangles ，其中 rectangles[i] = [xi, yi, ai, bi] 表示一个坐标轴平行的矩形。这个矩形的左下顶点是 (xi, yi) ，右上顶点是 (ai, bi) 。
+//    如果所有矩形一起精确覆盖了某个矩形区域，则返回 true ；否则，返回 false 。
+//    示例 1：
+//    输入：rectangles = [[1,1,3,3],[3,1,4,2],[3,2,4,4],[1,3,2,4],[2,3,3,4]]
+//    输出：true
+//    解释：5 个矩形一起可以精确地覆盖一个矩形区域。
+//    示例 2：
+//    输入：rectangles = [[1,1,2,3],[1,3,2,4],[3,1,4,2],[3,2,4,4]]
+//    输出：false
+//    解释：两个矩形之间有间隔，无法覆盖成一个矩形。
+//    示例 3：
+//    输入：rectangles = [[1,1,3,3],[3,1,4,2],[1,3,2,4],[3,2,4,4]]
+//    输出：false
+//    解释：图形顶端留有空缺，无法覆盖成一个矩形。
+//    示例 4：
+//    输入：rectangles = [[1,1,3,3],[3,1,4,2],[1,3,2,4],[2,2,4,4]]
+//    输出：false
+//    解释：因为中间有相交区域，虽然形成了矩形，但不是精确覆盖。
+//    提示：
+//    1 <= rectangles.length <= 2 * 104
+//    rectangles[i].length == 4
+//    -105 <= xi, yi, ai, bi <= 105
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/perfect-rectangle
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isRectangleCover(_ rectangles: [[Int]]) -> Bool {
+        // 核心思路
+        // 判定条件：
+        // 1.面积相等
+        // 2.只有4个角
+        // 3.角坐标位置能对应上
+        
+        
+        // 思路1的基础上，加上面积判断
+        var pointsDic: [[Int]:Int] = [:]// 坐标对应 -- 坐标个数
+        var leftBottom: [Int]?
+        var rightTop: [Int]?
+        var set: Set<[Int]> = [] //处理漏洞
+        var mianjiSum = 0
+        for item in rectangles {
+            let x1 = item[0]
+            let y1 = item[1]
+            let x2 = item[2]
+            let y2 = item[3]
+            pointsDic[[x1,y1],default: 0] += 1
+            pointsDic[[x2,y2],default: 0] += 1
+            pointsDic[[x2,y1],default: 0] += 1
+            pointsDic[[x1,y2],default: 0] += 1
+
+            if set.contains(item) {
+                return false
+            }else {
+                set.insert(item)
+            }
+            mianjiSum += (x2 - x1) * (y2 - y1)
+
+            if leftBottom == nil || (leftBottom != nil && leftBottom![0] >= x1 && leftBottom![1] >= y1) {
+                leftBottom = [x1, y1]
+            }
+            if rightTop == nil || (rightTop != nil && rightTop![0] <= x2 && rightTop![1] <= y2) {
+                rightTop = [x2, y2]
+            }
+        }
+        
+        let totleMianji = (rightTop![0] - leftBottom![0]) * (rightTop![1] - leftBottom![1])
+        if totleMianji != mianjiSum {
+            return false
+        }
+        
+        let leftTop = [leftBottom![0],rightTop![1]]
+        let rightBottom = [rightTop![0],leftBottom![1]]
+        
+        for (key,value) in pointsDic {
+            if key == leftTop || key == rightBottom || key == leftBottom! || key == rightTop! {
+                guard value == 1 else {
+                    return false }
+            }else {
+                guard value >= 2 else {
+                    return false}
+            }
+        }
+        return true
+        
+        //我的思路2 表格法  超时
+//        var minX = rectangles[0][0]
+//        var minY = rectangles[0][1]
+//        var maxX = rectangles[0][2]
+//        var maxY = rectangles[0][3]
+//
+//        var set: Set<[Int]> = [] //处理漏洞
+//        for item in rectangles {
+//            let x1 = item[0]
+//            let y1 = item[1]
+//            let x2 = item[2]
+//            let y2 = item[3]
+//
+//            if set.contains(item) {
+//                return false
+//            }else {
+//                set.insert(item)
+//            }
+//
+//            minX = min(minX, x1)
+//            minY = min(minY, y1)
+//            maxX = max(maxX, x2)
+//            maxY = max(maxY, y2)
+//        }
+//        let leftBottom: [Int] = [minX,minY]
+//        let rightTop: [Int] = [maxX,maxY]
+//
+//        //建表
+//        let w = rightTop[0] - leftBottom[0]
+//        let h = rightTop[1] - leftBottom[1]
+//        var table: [[Bool]] = Array(repeating: Array(repeating: false, count: h), count: w)
+//        var count = 0;
+//        let x = leftBottom[0]
+//        let y = leftBottom[1]
+//        for item in rectangles {
+//            let x1 = item[0] - x
+//            let y1 = item[1] - y
+//            let x2 = item[2] - x
+//            let y2 = item[3] - y
+//
+//            var xx = x1
+//            while xx < x2 {
+//                var yy = y1
+//                while yy < y2 {
+//                    if table[xx][yy] == true {
+//                        return false
+//                    }else {
+//                        table[xx][yy] = true
+//                        count += 1
+//                    }
+//                    yy += 1
+//                }
+//                xx += 1
+//            }
+//        }
+//
+//        return count == (w * h)
+        
+        
+        //我的思路1，除了四个角的点，其他点都应该存在多份   覆盖问题没有解决
+//        var pointsDic: [[Int]:Int] = [:]// 坐标对应 -- 坐标个数
+//        var leftBottom: [Int]?
+//        var rightTop: [Int]?
+//        var set: Set<[Int]> = [] //处理漏洞
+//        for item in rectangles {
+//            let x1 = item[0]
+//            let y1 = item[1]
+//            let x2 = item[2]
+//            let y2 = item[3]
+//            pointsDic[[x1,y1],default: 0] += 1
+//            pointsDic[[x2,y2],default: 0] += 1
+//            pointsDic[[x2,y1],default: 0] += 1
+//            pointsDic[[x1,y2],default: 0] += 1
+//
+//            if set.contains(item) {
+//                return false
+//            }else {
+//                set.insert(item)
+//            }
+//
+//            if leftBottom == nil || (leftBottom != nil && leftBottom![0] >= x1 && leftBottom![1] >= y1) {
+//                leftBottom = [x1, y1]
+//            }
+//            if rightTop == nil || (rightTop != nil && rightTop![0] <= x2 && rightTop![1] <= y2) {
+//                rightTop = [x2, y2]
+//            }
+//        }
+//        let leftTop = [leftBottom![0],rightTop![1]]
+//        let rightBottom = [rightTop![0],leftBottom![1]]
+//        for (key,value) in pointsDic {
+//            if key == leftTop || key == rightBottom || key == leftBottom! || key == rightTop! {
+//                guard value == 1 else {
+//                    return false }
+//            }else {
+//                guard value >= 2 else {
+//                    return false}
+//            }
+//        }
+//        return true
+    }
+    
+//    1541. 平衡括号字符串的最少插入次数
+//    给你一个括号字符串 s ，它只包含字符 '(' 和 ')' 。一个括号字符串被称为平衡的当它满足：
+//    任何左括号 '(' 必须对应两个连续的右括号 '))' 。
+//    左括号 '(' 必须在对应的连续两个右括号 '))' 之前。
+//    比方说 "())"， "())(())))" 和 "(())())))" 都是平衡的， ")()"， "()))" 和 "(()))" 都是不平衡的。
+//    你可以在任意位置插入字符 '(' 和 ')' 使字符串平衡。
+//    请你返回让 s 平衡的最少插入次数。
+//    示例 1：
+//    输入：s = "(()))"
+//    输出：1
+//    解释：第二个左括号有与之匹配的两个右括号，但是第一个左括号只有一个右括号。我们需要在字符串结尾额外增加一个 ')' 使字符串变成平衡字符串 "(())))" 。
+//    示例 2：
+//    输入：s = "())"
+//    输出：0
+//    解释：字符串已经平衡了。
+//    示例 3：
+//    输入：s = "))())("
+//    输出：3
+//    解释：添加 '(' 去匹配最开头的 '))' ，然后添加 '))' 去匹配最后一个 '(' 。
+//    示例 4：
+//    输入：s = "(((((("
+//    输出：12
+//    解释：添加 12 个 ')' 得到平衡字符串。
+//    示例 5：
+//    输入：s = ")))))))"
+//    输出：5
+//    解释：在字符串开头添加 4 个 '(' 并在结尾添加 1 个 ')' ，字符串变成平衡字符串 "(((())))))))" 。
+//    提示：
+//    1 <= s.length <= 10^5
+//    s 只包含 '(' 和 ')' 。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/minimum-insertions-to-balance-a-parentheses-string
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minInsertions(_ s: String) -> Int {
+        //其他思路 通过一个need来记录对)的需求数
+        var res = 0
+        var need = 0
+        let array = Array(s)
+        var i = 0
+        while i < array.count {
+            if array[i] == "(" {
+                need += 2
+                if need % 2 == 1 {
+                    //前面还少一个)
+                    res += 1
+                    need -= 1
+                }
+            }else {
+                need -= 1
+                if need == -1 {
+                    //)太多了
+                    res += 1
+                    need = 1
+                }
+            }
+            i += 1
+        }
+        
+        return res + need
+        
+        
+//        let array = Array(s)
+//        var stack: [Character] = []
+//        var count = 0
+//
+//        for item in array {
+//            if item == "(" {
+//                if stack.count > 0 && stack.last! == ")" {//
+//                    if stack.count > 1 {//()(
+//                        //说明欠一个)
+//                        count += 1
+//                        stack.removeLast()
+//                        stack.removeLast()
+//                    }else {// )(
+//                        count += 2
+//                        stack.removeLast()
+//                    }
+//                }
+//                stack.append(item)
+//            }else {
+//                if stack.count > 0 {
+//                    if stack.last! == ")" {
+//                        if stack.count > 1 {//())
+//                            //凑齐
+//                            stack.removeLast()
+//                            stack.removeLast()
+//                        }else {// ))
+//                            //前面只有一个),加上当前，需要补一个(
+//                            stack.removeLast()
+//                            count += 1
+//                        }
+//                    }else {
+//                        stack.append(item)//()
+//                    }
+//                }else {
+//                    stack.append(item)//)
+//                }
+//            }
+//        }
+//        if stack.count > 0 {
+//            // (((((
+//            // )
+//            // ()
+//            if stack.last! == ")" {
+//                if stack.count > 1 {// ((()
+//                    count += 1
+//                    stack.removeLast()
+//                    stack.removeLast()
+//                    //剩余都是(
+//                    count += stack.count * 2
+//                }else {// )
+//                    count += 2
+//                }
+//            }else {
+//                //剩余都是(
+//                count += stack.count * 2
+//            }
+//        }
+//        return count
+    }
+//    921. 使括号有效的最少添加
+//    给定一个由 '(' 和 ')' 括号组成的字符串 S，我们需要添加最少的括号（ '(' 或是 ')'，可以在任何位置），以使得到的括号字符串有效。
+//    从形式上讲，只有满足下面几点之一，括号字符串才是有效的：
+//    它是一个空字符串，或者
+//    它可以被写成 AB （A 与 B 连接）, 其中 A 和 B 都是有效字符串，或者
+//    它可以被写作 (A)，其中 A 是有效字符串。
+//    给定一个括号字符串，返回为使结果字符串有效而必须添加的最少括号数。
+//    示例 1：
+//    输入："())"
+//    输出：1
+//    示例 2：
+//    输入："((("
+//    输出：3
+//    示例 3：
+//    输入："()"
+//    输出：0
+//    示例 4：
+//    输入："()))(("
+//    输出：4
+//    提示：
+//    S.length <= 1000
+//    S 只包含 '(' 和 ')' 字符。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/minimum-add-to-make-parentheses-valid
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minAddToMakeValid(_ s: String) -> Int {
+        let array = Array(s)
+        var stack: [Character] = []
+        var count = 0
+        for item in array {
+            if item == "(" {
+                stack.append(item)
+            }else {
+                if stack.count > 0 {
+                    stack.removeLast()
+                }else {
+                    count += 1
+                }
+            }
+        }
+        count += stack.count
+        return count
+    }
+//    42. 接雨水
+//    给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+//    输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+//    输出：6
+//    解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。
+//    示例 2：
+//    输入：height = [4,2,0,3,2,5]
+//    输出：9
+//    提示：
+//    n == height.length
+//    1 <= n <= 2 * 104
+//    0 <= height[i] <= 105
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/trapping-rain-water
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func trap(_ height: [Int]) -> Int {
+        // 优化：双指针法
+        // 可以看到 下标i位置的水只和 min(左边最高柱，右边最高柱) 两者中最低的有关。 当 左边最高柱<右边的高柱  右边的高柱是不是最高的不重要
+        
+        // 核心思想： 下标i位置的水 = min(左边最高柱，右边最高柱) - height[i]
+        // water[i] = min(max(0...i-1),max(i+1...end)) - height[i]
+        // max[0...i] = max(max[0...i-1],height[i])
+        // max[i...end] = max(max[i+1...end],height[i])
+        
+        guard height.count > 2 else { return 0 }
+        var rightArray = Array(repeating: 0, count: height.count)
+        var i = height.count - 2
+        while i >= 0 {
+            rightArray[i] = max(rightArray[i + 1], height[i + 1])
+            i -= 1
+        }
+        var left = 1
+        var sum = 0
+        var leftMax = height[0]
+        while left < height.count - 1 {
+            let water = min(leftMax, rightArray[left]) - height[left]
+            sum += max(water, 0)
+            leftMax = max(leftMax, height[left])
+            left += 1
+        }
+        return sum
+    }
+    
+//    659. 分割数组为连续子序列
+//    给你一个按升序排序的整数数组 num（可能包含重复数字），请你将它们分割成一个或多个长度至少为 3 的子序列，其中每个子序列都由连续整数组成。
+//    如果可以完成上述分割，则返回 true ；否则，返回 false 。
+//    示例 1：
+//    输入: [1,2,3,3,4,5]
+//    输出: True
+//    解释:
+//    你可以分割出这样两个连续子序列 :
+//    1, 2, 3
+//    3, 4, 5
+//    示例 2：
+//    输入: [1,2,3,3,4,4,5,5]
+//    输出: True
+//    解释:
+//    你可以分割出这样两个连续子序列 :
+//    1, 2, 3, 4, 5
+//    3, 4, 5
+//    示例 3：
+//    输入: [1,2,3,4,4,5]
+//    输出: False
+//    提示：
+//    1 <= nums.length <= 10000
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isPossible(_ nums: [Int]) -> Bool {
+        //其他解法
+        // 两个hashmap, 一个存数字出现的次数 num->count  一个存需要的个数 num->count
+        //
+        
+        //试一下牌堆法
+        var heaps: [[Int]] = []
+        for item in nums {
+            var heap: [Int]?
+            var i = heaps.count - 1
+            while i >= 0 {
+                let tempHeap = heaps[i]
+                if item - tempHeap.last! == 1 {
+                    heap = tempHeap
+                    break
+                }
+                i -= 1
+            }
+            if heap != nil {
+                heap!.append(item)
+                heaps[i] = heap!
+            }else {
+                heaps.append([item])
+            }
+        }
+        
+        var i = heaps.count - 1
+        while i >= 0 {
+            if heaps[i].count < 3 {
+                return false
+            }
+            i -= 1
+        }
+        
+        return true
+    }
+    
+//    241. 为运算表达式设计优先级
+//    给定一个含有数字和运算符的字符串，为表达式添加括号，改变其运算优先级以求出不同的结果。你需要给出所有可能的组合的结果。有效的运算符号包含 +, - 以及 * 。
+//    示例 1:
+//    输入: "2-1-1"
+//    输出: [0, 2]
+//    解释:
+//    ((2-1)-1) = 0
+//    (2-(1-1)) = 2
+//    示例 2:
+//    输入: "2*3-4*5"
+//    输出: [-34, -14, -10, -10, 10]
+//    解释:
+//    (2*(3-(4*5))) = -34  x
+//    ((2*3)-(4*5)) = -14
+//    ((2*(3-4))*5) = -10  x
+//    (2*((3-4)*5)) = -10  x
+//    (((2*3)-4)*5) = 10   x
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/different-ways-to-add-parentheses
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func diffWaysToCompute(_ expression: String) -> [Int] {
+        var numArray: [Int] = []
+        var fuArray: [Character] = []
+        let array = Array(expression)
+        var i = 0
+        while i < array.count {
+            let ch = array[i]
+            if ch == "+" || ch == "-" || ch == "*" {
+                fuArray.append(ch)
+                i += 1
+            }else {
+                var string = String(ch)
+                i += 1
+                while i < array.count {
+                    let nextCh = array[i]
+                    if nextCh != "+" && nextCh != "-" && nextCh != "*" {
+                        string.append(nextCh)
+                        i += 1
+                    }else {
+                        break
+                    }
+                }
+                numArray.append(Int(string)!)
+            }
+        }
+        
+        return diffWaysToComputeHelper(numArray, fuArray, 0, numArray.count - 1)
+    }
+    
+    class func diffWaysToComputeHelper(_ numArray: [Int],_ fuArray: [Character],_ start: Int,_ end: Int) -> [Int] {
+        
+        //可以加个备忘录，再优化一下
+        if start == end {
+            return [numArray[start]]
+        }
+        var i = start
+        var resArray: [Int] = []
+        while i < end {
+            let leftResArr = diffWaysToComputeHelper(numArray, fuArray, start, i)
+            let rightResArr = diffWaysToComputeHelper(numArray, fuArray, i + 1, end)
+            let fu = fuArray[i]
+            for item in leftResArr {
+                for item1 in rightResArr {
+                    if fu == "+" {
+                        resArray.append(item + item1)
+                    }else if fu == "-" {
+                        resArray.append(item - item1)
+                    }else {
+                        resArray.append(item * item1)
+                    }
+                }
+            }
+            i += 1
+        }
+        return resArray
+    }
+    
+//    215. 数组中的第K个最大元素
+//    给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+//    请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+//    示例 1:
+//    输入: [3,2,1,5,6,4] 和 k = 2
+//    输出: 5
+//    示例 2:
+//    输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+//    输出: 4
+//    提示：
+//    1 <= k <= nums.length <= 104
+//    -104 <= nums[i] <= 104
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/kth-largest-element-in-an-array
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+        var targetIndex = nums.count - k
+        var arr = nums
+        var result: Int?
+        findKthLargestQuick(&arr, &targetIndex, 0, nums.count - 1, &result)
+        return result!
+    }
+    
+    class func findKthLargestQuick(_ array: inout [Int],_ targetIndex: inout Int,_ start: Int,_ end: Int,_ result: inout Int?) {
+        if end - start < 1 {
+            if start == targetIndex {
+                result = array[start]
+            }
+            return 
+        }
+        let ramdonIndex = Int.random(in: start...end)
+        array.swapAt(start, ramdonIndex)
+        let mid = array[start]
+        var left = start
+        var right = end
+        while left < right {
+            while left < right {
+                if array[right] > mid {
+                    right -= 1
+                }else {
+                    array[left] = array[right]
+                    left += 1
+                    break
+                }
+            }
+            
+            while left < right {
+                if array[left] <= mid {
+                    left += 1
+                }else {
+                    array[right] = array[left]
+                    right -= 1
+                    break
+                }
+            }
+        }
+        array[left] = mid
+        
+        if left == targetIndex {
+            result = array[left]
+        }else if left > targetIndex {//start...targetIndex...left...
+            findKthLargestQuick(&array, &targetIndex, start, left - 1, &result)
+        }else {//start...left...targetIndex
+            findKthLargestQuick(&array, &targetIndex, left + 1, end, &result)
+        }
+    }
+    
+    
 //    1081. 不同字符的最小子序列
 //    返回 s 字典序最小的子序列，该子序列包含 s 的所有不同字符，且只包含一次。
 //    注意：该题与 316 https://leetcode.com/problems/remove-duplicate-letters/ 相同

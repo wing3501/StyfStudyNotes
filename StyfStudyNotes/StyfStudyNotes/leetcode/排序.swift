@@ -368,7 +368,7 @@ import Foundation
             index += 1
         }
     }
-    
+    // 快排
     class func quickSort(array: [Int]) -> [Int] {
         var arr = array
         quickSort(array: &arr, begin: 0, end: arr.count)
