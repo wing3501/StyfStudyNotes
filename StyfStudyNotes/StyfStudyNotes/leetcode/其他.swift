@@ -483,19 +483,78 @@ class DijkstraDemo {
 //        print(minInsertions("))(()()))()))))))()())()(())()))))()())(()())))()("))//16
 
         //    391. 完美矩形
-        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[3,2,4,4],[1,3,2,4],[2,3,3,4]]))//true
-        print(isRectangleCover([[1,1,2,3],[1,3,2,4],[3,1,4,2],[3,2,4,4]]))
-        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[3,2,4,4]]))
-        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[2,2,4,4]]))
-        print(isRectangleCover([[0,0,4,1],[7,0,8,2],[6,2,8,3],[5,1,6,3],[4,0,5,1],[6,0,7,2],[4,2,5,3],[2,1,4,3],[0,1,2,2],[0,2,2,3],[4,1,5,2],[5,0,6,1]]))//true
-        print(isRectangleCover([[0,0,3,3],[1,1,2,2],[1,1,2,2]]))//重复区域问题
-        print(isRectangleCover([[0,0,1,1],[0,2,1,3],[1,1,2,2],[2,0,3,1],[2,2,3,3],[1,0,2,3],[0,1,3,2]]))
-        print(isRectangleCover([[0,0,2,1],[0,1,2,2],[0,2,1,3],[1,0,2,1]]))
+//        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[3,2,4,4],[1,3,2,4],[2,3,3,4]]))//true
+//        print(isRectangleCover([[1,1,2,3],[1,3,2,4],[3,1,4,2],[3,2,4,4]]))
+//        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[3,2,4,4]]))
+//        print(isRectangleCover([[1,1,3,3],[3,1,4,2],[1,3,2,4],[2,2,4,4]]))
+//        print(isRectangleCover([[0,0,4,1],[7,0,8,2],[6,2,8,3],[5,1,6,3],[4,0,5,1],[6,0,7,2],[4,2,5,3],[2,1,4,3],[0,1,2,2],[0,2,2,3],[4,1,5,2],[5,0,6,1]]))//true
+//        print(isRectangleCover([[0,0,3,3],[1,1,2,2],[1,1,2,2]]))//重复区域问题
+//        print(isRectangleCover([[0,0,1,1],[0,2,1,3],[1,1,2,2],[2,0,3,1],[2,2,3,3],[1,0,2,3],[0,1,3,2]]))
+//        print(isRectangleCover([[0,0,2,1],[0,1,2,2],[0,2,1,3],[1,0,2,1]]))
 //        3
 //        2 x x
 //        1 x   x
 //        x 1 2 3
+        
+        //    面试题 08.10. 颜色填充
+        print(floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2))
     }
+
+//    面试题 08.10. 颜色填充
+//    编写函数，实现许多图片编辑软件都支持的「颜色填充」功能。
+//    待填充的图像用二维数组 image 表示，元素为初始颜色值。初始坐标点的行坐标为 sr 列坐标为 sc。需要填充的新颜色为 newColor 。
+//    「周围区域」是指颜色相同且在上、下、左、右四个方向上存在相连情况的若干元素。
+//    请用新颜色填充初始坐标点的周围区域，并返回填充后的图像。
+//    示例：
+//    输入：
+//    image = [[1,1,1],
+//             [1,1,0],
+//             [1,0,1]]
+//    sr = 1, sc = 1, newColor = 2
+//    输出：[[2,2,2],
+//          [2,2,0],
+//          [2,0,1]]
+//    解释:
+//    初始坐标点位于图像的正中间，坐标 (sr,sc)=(1,1) 。
+//    初始坐标点周围区域上所有符合条件的像素点的颜色都被更改成 2 。
+//    注意，右下角的像素没有更改为 2 ，因为它不属于初始坐标点的周围区域。
+//    提示：
+//    image 和 image[0] 的长度均在范围 [1, 50] 内。
+//    初始坐标点 (sr,sc) 满足 0 <= sr < image.length 和 0 <= sc < image[0].length 。
+//    image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535] 内。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/color-fill-lcci
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func floodFill(_ image: [[Int]], _ sr: Int, _ sc: Int, _ newColor: Int) -> [[Int]] {
+        var visited: Set<[Int]> = [[sr,sc]]
+        var table = image
+        var stack: [[Int]] = [[sr,sc]]
+        let orgColor = image[sr][sc]
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        while !stack.isEmpty {
+            let obj = stack.removeLast()
+            let x = obj[0]
+            let y = obj[1]
+            table[x][y] = newColor
+            for step in steps {
+                let nextX = x + step[0]
+                let nextY = y + step[1]
+                if nextX >= 0 && nextX < table.count && nextY >= 0 && nextY < table[0].count && !visited.contains([nextX,nextY]) && table[nextX][nextY] == orgColor {
+                    visited.insert([nextX,nextY])
+                    stack.append([nextX,nextY])
+                }
+            }
+        }
+        return table
+    }
+    
+    /**
+     * Your ExamRoom object will be instantiated and called as such:
+     * let obj = ExamRoom(n)
+     * let ret_1: Int = obj.seat()
+     * obj.leave(p)
+     */
+    
 //    391. 完美矩形
 //    给你一个数组 rectangles ，其中 rectangles[i] = [xi, yi, ai, bi] 表示一个坐标轴平行的矩形。这个矩形的左下顶点是 (xi, yi) ，右上顶点是 (ai, bi) 。
 //    如果所有矩形一起精确覆盖了某个矩形区域，则返回 true ；否则，返回 false 。
