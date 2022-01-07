@@ -146,6 +146,8 @@ public class LinkedList<E> {
     }
 }
 
+// 链表的后续遍历思路：解决回文链表（进一步优化，找到中点，反转后半段）。 
+
 @objcMembers class LinkListTest: NSObject {
     class func test() {
 //        25. K 个一组翻转链表

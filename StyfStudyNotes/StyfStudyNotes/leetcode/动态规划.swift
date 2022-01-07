@@ -106,6 +106,7 @@ class Difference {
     
 }
 
+// 大数乘法： num1 * num2 转化为 每个位单独相乘 num1[i] * num2[j] 的结果存放在数组res[i + j] 和 res[j + j + 1]上
 
 import Foundation
 
