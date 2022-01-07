@@ -54,8 +54,330 @@ import Foundation
 //        print(slidingPuzzle([[1,2,3],[4,0,5]]))//1
 //        print(slidingPuzzle([[1,2,3],[5,4,0]]))//-1
 //        print(slidingPuzzle([[4,1,2],[5,0,3]]))//5
-        print(slidingPuzzle([[3,2,4],
-                             [1,5,0]]))//14
+//        print(slidingPuzzle([[3,2,4],
+//                             [1,5,0]]))//14
+        
+        //    200. 岛屿数量
+//        print(numIslands([
+//            ["1","1","1","1","0"],
+//            ["1","1","0","1","0"],
+//            ["1","1","0","0","0"],
+//            ["0","0","0","0","0"]
+//          ]))//1
+//        print(numIslands([
+//            ["1","1","0","0","0"],
+//            ["1","1","0","0","0"],
+//            ["0","0","1","0","0"],
+//            ["0","0","0","1","1"]
+//          ]))//3
+        
+        //    1254. 统计封闭岛屿的数目
+//        print(closedIsland([[1,1,1,1,1,1,1,0],
+//                            [1,0,0,0,0,1,1,0],
+//                            [1,0,1,0,1,1,1,0],
+//                            [1,0,0,0,0,1,0,1],
+//                            [1,1,1,1,1,1,1,0]]))//2
+//        print(closedIsland([[0,0,1,0,0],
+//                            [0,1,0,1,0],
+//                            [0,1,1,1,0]]))//1
+        
+        //    1020. 飞地的数量
+//        print(numEnclaves([[0,0,0,0],
+//                           [1,0,1,0],
+//                           [0,1,1,0],
+//                           [0,0,0,0]]))//3
+        
+        //    1905. 统计子岛屿
+//        print(countSubIslands([[1,1,1,0,0],
+//                               [0,1,1,1,1],
+//                               [0,0,0,0,0],
+//                               [1,0,0,0,0],
+//                               [1,1,0,1,1]], [[1,1,1,0,0],
+//                                              [0,0,1,1,1],
+//                                              [0,1,0,0,0],
+//                                              [1,0,1,1,0],
+//                                              [0,1,0,1,0]]))//3
+        
+        
+        
+    }
+    
+//    1905. 统计子岛屿
+//    给你两个 m x n 的二进制矩阵 grid1 和 grid2 ，它们只包含 0 （表示水域）和 1 （表示陆地）。一个 岛屿 是由 四个方向 （水平或者竖直）上相邻的 1 组成的区域。任何矩阵以外的区域都视为水域。
+//    如果 grid2 的一个岛屿，被 grid1 的一个岛屿 完全 包含，也就是说 grid2 中该岛屿的每一个格子都被 grid1 中同一个岛屿完全包含，那么我们称 grid2 中的这个岛屿为 子岛屿 。
+//    请你返回 grid2 中 子岛屿 的 数目 。
+//    示例 1：
+//    输入：
+//    grid1 = [[1,1,1,0,0],
+//             [0,1,1,1,1],
+//             [0,0,0,0,0],
+//             [1,0,0,0,0],
+//             [1,1,0,1,1]],
+//    grid2 = [[1,1,1,0,0],
+//             [0,0,1,1,1],
+//             [0,1,0,0,0],
+//             [1,0,1,1,0],
+//             [0,1,0,1,0]]
+//    输出：3
+//    解释：如上图所示，左边为 grid1 ，右边为 grid2 。
+//    grid2 中标红的 1 区域是子岛屿，总共有 3 个子岛屿。
+//    示例 2：
+//    输入：grid1 = [[1,0,1,0,1],[1,1,1,1,1],[0,0,0,0,0],[1,1,1,1,1],[1,0,1,0,1]], grid2 = [[0,0,0,0,0],[1,1,1,1,1],[0,1,0,1,0],[0,1,0,1,0],[1,0,0,0,1]]
+//    输出：2
+//    解释：如上图所示，左边为 grid1 ，右边为 grid2 。
+//    grid2 中标红的 1 区域是子岛屿，总共有 2 个子岛屿。
+//    提示：
+//    m == grid1.length == grid2.length
+//    n == grid1[i].length == grid2[i].length
+//    1 <= m, n <= 500
+//    grid1[i][j] 和 grid2[i][j] 都要么是 0 要么是 1 。
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/count-sub-islands
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func countSubIslands(_ grid1: [[Int]], _ grid2: [[Int]]) -> Int {
+        var table = grid2
+        var count = 0
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        var i = 0
+        while i < table.count {
+            var j = 0
+            while j < table[0].count {
+                let num = table[i][j]
+                if num == 1 {
+                    var isSub = true
+                    if grid1[i][j] != 1 {
+                        isSub = false
+                    }
+                    table[i][j] = 0
+                    var stack = [[i,j]]
+                    while !stack.isEmpty {
+                        let cur = stack.removeLast()
+                        for step in steps {
+                            let nextI = cur[0] + step[0]
+                            let nextJ = cur[1] + step[1]
+                            if nextI >= 0 && nextI < table.count && nextJ >= 0 && nextJ < table[0].count && table[nextI][nextJ] == 1 {
+                                stack.append([nextI,nextJ])
+                                table[nextI][nextJ] = 0
+                                if grid1[nextI][nextJ] != 1 {
+                                    isSub = false
+                                }
+                            }
+                        }
+                    }
+                    if isSub {
+                        count += 1
+                    }
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return count
+    }
+//    1020. 飞地的数量
+//    给出一个二维数组 A，每个单元格为 0（代表海）或 1（代表陆地）。
+//    移动是指在陆地上从一个地方走到另一个地方（朝四个方向之一）或离开网格的边界。
+//    返回网格中无法在任意次数的移动中离开网格边界的陆地单元格的数量。
+//    示例 1：
+//    输入：[[0,0,0,0],
+//          [1,0,1,0],
+//          [0,1,1,0],
+//          [0,0,0,0]]
+//    输出：3
+//    解释：
+//    有三个 1 被 0 包围。一个 1 没有被包围，因为它在边界上。
+//    示例 2：
+//    输入：[[0,1,1,0],
+//          [0,0,1,0],
+//          [0,0,1,0],
+//          [0,0,0,0]]
+//    输出：0
+//    解释：
+//    所有 1 都在边界上或可以到达边界。
+//    提示：
+//    1 <= A.length <= 500
+//    1 <= A[i].length <= 500
+//    0 <= A[i][j] <= 1
+//    所有行的大小都相同
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/number-of-enclaves
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func numEnclaves(_ grid: [[Int]]) -> Int {
+        guard grid.count > 2 && grid[0].count > 2 else { return 0 }
+        var table = grid
+        var count = 0
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        var i = 1
+        while i < table.count - 1 {
+            var j = 1
+            while j < table[0].count - 1 {
+                let num = table[i][j]
+                if num == 1 {
+                    var isClosed = true
+                    var stack = [[i,j]]
+                    table[i][j] = 0
+                    var tempCount = 1
+                    while !stack.isEmpty {
+                        let cur = stack.removeLast()
+                        for step in steps {
+                            let nextI = cur[0] + step[0]
+                            let nextJ = cur[1] + step[1]
+                            if nextI >= 0 && nextI < table.count && nextJ >= 0 && nextJ < table[0].count && table[nextI][nextJ] == 1 {
+                                if nextI == 0 || nextI == table.count - 1 || nextJ == 0 || nextJ == table[0].count - 1 {
+                                    //和边界相连
+                                    isClosed = false
+                                }else {
+                                    table[nextI][nextJ] = 0
+                                    tempCount += 1
+                                    stack.append([nextI,nextJ])
+                                }
+                            }
+                        }
+                    }
+                    if isClosed {
+                        count += tempCount
+                    }
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return count
+    }
+//    1254. 统计封闭岛屿的数目
+//    有一个二维矩阵 grid ，每个位置要么是陆地（记号为 0 ）要么是水域（记号为 1 ）。
+//    我们从一块陆地出发，每次可以往上下左右 4 个方向相邻区域走，能走到的所有陆地区域，我们将其称为一座「岛屿」。
+//    如果一座岛屿 完全 由水域包围，即陆地边缘上下左右所有相邻区域都是水域，那么我们将其称为 「封闭岛屿」。
+//    请返回封闭岛屿的数目。
+//    示例 1：
+//    输入：grid = [[1,1,1,1,1,1,1,0],
+//                 [1,0,0,0,0,1,1,0],
+//                 [1,0,1,0,1,1,1,0],
+//                 [1,0,0,0,0,1,0,1],
+//                 [1,1,1,1,1,1,1,0]]
+//    输出：2
+//    解释：
+//    灰色区域的岛屿是封闭岛屿，因为这座岛屿完全被水域包围（即被 1 区域包围）。
+//    示例 2：
+//    输入：grid = [[0,0,1,0,0],
+//                 [0,1,0,1,0],
+//                 [0,1,1,1,0]]
+//    输出：1
+//    示例 3：
+//    输入：grid = [[1,1,1,1,1,1,1],
+//                 [1,0,0,0,0,0,1],
+//                 [1,0,1,1,1,0,1],
+//                 [1,0,1,0,1,0,1],
+//                 [1,0,1,1,1,0,1],
+//                 [1,0,0,0,0,0,1],
+//                 [1,1,1,1,1,1,1]]
+//    输出：2
+//    提示：
+//    1 <= grid.length, grid[0].length <= 100
+//    0 <= grid[i][j] <=1
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/number-of-closed-islands
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func closedIsland(_ grid: [[Int]]) -> Int {
+        guard grid.count > 2 && grid[0].count > 2 else { return 0 }
+        var table = grid
+        var count = 0
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        var i = 1
+        while i < table.count - 1 {
+            var j = 1
+            while j < table[0].count - 1 {
+                let num = table[i][j]
+                if num == 0 {
+                    var isClosed = true
+                    var stack = [[i,j]]
+                    table[i][j] = 1
+                    while !stack.isEmpty {
+                        let cur = stack.removeLast()
+                        for step in steps {
+                            let nextI = cur[0] + step[0]
+                            let nextJ = cur[1] + step[1]
+                            if nextI >= 0 && nextI < table.count && nextJ >= 0 && nextJ < table[0].count && table[nextI][nextJ] == 0 {
+                                if nextI == 0 || nextI == table.count - 1 || nextJ == 0 || nextJ == table[0].count - 1 {
+                                    //和边界相连
+                                    isClosed = false
+                                }else {
+                                    table[nextI][nextJ] = 1
+                                    stack.append([nextI,nextJ])
+                                }
+                            }
+                        }
+                    }
+                    if isClosed {
+                        count += 1
+                    }
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return count
+    }
+//    200. 岛屿数量
+//    给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+//    岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
+//    此外，你可以假设该网格的四条边均被水包围。
+//    示例 1：
+//    输入：grid = [
+//      ["1","1","1","1","0"],
+//      ["1","1","0","1","0"],
+//      ["1","1","0","0","0"],
+//      ["0","0","0","0","0"]
+//    ]
+//    输出：1
+//    示例 2：
+//    输入：grid = [
+//      ["1","1","0","0","0"],
+//      ["1","1","0","0","0"],
+//      ["0","0","1","0","0"],
+//      ["0","0","0","1","1"]
+//    ]
+//    输出：3
+//    提示：
+//    m == grid.length
+//    n == grid[i].length
+//    1 <= m, n <= 300
+//    grid[i][j] 的值为 '0' 或 '1'
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/number-of-islands
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func numIslands(_ grid: [[Character]]) -> Int {
+        // 优化点：可以把岛屿淹了，避免维护visited
+        var count = 0
+        var visited:Set<[Int]> = []
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        var i = 0
+        while i < grid.count {
+            var j = 0
+            while j < grid[0].count {
+                let num = grid[i][j]
+                if num == "1" && !visited.contains([i,j]) {
+                    visited.insert([i,j])
+                    var stack = [[i,j]]
+                    while !stack.isEmpty {
+                        let cur = stack.removeLast()
+                        for step in steps {
+                            let nextI = cur[0] + step[0]
+                            let nextJ = cur[1] + step[1]
+                            if nextI >= 0 && nextI < grid.count && nextJ >= 0 && nextJ < grid[0].count && !visited.contains([nextI,nextJ]) && grid[nextI][nextJ] == "1" {
+                                stack.append([nextI,nextJ])
+                                visited.insert([nextI,nextJ])
+                            }
+                        }
+                    }
+                    count += 1
+                }
+                j += 1
+            }
+            i += 1
+        }
+        
+        return count
     }
 //    773. 滑动谜题
 //    在一个 2 x 3 的板上（board）有 5 块砖瓦，用数字 1~5 来表示, 以及一块空缺用 0 来表示.
