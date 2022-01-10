@@ -22,10 +22,10 @@
 //    [JianZhiOffer test];
 //    [SortTest test];
 //    [TreeTest test];
-//    [Other test];
+    [Other test];
 //    [DongTaiGuiHua test];
 //    [TwoPtr test];
-    [BFS test];
+//    [BFS test];
 //    [LinkListTest test];
 //    [HuiSu test];
 //    [Math test];
