@@ -95,6 +95,1373 @@ import Foundation
 //        print(strToInt("-91283472332"))//-2147483648
 //        print(strToInt("20000000000000000000"))//-2147483648
         
+        //    剑指 Offer II 001. 整数除法
+//        print(divide(7, -3))
+        
+        //    剑指 Offer II 081. 允许重复选择元素的组合
+//        print(combinationSum([2,3,6,7], 7))//[[7],[2,2,3]]
+//        print(combinationSum([2,3,5], 8))//[[2,2,2,2],[2,3,3],[3,5]]
+//        print(combinationSum([2], 1))//[]
+//        print(combinationSum([1], 1))//[[1]]
+//        print(combinationSum([1], 2))//[[1,1]]
+        
+        //    剑指 Offer II 003. 前 n 个数字二进制中 1 的个数
+//        print(countBits(5))//[0,1,1,2,1,2]
+        
+        //    剑指 Offer II 002. 二进制加法
+//        print(addBinary("11", "10"))//"101"
+//        print(addBinary("1010", "1011"))//"10101"
+        
+        //    剑指 Offer II 082. 含有重复元素集合的组合
+//        print(combinationSum2([10,1,2,7,6,1,5], 8))
+//        print(combinationSum2([2,5,2,1,2], 5))
+//        print(combinationSum2([1], 1))
+//        print(combinationSum2([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 27))
+        
+        //    剑指 Offer II 004. 只出现一次的数字
+//        print(singleNumbers2([2,2,3,2]))//3
+//        print(singleNumbers2([0,1,0,1,0,1,100]))//100
+//        print(singleNumbers2([-2,-2,1,1,4,1,4,4,-4,-2]))//-4
+        
+        //    剑指 Offer II 083. 没有重复元素集合的全排列
+//        print(permute([1,2,3]))
+        
+        //    剑指 Offer II 084. 含有重复元素集合的全排列
+//        print(permuteUnique([1,1,2]))
+//        print(permuteUnique([1,2,3]))
+        
+        //    剑指 Offer II 005. 单词长度的最大乘积
+//        print(maxProduct(["abcw","baz","foo","bar","fxyz","abcdef"]))
+//        print(maxProduct(["a","aa","aaa","aaaa"]))
+        
+        //    剑指 Offer II 085. 生成匹配的括号
+//        print(generateParenthesis(3))
+        
+        //    剑指 Offer II 007. 数组中和为 0 的三个数
+//        print(threeSum123([-1,0,1,2,-1,-4]))
+//        print(threeSum123([]))
+//        print(threeSum123([0]))
+//        print(threeSum123([-2,0,1,1,2]))//[[-2,0,2],[-2,1,1]]
+        
+        //    剑指 Offer II 086. 分割回文子字符串
+//        print(partition("google"))
+//        print(partition("aab"))
+//        print(partition("a"))
+//        print(partition("fff"))
+        
+        //    剑指 Offer II 087. 复原 IP
+//        print(restoreIpAddresses("25525511135"))
+//        print(restoreIpAddresses("0000"))
+//        print(restoreIpAddresses("1111"))
+//        print(restoreIpAddresses("010010"))
+//        print(restoreIpAddresses("10203040"))
+        
+        //    剑指 Offer II 008. 和大于等于 target 的最短子数组
+//        print(minSubArrayLen(7, [2,3,1,2,4,3]))//2
+//        print(minSubArrayLen(4, [1,4,4]))//1
+//        print(minSubArrayLen(11, [1,1,1,1,1,1,1,1]))//0
+        
+        //    剑指 Offer II 088. 爬楼梯的最少成本
+//        print(minCostClimbingStairs([10, 15, 20]))//15
+//        print(minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))//6
+        
+        //    剑指 Offer II 009. 乘积小于 K 的子数组
+//        print(numSubarrayProductLessThanK([10,5,2,6], 100))
+//        print(numSubarrayProductLessThanK([1,2,3], 0))
+        //    剑指 Offer II 089. 房屋偷盗
+//        print(rob([1,2,3,1]))
+//        print(rob([2,7,9,3,1]))
+        
+        //    剑指 Offer II 010. 和为 k 的子数组
+//        print(subarraySum([1,1,1], 2))
+//        print(subarraySum([1,2,3], 3))
+//        print(subarraySum([1], 0))
+        
+        //    剑指 Offer II 011. 0 和 1 个数相同的子数组
+//        print(findMaxLength([0,1]))//2
+//        print(findMaxLength([0,1,0]))//2
+//        print(findMaxLength([0,0,1]))//1
+//        print(findMaxLength([0,0,1,0,0,0,1,1]))//6
+        
+        //    剑指 Offer II 012. 左右两边子数组的和相等
+//        print(pivotIndex([1,7,3,6,5,6]))//3
+//        print(pivotIndex([1, 2, 3]))//-1
+//        print(pivotIndex([2, 1, -1]))//0
+//        print(pivotIndex([-1,-1,-1,-1,-1,0]))//2
+        
+        //    剑指 Offer II 013. 二维子矩阵的和
+//        let numMatrix = NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]])
+//        print(numMatrix.sumRegion(2, 1, 4, 3))//8
+//        print(numMatrix.sumRegion(1, 1, 2, 2))//11
+//        print(numMatrix.sumRegion(1, 2, 2, 4))//12
+        
+        //    剑指 Offer II 014. 字符串中的变位词
+//        print(checkInclusion("ab", "eidbaooo"))
+//        print(checkInclusion("ab", "eidboaoo"))
+    }
+//    剑指 Offer II 015. 字符串中的所有变位词
+//    给定两个字符串 s 和 p，找到 s 中所有 p 的 变位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
+//    变位词 指字母相同，但排列不同的字符串。
+//    示例 1:
+//    输入: s = "cbaebabacd", p = "abc"
+//    输出: [0,6]
+//    解释:
+//    起始索引等于 0 的子串是 "cba", 它是 "abc" 的变位词。
+//    起始索引等于 6 的子串是 "bac", 它是 "abc" 的变位词。
+//     示例 2:
+//    输入: s = "abab", p = "ab"
+//    输出: [0,1,2]
+//    解释:
+//    起始索引等于 0 的子串是 "ab", 它是 "ab" 的变位词。
+//    起始索引等于 1 的子串是 "ba", 它是 "ab" 的变位词。
+//    起始索引等于 2 的子串是 "ab", 它是 "ab" 的变位词。
+//    提示:
+//    1 <= s.length, p.length <= 3 * 104
+//    s 和 p 仅包含小写字母
+//    注意：本题与主站 438 题相同： https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/VabMRr
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findAnagrams(_ s: String, _ p: String) -> [Int] {
+
+    }
+//    剑指 Offer II 014. 字符串中的变位词
+//    给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的某个变位词。
+//    换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
+//    示例 1：
+//    输入: s1 = "ab" s2 = "eidbaooo"
+//    输出: True
+//    解释: s2 包含 s1 的排列之一 ("ba").
+//    示例 2：
+//    输入: s1= "ab" s2 = "eidboaoo"
+//    输出: False
+//    提示：
+//    1 <= s1.length, s2.length <= 104
+//    s1 和 s2 仅包含小写字母
+//    注意：本题与主站 567 题相同： https://leetcode-cn.com/problems/permutation-in-string/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/MPnaiL
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func checkInclusion(_ s1: String, _ s2: String) -> Bool {
+        let ss1 = Array(s1)
+        let ss2 = Array(s2)
+        var needCount = ss1.count
+        var need: [Character:Int] = [:]
+        for item in ss1 {
+            need[item,default: 0] += 1
+        }
+        var l = 0
+        var r = 0
+//        var win: [Character:Int] = [:]
+        while r < ss2.count {
+            let rightCh = ss2[r]
+            r += 1
+            
+//            win[rightCh,default: 0] += 1
+            if let chCount = need[rightCh] {
+                need[rightCh] = chCount - 1
+                if chCount > 0 {
+                    needCount -= 1
+                }
+            }
+            
+            //缩减窗口
+            while r - l > ss1.count {
+                let leftCh = ss2[l]
+                if let chCount = need[leftCh] {
+                    need[leftCh] = chCount + 1
+                    if need[leftCh]! > 0 {
+                        needCount += 1
+                    }
+                }
+                l += 1
+            }
+            if r - l == ss1.count && needCount == 0 {
+                return true
+            }
+        }
+        return false
+    }
+//    剑指 Offer II 013. 二维子矩阵的和
+//    给定一个二维矩阵 matrix，以下类型的多个请求：
+//    计算其子矩形范围内元素的总和，该子矩阵的左上角为 (row1, col1) ，右下角为 (row2, col2) 。
+//    实现 NumMatrix 类：
+//    NumMatrix(int[][] matrix) 给定整数矩阵 matrix 进行初始化
+//    int sumRegion(int row1, int col1, int row2, int col2) 返回左上角 (row1, col1) 、右下角 (row2, col2) 的子矩阵的元素总和。
+//    示例 1：
+//    输入:
+//    ["NumMatrix","sumRegion","sumRegion","sumRegion"]
+//    [[[ [3,0,1,4,2],
+//        [5,6,3,2,1],
+//        [1,2,0,1,5],
+//        [4,1,0,1,7],
+//        [1,0,3,0,5]
+//
+//    ]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]
+//    输出:
+//    [null, 8, 11, 12]
+//    解释:
+//    NumMatrix numMatrix = new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]]);
+//    numMatrix.sumRegion(2, 1, 4, 3); // return 8 (红色矩形框的元素总和)
+//    numMatrix.sumRegion(1, 1, 2, 2); // return 11 (绿色矩形框的元素总和)
+//    numMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和)
+//    提示：
+//    m == matrix.length
+//    n == matrix[i].length
+//    1 <= m, n <= 200
+//    -105 <= matrix[i][j] <= 105
+//    0 <= row1 <= row2 < m
+//    0 <= col1 <= col2 < n
+//    最多调用 104 次 sumRegion 方法
+//    注意：本题与主站 304 题相同： https://leetcode-cn.com/problems/range-sum-query-2d-immutable/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/O4NDxx
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class NumMatrix {
+        var sum: [[Int]] = []  //保存[0,0]到[i,j]的累加和
+        init(_ matrix: [[Int]]) {
+            guard matrix.count > 0,matrix[0].count > 0 else { return }
+            sum = Array(repeating: Array(repeating: 0, count: matrix[0].count), count: matrix.count)
+            var row = 0
+            while row < matrix.count {
+                var col = 0
+                var rowSum = 0
+                while col < matrix[0].count {
+                    if row == 0 {
+                        sum[row][col] = col == 0 ? matrix[row][col] : sum[row][col - 1] + matrix[row][col]
+                    }else {
+                        rowSum += matrix[row][col]
+                        sum[row][col] = sum[row - 1][col] + rowSum
+                    }
+                    col += 1
+                }
+                row += 1
+            }
+        }
+        
+        func sumRegion(_ row1: Int, _ col1: Int, _ row2: Int, _ col2: Int) -> Int {
+            let total = sum[row2][col2]
+            let leftTop = (row1 > 0 && col1 > 0) ? sum[row1 - 1][col1 - 1] : 0
+            let top = row1 > 0 ? sum[row1 - 1][col2] - leftTop : 0
+            let left = col1 > 0 ? sum[row2][col1 - 1] - leftTop : 0
+            return total - leftTop - top - left
+        }
+    }
+//    剑指 Offer II 012. 左右两边子数组的和相等
+//    给你一个整数数组 nums ，请计算数组的 中心下标 。
+//    数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。
+//    如果中心下标位于数组最左端，那么左侧数之和视为 0 ，因为在下标的左侧不存在元素。这一点对于中心下标位于数组最右端同样适用。
+//    如果数组有多个中心下标，应该返回 最靠近左边 的那一个。如果数组不存在中心下标，返回 -1 。
+//    示例 1：
+//    输入：nums = [1,7,3,6,5,6]
+//    输出：3
+//    解释：
+//    中心下标是 3 。
+//    左侧数之和 sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11 ，
+//    右侧数之和 sum = nums[4] + nums[5] = 5 + 6 = 11 ，二者相等。
+//    示例 2：
+//    输入：nums = [1, 2, 3]
+//    输出：-1
+//    解释：
+//    数组中不存在满足此条件的中心下标。
+//    示例 3：
+//    输入：nums = [2, 1, -1]
+//    输出：0
+//    解释：
+//    中心下标是 0 。
+//    左侧数之和 sum = 0 ，（下标 0 左侧不存在元素），
+//    右侧数之和 sum = nums[1] + nums[2] = 1 + -1 = 0 。
+//    提示：
+//    1 <= nums.length <= 104
+//    -1000 <= nums[i] <= 1000
+//    注意：本题与主站 724 题相同： https://leetcode-cn.com/problems/find-pivot-index/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/tvdfij
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func pivotIndex(_ nums: [Int]) -> Int {
+        var sum = 0
+        for item in nums {
+            sum += item
+        }
+        var i = 0
+        var left = 0
+        var right = sum
+        while i < nums.count {
+            let num = nums[i]
+            if left == right - num {
+                return i
+            }else {
+                left += num
+                right -= num
+            }
+            i += 1
+        }
+        return -1
+    }
+//    剑指 Offer II 011. 0 和 1 个数相同的子数组
+//    给定一个二进制数组 nums , 找到含有相同数量的 0 和 1 的最长连续子数组，并返回该子数组的长度。
+//    示例 1:
+//    输入: nums = [0,1]
+//    输出: 2
+//    说明: [0, 1] 是具有相同数量 0 和 1 的最长连续子数组。
+//    示例 2:
+//    输入: nums = [0,1,0]
+//    输出: 2
+//    说明: [0, 1] (或 [1, 0]) 是具有相同数量 0 和 1 的最长连续子数组。
+//    提示：
+//    1 <= nums.length <= 105
+//    nums[i] 不是 0 就是 1
+//    注意：本题与主站 525 题相同： https://leetcode-cn.com/problems/contiguous-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/A1NYOS
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findMaxLength(_ nums: [Int]) -> Int {
+//        由于「0 和 1 的数量相同」等价于「1 的数量减去 0 的数量等于 0」，我们可以将数组中的 0 视作 −1，则原问题转换成「求最长的连续子数组，其元素和为 0」。
+        var dic:[Int:Int] = [0:0]//前缀和：下标
+        var sum = 0
+        var len = 0
+        var i = 0
+        while i < nums.count {
+            let item = nums[i] == 0 ? -1 : 1
+            sum += item
+            if dic.keys.contains(sum) {//sum-k
+                len = max(len, (i + 1) - dic[sum]!)
+            }
+            if !dic.keys.contains(sum) {
+                dic[sum] = i + 1//前缀和下标比原数组多1
+            }
+            i += 1
+        }
+       
+        return len
+    }
+//    剑指 Offer II 010. 和为 k 的子数组
+//    给定一个整数数组和一个整数 k ，请找到该数组中和为 k 的连续子数组的个数。
+//    示例 1 :
+//    输入:nums = [1,1,1], k = 2
+//    输出: 2
+//    解释: 此题 [1,1] 与 [1,1] 为两种不同的情况
+//    示例 2 :
+//    输入:nums = [1,2,3], k = 3
+//    输出: 2
+//    提示:
+//    1 <= nums.length <= 2 * 104
+//    -1000 <= nums[i] <= 1000
+//    -107 <= k <= 107
+//    注意：本题与主站 560 题相同： https://leetcode-cn.com/problems/subarray-sum-equals-k/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/QTMn0o
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func subarraySum(_ nums: [Int], _ k: Int) -> Int {
+        var dic:[Int:Int] = [0:1] //前缀和：出现次数
+        var sum = 0
+        var i = 0
+        var count = 0
+        while i < nums.count {
+            sum += nums[i]
+            if dic.keys.contains(sum - k) {
+                count += dic[sum - k]! //前面出现了多少次(sum - k),就有多少个子数组和是k
+            }
+            dic[sum,default: 0] += 1
+            i += 1
+        }
+        return count
+    }
+//    剑指 Offer II 089. 房屋偷盗
+//    一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响小偷偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+//    给定一个代表每个房屋存放金额的非负整数数组 nums ，请计算 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
+//    示例 1：
+//    输入：nums = [1,2,3,1]
+//    输出：4
+//    解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。
+//         偷窃到的最高金额 = 1 + 3 = 4 。
+//    示例 2：
+//    输入：nums = [2,7,9,3,1]
+//    输出：12
+//    解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
+//         偷窃到的最高金额 = 2 + 9 + 1 = 12 。
+//    提示：
+//    1 <= nums.length <= 100
+//    0 <= nums[i] <= 400
+//    注意：本题与主站 198 题相同： https://leetcode-cn.com/problems/house-robber/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/Gu0c2T
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func rob(_ nums: [Int]) -> Int {
+        //dp[i] = max(dp[i-1],dp[i-2] + nums[i])
+        //dp[0] = nums[i]
+        //dp[1] = max(nums[0],nums[1])
+        guard nums.count > 1 else { return nums[0] }
+        var dp0 = nums[0]
+        var dp1 = max(nums[0], nums[1])
+        var i = 2
+        while i < nums.count {
+            let dp2 = max(dp1,dp0 + nums[i])
+            dp0 = dp1
+            dp1 = dp2
+            i += 1
+        }
+        return dp1
+    }
+//    剑指 Offer II 009. 乘积小于 K 的子数组
+//    给定一个正整数数组 nums和整数 k ，请找出该数组内乘积小于 k 的连续的子数组的个数。
+//    示例 1:
+//    输入: nums = [10,5,2,6], k = 100
+//    输出: 8
+//    解释: 8 个乘积小于 100 的子数组分别为: [10], [5], [2], [6], [10,5], [5,2], [2,6], [5,2,6]。
+//    需要注意的是 [10,5,2] 并不是乘积小于100的子数组。
+//    示例 2:
+//    输入: nums = [1,2,3], k = 0
+//    输出: 0
+//    提示:
+//    1 <= nums.length <= 3 * 104
+//    1 <= nums[i] <= 1000
+//    0 <= k <= 106
+//    注意：本题与主站 713 题相同：https://leetcode-cn.com/problems/subarray-product-less-than-k/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/ZVAVXX
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func numSubarrayProductLessThanK(_ nums: [Int], _ k: Int) -> Int {
+        var left = 0
+        var right = 0
+        var ji = 1
+        var count = 0
+//        10,5,2,6
+        while left < nums.count {
+            while right < nums.count && ji * nums[right] < k {
+                ji *= nums[right]
+                right += 1
+            }
+            if right > left {
+                count += (right - left)
+                ji /= nums[left]
+                left += 1
+            }else {
+                left += 1
+                right += 1
+            }
+        }
+        return count
+        
+        
+        //溢出了
+        //10 50 100 600  array[i] = array[i - 1] * nums[i]
+        // i..j = array[j] / array[i - 1]
+        // i = 0, array[j]
+//        var sum = 1
+//        var i = 0
+//        var array: [Int] = []
+//        while i < nums.count {
+//            sum *= nums[i]
+//            array.append(sum)
+//            i += 1
+//        }
+//        var count = 0
+//        i = 0
+//        while i < nums.count {
+//            var left = i
+//            var right = array.count - 1
+//            while left <= right {
+//                let j = left + (right - left) / 2
+//                let IToJ = i == 0 ? array[j] : (array[j]/array[i - 1])//子数组i...j的乘积
+//                if IToJ >= k {
+//                    right = j - 1
+//                }else {
+//                    left = j + 1
+//                }
+//            }
+//            if right >= 0  {
+//                count += (right - i + 1)
+//            }
+//            i += 1
+//        }
+//        return count
+    }
+    
+//    剑指 Offer II 088. 爬楼梯的最少成本
+//    数组的每个下标作为一个阶梯，第 i 个阶梯对应着一个非负数的体力花费值 cost[i]（下标从 0 开始）。
+//    每当爬上一个阶梯都要花费对应的体力值，一旦支付了相应的体力值，就可以选择向上爬一个阶梯或者爬两个阶梯。
+//    请找出达到楼层顶部的最低花费。在开始时，你可以选择从下标为 0 或 1 的元素作为初始阶梯。
+//    示例 1：
+//    输入：cost = [10, 15, 20]
+//    输出：15
+//    解释：最低花费是从 cost[1] 开始，然后走两步即可到阶梯顶，一共花费 15 。
+//     示例 2：
+//    输入：cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+//    输出：6
+//    解释：最低花费方式是从 cost[0] 开始，逐个经过那些 1 ，跳过 cost[3] ，一共花费 6 。
+//    提示：
+//    2 <= cost.length <= 1000
+//    0 <= cost[i] <= 999
+//    注意：本题与主站 746 题相同： https://leetcode-cn.com/problems/min-cost-climbing-stairs/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/GzCJIP
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minCostClimbingStairs(_ cost: [Int]) -> Int {
+        //dp[n] 到达下标n需要的最少成本
+        //dp[n] = min(dp[n-1] + cost[n-1],dp[n-2] + cost[n-2])
+        //base case dp[0] = 0 dp[1] = 0
+        var dp0 = 0
+        var dp1 = 0
+        var i = 2
+        while i <= cost.count {
+            let dp2 = min(dp0 + cost[i - 2], dp1 + cost[i - 1])
+            dp0 = dp1
+            dp1 = dp2
+            i += 1
+        }
+        return dp1
+    }
+//    剑指 Offer II 008. 和大于等于 target 的最短子数组
+//    给定一个含有 n 个正整数的数组和一个正整数 target 。
+//    找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+//    示例 1：
+//    输入：target = 7, nums = [2,3,1,2,4,3]
+//    输出：2
+//    解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+//    示例 2：
+//    输入：target = 4, nums = [1,4,4]
+//    输出：1
+//    示例 3：
+//    输入：target = 11, nums = [1,1,1,1,1,1,1,1]
+//    输出：0
+//    提示：
+//    1 <= target <= 109
+//    1 <= nums.length <= 105
+//    1 <= nums[i] <= 105
+//    进阶：
+//    如果你已经实现 O(n) 时间复杂度的解法, 请尝试设计一个 O(n log(n)) 时间复杂度的解法。
+//    注意：本题与主站 209 题相同：https://leetcode-cn.com/problems/minimum-size-subarray-sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/2VG8Kg
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minSubArrayLen(_ target: Int, _ nums: [Int]) -> Int {
+        //O(n log(n))的思路是 ：前缀和，然后二分搜索每个下标开始的满足target的右边界
+        var sum = 0
+        var left = 0
+        var right = 0
+        var len = Int.max
+        while right < nums.count {
+            let rNum = nums[right]
+            sum += rNum
+            
+            while sum - nums[left] >= target {
+                sum -= nums[left]
+                left += 1
+            }
+            if sum >= target {
+                len = min(len, right - left + 1)
+            }
+            right += 1
+        }
+        return len == Int.max ? 0 : len
+    }
+//    剑指 Offer II 087. 复原 IP
+//    给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能从 s 获得的 有效 IP 地址 。你可以按任何顺序返回答案。
+//    有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 '.' 分隔。
+//    例如："0.1.2.201" 和 "192.168.1.1" 是 有效 IP 地址，但是 "0.011.255.245"、"192.168.1.312" 和 "192.168@1.1" 是 无效 IP 地址。
+//    示例 1：
+//    输入：s = "25525511135"
+//    输出：["255.255.11.135","255.255.111.35"]
+//    示例 2：
+//    输入：s = "0000"
+//    输出：["0.0.0.0"]
+//    示例 3：
+//    输入：s = "1111"
+//    输出：["1.1.1.1"]
+//    示例 4：
+//    输入：s = "010010"
+//    输出：["0.10.0.10","0.100.1.0"]
+//    示例 5：
+//    输入：s = "10203040"
+//    输出：["10.20.30.40","102.0.30.40","10.203.0.40"]
+//    提示：
+//    0 <= s.length <= 3000
+//    s 仅由数字组成
+//    注意：本题与主站 93 题相同：https://leetcode-cn.com/problems/restore-ip-addresses/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/0on3uN
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func restoreIpAddresses(_ s: String) -> [String] {
+        let ss = Array(s)
+        var path: [Int] = []
+        var tempNum: Int = 0
+        var res:[String] = []
+        restoreIpAddressesBacktrace(ss, 0, &path, &tempNum, &res)
+        return res
+    }
+    
+    class func restoreIpAddressesBacktrace(_ s:[Character],_ index: Int,_ path: inout [Int],_ tempNum: inout Int,_ res: inout [String]) {
+        if index == s.count {
+            if path.count == 4 {
+                res.append("\(path[0]).\(path[1]).\(path[2]).\(path[3])")
+            }
+            return
+        }
+        if path.count == 4 {
+            return
+        }
+        
+        let ch = s[index]
+        if ch == "0" && tempNum == 0 {//只能单独成一组
+            path.append(0)
+            restoreIpAddressesBacktrace(s, index + 1, &path, &tempNum, &res)
+            path.removeLast()
+        }else {
+            //加上本次的
+            let num = ch.wholeNumberValue!
+            let temp = tempNum
+            tempNum = tempNum * 10 + num
+            if tempNum <= 255 {
+                restoreIpAddressesBacktrace(s, index + 1, &path, &tempNum, &res)
+                
+                path.append(tempNum)
+                tempNum = 0
+                restoreIpAddressesBacktrace(s, index + 1, &path, &tempNum, &res)
+                path.removeLast()
+            }
+            tempNum = temp
+        }
+    }
+    
+//    剑指 Offer II 086. 分割回文子字符串
+//    给定一个字符串 s ，请将 s 分割成一些子串，使每个子串都是 回文串 ，返回 s 所有可能的分割方案。
+//    回文串 是正着读和反着读都一样的字符串。
+//    示例 1：
+//    输入：s = "google"
+//    输出：[["g","o","o","g","l","e"],["g","oo","g","l","e"],["goog","l","e"]]
+//    示例 2：
+//    输入：s = "aab"
+//    输出：[["a","a","b"],["aa","b"]]
+//    示例 3：
+//    输入：s = "a"
+//    输出：[["a"]]
+//    提示：
+//    1 <= s.length <= 16
+//    s 仅由小写英文字母组成
+//    注意：本题与主站 131 题相同： https://leetcode-cn.com/problems/palindrome-partitioning/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/M99OJA
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func partition(_ s: String) -> [[String]] {
+        //思路：先收集回文位置，再回溯选择
+        let ss = Array(s)
+        var huiwens:[Int:[Int]] = [:]//收集所有回文位置
+        var i = 0
+        while i < ss.count {
+            partitionLen(ss, i, i, &huiwens)
+            partitionLen(ss, i, i + 1, &huiwens)
+            i += 1
+        }
+        var path: [String] = []
+        var res: [[String]] = []
+        partitionBacktrace(ss, 0, huiwens, &path, &res)
+        return res
+    }
+    
+    class func partitionBacktrace(_ ss: [Character],_ index: Int,_ huiwens:[Int:[Int]],_ path: inout [String] ,_ res: inout [[String]]) {
+        if index == ss.count {
+            res.append(path)
+            return
+        }
+        
+        //选回文或者不选
+        if let arr = huiwens[index] {
+            for right in arr {
+                path.append(String(ss[index...right]))
+                partitionBacktrace(ss, right + 1, huiwens, &path, &res)
+                path.removeLast()
+            }
+        }
+        
+        path.append(String(ss[index]))
+        partitionBacktrace(ss, index + 1, huiwens, &path, &res)
+        path.removeLast()
+    }
+    
+    class func partitionLen(_ s:[Character],_ left: Int,_ right: Int,_ huiwens: inout [Int:[Int]]) {
+        var l = left
+        var r = right
+        if l >= 0 && r < s.count && s[l] == s[r] {
+            while l >= 0 && r < s.count && s[l] == s[r] {
+                if r > l {
+                    var arr = huiwens[l,default: []]
+                    arr.append(r)
+                    huiwens[l] = arr
+                }
+                l -= 1
+                r += 1
+            }
+        }
+    }
+    
+//    剑指 Offer II 007. 数组中和为 0 的三个数
+//    给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a ，b ，c ，使得 a + b + c = 0 ？请找出所有和为 0 且 不重复 的三元组。
+//    示例 1：
+//    输入：nums = [-1,0,1,2,-1,-4]
+//    输出：[[-1,-1,2],[-1,0,1]]
+//    示例 2：
+//    输入：nums = []
+//    输出：[]
+//    示例 3：
+//    输入：nums = [0]
+//    输出：[]
+//    提示：
+//    0 <= nums.length <= 3000
+//    -105 <= nums[i] <= 105
+//    注意：本题与主站 15 题相同：https://leetcode-cn.com/problems/3sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/1fGaJU
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func threeSum123(_ nums: [Int]) -> [[Int]] {
+        guard nums.count > 2 else {return []}
+        let array = nums.sorted { a, b in
+            a < b
+        }
+        var res: Set<[Int]> = []
+        var i = 0
+        while i < array.count {
+            let a = array[i]
+            var left = i + 1
+            var right = array.count - 1
+            while left < right {
+                let num = array[left] + array[right]
+                if num == -a {
+                    res.insert([a,array[left],array[right]])
+                    left += 1
+                    right -= 1
+                }else if num < -a {
+                    left += 1
+                }else {
+                    right -= 1
+                }
+            }
+            i += 1
+        }
+        return Array(res)
+    }
+//    剑指 Offer II 085. 生成匹配的括号
+//    正整数 n 代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+//    示例 1：
+//    输入：n = 3
+//    输出：["((()))","(()())","(())()","()(())","()()()"]
+//    示例 2：
+//    输入：n = 1
+//    输出：["()"]
+//    提示：
+//    1 <= n <= 8
+//    注意：本题与主站 22 题相同： https://leetcode-cn.com/problems/generate-parentheses/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/IDBivT
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func generateParenthesis(_ n: Int) -> [String] {
+        var left = n
+        var right = n
+        var path: [Character] = []
+        var res: [String] = []
+        generateParenthesisBacktrace(&left, &right, &path, &res)
+        return res
+    }
+    
+    class func generateParenthesisBacktrace(_ left: inout Int,_ right: inout Int,_ path: inout [Character],_ res: inout [String]) {
+        if left == 0 && right == 0 {
+            res.append(String(path))
+            return
+        }
+        if right == 0 {
+            return
+        }
+        if left == right {
+            left -= 1
+            path.append("(")
+            generateParenthesisBacktrace(&left, &right, &path, &res)
+            left += 1
+            path.removeLast()
+        }else {
+            if left > 0 {
+                left -= 1
+                path.append("(")
+                generateParenthesisBacktrace(&left, &right, &path, &res)
+                left += 1
+                path.removeLast()
+            }
+            
+            if right > 0 {
+                right -= 1
+                path.append(")")
+                generateParenthesisBacktrace(&left, &right, &path, &res)
+                right += 1
+                path.removeLast()
+            }
+        }
+    }
+    
+//    剑指 Offer II 006. 排序数组中两个数字之和
+//    给定一个已按照 升序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
+//    函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 0 开始计数 ，所以答案数组应当满足 0 <= answer[0] < answer[1] < numbers.length 。
+//    假设数组中存在且只存在一对符合条件的数字，同时一个数字不能使用两次。
+//    示例 1：
+//    输入：numbers = [1,2,4,6,10], target = 8
+//    输出：[1,3]
+//    解释：2 与 6 之和等于目标数 8 。因此 index1 = 1, index2 = 3 。
+//    示例 2：
+//    输入：numbers = [2,3,4], target = 6
+//    输出：[0,2]
+//    示例 3：
+//    输入：numbers = [-1,0], target = -1
+//    输出：[0,1]
+//    提示：
+//    2 <= numbers.length <= 3 * 104
+//    -1000 <= numbers[i] <= 1000
+//    numbers 按 递增顺序 排列
+//    -1000 <= target <= 1000
+//    仅存在一个有效答案
+//    注意：本题与主站 167 题相似（下标起点不同）：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/kLl5u1
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func twoSum11(_ numbers: [Int], _ target: Int) -> [Int] {
+        var left = 0
+        var right = numbers.count - 1
+        while left < right {
+            let num = numbers[left] + numbers[right]
+            if num == target {
+                return [left,right]
+            }else if num < target {
+                left += 1
+            }else {
+                right -= 1
+            }
+        }
+        return []
+    }
+//    剑指 Offer II 005. 单词长度的最大乘积
+//    给定一个字符串数组 words，请计算当两个字符串 words[i] 和 words[j] 不包含相同字符时，它们长度的乘积的最大值。假设字符串中只包含英语的小写字母。如果没有不包含相同字符的一对字符串，返回 0。
+//    示例 1:
+//    输入: words = ["abcw","baz","foo","bar","fxyz","abcdef"]
+//    输出: 16
+//    解释: 这两个单词为 "abcw", "fxyz"。它们不包含相同字符，且长度的乘积最大。
+//    示例 2:
+//    输入: words = ["a","ab","abc","d","cd","bcd","abcd"]
+//    输出: 4
+//    解释: 这两个单词为 "ab", "cd"。
+//    示例 3:
+//    输入: words = ["a","aa","aaa","aaaa"]
+//    输出: 0
+//    解释: 不存在这样的两个单词。
+//    提示：
+//    2 <= words.length <= 1000
+//    1 <= words[i].length <= 1000
+//    words[i] 仅包含小写字母
+//    注意：本题与主站 318 题相同：https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/aseY1I
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func maxProduct(_ words: [String]) -> Int {
+        //计算每个单词的掩码
+        var wordDic: [Int:Int] = [:] //掩码：长度
+        for item in words {
+            let array = Array(item)
+            var mask = 0
+            let base = Character("a").asciiValue!
+            for ch in array {
+                mask |= (1 << (ch.asciiValue! - base))
+            }
+            // 掩码相同的，只保留长度最长的字符串
+            if let workLen = wordDic[mask] {
+                if workLen < array.count {
+                    wordDic[mask] = array.count
+                }
+            }else {
+                wordDic[mask] = array.count
+            }
+        }
+        var res = 0
+        for (mask1,len1) in wordDic {
+            for (mask2,len2) in wordDic {
+                if mask1 & mask2 == 0 {//核心： 没有相同字符的
+                    res = max(res, len1 * len2)
+                }
+            }
+        }
+        return res
+    }
+    
+//    剑指 Offer II 084. 含有重复元素集合的全排列
+//    给定一个可包含重复数字的整数集合 nums ，按任意顺序 返回它所有不重复的全排列。
+//    示例 1：
+//    输入：nums = [1,1,2]
+//    输出：
+//    [[1,1,2],
+//     [1,2,1],
+//     [2,1,1]]
+//    示例 2：
+//    输入：nums = [1,2,3]
+//    输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+//    提示：
+//    1 <= nums.length <= 8
+//    -10 <= nums[i] <= 10
+//    注意：本题与主站 47 题相同： https://leetcode-cn.com/problems/permutations-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/7p8L0Z
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func permuteUnique(_ nums: [Int]) -> [[Int]] {
+        //考虑同层相同元素剪枝
+        let array = nums.sorted { a, b in
+            a < b
+        }
+        var res:[[Int]] = []
+        var path: [Int] = []
+        var choosed: [Bool] = Array(repeating: false, count: nums.count)
+        permuteUniqueBacktrace(array, &choosed, &path, &res)
+        return res
+    }
+    
+    class func permuteUniqueBacktrace(_ nums: [Int],_ choosed: inout [Bool],_ path: inout [Int],_ res: inout [[Int]]) {
+        if path.count == nums.count {
+            res.append(path)
+            return
+        }
+        var i = 0
+        var cur: Int?
+        while i < nums.count {
+            if choosed[i] {
+                i += 1
+                continue
+            }
+            
+            let num = nums[i]
+            if cur == nil {
+                cur = num
+            }else {
+                if cur! == num {
+                    i += 1
+                    continue//同层剪枝
+                }else {
+                    cur = num
+                }
+            }
+            
+            choosed[i] = true
+            path.append(num)
+            permuteUniqueBacktrace(nums, &choosed, &path, &res)
+            
+            choosed[i] = false
+            path.removeLast()
+            
+            i += 1
+        }
+    }
+//    剑指 Offer II 083. 没有重复元素集合的全排列
+//    给定一个不含重复数字的整数数组 nums ，返回其 所有可能的全排列 。可以 按任意顺序 返回答案。
+//    示例 1：
+//    输入：nums = [1,2,3]
+//    输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+//    示例 2：
+//    输入：nums = [0,1]
+//    输出：[[0,1],[1,0]]
+//    示例 3：
+//    输入：nums = [1]
+//    输出：[[1]]
+//    提示：
+//    1 <= nums.length <= 6
+//    -10 <= nums[i] <= 10
+//    nums 中的所有整数 互不相同
+//    注意：本题与主站 46 题相同：https://leetcode-cn.com/problems/permutations/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/VvJkup
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func permute(_ nums: [Int]) -> [[Int]] {
+        var res:[[Int]] = []
+        var path: [Int] = []
+        var choosed: [Bool] = Array(repeating: false, count: nums.count)
+        permuteBacktrace(nums, &choosed, &path, &res)
+        return res
+    }
+    
+    class func permuteBacktrace(_ nums: [Int],_ choosed: inout [Bool],_ path: inout [Int],_ res: inout [[Int]])  {
+        if path.count == nums.count {
+            res.append(path)
+            return
+        }
+        
+        var i = 0
+        while i < nums.count {
+            if !choosed[i] {
+                choosed[i] = true
+                path.append(nums[i])
+                permuteBacktrace(nums, &choosed, &path, &res)
+                choosed[i] = false
+                path.removeLast()
+            }
+            i += 1
+        }
+        
+    }
+//    剑指 Offer II 004. 只出现一次的数字
+//    给你一个整数数组 nums ，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次 。请你找出并返回那个只出现了一次的元素。
+//    示例 1：
+//    输入：nums = [2,2,3,2]
+//    输出：3
+//    示例 2：
+//    输入：nums = [0,1,0,1,0,1,100]
+//    输出：100
+//    提示：
+//    1 <= nums.length <= 3 * 104
+//    -231 <= nums[i] <= 231 - 1
+//    nums 中，除某个元素仅出现 一次 外，其余每个元素都恰出现 三次
+//    进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+//    注意：本题与主站 137 题相同：https://leetcode-cn.com/problems/single-number-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/WGki4K
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func singleNumbers2(_ nums: [Int]) -> Int {
+//        01 10 11
+        //考虑每一个二进制位
+        var shu:Int32 = 0
+        var i = 0
+        while i < 32 {
+            var total = 0
+            for num in nums {
+                total += (num >> i) & 1
+            }
+            
+            if total % 3 != 0 {
+                shu |= (1 << i)
+            }
+            i += 1
+        }
+
+        return Int(shu)
+    }
+    
+//    剑指 Offer II 082. 含有重复元素集合的组合
+//    给定一个可能有重复数字的整数数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+//    candidates 中的每个数字在每个组合中只能使用一次，解集不能包含重复的组合。
+//    示例 1:
+//    输入: candidates = [10,1,2,7,6,1,5], target = 8,
+//    输出:
+//    [
+//    [1,1,6],
+//    [1,2,5],
+//    [1,7],
+//    [2,6]
+//    ]
+//    示例 2:
+//    输入: candidates = [2,5,2,1,2], target = 5,
+//    输出:
+//    [
+//    [1,2,2],
+//    [5]
+//    ]
+//    提示:
+//    1 <= candidates.length <= 100
+//    1 <= candidates[i] <= 50
+//    1 <= target <= 30
+//    注意：本题与主站 40 题相同： https://leetcode-cn.com/problems/combination-sum-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/4sjJUc
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
+        // 回溯
+        let array = candidates.sorted { a, b in
+            a < b
+        }
+        
+        var res: [[Int]] = []
+        var path: [Int] = []
+        combinationSum2Backtrace(array, &res, &path, 0,target)
+        return res
+        
+        //超时
+        //dp[i][j] = 当容量为j时，只使用前i件时，有多少种方式
+//        dp[i][j] = dp[i - 1][j] + dp[i - 1][j - num]
+//        var dp: [[[[Int]]]] = Array(repeating: Array(repeating: [], count: target + 1), count: candidates.count + 1)
+//        dp[0][0] = [[]]
+//        // base case
+//        // dp[0][j] = 0
+//        // dp[i][0] = 1
+//
+//        var i = 1
+//        while i <= candidates.count {
+//            let num = candidates[i - 1]
+//            var j = 0
+//            while j <= target {
+//                if j == 0 {
+//                    dp[i][j] = [[]]
+//                }else {
+//                    if j - num < 0 {
+//                        dp[i][j] = dp[i - 1][j]
+//                    }else {
+//                        var array = dp[i - 1][j - num]
+//                        var k = 0
+//                        while k < array.count {
+//                            var arr = array[k]
+//                            arr.append(num)
+//                            array[k] = arr
+//                            k += 1
+//                        }
+//                        dp[i][j] = dp[i - 1][j] + array
+//                    }
+//                }
+//                j += 1
+//            }
+//            i += 1
+//        }
+//        var set: Set<[Int]> = []
+//        let res = dp[candidates.count][target]
+//        for var arr in res {
+//            arr.sort { a, b in
+//                a < b
+//            }
+//            set.insert(arr)
+//        }
+//        return Array(set)
+    }
+    
+    class func combinationSum2Backtrace(_ array: [Int],_ res: inout [[Int]],_ path: inout [Int],_ begin: Int,_ rest: Int) {
+        if rest == 0 {
+            //找到一个结果
+            res.append(path)
+            return
+        }
+        var i = begin
+        while i < array.count {
+            let num = array[i]
+            if num > rest {
+                break
+            }
+            if i > begin && num == array[i - 1] {//核心 剪枝  去掉同层重复
+                i += 1
+                continue
+            }
+            path.append(num)
+            combinationSum2Backtrace(array, &res, &path, i + 1, rest - num)
+            path.removeLast()
+            i += 1
+        }
+    }
+    
+//    剑指 Offer II 002. 二进制加法
+//    给定两个 01 字符串 a 和 b ，请计算它们的和，并以二进制字符串的形式输出。
+//    输入为 非空 字符串且只包含数字 1 和 0。
+//    示例 1:
+//    输入: a = "11", b = "10"
+//    输出: "101"
+//    示例 2:
+//    输入: a = "1010", b = "1011"
+//    输出: "10101"
+//    提示：
+//    每个字符串仅由字符 '0' 或 '1' 组成。
+//    1 <= a.length, b.length <= 10^4
+//    字符串如果不是 "0" ，就都不含前导零。
+//    注意：本题与主站 67 题相同：https://leetcode-cn.com/problems/add-binary/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/JFETK5
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func addBinary(_ a: String, _ b: String) -> String {
+        let aa = Array(a)
+        let bb = Array(b)
+        var res: [Character] = []
+        var jin = 0
+        var p1 = aa.count - 1
+        var p2 = bb.count - 1
+        while p1 >= 0 || p2 >= 0 {
+            if p1 == -1 {
+                var num = bb[p2].wholeNumberValue! + jin
+                jin = 0
+                if num == 2 {
+                    num = 0
+                    jin = 1
+                }
+                res.append(num == 0 ? "0" : "1")
+                p2 -= 1
+            }else if p2 == -1 {
+                var num = aa[p1].wholeNumberValue! + jin
+                jin = 0
+                if num == 2 {
+                    num = 0
+                    jin = 1
+                }
+                res.append(num == 0 ? "0" : "1")
+                p1 -= 1
+            }else {
+                var num = aa[p1].wholeNumberValue! + bb[p2].wholeNumberValue! + jin
+                jin = 0
+                if num >= 2 {
+                    num -= 2
+                    jin = 1
+                }
+                res.append(num == 0 ? "0" : "1")
+                p1 -= 1
+                p2 -= 1
+            }
+        }
+        if jin > 0 {
+            res.append("1")
+        }
+        return String(res.reversed())
+    }
+//    剑指 Offer II 003. 前 n 个数字二进制中 1 的个数
+//    给定一个非负整数 n ，请计算 0 到 n 之间的每个数字的二进制表示中 1 的个数，并输出一个数组。
+//    示例 1:
+//    输入: n = 2
+//    输出: [0,1,1]
+//    解释:
+//    0 --> 0
+//    1 --> 1
+//    2 --> 10
+//    示例 2:
+//    输入: n = 5
+//    输出: [0,1,1,2,1,2]
+//    解释:
+//    0 --> 0
+//    1 --> 1
+//    2 --> 10
+//    3 --> 11
+//    4 --> 100
+//    5 --> 101
+//    说明 :
+//    0 <= n <= 105
+//    进阶:
+//    给出时间复杂度为 O(n*sizeof(integer)) 的解答非常容易。但你可以在线性时间 O(n) 内用一趟扫描做到吗？
+//    要求算法的空间复杂度为 O(n) 。
+//    你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的 __builtin_popcount ）来执行此操作。
+//    注意：本题与主站 338 题相同：https://leetcode-cn.com/problems/counting-bits/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/w3tCBm
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func countBits(_ n: Int) -> [Int] {
+        var array: [Int] = []
+        for var num in 0...n {
+            var count = 0
+            while num != 0 {
+                num = num & (num - 1)
+                count += 1
+            }
+            array.append(count)
+        }
+        return array
+    }
+    
+//    剑指 Offer II 081. 允许重复选择元素的组合
+//    给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，找出 candidates 中所有可以使数字和为目标数 target 的唯一组合。
+//    candidates 中的数字可以无限制重复被选取。如果至少一个所选数字数量不同，则两种组合是唯一的。
+//    对于给定的输入，保证和为 target 的唯一组合数少于 150 个。
+//    示例 1：
+//    输入: candidates = [2,3,6,7], target = 7
+//    输出: [[7],[2,2,3]]
+//    示例 2：
+//    输入: candidates = [2,3,5], target = 8
+//    输出: [[2,2,2,2],[2,3,3],[3,5]]
+//    示例 3：
+//    输入: candidates = [2], target = 1
+//    输出: []
+//    示例 4：
+//    输入: candidates = [1], target = 1
+//    输出: [[1]]
+//    示例 5：
+//    输入: candidates = [1], target = 2
+//    输出: [[1,1]]
+//    提示：
+//    1 <= candidates.length <= 30
+//    1 <= candidates[i] <= 200
+//    candidate 中的每个元素都是独一无二的。
+//    1 <= target <= 500
+//    注意：本题与主站 39 题相同： https://leetcode-cn.com/problems/combination-sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/Ygoe9J
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
+        
+        //转化为0-1背包问题
+        
+        //dp[i][j] = 当容量为j时，只使用前i件时，有多少种方式
+        //不放入i  dp[i][j] = dp[i - 1][j]
+        //放入i   dp[i][j] = dp[i - 1][j] + dp[i][j - num]
+        var dp: [[[[Int]]]] = Array(repeating: Array(repeating: [], count: target + 1), count: candidates.count + 1)
+        // base case
+        // dp[0][j] = 0
+        // dp[i][0] = 1
+        
+        var i = 1
+        while i <= candidates.count {
+            let num = candidates[i - 1]
+            var j = 0
+            while j <= target {
+                if j == 0 {
+                    dp[i][j] = [[]]
+                }else {
+                    if j - num < 0 {
+                        dp[i][j] = dp[i - 1][j]
+                    }else {
+                        var array = dp[i][j - num]
+                        var k = 0
+                        while k < array.count {
+                            var arr = array[k]
+                            arr.append(num)
+                            array[k] = arr
+                            k += 1
+                        }
+                        dp[i][j] = dp[i - 1][j] + array
+                    }
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return dp[candidates.count][target]
+    }
+//    剑指 Offer II 001. 整数除法
+//    给定两个整数 a 和 b ，求它们的除法的商 a/b ，要求不得使用乘号 '*'、除号 '/' 以及求余符号 '%' 。
+//    注意：
+//    整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2
+//    假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231, 231−1]。本题中，如果除法结果溢出，则返回 231 − 1
+//    示例 1：
+//    输入：a = 15, b = 2
+//    输出：7
+//    解释：15/2 = truncate(7.5) = 7
+//    示例 2：
+//    输入：a = 7, b = -3
+//    输出：-2
+//    解释：7/-3 = truncate(-2.33333..) = -2
+//    示例 3：
+//    输入：a = 0, b = 1
+//    输出：0
+//    示例 4：
+//    输入：a = 1, b = 1
+//    输出：1
+//    提示:
+//    -231 <= a, b <= 231 - 1
+//    b != 0
+//    注意：本题与主站 29 题相同：https://leetcode-cn.com/problems/divide-two-integers/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/xoh6Oh
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func divide(_ a: Int, _ b: Int) -> Int {
+//        -2147483648
+//        -1
+        if a == -2147483648 && b == -1 {//溢出问题
+            return 2147483647
+        }
+        
+        var count = 0
+        let f = ((a^b) < 0)
+//        -2147483648
+//        1
+        
+        var aa = fabs(Double(a))
+        let bb = fabs(Double(b))
+        
+        if bb == 1 {//超时问题
+            return f ? -Int(aa) : Int(aa)
+        }
+        
+        while aa >= bb {
+            aa -= bb
+            count += 1
+        }
+        return f ? -count : count
     }
     
 //    67. 把字符串转换成整数
@@ -990,7 +2357,7 @@ import Foundation
 //    限制：
 //    2 <= nums.length <= 10000
 //    链接：https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof
-    class func singleNumbers(_ nums: [Int]) -> [Int] {
+    class func singleNumbers1(_ nums: [Int]) -> [Int] {
 //        先对所有数字进行一次异或，得到两个出现一次的数字的异或值。
 //        在异或结果中找到任意为 1 的位。
 //        根据这一位对所有的数字进行分组。

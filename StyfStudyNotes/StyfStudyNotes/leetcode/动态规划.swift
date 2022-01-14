@@ -70,10 +70,14 @@ public class KMP {
 // 按end 排序
 
 // 前缀和技巧 累加成N+1的新数组，可以得知 nums[i..j] = sum[j+1] - sum[i]  场景：原数组不变，频繁查询某个区间累加和
+//    nums   3 5 2 -2 4 1
+//  presum 0 3 8 10 8..  nums[0...3] = 10 - 0
 
 // 差分数组技巧  diff[i] = nums[i]-nums[i-1]         场景：频繁对原数组的某个区间元素进行增减
 //       原数组 res[i] = res[i - 1] + diff[i]
 //       想要num[i..j]全部加3  需要diff[i] += 3   diff[j+1]-=3
+//  nums 8  2  6  3  1
+// diff  8 -6  4 -3  -2
 class Difference {
     private var diff: [Int]
     public var result: [Int] {
