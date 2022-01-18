@@ -198,6 +198,915 @@ import Foundation
         //    剑指 Offer II 014. 字符串中的变位词
 //        print(checkInclusion("ab", "eidbaooo"))
 //        print(checkInclusion("ab", "eidboaoo"))
+        
+        //    剑指 Offer II 015. 字符串中的所有变位词
+//        print(findAnagrams("cbaebabacd", "abc"))//[0,6]
+//        print(findAnagrams("abab", "ab"))//[0,1,2]
+//        print(findAnagrams("dinitrophenylhydrazinetrinitrophenylmethylnitramine", "trinitrophenylmethylnitramine"))//[19,20,21,22]
+        
+        //    剑指 Offer II 016. 不含重复字符的最长子字符串
+//        print(lengthOfLongestSubstring111("abcabcbb"))//3
+//        print(lengthOfLongestSubstring111("bbbbb"))//1
+//        print(lengthOfLongestSubstring111("pwwkew"))//3
+//        print(lengthOfLongestSubstring111(""))//0
+        
+        //    剑指 Offer II 017. 含有所有字符的最短字符串
+//        print(minWindow("ADOBECODEBANC", "ABC"))//"BANC"
+//        print(minWindow("a", "a"))//"a"
+
+        //    剑指 Offer II 018. 有效的回文
+//        print(isPalindrome("A man, a plan, a canal: Panama"))
+//        print(isPalindrome("race a car"))
+//        print(isPalindrome("0P"))
+        
+        //    剑指 Offer II 019. 最多删除一个字符得到回文
+//        print(validPalindrome("aba"))
+//        print(validPalindrome("abca"))
+//        print(validPalindrome("abc"))
+        
+        //    剑指 Offer II 020. 回文子字符串的个数
+//        print(countSubstrings("abc"))
+//        print(countSubstrings("aaa"))
+        
+        //    剑指 Offer II 026. 重排链表
+//        print(reorderList(createList([1,2,3,4,5])))
+        
+        //    剑指 Offer II 090. 环形房屋偷盗
+//        print(rob111([2,3,2]))
+//        print(rob111([1,2,3,1]))
+//        print(rob111([0]))
+    }
+    
+//    剑指 Offer II 030. 插入、删除和随机访问都是 O(1) 的容器
+//    设计一个支持在平均 时间复杂度 O(1) 下，执行以下操作的数据结构：
+//    insert(val)：当元素 val 不存在时返回 true ，并向集合中插入该项，否则返回 false 。
+//    remove(val)：当元素 val 存在时返回 true ，并从集合中移除该项，否则返回 false 。
+//    getRandom：随机返回现有集合中的一项。每个元素应该有 相同的概率 被返回。
+//    示例 :
+//    输入: inputs = ["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+//    [[], [1], [2], [2], [], [1], [2], []]
+//    输出: [null, true, false, true, 2, true, false, 2]
+//    解释:
+//    RandomizedSet randomSet = new RandomizedSet();  // 初始化一个空的集合
+//    randomSet.insert(1); // 向集合中插入 1 ， 返回 true 表示 1 被成功地插入
+//    randomSet.remove(2); // 返回 false，表示集合中不存在 2
+//    randomSet.insert(2); // 向集合中插入 2 返回 true ，集合现在包含 [1,2]
+//    randomSet.getRandom(); // getRandom 应随机返回 1 或 2
+//    randomSet.remove(1); // 从集合中移除 1 返回 true 。集合现在包含 [2]
+//    randomSet.insert(2); // 2 已在集合中，所以返回 false
+//    randomSet.getRandom(); // 由于 2 是集合中唯一的数字，getRandom 总是返回 2
+//    提示：
+//    -231 <= val <= 231 - 1
+//    最多进行 2 * 105 次 insert ， remove 和 getRandom 方法调用
+//    当调用 getRandom 方法时，集合中至少有一个元素
+//    注意：本题与主站 380 题相同：https://leetcode-cn.com/problems/insert-delete-getrandom-o1/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/FortPu
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class RandomizedSet {
+
+        /** Initialize your data structure here. */
+        init() {
+
+        }
+        
+        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+        func insert(_ val: Int) -> Bool {
+
+        }
+        
+        /** Removes a value from the set. Returns true if the set contained the specified element. */
+        func remove(_ val: Int) -> Bool {
+
+        }
+        
+        /** Get a random element from the set. */
+        func getRandom() -> Int {
+
+        }
+    }
+    
+//    剑指 Offer II 090. 环形房屋偷盗
+//    一个专业的小偷，计划偷窃一个环形街道上沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都 围成一圈 ，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。
+//    给定一个代表每个房屋存放金额的非负整数数组 nums ，请计算 在不触动警报装置的情况下 ，今晚能够偷窃到的最高金额。
+//    示例 1：
+//    输入：nums = [2,3,2]
+//    输出：3
+//    解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。
+//    示例 2：
+//    输入：nums = [1,2,3,1]
+//    输出：4
+//    解释：你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。
+//         偷窃到的最高金额 = 1 + 3 = 4 。
+//    示例 3：
+//    输入：nums = [0]
+//    输出：0
+//    提示：
+//    1 <= nums.length <= 100
+//    0 <= nums[i] <= 1000
+//    注意：本题与主站 213 题相同： https://leetcode-cn.com/problems/house-robber-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/PzWKhm
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func rob111(_ nums: [Int]) -> Int {
+        //dp[n][0] = max(dp[n-2][0] + nums[n],dp[n-1][0])
+        //dp[n][1] = max(dp[n-2][1] + nums[n],dp[n-1][1])
+//                n == nums.count  max(dp[n-2][1],dp[n-1][1])
+        // base case
+        // dp[0][0] = 0 dp[1][0] = nums[1]
+        // dp[0][1] = nums[0] dp[1][1] = dp[0][1]
+        
+        guard nums.count > 1 else { return nums[0] }
+        
+        var dp: [[Int]] = Array(repeating: [0, 0], count: nums.count)
+        dp[0][0] = 0
+        dp[1][0] = nums[1]
+        dp[0][1] = nums[0]
+        dp[1][1] = dp[0][1]
+        var n = 2
+        while n < nums.count {
+            dp[n][0] = max(dp[n-2][0] + nums[n],dp[n-1][0])
+            if n == nums.count - 1 {
+                dp[n][1] = max(dp[n-2][1],dp[n-1][1])
+            }else {
+                dp[n][1] = max(dp[n-2][1] + nums[n],dp[n-1][1])
+            }
+            n += 1
+        }
+        return max(dp[n - 1][0], dp[n - 1][1])
+    }
+    
+    class func createList(_ array: [Int]) -> ListNode? {
+        var head: ListNode? = nil
+        var node: ListNode? = nil
+        var i = 0
+        while i < array.count {
+            let val = array[i]
+            if i == 0 {
+                head = ListNode(val)
+                node = head
+            }else {
+                node?.next = ListNode(val)
+                node = node?.next
+            }
+            i += 1
+        }
+        return head
+    }
+    
+//    剑指 Offer II 029. 排序的循环链表
+//    给定循环单调非递减列表中的一个点，写一个函数向这个列表中插入一个新元素 insertVal ，使这个列表仍然是循环升序的。
+//    给定的可以是这个列表中任意一个顶点的指针，并不一定是这个列表中最小元素的指针。
+//    如果有多个满足条件的插入位置，可以选择任意一个位置插入新的值，插入后整个列表仍然保持有序。
+//    如果列表为空（给定的节点是 null），需要创建一个循环有序列表并返回这个节点。否则。请返回原先给定的节点。
+//    示例 1：
+//    输入：head = [3,4,1], insertVal = 2
+//    输出：[3,4,1,2]
+//    解释：在上图中，有一个包含三个元素的循环有序列表，你获得值为 3 的节点的指针，我们需要向表中插入元素 2 。新插入的节点应该在 1 和 3 之间，插入之后，整个列表如上图所示，最后返回节点 3 。
+//    示例 2：
+//    输入：head = [], insertVal = 1
+//    输出：[1]
+//    解释：列表为空（给定的节点是 null），创建一个循环有序列表并返回这个节点。
+//    示例 3：
+//    输入：head = [1], insertVal = 0
+//    输出：[1,0]
+//    提示：
+//    0 <= Number of Nodes <= 5 * 10^4
+//    -10^6 <= Node.val <= 10^6
+//    -10^6 <= insertVal <= 10^6
+//    注意：本题与主站 708 题相同： https://leetcode-cn.com/problems/insert-into-a-sorted-circular-linked-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/4ueAj6
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func insert(_ head: Node?, _ insertVal: Int) -> Node? {
+        let newNode = Node(insertVal)
+        guard var node = head else {
+            newNode.next = newNode
+            return newNode
+        }
+        let headAddress = nodeAdress1(&node)
+        let nextAddress = nodeAdress1(&(node.next!))
+        if headAddress == nextAddress {
+            newNode.next = head
+            head?.next = newNode
+            return head
+        }
+        
+        var array1: [Node] = []
+        var array2: [Node] = []
+        var putTo2 = true
+        while true {
+            var next = node.next!
+            if node.val > next.val {
+                //5 1   6
+                //5 1   5
+                //5 1   0
+                //5 1   1
+                if (insertVal >= node.val && insertVal >= next.val) ||
+                    (insertVal <= node.val && insertVal <= next.val){
+                    newNode.next = node.next
+                    node.next = newNode
+                    return head
+                }
+                array2.append(node)
+                putTo2 = false
+            }else {
+                //1 3  2
+                if insertVal >= node.val && insertVal <= next.val {
+                    newNode.next = node.next
+                    node.next = newNode
+                    return head
+                }
+                if putTo2 {
+                    array2.append(node)
+                }else {
+                    array1.append(node)
+                }
+            }
+            if nodeAdress1(&next) == headAddress {
+                break
+            }
+            node = next
+        }
+        array1.append(contentsOf: array2)
+        // 5 5 4
+        
+        newNode.next = node.next
+        node.next = newNode
+        
+        return head
+    }
+    
+    
+    class func nodeAdress1(_ node: inout Node) -> UInt {
+        return withUnsafePointer(to: &node) { UnsafeRawPointer($0)}.load(as: UInt.self)
+    }
+    
+      public class Node {
+          public var val: Int
+          public var prev: Node?
+          public var next: Node?
+          public var child: Node?
+          public init(_ val: Int) {
+              self.val = val
+              self.prev = nil
+              self.next = nil
+              self.child  = nil
+          }
+      }
+     
+//    剑指 Offer II 028. 展平多级双向链表
+//    多级双向链表中，除了指向下一个节点和前一个节点指针之外，它还有一个子链表指针，可能指向单独的双向链表。这些子列表也可能会有一个或多个自己的子项，依此类推，生成多级数据结构，如下面的示例所示。
+//    给定位于列表第一级的头节点，请扁平化列表，即将这样的多级双向链表展平成普通的双向链表，使所有结点出现在单级双链表中。
+//    示例 1：
+//    输入：head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+//    输出：[1,2,3,7,8,11,12,9,10,4,5,6]
+//    解释：
+//    输入的多级列表如下图所示：
+//    示例 2：
+//    输入：head = [1,2,null,3]
+//    输出：[1,3,2]
+//    解释：
+//    输入的多级列表如下图所示：
+//      1---2---NULL
+//      |
+//      3---NULL
+//    示例 3：
+//    输入：head = []
+//    输出：[]
+//    如何表示测试用例中的多级链表？
+//    以 示例 1 为例：
+//     1---2---3---4---5---6--NULL
+//             |
+//             7---8---9---10--NULL
+//                 |
+//                 11--12--NULL
+//    序列化其中的每一级之后：
+//    [1,2,3,4,5,6,null]
+//    [7,8,9,10,null]
+//    [11,12,null]
+//    为了将每一级都序列化到一起，我们需要每一级中添加值为 null 的元素，以表示没有节点连接到上一级的上级节点。
+//    [1,2,3,4,5,6,null]
+//    [null,null,7,8,9,10,null]
+//    [null,11,12,null]
+//    合并所有序列化结果，并去除末尾的 null 。
+//    [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+//    提示：
+//    节点数目不超过 1000
+//    1 <= Node.val <= 10^5
+//    注意：本题与主站 430 题相同： https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/Qv1Da2
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func flatten(_ head: Node?) -> Node? {
+        _ = flattenHelper(head)
+        return head
+    }
+    
+    class func flattenHelper(_ head: Node?) -> Node? {
+        if head == nil {
+            return nil
+        }
+        var node = head
+        var res = node
+        while node != nil {
+            let next = node?.next
+            if node?.child != nil {
+                let child = node?.child
+                let tail = flattenHelper(child)
+                node?.child = nil
+                node?.next = child
+                child?.prev = node
+                res = tail
+                tail?.next = next
+                next?.prev = tail
+            }
+            if next != nil {
+                res = next
+            }
+            node = next
+        }
+        return res
+    }
+    
+//    剑指 Offer II 026. 重排链表
+//    给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+//     L0 → L1 → … → Ln-1 → Ln
+//    请将其重新排列后变为：
+//    L0 → Ln → L1 → Ln-1 → L2 → Ln-2 → …
+//    不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+//    示例 1:
+//    输入: head = [1,2,3,4]
+//    输出: [1,4,2,3]
+//    示例 2:
+//    输入: head = [1,2,3,4,5]
+//    输出: [1,5,2,4,3]
+//    提示：
+//    链表的长度范围为 [1, 5 * 104]
+//    1 <= node.val <= 1000
+//    注意：本题与主站 143 题相同：https://leetcode-cn.com/problems/reorder-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/LGjMqU
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func reorderList(_ head: ListNode?) {
+//        [1,2,3,4,5]
+        var array: [ListNode] = []
+        var node = head
+        while node != nil {
+            let next = node?.next
+            node?.next = nil
+            array.append(node!)
+            node = next
+        }
+        if array.count >= 2 {
+            var l = 0
+            var r = array.count - 1
+            var tail: ListNode?
+            while l <= r {
+                if l == r {
+                    let leftNode = array[l]
+                    tail?.next = leftNode
+                }else {
+                    let leftNode = array[l]
+                    let rightNode = array[r]
+                    if tail != nil {
+                        tail?.next = leftNode
+                    }
+                    leftNode.next = rightNode
+                    rightNode.next = nil
+                    tail = rightNode
+                }
+                l += 1
+                r -= 1
+            }
+        }
+    }
+    
+//    剑指 Offer II 025. 链表中的两数相加
+//    给定两个 非空链表 l1和 l2 来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
+//    可以假设除了数字 0 之外，这两个数字都不会以零开头。
+//    示例1：
+//    输入：l1 = [7,2,4,3], l2 = [5,6,4]
+//    输出：[7,8,0,7]
+//    示例2：
+//    输入：l1 = [2,4,3], l2 = [5,6,4]
+//    输出：[8,0,7]
+//    示例3：
+//    输入：l1 = [0], l2 = [0]
+//    输出：[0]
+//    提示：
+//    链表的长度范围为 [1, 100]
+//    0 <= node.val <= 9
+//    输入数据保证链表代表的数字无前导 0
+//    进阶：如果输入链表不能修改该如何处理？换句话说，不能对列表中的节点进行翻转。
+//    注意：本题与主站 445 题相同：https://leetcode-cn.com/problems/add-two-numbers-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/lMSNwu
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        var arr1: [Int] = []
+        var arr2: [Int] = []
+        return addTwoNumbers1(l1, l2, &arr1, &arr2)
+    }
+    class func addTwoNumbers1(_ l1: ListNode?, _ l2: ListNode?,_ arr1: inout [Int],_ arr2: inout [Int]) -> ListNode? {
+        if l1 == nil && l2 == nil {
+            var sum = 0
+            if !arr1.isEmpty {
+                sum += arr1.removeLast()
+            }
+            if !arr2.isEmpty {
+                sum += arr2.removeLast()
+            }
+            return ListNode(sum)
+        }else {
+            if l1 != nil {
+                arr1.append(l1!.val)
+            }
+            if l2 != nil {
+                arr2.append(l2!.val)
+            }
+            let next = addTwoNumbers1(l1?.next, l2?.next, &arr1, &arr2)
+            var sum = 0
+            if next!.val >= 10 {
+                next!.val = next!.val - 10
+                sum += 1
+            }
+            if sum == 0 && arr1.isEmpty && arr2.isEmpty {
+                return next
+            }
+            if !arr1.isEmpty {
+                sum += arr1.removeLast()
+            }
+            if !arr2.isEmpty {
+                sum += arr2.removeLast()
+            }
+            return ListNode(sum, next)
+        }
+    }
+//    剑指 Offer II 024. 反转链表
+//    给定单链表的头节点 head ，请反转链表，并返回反转后的链表的头节点。
+//    示例 1
+//    输入：head = [1,2,3,4,5]
+//    输出：[5,4,3,2,1]
+//    示例 2：
+//    输入：head = [1,2]
+//    输出：[2,1]
+//    示例 3：
+//    输入：head = []
+//    输出：[]
+//    提示：
+//    链表中节点的数目范围是 [0, 5000]
+//    -5000 <= Node.val <= 5000
+//    进阶：链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
+//    注意：本题与主站 206 题相同： https://leetcode-cn.com/problems/reverse-linked-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/UHnkqh
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func reverseList(_ head: ListNode?) -> ListNode? {
+        //迭代
+        var preNode:ListNode? = nil
+        var cur = head
+        var next = cur?.next
+        while cur != nil {
+            let nextNext = next?.next
+            cur?.next = preNode
+            preNode = cur
+            if next == nil {
+                break
+            }
+            cur = next
+            next = nextNext
+        }
+        return cur
+        
+        //递归
+//        let cur = head
+//        let next = cur?.next
+//        if next == nil {
+//            return cur
+//        }
+//        let newhead = reverseList(next)
+//        cur?.next = nil
+//        next?.next = cur
+//        return newhead
+    }
+    
+//    剑指 Offer II 023. 两个链表的第一个重合节点
+//    给定两个单链表的头节点 headA 和 headB ，请找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+//    图示两个链表在节点 c1 开始相交：
+//    题目数据 保证 整个链式结构中不存在环。
+//    注意，函数返回结果后，链表必须 保持其原始结构 。
+//    示例 1：
+//    输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+//    输出：Intersected at '8'
+//    解释：相交节点的值为 8 （注意，如果两个链表相交则不能为 0）。
+//    从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
+//    在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+//    示例 2：
+//    输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+//    输出：Intersected at '2'
+//    解释：相交节点的值为 2 （注意，如果两个链表相交则不能为 0）。
+//    从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
+//    在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
+//    示例 3：
+//    输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+//    输出：null
+//    解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
+//    由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
+//    这两个链表不相交，因此返回 null 。
+//    提示：
+//    listA 中节点数目为 m
+//    listB 中节点数目为 n
+//    0 <= m, n <= 3 * 104
+//    1 <= Node.val <= 105
+//    0 <= skipA <= m
+//    0 <= skipB <= n
+//    如果 listA 和 listB 没有交点，intersectVal 为 0
+//    如果 listA 和 listB 有交点，intersectVal == listA[skipA + 1] == listB[skipB + 1]
+//    进阶：能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？
+//    注意：本题与主站 160 题相同：https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/3u1WK4
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
+//        listA = [4,1,8,4,5], listB = [5,0,1,8,4,5]
+//        [4,1,8,4,5 5,0,1,8,4,5]
+//        [5,0,1,8,4,5 4,1,8,4,5]
+        
+        var node1 = headA
+        var node2 = headB
+        var flag1 = true
+        var flag2 = true
+        while node1 != nil && node2 != nil {
+            if nodeAdress(&(node1!)) == nodeAdress(&(node2!)) {
+                return node1
+            }
+            
+            node1 = node1?.next
+            if node1 == nil && flag1 {
+                node1 = headB
+                flag1 = false
+            }
+            
+            node2 = node2?.next
+            if node2 == nil && flag2 {
+                node2 = headA
+                flag2 = false
+            }
+            
+        }
+
+        return nil
+    }
+    
+//    剑指 Offer II 022. 链表中环的入口节点
+//    给定一个链表，返回链表开始入环的第一个节点。 从链表的头节点开始沿着 next 指针进入环的第一个节点为环的入口节点。如果链表无环，则返回 null。
+//    为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。
+//    说明：不允许修改给定的链表。
+//    示例 1：
+//    输入：head = [3,2,0,-4], pos = 1
+//    输出：返回索引为 1 的链表节点
+//    解释：链表中有一个环，其尾部连接到第二个节点。
+//    示例 2：
+//    输入：head = [1,2], pos = 0
+//    输出：返回索引为 0 的链表节点
+//    解释：链表中有一个环，其尾部连接到第一个节点。
+//    示例 3：
+//    输入：head = [1], pos = -1
+//    输出：返回 null
+//    解释：链表中没有环。
+//    提示：
+//    链表中节点的数目范围在范围 [0, 104] 内
+//    -105 <= Node.val <= 105
+//    pos 的值为 -1 或者链表中的一个有效索引
+//    进阶：是否可以使用 O(1) 空间解决此题？
+//    注意：本题与主站 142 题相同： https://leetcode-cn.com/problems/linked-list-cycle-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/c32eOV
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func detectCycle(_ head: ListNode?) -> ListNode? {
+//        3,2,0,-4 2,0,-4 2,0,-4 2,0,-4
+//        x x x  x
+//        y y
+//        3,2,0,-4 2,0,-4 2,0,-4 2,0,-4
+//        x   x    x    x
+//                      y y
+//        1,2 1,2 1,2 1,2
+//        x x x
+//        y
+//        1,2 1,2 1,2 1,2
+//        x   x   x
+//                y
+        
+
+        guard let node = head else { return nil }
+        
+        var slow = node
+        var fast = node
+        while let fastN = fast.next,let fastNN = fastN.next {
+            fast = fastNN
+            slow = slow.next!
+            if nodeAdress(&fast) == nodeAdress(&slow) {
+                var start = node
+                while nodeAdress(&start) != nodeAdress(&slow){//细节
+                    start = start.next!
+                    slow = slow.next!
+                }
+                return start
+            }
+        }
+        return nil
+    }
+    
+    class func nodeAdress(_ node: inout ListNode) -> UInt {
+        return withUnsafePointer(to: &node) { UnsafeRawPointer($0)}.load(as: UInt.self)
+    }
+    
+    
+    public class ListNode {
+        public var val: Int
+        public var next: ListNode?
+        public init() { self.val = 0; self.next = nil; }
+        public init(_ val: Int) { self.val = val; self.next = nil; }
+        public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+    }
+     
+//    剑指 Offer II 021. 删除链表的倒数第 n 个结点
+//    给定一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+//    示例 1：
+//    输入：head = [1,2,3,4,5], n = 2
+//    输出：[1,2,3,5]
+//    示例 2：
+//    输入：head = [1], n = 1
+//    输出：[]
+//    示例 3：
+//    输入：head = [1,2], n = 1
+//    输出：[1]
+//    提示：
+//    链表中结点的数目为 sz
+//    1 <= sz <= 30
+//    0 <= Node.val <= 100
+//    1 <= n <= sz
+//    进阶：能尝试使用一趟扫描实现吗？
+//    注意：本题与主站 19 题相同： https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/SLwz0R
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+        if let node = head,let next = node.next {
+            let nextIndex = removeNthFromEndHelper(node, next, n)
+            if nextIndex == n - 1 {
+                return next
+            }
+            return node
+        }
+        return nil
+    }
+    class func removeNthFromEndHelper(_ pre: ListNode,_ node: ListNode, _ n: Int) -> Int {
+        let m = node.next == nil ? 1 : removeNthFromEndHelper(node,node.next!, n) + 1
+        if m == n {
+            pre.next = node.next
+        }
+        return m
+    }
+//    剑指 Offer II 020. 回文子字符串的个数
+//    给定一个字符串 s ，请计算这个字符串中有多少个回文子字符串。
+//    具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串。
+//    示例 1：
+//    输入：s = "abc"
+//    输出：3
+//    解释：三个回文子串: "a", "b", "c"
+//    示例 2：
+//    输入：s = "aaa"
+//    输出：6
+//    解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa"
+//    提示：
+//    1 <= s.length <= 1000
+//    s 由小写英文字母组成
+//    注意：本题与主站 647 题相同：https://leetcode-cn.com/problems/palindromic-substrings/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/a7VOhD
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func countSubstrings(_ s: String) -> Int {
+        let ss = Array(s)
+        var i = 0
+        var count = 0
+        while i < ss.count {
+            count += countSubstringsHelper(ss, i, i)
+            count += countSubstringsHelper(ss, i, i + 1)
+            i += 1
+        }
+        return count
+    }
+    
+    class func countSubstringsHelper(_ s:[Character],_ left:Int, _ right:Int) -> Int {
+        var l = left
+        var r = right
+        var count = 0
+        while l >= 0 && r < s.count && s[l] == s[r] {
+            count += 1
+            l -= 1
+            r += 1
+        }
+        return count
+    }
+//    剑指 Offer II 019. 最多删除一个字符得到回文
+//    给定一个非空字符串 s，请判断如果 最多 从字符串中删除一个字符能否得到一个回文字符串。
+//    示例 1:
+//    输入: s = "aba"
+//    输出: true
+//    示例 2:
+//    输入: s = "abca"
+//    输出: true
+//    解释: 可以删除 "c" 字符 或者 "b" 字符
+//    示例 3:
+//    输入: s = "abc"
+//    输出: false
+//    提示:
+//    1 <= s.length <= 105
+//    s 由小写英文字母组成
+//    注意：本题与主站 680 题相同： https://leetcode-cn.com/problems/valid-palindrome-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/RQku0D
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func validPalindrome(_ s: String) -> Bool {
+        let ss = Array(s)
+        var l = 0
+        var r = ss.count - 1
+        while l < r {
+            if ss[l] == ss[r] {
+                l += 1
+                r -= 1
+            }else {
+                return validPalindromeHelper(ss, l + 1, r) || validPalindromeHelper(ss, l, r - 1)
+            }
+        }
+        return true
+    }
+    
+    class func validPalindromeHelper(_ s:[Character],_ left:Int, _ right:Int) -> Bool {
+        var l = left
+        var r = right
+        while l < r {
+            if s[l] == s[r] {
+                l += 1
+                r -= 1
+            }else {
+                return false
+            }
+        }
+        return true
+    }
+//    剑指 Offer II 018. 有效的回文
+//    给定一个字符串 s ，验证 s 是否是 回文串 ，只考虑字母和数字字符，可以忽略字母的大小写。
+//    本题中，将空字符串定义为有效的 回文串 。
+//    示例 1:
+//    输入: s = "A man, a plan, a canal: Panama"
+//    输出: true
+//    解释："amanaplanacanalpanama" 是回文串
+//    示例 2:
+//    输入: s = "race a car"
+//    输出: false
+//    解释："raceacar" 不是回文串
+//    提示：
+//    1 <= s.length <= 2 * 105
+//    字符串 s 由 ASCII 字符组成
+//    注意：本题与主站 125 题相同： https://leetcode-cn.com/problems/valid-palindrome/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/XltzEq
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isPalindrome(_ s: String) -> Bool {
+        let ss = Array(s)
+        var sss :[Character] = []
+        for item in ss {
+            if item.isLetter || item.isNumber {
+                sss.append(item.isUppercase ? Character(item.lowercased()) : item)
+            }
+        }
+        var l = 0
+        var r = sss.count - 1
+        while l < r {
+            if sss[l] == sss[r] {
+                l += 1
+                r -= 1
+            }else {
+                return false
+            }
+        }
+        return true
+    }
+//    剑指 Offer II 017. 含有所有字符的最短字符串
+//    给定两个字符串 s 和 t 。返回 s 中包含 t 的所有字符的最短子字符串。如果 s 中不存在符合条件的子字符串，则返回空字符串 "" 。
+//    如果 s 中存在多个符合条件的子字符串，返回任意一个。
+//    注意： 对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。
+//    示例 1：
+//    输入：s = "ADOBECODEBANC", t = "ABC"
+//    输出："BANC"
+//    解释：最短子字符串 "BANC" 包含了字符串 t 的所有字符 'A'、'B'、'C'
+//    示例 2：
+//    输入：s = "a", t = "a"
+//    输出："a"
+//    示例 3：
+//    输入：s = "a", t = "aa"
+//    输出：""
+//    解释：t 中两个字符 'a' 均应包含在 s 的子串中，因此没有符合条件的子字符串，返回空字符串。
+//    提示：
+//    1 <= s.length, t.length <= 105
+//    s 和 t 由英文字母组成
+//    进阶：你能设计一个在 o(n) 时间内解决此问题的算法吗？
+//    注意：本题与主站 76 题相似（本题答案不唯一）：https://leetcode-cn.com/problems/minimum-window-substring/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/M1oyTv
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minWindow(_ s: String, _ t: String) -> String {
+        guard s.count >= t.count else { return "" }
+        let ss = Array(s)
+        let tt = Array(t)
+        var need: [Character:Int] = [:]
+        for item in tt {
+            need[item,default: 0] += 1
+        }
+        var needcount = tt.count
+        var minL = -1
+        var minR = -1
+        var l = 0
+        var r = 0
+        while r < ss.count {
+            let rightCh = ss[r]
+            r += 1
+            
+            if let chCount = need[rightCh] {
+                need[rightCh] = chCount - 1
+                if chCount > 0 {
+                    needcount -= 1
+                }
+            }
+            
+            while needcount == 0 {
+                let leftCh = ss[l]
+                if let chCount = need[leftCh] {
+                    if chCount >= 0  {//这个还需要
+                        break
+                    }else {//多了
+                        need[leftCh] = chCount + 1
+                    }
+                }
+                l += 1
+            }
+            
+            if needcount == 0 {
+                if minL == -1 || ((minL != -1) && ((r - l) < (minR - minL))){
+                    minL = l
+                    minR = r
+                }
+            }
+        }
+        return minL == -1 ? "" : String(ss[minL..<minR])
+    }
+//    剑指 Offer II 016. 不含重复字符的最长子字符串
+//    给定一个字符串 s ，请你找出其中不含有重复字符的 最长连续子字符串 的长度。
+//    示例 1:
+//    输入: s = "abcabcbb"
+//    输出: 3
+//    解释: 因为无重复字符的最长子字符串是 "abc"，所以其长度为 3。
+//    示例 2:
+//    输入: s = "bbbbb"
+//    输出: 1
+//    解释: 因为无重复字符的最长子字符串是 "b"，所以其长度为 1。
+//    示例 3:
+//    输入: s = "pwwkew"
+//    输出: 3
+//    解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+//         请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+//    示例 4:
+//    输入: s = ""
+//    输出: 0
+//    提示：
+//    0 <= s.length <= 5 * 104
+//    s 由英文字母、数字、符号和空格组成
+//    注意：本题与主站 3 题相同： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/wtcaE1
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func lengthOfLongestSubstring111(_ s: String) -> Int {
+        let ss = Array(s)
+        var set: Set<Character> = []
+        var l = 0
+        var r = 0
+        var len = 0
+        while r < ss.count {
+            let rightCh = ss[r]
+            r += 1
+            
+            while set.contains(rightCh) {
+                let leftCh = ss[l]
+                set.remove(leftCh)
+                l += 1
+            }
+            set.insert(rightCh)
+            len = max(len, r - l)
+        }
+        return len
     }
 //    剑指 Offer II 015. 字符串中的所有变位词
 //    给定两个字符串 s 和 p，找到 s 中所有 p 的 变位词 的子串，返回这些子串的起始索引。不考虑答案输出的顺序。
@@ -223,7 +1132,44 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/VabMRr
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func findAnagrams(_ s: String, _ p: String) -> [Int] {
-
+        let ss = Array(s)
+        let pp = Array(p)
+        
+        var need:[Character:Int] = [:]
+        for item in pp {
+            need[item,default: 0] += 1
+        }
+        var needCount = pp.count
+        var res: [Int] = []
+        var l = 0
+        var r = 0
+        while r < ss.count {
+            let rightch = ss[r]
+            r += 1
+            
+            if let chCount = need[rightch] {
+                need[rightch] = chCount - 1
+                if chCount > 0 {
+                    needCount -= 1
+                }
+            }
+            
+            while r - l > pp.count {
+                let leftch = ss[l]
+                if let chCount = need[leftch] {
+                    need[leftch] = chCount + 1
+                    if need[leftch]! > 0 {
+                        needCount += 1
+                    }
+                }
+                l += 1
+            }
+            
+            if needCount == 0{
+                res.append(l)
+            }
+        }
+        return res
     }
 //    剑指 Offer II 014. 字符串中的变位词
 //    给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的某个变位词。
