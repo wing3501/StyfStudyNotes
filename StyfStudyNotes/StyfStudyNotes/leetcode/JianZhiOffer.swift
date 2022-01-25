@@ -235,8 +235,677 @@ import Foundation
 //        print(rob111([2,3,2]))
 //        print(rob111([1,2,3,1]))
 //        print(rob111([0]))
+        
+        //    剑指 Offer II 091. 粉刷房子
+//        print(minCost([[17,2,17],[16,16,5],[14,3,19]]))//10
+        //    剑指 Offer II 092. 翻转字符
+//        print(minFlipsMonoIncr("00110"))//1
+//        print(minFlipsMonoIncr("010110"))//2
+//        print(minFlipsMonoIncr("00011000"))//2
+//        print(minFlipsMonoIncr("0101100011"))//3
+//        print(minFlipsMonoIncr("10011111110010111011"))//5
+//        print(minFlipsMonoIncr("11011"))//1
+        
+        //    剑指 Offer II 031. 最近最少使用缓存
+//        let lRUCache = LRUCache(2);
+//        lRUCache.put(1, 1); // 缓存是 {1=1}
+//        lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+//        print(lRUCache.get(1));    // 返回 1
+//        lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+//        print(lRUCache.get(2));    // 返回 -1 (未找到)
+//        lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+//        print(lRUCache.get(1));    // 返回 -1 (未找到)
+//        print(lRUCache.get(3));    // 返回 3
+//        print(lRUCache.get(4));    // 返回 4
+        
+        //    剑指 Offer II 093. 最长斐波那契数列
+//        print(lenLongestFibSubseq([1,2,3,4,5,6,7,8]))//5
+//        print(lenLongestFibSubseq([1,3,7,11,12,14,18]))//3
+        
+        //    剑指 Offer II 094. 最少回文分割
+//        print(minCut("ababa"))//0
+//        print(minCut("aab"))//1
+//        print(minCut("a"))//0
+//        print(minCut("ab"))//1
+//        print(minCut("ccaacabacb"))//3  cc aa cabac b
+//        print(minCut("ababababababababababababcbabababababababababababa"))
+        //    剑指 Offer II 032. 有效的变位词
+//        print(isAnagram("anagram", "nagaram"))
+//        print(isAnagram("rat", "car"))
+//        print(isAnagram("a", "a"))
+        //    剑指 Offer II 095. 最长公共子序列
+//        print(longestCommonSubsequence("abcde", "ace"))
+//        print(longestCommonSubsequence("abc", "abc"))
+//        print(longestCommonSubsequence("abc", "def"))
+        //    剑指 Offer II 033. 变位词组
+//        print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+//        print(groupAnagrams([""]))
+//        print(groupAnagrams(["a"]))
+        //    剑指 Offer II 034. 外星语言是否排序
+        print(isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
+    }
+//    剑指 Offer II 034. 外星语言是否排序
+//    某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
+//    给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。
+//    示例 1：
+//    输入：words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+//    输出：true
+//    解释：在该语言的字母表中，'h' 位于 'l' 之前，所以单词序列是按字典序排列的。
+//    示例 2：
+//    输入：words = ["word","world","row"], order = "worldabcefghijkmnpqstuvxyz"
+//    输出：false
+//    解释：在该语言的字母表中，'d' 位于 'l' 之后，那么 words[0] > words[1]，因此单词序列不是按字典序排列的。
+//    示例 3：
+//    输入：words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
+//    输出：false
+//    解释：当前三个字符 "app" 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 "apple" > "app"，因为 'l' > '∅'，其中 '∅' 是空白字符，定义为比任何其他字符都小（更多信息）。
+//    提示：
+//    1 <= words.length <= 100
+//    1 <= words[i].length <= 20
+//    order.length == 26
+//    在 words[i] 和 order 中的所有字符都是英文小写字母。
+//    注意：本题与主站 953 题相同： https://leetcode-cn.com/problems/verifying-an-alien-dictionary/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/lwyVBB
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isAlienSorted(_ words: [String], _ order: String) -> Bool {
+        guard words.count > 1 else { return true }
+        let orders = Array(order)
+        var book:[Character:Int] = [:]
+        var i = 0
+        while i < orders.count {
+            book[orders[i]] = i
+            i += 1
+        }
+        
+        var maxLen = 0
+        var wordArray: [[Character]] = []
+        for item in words {
+            let wordArr = Array(item)
+            maxLen = max(maxLen, wordArr.count)
+            wordArray.append(wordArr)
+        }
+        
+        i = 0
+        var j = 1
+        while i < maxLen {
+            var cur: [Character] = wordArray[0]
+            var nextJ = j
+            while j < wordArray.count {
+                let next = wordArray[j]
+                if i != cur.count && i == next.count {
+                    return false
+                }else if i != cur.count && i != next.count {
+                    if book[cur[i]]! > book[next[i]]! {
+                        return false
+                    }else if book[cur[i]]! == book[next[i]]! {
+                        nextJ = j
+                    }
+                }
+                
+                cur = next
+                j += 1
+            }
+            i += 1
+        }
+        return true
+    }
+//    剑指 Offer II 033. 变位词组
+//    给定一个字符串数组 strs ，将 变位词 组合在一起。 可以按任意顺序返回结果列表。
+//    注意：若两个字符串中每个字符出现的次数都相同，则称它们互为变位词。
+//    示例 1:
+//    输入: strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+//    输出: [["bat"],["nat","tan"],["ate","eat","tea"]]
+//    示例 2:
+//    输入: strs = [""]
+//    输出: [[""]]
+//    示例 3:
+//    输入: strs = ["a"]
+//    输出: [["a"]]
+//    提示：
+//    1 <= strs.length <= 104
+//    0 <= strs[i].length <= 100
+//    strs[i] 仅包含小写字母
+//    注意：本题与主站 49 题相同： https://leetcode-cn.com/problems/group-anagrams/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/sfvd7V
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func groupAnagrams(_ strs: [String]) -> [[String]] {
+        var res: [[String]] = []
+        var book: [[Character]] = []
+        for str in strs {
+            var array = Array(str)
+            array.sort()
+            if res.count == 0 {
+                res.append([str])
+                book.append(array)
+            }else {
+                var i = 0
+                while i < book.count {
+                    let item = book[i]
+                    if item == array {
+                        res[i].append(str)
+                        break
+                    }
+                    i += 1
+                }
+                if i == book.count {
+                    res.append([str])
+                    book.append(array)
+                }
+            }
+        }
+        return res
+    }
+//    剑指 Offer II 095. 最长公共子序列
+//    给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
+//    一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+//    例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。
+//    两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
+//    示例 1：
+//    输入：text1 = "abcde", text2 = "ace"
+//    输出：3
+//    解释：最长公共子序列是 "ace" ，它的长度为 3 。
+//    示例 2：
+//    输入：text1 = "abc", text2 = "abc"
+//    输出：3
+//    解释：最长公共子序列是 "abc" ，它的长度为 3 。
+//    示例 3：
+//    输入：text1 = "abc", text2 = "def"
+//    输出：0
+//    解释：两个字符串没有公共子序列，返回 0 。
+//    提示：
+//    1 <= text1.length, text2.length <= 1000
+//    text1 和 text2 仅由小写英文字符组成。
+//    注意：本题与主站 1143 题相同： https://leetcode-cn.com/problems/longest-common-subsequence/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/qJnOS7
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
+        let s1 = Array(text1)
+        let s2 = Array(text2)
+        var book = Array(repeating: Array(repeating: -1, count: s2.count), count: s1.count)
+        return longestCommonSubsequenceDP(s1, s2, 0, 0, &book)
+    }
+    // 从index1 index2开始的最长公共子序列
+    class func longestCommonSubsequenceDP(_ s1:[Character],_ s2:[Character],_ index1:Int,_ index2:Int,_ book: inout [[Int]]) -> Int {
+        if index1 == s1.count || index2 == s2.count {
+            return 0
+        }
+        if book[index1][index2] != -1 {
+            return book[index1][index2]
+        }else {
+            var len = 0
+            if s1[index1] == s2[index2] {
+                len = longestCommonSubsequenceDP(s1, s2, index1 + 1, index2 + 1, &book) + 1
+            }else {
+                len = max(longestCommonSubsequenceDP(s1, s2, index1 + 1, index2, &book), longestCommonSubsequenceDP(s1, s2, index1, index2 + 1, &book))
+            }
+            book[index1][index2] = len
+            return len
+        }
     }
     
+//    剑指 Offer II 032. 有效的变位词
+//    给定两个字符串 s 和 t ，编写一个函数来判断它们是不是一组变位词（字母异位词）。
+//    注意：若 s 和 t 中每个字符出现的次数都相同且字符顺序不完全相同，则称 s 和 t 互为变位词（字母异位词）。
+//    示例 1:
+//    输入: s = "anagram", t = "nagaram"
+//    输出: true
+//    示例 2:
+//    输入: s = "rat", t = "car"
+//    输出: false
+//    示例 3:
+//    输入: s = "a", t = "a"
+//    输出: false
+//    提示:
+//    1 <= s.length, t.length <= 5 * 104
+//    s and t 仅包含小写字母
+//    进阶: 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+//    注意：本题与主站 242 题相似（字母异位词定义不同）：https://leetcode-cn.com/problems/valid-anagram/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/dKk3P7
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isAnagram(_ s: String, _ t: String) -> Bool {
+        let ss = Array(s)
+        let tt = Array(t)
+        guard ss.count == tt.count else { return false }
+        var dic: [Character:Int] = [:]
+        var count = ss.count
+        for item in ss {
+            dic[item,default: 0] += 1
+        }
+        var eq = true
+        var i = 0
+        while i < tt.count {
+            let item = tt[i]
+            if eq && item != ss[i] {
+                eq = false
+            }
+            if let c = dic[item] {
+                count -= 1
+                dic[item] = c - 1
+                if c - 1 < 0{
+                    return false
+                }
+            }else {
+                return false
+            }
+            i += 1
+        }
+        return count == 0 && !eq
+    }
+//    剑指 Offer II 094. 最少回文分割
+//    给定一个字符串 s，请将 s 分割成一些子串，使每个子串都是回文串。
+//    返回符合要求的 最少分割次数 。
+//    示例 1：
+//    输入：s = "aab"
+//    输出：1
+//    解释：只需一次分割就可将 s 分割成 ["aa","b"] 这样两个回文子串。
+//    示例 2：
+//    输入：s = "a"
+//    输出：0
+//    示例 3：
+//    输入：s = "ab"
+//    输出：1
+//    提示：
+//    1 <= s.length <= 2000
+//    s 仅由小写英文字母组成
+//    注意：本题与主站 132 题相同： https://leetcode-cn.com/problems/palindrome-partitioning-ii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/omKAoA
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minCut(_ s: String) -> Int {
+        // 先全部整理成线段，再回溯选取
+        let array = Array(s)
+        var huiwenDic: [Int:[Int]] = [:]//l -> [r,r,r]
+        var i = 0
+        while i < array.count {
+            let huiArr1 = huiwenLen(array, i, i)
+            if !huiArr1.isEmpty {
+                for item in huiArr1 {
+                    let l = item[0]
+                    let r = item[1]
+                    var rArr = huiwenDic[l,default: []]
+                    rArr.append(r)
+                    huiwenDic[l] = rArr
+                }
+            }
+            let huiArr2 = huiwenLen(array, i, i + 1)
+            if !huiArr2.isEmpty {
+                for item in huiArr2 {
+                    let l = item[0]
+                    let r = item[1]
+                    var rArr = huiwenDic[l,default: []]
+                    rArr.append(r)
+                    huiwenDic[l] = rArr
+                }
+            }
+            i += 1
+        }
+        //回溯
+        var book: [Int:Int] = [:]
+        return minCutCount(array, huiwenDic, 0,&book) - 1
+    }
+    //从i开始的最少个数
+    class func minCutCount(_ array: [Character],_ huiwenDic:[Int:[Int]],_ i:Int,_ book: inout [Int:Int]) -> Int {
+        if i == array.count {
+//            print("\(path)")
+            return 0
+        }
+        if let count = book[i] {
+            return count
+        }
+        let rights = huiwenDic[i]!
+        var j = 0
+        var minCount = 0
+        while j < rights.count {
+            let r = rights[j]
+            let count = minCutCount(array, huiwenDic, r + 1, &book) + 1
+            if j == 0 {
+                minCount = count
+            }else {
+                minCount = min(minCount, count)
+            }
+            j += 1
+        }
+        book[i] = minCount
+        return minCount
+    }
+    
+    class func huiwenLen(_ s:[Character],_ left:Int,_ right: Int) -> [[Int]] {
+        var arr: [[Int]] = []
+        var l = left
+        var r = right
+        while l >= 0 && r < s.count && s[l] == s[r] {
+            arr.append([l,r])
+            r += 1
+            l -= 1
+        }
+        return arr
+    }
+    
+//    剑指 Offer II 093. 最长斐波那契数列
+//    如果序列 X_1, X_2, ..., X_n 满足下列条件，就说它是 斐波那契式 的：
+//    n >= 3
+//    对于所有 i + 2 <= n，都有 X_i + X_{i+1} = X_{i+2}
+//    给定一个严格递增的正整数数组形成序列 arr ，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回  0 。
+//    （回想一下，子序列是从原序列  arr 中派生出来的，它从 arr 中删掉任意数量的元素（也可以不删），而不改变其余元素的顺序。例如， [3, 5, 8] 是 [3, 4, 5, 6, 7, 8] 的一个子序列）
+//    示例 1：
+//    输入: arr = [1,2,3,4,5,6,7,8]
+//    输出: 5
+//    解释: 最长的斐波那契式子序列为 [1,2,3,5,8] 。
+//    示例 2：
+//    输入: arr = [1,3,7,11,12,14,18]
+//    输出: 3
+//    解释: 最长的斐波那契式子序列有 [1,11,12]、[3,11,14] 以及 [7,11,18] 。
+//    提示：
+//    3 <= arr.length <= 1000
+//    1 <= arr[i] < arr[i + 1] <= 10^9
+//    注意：本题与主站 873 题相同： https://leetcode-cn.com/problems/length-of-longest-fibonacci-subsequence/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/Q91FMA
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func lenLongestFibSubseq(_ arr: [Int]) -> Int {
+        var dic: [Int:Int] = [:]
+        var index = 0
+        while index < arr.count {
+            let num = arr[index]
+            dic[num] = index
+            index += 1
+        }
+        var res = 0
+        var book: [[Int]] = Array(repeating: Array(repeating: -1, count: arr.count), count: arr.count)
+        var i = 0
+        while i < arr.count {
+            var j = i + 1
+            while j < arr.count {
+                res = max(res,lenLongestFibSubseqHelper(arr, i, j, dic, &book, 2))
+                j += 1
+            }
+            i += 1
+        }
+        return res
+    }
+    
+//        1        2     3  4  5
+//     2 3 4 5   3 4 5  4
+//    3   4   5 5      5
+//   5
+    class func lenLongestFibSubseqHelper(_ arr: [Int],_ i:Int,_ j:Int,_ dic:[Int:Int],_ book: inout [[Int]],_ len: Int) -> Int {
+        if book[i][j] != -1 {
+            return book[i][j]
+        }
+        if let index = dic[arr[i] + arr[j]] {
+            let maxLen = lenLongestFibSubseqHelper(arr, j, index, dic, &book, len + 1)
+            book[i][j] = maxLen
+            return maxLen
+        }
+        return len < 3 ? 0 : len
+    }
+    
+//    剑指 Offer II 031. 最近最少使用缓存
+//    运用所掌握的数据结构，设计和实现一个  LRU (Least Recently Used，最近最少使用) 缓存机制 。
+//    实现 LRUCache 类：
+//    LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存
+//    int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+//    void put(int key, int value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
+//    示例：
+//    输入
+//    ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
+//    [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+//    输出
+//    [null, null, null, 1, null, -1, null, -1, 3, 4]
+//    解释
+//    LRUCache lRUCache = new LRUCache(2);
+//    lRUCache.put(1, 1); // 缓存是 {1=1}
+//    lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+//    lRUCache.get(1);    // 返回 1
+//    lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+//    lRUCache.get(2);    // 返回 -1 (未找到)
+//    lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+//    lRUCache.get(1);    // 返回 -1 (未找到)
+//    lRUCache.get(3);    // 返回 3
+//    lRUCache.get(4);    // 返回 4
+//    提示：
+//    1 <= capacity <= 3000
+//    0 <= key <= 10000
+//    0 <= value <= 105
+//    最多调用 2 * 105 次 get 和 put
+//    进阶：是否可以在 O(1) 时间复杂度内完成这两种操作？
+//    注意：本题与主站 146 题相同：https://leetcode-cn.com/problems/lru-cache/
+
+    /**
+     * Your LRUCache object will be instantiated and called as such:
+     * let obj = LRUCache(capacity)
+     * let ret_1: Int = obj.get(key)
+     * obj.put(key, value)
+     */
+
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/OrIXps
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class LRUCache {
+        class LRUCacheNode {
+            var prev:LRUCacheNode?
+            var next:LRUCacheNode?
+            var key:Int = 0
+            var val:Int = 0
+        }
+        var capacity:Int
+        var count = 0
+        var head: LRUCacheNode?
+        var tail: LRUCacheNode?
+        var hashMap: [Int:LRUCacheNode] = [:]
+        
+        init(_ capacity: Int) {
+            self.capacity = capacity
+        }
+        
+        func get(_ key: Int) -> Int {
+            if let node = hashMap[key] {
+                //置前
+                bringToFront(node)
+                return node.val
+            }
+            return -1
+        }
+        
+        func put(_ key: Int, _ value: Int) {
+            if let node = hashMap[key] {
+                node.val = value
+                //置前
+                bringToFront(node)
+            }else {
+                if capacity > 0 {
+                    //检查容量，删除最末尾
+                    if count == capacity {
+                        if count == 1 {
+                            hashMap.removeValue(forKey: head!.key)
+                            head = nil
+                            tail = nil
+                        }else {
+                            let last = tail!
+                            let prev = tail?.prev
+                            prev?.next = nil
+                            tail = prev
+                            hashMap.removeValue(forKey: last.key)
+                        }
+                        count -= 1
+                    }
+                    
+                    let newNode = LRUCacheNode()
+                    newNode.key = key
+                    newNode.val = value
+                    if count == 0 {
+                        //如果是第一个
+                        head = newNode
+                        tail = newNode
+                    }else {
+                        //插入最前
+                        head?.prev = newNode
+                        newNode.next = head
+                        head = newNode
+                    }
+                    hashMap[key] = newNode
+                    count += 1
+                }
+            }
+        }
+        
+        func bringToFront(_ node: LRUCacheNode) {
+            var headNode = head!
+            var curNode = node
+            if nodeAddress(&headNode) == nodeAddress(&curNode) {
+                return
+            }
+            var tailNode = tail!
+            let isTail = nodeAddress(&tailNode) == nodeAddress(&curNode)
+            
+            let prev = node.prev
+            let next = node.next
+            prev?.next = next
+            next?.prev = prev
+    
+            node.prev = nil
+            node.next = head
+            head?.prev = node
+            
+            head = node
+            
+            if isTail {
+                tail = prev
+            }
+        }
+        
+        func nodeAddress(_ node: inout LRUCacheNode) -> UInt {
+            return withUnsafePointer(to: &node) { UnsafeRawPointer($0)}.load(as: UInt.self)
+        }
+    }
+    
+//    剑指 Offer II 092. 翻转字符
+//    如果一个由 '0' 和 '1' 组成的字符串，是以一些 '0'（可能没有 '0'）后面跟着一些 '1'（也可能没有 '1'）的形式组成的，那么该字符串是 单调递增 的。
+//    我们给出一个由字符 '0' 和 '1' 组成的字符串 s，我们可以将任何 '0' 翻转为 '1' 或者将 '1' 翻转为 '0'。
+//    返回使 s 单调递增 的最小翻转次数。
+//    示例 1：
+//    输入：s = "00110"
+//    输出：1
+//    解释：我们翻转最后一位得到 00111.
+//    示例 2：
+//    输入：s = "010110"
+//    输出：2
+//    解释：我们翻转得到 011111，或者是 000111。
+//    示例 3：
+//    输入：s = "00011000"
+//    输出：2
+//    解释：我们翻转得到 00000000。
+//    提示：
+//    1 <= s.length <= 20000
+//    s 中只包含字符 '0' 和 '1'
+//    注意：本题与主站 926 题相同： https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/cyJERH
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minFlipsMonoIncr(_ s: String) -> Int {
+        //dp[n][0] = nums[0] == 0 最后一位是0的最小反转次数
+//                   = dp[n-1][0]
+//                   nums[0] == 1
+//                   == dp[n-1][0] + 1
+        //dp[n][1] nums[0] == 0 最后一位是1的最小反转次数
+//                = dp[n-1][1] + 1
+                    
+        let array = Array(s)
+        var dp = Array(repeating: [0,0], count: array.count)
+        dp[0][0] = array[0] == "0" ? 0 : 1
+        dp[0][1] = array[0] == "1" ? 0 : 1
+        var i = 1
+        while i < array.count {
+            let ch = array[i]
+            if ch == "0" {
+                dp[i][0] = dp[i-1][0]
+                dp[i][1] = min(dp[i-1][0] + 1, dp[i-1][1] + 1)
+            }else {
+                dp[i][0] = dp[i-1][0] + 1
+                dp[i][1] = min(dp[i-1][0], dp[i-1][1])
+            }
+            i += 1
+        }
+        return min(dp[i - 1][0], dp[i - 1][1])
+        //-------------
+        //错误
+//        let array = Array(s)
+//        var count0 = 0
+//        var count1 = 0
+//        var first1 = -1
+//        var last0 = -1
+//        var i = 0
+//        while i < array.count {
+//            let ch = array[i]
+//            if ch == "0" {
+//                count0 += 1
+//                last0 = i
+//            }else {
+//                count1 += 1
+//                if count1 == 1 {
+//                    first1 = i
+//                }
+//            }
+//            i += 1
+//        }
+//        //不用反转
+//        if count0 == 0 || count1 == 0 {
+//            return 0
+//        }
+//        //全反转另一个
+////        let all = min(count0, count1)
+//        //把第一个1之后的0都反转
+//        let fisrt = count0 - first1
+//        //把最后一个0之前的1都反转
+//        let last = count1 - (array.count - last0 - 1)
+//
+//        return min(last, fisrt)
+    }
+//    剑指 Offer II 091. 粉刷房子
+//    假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。
+//    当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。每个房子粉刷成不同颜色的花费是以一个 n x 3 的正整数矩阵 costs 来表示的。
+//    例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2] 表示第 1 号房子粉刷成绿色的花费，以此类推。
+//    请计算出粉刷完所有房子最少的花费成本。
+//    示例 1：
+//    输入: costs = [[17,2,17],[16,16,5],[14,3,19]]
+//    输出: 10
+//    解释: 将 0 号房子粉刷成蓝色，1 号房子粉刷成绿色，2 号房子粉刷成蓝色。
+//         最少花费: 2 + 5 + 3 = 10。
+//    示例 2：
+//    输入: costs = [[7,6,2]]
+//    输出: 2
+//    提示:
+//    costs.length == n
+//    costs[i].length == 3
+//    1 <= n <= 100
+//    1 <= costs[i][j] <= 20
+//    注意：本题与主站 256 题相同：https://leetcode-cn.com/problems/paint-house/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/JEj789
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minCost(_ costs: [[Int]]) -> Int {
+        //dp[n] = min(dp[n][0],dp[n][1],dp[n][2])
+        //dp[n][0] = min(dp[n-1][1],dp[n-1][2]) + cost[n][0]
+        var dp0 = costs[0][0]
+        var dp1 = costs[0][1]
+        var dp2 = costs[0][2]
+        var n = 1
+        while n < costs.count {
+            let cost = costs[n]
+            let t0 = min(dp1, dp2) + cost[0]
+            let t1 = min(dp0, dp2) + cost[1]
+            let t2 = min(dp0, dp1) + cost[2]
+            dp0 = t0
+            dp1 = t1
+            dp2 = t2
+            n += 1
+        }
+        return min(min(dp0, dp1), dp2)
+    }
 //    剑指 Offer II 030. 插入、删除和随机访问都是 O(1) 的容器
 //    设计一个支持在平均 时间复杂度 O(1) 下，执行以下操作的数据结构：
 //    insert(val)：当元素 val 不存在时返回 true ，并向集合中插入该项，否则返回 false 。
@@ -264,7 +933,8 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/FortPu
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class RandomizedSet {
-
+        var dic: [Int:Int] = [:] //val->index
+        var array: [Int] = []
         /** Initialize your data structure here. */
         init() {
 
@@ -272,17 +942,30 @@ import Foundation
         
         /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
         func insert(_ val: Int) -> Bool {
-
+            if dic.keys.contains(val) {
+                return false
+            }
+            array.append(val)
+            dic[val] = array.count - 1
+            return true
         }
         
         /** Removes a value from the set. Returns true if the set contained the specified element. */
         func remove(_ val: Int) -> Bool {
-
+            if let index = dic[val] {
+                let lastVal = array.last!
+                dic[lastVal] = index
+                dic.removeValue(forKey: val)
+                array[index] = lastVal
+                array.removeLast()
+                return true
+            }
+            return false
         }
         
         /** Get a random element from the set. */
         func getRandom() -> Int {
-
+            return array[Int.random(in: 0...(array.count - 1))]
         }
     }
     
