@@ -282,7 +282,315 @@ import Foundation
 //        print(groupAnagrams([""]))
 //        print(groupAnagrams(["a"]))
         //    剑指 Offer II 034. 外星语言是否排序
-        print(isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
+//        print(isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
+//        print(isAlienSorted(["word","world","row"], "worldabcefghijkmnpqstuvxyz"))
+//        print(isAlienSorted(["apple","app"], "abcdefghijklmnopqrstuvwxyz"))
+//        print(isAlienSorted(["xpzurqpjimcqjp","cpoymyvqrrkw","jhvxpqgq","escrktgzqpoze","tamdkoyacprfyj","tcgkdjerydm","czhzgfcvrmudxd","qwbegrhcavi","yvluklzflkjq","pwawsolwzognjx"], "xchaiwgovseknjuztmrydflqbp"))//false
+        
+        //    剑指 Offer II 096. 字符串交织
+//        print(isInterleave("aabcc", "dbbca", "aadbbcbcac"))//true
+//        print(isInterleave("aabcc", "dbbca", "aadbbbaccc"))//false
+//        print(isInterleave("", "", ""))//true
+//        print(isInterleave("bbbcc", "bbaccbbbabcacc", "bbbbacbcccbcbabbacc"))//false
+//        print(isInterleave("aabcc", "dbbca", "aadbbcbcac"))//true
+//        print(isInterleave("abababababababababababababababababababababababababababababababababababababababababababababababababbb", "babababababababababababababababababababababababababababababababababababababababababababababababaaaba", "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababbb"))
+        //    剑指 Offer II 035. 最小时间差
+//        print(findMinDifference(["23:59","00:00"]))//1
+//        print(findMinDifference(["00:00","23:59","00:00"]))//0
+        
+        //    剑指 Offer II 036. 后缀表达式
+//        print(evalRPN(["2","1","+","3","*"]))//9
+//        print(evalRPN(["4","13","5","/","+"]))//6
+//        print(evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]))//22
+        
+        //    剑指 Offer II 097. 子序列的数目
+//        print(numDistinct("rabbbit", "rabbit"))//3
+//        print(numDistinct("babgbag", "bag"))//5
+    }
+    
+//    剑指 Offer II 037. 小行星碰撞
+//    给定一个整数数组 asteroids，表示在同一行的小行星。
+//    对于数组中的每一个元素，其绝对值表示小行星的大小，正负表示小行星的移动方向（正表示向右移动，负表示向左移动）。每一颗小行星以相同的速度移动。
+//    找出碰撞后剩下的所有小行星。碰撞规则：两个行星相互碰撞，较小的行星会爆炸。如果两颗行星大小相同，则两颗行星都会爆炸。两颗移动方向相同的行星，永远不会发生碰撞。
+//    示例 1：
+//    输入：asteroids = [5,10,-5]
+//    输出：[5,10]
+//    解释：10 和 -5 碰撞后只剩下 10 。 5 和 10 永远不会发生碰撞。
+//    示例 2：
+//    输入：asteroids = [8,-8]
+//    输出：[]
+//    解释：8 和 -8 碰撞后，两者都发生爆炸。
+//    示例 3：
+//    输入：asteroids = [10,2,-5]
+//    输出：[10]
+//    解释：2 和 -5 发生碰撞后剩下 -5 。10 和 -5 发生碰撞后剩下 10 。
+//    示例 4：
+//    输入：asteroids = [-2,-1,1,2]
+//    输出：[-2,-1,1,2]
+//    解释：-2 和 -1 向左移动，而 1 和 2 向右移动。 由于移动方向相同的行星不会发生碰撞，所以最终没有行星发生碰撞。
+//    提示：
+//    2 <= asteroids.length <= 104
+//    -1000 <= asteroids[i] <= 1000
+//    asteroids[i] != 0
+//    注意：本题与主站 735 题相同： https://leetcode-cn.com/problems/asteroid-collision/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/XagZNi
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func asteroidCollision(_ asteroids: [Int]) -> [Int] {
+
+    }
+//    剑指 Offer II 097. 子序列的数目
+//    给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。
+//    字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，"ACE" 是 "ABCDE" 的一个子序列，而 "AEC" 不是）
+//    题目数据保证答案符合 32 位带符号整数范围。
+//    示例 1：
+//    输入：s = "rabbbit", t = "rabbit"
+//    输出：3
+//    解释：
+//    如下图所示, 有 3 种可以从 s 中得到 "rabbit" 的方案。
+//    rabbbit
+//    rabbbit
+//    rabbbit
+//    示例 2：
+//    输入：s = "babgbag", t = "bag"
+//    输出：5
+//    解释：
+//    如下图所示, 有 5 种可以从 s 中得到 "bag" 的方案。
+//    babgbag
+//    babgbag
+//    babgbag
+//    babgbag
+//    babgbag
+//    提示：
+//    0 <= s.length, t.length <= 1000
+//    s 和 t 由英文字母组成
+//    注意：本题与主站 115 题相同： https://leetcode-cn.com/problems/distinct-subsequences/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/21dk04
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func numDistinct(_ s: String, _ t: String) -> Int {
+        let ss = Array(s)
+        let tt = Array(t)
+        guard ss.count >= tt.count else { return 0}
+        var book = Array(repeating: Array(repeating: -1, count: tt.count), count: ss.count)
+        return numDistinct(ss, 0, tt, 0, &book)
+    }
+    class func numDistinct(_ s: [Character],_ i: Int,_ t: [Character],_ j: Int,_ book: inout [[Int]]) -> Int {
+        if j == t.count - 1 {
+            var res = 0
+            var k = i
+            while k < s.count {
+                if s[k] == t[j] {
+                    res += 1
+                }
+                k += 1
+            }
+            return res
+        }
+        if i == s.count {
+            return 0
+        }
+        
+        if book[i][j] != -1 {
+            return book[i][j]
+        }
+        
+        if s[i] == t[j] {
+            let count1 = numDistinct(s, i + 1, t, j, &book)
+            let count2 = numDistinct(s, i + 1, t, j + 1, &book)
+            book[i][j] = count1 + count2
+            return count1 + count2
+        }else {
+            let count = numDistinct(s, i + 1, t, j, &book)
+            book[i][j] = count
+            return count
+        }
+    }
+//    剑指 Offer II 036. 后缀表达式
+//    根据 逆波兰表示法，求该后缀表达式的计算结果。
+//    有效的算符包括 +、-、*、/ 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。
+//    说明：
+//    整数除法只保留整数部分。
+//    给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。
+//    示例 1：
+//    输入：tokens = ["2","1","+","3","*"]
+//    输出：9
+//    解释：该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9
+//    示例 2：
+//    输入：tokens = ["4","13","5","/","+"]
+//    输出：6
+//    解释：该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6
+//    示例 3：
+//    输入：tokens = ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
+//    输出：22
+//    解释：
+//    该算式转化为常见的中缀算术表达式为：
+//      ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+//    = ((10 * (6 / (12 * -11))) + 17) + 5
+//    = ((10 * (6 / -132)) + 17) + 5
+//    = ((10 * 0) + 17) + 5
+//    = (0 + 17) + 5
+//    = 17 + 5
+//    = 22
+//    提示：
+//    1 <= tokens.length <= 104
+//    tokens[i] 要么是一个算符（"+"、"-"、"*" 或 "/"），要么是一个在范围 [-200, 200] 内的整数
+//    逆波兰表达式：
+//    逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。
+//    平常使用的算式则是一种中缀表达式，如 ( 1 + 2 ) * ( 3 + 4 ) 。
+//    该算式的逆波兰表达式写法为 ( ( 1 2 + ) ( 3 4 + ) * ) 。
+//    逆波兰表达式主要有以下两个优点：
+//    去掉括号后表达式无歧义，上式即便写成 1 2 + 3 4 + * 也可以依据次序计算出正确结果。
+//    适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。
+//    注意：本题与主站 150 题相同： https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/8Zf90G
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func evalRPN(_ tokens: [String]) -> Int {
+        var array = tokens
+        return evalRPN1(&array)
+    }
+    
+    class func evalRPN1(_ tokens: inout [String]) -> Int {
+        if let last = tokens.last {
+            if last == "+" || last == "-" || last == "*" || last == "/" {
+                let op = tokens.removeLast()
+                let right = evalRPN1(&tokens)
+                let left = evalRPN1(&tokens)
+                var res = 0
+                switch op {
+                case "+":
+                    res = left + right
+                case "-":
+                    res = left - right
+                case "*":
+                    res = left * right
+                default:
+                    res = left / right
+                }
+                return res
+            }else {
+                return Int(tokens.removeLast())!
+            }
+        }
+        return 0
+    }
+    
+//    剑指 Offer II 035. 最小时间差
+//    给定一个 24 小时制（小时:分钟 "HH:MM"）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。
+//    示例 1：
+//    输入：timePoints = ["23:59","00:00"]
+//    输出：1
+//    示例 2：
+//    输入：timePoints = ["00:00","23:59","00:00"]
+//    输出：0
+//    提示：
+//    2 <= timePoints <= 2 * 104
+//    timePoints[i] 格式为 "HH:MM"
+//    注意：本题与主站 539 题相同： https://leetcode-cn.com/problems/minimum-time-difference/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/569nqc
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findMinDifference(_ timePoints: [String]) -> Int {
+        var array: [Int] = []
+        let hour24 = 60 * 24
+        for item in timePoints {
+            let arr = Array(item)
+            let time = arr[0].wholeNumberValue! * 600 + arr[1].wholeNumberValue! * 60 + arr[3].wholeNumberValue! * 10 + arr[4].wholeNumberValue!
+            array.append(time)
+        }
+        array.sort()
+        var minVal = hour24 - array.last! + array[0]
+        var i = 1
+        while i < array.count {
+            minVal = min(minVal, array[i] - array[i - 1])
+            i += 1
+        }
+        return minVal
+    }
+    
+//    剑指 Offer II 096. 字符串交织
+//    给定三个字符串 s1、s2、s3，请判断 s3 能不能由 s1 和 s2 交织（交错） 组成。
+//    两个字符串 s 和 t 交织 的定义与过程如下，其中每个字符串都会被分割成若干 非空 子字符串：
+//    s = s1 + s2 + ... + sn
+//    t = t1 + t2 + ... + tm
+//    |n - m| <= 1
+//    交织 是 s1 + t1 + s2 + t2 + s3 + t3 + ... 或者 t1 + s1 + t2 + s2 + t3 + s3 + ...
+//    提示：a + b 意味着字符串 a 和 b 连接。
+//    示例 1：
+//    输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
+//    输出：true
+//    示例 2：
+//    输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
+//    输出：false
+//    示例 3：
+//    输入：s1 = "", s2 = "", s3 = ""
+//    输出：true
+//    提示：
+//    0 <= s1.length, s2.length <= 100
+//    0 <= s3.length <= 200
+//    s1、s2、和 s3 都由小写英文字母组成
+//    注意：本题与主站 97 题相同： https://leetcode-cn.com/problems/interleaving-string/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/IY6buf
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isInterleave(_ s1: String, _ s2: String, _ s3: String) -> Bool {
+        let ss1 = Array(s1)
+        let ss2 = Array(s2)
+        let ss3 = Array(s3)
+        guard ss1.count + ss2.count == ss3.count else { return false }
+        if ss1.count == 0 && ss2.count == 0 && ss3.count == 0 {
+            return true
+        }
+        var book: [[Int]] = Array(repeating: Array(repeating: -1, count: ss2.count), count: ss1.count)
+        return isInterleaveBacktrace(ss1, 0, ss2, 0, ss3, 0,&book)
+    }
+    class func isInterleaveBacktrace(_ ss1:[Character],_ i1: Int,_ ss2:[Character],_ i2: Int,_ ss3:[Character],_ i3: Int,_ book: inout [[Int]]) -> Bool {
+        
+        if i1 == ss1.count {
+            var i = i2
+            var j = i3
+            while i < ss2.count {
+                if ss2[i] != ss3[j] {
+                    return false
+                }
+                i += 1
+                j += 1
+            }
+            return true
+        }
+        if i2 == ss2.count {
+            var i = i1
+            var j = i3
+            while i < ss1.count {
+                if ss1[i] != ss3[j] {
+                    return false
+                }
+                i += 1
+                j += 1
+            }
+            return true
+        }
+        if book[i1][i2] != -1 {
+            return book[i1][i2] == 1 ? true : false
+        }
+        
+        if ss1[i1] == ss3[i3] {
+            let flag = isInterleaveBacktrace(ss1, i1 + 1, ss2, i2, ss3, i3 + 1, &book)
+            if flag {
+                book[i1][i2] = 1
+                return true
+            }
+        }
+        if ss2[i2] == ss3[i3] {
+            let flag = isInterleaveBacktrace(ss1, i1, ss2, i2 + 1, ss3, i3 + 1, &book)
+            if flag {
+                book[i1][i2] = 1
+                return true
+            }
+        }
+        book[i1][i2] = 0
+        return false
     }
 //    剑指 Offer II 034. 外星语言是否排序
 //    某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。
@@ -309,6 +617,11 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/lwyVBB
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func isAlienSorted(_ words: [String], _ order: String) -> Bool {
+//        其他思路：
+//        1.遍历order 建立与正常字符的映射，比如  外星e-->正常b
+//        2.word替换为正常的字符
+//        3.直接比较 word[i] word[i-1]
+        
         guard words.count > 1 else { return true }
         let orders = Array(order)
         var book:[Character:Int] = [:]
@@ -327,24 +640,46 @@ import Foundation
         }
         
         i = 0
-        var j = 1
+        var start = 0
         while i < maxLen {
-            var cur: [Character] = wordArray[0]
-            var nextJ = j
+            var cur: [Character]?
+            var j = start
+            var iseq = false
             while j < wordArray.count {
-                let next = wordArray[j]
-                if i != cur.count && i == next.count {
-                    return false
-                }else if i != cur.count && i != next.count {
-                    if book[cur[i]]! > book[next[i]]! {
+                if cur == nil {
+                    cur = wordArray[j]
+                }else {
+                    let next = wordArray[j]
+                    if i != cur!.count && i == next.count {
                         return false
-                    }else if book[cur[i]]! == book[next[i]]! {
-                        nextJ = j
+                    }else if i != cur!.count && i != next.count {
+                        if book[cur![i]]! > book[next[i]]! {
+                            return false
+                        }else if book[cur![i]]! == book[next[i]]! {
+                            if !iseq {
+                                start = j - 1
+                                iseq = true
+                            }
+                        }else {
+                            if !iseq {
+                                start = j
+                            }
+                        }
+                    }else if i == cur!.count && i == next.count {
+                        if !iseq {
+                            start = j + 1
+                        }
+                    }else if i == cur!.count && i != next.count {
+                        if !iseq {
+                            start = j
+                        }
                     }
+                    cur = next
                 }
-                
-                cur = next
                 j += 1
+            }
+            if start == wordArray.count - 1 {
+                break
             }
             i += 1
         }
