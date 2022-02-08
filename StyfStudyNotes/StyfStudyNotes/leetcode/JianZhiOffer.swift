@@ -306,8 +306,59 @@ import Foundation
         //    剑指 Offer II 097. 子序列的数目
 //        print(numDistinct("rabbbit", "rabbit"))//3
 //        print(numDistinct("babgbag", "bag"))//5
+        
+        //    剑指 Offer II 037. 小行星碰撞
+//        print(asteroidCollision([5,10,-5]))//[5,10]
+//        print(asteroidCollision([8,-8]))//[]
+//        print(asteroidCollision([10,2,-5]))//[10]
+//        print(asteroidCollision([-2,-1,1,2]))//[-2,-1,1,2]
+//        print(asteroidCollision([-2,-2,1,-1]))//[-2,-2]
+//        print(asteroidCollision([1,-2,-2,-2]))//[-2,-2,-2]
     }
     
+//    剑指 Offer II 038. 每日温度
+//    请根据每日 气温 列表 temperatures ，重新生成一个列表，要求其对应位置的输出为：要想观测到更高的气温，至少需要等待的天数。如果气温在这之后都不会升高，请在该位置用 0 来代替。
+//    示例 1:
+//    输入: temperatures = [73,74,75,71,69,72,76,73]
+//    输出: [1,1,4,2,1,1,0,0]
+//    示例 2:
+//    输入: temperatures = [30,40,50,60]
+//    输出: [1,1,1,0]
+//    示例 3:
+//    输入: temperatures = [30,60,90]
+//    输出: [1,1,0]
+//    提示：
+//    1 <= temperatures.length <= 105
+//    30 <= temperatures[i] <= 100
+//    注意：本题与主站 739 题相同： https://leetcode-cn.com/problems/daily-temperatures/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/iIQa4I
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
+//        可以维护一个存储下标的单调栈，从栈底到栈顶的下标对应的温度列表中的温度依次递减。如果一个下标在单调栈里，则表示尚未找到下一次温度更高的下标。
+//        69 5
+//        71 4
+//        75 3
+        var res: [Int] = []
+        var stack: [Int] = []
+        for item in temperatures {
+            if stack.isEmpty {
+                stack.append(item)
+            }else {
+                var temp: [Int] = []
+                while !stack.isEmpty {
+                    let last = stack.last!
+                    var count = 0
+                    if item > last {
+                        count += 1
+                        temp.append(count)
+                    }
+                    
+                }
+            }
+        }
+        return res
+    }
 //    剑指 Offer II 037. 小行星碰撞
 //    给定一个整数数组 asteroids，表示在同一行的小行星。
 //    对于数组中的每一个元素，其绝对值表示小行星的大小，正负表示小行星的移动方向（正表示向右移动，负表示向左移动）。每一颗小行星以相同的速度移动。
@@ -337,7 +388,40 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/XagZNi
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func asteroidCollision(_ asteroids: [Int]) -> [Int] {
-
+        var res:[Int] = []
+        for item in asteroids {
+            if item > 0 {
+                res.append(item)
+            }else {
+                //如果是负数
+                if res.isEmpty {
+                    res.append(item)
+                }else {
+                    while !res.isEmpty {
+                        let last = res.last!
+                        if last < 0 {
+                            //上一个也是负数，直接添加
+                            res.append(item)
+                            break
+                        }else {
+                            if last > -item {//自己炸了
+                                break
+                            }else if last < -item {
+                                res.removeLast()//上一个炸了
+                                if res.isEmpty {
+                                    res.append(item)//胜出了
+                                    break
+                                }
+                            }else {
+                                res.removeLast()//一起炸了
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return res
     }
 //    剑指 Offer II 097. 子序列的数目
 //    给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。
