@@ -314,6 +314,1547 @@ import Foundation
 //        print(asteroidCollision([-2,-1,1,2]))//[-2,-1,1,2]
 //        print(asteroidCollision([-2,-2,1,-1]))//[-2,-2]
 //        print(asteroidCollision([1,-2,-2,-2]))//[-2,-2,-2]
+        
+//        print(climbStairs(1))
+        
+        //    剑指 Offer II 038. 每日温度
+//        print(dailyTemperatures([73,74,75,71,69,72,76,73]))//[1, 1, 4, 2, 1, 1, 0, 0]
+//        print(dailyTemperatures([30,40,50,60]))//[1,1,1,0]
+//        print(dailyTemperatures([30,60,90]))//[1,1,0]
+        
+        //    剑指 Offer II 039. 直方图最大矩形面积
+//        print(largestRectangleArea([2,1,5,6,2,3]))//10
+//        print(largestRectangleArea([2,4]))//4
+//        print(largestRectangleArea([2,1,2]))//3
+        
+        //    剑指 Offer II 040. 矩阵中最大的矩形
+//        print(maximalRectangle(["10100","10111","11111","10010"]))
+        
+        //    剑指 Offer II 099. 最小路径之和
+//        print(minPathSum([[1,3,1],[1,5,1],[4,2,1]]))
+//        print(minPathSum([[1,2,3],[4,5,6]]))
+        
+        //    剑指 Offer II 100. 三角形中最小路径之和
+//        print(minimumTotal([[2],[3,4],[6,5,7],[4,1,8,3]]))
+//        print(minimumTotal([[-10]]))
+        
+        //    剑指 Offer II 101. 分割等和子集
+//        print(canPartition([1,5,11,5]))
+//        print(canPartition([1,2,3,5]))
+//        print(canPartition([1,2,5]))
+        //    剑指 Offer II 102. 加减的目标值
+//        print(findTargetSumWays([1,1,1,1,1], 3))
+//        print(findTargetSumWays([1], 1))
+//        print(findTargetSumWays([0,0,0,0,0,0,0,0,1], 1))
+        
+        //    剑指 Offer II 059. 数据流的第 K 大数值
+//        let a = KthLargest(3, [4, 5, 8, 2])
+//        print(a.add(3))
+//        print(a.add(5))
+//        print(a.add(10))
+//        print(a.add(9))
+//        print(a.add(4))
+//        剑指 Offer II 068. 查找插入位置
+//        print(searchInsert([1,3,5,6], 5))//2
+//        print(searchInsert([1,3,5,6], 2))//1
+//        print(searchInsert([1,3,5,6], 7))//4
+//        print(searchInsert([1,3,5,6], 0))//0
+//        print(searchInsert([1], 0))//0
+        
+        //    剑指 Offer II 072. 求平方根
+//        print(mySqrt(4))//2
+//        print(mySqrt(8))//2
+//        print(mySqrt(2))//1
+//        print(mySqrt(3))//1
+        
+        //    剑指 Offer II 103. 最少的硬币数目
+//        print(coinChange([1, 2, 5], 11))//3
+//        print(coinChange([2], 3))//-1
+//        print(coinChange([1], 0))//0
+//        print(coinChange([1], 1))//1
+//        print(coinChange([1], 2))//2
+        
+        //    剑指 Offer II 104. 排列的数目
+//        print(combinationSum4([10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,610,620,630,640,650,660,670,680,690,700,710,720,730,740,750,760,770,780,790,800,810,820,830,840,850,860,870,880,890,900,910,920,930,940,950,960,970,980,990,111], 999))
+        
+//    剑指 Offer II 105. 岛屿的最大面积
+//        print(maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]))
+//        print(maxAreaOfIsland([[0,0,0,0,0,0,0,0]]))
+        
+        //    剑指 Offer II 106. 二分图
+//        print(isBipartite([[1,2,3],[0,2],[0,1,3],[0,2]]))//false
+//        print(isBipartite([[1,3],[0,2],[1,3],[0,2]]))//true
+//        print(isBipartite([[3],[2,4],[1],[0,4],[1,3]]))//true
+//        print(isBipartite([[2,4],[2,3,4],[0,1],[1],[0,1],[7],[9],[5],[],[6],[12,14],[],[10],[],[10],[19],[18],[],[16],[15],[23],[23],[],[20,21],[],[],[27],[26],[],[],[34],[33,34],[],[31],[30,31],[38,39],[37,38,39],[36],[35,36],[35,36],[43],[],[],[40],[],[49],[47,48,49],[46,48,49],[46,47,49],[45,46,47,48]]))
+        
+        //    剑指 Offer II 043. 往完全二叉树添加节点
+//        let node = TreeTest.deserialize("[1,2,3,4,5,6]")
+//        let n = CBTInserter(node)
+//        print(n.insert(7))
+//        print(n.insert(8))
+//
+        //    剑指 Offer II 107. 矩阵中的距离
+//        print(updateMatrix([[0,0,0],[0,1,0],[1,1,1]]))
+    }
+//    剑指 Offer II 047. 二叉树剪枝
+//    给定一个二叉树 根节点 root ，树的每个节点的值要么是 0，要么是 1。请剪除该二叉树中所有节点的值为 0 的子树。
+//    节点 node 的子树为 node 本身，以及所有 node 的后代。
+//    示例 1:
+//    输入: [1,null,0,0,1]
+//    输出: [1,null,0,null,1]
+//    解释:
+//    只有红色节点满足条件“所有不包含 1 的子树”。
+//    右图为返回的答案。
+//    示例 2:
+//    输入: [1,0,1,0,0,0,1]
+//    输出: [1,null,1,null,1]
+//    解释:
+//    示例 3:
+//    输入: [1,1,0,1,1,0,1,0]
+//    输出: [1,1,0,1,1,null,1]
+//    解释:
+//    提示:
+//    二叉树的节点个数的范围是 [1,200]
+//    二叉树节点的值只会是 0 或 1
+//    注意：本题与主站 814 题相同：https://leetcode-cn.com/problems/binary-tree-pruning/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/pOCWxh
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func pruneTree(_ root: TreeNode?) -> TreeNode? {
+
+    }
+//    剑指 Offer II 046. 二叉树的右侧视图
+//    给定一个二叉树的 根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+//    示例 1:
+//    输入: [1,2,3,null,5,null,4]
+//    输出: [1,3,4]
+//    示例 2:
+//    输入: [1,null,3]
+//    输出: [1,3]
+//    示例 3:
+//    输入: []
+//    输出: []
+//    提示:
+//    二叉树的节点个数的范围是 [0,100]
+//    -100 <= Node.val <= 100
+//    注意：本题与主站 199 题相同：https://leetcode-cn.com/problems/binary-tree-right-side-view/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/WNC0Lk
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func rightSideView(_ root: TreeNode?) -> [Int] {
+        guard let node = root else { return [] }
+        var stack: [TreeNode] = [node]
+        var res: [Int] = []
+        while !stack.isEmpty {
+            let size = stack.count
+            var i = 0
+            while i < size {
+                let node = stack.removeFirst()
+                if i == size - 1 {
+                    res.append(node.val)
+                }
+                if let left = node.left {
+                    stack.append(left)
+                }
+                if let right = node.right {
+                    stack.append(right)
+                }
+                i += 1
+            }
+        }
+        return res
+    }
+    
+//    剑指 Offer II 045. 二叉树最底层最左边的值
+//    给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。
+//    假设二叉树中至少有一个节点。
+//    示例 1:
+//    输入: root = [2,1,3]
+//    输出: 1
+//    示例 2:
+//    输入: [1,2,3,4,null,5,6,null,null,7]
+//    输出: 7
+//    提示:
+//    二叉树的节点个数的范围是 [1,104]
+//    -231 <= Node.val <= 231 - 1
+//    注意：本题与主站 513 题相同： https://leetcode-cn.com/problems/find-bottom-left-tree-value/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/LwUNpT
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findBottomLeftValue(_ root: TreeNode?) -> Int {
+        var stack = [root!]
+        var bootomLeft = root!.val
+        while !stack.isEmpty {
+            let size = stack.count
+            var i = 0
+            while i < size {
+                let node = stack.removeFirst()
+                if i == 0 {
+                    bootomLeft = node.val
+                }
+                if let left = node.left {
+                    stack.append(left)
+                }
+                if let right = node.right {
+                    stack.append(right)
+                }
+                i += 1
+            }
+        }
+        return bootomLeft
+    }
+//    剑指 Offer II 044. 二叉树每层的最大值
+//    给定一棵二叉树的根节点 root ，请找出该二叉树中每一层的最大值。
+//    示例1：
+//    输入: root = [1,3,2,5,3,null,9]
+//    输出: [1,3,9]
+//    解释:
+//              1
+//             / \
+//            3   2
+//           / \   \
+//          5   3   9
+//    示例2：
+//    输入: root = [1,2,3]
+//    输出: [1,3]
+//    解释:
+//              1
+//             / \
+//            2   3
+//    示例3：
+//    输入: root = [1]
+//    输出: [1]
+//    示例4：
+//    输入: root = [1,null,2]
+//    输出: [1,2]
+//    解释:
+//               1
+//                \
+//                 2
+//    示例5：
+//    输入: root = []
+//    输出: []
+//    提示：
+//    二叉树的节点个数的范围是 [0,104]
+//    -231 <= Node.val <= 231 - 1
+//    注意：本题与主站 515 题相同： https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/hPov7L
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func largestValues(_ root: TreeNode?) -> [Int] {
+        guard let node = root else { return [] }
+        var stack: [TreeNode] = [node]
+        var temp: [TreeNode] = []
+        var res: [Int] = []
+        var maxVal = Int.min
+        while !stack.isEmpty {
+            let n = stack.removeLast()
+            maxVal = max(maxVal,n.val)
+            if let left = n.left {
+                temp.append(left)
+            }
+            if let right = n.right {
+                temp.append(right)
+            }
+            if stack.isEmpty {
+                res.append(maxVal)
+                maxVal = Int.min
+                stack = temp
+                temp = []
+            }
+        }
+        return res
+    }
+//    剑指 Offer II 107. 矩阵中的距离
+//    给定一个由 0 和 1 组成的矩阵 mat ，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。
+//    两个相邻元素间的距离为 1 。
+//    示例 1：
+//    输入：mat = [[0,0,0],[0,1,0],[0,0,0]]
+//    输出：[[0,0,0],[0,1,0],[0,0,0]]
+//    示例 2：
+//    输入：mat = [[0,0,0],
+//                [0,1,0],
+//                [1,1,1]]
+//    输出：[[0,0,0],[0,1,0],[1,2,1]]
+//    提示：
+//    m == mat.length
+//    n == mat[i].length
+//    1 <= m, n <= 104
+//    1 <= m * n <= 104
+//    mat[i][j] is either 0 or 1.
+//    mat 中至少有一个 0
+//    注意：本题与主站 542 题相同：https://leetcode-cn.com/problems/01-matrix/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/2bCMpM
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func updateMatrix(_ mat: [[Int]]) -> [[Int]] {
+        var res = Array(repeating: Array(repeating: -1, count: mat[0].count), count: mat.count)
+        var queue: [[Int]] = []
+        var i = 0
+        while i < mat.count {
+            var j = 0
+            while j < mat[0].count {
+                let num = mat[i][j]
+                if num == 0 {
+                    queue.append([i,j])
+                    res[i][j] = 0
+                }
+                j += 1
+            }
+            i += 1
+        }
+        var temp: [[Int]] = []
+        var step = 1
+        let steps = [[0,1],[0,-1],[1,0],[-1,0]]
+        while !queue.isEmpty {
+            let a = queue.removeLast()
+            for item in steps {
+                let ii = item[0] + a[0]
+                let jj = item[1] + a[1]
+                if ii >= 0 && ii < mat.count && jj >= 0 && jj < mat[0].count && res[ii][jj] == -1 {//没访问过
+                    res[ii][jj] = step
+                    temp.append([ii,jj])
+                }
+            }
+            if queue.isEmpty && !temp.isEmpty {
+                step += 1
+                queue = temp
+                temp = []
+            }
+        }
+        return res
+    }
+    
+//    剑指 Offer II 043. 往完全二叉树添加节点
+//    完全二叉树是每一层（除最后一层外）都是完全填充（即，节点数达到最大，第 n 层有 2^(n-1) 个节点）的，并且所有的节点都尽可能地集中在左侧。
+//    设计一个用完全二叉树初始化的数据结构 CBTInserter，它支持以下几种操作：
+//    CBTInserter(TreeNode root) 使用根节点为 root 的给定树初始化该数据结构；
+//    CBTInserter.insert(int v)  向树中插入一个新节点，节点类型为 TreeNode，值为 v 。使树保持完全二叉树的状态，并返回插入的新节点的父节点的值；
+//    CBTInserter.get_root() 将返回树的根节点。
+//    示例 1：
+//    输入：inputs = ["CBTInserter","insert","get_root"], inputs = [[[1]],[2],[]]
+//    输出：[null,1,[1,2]]
+//    示例 2：
+//    输入：inputs = ["CBTInserter","insert","insert","get_root"], inputs = [[[1,2,3,4,5,6]],[7],[8],[]]
+//    输出：[null,3,4,[1,2,3,4,5,6,7,8]]
+//    提示：
+//    最初给定的树是完全二叉树，且包含 1 到 1000 个节点。
+//    每个测试用例最多调用 CBTInserter.insert  操作 10000 次。
+//    给定节点或插入节点的每个值都在 0 到 5000 之间。
+//    注意：本题与主站 919 题相同： https://leetcode-cn.com/problems/complete-binary-tree-inserter/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/NaqhDT
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class CBTInserter {
+        var root: TreeNode?
+        var deep: Int = 0
+        var lastFathers: [TreeNode?] = []
+        var lastChildren: [TreeNode?] = []
+        init(_ root: TreeNode?) {
+            self.root = root
+            deep = 1
+            var queue: [TreeNode] = [root!]
+            lastChildren = queue
+            var temp: [TreeNode] = []
+            while !queue.isEmpty {
+                let node = queue.removeFirst()
+                if let left = node.left {
+                    temp.append(left)
+                }
+                if let right = node.right {
+                    temp.append(right)
+                }
+                if queue.isEmpty {
+                    if !temp.isEmpty {
+                        lastFathers = lastChildren
+                        lastChildren = temp
+                        queue = temp
+                        deep += 1
+                        temp = []
+                    }
+                }
+            }
+        }
+        
+        func insert(_ v: Int) -> Int {
+            if Int(pow(2.0, Double(deep - 1))) == lastChildren.count {
+                //当前是满树
+                let father = lastChildren[0]
+                father?.left = TreeNode(v)
+                lastFathers = lastChildren
+                lastChildren = [father?.left]
+                deep += 1
+                return father!.val
+            }else {
+                let index = lastChildren.count
+                let putLeft = index % 2 == 0 ? true : false
+                let fatherIndex = index / 2
+                let father = lastFathers[fatherIndex]
+                let node = TreeNode(v)
+                if putLeft {
+                    father?.left = node
+                }else {
+                    father?.right = node
+                }
+                lastChildren.append(node)
+                return father!.val
+            }
+        }
+        
+        func get_root() -> TreeNode? {
+            return root
+        }
+    }
+    
+//    剑指 Offer II 106. 二分图
+//    存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。
+//    给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：
+//    不存在自环（graph[u] 不包含 u）。
+//    不存在平行边（graph[u] 不包含重复值）。
+//    如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图）
+//    这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。
+//    二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，一个来自 B 集合，就将这个图称为 二分图 。
+//    如果图是二分图，返回 true ；否则，返回 false 。
+//    示例 1：
+//    输入：graph = [[1,2,3],[0,2],[0,1,3],[0,2]]
+//    输出：false
+//    解释：不能将节点分割成两个独立的子集，以使每条边都连通一个子集中的一个节点与另一个子集中的一个节点。
+//    示例 2：
+//    输入：graph = [[1,3],[0,2],[1,3],[0,2]]
+//    输出：true
+//    解释：可以将节点分成两组: {0, 2} 和 {1, 3} 。
+//    提示：
+//    graph.length == n
+//    1 <= n <= 100
+//    0 <= graph[u].length < n
+//    0 <= graph[u][i] <= n - 1
+//    graph[u] 不会包含 u
+//    graph[u] 的所有值 互不相同
+//    如果 graph[u] 包含 v，那么 graph[v] 也会包含 u
+//    注意：本题与主站 785 题相同： https://leetcode-cn.com/problems/is-graph-bipartite/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/vEAB3K
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func isBipartite(_ graph: [[Int]]) -> Bool {
+        //DFS
+        var A = Set<Int>()
+        var B = Set<Int>()
+        var stack: [Int] = []
+        var i = 0
+        while i < graph.count {
+            if !A.contains(i) && !B.contains(i) {//这是一个没有分组的点
+                if stack.isEmpty {
+                    if i == 0 {
+                        A.insert(i)
+                    }else {
+                        B.insert(i)//保证肯定分开放
+                    }
+                    stack.append(i)
+                }
+                while !stack.isEmpty {
+                    let last = stack.removeLast()
+                    let lastInA = A.contains(last)
+                    for item in graph[last] {
+                        if (lastInA && A.contains(item)) || (!lastInA && B.contains(item)) {
+                            //有一个校验不通过就是不能放
+                            return false
+                        }else {
+                            if lastInA && !B.contains(item) {
+                                B.insert(item)
+                                stack.append(item)
+                            }else if !lastInA && !A.contains(item) {
+                                A.insert(item)
+                                stack.append(item)
+                            }
+                        }
+                    }
+                }
+            }
+            i += 1
+        }
+        return true
+        
+        //回溯放置 超时
+//        let A: [Int: Int] = [:]
+//        let B: [Int: Int] = [:]
+//        var array = [A,B]
+//        return isBipartiteBack(graph, 0, &array)
+    }
+    
+    class func isBipartiteBack(_ graph: [[Int]],_ index: Int,_ array: inout [[Int: Int]]) -> Bool {
+        if index == graph.count {
+            return true
+        }
+        var i = 0
+        while i < array.count {
+            if index == 0 && i == 1 {
+                break;
+            }
+            var curDic = array[i]
+            let otherIndex = i == 0 ? i + 1 : i - 1
+            var otherDic = array[otherIndex]
+            var canPut = true
+            if otherDic[index] != nil {//index不能放
+                canPut = false
+            }
+            if canPut {
+                for item in graph[index] {
+                    if curDic[item] != nil {
+                        canPut = false//有子元素不能放
+                        break
+                    }
+                }
+            }
+            if canPut {//都能放
+                curDic[index,default: 0] += 1
+                for item in graph[index] {
+                    otherDic[item,default: 0] += 1
+                }
+                array[i] = curDic
+                array[otherIndex] = otherDic
+                //验证下一个
+                let res = isBipartiteBack(graph, index + 1, &array)
+                if res {
+                    return res
+                }
+                //回溯
+                curDic[index,default: 0] -= 1
+                if curDic[index] == 0 {
+                    curDic.removeValue(forKey: index)
+                }
+                for item in graph[index] {
+                    otherDic[item,default: 0] -= 1
+                    if otherDic[item] == 0 {
+                        otherDic.removeValue(forKey: item)
+                    }
+                }
+                array[i] = curDic
+                array[otherIndex] = otherDic
+            }
+            i += 1
+        }
+        return false
+    }
+//    剑指 Offer II 042. 最近请求次数
+//    写一个 RecentCounter 类来计算特定时间范围内最近的请求。
+//    请实现 RecentCounter 类：
+//    RecentCounter() 初始化计数器，请求数为 0 。
+//    int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。
+//    保证 每次对 ping 的调用都使用比之前更大的 t 值。
+//    示例：
+//    输入：
+//    inputs = ["RecentCounter", "ping", "ping", "ping", "ping"]
+//    inputs = [[], [1], [100], [3001], [3002]]
+//    输出：
+//    [null, 1, 2, 3, 3]
+//    解释：
+//    RecentCounter recentCounter = new RecentCounter();
+//    recentCounter.ping(1);     // requests = [1]，范围是 [-2999,1]，返回 1
+//    recentCounter.ping(100);   // requests = [1, 100]，范围是 [-2900,100]，返回 2
+//    recentCounter.ping(3001);  // requests = [1, 100, 3001]，范围是 [1,3001]，返回 3
+//    recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002]，范围是 [2,3002]，返回 3
+//    提示：
+//    1 <= t <= 109
+//    保证每次对 ping 调用所使用的 t 值都 严格递增
+//    至多调用 ping 方法 104 次
+//    注意：本题与主站 933 题相同： https://leetcode-cn.com/problems/number-of-recent-calls/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/H8086Q
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class RecentCounter {
+        class RecentCounterNode {
+            var next: RecentCounterNode?
+            var val: Int = 0
+            init(_ val: Int) {
+                self.val = val
+            }
+        }
+        var head: RecentCounterNode?
+        var tail: RecentCounterNode?
+        var count = 0
+        
+        init() {
+
+        }
+        
+        func ping(_ t: Int) -> Int {
+            while count > 0 && head!.val < (t - 3000) {
+                head = head?.next
+                count -= 1
+            }
+            
+            if count == 0 {
+                head = RecentCounterNode(t)
+                tail = head
+                count += 1
+                return count
+            }
+            
+            tail?.next = RecentCounterNode(t)
+            tail = tail?.next
+            count += 1
+            return count
+        }
+    }
+    
+//    剑指 Offer II 041. 滑动窗口的平均值
+//    给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。
+//    实现 MovingAverage 类：
+//    MovingAverage(int size) 用窗口大小 size 初始化对象。
+//    double next(int val) 成员函数 next 每次调用的时候都会往滑动窗口增加一个整数，请计算并返回数据流中最后 size 个值的移动平均值，即滑动窗口里所有数字的平均值。
+//    示例：
+//    输入：
+//    inputs = ["MovingAverage", "next", "next", "next", "next"]
+//    inputs = [[3], [1], [10], [3], [5]]
+//    输出：
+//    [null, 1.0, 5.5, 4.66667, 6.0]
+//    解释：
+//    MovingAverage movingAverage = new MovingAverage(3);
+//    movingAverage.next(1); // 返回 1.0 = 1 / 1
+//    movingAverage.next(10); // 返回 5.5 = (1 + 10) / 2
+//    movingAverage.next(3); // 返回 4.66667 = (1 + 10 + 3) / 3
+//    movingAverage.next(5); // 返回 6.0 = (10 + 3 + 5) / 3
+//    提示：
+//    1 <= size <= 1000
+//    -105 <= val <= 105
+//    最多调用 next 方法 104 次
+//    注意：本题与主站 346 题相同： https://leetcode-cn.com/problems/moving-average-from-data-stream/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/qIsx9U
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class MovingAverage {
+        class MovingAverageNode {
+            var next: MovingAverageNode?
+            var val: Int = 0
+            init(_ val: Int) {
+                self.val = val
+            }
+        }
+        var avg: Double = 0
+        var size: Int
+        var count = 0
+        var head: MovingAverageNode?
+        var tail: MovingAverageNode?
+        
+        /** Initialize your data structure here. */
+        init(_ size: Int) {
+            self.size = size
+        }
+        
+        func next(_ val: Int) -> Double {
+            if count == 0 {
+                head = MovingAverageNode(val)
+                tail = head
+                count += 1
+                avg = Double(val)
+                return Double(val)
+            }
+            var sum = avg * Double(count)
+            if count == size {
+                sum -= Double(head!.val)
+                head = head?.next
+                count -= 1
+            }
+            tail?.next = MovingAverageNode(val)
+            tail = tail?.next
+            sum += Double(val)
+            count += 1
+            avg = sum / Double(count)
+            return avg
+        }
+    }
+//    剑指 Offer II 105. 岛屿的最大面积
+//    给定一个由 0 和 1 组成的非空二维数组 grid ，用来表示海洋岛屿地图。
+//    一个 岛屿 是由一些相邻的 1 (代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。你可以假设 grid 的四个边缘都被 0（代表水）包围着。
+//    找到给定的二维数组中最大的岛屿面积。如果没有岛屿，则返回面积为 0 。
+//    示例 1:
+//    输入: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+//    输出: 6
+//    解释: 对于上面这个给定矩阵应返回 6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。
+//    示例 2:
+//    输入: grid = [[0,0,0,0,0,0,0,0]]
+//    输出: 0
+//    提示：
+//    m == grid.length
+//    n == grid[i].length
+//    1 <= m, n <= 50
+//    grid[i][j] is either 0 or 1
+//    注意：本题与主站 695 题相同： https://leetcode-cn.com/problems/max-area-of-island/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/ZL6zAn
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func maxAreaOfIsland(_ grid: [[Int]]) -> Int {
+        var grid1 = grid
+        var res = 0
+        let steps = [(0,1),(0,-1),(1,0),(-1,0)]
+        var stack: [(Int,Int)] = []
+        var i = 0
+        while i < grid1.count {
+            var j = 0
+            while j < grid1[0].count {
+                let num = grid1[i][j]
+                var temp = 0
+                if num == 1 {
+                    temp = 1
+                    grid1[i][j] = 0
+                    stack.append((i,j))
+                }
+                while !stack.isEmpty {
+                    let num = stack.removeLast()
+                    for step in steps {
+                        let newI = num.0 + step.0
+                        let newJ = num.1 + step.1
+                        if newI >= 0 && newI < grid1.count && newJ >= 0 && newJ < grid1[0].count && grid1[newI][newJ] == 1 {
+                            temp += 1
+                            grid1[newI][newJ] = 0
+                            stack.append((newI,newJ))
+                        }
+                    }
+                }
+                res = max(res,temp)
+                j += 1
+            }
+            i += 1
+        }
+        return res
+    }
+    
+    class func mergeTwoLists(_ list1: ListNode?, _ list2: ListNode?) -> ListNode? {
+        if list1 == nil {
+            return list2
+        }
+        if list2 == nil {
+            return list1
+        }
+        var n1 = list1
+        var n2 = list2
+        var head:ListNode? = nil
+        var cur:ListNode? = nil
+        while n1 != nil || n2 != nil {
+            if n1 == nil && n2 != nil {
+                cur?.next = n2
+                break
+            }else if n2 == nil && n1 != nil {
+                cur?.next = n1
+                break
+            }else {
+                if head == nil {
+                    if n1!.val < n2!.val {
+                        head = n1
+                        n1 = n1?.next
+                        head?.next = nil
+                    }else {
+                        head = n2
+                        n2 = n2?.next
+                        head?.next = nil
+                    }
+                    cur = head
+                }else {
+                    if n1!.val < n2!.val {
+                        cur?.next = n1
+                        n1 = n1?.next
+                        cur = cur?.next
+                    }else {
+                        cur?.next = n2
+                        n2 = n2?.next
+                        cur = cur?.next
+                    }
+                    cur?.next = nil
+                }
+            }
+        }
+        return head
+    }
+    
+//    剑指 Offer II 104. 排列的数目
+//    给定一个由 不同 正整数组成的数组 nums ，和一个目标整数 target 。请从 nums 中找出并返回总和为 target 的元素组合的个数。数组中的数字可以在一次排列中出现任意次，但是顺序不同的序列被视作不同的组合。
+//    题目数据保证答案符合 32 位整数范围。
+//    示例 1：
+//    输入：nums = [1,2,3], target = 4
+//    输出：7
+//    解释：
+//    所有可能的组合为：
+//    (1, 1, 1, 1)
+//    (1, 1, 2)
+//    (1, 2, 1)
+//    (1, 3)
+//    (2, 1, 1)
+//    (2, 2)
+//    (3, 1)
+//    请注意，顺序不同的序列被视作不同的组合。
+//    示例 2：
+//    输入：nums = [9], target = 3
+//    输出：0
+//    提示：
+//    1 <= nums.length <= 200
+//    1 <= nums[i] <= 1000
+//    nums 中的所有元素 互不相同
+//    1 <= target <= 1000
+//    进阶：如果给定的数组中含有负数会发生什么？问题会产生何种变化？如果允许负数出现，需要向题目中添加哪些限制条件？
+//    注意：本题与主站 377 题相同：https://leetcode-cn.com/problems/combination-sum-iv/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/D0F0SV
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func combinationSum4(_ nums: [Int], _ target: Int) -> Int {
+        //dp[k] = sum(dp[k-num1]...)
+        //dp[0] = 1
+        var dp = Array(repeating: 0, count: target + 1)
+        dp[0] = 1
+        var i = 0
+        while i <= target {
+            for num in nums {
+                if i - num >= 0 && dp[i - num] < Int.max - dp[i]{
+                    dp[i] += dp[i - num]
+                }
+            }
+            i += 1
+        }
+        return dp[target]
+    }
+    
+//    剑指 Offer II 103. 最少的硬币数目
+//    给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
+//    你可以认为每种硬币的数量是无限的。
+//    示例 1：
+//    输入：coins = [1, 2, 5], amount = 11
+//    输出：3
+//    解释：11 = 5 + 5 + 1
+//    示例 2：
+//    输入：coins = [2], amount = 3
+//    输出：-1
+//    示例 3：
+//    输入：coins = [1], amount = 0
+//    输出：0
+//    示例 4：
+//    输入：coins = [1], amount = 1
+//    输出：1
+//    示例 5：
+//    输入：coins = [1], amount = 2
+//    输出：2
+//    提示：
+//    1 <= coins.length <= 12
+//    1 <= coins[i] <= 231 - 1
+//    0 <= amount <= 104
+//    注意：本题与主站 322 题相同： https://leetcode-cn.com/problems/coin-change/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/gaM7Ch
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func coinChange(_ coins: [Int], _ amount: Int) -> Int {
+        //dp[n] = min(dp[n - num1]...) + 1
+        //dp[0] = 0
+        //dp[num1...] = 1
+        var dp = Array(repeating: amount + 1, count: amount + 1)
+        dp[0] = 0
+        var i = 1
+        while i <= amount {
+            var j = 0
+            while j < coins.count {
+                if i - coins[j] >= 0 {
+                    dp[i] = min(dp[i], dp[i - coins[j]] + 1)
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return dp[amount] > amount ? -1: dp[amount] 
+    }
+    
+//    剑指 Offer II 072. 求平方根
+//    给定一个非负整数 x ，计算并返回 x 的平方根，即实现 int sqrt(int x) 函数。
+//    正数的平方根有两个，只输出其中的正数平方根。
+//    如果平方根不是整数，输出只保留整数的部分，小数部分将被舍去。
+//    示例 1:
+//    输入: x = 4
+//    输出: 2
+//    示例 2:
+//    输入: x = 8
+//    输出: 2
+//    解释: 8 的平方根是 2.82842...，由于小数部分将被舍去，所以返回 2
+//    提示:
+//    0 <= x <= 231 - 1
+//    注意：本题与主站 69 题相同： https://leetcode-cn.com/problems/sqrtx/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/jJ0w9p
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func mySqrt(_ x: Int) -> Int {
+        guard x > 1 else { return x }
+        var left = 1
+        var right = x / 2
+        while left <= right {
+            let mid = left + (right - left) / 2
+            let val = mid * mid
+            if val == x {
+                return mid
+            }else if val > x {
+                right = mid - 1
+            }else {
+                left = mid + 1
+            }
+        }
+        
+        if right == 0 {
+            return 1
+        }else if left == x / 2 {
+            return left * left > x ? right : left
+        }else {
+            return right * right > x ? right - 1: right
+        }
+    }
+//    剑指 Offer II 075. 数组相对排序
+//    给定两个数组，arr1 和 arr2，
+//    arr2 中的元素各不相同
+//    arr2 中的每个元素都出现在 arr1 中
+//    对 arr1 中的元素进行排序，使 arr1 中项的相对顺序和 arr2 中的相对顺序相同。未在 arr2 中出现过的元素需要按照升序放在 arr1 的末尾。
+//    示例：
+//    输入：arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6]
+//    输出：[2,2,2,1,4,3,3,9,6,7,19]
+//    提示：
+//    1 <= arr1.length, arr2.length <= 1000
+//    0 <= arr1[i], arr2[i] <= 1000
+//    arr2 中的元素 arr2[i] 各不相同
+//    arr2 中的每个元素 arr2[i] 都出现在 arr1 中
+//    注意：本题与主站 1122 题相同：https://leetcode-cn.com/problems/relative-sort-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/0H97ZC
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func relativeSortArray(_ arr1: [Int], _ arr2: [Int]) -> [Int] {
+//        [28,6,22,8,44,17]
+//        [22,28,8,6]
+        var dic:[Int: [Int]] = [:]
+        var other: [Int] = []
+        let set = Set(arr2)
+        for item in arr1 {
+            if set.contains(item) {
+                var array = dic[item,default: []]
+                array.append(item)
+                dic[item] = array
+            }else {
+                other.append(item)
+            }
+        }
+        var res:[Int] = []
+        for item in arr2 {
+            res.append(contentsOf: dic[item,default: []])
+        }
+        other.sort()
+        res.append(contentsOf: other)
+        return res
+    }
+//    剑指 Offer II 068. 查找插入位置
+//    给定一个排序的整数数组 nums 和一个整数目标值 target ，请在数组中找到 target ，并返回其下标。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+//    请必须使用时间复杂度为 O(log n) 的算法。
+//    示例 1:
+//    输入: nums = [1,3,5,6], target = 5
+//    输出: 2
+//    示例 2:
+//    输入: nums = [1,3,5,6], target = 2
+//    输出: 1
+//    示例 3:
+//    输入: nums = [1,3,5,6], target = 7
+//    输出: 4
+//    示例 4:
+//    输入: nums = [1,3,5,6], target = 0
+//    输出: 0
+//    示例 5:
+//    输入: nums = [1], target = 0
+//    输出: 0
+//    提示:
+//    1 <= nums.length <= 104
+//    -104 <= nums[i] <= 104
+//    nums 为无重复元素的升序排列数组
+//    -104 <= target <= 104
+//    注意：本题与主站 35 题相同： https://leetcode-cn.com/problems/search-insert-position/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/N6YdxV
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        var l = 0
+        var r = nums.count - 1
+        while l <= r {
+            let mid = l + (r - l)/2
+            let num = nums[mid]
+            if num == target {
+                return mid
+            }else if num > target {
+                r = mid - 1
+            }else {
+                l = mid + 1
+            }
+        }
+        if r < 0 {
+            return 0
+        }else if l == nums.count {
+            return nums.count
+        }else {
+            if nums[r] > target {
+                return r - 1 < 0 ? 0 : r - 1
+            }
+            return l
+        }
+    }
+    
+//    剑指 Offer II 059. 数据流的第 K 大数值
+//    设计一个找到数据流中第 k 大元素的类（class）。注意是排序后的第 k 大元素，不是第 k 个不同的元素。
+//    请实现 KthLargest 类：
+//    KthLargest(int k, int[] nums) 使用整数 k 和整数流 nums 初始化对象。
+//    int add(int val) 将 val 插入数据流 nums 后，返回当前数据流中第 k 大的元素。
+//    示例：
+//    输入：
+//    ["KthLargest", "add", "add", "add", "add", "add"]
+//    [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+//    输出：
+//    [null, 4, 5, 5, 8, 8]
+//    解释：
+//    KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+//    kthLargest.add(3);   // return 4
+//    kthLargest.add(5);   // return 5
+//    kthLargest.add(10);  // return 5
+//    kthLargest.add(9);   // return 8
+//    kthLargest.add(4);   // return 8
+//    提示：
+//    1 <= k <= 104
+//    0 <= nums.length <= 104
+//    -104 <= nums[i] <= 104
+//    -104 <= val <= 104
+//    最多调用 add 方法 104 次
+//    题目数据保证，在查找第 k 大元素时，数组中至少有 k 个元素
+//    注意：本题与主站 703 题相同： https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/jBjn9C
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class KthLargest {
+         
+        class Heap {
+            var array:[Int] = []
+            var size: Int {
+                array.count
+            }
+            func siftDown(_ index: Int,_ size: Int) {
+                let element = array[index]
+                let half = size / 2
+                var i = index
+                while i < half {
+                    var childIndex = 2 * i + 1
+                    let rightIndex = childIndex + 1
+                    var child = array[childIndex]
+                    
+                    if rightIndex < array.count && child > array[rightIndex] {
+                        childIndex = rightIndex
+                        child = array[rightIndex]
+                    }
+                    if element < child {
+                        break
+                    }
+                    array[i] = child
+                    i = childIndex
+                }
+                array[i] = element
+            }
+            func siftUp(_ index: Int) {
+                let element = array[index]
+                var i = index
+                while i > 0 {
+                    let fatherIndex = (i - 1)/2
+                    let father = array[fatherIndex]
+                    if father < element {
+                        break
+                    }
+                    array[i] = father
+                    i = fatherIndex
+                }
+                array[i] = element
+            }
+            func push(_ val: Int) {
+                array.append(val)
+                siftUp(array.count - 1)
+            }
+            func poll() {
+                if !array.isEmpty {
+                    array.swapAt(0, array.count - 1)
+                    array.removeLast()
+                    siftDown(0, array.count)
+                }
+            }
+            func peek() -> Int {
+                if array.isEmpty {
+                    return -1
+                }
+                return array[0]
+            }
+            
+        }
+        var heap = Heap()
+        let k: Int
+        init(_ k: Int, _ nums: [Int]) {
+            self.k = k
+            for item in nums {
+                _ = add(item)
+            }
+        }
+        
+        func add(_ val: Int) -> Int {
+            heap.push(val)
+            if heap.size > k {
+                heap.poll()
+            }
+            return heap.peek()
+        }
+    }
+//    public KthLargest(int k, int[] nums) {
+//            this.k = k;
+//            pq = new PriorityQueue<Integer>();
+//            for (int x : nums) {
+//                add(x);
+//            }
+//        }
+//
+//        public int add(int val) {
+//            pq.offer(val);
+//            if (pq.size() > k) {
+//                pq.poll();
+//            }
+//            return pq.peek();
+//        }
+
+    
+//    剑指 Offer II 056. 二叉搜索树中两个节点之和
+//    给定一个二叉搜索树的 根节点 root 和一个整数 k , 请判断该二叉搜索树中是否存在两个节点它们的值之和等于 k 。假设二叉搜索树中节点的值均唯一。
+//    示例 1：
+//    输入: root = [8,6,10,5,7,9,11], k = 12
+//    输出: true
+//    解释: 节点 5 和节点 7 之和等于 12
+//    示例 2：
+//    输入: root = [8,6,10,5,7,9,11], k = 22
+//    输出: false
+//    解释: 不存在两个节点值之和为 22 的节点
+//    提示：
+//    二叉树的节点个数的范围是  [1, 104].
+//    -104 <= Node.val <= 104
+//    root 为二叉搜索树
+//    -105 <= k <= 105
+//    注意：本题与主站 653 题相同： https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/opLdQZ
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findTarget(_ root: TreeNode?, _ k: Int) -> Bool {
+//        [2,0,3,-4,1]
+//        -1
+//           2
+//         0   3
+//        -4 1
+        guard let node = root else {return false}
+        let list = getValList(node)
+        var l = 0
+        var r = list.count - 1
+        while l < r {
+            if list[l] + list[r] == k {
+                return true
+            }else if list[l] + list[r] > k {
+                r -= 1
+            }else {
+                l += 1
+            }
+        }
+        return false
+    }
+    class func getValList(_ root: TreeNode?) -> [Int] {
+        guard let node = root else {return []}
+        var list: [Int] = []
+        list += getValList(root?.left)
+        list.append(node.val)
+        list += getValList(root?.right)
+        return list
+    }
+    
+//    剑指 Offer II 052. 展平二叉搜索树
+//    给你一棵二叉搜索树，请 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。
+//    示例 1：
+//    输入：root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+//    输出：[1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
+//    示例 2：
+//    输入：root = [5,1,7]
+//    输出：[1,null,5,null,7]
+//    提示：
+//    树中节点数的取值范围是 [1, 100]
+//    0 <= Node.val <= 1000
+//    注意：本题与主站 897 题相同： https://leetcode-cn.com/problems/increasing-order-search-tree/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/NYBBNL
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func increasingBST(_ root: TreeNode?) -> TreeNode? {
+        guard let node = root else{ return nil}
+        return increasingBST1(node).0
+    }
+    
+    class func increasingBST1(_ root: TreeNode) -> (TreeNode,TreeNode) {
+        if root.left == nil && root.right == nil {
+            return (root,root)
+        }
+        var head = root
+        var tail = root
+        if let left = root.left {
+            let t = increasingBST1(left)
+            head = t.0
+            root.left = nil
+            t.1.right = root
+        }
+        
+        if let right = root.right {
+            let t = increasingBST1(right)
+            tail.right = t.0
+            tail = t.1
+        }
+        return (head,tail)
+    }
+//    剑指 Offer II 102. 加减的目标值
+//    给定一个正整数数组 nums 和一个整数 target 。
+//    向数组中的每个整数前添加 '+' 或 '-' ，然后串联起所有整数，可以构造一个 表达式 ：
+//    例如，nums = [2, 1] ，可以在 2 之前添加 '+' ，在 1 之前添加 '-' ，然后串联起来得到表达式 "+2-1" 。
+//    返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+//    示例 1：
+//    输入：nums = [1,1,1,1,1], target = 3
+//    输出：5
+//    解释：一共有 5 种方法让最终目标和为 3 。
+//    -1 + 1 + 1 + 1 + 1 = 3
+//    +1 - 1 + 1 + 1 + 1 = 3
+//    +1 + 1 - 1 + 1 + 1 = 3
+//    +1 + 1 + 1 - 1 + 1 = 3
+//    +1 + 1 + 1 + 1 - 1 = 3
+//    示例 2：
+//    输入：nums = [1], target = 1
+//    输出：1
+//    提示：
+//    1 <= nums.length <= 20
+//    0 <= nums[i] <= 1000
+//    0 <= sum(nums[i]) <= 1000
+//    -1000 <= target <= 1000
+//    注意：本题与主站 494 题相同： https://leetcode-cn.com/problems/target-sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/YaVDxD
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findTargetSumWays(_ nums: [Int], _ target: Int) -> Int {
+        //A + B = target
+        //A - B = sum
+        //2A = target + sum
+        //A = (target + sum) * 0.5
+        //转化为背包问题
+        var sum = 0
+        for item in nums {
+            sum += item
+        }
+        guard (target + sum) % 2 == 0 else { return 0 }
+        let k = (target + sum) / 2
+        //dp[i][k] = dp[i-1][k] + dp[i-1][k-nums[i - 1]]
+        //dp[0][k] = 0
+        //dp[k][0] = 1
+        var dp = Array(repeating: 0, count: k + 1)
+        dp[0] = 1
+        var i = 1
+        while i <= nums.count {
+            var j = k
+            let num = nums[i - 1]
+            while j >= 0 {
+                if j - num >= 0 {
+                    dp[j] = dp[j] + dp[j - num]
+                }
+                j -= 1
+            }
+            i += 1
+        }
+        return dp[k]
+    }
+//    剑指 Offer II 101. 分割等和子集
+//    给定一个非空的正整数数组 nums ，请判断能否将这些数字分成元素和相等的两部分。
+//    示例 1：
+//    输入：nums = [1,5,11,5]
+//    输出：true
+//    解释：nums 可以分割成 [1, 5, 5] 和 [11] 。
+//    示例 2：
+//    输入：nums = [1,2,3,5]
+//    输出：false
+//    解释：nums 不可以分为和相等的两部分
+//    提示：
+//    1 <= nums.length <= 200
+//    1 <= nums[i] <= 100
+//    注意：本题与主站 416 题相同： https://leetcode-cn.com/problems/partition-equal-subset-sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/NUPfPr
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func canPartition(_ nums: [Int]) -> Bool {
+        guard nums.count > 1 else {return false}
+        var sum = 0
+        for item in nums {
+            sum += item
+        }
+        guard sum % 2 == 0 else {return false}
+        let k = sum / 2
+        //dp[i][k] = dp[i-1][k] + dp[i-1][k-nums[i-1]]
+        //dp[0][k] = 0
+        //dp[i][0] = 1
+        var dp = Array(repeating: false, count: k + 1)
+        dp[0] = true
+        var i = 1
+        while i < nums.count {
+            var j = k
+            while j >= 0 {
+                if j == 0 {
+                    dp[j] = true
+                }else {
+                    dp[j] = dp[j]
+                    if !dp[j] && j - nums[i] >= 0 {
+                        dp[j] = dp[j-nums[i]]
+                    }
+                }
+                if j == k && dp[j]{
+                    return true
+                }
+                j -= 1
+            }
+            i += 1
+        }
+        return false
+    }
+    
+//    剑指 Offer II 100. 三角形中最小路径之和
+//    给定一个三角形 triangle ，找出自顶向下的最小路径和。
+//    每一步只能移动到下一行中相邻的结点上。相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。
+//    示例 1：
+//    输入：triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+//    输出：11
+//    解释：如下面简图所示：
+//       2
+//      3 4
+//     6 5 7
+//    4 1 8 3
+//    自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
+//    示例 2：
+//    输入：triangle = [[-10]]
+//    输出：-10
+//    提示：
+//    1 <= triangle.length <= 200
+//    triangle[0].length == 1
+//    triangle[i].length == triangle[i - 1].length + 1
+//    -104 <= triangle[i][j] <= 104
+//    进阶：
+//    你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题吗？
+//    注意：本题与主站 120 题相同： https://leetcode-cn.com/problems/triangle/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/IlPe0q
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minimumTotal(_ triangle: [[Int]]) -> Int {
+        var dp = Array(repeating: Int.max, count: triangle.count)
+        var i = 0
+        var res = Int.max
+        while i < triangle.count {
+            var j = triangle[i].count - 1
+            while j >= 0 {
+                if i == 0 && j == 0 {
+                    dp[i] = triangle[0][0]
+                }else {
+                    if j == triangle[i].count - 1 {
+                        dp[j] = dp[j-1] + triangle[i][j]
+                    }else if j == 0 {
+                        dp[j] = dp[j] + triangle[i][j]
+                    }else {
+                        dp[j] = min(dp[j], dp[j-1]) + triangle[i][j]
+                    }
+                }
+                if i == triangle.count - 1 {
+                    res = min(res, dp[j])
+                }
+                j -= 1
+            }
+            i += 1
+        }
+        return res
+    }
+//    剑指 Offer II 099. 最小路径之和
+//    给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+//    说明：一个机器人每次只能向下或者向右移动一步。
+//    示例 1：
+//    输入：grid = [[1,3,1],[1,5,1],[4,2,1]]
+//    输入：grid = [   [1,3,1],
+//                    [1,5,1],
+//                    [4,2,1]]
+//    输出：7
+//    解释：因为路径 1→3→1→1→1 的总和最小。
+//    示例 2：
+//    输入：grid = [[1,2,3],[4,5,6]]
+//    输出：12
+//    提示：
+//    m == grid.length
+//    n == grid[i].length
+//    1 <= m, n <= 200
+//    0 <= grid[i][j] <= 100
+//    注意：本题与主站 64 题相同： https://leetcode-cn.com/problems/minimum-path-sum/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/0i0mDW
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minPathSum(_ grid: [[Int]]) -> Int {
+        var dp: [[Int]] = Array(repeating: Array(repeating: Int.max, count: grid[0].count), count: grid.count)
+        var i = 0
+        while i < dp.count {
+            var j = 0
+            while j < dp[0].count {
+                if i == 0 && j == 0 {
+                    dp[i][j] = grid[0][0]
+                }else {
+                    if i - 1 >= 0 {
+                        dp[i][j] = min(dp[i][j], dp[i-1][j] + grid[i][j])
+                    }
+                    if j - 1 >= 0 {
+                        dp[i][j] = min(dp[i][j], dp[i][j-1] + grid[i][j])
+                    }
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return dp.last!.last!
+    }
+//    剑指 Offer II 040. 矩阵中最大的矩形
+//    给定一个由 0 和 1 组成的矩阵 matrix ，找出只包含 1 的最大矩形，并返回其面积。
+//    注意：此题 matrix 输入格式为一维 01 字符串数组。
+//    示例 1：
+//    输入：matrix = [  "10100"
+//                    ,"10111"
+//                    ,"11111"
+//                    ,"10010"]
+//    输出：6
+//    解释：最大矩形如上图所示。
+//    示例 2：
+//    输入：matrix = []
+//    输出：0
+//    示例 3：
+//    输入：matrix = ["0"]
+//    输出：0
+//    示例 4：
+//    输入：matrix = ["1"]
+//    输出：1
+//    示例 5：
+//    输入：matrix = ["00"]
+//    输出：0
+//    提示：
+//    rows == matrix.length
+//    cols == matrix[0].length
+//    0 <= row, cols <= 200
+//    matrix[i][j] 为 '0' 或 '1'
+//    注意：本题与主站 85 题相同（输入参数格式不同）： https://leetcode-cn.com/problems/maximal-rectangle/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/PLYXKQ
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func maximalRectangle(_ matrix: [String]) -> Int {
+        var array: [[Character]] = []
+        for item in matrix {
+            array.append(Array(item))
+        }
+        var res = 0
+        var i = 0
+        while i < array.count {
+            var j = 0
+            while j < array[i].count {
+                let cur = array[i][j]
+                if cur == "1" {
+                    var area = 1 //以这个点为左上角的最大面积
+                    var maxW = array[i].count
+                    //向下走
+                    var k = i
+                    while k < array.count {
+                        if array[k][j] == "1" {
+                            //向右走，确定矩形最长宽度
+                            var tempW = 1
+                            var jj = j + 1
+                            while jj < array[k].count && tempW <= maxW {
+                                if array[k][jj] == "1" {
+                                    tempW += 1
+                                }else {
+                                    maxW = min(maxW, tempW)
+                                    area = max(area, maxW * (k - i + 1))
+                                    break
+                                }
+                                jj += 1
+                            }
+                        }else {
+                            break
+                        }
+                        k += 1
+                    }
+                    res = max(res, area)
+                }
+                j += 1
+            }
+            i += 1
+        }
+        return res
+    }
+    
+//    剑指 Offer II 039. 直方图最大矩形面积
+//    给定非负整数数组 heights ，数组中的数字用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
+//    求在该柱状图中，能够勾勒出来的矩形的最大面积。
+//    示例 1:
+//    输入：heights = [2,1,5,6,2,3]
+//    输出：10
+//    解释：最大的矩形为图中红色区域，面积为 10
+//    示例 2：
+//    输入： heights = [2,4]
+//    输出： 4
+//    提示：
+//    1 <= heights.length <=105
+//    0 <= heights[i] <= 104
+//    注意：本题与主站 84 题相同： https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/0ynMMM
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func largestRectangleArea(_ heights: [Int]) -> Int {
+        //单调栈 左右放一个哨兵 弹出比当前大的，可以确定弹出元素的宽度 0 [2,1,5,6,2,3] 0
+        //  小1 大 小2   可以确定大的面积 = （小2 - 小1 - 1）* 大的高度
+        var res = 0
+        let newHeights = [0] + heights + [0]
+        var stack = [0]
+        var i = 1
+        while i < newHeights.count {
+            while newHeights[i] < newHeights[stack.last!] {
+                let lastIndex = stack.removeLast()
+                let h = newHeights[lastIndex]
+                let w = i - stack.last! - 1 //注意点 。宽度 = i - 上一个 - 1
+                res = max(res, w * h)
+            }
+            stack.append(i)
+            i += 1
+        }
+        return res
+    }
+//    假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+//    每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+//    示例 1：
+//    输入：n = 2
+//    输出：2
+//    解释：有两种方法可以爬到楼顶。
+//    1. 1 阶 + 1 阶
+//    2. 2 阶
+//    示例 2：
+//    输入：n = 3
+//    输出：3
+//    解释：有三种方法可以爬到楼顶。
+//    1. 1 阶 + 1 阶 + 1 阶
+//    2. 1 阶 + 2 阶
+//    3. 2 阶 + 1 阶
+//    提示：
+//    1 <= n <= 45
+//    链接：https://leetcode-cn.com/problems/climbing-stairs
+    class func climbStairs(_ n: Int) -> Int {
+        //dp[n] = dp[n-1] + dp[n-2]
+        //dp[0] = 0 dp[1] = 1 dp[2] = [2]
+        guard n > 2 else {return n}
+        var dp = Array(repeating: 0, count: n + 1)
+        dp[1] = 1
+        dp[2] = 2
+        var i = 3
+        while i <= n {
+            dp[i] = dp[i-1] + dp[i-2]
+            i += 1
+        }
+        return dp[n]
     }
     
 //    剑指 Offer II 038. 每日温度
@@ -336,26 +1877,27 @@ import Foundation
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
 //        可以维护一个存储下标的单调栈，从栈底到栈顶的下标对应的温度列表中的温度依次递减。如果一个下标在单调栈里，则表示尚未找到下一次温度更高的下标。
-//        69 5
-//        71 4
-//        75 3
-        var res: [Int] = []
+        var res: [Int] = Array(repeating: 0, count: temperatures.count)
         var stack: [Int] = []
-        for item in temperatures {
+        var i = 0
+        while i < temperatures.count {
+            let item = temperatures[i]
             if stack.isEmpty {
-                stack.append(item)
+                stack.append(i)
             }else {
-                var temp: [Int] = []
                 while !stack.isEmpty {
-                    let last = stack.last!
-                    var count = 0
+                    let lastIndex = stack.last!
+                    let last = temperatures[lastIndex]
                     if item > last {
-                        count += 1
-                        temp.append(count)
+                        stack.removeLast()
+                        res[lastIndex] = i - lastIndex
+                    }else {
+                        break
                     }
-                    
                 }
+                stack.append(i)
             }
+            i += 1
         }
         return res
     }

@@ -23,7 +23,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self serviceTest];
+//    [self serviceTest];
+    [self test];
 }
 
 - (void)serviceTest {
@@ -92,37 +93,37 @@
 //        });
 //    }];
     
-    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"主队列任务1" executionBlock:^{
-        NSLog(@"主队列任务1----do");
-    }];
-    
-    [[TaskService sharedInstance]addAsyncTaskOnMainQueue:@"主队列任务2" executionBlock:^(void (^ _Nonnull doneBlock)(void)) {
-        NSLog(@"主队列任务2----do");
-        doneBlock();
-    }];
-    
-    [[TaskService sharedInstance]addSyncTaskOnMainThread:@"主线程任务11" executionBlock:^{
-        NSLog(@"主线程任务11----do");
-        sleep(1);
-        NSLog(@"主线程任务11----done");
-    }];
-    
-    [[TaskService sharedInstance]start];
-    NSLog(@"任务开始了--------------");
+//    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"主队列任务1" executionBlock:^{
+//        NSLog(@"主队列任务1----do");
+//    }];
+//
+//    [[TaskService sharedInstance]addAsyncTaskOnMainQueue:@"主队列任务2" executionBlock:^(void (^ _Nonnull doneBlock)(void)) {
+//        NSLog(@"主队列任务2----do");
+//        doneBlock();
+//    }];
+//
+//    [[TaskService sharedInstance]addSyncTaskOnMainThread:@"主线程任务11" executionBlock:^{
+//        NSLog(@"主线程任务11----do");
+//        sleep(1);
+//        NSLog(@"主线程任务11----done");
+//    }];
+//
+//    [[TaskService sharedInstance]start];
+//    NSLog(@"任务开始了--------------");
 }
 
 - (void)test {
-    //    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    //    queue.maxConcurrentOperationCount = 2;
-    //    for (int i = 1; i < 5; i++) {
-    //        NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
-    //            sleep(1);
-    //            NSLog(@"任务%d,当前线程%@", i, [NSThread currentThread]);
-    //
-    //        }];
-    //        [queue addOperation:blockOperation];
-    ////        [blockOperation start];
-    //    }
+//        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//        queue.maxConcurrentOperationCount = 2;
+//        for (int i = 1; i < 5; i++) {
+//            NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+//                sleep(1);
+//                NSLog(@"任务%d,当前线程%@", i, [NSThread currentThread]);
+//
+//            }];
+//            [queue addOperation:blockOperation];
+//    //        [blockOperation start];
+//        }
         
     //    OperationTask *o1 = [[OperationTask alloc]init];
     //    o1.name = @"任务1";
