@@ -7,6 +7,76 @@
 
 import Foundation
 
+class PriorityQueue<T> {
+    //a < b   then return NSOrderedAscending
+    typealias PriorityQueueComparator = (T, T) -> ComparisonResult
+    var k: Int//容量
+    var comparator: PriorityQueueComparator//比较器
+    var array: [T] = []
+    var isEmpty: Bool {
+        return array.isEmpty
+    }
+    init(_ k: Int,_ comparator: @escaping PriorityQueueComparator) {
+        self.k = k
+        self.comparator = comparator
+    }
+    
+    func offer(_ e: T) {
+        array.append(e)
+        siftUp(array.count - 1)
+    }
+    
+    func poll() -> T {
+        let e = array[0]
+        if array.count == 1 {
+            array.removeFirst()
+        }else {
+            array[0] = array[array.count - 1]
+            array.removeLast()
+            siftDown(0)
+        }
+        return e;
+    }
+    
+    func siftDown(_ i: Int) {
+        var index = i
+        let element = array[index]
+        let size = array.count / 2
+        while index < size {
+            var childIndex = index * 2 + 1
+            var child = array[childIndex]
+            let rightChildIndex = childIndex + 1
+            if rightChildIndex < array.count,comparator(child, array[rightChildIndex]) == ComparisonResult.orderedAscending {
+                childIndex = rightChildIndex
+                child = array[rightChildIndex]
+            }
+            
+            if comparator(element, child) == ComparisonResult.orderedDescending {
+                break
+            }
+            array[index] = child
+            index = childIndex
+        }
+        array[index] = element
+    }
+    
+    func siftUp(_ i: Int) {
+        var index = i
+        let element = array[index]
+        while index > 0 {
+            let fatherIndex = (index - 1) / 2
+            let father = array[fatherIndex]
+            if comparator(element, father) == ComparisonResult.orderedAscending {
+                break
+            }
+            array[index] = father
+            index = fatherIndex
+        }
+        array[index] = element
+    }
+    
+}
+
 @objcMembers class JianZhiOffer: NSObject {
     class func test()  {
         //47. 礼物的最大价值
@@ -395,6 +465,767 @@ import Foundation
 //
         //    剑指 Offer II 107. 矩阵中的距离
 //        print(updateMatrix([[0,0,0],[0,1,0],[1,1,1]]))
+        
+        //    剑指 Offer II 054. 所有大于等于节点的值之和
+//        let node = TreeTest.deserialize("[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]")
+//        convertBST(node)
+//        print("")
+        
+        //    剑指 Offer II 057. 值和下标之差都在给定的范围内
+//        print(containsNearbyAlmostDuplicate([1,2,3,1], 3, 0))
+//        print(containsNearbyAlmostDuplicate([1,0,1,1], 1, 2))
+//        print(containsNearbyAlmostDuplicate([1,5,9,1,5,9], 2, 3))
+//        print(containsNearbyAlmostDuplicate([2147483647,-1,2147483647], 1, 2147483647))//false
+        
+        //    剑指 Offer II 058. 日程表
+//        let a = MyCalendar()
+//        print(a.book(47, 50))
+//        print(a.book(33, 41))
+//        print(a.book(39, 45))
+//        print(a.book(33, 42))
+//        print(a.book(25, 32))
+//        print(a.book(26, 35))
+//        print(a.book(19, 25))
+//        print(a.book(3, 8))
+//        print(a.book(8, 13))
+//        print(a.book(18, 27))
+//        ["MyCalendar","book","book","book","book","book","book","book","book","book","book"]
+//        [[],[47,50],[33,41],[39,45],[33,42],[25,32],[26,35],[19,25],[3,8],[8,13],[18,27]]
+//        [null,true,true,false,false,true,false,true,true,true,false]
+        
+        //    剑指 Offer II 060. 出现频率最高的 k 个数字
+//        print(topKFrequent([1,1,1,2,2,3], 2))
+//        print(topKFrequent([-1,1,4,-4,3,5,4,-2,3,-1], 3))//[-1,3,4]
+        //    剑指 Offer II 061. 和最小的 k 个数对
+//        print(kSmallestPairs([1,7,11], [2,4,6], 3))
+//        print(kSmallestPairs([1,1,2], [1,2,3], 2))
+//        print(kSmallestPairs([1,2], [3], 3))
+//        print(kSmallestPairs([1,1,2], [1,2,3], 10))
+//        print(kSmallestPairs([0,0,0,0,0], [-3,22,35,56,76], 22))
+//        [[0,-3],[0,-3],[0,-3],[0,-3],[0,-3],[0,22],[0,22],[0,22],[0,22],[0,22],[0,35],[0,35],[0,35],[0,35],[0,35],[0,56],[0,56],[0,56],[0,56],[0,56],[0,76],[0,76]]
+        
+        //    剑指 Offer II 062. 实现前缀树
+//        let trie = Trie();
+//        trie.insert("apple");
+//        trie.search("apple");   // 返回 True
+//        trie.search("app");     // 返回 False
+//        trie.startsWith("app"); // 返回 True
+//        trie.insert("app");
+//        trie.search("app");     // 返回 True
+
+        
+    }
+//    剑指 Offer II 063. 替换单词
+//    在英语中，有一个叫做 词根(root) 的概念，它可以跟着其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。
+//    现在，给定一个由许多词根组成的词典和一个句子，需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。
+//    需要输出替换之后的句子。
+//    示例 1：
+//    输入：dictionary = ["cat","bat","rat"], sentence = "the cattle was rattled by the battery"
+//    输出："the cat was rat by the bat"
+//    示例 2：
+//    输入：dictionary = ["a","b","c"], sentence = "aadsfasf absbs bbab cadsfafs"
+//    输出："a a b c"
+//    示例 3：
+//    输入：dictionary = ["a", "aa", "aaa", "aaaa"], sentence = "a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa"
+//    输出："a a a a a a a a bbb baba a"
+//    示例 4：
+//    输入：dictionary = ["catt","cat","bat","rat"], sentence = "the cattle was rattled by the battery"
+//    输出："the cat was rat by the bat"
+//    示例 5：
+//    输入：dictionary = ["ac","ab"], sentence = "it is abnormal that this solution is accepted"
+//    输出："it is ab that this solution is ac"
+//    提示：
+//    1 <= dictionary.length <= 1000
+//    1 <= dictionary[i].length <= 100
+//    dictionary[i] 仅由小写字母组成。
+//    1 <= sentence.length <= 10^6
+//    sentence 仅由小写字母和空格组成。
+//    sentence 中单词的总量在范围 [1, 1000] 内。
+//    sentence 中每个单词的长度在范围 [1, 1000] 内。
+//    sentence 中单词之间由一个空格隔开。
+//    sentence 没有前导或尾随空格。
+//    注意：本题与主站 648 题相同： https://leetcode-cn.com/problems/replace-words/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/UhWRSj
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func replaceWords(_ dictionary: [String], _ sentence: String) -> String {
+
+    }
+//    剑指 Offer II 062. 实现前缀树
+//    Trie（发音类似 "try"）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
+//    请你实现 Trie 类：
+//    Trie() 初始化前缀树对象。
+//    void insert(String word) 向前缀树中插入字符串 word 。
+//    boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。
+//    boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。
+//    示例：
+//    输入
+//    inputs = ["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+//    inputs = [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+//    输出
+//    [null, null, true, false, true, null, true]
+//
+//    解释
+//    Trie trie = new Trie();
+//    trie.insert("apple");
+//    trie.search("apple");   // 返回 True
+//    trie.search("app");     // 返回 False
+//    trie.startsWith("app"); // 返回 True
+//    trie.insert("app");
+//    trie.search("app");     // 返回 True
+//    提示：
+//    1 <= word.length, prefix.length <= 2000
+//    word 和 prefix 仅由小写英文字母组成
+//    insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
+//    注意：本题与主站 208 题相同：https://leetcode-cn.com/problems/implement-trie-prefix-tree/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/QC3q1f
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class Trie {
+        class TrieNode {
+            var children: [Character:TrieNode] = [:]
+            var isEnd: Bool = false
+        }
+        let root: TrieNode = TrieNode()
+        /** Initialize your data structure here. */
+        init() {
+
+        }
+        
+        /** Inserts a word into the trie. */
+        func insert(_ word: String) {
+            let array = Array(word)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let nextNode = node.children[ch] {
+                    if i == array.count - 1 {
+                        nextNode.isEnd = true
+                    }
+                    node = nextNode
+                }else {
+                    let newNode = TrieNode()
+                    node.children[ch] = newNode
+                    node = newNode
+                    if i == array.count - 1 {
+                        newNode.isEnd = true
+                    }
+                }
+                i += 1
+            }
+        }
+        
+        /** Returns if the word is in the trie. */
+        func search(_ word: String) -> Bool {
+            let array = Array(word)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let nextNode = node.children[ch] {
+                    if i == array.count - 1,nextNode.isEnd {
+                        return true
+                    }
+                    node = nextNode
+                }else {
+                    break
+                }
+                i += 1
+            }
+            return false
+        }
+        
+        /** Returns if there is any word in the trie that starts with the given prefix. */
+        func startsWith(_ prefix: String) -> Bool {
+            let array = Array(prefix)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let nextNode = node.children[ch] {
+                    if i == array.count - 1 {
+                        return true
+                    }
+                    node = nextNode
+                }else {
+                    break
+                }
+                i += 1
+            }
+            return false
+        }
+    }
+    
+//    剑指 Offer II 061. 和最小的 k 个数对
+//    给定两个以升序排列的整数数组 nums1 和 nums2 , 以及一个整数 k 。
+//    定义一对值 (u,v)，其中第一个元素来自 nums1，第二个元素来自 nums2 。
+//    请找到和最小的 k 个数对 (u1,v1),  (u2,v2)  ...  (uk,vk) 。
+//    示例 1:
+//    输入: nums1 = [1,7,11], nums2 = [2,4,6], k = 3
+//    输出: [1,2],[1,4],[1,6]
+//    解释: 返回序列中的前 3 对数：
+//        [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
+//    示例 2:
+//    输入: nums1 = [1,1,2], nums2 = [1,2,3], k = 2
+//    输出: [1,1],[1,1]
+//    解释: 返回序列中的前 2 对数：
+//         [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
+//    示例 3:
+//    输入: nums1 = [1,2], nums2 = [3], k = 3
+//    输出: [1,3],[2,3]
+//    解释: 也可能序列中所有的数对都被返回:[1,3],[2,3]
+//    提示:
+//    1 <= nums1.length, nums2.length <= 104
+//    -109 <= nums1[i], nums2[i] <= 109
+//    nums1, nums2 均为升序排列
+//    1 <= k <= 1000
+//    注意：本题与主站 373 题相同：https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/qn8gGX
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func kSmallestPairs(_ nums1: [Int], _ nums2: [Int], _ k: Int) -> [[Int]] {
+        
+//        首先，利用两个数组都是升序的条件，结果中最小的组合肯定是 nums1[0] + nums2[0]。
+//        但是，次小的是什么呢？ 是 nums1[0] + nums2[1] 还是 nums1[1] + nums2[0] 呢？我们不知道。
+//        所以，我们需要设计一种比较方式使我们能知道上述比较的结果，使用优先级队列就可以解决。
+//        假设，我们以 [0, 1] 表示 nums1[0] + nums2[1] 的结果，整个过程的处理如下：
+//        先把所有的 nums1 的索引入队，即入队的元素有 [0, 0]、[1, 0]、[2, 0]、[3, 0]、......
+//        首次弹出的肯定是 [0, 0]，再把 [0, 1] 入队；
+//        这样就可以通过优先级队列比较 [0, 1] 和 [1, 0] 的结果，再弹出较小者；
+//        依次进行，进行 k 轮
+        
+        
+        
+        let pq = PriorityQueue<[Int]>(k) { (a,b) in
+            let sum1 = nums1[a[0]] + nums2[a[1]]
+            let sum2 = nums1[b[0]] + nums2[b[1]]
+            if sum1 >= sum2 {
+                return ComparisonResult.orderedAscending
+            }
+            return ComparisonResult.orderedDescending
+        }
+        var res: [[Int]] = []
+        var kk = k
+        var i = 0
+        let min = min(k, nums1.count)
+        while i < min {
+            pq.offer([i, 0])
+            i += 1
+        }
+        while kk > 0 && !pq.isEmpty {
+            let e = pq.poll()
+            res.append([nums1[e[0]],nums2[e[1]]])
+            if e[1] + 1 < nums2.count {
+                pq.offer([e[0],e[1] + 1])
+            }
+            kk -= 1
+        }
+        return res
+    }
+//    剑指 Offer II 060. 出现频率最高的 k 个数字
+//    给定一个整数数组 nums 和一个整数 k ，请返回其中出现频率前 k 高的元素。可以按 任意顺序 返回答案。
+//    示例 1:
+//    输入: nums = [1,1,1,2,2,3], k = 2
+//    输出: [1,2]
+//    示例 2:
+//    输入: nums = [1], k = 1
+//    输出: [1]
+//    提示：
+//    1 <= nums.length <= 105
+//    k 的取值范围是 [1, 数组中不相同的元素的个数]
+//    题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的
+//    进阶：所设计算法的时间复杂度 必须 优于 O(n log n) ，其中 n 是数组大小。
+//    注意：本题与主站 347 题相同：https://leetcode-cn.com/problems/top-k-frequent-elements/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/g5c51o
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+        class LittleHeap {
+            class LittleHeapNode {
+                var num: Int
+                var count: Int
+                init(_ num: Int,_ count: Int) {
+                    self.num = num
+                    self.count = count
+                }
+            }
+            var array: [LittleHeapNode] = []
+            var topCount: Int {
+                return array[0].count
+            }
+            var count: Int {
+                return array.count
+            }
+            var result: [Int] {
+                var res: [Int] = []
+                for item in array {
+                    res.append(item.num)
+                }
+                return res
+            }
+            func push(_ num: Int,_ numCount: Int) {
+                array.append(LittleHeapNode(num, numCount))
+                siftUp(array.count - 1)
+            }
+            func replaceTop(_ num: Int,_ numCount: Int) {
+                array[0] = LittleHeapNode(num, numCount)
+                siftDown(0)
+            }
+            func siftDown(_ i: Int) {
+                var index = i
+                let size = array.count / 2
+                let node = array[index]
+                while index < size {
+                    var childIndex = index * 2 + 1
+                    var child = array[childIndex]
+                    let rightChildIndex = childIndex + 1
+                    if rightChildIndex < array.count,array[rightChildIndex].count < child.count {
+                        childIndex = rightChildIndex
+                        child = array[rightChildIndex]
+                    }
+                    if child.count > node.count {
+                        break
+                    }
+                    array[index] = child
+                    index = childIndex
+                }
+                array[index] = node
+            }
+            func siftUp(_ i: Int) {
+                var index = i
+                let node = array[index]
+                while index > 0 {
+                    let parentIndex = (index - 1) / 2
+                    let parent = array[parentIndex]
+                    if parent.count < node.count {
+                        break
+                    }
+                    array[index] = parent
+                    index = parentIndex
+                }
+                array[index] = node
+            }
+        }
+        
+        
+        var dic:[Int: Int] = [:]
+        for num in nums {
+            dic[num,default: 0] += 1
+        }
+        let heap = LittleHeap()
+        for (num,count) in dic {
+            if heap.count < k {
+                heap.push(num, count)
+            }else {
+                if count > heap.topCount {
+                    heap.replaceTop(num, count)
+                }
+            }
+        }
+        return heap.result
+    }
+//    剑指 Offer II 058. 日程表
+//    请实现一个 MyCalendar 类来存放你的日程安排。如果要添加的时间内没有其他安排，则可以存储这个新的日程安排。
+//    MyCalendar 有一个 book(int start, int end)方法。它意味着在 start 到 end 时间内增加一个日程安排，注意，这里的时间是半开区间，即 [start, end), 实数 x 的范围为，  start <= x < end。
+//    当两个日程安排有一些时间上的交叉时（例如两个日程安排都在同一时间内），就会产生重复预订。
+//    每次调用 MyCalendar.book方法时，如果可以将日程安排成功添加到日历中而不会导致重复预订，返回 true。否则，返回 false 并且不要将该日程安排添加到日历中。
+//    请按照以下步骤调用 MyCalendar 类: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)
+//    示例:
+//    输入:
+//    ["MyCalendar","book","book","book"]
+//    [[],[10,20],[15,25],[20,30]]
+//    输出: [null,true,false,true]
+//    解释:
+//    MyCalendar myCalendar = new MyCalendar();
+//    MyCalendar.book(10, 20); // returns true
+//    MyCalendar.book(15, 25); // returns false ，第二个日程安排不能添加到日历中，因为时间 15 已经被第一个日程安排预定了
+//    MyCalendar.book(20, 30); // returns true ，第三个日程安排可以添加到日历中，因为第一个日程安排并不包含时间 20
+//    提示：
+//    每个测试用例，调用 MyCalendar.book 函数最多不超过 1000次。
+//    0 <= start < end <= 109
+//    注意：本题与主站 729 题相同： https://leetcode-cn.com/problems/my-calendar-i/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/fi9suh
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class MyCalendar {
+        class CalendarBST {
+            class CalendarNode {
+                var start: Int
+                var end: Int
+                var left: CalendarNode?
+                var right: CalendarNode?
+                init(_ start: Int,_ end: Int) {
+                    self.start = start
+                    self.end = end
+                }
+            }
+            var root: CalendarNode?
+            func add(_ start: Int,_ end: Int) -> Bool {
+                if root == nil {
+                    root = CalendarNode(start, end)
+                    return true
+                }else {
+                    var node = root
+                    while node != nil {
+                        if start >= node!.end {
+                            //右侧找
+                            if node?.right == nil {
+                                node?.right = CalendarNode(start, end)
+                                return true
+                            }else {
+                                node = node?.right
+                            }
+                        }else if end <= node!.start{
+                            //左侧找
+                            if node?.left == nil {
+                                node?.left = CalendarNode(start, end)
+                                return true
+                            }else {
+                                node = node?.left
+                            }
+                        }else {
+                            return false
+                        }
+                    }
+                }
+                return true
+            }
+        }
+        var bst:CalendarBST = CalendarBST()
+        init() {
+
+        }
+        
+        func book(_ start: Int, _ end: Int) -> Bool {
+            return bst.add(start, end)
+        }
+    }
+//    剑指 Offer II 057. 值和下标之差都在给定的范围内
+//    给你一个整数数组 nums 和两个整数 k 和 t 。请你判断是否存在 两个不同下标 i 和 j，使得 abs(nums[i] - nums[j]) <= t ，同时又满足 abs(i - j) <= k 。
+//    如果存在则返回 true，不存在返回 false。
+//    示例 1：
+//    输入：nums = [1,2,3,1], k = 3, t = 0
+//    输出：true
+//    示例 2：
+//    输入：nums = [1,0,1,1], k = 1, t = 2
+//    输出：true
+//    示例 3：
+//    输入：nums = [1,5,9,1,5,9], k = 2, t = 3
+//    输出：false
+//    提示：
+//    0 <= nums.length <= 2 * 104
+//    -231 <= nums[i] <= 231 - 1
+//    0 <= k <= 104
+//    0 <= t <= 231 - 1
+//    注意：本题与主站 220 题相同： https://leetcode-cn.com/problems/contains-duplicate-iii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/7WqeDu
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func containsNearbyAlmostDuplicate(_ nums: [Int], _ k: Int, _ t: Int) -> Bool {
+        //桶排序
+//        我们可以设定桶的大小为 t + 1。如果两个元素同属一个桶，那么这两个元素必然符合条件。
+//        如果两个元素属于相邻桶，那么我们需要校验这两个元素是否差值不超过 t。
+//        如果两个元素既不属于同一个桶，也不属于相邻桶，那么这两个元素必然不符合条件。
+
+//        实现方面，我们将 {int} 范围内的每一个整数 x 表示为 x = (t + 1) * a + b(0≤b≤t) 的形式，这样 x 即归属于编号为 a 的桶。因为一个桶内至多只会有一个元素，所以我们使用哈希表实现即可。
+        var tongs: [Int:Int] = [:] //第几个桶 ： 桶最多一个元素下标
+        var i = 0
+        while i < nums.count {
+            let num = nums[i]
+            let index = indexHelper(num, t + 1)
+            if let _ = tongs[index] {
+                //桶里有元素
+                return true
+            }
+            if let nextTongNum = tongs[index + 1],abs(nextTongNum - num) <= t {//下一个桶有元素,比较
+                return true
+            }
+            if let prevTongNum = tongs[index - 1],abs(prevTongNum - num) <= t {//上一个桶有元素,比较
+                return true
+            }
+            tongs[index] = num
+            if i >= k {//通过k维护窗口
+                tongs.removeValue(forKey: indexHelper(nums[i - k], t + 1))
+            }
+            i += 1
+        }
+        return false
+    }
+    
+    class func indexHelper(_ num: Int,_ w: Int) -> Int {
+        if num >= 0 {
+            return num / w
+        }
+        return (num + 1) / w - 1
+    }
+    
+//    剑指 Offer II 055. 二叉搜索树迭代器
+//    实现一个二叉搜索树迭代器类BSTIterator ，表示一个按中序遍历二叉搜索树（BST）的迭代器：
+//    BSTIterator(TreeNode root) 初始化 BSTIterator 类的一个对象。BST 的根节点 root 会作为构造函数的一部分给出。指针应初始化为一个不存在于 BST 中的数字，且该数字小于 BST 中的任何元素。
+//    boolean hasNext() 如果向指针右侧遍历存在数字，则返回 true ；否则返回 false 。
+//    int next()将指针向右移动，然后返回指针处的数字。
+//    注意，指针初始化为一个不存在于 BST 中的数字，所以对 next() 的首次调用将返回 BST 中的最小元素。
+//    可以假设 next() 调用总是有效的，也就是说，当调用 next() 时，BST 的中序遍历中至少存在一个下一个数字。
+//    示例：
+//    输入
+//    inputs = ["BSTIterator", "next", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"]
+//    inputs = [[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []]
+//    输出
+//    [null, 3, 7, true, 9, true, 15, true, 20, false]
+//    解释
+//    BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]);
+//    bSTIterator.next();    // 返回 3
+//    bSTIterator.next();    // 返回 7
+//    bSTIterator.hasNext(); // 返回 True
+//    bSTIterator.next();    // 返回 9
+//    bSTIterator.hasNext(); // 返回 True
+//    bSTIterator.next();    // 返回 15
+//    bSTIterator.hasNext(); // 返回 True
+//    bSTIterator.next();    // 返回 20
+//    bSTIterator.hasNext(); // 返回 False
+//    提示：
+//    树中节点的数目在范围 [1, 105] 内
+//    0 <= Node.val <= 106
+//    最多调用 105 次 hasNext 和 next 操作
+//    进阶：
+//    你可以设计一个满足下述条件的解决方案吗？next() 和 hasNext() 操作均摊时间复杂度为 O(1) ，并使用 O(h) 内存。其中 h 是树的高度。
+//    注意：本题与主站 173 题相同： https://leetcode-cn.com/problems/binary-search-tree-iterator/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/kTOapQ
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+//        7
+//       3 15
+//        9  20
+    class BSTIterator {
+        var stack: [TreeNode]
+        var visited: Set<UInt> = []
+        
+        init(_ root: TreeNode?) {
+            stack = [root!]
+            var node = root!
+            visited.insert(nodeAddr(&node))
+        }
+        
+        func next() -> Int {
+            while !stack.isEmpty {
+                let node = stack.last!
+                if var left = node.left ,!visited.contains(nodeAddr(&left)){
+                    stack.append(left)
+                    visited.insert(nodeAddr(&left))
+                }else {
+                    let last = stack.removeLast()
+                    if var right = last.right,!visited.contains(nodeAddr(&right))  {
+                        stack.append(right)
+                        visited.insert(nodeAddr(&right))
+                    }
+                    return last.val
+                }
+            }
+            return -1
+        }
+        
+        func hasNext() -> Bool {
+            return !stack.isEmpty
+        }
+        
+        func nodeAddr(_ node: inout TreeNode) -> UInt {
+            return withUnsafePointer(to: &node) { UnsafeRawPointer($0)}.load(as: UInt.self)
+        }
+    }
+    
+//    剑指 Offer II 054. 所有大于等于节点的值之和
+//    给定一个二叉搜索树，请将它的每个节点的值替换成树中大于或者等于该节点值的所有节点值之和。
+//    提醒一下，二叉搜索树满足下列约束条件：
+//    节点的左子树仅包含键 小于 节点键的节点。
+//    节点的右子树仅包含键 大于 节点键的节点。
+//    左右子树也必须是二叉搜索树。
+//    示例 1：
+//    输入：root = [4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+//    输出：[30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]
+//    示例 2：
+//    输入：root = [0,null,1]
+//    输出：[1,null,1]
+//    示例 3：
+//    输入：root = [1,0,2]
+//    输出：[3,3,2]
+//    示例 4：
+//    输入：root = [3,2,4,1]
+//    输出：[7,9,4,10]
+//    提示：
+//    树中的节点数介于 0 和 104 之间。
+//    每个节点的值介于 -104 和 104 之间。
+//    树中的所有值 互不相同 。
+//    给定的树为二叉搜索树。
+//    注意：
+//    本题与主站 538 题相同： https://leetcode-cn.com/problems/convert-bst-to-greater-tree/
+//    本题与主站 1038 题相同：https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/w6cpku
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func convertBST(_ root: TreeNode?) -> TreeNode? {
+        guard var node = root else { return root }
+        var stack = [node]
+        var visited = Set([nodeAddress(&node)])
+        var sum = 0
+        while !stack.isEmpty {
+            let n = stack.last!
+            if var right = n.right , !visited.contains(nodeAddress(&right)) {
+                visited.insert(nodeAddress(&right))
+                stack.append(right)
+            }else {
+                let last = stack.removeLast()
+                sum += last.val
+                last.val = sum
+                if var left = last.left, !visited.contains(nodeAddress(&left)){
+                    visited.insert(nodeAddress(&left))
+                    stack.append(left)
+                }
+            }
+        }
+        return node
+    }
+    
+    class func nodeAddress(_ node: inout TreeNode) -> UInt {
+        return withUnsafePointer(to: &node) { UnsafeRawPointer($0)}.load(as: UInt.self)
+    }
+    
+//    剑指 Offer II 053. 二叉搜索树中的中序后继
+//    给定一棵二叉搜索树和其中的一个节点 p ，找到该节点在树中的中序后继。如果节点没有中序后继，请返回 null 。
+//    节点 p 的后继是值比 p.val 大的节点中键值最小的节点，即按中序遍历的顺序节点 p 的下一个节点。
+//    示例 1：
+//    输入：root = [2,1,3], p = 1
+//    输出：2
+//    解释：这里 1 的中序后继是 2。请注意 p 和返回值都应是 TreeNode 类型。
+//    示例 2：
+//    输入：root = [5,3,6,2,4,null,null,1], p = 6
+//    输出：null
+//    解释：因为给出的节点没有中序后继，所以答案就返回 null 了。
+//    提示：
+//    树中节点的数目在范围 [1, 104] 内。
+//    -105 <= Node.val <= 105
+//    树中各节点的值均保证唯一。
+//    注意：本题与主站 285 题相同： https://leetcode-cn.com/problems/inorder-successor-in-bst/
+    class func inorderSuccessor(_ root: TreeNode?, _ p: TreeNode?) -> TreeNode? {
+        guard let node = root,let pp = p else {return nil}
+        var stack = [node]
+        var visited = Set([node.val])
+        while !stack.isEmpty {
+            let node = stack.last!
+            if let left = node.left,!visited.contains(left.val) {
+                visited.insert(left.val)
+                stack.append(left)
+            }else {
+                let last = stack.removeLast()
+                //访问last
+                if let right = node.right,!visited.contains(right.val) {
+                    visited.insert(right.val)
+                    stack.append(right)
+                }
+                if !stack.isEmpty && last.val == pp.val {
+                    var n = stack.last!
+                    if n.val == last.right?.val {
+                        while n.left != nil {
+                            n = n.left!
+                        }
+                        return n
+                    }else {
+                        return n
+                    }
+                }
+            }
+        }
+        return nil
+    }
+//    剑指 Offer II 050. 向下的路径节点之和
+//    给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+//    路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+//    示例 1：
+//    输入：root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+//    输出：3
+//    解释：和等于 8 的路径有 3 条，如图所示。
+//    示例 2：
+//    输入：root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+//    输出：3
+//    提示:
+//    二叉树的节点个数的范围是 [0,1000]
+//    -109 <= Node.val <= 109
+//    -1000 <= targetSum <= 1000
+//    注意：本题与主站 437 题相同：https://leetcode-cn.com/problems/path-sum-iii/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/6eUYwP
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func pathSum(_ root: TreeNode?, _ targetSum: Int) -> Int {
+        guard let node = root else { return 0 }
+        var res = 0
+        res += pathSumHelper(node, targetSum)
+        res += pathSum(node.left, targetSum)
+        res += pathSum(node.right, targetSum)
+        return res
+    }
+
+    class func pathSumHelper(_ root: TreeNode?, _ targetSum: Int) -> Int {
+        guard let node = root else { return 0 }
+        var res = 0
+        if node.val == targetSum {
+            res += 1
+        }
+        if let left = node.left {
+            res += pathSumHelper(left, targetSum - node.val)
+        }
+        if let right = node.right {
+            res += pathSumHelper(right, targetSum - node.val)
+        }
+        return res
+    }
+    
+//    剑指 Offer II 049. 从根节点到叶节点的路径数字之和
+//    给定一个二叉树的根节点 root ，树中每个节点都存放有一个 0 到 9 之间的数字。
+//    每条从根节点到叶节点的路径都代表一个数字：
+//    例如，从根节点到叶节点的路径 1 -> 2 -> 3 表示数字 123 。
+//    计算从根节点到叶节点生成的 所有数字之和 。
+//    叶节点 是指没有子节点的节点。
+//    示例 1：
+//    输入：root = [1,2,3]
+//    输出：25
+//    解释：
+//    从根到叶子节点路径 1->2 代表数字 12
+//    从根到叶子节点路径 1->3 代表数字 13
+//    因此，数字总和 = 12 + 13 = 25
+//    示例 2：
+//    输入：root = [4,9,0,5,1]
+//    输出：1026
+//    解释：
+//    从根到叶子节点路径 4->9->5 代表数字 495
+//    从根到叶子节点路径 4->9->1 代表数字 491
+//    从根到叶子节点路径 4->0 代表数字 40
+//    因此，数字总和 = 495 + 491 + 40 = 1026
+//    提示：
+//    树中节点的数目在范围 [1, 1000] 内
+//    0 <= Node.val <= 9
+//    树的深度不超过 10
+//    注意：本题与主站 129 题相同： https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/3Etpl5
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func sumNumbers(_ root: TreeNode?) -> Int {
+        guard let node = root else { return 0 }
+        var sum = 0
+        sumNumbersHelper(node, &sum, 0)
+        return sum
+    }
+    class func sumNumbersHelper(_ node: TreeNode,_ sum: inout Int,_ lei: Int) {
+        let val = lei * 10 + node.val
+        if node.left == nil && node.right == nil {
+            sum += val
+            return
+        }
+        if let left = node.left {
+            sumNumbersHelper(left, &sum, val)
+        }
+        if let right = node.right {
+            sumNumbersHelper(right, &sum, val)
+        }
     }
 //    剑指 Offer II 047. 二叉树剪枝
 //    给定一个二叉树 根节点 root ，树的每个节点的值要么是 0，要么是 1。请剪除该二叉树中所有节点的值为 0 的子树。
@@ -421,7 +1252,35 @@ import Foundation
 //    链接：https://leetcode-cn.com/problems/pOCWxh
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func pruneTree(_ root: TreeNode?) -> TreeNode? {
-
+        guard let node = root else { return root }
+        return pruneTreeHelper(node) ? nil : node
+    }
+    
+    class func pruneTreeHelper(_ root: TreeNode) -> Bool {
+        if let left = root.left,let right = root.right {
+            let leftCanCut = pruneTreeHelper(left)
+            let rightCanCut = pruneTreeHelper(right)
+            if leftCanCut {
+                root.left = nil
+            }
+            if rightCanCut {
+                root.right = nil
+            }
+            return leftCanCut && rightCanCut && root.val == 0
+        }else if let left = root.left {
+            let leftCanCut = pruneTreeHelper(left)
+            if leftCanCut {
+                root.left = nil
+            }
+            return leftCanCut && root.val == 0
+        }else if let right = root.right {
+            let rightCanCut = pruneTreeHelper(right)
+            if rightCanCut {
+                root.right = nil
+            }
+            return rightCanCut && root.val == 0
+        }
+        return root.val == 0
     }
 //    剑指 Offer II 046. 二叉树的右侧视图
 //    给定一个二叉树的 根节点 root，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。

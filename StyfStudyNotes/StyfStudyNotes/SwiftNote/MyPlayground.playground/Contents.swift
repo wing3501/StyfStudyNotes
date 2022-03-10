@@ -1429,3 +1429,86 @@ let imp = imp_implementationWithBlock(unsafeBitCast(newFunc, to: AnyObject.self)
 method_setImplementation(methond!, imp)
 let person123 = PersonObject()
 person123.countNumber(toValue: 50)
+
+
+// https://zxfcumtcs.github.io/2022/02/01/SwiftProtocol1/
+// 协议类型擦除
+public protocol MarkdownBuilder: Equatable, Identifiable {
+  var style: String { get }
+  func build(from text: String) -> String
+}
+extension MarkdownBuilder {
+  public var id: String { style }
+}
+// 斜体
+//
+fileprivate struct ItalicsBuilder: MarkdownBuilder {
+  public var style: String { "*Italics*" }
+  public func build(from text: String) -> String { "*\(text)*" }
+}
+
+// 粗体
+//
+fileprivate struct BoldBuilder: MarkdownBuilder {
+  public var style: String { "**Bold**" }
+  public func build(from text: String) -> String { "**\(text)**" }
+}
+
+//private let allBuilders: [MarkdownBuilder]  //Protocol 'MarkdownBuilder' can only be used as a generic constraint because it has Self or associated type requirements
+//解决
+public struct AnyBuilder: MarkdownBuilder {
+  public let style: String
+  public var id: String { "AnyBuilder-\(style)" }
+
+  private let wrappedApply: (String) -> String
+
+  public init<B: MarkdownBuilder>(_ builder: B) {
+    style = builder.style
+    wrappedApply = builder.build(from:)
+  }
+  public func build(from text: String) -> String {
+    wrappedApply(text)
+  }
+  public static func == (lhs: AnyBuilder, rhs: AnyBuilder) -> Bool {
+    lhs.id == rhs.id
+  }
+}
+// 使用
+private let allBuilders: [AnyBuilder]
+// 扩展
+public extension MarkdownBuilder {
+  func asAnyBuilder() -> AnyBuilder {
+    AnyBuilder(self)
+  }
+}
+BoldBuilder().asAnyBuilder()
+AnyBuilder(BoldBuilder())
+
+//Opaque Types 就是让函数/方法的返回值是协议，而不是具体的类型。
+//只想对外暴露MarkdownBuilder
+//public func italicsBuilder() -> MarkdownBuilder {   Protocol 'MarkdownBuilder' can only be used as a generic constraint because it has Self or associated type requirements
+//  ItalicsBuilder()
+//}
+
+//解决
+public func italicsBuilder() -> some MarkdownBuilder {
+    ItalicsBuilder()
+}
+//Opaque Types 与直接返回协议类型的最大区别是：
+//Opaque Types 只是对使用方(人)隐藏了具体类型细节，编译器是知道具体类型的；
+//而直接返回协议类型，则是运行时行为，编译器是无法知道的；
+//编译器是明确知道 italicsBuilder 方法的返回值类型是 ItalicsBuilder，但方法调用方却只知道返回值遵守了 MarkdownBuilder 协议。从而也就达到了隐藏实现细节的目的；
+
+//Phantom Types   用于对类型做进一步的强化。
+//Phantom Types 没有严格的定义，一般表述是：出现在泛型参数中，但没有被真正使用。
+//如下代码中的 Role (例子来自 How to use phantom types in Swift)，它只出现在泛型参数中，在 Employee 实现中并未使用：
+struct Employee<Role>: Equatable {
+    var name: String
+}
+enum Sales { }
+enum Programmer { }
+//由于 Employee 实现了 Equatable，可以在两个实例间进行判等操作。
+//但判等操作明显只有在同一种角色间进行才有意义：
+let john = Employee<Sales>.init(name: "John")
+let sea = Employee<Programmer>.init(name: "Sea")
+//john == sea  //Cannot convert value of type 'Employee<Programmer>' to expected argument type 'Employee<Sales>'
