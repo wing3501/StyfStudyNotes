@@ -30,8 +30,6 @@
 		920C4FF1273276480091487B /* KVODemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FF0273276480091487B /* KVODemoViewController.m */; };
 		920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 920C4FF3273278140091487B /* UIViewController+KVO.m */; };
 		920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */; };
-		920D2C20274CD70300246B1C /* UserDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 920D2C1F274CD70300246B1C /* UserDump.m */; };
-		920D2C24274CD7FC00246B1C /* KSUserDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 920D2C23274CD7FC00246B1C /* KSUserDump.m */; };
 		920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3EFF25E8A4A000DE2990 /* TestViewController.m */; };
 		920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0425E8A4A700DE2990 /* FDownLoaderManager.m */; };
 		920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 920E3F0525E8A4A700DE2990 /* FFileTool.m */; };
@@ -47,6 +45,7 @@
 		9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59526AA94CC007E8B6A /* SaleHeaderFooterView.m */; };
 		9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
+		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		92426DDA26246289002062B7 /* LeaksDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DD926246288002062B7 /* LeaksDemo.m */; };
 		92426DDF262464EA002062B7 /* LeaksObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DDE262464EA002062B7 /* LeaksObj.m */; };
 		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
@@ -161,10 +160,6 @@
 		920C4FF2273278140091487B /* UIViewController+KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KVO.h"; sourceTree = "<group>"; };
 		920C4FF3273278140091487B /* UIViewController+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KVO.m"; sourceTree = "<group>"; };
 		920CD00F26521002007E4E2E /* PropertyWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperViewController.swift; sourceTree = "<group>"; };
-		920D2C1E274CD70300246B1C /* UserDump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDump.h; sourceTree = "<group>"; };
-		920D2C1F274CD70300246B1C /* UserDump.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDump.m; sourceTree = "<group>"; };
-		920D2C22274CD7FC00246B1C /* KSUserDump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSUserDump.h; sourceTree = "<group>"; };
-		920D2C23274CD7FC00246B1C /* KSUserDump.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSUserDump.m; sourceTree = "<group>"; };
 		920E3EFE25E8A4A000DE2990 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		920E3EFF25E8A4A000DE2990 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		920E3F0325E8A4A700DE2990 /* FDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDownLoader.h; sourceTree = "<group>"; };
@@ -191,6 +186,8 @@
 		9220D59826AA97D1007E8B6A /* SaleHeaderFooterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleHeaderFooterModel.h; sourceTree = "<group>"; };
 		9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleHeaderFooterModel.m; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
+		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
+		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		92426DD826246288002062B7 /* LeaksDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksDemo.h; sourceTree = "<group>"; };
 		92426DD926246288002062B7 /* LeaksDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksDemo.m; sourceTree = "<group>"; };
 		92426DDD262464E9002062B7 /* LeaksObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksObj.h; sourceTree = "<group>"; };
@@ -340,6 +337,8 @@
 				920B9BDD25DF5FF80098B1BA /* Other.m */,
 				92F36644273381A20013FB92 /* UIImage+scale.h */,
 				92F36645273381A20013FB92 /* UIImage+scale.m */,
+				9231DFD027DB47C000607C03 /* CALayer+Ext.h */,
+				9231DFD127DB47C000607C03 /* CALayer+Ext.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -442,33 +441,6 @@
 				920C4FF0273276480091487B /* KVODemoViewController.m */,
 			);
 			path = KVO;
-			sourceTree = "<group>";
-		};
-		920D2C1D274CD6C600246B1C /* UserDump */ = {
-			isa = PBXGroup;
-			children = (
-				920D2C1E274CD70300246B1C /* UserDump.h */,
-				920D2C1F274CD70300246B1C /* UserDump.m */,
-				920D2C21274CD70E00246B1C /* KSCrash */,
-			);
-			path = UserDump;
-			sourceTree = "<group>";
-		};
-		920D2C21274CD70E00246B1C /* KSCrash */ = {
-			isa = PBXGroup;
-			children = (
-				920D2C25274CD88800246B1C /* UserDump */,
-			);
-			path = KSCrash;
-			sourceTree = "<group>";
-		};
-		920D2C25274CD88800246B1C /* UserDump */ = {
-			isa = PBXGroup;
-			children = (
-				920D2C22274CD7FC00246B1C /* KSUserDump.h */,
-				920D2C23274CD7FC00246B1C /* KSUserDump.m */,
-			);
-			path = UserDump;
 			sourceTree = "<group>";
 		};
 		920E3EFD25E8A46200DE2990 /* 断点续传 */ = {
@@ -684,7 +656,6 @@
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
 				92E2359027671CF7003B7C85 /* CPPNote */,
-				920D2C1D274CD6C600246B1C /* UserDump */,
 				920C4FEB273275F90091487B /* KVO */,
 				92C1D92427293C6500FF3398 /* 问题 */,
 				9220D57F26AA91FF007E8B6A /* DiffableDataSource */,
@@ -1041,7 +1012,6 @@
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
-				920D2C20274CD70300246B1C /* UserDump.m in Sources */,
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
@@ -1056,7 +1026,6 @@
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
-				920D2C24274CD7FC00246B1C /* KSUserDump.m in Sources */,
 				92E2359227671D17003B7C85 /* myCpp.cpp in Sources */,
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */,
@@ -1073,6 +1042,7 @@
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
+				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,

@@ -513,7 +513,158 @@ class PriorityQueue<T> {
 //        trie.insert("app");
 //        trie.search("app");     // 返回 True
 
+        //    剑指 Offer II 063. 替换单词
+//        print(replaceWords(["cat","bat","rat"], "the cattle was rattled by the battery"))
+//        print(replaceWords(["a","b","c"], "aadsfasf absbs bbab cadsfafs"))
+//        print(replaceWords(["a", "aa", "aaa", "aaaa"], "a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa"))
+//        print(replaceWords(["catt","cat","bat","rat"], "the cattle was rattled by the battery"))
+//        print(replaceWords(["ac","ab"], "it is abnormal that this solution is accepted"))
         
+        //    剑指 Offer II 064. 神奇的字典
+        let dic = MagicDictionary()
+//        dic.buildDict(["hello", "leetcode"])
+//        print(dic.search("hello"))
+//        print(dic.search("hhllo"))
+//        print(dic.search("hell"))
+//        print(dic.search("leetcoded"))
+        
+//        dic.buildDict(["hello","hallo","leetcode","judge", "judgg"])
+//        print(dic.search("judge"))
+//        print(dic.search("judgg"))
+        
+//        dic.buildDict(["hello","leetcode"])
+//        print(dic.search("hello"))
+        
+        dic.buildDict(["a","b","ab","abc","abcabacbababdbadbfaejfoiawfjaojfaojefaowjfoawjfoawj","abcdefghijawefe","aefawoifjowajfowafjeoawjfaow","cba","cas","aaewfawi","babcda","bcd","awefj"])
+//        print(dic.search("a"))
+//        print(dic.search("b"))
+//        print(dic.search("c"))
+//        print(dic.search("a"))
+//        print(dic.search("d"))
+//        print(dic.search("e"))
+//        print(dic.search("f"))
+        print(dic.search("ab"))
+//        print(dic.search("ba"))
+//        print(dic.search("abc"))
+//        print(dic.search("cba"))
+//        print(dic.search("abb"))
+//        print(dic.search("bb"))
+//        print(dic.search("aa"))
+//        print(dic.search("bbc"))
+//        print(dic.search("abcd"))
+        
+//        ["MagicDictionary", "buildDict", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search"]
+//        [[], [["a","b","ab","abc","abcabacbababdbadbfaejfoiawfjaojfaojefaowjfoawjfoawj","abcdefghijawefe","aefawoifjowajfowafjeoawjfaow","cba","cas","aaewfawi","babcda","bcd","awefj"]], ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["ab"], ["ba"], ["abc"], ["cba"], ["abb"], ["bb"], ["aa"], ["bbc"], ["abcd"]]
+    }
+    
+    
+    
+    
+//    剑指 Offer II 064. 神奇的字典
+//    设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于已构建的神奇字典中。
+//    实现 MagicDictionary 类：
+//    MagicDictionary() 初始化对象
+//    void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同
+//    bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。
+//    示例：
+//    输入
+//    inputs = ["MagicDictionary", "buildDict", "search", "search", "search", "search"]
+//    inputs = [[], [["hello", "leetcode"]], ["hello"], ["hhllo"], ["hell"], ["leetcoded"]]
+//    输出
+//    [null, null, false, true, false, false]
+//    解释
+//    MagicDictionary magicDictionary = new MagicDictionary();
+//    magicDictionary.buildDict(["hello", "leetcode"]);
+//    magicDictionary.search("hello"); // 返回 False
+//    magicDictionary.search("hhllo"); // 将第二个 'h' 替换为 'e' 可以匹配 "hello" ，所以返回 True
+//    magicDictionary.search("hell"); // 返回 False
+//    magicDictionary.search("leetcoded"); // 返回 False
+//    提示：
+//    1 <= dictionary.length <= 100
+//    1 <= dictionary[i].length <= 100
+//    dictionary[i] 仅由小写英文字母组成
+//    dictionary 中的所有字符串 互不相同
+//    1 <= searchWord.length <= 100
+//    searchWord 仅由小写英文字母组成
+//    buildDict 仅在 search 之前调用一次
+//    最多调用 100 次 search
+//    注意：本题与主站 676 题相同： https://leetcode-cn.com/problems/implement-magic-dictionary/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/US1pGT
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class MagicDictionary {
+        class TrieNode {
+            var children: [Character:TrieNode] = [:]
+            var isEnd: Bool = false
+        }
+        let root: TrieNode = TrieNode()
+        
+        func insert(_ word: String) {
+            let array = Array(word)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let nextNode = node.children[ch] {
+                    if i == array.count - 1 {
+                        nextNode.isEnd = true
+                    }
+                    node = nextNode
+                }else {
+                    let newNode = TrieNode()
+                    node.children[ch] = newNode
+                    node = newNode
+                    if i == array.count - 1 {
+                        newNode.isEnd = true
+                    }
+                }
+                i += 1
+            }
+        }
+        
+        /** Initialize your data structure here. */
+        init() {
+
+        }
+        
+        func buildDict(_ dictionary: [String]) {
+            for item in dictionary {
+                insert(item)
+            }
+        }
+        
+        func search(_ searchWord: [Character],_ index: Int,_ node:TrieNode, _ hasSkip: Bool) -> Bool {
+            let ch = searchWord[index]
+            if let next = node.children[ch] {
+                if index == searchWord.count - 1 {
+                    if next.isEnd,hasSkip {
+                        return true
+                    }
+                }else {
+                    if search(searchWord, index + 1,next , hasSkip) {
+                        return true
+                    }
+                }
+            }
+            if !hasSkip {
+                for (key,val) in node.children {
+                    if ch == key {
+                        continue
+                    }
+                    if index == searchWord.count - 1,val.isEnd {
+                        return true
+                    }
+                    if index + 1 < searchWord.count, search(searchWord, index + 1, val, true) {
+                        return true
+                    }
+                }
+            }
+            return false
+        }
+        
+        func search(_ searchWord: String) -> Bool {
+            return search(Array(searchWord), 0,root, false)
+        }
     }
 //    剑指 Offer II 063. 替换单词
 //    在英语中，有一个叫做 词根(root) 的概念，它可以跟着其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。
@@ -549,7 +700,79 @@ class PriorityQueue<T> {
 //    链接：https://leetcode-cn.com/problems/UhWRSj
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
     class func replaceWords(_ dictionary: [String], _ sentence: String) -> String {
+        class Trie {
+            class TrieNode {
+                var children: [Character:TrieNode] = [:]
+                var isEnd: Bool = false
+            }
+            let root: TrieNode = TrieNode()
+            /** Initialize your data structure here. */
+            init() {
 
+            }
+            
+            /** Inserts a word into the trie. */
+            func insert(_ word: String) {
+                let array = Array(word)
+                var node = root
+                var i = 0
+                while i < array.count {
+                    let ch = array[i]
+                    if let nextNode = node.children[ch] {
+                        if i == array.count - 1 {
+                            nextNode.isEnd = true
+                        }
+                        node = nextNode
+                    }else {
+                        let newNode = TrieNode()
+                        node.children[ch] = newNode
+                        node = newNode
+                        if i == array.count - 1 {
+                            newNode.isEnd = true
+                        }
+                    }
+                    i += 1
+                }
+            }
+            
+            /** Returns if the word is in the trie. */
+            func search(_ word: String) -> String {
+                let array = Array(word)
+                var node = root
+                var res: [Character] = []
+                var i = 0
+                while i < array.count {
+                    let ch = array[i]
+                    if let nextNode = node.children[ch] {
+                        res.append(ch)
+                        if nextNode.isEnd {
+                            return String(res)
+                        }
+                        node = nextNode
+                    }else {
+                        break
+                    }
+                    i += 1
+                }
+                return ""
+            }
+        }
+        
+        let trie = Trie()
+        for item in dictionary {
+            trie.insert(item)
+        }
+        var array: [String] = sentence.split(separator: " ").map {String($0)}
+        var i = 0
+        while i < array.count {
+            let item = array[i]
+            let str = trie.search(item)
+            if !str.isEmpty {
+                array[i] = str
+            }
+            i += 1
+        }
+        return array.joined(separator: " ")
     }
 //    剑指 Offer II 062. 实现前缀树
 //    Trie（发音类似 "try"）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
