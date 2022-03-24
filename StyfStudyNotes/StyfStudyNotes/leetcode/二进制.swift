@@ -17,6 +17,8 @@ import Foundation
 //0=a^a
 //由上面两个推导出：a=a^b^b
 
+//如果 a ^ b = c 成立，那么a ^ c = b 与 b ^ c = a 均成立。
+
 //交换两个数
 //a=a^b
 //b=a^b

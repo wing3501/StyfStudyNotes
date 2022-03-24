@@ -521,7 +521,7 @@ class PriorityQueue<T> {
 //        print(replaceWords(["ac","ab"], "it is abnormal that this solution is accepted"))
         
         //    剑指 Offer II 064. 神奇的字典
-        let dic = MagicDictionary()
+//        let dic = MagicDictionary()
 //        dic.buildDict(["hello", "leetcode"])
 //        print(dic.search("hello"))
 //        print(dic.search("hhllo"))
@@ -535,7 +535,7 @@ class PriorityQueue<T> {
 //        dic.buildDict(["hello","leetcode"])
 //        print(dic.search("hello"))
         
-        dic.buildDict(["a","b","ab","abc","abcabacbababdbadbfaejfoiawfjaojfaojefaowjfoawjfoawj","abcdefghijawefe","aefawoifjowajfowafjeoawjfaow","cba","cas","aaewfawi","babcda","bcd","awefj"])
+//        dic.buildDict(["a","b","ab","abc","abcabacbababdbadbfaejfoiawfjaojfaojefaowjfoawjfoawj","abcdefghijawefe","aefawoifjowajfowafjeoawjfaow","cba","cas","aaewfawi","babcda","bcd","awefj"])
 //        print(dic.search("a"))
 //        print(dic.search("b"))
 //        print(dic.search("c"))
@@ -543,7 +543,7 @@ class PriorityQueue<T> {
 //        print(dic.search("d"))
 //        print(dic.search("e"))
 //        print(dic.search("f"))
-        print(dic.search("ab"))
+//        print(dic.search("ab"))
 //        print(dic.search("ba"))
 //        print(dic.search("abc"))
 //        print(dic.search("cba"))
@@ -555,10 +555,251 @@ class PriorityQueue<T> {
         
 //        ["MagicDictionary", "buildDict", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search", "search"]
 //        [[], [["a","b","ab","abc","abcabacbababdbadbfaejfoiawfjaojfaojefaowjfoawjfoawj","abcdefghijawefe","aefawoifjowajfowafjeoawjfaow","cba","cas","aaewfawi","babcda","bcd","awefj"]], ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["ab"], ["ba"], ["abc"], ["cba"], ["abb"], ["bb"], ["aa"], ["bbc"], ["abcd"]]
+    
+//        剑指 Offer II 065. 最短的单词编码
+//        print(minimumLengthEncoding(["time", "me", "bell"]))//10
+//        print(minimumLengthEncoding(["t"]))//2
+//        print(minimumLengthEncoding(["time","atime","btime"]))//12
+        
+        //    剑指 Offer II 066. 单词之和
+//        let mapSum = MapSum()
+//        mapSum.insert("apple", 3)
+//        print(mapSum.sum("ap"))
+//        mapSum.insert("app", 2)
+//        mapSum.insert("apple", 2)
+//        print(mapSum.sum("ap"))
+//        ["MapSum", "insert", "sum", "insert", "insert", "sum"]
+//        [[], ["apple",3], ["ap"], ["app",2], ["apple", 2], ["ap"]]
+        
+        
+        //    剑指 Offer II 067. 最大的异或
+        print(findMaximumXOR([3,10,5,25,2,8]))//28
     }
     
+//    剑指 Offer II 067. 最大的异或
+//    给定一个整数数组 nums ，返回 nums[i] XOR nums[j] 的最大运算结果，其中 0 ≤ i ≤ j < n 。
+//    示例 1：
+//    输入：nums = [3,10,5,25,2,8]
+//    输出：28
+//    解释：最大运算结果是 5 XOR 25 = 28.
+//    示例 2：
+//    输入：nums = [0]
+//    输出：0
+//    示例 3：
+//    输入：nums = [2,4]
+//    输出：6
+//    示例 4：
+//    输入：nums = [8,10,2]
+//    输出：10
+//    示例 5：
+//    输入：nums = [14,70,53,83,49,91,36,80,92,51,66,70]
+//    输出：127
+//    提示：
+//    1 <= nums.length <= 2 * 104
+//    0 <= nums[i] <= 231 - 1
+//    进阶：你可以在 O(n) 的时间解决这个问题吗？
+//    注意：本题与主站 421 题相同： https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/ms70jA
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findMaximumXOR(_ nums: [Int]) -> Int {
+        // 先确定高位，再确定低位（有点贪心算法的意思），才能保证这道题的最大性质
+            // 一位接着一位去确定这个数位的大小
+            // 利用性质： a ^ b = c ，则 a ^ c = b，且 b ^ c = a
+        var res = 0
+        var mask = 0
+        var i = 30
+        while i >= 0 {
+            //注意点1：注意保留前缀的方法，mask 是这样得来的
+            mask = mask | (1 << i);
+            
+            var set = Set<Int>()
+            for num in nums {
+                set.insert(num & mask)
+            }
+            // 这里先假定第 n 位为 1 ，前 n-1 位 res 为之前迭代求得
+            let temp = res | (1 << i)
+            for prefixNum in set {
+                if set.contains(prefixNum ^ temp) {
+                    res = temp;
+                    break
+                }
+            }
+            i -= 1
+        }
+        return res
+    }
     
-    
+//    剑指 Offer II 066. 单词之和
+//    实现一个 MapSum 类，支持两个方法，insert 和 sum：
+//    MapSum() 初始化 MapSum 对象
+//    void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对将被替代成新的键值对。
+//    int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。
+//    示例：
+//    输入：
+//    inputs = ["MapSum", "insert", "sum", "insert", "sum"]
+//    inputs = [[], ["apple", 3], ["ap"], ["app", 2], ["ap"]]
+//    输出：
+//    [null, null, 3, null, 5]
+//    解释：
+//    MapSum mapSum = new MapSum();
+//    mapSum.insert("apple", 3);
+//    mapSum.sum("ap");           // return 3 (apple = 3)
+//    mapSum.insert("app", 2);
+//    mapSum.sum("ap");           // return 5 (apple + app = 3 + 2 = 5)
+//    提示：
+//    1 <= key.length, prefix.length <= 50
+//    key 和 prefix 仅由小写英文字母组成
+//    1 <= val <= 1000
+//    最多调用 50 次 insert 和 sum
+//    注意：本题与主站 677 题相同： https://leetcode-cn.com/problems/map-sum-pairs/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/z1R5dt
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class MapSum {
+        
+        class MapSumNode {
+            var val: Int = 0
+            var children: [Character: MapSumNode] = [:]
+        }
+        var root: MapSumNode
+
+        /** Initialize your data structure here. */
+        init() {
+            root = MapSumNode()
+        }
+        
+        func insert(_ key: String, _ val: Int) {
+            let array = Array(key)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let next = node.children[ch] {
+                    node = next
+                    if i == array.count - 1 {
+                        node.val = val
+                    }
+                }else {
+                    let next = MapSumNode()
+                    node.children[ch] = next
+                    node = next
+                    if i == array.count - 1 {
+                        node.val = val
+                    }
+                }
+                i += 1
+            }
+        }
+        
+        func sum(_ prefix: String) -> Int {
+            let array = Array(prefix)
+            var node = root
+            var i = 0
+            while i < array.count {
+                let ch = array[i]
+                if let next = node.children[ch] {
+                    node = next
+                    if i == array.count - 1 {
+                        var sum = node.val
+                        var queue: [MapSumNode] = Array(node.children.values)
+                        var temp: [MapSumNode] = []
+                        while !queue.isEmpty {
+                            let last = queue.removeLast()
+                            sum += last.val
+                            temp.append(contentsOf: Array(last.children.values))
+                            if queue.isEmpty {
+                                queue = temp
+                                temp.removeAll()
+                            }
+                        }
+                        return sum
+                    }
+                }else {
+                    break
+                }
+                i += 1
+            }
+            return 0
+        }
+    }
+//    剑指 Offer II 065. 最短的单词编码
+//    单词数组 words 的 有效编码 由任意助记字符串 s 和下标数组 indices 组成，且满足：
+//    words.length == indices.length
+//    助记字符串 s 以 '#' 字符结尾
+//    对于每个下标 indices[i] ，s 的一个从 indices[i] 开始、到下一个 '#' 字符结束（但不包括 '#'）的 子字符串 恰好与 words[i] 相等
+//    给定一个单词数组 words ，返回成功对 words 进行编码的最小助记字符串 s 的长度 。
+//    示例 1：
+//    输入：words = ["time", "me", "bell"]
+//    输出：10
+//    解释：一组有效编码为 s = "time#bell#" 和 indices = [0, 2, 5] 。
+//    words[0] = "time" ，s 开始于 indices[0] = 0 到下一个 '#' 结束的子字符串，如加粗部分所示 "time#bell#"
+//    words[1] = "me" ，s 开始于 indices[1] = 2 到下一个 '#' 结束的子字符串，如加粗部分所示 "time#bell#"
+//    words[2] = "bell" ，s 开始于 indices[2] = 5 到下一个 '#' 结束的子字符串，如加粗部分所示 "time#bell#"
+//    示例 2：
+//    输入：words = ["t"]
+//    输出：2
+//    解释：一组有效编码为 s = "t#" 和 indices = [0] 。
+//    提示：
+//    1 <= words.length <= 2000
+//    1 <= words[i].length <= 7
+//    words[i] 仅由小写字母组成
+//    注意：本题与主站 820 题相同： https://leetcode-cn.com/problems/short-encoding-of-words/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/iSwD2y
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minimumLengthEncoding(_ words: [String]) -> Int {
+        class TrieNode {
+            var children: [Character:TrieNode] = [:]
+            var isEnd: Bool = false
+        }
+        let root: TrieNode = TrieNode()
+        
+        func insert(_ word: String) {
+            let array = Array(word)
+            var node = root
+            var i = array.count - 1
+            while i >= 0 {
+                let ch = array[i]
+                if let nextNode = node.children[ch] {
+                    if i == array.count - 1 {
+                        nextNode.isEnd = true
+                    }
+                    node = nextNode
+                }else {
+                    let newNode = TrieNode()
+                    node.children[ch] = newNode
+                    node = newNode
+                    if i == array.count - 1 {
+                        newNode.isEnd = true
+                    }
+                }
+                i -= 1
+            }
+        }
+        
+        for word in words {
+            insert(word)
+        }
+        var queue: [TrieNode] = Array(root.children.values)
+        var s = 0
+        var temp: [TrieNode] = []
+        var deep = 1
+        while !queue.isEmpty {
+            let node = queue.removeLast()
+            if node.children.isEmpty {
+                s += deep + 1
+            }else {
+                temp.append(contentsOf: Array(node.children.values))
+            }
+            if queue.isEmpty,!temp.isEmpty {
+                deep += 1
+                queue = temp
+                temp.removeAll()
+            }
+        }
+        return s
+    }
     
 //    剑指 Offer II 064. 神奇的字典
 //    设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于已构建的神奇字典中。

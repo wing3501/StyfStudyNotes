@@ -46,7 +46,7 @@ class PropertyWrapperViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.white
         ///具体的业务代码。
         UserDefaultsConfig.hadShownGuideView = false
         print(UserDefaultsConfig.hadShownGuideView) // false

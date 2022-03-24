@@ -312,6 +312,9 @@ struct Circle {
         }
     }
     //延迟存储属性 必须是var
+//    使用延迟属性注意点
+//    1 如果多条线程同时第一次访问延迟属性，无法保证属性只被初始化1次。因此，延迟属性不是线程安全的。
+//    2 当结构体包含一个延迟属性时，只有var修饰实例 才能访问延迟属性，因为延迟属性初始化时需要改变结构体的内存
     lazy var radius1: Double = 1
     //计算属性
     var diameter: Double {
@@ -336,8 +339,9 @@ struct Shape1 {
     }
 //    static var count: Int = 0  如果是类也可以用class  
 }
-
+//单例
 class FileManager {
+    //static内部使用swift_once保证只初始化一次，swift_once内部是dispatch_once_f
     public static let shared = FileManager()
     private init() { }
 }
@@ -1006,6 +1010,17 @@ var ptr3 = withUnsafePointer(to: &age) { (p) -> Int in
 var ptr4 = withUnsafePointer(to: &age) {
     return UnsafeRawPointer($0)
 }
+
+//修改指针内容
+//1
+age = withUnsafePointer(to: &age, { ptr in
+    return ptr.pointee + 1
+})
+//2
+withUnsafeMutablePointer(to: &age) { ptr in
+    return ptr.pointee + 1
+}
+
 //获得指向堆空间实例的指针
 var person = Person(age: 21)
 var ptr5 = withUnsafePointer(to: &person) { UnsafeRawPointer($0)}
@@ -1017,11 +1032,17 @@ var ptr7 = malloc(16)
 ptr7?.storeBytes(of: 10, as: Int.self)
 ptr7?.storeBytes(of: 20, toByteOffset: 8, as: Int.self)
 ptr7?.load(as: Int.self)
+//fromByteOffset: 读取数据偏移大小
+//as:数据类型
 ptr7?.load(fromByteOffset: 8, as: Int.self)
 free(ptr7)
-
+///byteCount:需要多少内存空间
+///alignment:内存对齐大小
 var ptr8 = UnsafeMutableRawPointer.allocate(byteCount: 16, alignment: 1)
+//of:数据大小
+//as:数据类型
 ptr8.storeBytes(of: 11, as: Int.self)
+//by: 可以移动的步长
 var ptr9 = ptr8.advanced(by: 8)//返回指向后8个字节的指针
 ptr8.deallocate()
 
@@ -1036,11 +1057,46 @@ print(ptr10[0])
 ptr10.deinitialize(count: 3)//不写会内存泄漏
 ptr10.deallocate()
 
+//在Swift中提供了三种不同的API来绑定指针，或者重新绑定指针
+//使⽤ assumingMemoryBound(to:) 来告诉编译器预期的类型
 //RawPointer转Pointer
 ptr8.assumingMemoryBound(to: Int.self)
 (ptr8 + 8).assumingMemoryBound(to: Int.self)
 
+func testPointer(_ p: UnsafePointer<Int>) {
+    print(p[0])
+    print(p[1])
+}
+let myTuple = (10,20)
+withUnsafePointer(to: myTuple) { tuplePtr in
+    //先转到原生指针
+    let ptr = UnsafeRawPointer(tuplePtr)
+    //绑定类型
+    testPointer(ptr.assumingMemoryBound(to: Int.self))
+}
+//bindMemory(to: capacity:)
+//⽤于更改内存绑定的类型，如果当前内存还没有类型绑定，则将⾸次绑定为该类型；否则重新绑定该类型，并且内存中所有的值都会变成该类型。
+withUnsafePointer(to: myTuple) { tuplePtr in
+    //先转到原生指针
+    let ptr = UnsafeRawPointer(tuplePtr)
+    //绑定类型
+//    testPointer(ptr.assumingMemoryBound(to: Int.self))
+    testPointer(ptr.bindMemory(to: Int.self, capacity: 1))
+}
+
+//withMemoryRebound(to: capacity: body:)
+//来临时更改内存绑定类型.当离开当前的作用域就会失效，重新绑定为原始类型。
+let Uint8ptr = UnsafePointer<UInt8>.init(bitPattern: 10)
+Uint8ptr?.withMemoryRebound(to: Int.self, capacity: 1, { intptr in
+    testPointer(intptr)
+})
+
+
 var ptr11 = unsafeBitCast(ptr8, to: UnsafeMutablePointer<Int>.self)
+
+
+
+
 
 //字面量
 extension Int : ExpressibleByBooleanLiteral {
