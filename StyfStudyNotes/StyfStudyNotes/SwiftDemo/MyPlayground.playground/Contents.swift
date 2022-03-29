@@ -605,14 +605,24 @@ protocol Drawable {
 //Any AnyObject
 //Any:可以代表任意类型（枚举、结构体、类、函数类型）
 //AnyObject:可以代表任意类类型
+//把AnyObject转换成具体的类型，这⾥我们使⽤三个关键字as，as?，as!进行类型转换
 protocol Runnable: AnyObject {//只有类才能遵守这个协议
 }
+
+var t1: AnyObject = p //代表类的实例
+var t2: AnyObject = Person.self //代表类的类型
+
 var array1 = Array<Any>()//可以放任意类型
 
 //只能被类遵守的协议 3种方式
 protocol Runnable3: AnyObject {}
 protocol Runnable4: class {}
 @objc protocol Runnable5 {} //还能暴露给OC去遵守
+
+//AnyClass
+//AnyClass代表了任意实例的类型
+//public typealias AnyClass = AnyObject.Type
+//所以我们不能用具体的实例对象赋值给AnyClass，编译器会报错。
 
 //可选协议
 //第一个方式：给协议增加扩展，扩展里给默认实现
@@ -636,13 +646,42 @@ var dd = 10 as Double//百分百可以转的用as就可以
 //X.type
 var p: Person = Person()
 var pType: Person.Type = Person.self
+//type(Of:)⽤来获取⼀个值的动态类型。
+//静态类型(static type)，这个是在编译时期确定的类型。
+//动态类型(dynamic Type)，这个是在运⾏时期确定的类型。
 pType = type(of: p)//从p取出前8个字节
+
+//self
+//T.self: T 是实例对象，当前 T.self 返回的就是实例对象本身。如果 T 是类，当前 T.self 返回的就是元类型。
+
+//Self 一般用作返回值类型，限定返回值跟方法调用者必须是同一类型，也可以作为参数类型
+// Self类型不是特定类型，⽽是让您⽅便地引⽤当前类型，⽽⽆需重复或知道该类型的名称。
+// 1.在协议声明或协议成员声明中，Self类型是指最终符合协议的类型
+protocol MyTestProtocol {
+    func get() -> Self //返回遵守协议的类型
+}
+class MyPerson: MyTestProtocol {
+    func get() -> Self {
+        self
+    }
+}
+// 2.Self作为实例方法的返回类型代表自身类型
+class MyPerson1 {
+    func get() -> Self {
+        self
+    }
+}
+// 3.计算属性/实例方法中访问自身的类型属性，类型方法
+class MyPerson2 {
+    static let age = 0
+    var age1: Int {
+        return Self.age
+    }
+}
 
 //元类型的使用
 var t = Person.self
 var p3 = t.init()
-
-//Self 一般用作返回值类型，限定返回值跟方法调用者必须是同一类型，也可以作为参数类型
 
 //错误处理
 
@@ -1097,7 +1136,6 @@ var ptr11 = unsafeBitCast(ptr8, to: UnsafeMutablePointer<Int>.self)
 
 
 
-
 //字面量
 extension Int : ExpressibleByBooleanLiteral {
     public init(booleanLiteral value: Bool) {
@@ -1225,6 +1263,11 @@ class Person11 {
 //@UIApplicationMain 自动设AppDeleagete为代理
 //也可以自己建 main.swift
 
+//Swift Runtime
+//纯swift类没有动态性，但在⽅法、属性前添加dynamic修饰，可获得动态性。
+//继承⾃NSObject的swift类，其继承⾃⽗类的⽅法具有动态性，其它⾃定义⽅法、属性想要获得动态性，需要添加dynamic修饰。
+//若⽅法的参数、属性类型为swift特有、⽆法映射到objective－c的类型(如Character、Tuple)，则 此⽅法、属性⽆法添加dynamic修饰(编译器报错)
+
 //swift 调用 OC
 //新建桥接头文件  {TargetName}-Bridging-Header.h   (创建一个OC文件，会提示是否创建)
 //OC里面哪些要暴露给swift的头文件
@@ -1238,6 +1281,7 @@ class Person11 {
 
 //OC 调用 swift
 //头文件  {targetName}-Swift.h
+
 
 //可以用通过@objc 重命名Swift暴露给OC的符号名（类名、属性名、函数名等）
 //@objc(MJMyCar)
@@ -1420,8 +1464,20 @@ let mirror = Mirror(reflecting: Person(age: 10))
 print(mirror.displayStyle)
 print(mirror.subjectType)
 print(mirror.superclassMirror as Any)
+//通过 label 输出当前的名称，value 输出当前反射的值
 for case let (label?, value) in mirror.children {
     print(label, value)
+}
+//这里通过遵循customReflectable 协议并实现了其中的计算属性customMirror，主要作用是当我们使用lldb debug的时候，可以提供详细的属性信息。
+class Girl: CustomReflectable {
+    var age: Int = 18
+    var name: String = "GG"
+    
+    var customMirror: Mirror {
+        let info = KeyValuePairs<String,Any>.init(dictionaryLiteral: ("age",age),("name",name))
+        let mirror = Mirror(self, children: info, displayStyle: .class, ancestorRepresentation: .generated)
+        return mirror
+    }
 }
 
 

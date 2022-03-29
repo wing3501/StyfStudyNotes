@@ -21,8 +21,10 @@ class SwiftDemo: UIViewController {
 //        let vc = PropertyWrapperViewController()
 //        let vc = DynamicMemberLookupController()
 //        let vc = DynamicStructViewController()
-        let vc = PointerAPIViewController()
+//        let vc = PointerAPIViewController()
+//        let vc = ClassLifeViewController()
         
+        let vc = ConcurrencyViewController()
         navigationController?.pushViewController(vc, animated: true)
 
     }

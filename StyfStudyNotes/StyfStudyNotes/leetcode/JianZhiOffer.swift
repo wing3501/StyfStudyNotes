@@ -573,7 +573,130 @@ class PriorityQueue<T> {
         
         
         //    剑指 Offer II 067. 最大的异或
-        print(findMaximumXOR([3,10,5,25,2,8]))//28
+//        print(findMaximumXOR([3,10,5,25,2,8]))//28
+        
+//        剑指 Offer II 069. 山峰数组的顶部
+//        print(peakIndexInMountainArray([0,1,0]))//1
+//        print(peakIndexInMountainArray([1,3,5,4,2]))//2
+//        print(peakIndexInMountainArray([0,10,5,2]))//1
+//        print(peakIndexInMountainArray([3,4,5,1]))//2
+//        print(peakIndexInMountainArray([24,69,100,99,79,78,67,36,26,19]))//2
+        
+        //    剑指 Offer II 070. 排序数组中只出现一次的数字
+        print(singleNonDuplicate([1,1,2,3,3,4,4,8,8]))//2
+        print(singleNonDuplicate([3,3,7,7,10,11,11]))//10
+    }
+//    剑指 Offer II 070. 排序数组中只出现一次的数字
+//    给定一个只包含整数的有序数组 nums ，每个元素都会出现两次，唯有一个数只会出现一次，请找出这个唯一的数字。
+//    示例 1:
+//    输入: nums = [1,1,2,3,3,4,4,8,8]
+//    输出: 2
+//    示例 2:
+//    输入: nums =  [3,3,7,7,10,11,11]
+//    输出: 10
+//    提示:
+//    1 <= nums.length <= 105
+//    0 <= nums[i] <= 105
+//    进阶: 采用的方案可以在 O(log n) 时间复杂度和 O(1) 空间复杂度中运行吗？
+//    注意：本题与主站 540 题相同：https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/skFtm2
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func singleNonDuplicate(_ nums: [Int]) -> Int {
+//        根据 mid 的奇偶性决定和左边或右边的相邻元素比较：
+//        如果 mid 是偶数，则比较 nums[mid] 和 nums[mid+1] 是否相等；
+//        如果 mid 是奇数，则比较 nums[mid−1] 和 nums[mid] 是否相等。
+//        如果上述比较相邻元素的结果是相等，则 mid<x，调整左边界，否则 mid≥x，调整右边界。调整边界之后继续二分查找，直到确定下标 xx 的值。
+        guard nums.count > 1 else { return nums[0] }
+        var left = 0
+        var right = nums.count - 1
+        while left < right {
+            let mid = left + (right - left) / 2
+            if mid % 2 == 0 {//偶数
+                if nums[mid] == nums[mid + 1] {
+                    left = mid + 1
+                }else {
+                    right = mid - 1
+                }
+            }else {
+                if nums[mid - 1] == nums[mid] {
+                    //在左边
+                    left = mid + 1
+                }else {
+                    right = mid - 1
+                }
+            }
+        }
+        return nums[left]
+    }
+//    剑指 Offer II 069. 山峰数组的顶部
+//    符合下列属性的数组 arr 称为 山峰数组（山脉数组） ：
+//    arr.length >= 3
+//    存在 i（0 < i < arr.length - 1）使得：
+//    arr[0] < arr[1] < ... arr[i-1] < arr[i]
+//    arr[i] > arr[i+1] > ... > arr[arr.length - 1]
+//    给定由整数组成的山峰数组 arr ，返回任何满足 arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1] 的下标 i ，即山峰顶部。
+//    示例 1：
+//    输入：arr = [0,1,0]
+//    输出：1
+//    示例 2：
+//    输入：arr = [1,3,5,4,2]
+//    输出：2
+//    示例 3：
+//    输入：arr = [0,10,5,2]
+//    输出：1
+//    示例 4：
+//    输入：arr = [3,4,5,1]
+//    输出：2
+//    示例 5：
+//    输入：arr = [24,69,100,99,79,78,67,36,26,19]
+//    输出：2
+//    提示：
+//    3 <= arr.length <= 104
+//    0 <= arr[i] <= 106
+//    题目数据保证 arr 是一个山脉数组
+//    进阶：很容易想到时间复杂度 O(n) 的解决方案，你可以设计一个 O(log(n)) 的解决方案吗？
+//    注意：本题与主站 852 题相同：https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/B1IidL
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+        var left = 0
+        var right = arr.count - 1
+        while left < right {
+            let mid = left + (right - left) / 2
+            
+            if mid == 0,arr[mid] > arr[mid + 1] {
+                return mid
+            }
+            if mid == arr.count - 1,arr[mid] > arr[mid - 1] {
+                return mid
+            }
+            
+            if mid > 0,mid < arr.count - 1 {
+                if arr[mid] > arr[mid - 1],arr[mid] > arr[mid + 1] {
+                    return mid
+                }
+            }
+            
+            if mid > 0 {
+                if arr[mid] > arr[mid - 1] {
+                    //上
+                    left = mid
+                }else {
+                    //下
+                    right = mid
+                }
+            }else if mid < arr.count - 1 {
+                if arr[mid] > arr[mid + 1] {
+                    //下
+                    right = mid
+                }else {
+                    left = mid
+                }
+            }
+        }
+        return left
     }
     
 //    剑指 Offer II 067. 最大的异或

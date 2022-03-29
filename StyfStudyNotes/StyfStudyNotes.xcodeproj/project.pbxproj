@@ -39,6 +39,7 @@
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
+		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
 		9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58D26AA941D007E8B6A /* SaleCell.m */; };
 		9220D59226AA942A007E8B6A /* SaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59126AA942A007E8B6A /* SaleModel.m */; };
@@ -46,6 +47,8 @@
 		9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
+		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
+		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
 		92426DDA26246289002062B7 /* LeaksDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DD926246288002062B7 /* LeaksDemo.m */; };
 		92426DDF262464EA002062B7 /* LeaksObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DDE262464EA002062B7 /* LeaksObj.m */; };
 		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
@@ -179,6 +182,7 @@
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
+		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
 		9220D58326AA92A1007E8B6A /* DiffableDataSourceDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffableDataSourceDemo.h; sourceTree = "<group>"; };
 		9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffableDataSourceDemo.m; sourceTree = "<group>"; };
 		9220D58C26AA941D007E8B6A /* SaleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleCell.h; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
+		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
+		923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyViewController.swift; sourceTree = "<group>"; };
 		92426DD826246288002062B7 /* LeaksDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksDemo.h; sourceTree = "<group>"; };
 		92426DD926246288002062B7 /* LeaksDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksDemo.m; sourceTree = "<group>"; };
 		92426DDD262464E9002062B7 /* LeaksObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksObj.h; sourceTree = "<group>"; };
@@ -778,6 +784,9 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
+				923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */,
+				921FE16227ED8FBB00760625 /* MetadataViewController.swift */,
 				9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */,
 				925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */,
 				928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */,
@@ -976,8 +985,10 @@
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
+				923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */,
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
+				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
@@ -1051,6 +1062,7 @@
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
@@ -1204,7 +1216,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1228,7 +1240,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
