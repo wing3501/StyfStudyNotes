@@ -3,6 +3,7 @@
 //  StyfStudyNotes
 //
 //  Created by styf on 2022/3/28.
+//  https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html
 //  https://www.hackingwithswift.com/quick-start/concurrency
 
 import UIKit
@@ -19,6 +20,23 @@ extension URLSession {
 }
 
 class ConcurrencyViewController: UIViewController {
+    
+    
+    @available(iOS 15.0, *)
+    func fetchNews() async -> Data? {
+        do {
+            let url = URL(string: "https://hws.dev/news-1.json")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            print("  \(Thread.current)")
+            return data
+        } catch {
+            print("Failed to fetch data")
+            return nil
+        }
+    }
+
+    
+        
     //调用异步函数的三种方式
     //1、在命令行工具中使用@main,把main方法标记为async
 //    @main
@@ -278,7 +296,678 @@ class ConcurrencyViewController: UIViewController {
             print("No number was the highest.")
         }
     }
+    //-----------------------------------
+//    如何自定义一个AsyncSequence
+//    1.实现协议AsyncSequence和AsyncIteratorProtocol
+//    2.next()方法标记为async
+//    3.创建makeAsyncIterator()方法
     
+    //一个数字加倍的例子
+    struct DoubleGenerator: AsyncSequence, AsyncIteratorProtocol {
+        typealias Element = Int
+        var current = 1
+
+        mutating func next() async -> Element? {
+            defer { current &*= 2 }
+
+            if current < 0 {
+                return nil
+            } else {
+                return current
+            }
+        }
+        func makeAsyncIterator() -> DoubleGenerator {
+            self
+        }
+    }
+//    let sequence = DoubleGenerator()
+//    for await number in sequence {
+//        print(number)
+//    }
+    @available(iOS 15.0, *)
+    struct URLWatcher: AsyncSequence, AsyncIteratorProtocol {
+        typealias Element = Data
+
+        let url: URL
+        let delay: Int
+        private var comparisonData: Data?
+        private var isActive = true
+
+        init(url: URL, delay: Int = 10) {
+            self.url = url
+            self.delay = delay
+        }
+
+        mutating func next() async throws -> Element? {
+            // Once we're inactive always return nil immediately
+            guard isActive else { return nil }
+
+            if comparisonData == nil {
+                // If this is our first iteration, return the initial value
+                comparisonData = try await fetchData()
+            } else {
+                // Otherwise, sleep for a while and see if our data changed
+                while true {//一直抓取新数据，直到数据变动
+                    try await Task.sleep(nanoseconds: UInt64(delay) * 1_000_000_000)
+                    let latestData = try await fetchData()
+
+                    if latestData != comparisonData {
+                        // New data is different from previous data,
+                        // so update previous data and send it back
+                        comparisonData = latestData
+                        break
+                    }
+                }
+            }
+
+            if comparisonData == nil {
+                isActive = false
+                return nil
+            } else {
+                return comparisonData
+            }
+        }
+
+        @available(iOS 15.0, *)
+        private func fetchData() async throws -> Element {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return data
+        }
+
+        func makeAsyncIterator() -> URLWatcher {
+            self
+        }
+    }
+
+    // As an example of URLWatcher in action, try something like this:
+    @available(iOS 15.0, *)
+    func fetchUsers1() async {
+        let url = URL(fileURLWithPath: "FILENAMEHERE.json")
+        let urlWatcher = URLWatcher(url: url, delay: 3)
+        do {
+            for try await data in urlWatcher {
+//                try withAnimation {
+//                    users = try JSONDecoder().decode([User].self, from: data)
+//                }
+            }
+        } catch {
+            // just bail out
+        }
+    }
+    //-----------------------------------
+    //AsyncSequence 转换为 Sequence
+    //1.使用reduce(into:)
+//    extension AsyncSequence {
+//        func collect() async rethrows -> [Element] {
+//            try await reduce(into: [Element]()) { $0.append($1) }
+//        }
+//    }
+//    func getNumberArray() async throws -> [Int] {
+//        let url = URL(string: "https://hws.dev/random-numbers.txt")!
+//        let numbers = url.lines.compactMap(Int.init)
+//        return try await numbers.collect()
+//    }
+    
+    //-----------------------------------
+//    Task  TaskGroup
+//    你选择任务还是任务组取决于你的工作目标：如果你想开始一两项独立的工作，那么任务就是正确的选择。如果您想将一个作业拆分为多个并发操作，那么TaskGroup更适合。
+//    一旦创建任务，它就会开始运行——没有start（）方法或类似方法。
+//    尽量不用Task.detached
+    struct NewsItem: Decodable {
+        let id: Int
+        let title: String
+        let url: URL
+    }
+
+    struct HighScore: Decodable {
+        let name: String
+        let score: Int
+    }
+
+    @available(iOS 15.0, *)
+    func fetchUpdates() async {
+        let newsTask = Task { () -> [NewsItem] in
+            let url = URL(string: "https://hws.dev/headlines.json")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return try JSONDecoder().decode([NewsItem].self, from: data)
+        }
+
+        let highScoreTask = Task { () -> [HighScore] in
+            let url = URL(string: "https://hws.dev/scores.json")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return try JSONDecoder().decode([HighScore].self, from: data)
+        }
+
+        do {
+            let news = try await newsTask.value
+            let highScores = try await highScoreTask.value
+            print("Latest news loaded with \(news.count) items.")
+
+            if let topScore = highScores.first {
+                print("\(topScore.name) has the highest score with \(topScore.score), out of \(highScores.count) total results. ")
+            }
+        } catch {
+            print("There was an error loading user data.")
+        }
+    }
+    
+    //-----------------------------------
+//    Task的返回值
+//    1.可以直接使用 try await task.value
+//    2.也可以使用downloadTask.result
+    enum LoadError: Error {
+        case fetchFailed, decodeFailed
+    }
+
+    @available(iOS 15.0, *)
+    func fetchQuotes() async {
+        let downloadTask = Task { () -> String in
+            let url = URL(string: "https://hws.dev/quotes.txt")!
+            let data: Data
+
+            do {
+                (data, _) = try await URLSession.shared.data(from: url)
+            } catch {
+                throw LoadError.fetchFailed
+            }
+
+            if let string = String(data: data, encoding: .utf8) {
+                return string
+            } else {
+                throw LoadError.decodeFailed
+            }
+        }
+        let result = await downloadTask.result
+        do {
+            let string = try result.get()
+            print(string)
+        } catch LoadError.fetchFailed {
+            print("Unable to fetch the quotes.")
+        } catch LoadError.decodeFailed {
+            print("Unable to convert quotes to text.")
+        } catch {
+            print("Unknown error.")
+        }
+    }
+
+//    await fetchQuotes()
+    //-----------------------------------
+    // 任务的优先级
+    // 系统可以使用该优先级来确定下一步应该执行哪个任务，但这并不能保证——可以将其视为建议，而不是规则。
+    // 虽然创建任务时可以直接为其分配优先级，但如果不这样做，Swift将遵循三条规则自动确定优先级：
+    // 1.如果任务是从其他任务创建的，则子任务将继承父任务的优先级。
+    // 2.如果新任务是直接从主线程创建的，而不是从任务创建的，则会自动为其分配最高优先级userInitiated。
+    // 3.如果新任务不是由另一个任务或主线程执行的，Swift将尝试查询该线程的优先级或给它一个nil优先级。
+    // 这意味着不指定确切的优先级通常是个好主意，因为Swift会做正确的事情。
+    // 查询当前任务优先级，用Task.currentPriority
+    @available(iOS 15.0, *)
+    func fetchQuotes2() async {
+        let downloadTask = Task(priority: .high) { () -> String in
+            let url = URL(string: "https://hws.dev/chapter.txt")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return String(decoding: data, as: UTF8.self)
+        }
+
+        do {
+            let text = try await downloadTask.value
+            print(text)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    //-----------------------------------
+    // 任务的取消
+    // 1.使用cancel()取消任务
+    // 2.使用Task.isCancelled检查任务是否取消
+    // 3.使用Task.checkCancellation()检查时，如果任务已取消则抛出错误CancellationError
+    // 4.Foundation的某些部分会自动检查任务取消并抛出取消异常
+    // 5.如果使用了 Task.sleep()，即使任务被取消，任务仍将处于睡眠状态。
+    // 6.如果任务是组的一部分，并且组的任何部分抛出错误，则其他任务将被取消并等待。
+    // 7.如果使用了SwiftUI的task()，则任务会在view disappears时，自动取消
+    @available(iOS 15.0, *)
+    func getAverageTemperature() async {
+        let fetchTask = Task { () -> Double in
+            let url = URL(string: "https://hws.dev/readings.json")!
+            let (data, _) = try await URLSession.shared.data(from: url)
+            try Task.checkCancellation()
+            let readings = try JSONDecoder().decode([Double].self, from: data)
+            let sum = readings.reduce(0, +)
+            return sum / Double(readings.count)
+        }
+
+        do {
+            let result = try await fetchTask.value
+            print("Average temperature: \(result)")
+        } catch {
+            print("Failed to get data.")
+        }
+    }
+    
+    @available(iOS 15.0, *)
+    func getAverageTemperature1() async {
+        let fetchTask = Task { () -> Double in
+            let url = URL(string: "https://hws.dev/readings.json")!
+
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                if Task.isCancelled { return 0 }//显式取消
+
+                let readings = try JSONDecoder().decode([Double].self, from: data)
+                let sum = readings.reduce(0, +)
+                return sum / Double(readings.count)
+            } catch {
+                return 0 //URLSession.shared.data(from: url)隐式取消处理点
+            }
+        }
+
+        fetchTask.cancel()//立即取消
+
+        let result = await fetchTask.value
+        print("Average temperature: \(result)")
+    }
+    //-----------------------------------
+    // 如何让任务休眠
+    // 休眠至少3秒
+    // 取消一个休眠任务，任务会被唤醒，并抛出一个CancellationError
+    // try await Task.sleep(nanoseconds: 3_000_000_000) //纳秒
+    
+//    extension Task where Success == Never, Failure == Never {
+//        static func sleep(seconds: Double) async throws {
+//            let duration = UInt64(seconds * 1_000_000_000)
+//            try await Task.sleep(nanoseconds: duration)
+//        }
+//    }
+    
+    //-----------------------------------
+//    如何自动暂停任务
+//    使用Task.yield() 自动暂停当前任务，以便Swift可以在需要时给其他任务一点继续的机会。
+//    调用yield（）并不总是意味着任务将停止运行：如果它的优先级高于其他正在等待的任务，那么您的任务完全有可能立即恢复工作。将此视为指导——我们给Swift临时执行其他任务的机会，而不是强迫它这样做。
+//    Task.yield() as the equivalent of calling a fictional Task.doNothing()
+    func factors(for number: Int) async -> [Int] {
+        var result = [Int]()
+        for check in 1...number {
+            if number.isMultiple(of: check) {
+                result.append(check)
+                print("find---\(check)")
+                await Task.yield()//每找到一个因子，就让步暂停一下
+            }
+        }
+        
+        return result
+    }
+    //-----------------------------------
+    // 如何创建任务组
+//    任务组是一系列任务的集合，它们共同工作以产生单一的结果。组中的每个任务都必须返回相同类型的数据，但如果使用与枚举关联的值，则可以让它们发回不同类型的数据
+//    使用withTaskGroup(of:)创建任务组
+    func printMessage() async {
+       let string = await withTaskGroup(of: String.self) { group -> String in
+           group.addTask { "Hello" }
+           group.addTask { "From" }
+           group.addTask { "A" }
+           group.addTask { "Task" }
+           group.addTask { "Group" }
+
+           var collected = [String]()
+
+           for await value in group {//任务结果是按照完成顺序而不是创建顺序发送回来的
+               collected.append(value)
+           }
+           return collected.joined(separator: " ")
+       }
+       print(string)
+   }
+    // 如果要抛出错误就使用 withThrowingTaskGroup
+//    func loadStories() async {
+//        do {
+//            stories = try await withThrowingTaskGroup(of: [NewsStory].self) { group -> [NewsStory] in
+//                for i in 1...5 {
+//                    group.addTask {
+//                        let url = URL(string: "https://hws.dev/news-\(i).json")!
+//                        let (data, _) = try await URLSession.shared.data(from: url)
+//                        return try JSONDecoder().decode([NewsStory].self, from: data)
+//                    }
+//                }
+//                //因为任务组符合AsyncSequence，所以我们可以调用它的reduce（）方法，将其所有任务结果浓缩为一个值，在本例中是一个新闻故事数组。
+//                let allStories = try await group.reduce(into: [NewsStory]()) { $0 += $1 }
+//                return allStories.sorted { $0.id > $1.id }  //一个团队中的任务可以以任何顺序完成，因此我们对产生的一系列新闻故事进行了排序，以使它们以合理的顺序完成。
+//            }
+//        } catch {
+//            print("Failed to load stories")
+//        }
+//    }
+    //-----------------------------------
+    // 如何取消TaskGroup
+    // 取消的三种方式
+    // 1.TaskGroup的父Task取消了
+    // 2.显式调用cancelAll()
+    // 3.如果您的一个子任务抛出了一个未捕获的错误，那么所有剩余的任务都将被隐式取消
+    // 一个简单示例
+    func printMessage1() async {
+        let result = await withThrowingTaskGroup(of: String.self) { group -> String in
+            group.addTask { return "Testing" }
+            group.addTask { return "Group" }
+            group.addTask { return "Cancellation" }
+
+            group.cancelAll()
+            var collected = [String]()
+            do {
+                for try await value in group {
+                    collected.append(value)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            return collected.joined(separator: " ")
+        }
+//        但当代码运行时，您仍然会看到所有三个字符串都打印出来。
+//        取消任务组是合作的，因此除非您添加的任务隐式或显式地检查取消，否则单独调用cancelAll（）不会有多大作用。
+        print(result)
+    }
+    //优化后
+//    记住，调用cancelAll（）只会取消剩余的任务，这意味着它不会撤消已经完成的工作。即使这样，取消也是合作的，因此您需要确保添加到组中的任务检查取消情况。
+//    group.addTask {
+//        try Task.checkCancellation()
+//        return "Testing"
+//    }
+    struct NewsStory: Identifiable, Decodable {
+        let id: Int
+        let title: String
+        let strap: String
+        let url: URL
+    }
+    private var stories = [NewsStory]()
+    func loadStories() async {
+        do {
+            try await withThrowingTaskGroup(of: [NewsStory].self) { group -> Void in
+                for i in 1...5 {
+                    group.addTask {
+                        let url = URL(string: "https://hws.dev/news-\(i).json")!
+                        let (data, _) = try await URLSession.shared.data(from: url)
+                        try Task.checkCancellation()
+                        return try JSONDecoder().decode([NewsStory].self, from: data)
+                    }
+                }
+
+                for try await result in group {
+                    if result.isEmpty {
+                        group.cancelAll()
+                    } else {
+                        stories.append(contentsOf: result)
+                    }
+                }
+
+                stories.sort { $0.id < $1.id }
+            }
+        } catch {
+            print("Failed to load stories: \(error.localizedDescription)")
+        }
+    }
+//    任务组被取消的另一种方式是其中一个任务抛出未捕获的错误。
+    enum ExampleError: Error {
+        case badURL
+    }
+
+    func testCancellation() async {
+        do {
+            try await withThrowingTaskGroup(of: Void.self) { group -> Void in
+                group.addTask {
+                    try await Task.sleep(nanoseconds: 1_000_000_000)
+                    throw ExampleError.badURL
+                }
+                group.addTask {
+                    try await Task.sleep(nanoseconds: 2_000_000_000)
+                    print("Task is cancelled: \(Task.isCancelled)")
+                }
+//                注意：仅在addTask（）中抛出一个错误不足以导致组中的其他任务被取消——只有在使用next（）访问抛出任务的值或循环子任务时，才会发生这种情况。
+                try await group.next()
+            }
+        } catch {
+            print("Error thrown: \(error.localizedDescription)")
+        }
+    }
+//    如果要避免将任务添加到已取消的组中，请改用addTaskUnlessCancelled（）方法
+    //-----------------------------------
+//    如何在TaskGroup中返回不同类型的返回值
+//    通常情况应该首先考虑试用 async let
+//    但是，如果需要使用任务组（例如，如果需要在循环中创建任务），那么有一个解决方案：创建一个包含相关值的枚举，该值封装要返回的基础数据。
+    struct Message1: Decodable {
+        let id: Int
+        let from: String
+        let message: String
+    }
+
+    // A user, containing their name, favorites list, and messages array.
+    struct User1 {
+        let username: String
+        let favorites: Set<Int>
+        let messages: [Message1]
+    }
+
+    // A single enum we'll be using for our tasks, each containing a different associated value.
+    enum FetchResult {
+        case username(String)
+        case favorites(Set<Int>)
+        case messages([Message1])
+    }
+
+    func loadUser() async {
+        // Each of our tasks will return one FetchResult, and the whole group will send back a User.
+        let user = await withThrowingTaskGroup(of: FetchResult.self) { group -> User1 in
+            // Fetch our username string
+            group.addTask {
+                let url = URL(string: "https://hws.dev/username.json")!
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let result = String(decoding: data, as: UTF8.self)
+
+                // Send back FetchResult.username, placing the string inside.
+                return .username(result)
+            }
+
+            // Fetch our favorites set
+            group.addTask {
+                let url = URL(string: "https://hws.dev/user-favorites.json")!
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let result = try JSONDecoder().decode(Set<Int>.self, from: data)
+
+                // Send back FetchResult.favorites, placing the set inside.
+                return .favorites(result)
+            }
+
+            // Fetch our messages array
+            group.addTask {
+                let url = URL(string: "https://hws.dev/user-messages.json")!
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let result = try JSONDecoder().decode([Message1].self, from: data)
+
+                // Send back FetchResult.messages, placing the message array inside
+                return .messages(result)
+            }
+
+            // At this point we've started all our tasks,
+            // so now we need to stitch them together into
+            // a single User instance. First, we set
+            // up some default values:
+            var username = "Anonymous"
+            var favorites = Set<Int>()
+            var messages = [Message1]()
+
+            // Now we read out each value, figure out
+            // which case it represents, and copy its
+            // associated value into the right variable.
+            do {
+                for try await value in group {
+                    switch value {
+                    case .username(let value):
+                        username = value
+                    case .favorites(let value):
+                        favorites = value
+                    case .messages(let value):
+                        messages = value
+                    }
+                }
+            } catch {
+                // If any of the fetches went wrong, we might
+                // at least have partial data we can send back.
+                print("Fetch at least partially failed; sending back what we have so far. \(error.localizedDescription)")
+            }
+
+            // Send back our user, either filled with
+            // default values or using the data we
+            // fetched from the server.
+            return User1(username: username, favorites: favorites, messages: messages)
+        }
+
+        // Now do something with the finished user data.
+        print("User \(user.username) has \(user.messages.count) messages and \(user.favorites.count) favorites.")
+    }
+    //-----------------------------------
+    // 任务本地变量
+    enum User2 {
+//        使用@TaskLocal属性包装器标记每个任务本地值。这些属性可以是您想要的任何类型，包括选项，但必须标记为static。
+        @TaskLocal static var id = "Anonymous"
+    }
+    func User2Test() async {
+//        Starting a new task-local scope using YourType.$yourProperty.withValue(someValue) { … }.
+            Task {
+                try await User2.$id.withValue("Piper") {
+                    print("Start of task: \(User2.id)")
+                    try await Task.sleep(nanoseconds: 1_000_000)
+                    print("End of task: \(User2.id)")
+                }
+            }
+            Task {
+                try await User2.$id.withValue("Alex") {
+                    print("Start of task: \(User2.id)")
+                    try await Task.sleep(nanoseconds: 1_000_000)
+                    print("End of task: \(User2.id)")
+                }
+            }
+            print("Outside of tasks: \(User2.id)")
+        }
+    // 日志器案例
+    enum LogLevel: Comparable {
+        case debug, info, warn, error, fatal
+    }
+
+    struct Logger {
+        // The log level for an individual task
+        @TaskLocal static var logLevel = LogLevel.info
+
+        // Make this struct a singleton
+        private init() { }
+        static let shared = Logger()
+
+        // Print out a message only if it meets or exceeds our log level.
+        func write(_ message: String, level: LogLevel) {
+            if level >= Logger.logLevel {
+                print(message)
+            }
+        }
+    }
+    // Returns data from a URL, writing log messages along the way.
+    static func fetch(url urlString: String) async throws -> String? {
+        Logger.shared.write("Preparing request: \(urlString)", level: .debug)
+
+        if let url = URL(string: urlString) {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            Logger.shared.write("Received \(data.count) bytes", level: .info)
+            return String(decoding: data, as: UTF8.self)
+        } else {
+            Logger.shared.write("URL \(urlString) is invalid", level: .error)
+            return nil
+        }
+    }
+
+    // Starts a couple of fire-and-forget tasks with different log levels.
+    static func LoggerTest() async throws {
+        Task {
+            try await Logger.$logLevel.withValue(.debug) {
+                try await fetch(url: "https://hws.dev/news-1.json")
+            }
+        }
+
+        Task {
+            try await Logger.$logLevel.withValue(.error) {
+                try await fetch(url: "https:\\hws.dev/news-1.json")
+            }
+        }
+    }
+    //-----------------------------------
+//    actor
+//    在概念上类似于可以在并发环境中安全使用的类
+//    1.使用actor关键字创建actor。这是Swift中的一种具体的命名类型，如结构、类和枚举。
+//    2.与类一样，actor也是引用类型
+//    3.actor有许多与类相同的特性：actor可以有属性、方法、构造器、下标，可以实现协议，也可是泛型
+//    4.actor不支持继承，所以不能有便利构造器，也不支持final或override
+//    5.所有actor自动实现Actor协议
+//    如果要在actor访问属性或者调用方法，必须使用await
+    actor User3 {
+        var score = 10
+
+        func printScore() {
+            print("My score is \(score)")
+        }
+        func copyScore(from other: User3) async {
+//            我们试图从另一个用户那里读取分数，如果不将请求标记为wait，我们无法读取他们的分数属性
+            score = await other.score
+        }
+    }
+    let actor1 = User3()
+    let actor2 = User3()
+//    await print(actor1.score)
+//    await actor1.copyScore(from: actor2)
+    
+//    无论是否await，都不允许从actor外部写入属性。
+    actor URLCache {
+        private var cache = [URL: Data]()
+
+        func data(for url: URL) async throws -> Data {
+            if let cached = cache[url] {
+                return cached
+            }
+
+            let (data, _) = try await URLSession.shared.data(from: url)
+            cache[url] = data
+            return data
+        }
+    }
+    static func URLCacheTest() async throws {
+        let cache = URLCache()
+
+        let url = URL(string: "https://apple.com")!
+        let apple = try await cache.data(for: url)
+        let dataString = String(decoding: apple, as: UTF8.self)
+        print(dataString)
+    }
+//    记住actor的串行队列行为非常重要，因为完全有可能仅仅因为编写了actor而不是类，就在代码中创建了大量的减速。
+    
+    //防止资源竞争的例子
+    actor BankAccount {
+        var balance: Decimal
+
+        init(initialBalance: Decimal) {
+            balance = initialBalance
+        }
+
+        func deposit(amount: Decimal) {
+            balance = balance + amount
+        }
+
+        func transfer(amount: Decimal, to other: BankAccount) async {
+            // Check that we have enough money to pay
+            guard balance > amount else { return }
+
+            // Subtract it from our balance
+            balance = balance - amount
+
+            // Send it to the other account
+            await other.deposit(amount: amount)
+        }
+    }
+
+//    let firstAccount = BankAccount(initialBalance: 500)
+//    let secondAccount = BankAccount(initialBalance: 0)
+//    await firstAccount.transfer(amount: 500, to: secondAccount)
     
     //-----------------------------------
     func random6() async -> Int {
@@ -286,24 +975,65 @@ class ConcurrencyViewController: UIViewController {
         return Int.random(in: 1...6)
     }
     
+    var imageView = UIImageView(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        view.addSubview(imageView)
 //        Task {
 //            let val = await random6()
 //            print("val : \(val) _ \(Thread.current)")
 //        }
 //        print("viewDidLoad : \(Thread.current)")
         
+//        Task(priority: .background) {
+//            async let a = factors(for: 1000000000)
+//        }
+        
+        
+        
+//        DispatchQueue.global().async {
+//            let number = 1000000000
+//            var result = [Int]()
+//            for check in 1...number {
+//                if number.isMultiple(of: check) {
+//                    result.append(check)
+//                    print("find---\(check)")
+//
+//                }
+//            }
+//        }
+        
         Task {
             if #available(iOS 15.0, *) {
-                try? await shoutQuotes()
+//                try? await shoutQuotes()
+//                await fetchUpdates()
+//                async let a = factors(for: 1000000000)
+//                await fetchNews()
+//                await testCancellation()
+//                await User2Test()
+
             } else {
                 // Fallback on earlier versions
             }
         }
+        
+                
+        print("viewDidLoad end")
     }
     
+    var asyncAction: () async -> Void = {
+        do {
+            try await Task.sleep(nanoseconds: 10_000_000_000)
+        } catch {}
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        Task {
+            await asyncAction()
+        }
+    }
 
     /*
     // MARK: - Navigation
