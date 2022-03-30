@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import CoreLocation
 import CoreLocationUI
+import CryptoKit
 
 extension URLSession {
     static let noCacheSession: URLSession = {
@@ -488,6 +489,7 @@ class ConcurrencyViewController: UIViewController {
         } catch {
             print("Unknown error.")
         }
+        
     }
 
 //    await fetchQuotes()
@@ -968,7 +970,153 @@ class ConcurrencyViewController: UIViewController {
 //    let firstAccount = BankAccount(initialBalance: 500)
 //    let secondAccount = BankAccount(initialBalance: 0)
 //    await firstAccount.transfer(amount: 500, to: secondAccount)
+    //-----------------------------------
+//    isolated的使用
+//    使外部方法访问actor内部属性、方法时，不需要使用await
+//    像这样使用isolated不会绕过actor的任何潜在安全性或实现——在任何时候，仍然只能有一个线程访问actor。我们所做的只是将访问权限向外推了一个级别
+//    副作用是：现在调用debugLog需要使用await，即使它没有标记为async
+    actor DataStore {
+        var username = "Anonymous"
+        var friends = [String]()
+        var highScores = [Int]()
+        var favorites = Set<Int>()
+
+        init() {
+            // load data here
+        }
+
+        func save() {
+            // save data here
+        }
+    }
+
+    func debugLog(dataStore: isolated DataStore) {
+        print("Username: \(dataStore.username)")
+        print("Friends: \(dataStore.friends)")
+        print("High scores: \(dataStore.highScores)")
+        print("Favorites: \(dataStore.favorites)")
+    }
+
+//    let data = DataStore()
+//    await debugLog(dataStore: data)
+    //-----------------------------------
+//    nonisolated 的使用
     
+    
+    actor User4: Codable {
+        let username: String
+        let password: String
+        var isOnline = false
+
+        init(username: String, password: String) {
+            self.username = username
+            self.password = password
+        }
+        //标记为nonisolated，意味着可以不用await在外部调用
+        nonisolated func passwordHash() -> String {
+            let passwordData = Data(password.utf8)//非隔离的属性、方法，只能能在非隔离的属性、方法里访问，这里是常量
+            let hash = SHA256.hash(data: passwordData)
+            return hash.compactMap { String(format: "%02x", $0) }.joined()
+        }
+        
+//        nonisolated在实现一些协议，例如Hashable和Codable时，非常有用
+        enum CodingKeys: CodingKey {
+            case username, password
+        }
+        nonisolated func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(username, forKey: .username)
+            try container.encode(password, forKey: .password)
+        }
+    }
+
+//    let user = User4(username: "twostraws", password: "s3kr1t")
+//    print(user.passwordHash())
+    //-----------------------------------
+//    @MainActor 的使用
+//    @MainActor 是使用主队列执行工作的全局actor
+//    使用@MainActor 标记的方法、类型可以安全地修改UI，因为它始终在主队列运行，并调用MainActor.run()将自定义任务推给main actor
+    @MainActor
+    class AccountViewModel: ObservableObject {
+        @Published var username = "Anonymous"
+        @Published var isAuthenticated = false
+    }
+    
+    func couldBeAnywhere() async {
+        //如果当前已经在main actor上了，会立即执行
+        await MainActor.run {
+            print("This is on the main actor.")
+        }
+//        let result = await MainActor.run { () -> Int in
+//            print("This is on the main actor.")
+//            return 42
+//        }
+        //不想立即执行，可以套个Task
+//        Task {
+//            await MainActor.run {
+//                print("This is on the main actor.")
+//            }
+//        }
+        //或者
+        Task { @MainActor in
+            print("This is on the main actor.")
+        }
+    }
+//    await couldBeAnywhere()
+    //如果当前已经main actor上了，await MainActor.run()会立即执行不等待下一个运行循环，但是使用Task会等待
+    
+    
+//    1，如果一个类被标记为@MainActor，那么它的所有子类也会自动标记为@MainActor。
+//    2，如果类中的一个方法被标记为@MainActor，那么该方法的任何重写也会自动被标记为@MainActor。
+//    3，任何使用@MainActor作为其包装值的属性包装的结构或类都将自动成为@MainActor。
+//    4：如果协议将一个方法声明为@MainActor，则任何符合该协议的类型都会自动将该方法声明为@MainActor，除非您将一致性与该方法分离。
+
+//    // A protocol with a single `@MainActor` method.
+//    protocol DataStoring {
+//        @MainActor func save()
+//    }
+//
+//    // A struct that does not conform to the protocol.
+//    struct DataStore1 { }
+//
+//    // When we make it conform and add save() at the same time, our method is implicitly @MainActor.
+//    extension DataStore1: DataStoring {
+//        func save() { } // This is automatically @MainActor.
+//    }
+//
+//    // A struct that conforms to the protocol.
+//    struct DataStore2: DataStoring { }
+//
+//    // If we later add the save() method, it will *not* be implicitly @MainActor so we need to mark it as such ourselves.
+//    extension DataStore2 {
+//        @MainActor func save() { }
+//    }
+    //    5：如果整个协议都用@MainActor标记，那么符合该协议的任何类型也将自动成为@MainActor，除非您将一致性与主类型声明分开放置，在这种情况下，只有方法是@MainActor。
+    // A protocol marked as @MainActor.
+//    @MainActor protocol DataStoring {
+//        func save()
+//    }
+//
+//    // A struct that conforms to DataStoring as part of its primary type definition.
+//    struct DataStore1: DataStoring { // This struct is automatically @MainActor.
+//        func save() { } // This method is automatically @MainActor.
+//    }
+//
+//    // Another struct that conforms to DataStoring as part of its primary type definition.
+//    struct DataStore2: DataStoring { } // This struct is automatically @MainActor.
+//
+//    // The method is provided in an extension, but it's the same as if it were in the primary type definition.
+//    extension DataStore2 {
+//        func save() { } // This method is automatically @MainActor.
+//    }
+//
+//    // A third struct that does *not* conform to DataStoring in its primary type definition.
+//    struct DataStore3 { } // This struct is not @MainActor.
+//
+//    // The conformance is added as an extension
+//    extension DataStore3: DataStoring {
+//        func save() { } // This method is automatically @MainActor.
+//    }
     //-----------------------------------
     func random6() async -> Int {
         print("random6 : \(Thread.current)")
@@ -1019,8 +1167,27 @@ class ConcurrencyViewController: UIViewController {
             }
         }
         
-                
+        for i in 1...10 {
+            Task {
+                if #available(iOS 15.0, *) {
+                    await printCurrentThread(i)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+        }
+        
         print("viewDidLoad end")
+    }
+    
+    func printCurrentThread(_ index: Int) async -> Int {
+        await withCheckedContinuation({ continuation in
+            DispatchQueue.global().async {
+                sleep(1)
+                print("index: \(index)   \(Thread.current)")
+                continuation.resume(returning: 0)
+            }
+        })
     }
     
     var asyncAction: () async -> Void = {
