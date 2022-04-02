@@ -587,8 +587,68 @@ class PriorityQueue<T> {
 //        print(singleNonDuplicate([3,3,7,7,10,11,11]))//10
 //        print(singleNonDuplicate([1,1,2,3,3]))//2
         
+//        剑指 Offer II 073. 狒狒吃香蕉
+        print(minEatingSpeed([3,6,7,11], 8))
+        print(minEatingSpeed([30,11,23,4,20], 5))
+        print(minEatingSpeed([30,11,23,4,20], 6))
+        print(minEatingSpeed([312884470], 312884469))
+        
     }
-    
+//    剑指 Offer II 073. 狒狒吃香蕉
+//    狒狒喜欢吃香蕉。这里有 N 堆香蕉，第 i 堆中有 piles[i] 根香蕉。警卫已经离开了，将在 H 小时后回来。
+//    狒狒可以决定她吃香蕉的速度 K （单位：根/小时）。每个小时，她将会选择一堆香蕉，从中吃掉 K 根。如果这堆香蕉少于 K 根，她将吃掉这堆的所有香蕉，然后这一小时内不会再吃更多的香蕉，下一个小时才会开始吃另一堆的香蕉。
+//    狒狒喜欢慢慢吃，但仍然想在警卫回来前吃掉所有的香蕉。
+//    返回她可以在 H 小时内吃掉所有香蕉的最小速度 K（K 为整数）。
+//    示例 1：
+//    输入: piles = [3,6,7,11], H = 8
+//    输出: 4
+//    示例 2：
+//    输入: piles = [30,11,23,4,20], H = 5
+//    输出: 30
+//    示例 3：
+//    输入: piles = [30,11,23,4,20], H = 6
+//    输出: 23
+//    提示：
+//    1 <= piles.length <= 10^4
+//    piles.length <= H <= 10^9
+//    1 <= piles[i] <= 10^9
+//    注意：本题与主站 875 题相同： https://leetcode-cn.com/problems/koko-eating-bananas/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/nZZqjQ
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func minEatingSpeed(_ piles: [Int], _ h: Int) -> Int {
+        var sum = 0
+        var right = 0
+        for item in piles {
+            sum += item
+            right = max(right, item)
+        }
+        var left = Int(ceil(Double(sum) / Double(h)))
+        while left <= right {
+            let mid = left + (right - left)/2
+            if minEatingSpeedCanEat(piles, h, mid) {
+                right = mid - 1
+            }else {
+                left = mid + 1
+            }
+        }
+        return left
+    }
+    class func minEatingSpeedCanEat(_ piles: [Int],_ h: Int,_ n: Int) -> Bool {
+        var hour = 0
+        var i = 0
+        while i < piles.count {
+            var item = piles[i]
+            let tempCount = item / n
+            item = item - tempCount * n
+            hour += item > 0 ? (tempCount + 1) : tempCount
+            i += 1
+            if hour > h {
+                return false
+            }
+        }
+        return true
+    }
 //    剑指 Offer II 071. 按权重生成随机数
 //    给定一个正整数数组 w ，其中 w[i] 代表下标 i 的权重（下标从 0 开始），请写一个函数 pickIndex ，它可以随机地获取下标 i，选取下标 i 的概率与 w[i] 成正比。
 //    例如，对于 w = [1, 3]，挑选下标 0 的概率为 1 / (1 + 3) = 0.25 （即，25%），而选取下标 1 的概率为 3 / (1 + 3) = 0.75（即，75%）。
@@ -631,16 +691,36 @@ class PriorityQueue<T> {
 //    来源：力扣（LeetCode）
 //    链接：https://leetcode-cn.com/problems/cuyjEf
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-//    class Solution111 {
-//
-//        init(_ w: [Int]) {
-//
-//        }
-//        
-//        func pickIndex() -> Int {
-//
-//        }
-//    }
+    class Solution111 {
+        var sum: Int
+        var presum: [Int]
+        init(_ w: [Int]) {
+            sum = 0
+            presum = []
+            for item in w {
+                sum += item
+                presum.append(sum)
+            }
+        }
+//        1234
+//       1 3 6 10
+        func pickIndex() -> Int {
+            let val = Int.random(in: 1...sum)
+            var left = 0
+            var right = presum.count - 1
+            while left <= right {
+                let mid = left + (right - left)
+                if val > presum[mid] {
+                    left = mid + 1
+                }else if val < presum[mid] {
+                    right = mid - 1
+                }else {
+                    right = mid - 1
+                }
+            }
+            return left >= presum.count ? left - 1: left
+        }
+    }
 //    剑指 Offer II 070. 排序数组中只出现一次的数字
 //    给定一个只包含整数的有序数组 nums ，每个元素都会出现两次，唯有一个数只会出现一次，请找出这个唯一的数字。
 //    示例 1:
