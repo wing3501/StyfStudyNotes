@@ -588,11 +588,125 @@ class PriorityQueue<T> {
 //        print(singleNonDuplicate([1,1,2,3,3]))//2
         
 //        剑指 Offer II 073. 狒狒吃香蕉
-        print(minEatingSpeed([3,6,7,11], 8))
-        print(minEatingSpeed([30,11,23,4,20], 5))
-        print(minEatingSpeed([30,11,23,4,20], 6))
-        print(minEatingSpeed([312884470], 312884469))
+//        print(minEatingSpeed([3,6,7,11], 8))
+//        print(minEatingSpeed([30,11,23,4,20], 5))
+//        print(minEatingSpeed([30,11,23,4,20], 6))
+//        print(minEatingSpeed([312884470], 312884469))
         
+        //    剑指 Offer II 074. 合并区间
+//        print(merge([[1,3],[2,6],[8,10],[15,18]]))
+//        print(merge([[1,4],[4,5]]))
+        
+//        剑指 Offer II 076. 数组中的第 k 大的数字
+//        print(findKthLargest([3,2,1,5,6,4], 2))//5
+        print(findKthLargest([3,2,3,1,2,4,5,5,6], 4))//4
+        
+        
+    }
+//    剑指 Offer II 076. 数组中的第 k 大的数字
+//    给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+//    请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+//    示例 1:
+//    输入: [3,2,1,5,6,4] 和 k = 2
+//    输出: 5
+//    示例 2:
+//    输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
+//    输出: 4
+//    提示：
+//    1 <= k <= nums.length <= 104
+//    -104 <= nums[i] <= 104
+//    注意：本题与主站 215 题相同： https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/xx4gT2
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+        return findKthLargest(nums, k, 0, nums.count - 1)
+    }
+    
+    class func findKthLargest(_ nums: [Int], _ k: Int,_ start: Int,_ end: Int) -> Int {
+        
+        var array = nums
+        let index = Int.random(in: start...end)
+        array.swapAt(start, index)
+        let point = array[start]
+        var left = start
+        var right = end
+        while left < right {
+            while left < right {
+                if array[right] < point {
+                    right -= 1
+                }else {
+                    array[left] = array[right]
+                    left += 1
+                    break
+                }
+            }
+            while left < right {
+                if array[left] > point {
+                    left += 1
+                }else {
+                    array[right] = array[left]
+                    right -= 1
+                    break
+                }
+            }
+        }
+        array[left] = point
+        if k == left + 1 {
+            return array[left]
+        }else if k > left + 1 {
+            return findKthLargest(array, k, left + 1, end)
+        }else {
+            return findKthLargest(array, k, start, left - 1)
+        }
+    }
+//    剑指 Offer II 074. 合并区间
+//    以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+//    示例 1：
+//    输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+//    输出：[[1,6],[8,10],[15,18]]
+//    解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+//    示例 2：
+//    输入：intervals = [[1,4],[4,5]]
+//    输出：[[1,5]]
+//    解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+//    提示：
+//    1 <= intervals.length <= 104
+//    intervals[i].length == 2
+//    0 <= starti <= endi <= 104
+//    注意：本题与主站 56 题相同： https://leetcode-cn.com/problems/merge-intervals/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/SsGoHC
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func merge(_ intervals: [[Int]]) -> [[Int]] {
+        guard intervals.count > 1 else { return intervals }
+        let array = intervals.sorted { a, b in
+            if a[0] == b[0] {
+                return a[1] > b[1]
+            }else {
+                return a[0] < b[0]
+            }
+        }
+        
+        var result: [[Int]] = []
+        var cur = array[0]
+        var i = 1
+        while i < array.count {
+            let next = array[i]
+            if next[0] <= cur[1] {
+                if next[1] >= cur[1] {
+                    cur = [cur[0],next[1]]
+                }
+            }else {
+                result.append(cur)
+                cur = next
+            }
+            if i == array.count - 1 {
+                result.append(cur)
+            }
+            i += 1
+        }
+        return result
     }
 //    剑指 Offer II 073. 狒狒吃香蕉
 //    狒狒喜欢吃香蕉。这里有 N 堆香蕉，第 i 堆中有 piles[i] 根香蕉。警卫已经离开了，将在 H 小时后回来。

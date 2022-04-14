@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -68,6 +69,8 @@
 		9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03025E63DA00008D6BB /* SerialQueueDemo.m */; };
 		9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03125E63DA00008D6BB /* MutexDemo2.m */; };
 		9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */; };
+		925810222806C452008AF141 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810212806C452008AF141 /* GithubAPI.swift */; };
+		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
@@ -107,6 +110,7 @@
 		92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92A27293D6F00FF3398 /* CrashHelper.m */; };
 		92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C374792738F8A00026BC15 /* MemoryHelper.m */; };
 		92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */; };
+		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
@@ -121,6 +125,7 @@
 
 /* Begin PBXFileReference section */
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -236,6 +241,8 @@
 		9244F03125E63DA00008D6BB /* MutexDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
 		9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo2.m; sourceTree = "<group>"; };
 		9244F03325E63DA00008D6BB /* NSLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
+		925810212806C452008AF141 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
@@ -302,6 +309,7 @@
 		92C374792738F8A00026BC15 /* MemoryHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryHelper.m; sourceTree = "<group>"; };
 		92C84BC826735C3C002C2387 /* MyFlutterBoostDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlutterBoostDelegate.m; sourceTree = "<group>"; };
 		92C84BC926735C3C002C2387 /* MyFlutterBoostDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlutterBoostDelegate.h; sourceTree = "<group>"; };
+		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
 		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
 		92E1A5ED264CD2ED007D63D5 /* SessionDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDelegateProxy.h; sourceTree = "<group>"; };
@@ -340,6 +348,23 @@
 				B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9208CC102807FA980095E1C1 /* GithubAPI */ = {
+			isa = PBXGroup;
+			children = (
+				925810212806C452008AF141 /* GithubAPI.swift */,
+				925810232806CB2C008AF141 /* GithubViewController.swift */,
+			);
+			path = GithubAPI;
+			sourceTree = "<group>";
+		};
+		9208CC112807FAAF0095E1C1 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				9208CC122807FADB0095E1C1 /* FormViewController.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 		920B9BD625DF59A40098B1BA /* Other */ = {
@@ -570,6 +595,16 @@
 			path = Locks;
 			sourceTree = "<group>";
 		};
+		925810202806C434008AF141 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				92CF232F27F8179B00EE725C /* CombineViewController.swift */,
+				9208CC112807FAAF0095E1C1 /* Form */,
+				9208CC102807FA980095E1C1 /* GithubAPI */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		926EE2532626B8270008F924 /* Mach-O */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +819,7 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				925810202806C434008AF141 /* Combine */,
 				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
 				923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */,
 				921FE16227ED8FBB00760625 /* MetadataViewController.swift */,
@@ -1000,10 +1036,12 @@
 				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
 				9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */,
+				9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */,
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
@@ -1041,6 +1079,7 @@
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
+				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
@@ -1065,6 +1104,7 @@
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
+				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
