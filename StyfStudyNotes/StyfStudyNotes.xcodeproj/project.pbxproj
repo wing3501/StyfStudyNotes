@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
+		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
+		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -102,6 +104,9 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
+		92AE63002809184F0082505B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE62FF2809184F0082505B /* NotificationViewController.swift */; };
+		92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE630228093C520082505B /* ReactiveFormModel.swift */; };
+		92AE63052809413F0082505B /* ReactiveForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE63042809413F0082505B /* ReactiveForm.swift */; };
 		92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF2F89273134E200C5C379 /* CookieViewController.m */; };
 		92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1AFDB265B3A2E0029C502 /* OpenSetting.m */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
@@ -126,6 +131,8 @@
 /* Begin PBXFileReference section */
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
+		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -293,6 +300,9 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		92AE62FF2809184F0082505B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		92AE630228093C520082505B /* ReactiveFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormModel.swift; sourceTree = "<group>"; };
+		92AE63042809413F0082505B /* ReactiveForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveForm.swift; sourceTree = "<group>"; };
 		92AF2F88273134E200C5C379 /* CookieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CookieViewController.h; sourceTree = "<group>"; };
 		92AF2F89273134E200C5C379 /* CookieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieViewController.m; sourceTree = "<group>"; };
 		92B1AFDA265B3A2E0029C502 /* OpenSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenSetting.h; sourceTree = "<group>"; };
@@ -365,6 +375,15 @@
 				9208CC122807FADB0095E1C1 /* FormViewController.swift */,
 			);
 			path = Form;
+			sourceTree = "<group>";
+		};
+		9208CCBA28083C470095E1C1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */,
+				9208CCBD28083E290095E1C1 /* HeadingViewController.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		920B9BD625DF59A40098B1BA /* Other */ = {
@@ -599,6 +618,9 @@
 			isa = PBXGroup;
 			children = (
 				92CF232F27F8179B00EE725C /* CombineViewController.swift */,
+				92AE630128093BB50082505B /* SwiftUI */,
+				92AE62FE2809183C0082505B /* Notification */,
+				9208CCBA28083C470095E1C1 /* Location */,
 				9208CC112807FAAF0095E1C1 /* Form */,
 				9208CC102807FA980095E1C1 /* GithubAPI */,
 			);
@@ -755,6 +777,23 @@
 				92426F2E26246C77002062B7 /* RAMExport.m */,
 			);
 			path = __attribute__;
+			sourceTree = "<group>";
+		};
+		92AE62FE2809183C0082505B /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				92AE62FF2809184F0082505B /* NotificationViewController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		92AE630128093BB50082505B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				92AE630228093C520082505B /* ReactiveFormModel.swift */,
+				92AE63042809413F0082505B /* ReactiveForm.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		92B1AFD9265B3A1A0029C502 /* 打开设置 */ = {
@@ -1008,6 +1047,7 @@
 			files = (
 				92F36646273381A20013FB92 /* UIImage+scale.m in Sources */,
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
+				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
@@ -1021,6 +1061,7 @@
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
+				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
 				923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */,
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
@@ -1055,8 +1096,10 @@
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
+				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
+				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
@@ -1102,6 +1145,7 @@
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
+				9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,

@@ -29,6 +29,14 @@ struct GithubAPI {
         let assembledURL = String("https://api.github.com/users/\(username)")
         let publisher = URLSession.shared.dataTaskPublisher(for: URL(string: assembledURL)!)
 //        handleEvents 操作符是我们触发网络请求发布者更新的方式。 我们定义了在订阅和终结（完成和取消）时触发的闭包，它们会在 passthroughSubject 上调用 send()
+//        handleEvents 传入数据，不对输出和失败类型或数据进行任何修改。 当你在管道中加入该操作符时，可以指定一些可选的闭包，从而让你能够专注于你想要看到的信息。
+//        可以指定的闭包包括：
+//        receiveSubscription
+//        receiveRequest
+//        receiveCancel
+//        receiveOutput
+//        receiveCompletion
+        
             .handleEvents(receiveSubscription: { _ in
                 networkActivityPublisher.send(true)
             }, receiveCompletion: { _ in

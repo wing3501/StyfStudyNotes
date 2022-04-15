@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import Contacts
+import SwiftUI
 
 class CombineViewController: UIViewController {
 
@@ -35,18 +36,21 @@ class CombineViewController: UIViewController {
     
     var usernameSubscriber: AnyCancellable?
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //            let vc = GithubViewController()
+        //            let vc = FormViewController()
+//                    let vc = HeadingViewController()
+//                    let vc = NotificationViewController()
+        let vc = UIHostingController(rootView: ReactiveForm(model: ReactiveFormModel()))
+                    self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         
         
         //--------------------
-        let time = DispatchTime.now() + 3
-        DispatchQueue.main.asyncAfter(deadline: time) {
-//            let vc = GithubViewController()
-            let vc = FormViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
         
         view.addSubview(textField)
         view.addSubview(label)

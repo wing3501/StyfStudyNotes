@@ -599,10 +599,97 @@ class PriorityQueue<T> {
         
 //        剑指 Offer II 076. 数组中的第 k 大的数字
 //        print(findKthLargest([3,2,1,5,6,4], 2))//5
-        print(findKthLargest([3,2,3,1,2,4,5,5,6], 4))//4
+//        print(findKthLargest([3,2,3,1,2,4,5,5,6], 4))//4
         
         
     }
+    
+//    剑指 Offer II 077. 链表排序
+//    给定链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+//    示例 1：
+//    输入：head = [4,2,1,3]
+//    输出：[1,2,3,4]
+//    示例 2：
+//    输入：head = [-1,5,3,4,0]
+//    输出：[-1,0,3,4,5]
+//    示例 3：
+//    输入：head = []
+//    输出：[]
+//    提示：
+//    链表中节点的数目在范围 [0, 5 * 104] 内
+//    -105 <= Node.val <= 105
+//    进阶：你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+//    注意：本题与主站 148 题相同：https://leetcode-cn.com/problems/sort-list/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/7WHec2
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    func sortList(_ head: ListNode?) -> ListNode? {
+        return nil
+//        class Solution {
+//            public ListNode sortList(ListNode head) {
+//                if (head == null) {
+//                    return head;
+//                }
+//                int length = 0;
+//                ListNode node = head;
+//                while (node != null) {
+//                    length++;
+//                    node = node.next;
+//                }
+//                ListNode dummyHead = new ListNode(0, head);
+//                for (int subLength = 1; subLength < length; subLength <<= 1) {
+//                    ListNode prev = dummyHead, curr = dummyHead.next;
+//                    while (curr != null) {
+//                        ListNode head1 = curr;
+//                        for (int i = 1; i < subLength && curr.next != null; i++) {
+//                            curr = curr.next;
+//                        }
+//                        ListNode head2 = curr.next;
+//                        curr.next = null;
+//                        curr = head2;
+//                        for (int i = 1; i < subLength && curr != null && curr.next != null; i++) {
+//                            curr = curr.next;
+//                        }
+//                        ListNode next = null;
+//                        if (curr != null) {
+//                            next = curr.next;
+//                            curr.next = null;
+//                        }
+//                        ListNode merged = merge(head1, head2);
+//                        prev.next = merged;
+//                        while (prev.next != null) {
+//                            prev = prev.next;
+//                        }
+//                        curr = next;
+//                    }
+//                }
+//                return dummyHead.next;
+//            }
+//
+//            public ListNode merge(ListNode head1, ListNode head2) {
+//                ListNode dummyHead = new ListNode(0);
+//                ListNode temp = dummyHead, temp1 = head1, temp2 = head2;
+//                while (temp1 != null && temp2 != null) {
+//                    if (temp1.val <= temp2.val) {
+//                        temp.next = temp1;
+//                        temp1 = temp1.next;
+//                    } else {
+//                        temp.next = temp2;
+//                        temp2 = temp2.next;
+//                    }
+//                    temp = temp.next;
+//                }
+//                if (temp1 != null) {
+//                    temp.next = temp1;
+//                } else if (temp2 != null) {
+//                    temp.next = temp2;
+//                }
+//                return dummyHead.next;
+//            }
+//        }
+
+    }
+    
 //    剑指 Offer II 076. 数组中的第 k 大的数字
 //    给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
 //    请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
