@@ -35,6 +35,7 @@ class SwiftDemo: UIViewController {
         tableView.mas_makeConstraints { make in
             make?.edges.equalTo()(view)
         }
+        
     }
 }
 

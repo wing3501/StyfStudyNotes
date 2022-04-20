@@ -601,7 +601,75 @@ class PriorityQueue<T> {
 //        print(findKthLargest([3,2,1,5,6,4], 2))//5
 //        print(findKthLargest([3,2,3,1,2,4,5,5,6], 4))//4
         
+        //    剑指 Offer II 077. 链表排序
+//        printNode(sortList(createNode([4,2,1,3])))
+//        printNode(sortList(createNode([-1,5,3,4,0])))
         
+        //    剑指 Offer II 079. 所有子集
+        print(subsets([1,2,3]))
+        print(subsets([0]))
+    }
+//    剑指 Offer II 079. 所有子集
+//    给定一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
+//    解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
+//    示例 1：
+//    输入：nums = [1,2,3]
+//    输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+//    示例 2：
+//    输入：nums = [0]
+//    输出：[[],[0]]
+//    提示：
+//    1 <= nums.length <= 10
+//    -10 <= nums[i] <= 10
+//    nums 中的所有元素 互不相同
+//    注意：本题与主站 78 题相同： https://leetcode-cn.com/problems/subsets/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/TVdhkn
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func subsets(_ nums: [Int]) -> [[Int]] {
+        var result: [[Int]] = []
+        var choosed: [Int] = []
+        subsetsBacktrace(nums, 0, &result, &choosed)
+        return result
+    }
+    
+    class func subsetsBacktrace(_ nums: [Int],_ index: Int,_ result: inout [[Int]],_ choosed: inout [Int]) {
+        if index == nums.count {
+            result.append(choosed)
+            return
+        }
+        subsetsBacktrace(nums, index + 1, &result, &choosed)
+        choosed.append(nums[index])
+        subsetsBacktrace(nums, index + 1, &result, &choosed)
+        choosed.removeLast()
+    }
+    
+    class func createNode(_ array: [Int]) -> ListNode? {
+        var head: ListNode?
+        var prev: ListNode?
+        var i = 0
+        while i < array.count {
+            if i == 0 {
+                head = ListNode(array[i])
+                prev = head
+            }else {
+                let cur = ListNode(array[i])
+                prev?.next = cur
+                prev = cur
+            }
+            i += 1
+        }
+        return head
+    }
+    
+    class func printNode(_ head: ListNode?) {
+        var node = head
+        var result: [Int] = []
+        while node != nil {
+            result.append(node!.val)
+            node = node?.next
+        }
+        print(result)
     }
     
 //    剑指 Offer II 077. 链表排序
@@ -623,71 +691,81 @@ class PriorityQueue<T> {
 //    来源：力扣（LeetCode）
 //    链接：https://leetcode-cn.com/problems/7WHec2
 //    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-    func sortList(_ head: ListNode?) -> ListNode? {
-        return nil
-//        class Solution {
-//            public ListNode sortList(ListNode head) {
-//                if (head == null) {
-//                    return head;
-//                }
-//                int length = 0;
-//                ListNode node = head;
-//                while (node != null) {
-//                    length++;
-//                    node = node.next;
-//                }
-//                ListNode dummyHead = new ListNode(0, head);
-//                for (int subLength = 1; subLength < length; subLength <<= 1) {
-//                    ListNode prev = dummyHead, curr = dummyHead.next;
-//                    while (curr != null) {
-//                        ListNode head1 = curr;
-//                        for (int i = 1; i < subLength && curr.next != null; i++) {
-//                            curr = curr.next;
-//                        }
-//                        ListNode head2 = curr.next;
-//                        curr.next = null;
-//                        curr = head2;
-//                        for (int i = 1; i < subLength && curr != null && curr.next != null; i++) {
-//                            curr = curr.next;
-//                        }
-//                        ListNode next = null;
-//                        if (curr != null) {
-//                            next = curr.next;
-//                            curr.next = null;
-//                        }
-//                        ListNode merged = merge(head1, head2);
-//                        prev.next = merged;
-//                        while (prev.next != null) {
-//                            prev = prev.next;
-//                        }
-//                        curr = next;
-//                    }
-//                }
-//                return dummyHead.next;
-//            }
-//
-//            public ListNode merge(ListNode head1, ListNode head2) {
-//                ListNode dummyHead = new ListNode(0);
-//                ListNode temp = dummyHead, temp1 = head1, temp2 = head2;
-//                while (temp1 != null && temp2 != null) {
-//                    if (temp1.val <= temp2.val) {
-//                        temp.next = temp1;
-//                        temp1 = temp1.next;
-//                    } else {
-//                        temp.next = temp2;
-//                        temp2 = temp2.next;
-//                    }
-//                    temp = temp.next;
-//                }
-//                if (temp1 != null) {
-//                    temp.next = temp1;
-//                } else if (temp2 != null) {
-//                    temp.next = temp2;
-//                }
-//                return dummyHead.next;
-//            }
-//        }
-
+    class func sortList(_ head: ListNode?) -> ListNode? {
+        guard head != nil else { return head }
+        var lenth = 0
+        var temp = head
+        while temp != nil {
+            lenth += 1
+            temp = temp?.next
+        }
+        let dummyNode = ListNode(0, head)
+        var subLen = 1
+        while subLen < lenth {
+            var prev: ListNode? = dummyNode
+            var cur = prev?.next
+            
+            while cur != nil {
+                let node1 = cur
+                var i = 1
+                while i < subLen,cur != nil {
+                    cur = cur?.next
+                    i += 1
+                }
+                if cur != nil {
+                    let next = cur?.next
+                    cur?.next = nil
+                    cur = next
+                }
+                
+                let node2 = cur
+                i = 1
+                while i < subLen,cur != nil {
+                    cur = cur?.next
+                    i += 1
+                }
+                
+                if cur != nil {
+                    let next = cur?.next
+                    cur?.next = nil
+                    cur = next
+                }
+                
+                let nodePrev = mergeNodes(node1, node2)
+                prev?.next = nodePrev
+                while prev?.next != nil {
+                    prev = prev?.next
+                }
+            }
+            
+            subLen *= 2
+        }
+        
+        return dummyNode.next
+    }
+    
+    class func mergeNodes(_ node1: ListNode?,_ node2: ListNode?) -> ListNode {
+        let dummyHead = ListNode()
+        var cur = dummyHead
+        var n1 = node1
+        var n2 = node2
+        while n1 != nil && n2 != nil {
+            if n1!.val < n2!.val {
+                cur.next = n1
+                n1 = n1?.next
+            }else {
+                cur.next = n2
+                n2 = n2?.next
+            }
+            cur = cur.next!
+            cur.next = nil
+        }
+        if n1 == nil {
+            cur.next = n2
+        }else {
+            cur.next = n1
+        }
+        return dummyHead.next!
     }
     
 //    剑指 Offer II 076. 数组中的第 k 大的数字
