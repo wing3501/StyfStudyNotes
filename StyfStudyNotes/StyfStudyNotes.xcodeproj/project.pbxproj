@@ -41,6 +41,7 @@
 		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
+		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
@@ -111,6 +112,7 @@
 		92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1AFDB265B3A2E0029C502 /* OpenSetting.m */; };
 		92B265A226353BE500C4D16D /* SystemNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A126353BE500C4D16D /* SystemNotify.m */; };
 		92B265A9263546D400C4D16D /* Builtin.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B265A8263546D400C4D16D /* Builtin.m */; };
+		92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B428E2281104740098C4D5 /* CalculatorBrain.swift */; };
 		92C1D92727293C8300FF3398 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92627293C8300FF3398 /* Question.m */; };
 		92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92A27293D6F00FF3398 /* CrashHelper.m */; };
 		92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C374792738F8A00026BC15 /* MemoryHelper.m */; };
@@ -125,6 +127,8 @@
 		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
 		92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368522733AE8E0013FB92 /* SMCPUMonitor.m */; };
 		92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368542733AE8F0013FB92 /* SMLagMonitor.m */; };
+		92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */; };
+		92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */; };
 		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +196,7 @@
 		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
+		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
 		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +316,7 @@
 		92B265A126353BE500C4D16D /* SystemNotify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemNotify.m; sourceTree = "<group>"; };
 		92B265A7263546D400C4D16D /* Builtin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builtin.h; sourceTree = "<group>"; };
 		92B265A8263546D400C4D16D /* Builtin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Builtin.m; sourceTree = "<group>"; };
+		92B428E2281104740098C4D5 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		92C1D92527293C8300FF3398 /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		92C1D92627293C8300FF3398 /* Question.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		92C1D92927293D6F00FF3398 /* CrashHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashHelper.h; sourceTree = "<group>"; };
@@ -336,6 +342,8 @@
 		92F368532733AE8E0013FB92 /* SMLagMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLagMonitor.h; sourceTree = "<group>"; };
 		92F368542733AE8F0013FB92 /* SMLagMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLagMonitor.m; sourceTree = "<group>"; };
 		92F368552733AE8F0013FB92 /* SMCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallStack.h; sourceTree = "<group>"; };
+		92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
+		92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,6 +524,25 @@
 				920E3F0925E8A4A700DE2990 /* NSString+MD5.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		9215A8D7280FD44700344F40 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				9215A8D8280FD54B00344F40 /* Calculator */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		9215A8D8280FD54B00344F40 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				9215A8D9280FD57C00344F40 /* ContentView.swift */,
+				92B428E2281104740098C4D5 /* CalculatorBrain.swift */,
+				92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */,
+				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		9218C2DF2669D2B200A932E6 /* Flutter */ = {
@@ -858,6 +885,7 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				9215A8D7280FD44700344F40 /* SwiftUI */,
 				925810202806C434008AF141 /* Combine */,
 				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
 				923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */,
@@ -1068,8 +1096,10 @@
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
+				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
+				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
@@ -1107,6 +1137,7 @@
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
+				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
@@ -1120,6 +1151,7 @@
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
+				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,

@@ -25,7 +25,8 @@ class SwiftDemo: UIViewController {
                      "PointerAPIViewController",
                      "ClassLifeViewController",
                      "ConcurrencyViewController",
-                     "CombineViewController"]
+                     "CombineViewController",
+                     "SwiftUIViewController"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

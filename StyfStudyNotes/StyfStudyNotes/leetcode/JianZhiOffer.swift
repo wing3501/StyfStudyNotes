@@ -606,9 +606,75 @@ class PriorityQueue<T> {
 //        printNode(sortList(createNode([-1,5,3,4,0])))
         
         //    剑指 Offer II 079. 所有子集
-        print(subsets([1,2,3]))
-        print(subsets([0]))
+//        print(subsets([1,2,3]))
+//        print(subsets([0]))
+        
+        //    剑指 Offer II 098. 路径的数目
+        print(uniquePaths(3, 7))
+        print(uniquePaths(3, 2))
+        print(uniquePaths(7, 3))
+        print(uniquePaths(3, 3))
+        print(uniquePaths(51, 9))
     }
+//    剑指 Offer II 098. 路径的数目
+//    一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
+//    机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。
+//    问总共有多少条不同的路径？
+//    示例 1：
+//    输入：m = 3, n = 7
+//    输出：28
+//    示例 2：
+//    输入：m = 3, n = 2
+//    输出：3
+//    解释：
+//    从左上角开始，总共有 3 条路径可以到达右下角。
+//    1. 向右 -> 向下 -> 向下
+//    2. 向下 -> 向下 -> 向右
+//    3. 向下 -> 向右 -> 向下
+//    示例 3：
+//    输入：m = 7, n = 3
+//    输出：28
+//    示例 4：
+//    输入：m = 3, n = 3
+//    输出：6
+//    提示：
+//    1 <= m, n <= 100
+//    题目数据保证答案小于等于 2 * 109
+//    注意：本题与主站 62 题相同： https://leetcode-cn.com/problems/unique-paths/
+//    来源：力扣（LeetCode）
+//    链接：https://leetcode-cn.com/problems/2AoeFn
+//    著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+    class func uniquePaths(_ m: Int, _ n: Int) -> Int {
+        var book: [[Int]: Int] = [:]
+        return uniquePathsBacktrace(m, n, 0, 0, &book)
+    }
+    
+    class func uniquePathsBacktrace(_ m: Int, _ n: Int,_ i: Int,_ j: Int,_ book: inout [[Int]:Int]) -> Int {
+        if i == m - 1 && j == n - 1 {
+            book[[i,j]] = 1
+            return 1
+        }
+        
+        var result = 0
+        if i + 1 < m {
+            if let count = book[[i + 1,j]] {
+                result += count
+            }else {
+                result += uniquePathsBacktrace(m, n, i + 1, j, &book)
+            }
+        }
+        
+        if j + 1 < n {
+            if let count = book[[i,j + 1]] {
+                result += count
+            }else {
+                result += uniquePathsBacktrace(m, n, i, j + 1, &book)
+            }
+        }
+        book[[i,j]] = result
+        return result
+    }
+    
 //    剑指 Offer II 079. 所有子集
 //    给定一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
 //    解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
