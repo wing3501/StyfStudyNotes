@@ -8,6 +8,7 @@
 import Foundation
 
 enum CalculatorButtonItem {
+    
     enum Op: String {
         case plus = "+"
         case minus = "-"
@@ -30,7 +31,7 @@ enum CalculatorButtonItem {
 
 // 在 extension 里追加定义必要的外观
 // 严格来说，可能将上面的 extension 提取出来，遵照 MVVM 的架构模式将 它定义成一个新的 View Model 类型会更好
-extension CalculatorButtonItem {
+extension CalculatorButtonItem: CustomStringConvertible {
     var title: String {
         switch self {
         case .digit(let val): return String(val)
@@ -38,6 +39,10 @@ extension CalculatorButtonItem {
         case .op(let op): return op.rawValue
         case .command(let com): return com.rawValue
         }
+    }
+    
+    var description: String {
+        title
     }
     
     var size: CGSize {

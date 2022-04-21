@@ -43,6 +43,8 @@ struct UserDefaultsConfig {
 }
 
 class PropertyWrapperViewController: UIViewController {
+    
+    @Converter(initialValue: "100", from: "USD", to: "CNY", rate: 6.88) var usd_cny
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +54,36 @@ class PropertyWrapperViewController: UIViewController {
         print(UserDefaultsConfig.hadShownGuideView) // false
         UserDefaultsConfig.hadShownGuideView = true
         print(UserDefaultsConfig.hadShownGuideView) // true
+        
+        print("\(usd_cny) = \($usd_cny)")
+        
+        
+    }
+}
+
+
+//-----------------
+
+@propertyWrapper struct Converter {
+    let from: String
+    let to: String
+    let rate: Double
+    var value: Double
+
+    var wrappedValue: String {
+        get { "\(from) \(value)" }
+        set { value = Double(newValue) ?? -1 }
+    }
+    
+    var projectedValue: String {
+        return "\(to) \(value * rate)"
+    }
+    
+    init(initialValue: String, from: String, to: String, rate: Double) {
+        self.rate = rate
+        self.value = 0
+        self.from = from
+        self.to = to
+        self.wrappedValue = initialValue
     }
 }

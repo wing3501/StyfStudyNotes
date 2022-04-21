@@ -105,6 +105,8 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
+		92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589928112F75000BE001 /* CalculatorModel.swift */; };
+		92AC589C28113E44000BE001 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589B28113E43000BE001 /* HistoryView.swift */; };
 		92AE63002809184F0082505B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE62FF2809184F0082505B /* NotificationViewController.swift */; };
 		92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE630228093C520082505B /* ReactiveFormModel.swift */; };
 		92AE63052809413F0082505B /* ReactiveForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE63042809413F0082505B /* ReactiveForm.swift */; };
@@ -305,6 +307,8 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		92AC589928112F75000BE001 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		92AC589B28113E43000BE001 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92AE62FF2809184F0082505B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		92AE630228093C520082505B /* ReactiveFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveFormModel.swift; sourceTree = "<group>"; };
 		92AE63042809413F0082505B /* ReactiveForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveForm.swift; sourceTree = "<group>"; };
@@ -538,9 +542,11 @@
 			isa = PBXGroup;
 			children = (
 				9215A8D9280FD57C00344F40 /* ContentView.swift */,
+				92AC589928112F75000BE001 /* CalculatorModel.swift */,
 				92B428E2281104740098C4D5 /* CalculatorBrain.swift */,
 				92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */,
 				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
+				92AC589B28113E43000BE001 /* HistoryView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -1150,6 +1156,7 @@
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
+				92AC589C28113E44000BE001 /* HistoryView.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
@@ -1190,6 +1197,7 @@
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				92B265A226353BE500C4D16D /* SystemNotify.m in Sources */,
 				928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */,
+				92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 				92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */,
 				92426DDA26246289002062B7 /* LeaksDemo.m in Sources */,

@@ -13,7 +13,7 @@ class SwiftUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let vc = UIHostingController(rootView: ContentView())
+        let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
