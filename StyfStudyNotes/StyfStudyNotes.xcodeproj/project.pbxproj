@@ -100,6 +100,7 @@
 		92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417DB281282EF00603DCE /* AbilityViewModel.swift */; };
 		92A417DE28128F8000603DCE /* PokemonInfoPanelHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */; };
 		92A417E028128FBB00603DCE /* PokemonInfoPanelAbilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */; };
+		92A417E228129B1700603DCE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E128129B1600603DCE /* BlurView.swift */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
 		92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D725D288DD0008EFAA /* Assets.xcassets */; };
@@ -304,6 +305,7 @@
 		92A417DB281282EF00603DCE /* AbilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityViewModel.swift; sourceTree = "<group>"; };
 		92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelHeader.swift; sourceTree = "<group>"; };
 		92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelAbilityList.swift; sourceTree = "<group>"; };
+		92A417E128129B1600603DCE /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -836,6 +838,7 @@
 				92AC5D1E28115505000BE001 /* pokemon.json */,
 				92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */,
 				92A417D52812724700603DCE /* PokemonList.swift */,
+				92A417E128129B1600603DCE /* BlurView.swift */,
 				92A417D92812828A00603DCE /* PokemonInfoPanel.swift */,
 				92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */,
 				92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */,
@@ -1210,6 +1213,7 @@
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */,
 				92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */,
+				92A417E228129B1700603DCE /* BlurView.swift in Sources */,
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,

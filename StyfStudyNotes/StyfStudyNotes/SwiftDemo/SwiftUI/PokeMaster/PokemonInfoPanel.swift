@@ -35,7 +35,8 @@ struct PokemonInfoPanel: View {
             AbilityList(model: model, abilityModels: abilities)
         }
         .padding(EdgeInsets(top: 12, leading: 30, bottom: 30, trailing: 30))
-        .background(.white)
+//        .background(.white)
+        .blurBackground(style: .systemMaterial)
         .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
     }

@@ -34,7 +34,8 @@ struct PokemonList: View {
             VStack {
                 Spacer()
                 PokemonInfoPanel(model: PokemonViewModel(), abilities: [AbilityViewModel()])
-            }.edgesIgnoringSafeArea(.bottom)//忽略 safe area
+            }
+                .edgesIgnoringSafeArea(.bottom)//忽略 safe area
         )
     }
 }
