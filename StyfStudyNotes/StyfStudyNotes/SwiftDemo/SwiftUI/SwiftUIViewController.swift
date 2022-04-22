@@ -14,6 +14,9 @@ class SwiftUIViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
+        
+//        let vc = UIHostingController(rootView: PokemonView())
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
