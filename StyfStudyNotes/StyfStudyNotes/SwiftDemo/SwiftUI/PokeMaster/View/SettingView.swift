@@ -32,7 +32,7 @@ struct SettingView: View {
         Section(header: Text("账户")) {
             if settings.loginUser == nil {
                 Picker(selection: settingsBinding.accountBehavior) {
-                    ForEach(Settings.AccountBehavior.allCases, id: \.self) {
+                    ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
                         Text($0.text)
                     }
                 } label: {
@@ -47,8 +47,12 @@ struct SettingView: View {
                     SecureField("确认密码", text: settingsBinding.verifyPassword)
                 }
                 
-                Button(settings.accountBehavior.text) {
-                    store.dispatch(.login(email: settings.email, password: settings.password))
+                if settings.loginRequesting {
+                    Text("登录中...")
+                }else {
+                    Button(settings.accountBehavior.text) {
+                        store.dispatch(.login(email: settings.email, password: settings.password))
+                    }
                 }
             }else {
                 Text(settings.loginUser!.email)
