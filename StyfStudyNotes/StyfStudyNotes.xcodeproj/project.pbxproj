@@ -140,6 +140,7 @@
 		92CA9CCA28167A1400246D51 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9CC928167A1400246D51 /* AppCommand.swift */; };
 		92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0028168F6600246D51 /* FileStorage.swift */; };
 		92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0228168FE300246D51 /* FileHelper.swift */; };
+		92CA9D0528169E5300246D51 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */; };
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
@@ -373,6 +374,7 @@
 		92CA9CC928167A1400246D51 /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		92CA9D0028168F6600246D51 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		92CA9D0228168FE300246D51 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
 		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
@@ -973,6 +975,7 @@
 				92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */,
 				92A417D52812724700603DCE /* PokemonList.swift */,
 				92A417E128129B1600603DCE /* BlurView.swift */,
+				92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */,
 				92A417D92812828A00603DCE /* PokemonInfoPanel.swift */,
 				92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */,
 				92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */,
@@ -1354,6 +1357,7 @@
 				92B265A226353BE500C4D16D /* SystemNotify.m in Sources */,
 				928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */,
 				92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */,
+				92CA9D0528169E5300246D51 /* ActivityIndicatorView.swift in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 				92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */,
 				92426DDA26246289002062B7 /* LeaksDemo.m in Sources */,

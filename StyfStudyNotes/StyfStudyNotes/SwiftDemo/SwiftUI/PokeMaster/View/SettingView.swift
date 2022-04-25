@@ -48,18 +48,18 @@ struct SettingView: View {
                 if settings.accountBehavior == .register {
                     SecureField("确认密码", text: settingsBinding.verifyPassword)
                 }
-                
-                if settings.loginRequesting {
-                    Text("登录中...")
-                }else {
-                    Button(settings.accountBehavior.text) {
-                        store.dispatch(.login(email: settings.email, password: settings.password))
+                ZStack {
+                    ActivityIndicatorView(.medium, settings.loginRequesting)
+                    if !settings.loginRequesting {
+                        Button(settings.accountBehavior.text) {
+                            store.dispatch(.login(email: settings.email, password: settings.password))
+                        }
                     }
                 }
             }else {
                 Text(settings.loginUser!.email)
                 Button {
-                    
+                    store.dispatch(.logOff)
                 } label: {
                     Text("注销")
                 }
