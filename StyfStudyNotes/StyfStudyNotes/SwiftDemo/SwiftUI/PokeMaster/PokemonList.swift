@@ -40,8 +40,17 @@ struct PokemonList: View {
     }
 }
 
+struct PokemonRootView: View {
+    var body: some View {
+        NavigationView {
+            PokemonList().navigationTitle("宝可梦列表")
+        }
+    }
+}
+
 struct PokemonList_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonList()
+//        PokemonList()
+        PokemonRootView()
     }
 }

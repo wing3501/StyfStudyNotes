@@ -101,6 +101,8 @@
 		92A417DE28128F8000603DCE /* PokemonInfoPanelHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */; };
 		92A417E028128FBB00603DCE /* PokemonInfoPanelAbilityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */; };
 		92A417E228129B1700603DCE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E128129B1600603DCE /* BlurView.swift */; };
+		92A417E42812A26700603DCE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E32812A26700603DCE /* Settings.swift */; };
+		92A417E62812A48000603DCE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E52812A48000603DCE /* SettingView.swift */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
 		92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D725D288DD0008EFAA /* Assets.xcassets */; };
@@ -133,6 +135,7 @@
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
+		92F2EFC12815170B00773B17 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2EFC02815170B00773B17 /* Utils.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
 		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
 		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
@@ -306,6 +309,8 @@
 		92A417DD28128F8000603DCE /* PokemonInfoPanelHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelHeader.swift; sourceTree = "<group>"; };
 		92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanelAbilityList.swift; sourceTree = "<group>"; };
 		92A417E128129B1600603DCE /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		92A417E32812A26700603DCE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		92A417E52812A48000603DCE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -355,6 +360,8 @@
 		92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDelegateProxy.m; sourceTree = "<group>"; };
 		92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo.swift; sourceTree = "<group>"; };
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
+		92F2EFC02815170B00773B17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		92F2EFC22815182800773B17 /* CombinePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombinePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
 		92F36645273381A20013FB92 /* UIImage+scale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+scale.m"; sourceTree = "<group>"; };
 		92F3684E2733AE8E0013FB92 /* SMCPUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCPUMonitor.h; sourceTree = "<group>"; };
@@ -553,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
+				92F2EFBF281516F400773B17 /* Combine */,
 				92AC5D1D2811532E000BE001 /* PokeMaster */,
 				9215A8D8280FD54B00344F40 /* Calculator */,
 			);
@@ -845,6 +853,8 @@
 				92A417DB281282EF00603DCE /* AbilityViewModel.swift */,
 				92A417D1281248C100603DCE /* PokemonViewModel.swift */,
 				92A417D7281272F700603DCE /* Pokemon.swift */,
+				92A417E32812A26700603DCE /* Settings.swift */,
+				92A417E52812A48000603DCE /* SettingView.swift */,
 			);
 			path = PokeMaster;
 			sourceTree = "<group>";
@@ -948,6 +958,15 @@
 				92E2359127671D17003B7C85 /* myCpp.cpp */,
 			);
 			path = CPPNote;
+			sourceTree = "<group>";
+		};
+		92F2EFBF281516F400773B17 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				92F2EFC02815170B00773B17 /* Utils.swift */,
+				92F2EFC22815182800773B17 /* CombinePlayground.playground */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		92F3684D2733AE7D0013FB92 /* SMLagMonitor */ = {
@@ -1126,6 +1145,7 @@
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
+				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
@@ -1158,6 +1178,7 @@
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
+				92A417E42812A26700603DCE /* Settings.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
@@ -1229,6 +1250,7 @@
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				92F2EFC12815170B00773B17 /* Utils.swift in Sources */,
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
 				9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,

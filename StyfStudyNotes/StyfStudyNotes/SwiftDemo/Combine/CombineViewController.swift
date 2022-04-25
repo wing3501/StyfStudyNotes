@@ -89,6 +89,36 @@ class CombineViewController: UIViewController {
 //        sinkTest()
     }
     //------------------------------------
+    
+    //    和 PassthroughSubject 不同，CurrentValueSubject 则会包装和持有一个值，并在 设置该值时发送事件并保留新的值。
+//    在订阅发生的瞬间，CurrentValueSubject 会把 当前保存的值发送给订阅者。
+    func CurrentValueSubjectTest() {
+        let publisher3 = CurrentValueSubject<Int, Never>(0)
+        print("订阅开始")
+        publisher3.sink { complete in
+            print(complete)
+        } receiveValue: { value in
+            print(value)
+        }
+        publisher3.value = 1
+        publisher3.value = 2
+        publisher3.send(completion: .finished)
+    }
+    
+    //    PassthroughSubject 并不会对接受到的值进行保留，当订阅开始后，它将监听并响 应接下来的事件。
+    func PassthroughSubjectTest() {
+        let publisher2 = PassthroughSubject<Int,Never>()
+        publisher2.send(1)
+        print("开始订阅")
+        publisher2.sink { complete in
+            print(complete)
+        } receiveValue: { value in
+            print(value)
+        }
+        publisher2.send(2)
+        publisher2.send(completion: .finished)
+    }
+    
 //    网络受限时从备用 URL 请求数据
     func adaptiveLoader(regularURL: URL, lowDataURL: URL) -> AnyPublisher<Data, Error> {
         var request = URLRequest(url: regularURL)
