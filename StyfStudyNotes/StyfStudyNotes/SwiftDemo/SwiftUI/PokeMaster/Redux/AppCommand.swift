@@ -34,3 +34,4 @@ struct LoginAppCommand: AppCommand {
             .store(in: &anyCancellableSet)
     }
 }
+

@@ -138,6 +138,8 @@
 		92CA9CC62816770100246D51 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9CC52816770100246D51 /* LoginRequest.swift */; };
 		92CA9CC8281678EF00246D51 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9CC7281678EF00246D51 /* AppError.swift */; };
 		92CA9CCA28167A1400246D51 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9CC928167A1400246D51 /* AppCommand.swift */; };
+		92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0028168F6600246D51 /* FileStorage.swift */; };
+		92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0228168FE300246D51 /* FileHelper.swift */; };
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
@@ -369,6 +371,8 @@
 		92CA9CC52816770100246D51 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		92CA9CC7281678EF00246D51 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		92CA9CC928167A1400246D51 /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
+		92CA9D0028168F6600246D51 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		92CA9D0228168FE300246D51 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
 		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
@@ -859,6 +863,7 @@
 		92AC5D1D2811532E000BE001 /* PokeMaster */ = {
 			isa = PBXGroup;
 			children = (
+				92CA9CFF28168F5300246D51 /* Tool */,
 				92CA9CC4281676ED00246D51 /* Network */,
 				92CA9CBB28164F9000246D51 /* Redux */,
 				92CA9CB828164BA800246D51 /* View */,
@@ -995,6 +1000,15 @@
 				92CA9CC7281678EF00246D51 /* AppError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		92CA9CFF28168F5300246D51 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				92CA9D0028168F6600246D51 /* FileStorage.swift */,
+				92CA9D0228168FE300246D51 /* FileHelper.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		92E1A91B264D2B17007D63D5 /* SwiftDemo */ = {
@@ -1244,6 +1258,7 @@
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
+				92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
@@ -1257,6 +1272,7 @@
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
+				92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
