@@ -389,7 +389,8 @@ class LoadingUI {
     var isSuccess: Bool = false
     var text: String = ""
 }
-
+//dataTaskPublisher 是 struct，它遵循值语义 (value semantics)。在变形的时候，
+//负责网络请求的 Publisher 将被复制一份。这样一来，最后使用 assign 操作 isSuccess 和 latestText 时，最终订阅的是两个不同的 Publisher，因此网络请求也 发生了两次。
 let dataTaskPublisher = URLSession.shared .dataTaskPublisher(for: URL(string: "https://httpbin.org/get?foo=bar")!)
     .share()//通过 share() 操作，原来的 Publisher 将被包装在 class 内，对它的进一步变形也会 适用引用语义
 let isSuccess = dataTaskPublisher.map { data,response in
@@ -409,3 +410,27 @@ let latestText = dataTaskPublisher.map { data,_ in
 let ui = LoadingUI()
 var token1 = isSuccess.assign(to: \.isSuccess, on: ui)
 var token2 = latestText.assign(to: \.text, on: ui)
+
+
+//对于一般的 Cancellable，例如 connect 的返回 值，我们需要显式地调用 cancel() 来停止活动，但 AnyCancellable 则在自己的 deinit 中帮我们做了这件事。换句话说，当 sink 或 assign 返回的 AnyCancellable 被释放时，它对应的订阅操作也将停止。
+
+//内存管理规则
+//1.对于需要 connect 的 Publisher，在 connect 后需要保存返回的 Cancellable，并在合适的时候调用 cancel() 以结束事件的持续发布。
+//2.对于 sink 或 assign 的返回值，一般将其存储在实例的变量中，等待属性持有 者被释放时一同自动取消。不过，你也完全可以在不需要时提前释放这个变量 或者明确地调用 cancel() 以取消绑定。
+//3.对于 1 的情况，也完全可以将 Cancellable 作为参数传递给 AnyCancellable 的初始化方法，将它包装成为一个可以自动取消的对象。这样一来，1 将被转 换为 2 的情况。
+
+
+//debounce 防抖：Publisher 在接收到第一个值后，并不是立即将它发布出 去，而是会开启一个内部计时器，当一定时间内没有新的事件来到，再将这个值进行 发布。如果在计时期间有新的事件，则重置计时器并重复上述等待过程。
+let searchText = PassthroughSubject<String,Never>()
+
+check("Debounce") {
+    searchText.debounce(for: .seconds(1), scheduler: RunLoop.main)
+}
+delay(0) { searchText.send("S") }
+delay(0.1) { searchText.send("Sw") }
+delay(0.2) { searchText.send("Swi") }
+delay(1.3) { searchText.send("Swif") }
+delay(1.4) { searchText.send("Swift") }
+
+
+//throttle 防抖：它在收到一个事件后开始计时，并忽略计时 周期内的后续输入。
