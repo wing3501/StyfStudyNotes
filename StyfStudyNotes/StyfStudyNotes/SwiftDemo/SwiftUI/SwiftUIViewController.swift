@@ -16,7 +16,7 @@ class SwiftUIViewController: UIViewController {
 //        let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
 //        let vc = UIHostingController(rootView: PokemonList())
         
-        let vc = UIHostingController(rootView: MainTab())
+        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -9,7 +9,16 @@ import SwiftUI
 
 struct SettingView: View {
     
-    @ObservedObject var settings = Settings()
+//    @ObservedObject var settings = Settings()
+    
+    @EnvironmentObject var store: Store
+    
+    var settingsBinding: Binding<AppState.Settings> {
+        $store.appState.settings
+    }
+    var settings: AppState.Settings {
+        store.appState.settings
+    }
     
     var body: some View {
         Form {
@@ -21,33 +30,49 @@ struct SettingView: View {
     
     var accountSection: some View {
         Section(header: Text("账户")) {
-            Picker(selection: $settings.accountBehavior) {
-                ForEach(Settings.AccountBehavior.allCases, id: \.self) {
-                    Text($0.text)
+            if settings.loginUser == nil {
+                Picker(selection: settingsBinding.accountBehavior) {
+                    ForEach(Settings.AccountBehavior.allCases, id: \.self) {
+                        Text($0.text)
+                    }
+                } label: {
+                    Text("")
                 }
-            } label: {
-                Text("")
-            }
-            .pickerStyle(SegmentedPickerStyle())
+                .pickerStyle(SegmentedPickerStyle())
 
-            TextField("电子邮箱", text: $settings.email)
-            SecureField("密码", text: $settings.password)
-            
-            if settings.accountBehavior == .register {
-                SecureField("确认密码", text: $settings.verifyPassword)
-            }
-            
-            Button(settings.accountBehavior.text) {
-                print("登录/注册")
+                TextField("电子邮箱", text: settingsBinding.email)
+                SecureField("密码", text: settingsBinding.password)
+                
+                if settings.accountBehavior == .register {
+                    SecureField("确认密码", text: settingsBinding.verifyPassword)
+                }
+                
+                Button(settings.accountBehavior.text) {
+                    store.dispatch(.login(email: settings.email, password: settings.password))
+                }
+            }else {
+                Text(settings.loginUser!.email)
+                Button {
+                    
+                } label: {
+                    Text("注销")
+                }
+
             }
         }
     }
     
     var optionSection: some View {
         Section("选项") {
-            Toggle("只显示英文名", isOn: $settings.showEnglishName)
+            Toggle("只显示英文名", isOn: settingsBinding.showEnglishName)
             
-            Toggle("只显示收藏", isOn: $settings.showFavoriteOnly)
+            Picker(selection: settingsBinding.sorting, label: Text("排序方式")) {
+                ForEach(AppState.Settings.Sorting.allCases, id: \.self) {
+                    Text($0.text)
+                }
+            }
+            
+            Toggle("只显示收藏", isOn: settingsBinding.showFavoriteOnly)
         }
     }
     
@@ -70,9 +95,31 @@ struct SettingRootView: View {
     }
 }
 
+extension AppState.Settings.Sorting {
+    var text: String {
+        switch self {
+        case .id: return "ID"
+        case .name: return "名字"
+        case .color: return "颜色"
+        case .favorite: return "最爱"
+        }
+    }
+}
+
+extension AppState.Settings.AccountBehavior {
+    var text: String {
+        switch self {
+        case .register: return "注册"
+        case .login: return "登录"
+        }
+    }
+}
+
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
 //        SettingView()
-        SettingRootView()
+        SettingRootView().environmentObject(Store())
     }
 }
+
+
