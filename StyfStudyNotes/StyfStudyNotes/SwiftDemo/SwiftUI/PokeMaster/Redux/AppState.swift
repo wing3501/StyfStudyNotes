@@ -25,7 +25,9 @@ extension AppState {
         var password = ""
         var verifyPassword = ""
         
-        var showEnglishName = true
+        @UserDefaultsStorage(key: .showEnglishName, defaultValue: false)
+        var showEnglishName: Bool
+        
         var sorting = Sorting.id
         var showFavoriteOnly = false
         
