@@ -33,7 +33,7 @@ struct SettingView: View {
     var accountSection: some View {
         Section(header: Text("账户")) {
             if settings.loginUser == nil {
-                Picker(selection: settingsBinding.accountBehavior) {
+                Picker(selection: settingsBinding.checker.accountBehavior) {
                     ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
                         Text($0.text)
                     }
@@ -42,17 +42,18 @@ struct SettingView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
 
-                TextField("电子邮箱", text: settingsBinding.email)
-                SecureField("密码", text: settingsBinding.password)
+                TextField("电子邮箱", text: settingsBinding.checker.email)
+                    .foregroundColor(settings.isEmailValid ? .green : .red)
+                SecureField("密码", text: settingsBinding.checker.password)
                 
-                if settings.accountBehavior == .register {
-                    SecureField("确认密码", text: settingsBinding.verifyPassword)
+                if settings.checker.accountBehavior == .register {
+                    SecureField("确认密码", text: settingsBinding.checker.verifyPassword)
                 }
                 ZStack {
                     ActivityIndicatorView(.medium, settings.loginRequesting)
                     if !settings.loginRequesting {
-                        Button(settings.accountBehavior.text) {
-                            store.dispatch(.login(email: settings.email, password: settings.password))
+                        Button(settings.checker.accountBehavior.text) {
+                            store.dispatch(.login(email: settings.checker.email, password: settings.checker.password))
                         }
                     }
                 }

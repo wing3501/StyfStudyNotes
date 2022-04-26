@@ -41,6 +41,8 @@
 		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
+		921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545CE2817C8FB009781D2 /* StringExtension.swift */; };
+		921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D02817CA96009781D2 /* EmailCheckingRequest.swift */; };
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
@@ -222,6 +224,8 @@
 		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
+		921545CE2817C8FB009781D2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		921545D02817CA96009781D2 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
@@ -1002,6 +1006,7 @@
 			isa = PBXGroup;
 			children = (
 				92CA9CC52816770100246D51 /* LoginRequest.swift */,
+				921545D02817CA96009781D2 /* EmailCheckingRequest.swift */,
 				92CA9CC7281678EF00246D51 /* AppError.swift */,
 			);
 			path = Network;
@@ -1013,6 +1018,7 @@
 				92CA9D0028168F6600246D51 /* FileStorage.swift */,
 				925447782816C01B00058CBD /* UserDefaultsStorage.swift */,
 				92CA9D0228168FE300246D51 /* FileHelper.swift */,
+				921545CE2817C8FB009781D2 /* StringExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1269,6 +1275,7 @@
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
+				921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */,
 				92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */,
 				920C4FEE273276140091487B /* KVO.m in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
@@ -1332,6 +1339,7 @@
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
+				921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */,
 				92A417D62812724700603DCE /* PokemonList.swift in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,

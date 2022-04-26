@@ -10,6 +10,20 @@ import Combine
 class Store: ObservableObject {
     @Published var appState = AppState()
     
+    var disposeBag = Set<AnyCancellable>()
+    
+    init() {
+//        我们更倾向于在 app 开始时就把所有内容设定好，并用声明式和响应式 的方法让 app 维护自己的状态，因此，订阅的一个比较好的时机是在 Store 的初始 化方法中
+        setupObservers()
+    }
+    
+    func setupObservers() {
+        appState.settings.checker.isEmailValid.sink { [weak self] isValid in
+//            和通过 UI 事件改变状态一样，想要变更 Settings.isEmailValid，并以此影响 UI 状 态，我们只能通过发送 Action 来进行。
+            self?.dispatch(.emailValid(valid: isValid))
+        }.store(in: &disposeBag)
+    }
+    
     func dispatch(_ action: AppAction) {
         #if DEBUG
         print("[ACTION]: \(action)")
@@ -49,6 +63,8 @@ class Store: ObservableObject {
             }
         case .logOff:
             appState.settings.loginUser = nil
+        case .emailValid(let valid):
+            appState.settings.isEmailValid = valid
         }
         return (appState,appCommand)
     }
