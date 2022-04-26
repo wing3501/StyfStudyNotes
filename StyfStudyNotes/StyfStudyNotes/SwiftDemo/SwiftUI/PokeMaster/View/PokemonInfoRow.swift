@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PokemonInfoRow: View {
     let model: PokemonViewModel
@@ -15,7 +16,9 @@ struct PokemonInfoRow: View {
     var body: some View {
         VStack {
             HStack {//图片，名字
-                Image("Pokemon-25")
+//                Image("Pokemon-25")
+//                KFImage(URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(model.id).png")!)
+                KFImage(URL(string: "https://img2.baidu.com/it/u=2229712510,2079475217&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500")!)
                     .resizable() //如果我们想要图片可以按照所在的 frame 缩放，需要添加 resizable()
                     .frame(width: 50, height: 50)
                     .aspectRatio(contentMode: .fit)
