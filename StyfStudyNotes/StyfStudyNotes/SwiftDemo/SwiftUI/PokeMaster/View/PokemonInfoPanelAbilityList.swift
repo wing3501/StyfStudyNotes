@@ -23,7 +23,7 @@ extension PokemonInfoPanel {
                     ForEach(abilityModels!) { ability in
                         Text(ability.name)
                             .font(.subheadline)
-                            .foregroundColor(model.color)
+                            .foregroundColor(.yellow)
                         Text(ability.descriptionText)
                             .font(.footnote)
                             .foregroundColor(.blue)
