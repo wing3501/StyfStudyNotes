@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PokemonList: View {
+    
+    @EnvironmentObject var store: Store
+    
 //    添加 @State 将会使该属性被修改时触发 ScrollView 的计算 和重绘，以保证尺寸正确。
     @State var expandingIndex: Int?
     var body: some View {
@@ -18,7 +21,7 @@ struct PokemonList: View {
         //和 List 不同，ScrollView 并没有一个接受数组数据的初始化方法。我们需要使用 DSL 来描述它的内容。
         //ScrollView 暂时没有内建的 cell 重用机制
         ScrollView {
-            ForEach(PokemonViewModel.all) { pokemon in
+            ForEach(store.appState.pokemonList.allPokemonsByID) { pokemon in
                 PokemonInfoRow(model: pokemon, expanded: expandingIndex == pokemon.id)
                     .onTapGesture {
                         if expandingIndex == pokemon.id {
@@ -41,9 +44,18 @@ struct PokemonList: View {
 }
 
 struct PokemonRootView: View {
+    
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         NavigationView {
-            PokemonList().navigationTitle("宝可梦列表")
+            if store.appState.pokemonList.pokemons == nil {
+                Text("Loading...").onAppear {
+                    self.store.dispatch(.loadPokemons)
+                }
+            }else {
+                PokemonList().navigationTitle("宝可梦列表")
+            }
         }
     }
 }

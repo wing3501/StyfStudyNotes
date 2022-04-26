@@ -52,6 +52,7 @@ struct PokemonInfoPanel: View {
 
 struct PokemonInfoPanel_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonInfoPanel(model: PokemonViewModel(), abilities: [AbilityViewModel()])
+//        PokemonInfoPanel(model: PokemonViewModel(), abilities: [AbilityViewModel()])
+        PokemonInfoPanel(model: PokemonViewModel(Pokemon(id: 1, species: PokemonSpecies(name: "", url: "")), PokemonSpecies(name: "", url: "")), abilities: [])
     }
 }

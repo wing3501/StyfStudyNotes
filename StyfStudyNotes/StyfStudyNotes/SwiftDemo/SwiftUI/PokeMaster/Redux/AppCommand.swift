@@ -35,3 +35,16 @@ struct LoginAppCommand: AppCommand {
     }
 }
 
+struct LoadPokemonsCommand: AppCommand {
+    func execute(in store: Store) {
+        LoadPokemonRequest.all
+            .sink { complete in
+            if case .failure(let error) = complete {
+                store.dispatch(.loadPokemonsDone(result: .failure(error)))
+            }
+        } receiveValue: { value in
+            store.dispatch(.loadPokemonsDone(result: .success(value)))
+        }
+        .store(in: &anyCancellableSet)
+    }
+}

@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Pokemon {
+struct Pokemon: Codable {
     var id: Int
+    var species: PokemonSpecies
 }

@@ -8,29 +8,25 @@
 import Foundation
 import SwiftUI
 
-struct PokemonViewModel: Identifiable, Codable {
+struct PokemonViewModel: Identifiable {
     let pokemon: Pokemon
+    let species: PokemonSpecies
+    
     var id: Int { pokemon.id }
     let color: Color = .yellow
     
     static var all: [PokemonViewModel] {
         var array: [PokemonViewModel] = []
-        for _ in 1...30 {
-            array.append(PokemonViewModel())
-        }
+//        for _ in 1...30 {
+//            array.append(PokemonViewModel())
+//        }
         return array
     }
     
-    init() {
-        pokemon = Pokemon(id: 0)
-    }
     
-    init(from decoder: Decoder) throws {
-        pokemon = Pokemon(id: 0)
-    }
     
-    func encode(to encoder: Encoder) throws {
-        
+    init(_ pokemon: Pokemon,_ species: PokemonSpecies) {
+        self.pokemon = pokemon
+        self.species = species
     }
-    
 }

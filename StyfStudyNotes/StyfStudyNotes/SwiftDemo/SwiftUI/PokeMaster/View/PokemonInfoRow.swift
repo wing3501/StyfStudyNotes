@@ -105,9 +105,9 @@ struct ToolButtonModifier: ViewModifier {
 struct PokemonInfoRow_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            PokemonInfoRow(model: PokemonViewModel(), expanded: false)
-            PokemonInfoRow(model: PokemonViewModel(), expanded: true)
-            PokemonInfoRow(model: PokemonViewModel(), expanded: false)
+//            PokemonInfoRow(model: PokemonViewModel(), expanded: false)
+//            PokemonInfoRow(model: PokemonViewModel(), expanded: true)
+//            PokemonInfoRow(model: PokemonViewModel(), expanded: false)
         }
     }
 }

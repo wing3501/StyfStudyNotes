@@ -43,6 +43,9 @@
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
 		921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545CE2817C8FB009781D2 /* StringExtension.swift */; };
 		921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D02817CA96009781D2 /* EmailCheckingRequest.swift */; };
+		921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */; };
+		921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D42817DE21009781D2 /* PokemonSpecies.swift */; };
+		921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D62817E4CB009781D2 /* ArrayExtension.swift */; };
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
@@ -226,6 +229,9 @@
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
 		921545CE2817C8FB009781D2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		921545D02817CA96009781D2 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
+		921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
+		921545D42817DE21009781D2 /* PokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpecies.swift; sourceTree = "<group>"; };
+		921545D62817E4CB009781D2 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
@@ -959,6 +965,7 @@
 			isa = PBXGroup;
 			children = (
 				92A417D7281272F700603DCE /* Pokemon.swift */,
+				921545D42817DE21009781D2 /* PokemonSpecies.swift */,
 				92AC5D1E28115505000BE001 /* pokemon.json */,
 				92CA9CC028166D6100246D51 /* User.swift */,
 			);
@@ -1007,6 +1014,7 @@
 			children = (
 				92CA9CC52816770100246D51 /* LoginRequest.swift */,
 				921545D02817CA96009781D2 /* EmailCheckingRequest.swift */,
+				921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */,
 				92CA9CC7281678EF00246D51 /* AppError.swift */,
 			);
 			path = Network;
@@ -1019,6 +1027,7 @@
 				925447782816C01B00058CBD /* UserDefaultsStorage.swift */,
 				92CA9D0228168FE300246D51 /* FileHelper.swift */,
 				921545CE2817C8FB009781D2 /* StringExtension.swift */,
+				921545D62817E4CB009781D2 /* ArrayExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1269,10 +1278,12 @@
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
 				92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
+				921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
 				921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */,
@@ -1328,6 +1339,7 @@
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A417D2281248C100603DCE /* PokemonViewModel.swift in Sources */,
+				921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */,
 				92CA9CBA28164C0B00246D51 /* MainTab.swift in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				92E2359227671D17003B7C85 /* myCpp.cpp in Sources */,

@@ -9,6 +9,7 @@ import Combine
 
 struct AppState {
     var settings = Settings()
+    var pokemonList = PokemonList()
 }
 
 extension AppState {
@@ -81,4 +82,18 @@ extension AppState {
         var loginError: AppError?
     }
     
+}
+
+extension AppState {
+    struct PokemonList {
+        var pokemons: [Int: PokemonViewModel]?
+        var loadingPokemons = false
+        
+        var allPokemonsByID: [PokemonViewModel] {
+            guard let pokemons = pokemons?.values else {
+                return []
+            }
+            return pokemons.sorted { $0.id < $1.id }
+        }
+    }
 }
