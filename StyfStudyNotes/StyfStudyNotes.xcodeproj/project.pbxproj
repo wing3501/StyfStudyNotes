@@ -236,6 +236,7 @@
 		921545D62817E4CB009781D2 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		921545D828180C37009781D2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
+		921545DD2818154C009781D2 /* Kingfisher-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Kingfisher-master"; path = "SPM/Kingfisher-master"; sourceTree = "<group>"; };
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
@@ -594,6 +595,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		921545DC2818154C009781D2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				921545DD2818154C009781D2 /* Kingfisher-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		9215A8D7280FD44700344F40 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +804,7 @@
 		92A8D7BF25D288DA0008EFAA = {
 			isa = PBXGroup;
 			children = (
+				921545DC2818154C009781D2 /* Packages */,
 				92A8D7CA25D288DA0008EFAA /* StyfStudyNotes */,
 				92A8D7C925D288DA0008EFAA /* Products */,
 				E79A4B88C018268A4AA9ED07 /* Pods */,
