@@ -27,6 +27,7 @@ struct UserDefaultsStorage<T> {
     var wrappedValue: T {
         set {
             UserDefaults.standard.set(newValue, forKey: key.rawValue)
+            UserDefaults.standard.synchronize()
             userDefaultsCache[key] = newValue
         }
         get {
