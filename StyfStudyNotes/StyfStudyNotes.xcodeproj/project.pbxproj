@@ -46,6 +46,8 @@
 		921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */; };
 		921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D42817DE21009781D2 /* PokemonSpecies.swift */; };
 		921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D62817E4CB009781D2 /* ArrayExtension.swift */; };
+		921545D928180C37009781D2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D828180C37009781D2 /* UserModel.swift */; };
+		921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */; };
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
@@ -232,6 +234,8 @@
 		921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
 		921545D42817DE21009781D2 /* PokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpecies.swift; sourceTree = "<group>"; };
 		921545D62817E4CB009781D2 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		921545D828180C37009781D2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
@@ -968,6 +972,7 @@
 				921545D42817DE21009781D2 /* PokemonSpecies.swift */,
 				92AC5D1E28115505000BE001 /* pokemon.json */,
 				92CA9CC028166D6100246D51 /* User.swift */,
+				921545D828180C37009781D2 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1028,6 +1033,7 @@
 				92CA9D0228168FE300246D51 /* FileHelper.swift */,
 				921545CE2817C8FB009781D2 /* StringExtension.swift */,
 				921545D62817E4CB009781D2 /* ArrayExtension.swift */,
+				921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1268,6 +1274,7 @@
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
+				921545D928180C37009781D2 /* UserModel.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
@@ -1373,6 +1380,7 @@
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
+				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
