@@ -10,6 +10,7 @@ import Combine
 struct AppState {
     var settings = Settings()
     var pokemonList = PokemonList()
+    var mainTab = MainTab()
 }
 
 extension AppState {
@@ -129,5 +130,15 @@ extension AppState {
         var selectionState = SelectionState()
         
         var isSFViewActive = false
+    }
+}
+
+extension AppState {
+    struct MainTab {
+        enum Index: Hashable {
+        case list, settings
+        }
+        
+        var selection: Index = .list
     }
 }
