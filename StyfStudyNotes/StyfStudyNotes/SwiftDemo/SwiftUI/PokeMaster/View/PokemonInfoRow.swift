@@ -77,7 +77,7 @@ struct PokemonInfoRow: View {
         //隐式动画，通过 View 上的 animtion 修饰，就可以在 View 中支持动画的属性发生变化时自动为整个 View 添加上动画支持了
         .animation(.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0), value: expanded)
 //        .animation(.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0))
-        .onTapGesture {
+//        .onTapGesture {
 //            SwiftUI 中的动画有两种类型:显式动画和隐式动画。显式动画通过 withAnimation 触发
 //            withAnimation {
 //                expanded.toggle()
@@ -90,7 +90,7 @@ struct PokemonInfoRow: View {
 //            withAnimation(animation) {
 //                expanded.toggle()
 //            }
-        }
+//        }
     }
 }
 
