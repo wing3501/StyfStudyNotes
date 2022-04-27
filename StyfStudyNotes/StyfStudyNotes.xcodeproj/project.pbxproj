@@ -138,6 +138,7 @@
 		92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B428E2281104740098C4D5 /* CalculatorBrain.swift */; };
 		92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B848BF28191B1100D46185 /* OverlaySheet.swift */; };
 		92B848C228191CA600D46185 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B848C128191CA600D46185 /* ViewExtension.swift */; };
+		92B848C42819316F00D46185 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B848C32819316F00D46185 /* SafariView.swift */; };
 		92C1D92727293C8300FF3398 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92627293C8300FF3398 /* Question.m */; };
 		92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1D92A27293D6F00FF3398 /* CrashHelper.m */; };
 		92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C374792738F8A00026BC15 /* MemoryHelper.m */; };
@@ -380,6 +381,7 @@
 		92B428E2281104740098C4D5 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		92B848BF28191B1100D46185 /* OverlaySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySheet.swift; sourceTree = "<group>"; };
 		92B848C128191CA600D46185 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		92B848C32819316F00D46185 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		92C1D92527293C8300FF3398 /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		92C1D92627293C8300FF3398 /* Question.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		92C1D92927293D6F00FF3398 /* CrashHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashHelper.h; sourceTree = "<group>"; };
@@ -1017,6 +1019,7 @@
 				92A417DF28128FBB00603DCE /* PokemonInfoPanelAbilityList.swift */,
 				92A417E52812A48000603DCE /* SettingView.swift */,
 				92CA9CB928164C0B00246D51 /* MainTab.swift */,
+				92B848C32819316F00D46185 /* SafariView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1390,6 +1393,7 @@
 				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,
 				92CA9CCA28167A1400246D51 /* AppCommand.swift in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
+				92B848C42819316F00D46185 /* SafariView.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,

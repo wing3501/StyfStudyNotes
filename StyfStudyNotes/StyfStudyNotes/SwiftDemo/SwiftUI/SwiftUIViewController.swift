@@ -18,7 +18,9 @@ class SwiftUIViewController: UIViewController {
 //        let vc = UIHostingController(rootView: PokemonList())
         
         let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
-        self.navigationController?.pushViewController(vc, animated: true)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
 

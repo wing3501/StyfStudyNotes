@@ -54,8 +54,19 @@ struct PokemonInfoRow: View {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
                 }
-                Button {
-                    
+//                Button {
+//
+//                } label: {
+//                    Image(systemName: "info.circle")
+//                        .modifier(ToolButtonModifier())
+//                }
+                
+//                想要以推入 的方式显示新 View，需要使用 NavigationLink。
+//                注意，NavigationLink 只在当前 View 处于 NavigationView 中才有效。在我 们的例子中，NavigationView 被定义在 PokemonRootView 里。
+                NavigationLink {
+                    SafariView(url: URL(string: "http://news.baidu.com/")!)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationTitle(Text("我是一个标题"))
                 } label: {
                     Image(systemName: "info.circle")
                         .modifier(ToolButtonModifier())
