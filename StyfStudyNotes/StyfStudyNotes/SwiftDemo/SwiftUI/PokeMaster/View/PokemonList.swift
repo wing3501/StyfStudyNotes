@@ -11,6 +11,13 @@ struct PokemonList: View {
     
     @EnvironmentObject var store: Store
     
+    var pokemonListBinding: Binding<AppState.PokemonList> {
+        $store.appState.pokemonList
+    }
+    var pokemonList: AppState.PokemonList {
+        store.appState.pokemonList
+    }
+    
 //    添加 @State 将会使该属性被修改时触发 ScrollView 的计算 和重绘，以保证尺寸正确。
 //    @State var expandingIndex: Int?
     var body: some View {
@@ -26,6 +33,12 @@ struct PokemonList: View {
                     .onTapGesture {
                         store.dispatch(.expandPokemonInfoRow(id: pokemon.id))
                     }
+            }
+        }
+        // 使用sheet弹出SafariView
+        .sheet(isPresented: pokemonListBinding.isSFViewActive) {
+            SafariView(url: URL(string: "http://news.baidu.com/")!) {
+                store.dispatch(.closeSafariView)
             }
         }
 //        overlay 在当前 View (ScrollView) 上方添加一层另外的 View。它的行为和 ZStack 比较相似，只不过 overlay 会尊重它下方的原有 View 的布局，而不像 ZStack 中的 View 那样相互没有约束。

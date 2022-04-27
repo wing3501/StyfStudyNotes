@@ -104,6 +104,8 @@ class Store: ObservableObject {
             appState.pokemonList.selectionState.panelPresented = target
         case .closeSafariView:
             appState.pokemonList.isSFViewActive = false
+        case .sheetOpenSafariView:
+            appState.pokemonList.isSFViewActive = true
         }
         return (appState,appCommand)
     }

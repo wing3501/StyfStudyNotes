@@ -64,12 +64,13 @@ struct PokemonInfoRow: View {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
                 }
-//                Button {
-//
-//                } label: {
-//                    Image(systemName: "info.circle")
-//                        .modifier(ToolButtonModifier())
-//                }
+                Button {
+                    //使用sheet弹出SafariView
+                    store.dispatch(.sheetOpenSafariView)
+                } label: {
+                    Image(systemName: "info.circle")
+                        .modifier(ToolButtonModifier())
+                }
                 
 //                想要以推入 的方式显示新 View，需要使用 NavigationLink。
 //                注意，NavigationLink 只在当前 View 处于 NavigationView 中才有效。在我 们的例子中，NavigationView 被定义在 PokemonRootView 里。
@@ -84,16 +85,16 @@ struct PokemonInfoRow: View {
                 
                 
 //                除了 像上面那样最简单的 init(destination:label:) 以外，NavigationLink 还有另外的接受 一个 Binding<Bool> 的初始化方法。
-                NavigationLink(isActive: expanded ? pokemonListBinding.isSFViewActive : .constant(false)) {
-                    SafariView(url: URL(string: "http://news.baidu.com/")!) {
-                        store.dispatch(.closeSafariView)
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle(Text("我是一个标题"))
-                } label: {
-                    Image(systemName: "info.circle")
-                        .modifier(ToolButtonModifier())
-                }
+//                NavigationLink(isActive: expanded ? pokemonListBinding.isSFViewActive : .constant(false)) {
+//                    SafariView(url: URL(string: "http://news.baidu.com/")!) {
+//                        store.dispatch(.closeSafariView)
+//                    }
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .navigationTitle(Text("我是一个标题"))
+//                } label: {
+//                    Image(systemName: "info.circle")
+//                        .modifier(ToolButtonModifier())
+//                }
             }
             .padding(.bottom,12)
             .opacity(expanded ? 1.0 : 0.0)//设定透明度来隐藏按钮
