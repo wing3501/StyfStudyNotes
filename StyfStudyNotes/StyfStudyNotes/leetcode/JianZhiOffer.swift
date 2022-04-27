@@ -619,6 +619,12 @@ class PriorityQueue<T> {
         //    剑指 Offer II 080. 含有 k 个元素的组合
 //        print(combine(4, 2))
 //        print(combine(1, 1))
+        
+        //    剑指 Offer II 109. 开密码锁
+        print(openLock(["0201","0101","0102","1212","2002"], "0202"))
+        print(openLock(["8888"], "0009"))
+        print(openLock(["8887","8889","8878","8898","8788","8988","7888","9888"], "8888"))
+        print(openLock(["0000"], "8888"))
     }
     
 //    剑指 Offer II 109. 开密码锁
@@ -659,14 +665,66 @@ class PriorityQueue<T> {
         if deadends.contains("0000") || deadends.contains(target) {
             return -1
         }
+        if target == "0000" {
+            return 0
+        }
         var queue: [[Character]] = [["0","0","0","0"]]
+        var visited = Set<[Character]>(queue)
         var deadSet: Set<[Character]> = []
         for dead in deadends {
             deadSet.insert(Array(dead))
         }
         let targetArr = Array(target)
-        return 0
+        var temp: [[Character]] = []
+        var steps = 0
+        while !queue.isEmpty {
+            let step = queue.removeLast()
+            for index in 0...3 {
+                let nextStep1 = openLockWalk(step, index, true)
+                if nextStep1 == targetArr {
+                    return steps + 1
+                }
+                let nextStep2 = openLockWalk(step, index, false)
+                if nextStep2 == targetArr {
+                    return steps + 1
+                }
+                if !visited.contains(nextStep1) {
+                    visited.insert(nextStep1)
+                    if !deadSet.contains(nextStep1) {
+                        temp.append(nextStep1)
+                    }
+                }
+                if !visited.contains(nextStep2) {
+                    visited.insert(nextStep2)
+                    if !deadSet.contains(nextStep2) {
+                        temp.append(nextStep2)
+                    }
+                }
+            }
+            if queue.isEmpty {
+                queue = temp
+                temp = []
+                steps += 1
+            }
+        }
+        return -1
     }
+    
+    class func openLockWalk(_ curArray: [Character],_ index: Int,_ up: Bool) -> [Character] {
+        var step = curArray
+        let ch = step[index]
+        if ch == "0", !up {
+            step[index] = "9"
+        }else if ch == "9", up {
+            step[index] = "0"
+        }else if up {
+            step[index] = Character("\(ch.wholeNumberValue! + 1)")
+        }else {
+            step[index] = Character("\(ch.wholeNumberValue! - 1)")
+        }
+        return step
+    }
+    
 //    剑指 Offer II 080. 含有 k 个元素的组合
 //    给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 //    示例 1:
