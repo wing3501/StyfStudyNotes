@@ -15,6 +15,16 @@ struct PokemonInfoRow: View {
     
     @EnvironmentObject var store: Store
     
+    var pokemonListBinding: Binding<AppState.PokemonList> {
+        $store.appState.pokemonList
+    }
+    var pokemonList: AppState.PokemonList {
+        store.appState.pokemonList
+    }
+    
+//    isSFViewActive 控制的不仅仅是自身 View 中临时状态，而是影响了整个 app UI 结 构的状态。简单地使用这样的 @State，破坏了 model 和 view 的对应关系。我们会 想办法将这个状态放到 AppState 里，用 AppAction 来修改状态并驱动 UI。
+//    @State var isSFViewActive = false
+    
     var body: some View {
         VStack {
             HStack {//图片，名字
@@ -63,10 +73,23 @@ struct PokemonInfoRow: View {
                 
 //                想要以推入 的方式显示新 View，需要使用 NavigationLink。
 //                注意，NavigationLink 只在当前 View 处于 NavigationView 中才有效。在我 们的例子中，NavigationView 被定义在 PokemonRootView 里。
-                NavigationLink {
-                    SafariView(url: URL(string: "http://news.baidu.com/")!)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationTitle(Text("我是一个标题"))
+//                NavigationLink {
+//                    SafariView(url: URL(string: "http://news.baidu.com/")!)
+//                        .navigationBarTitleDisplayMode(.inline)
+//                        .navigationTitle(Text("我是一个标题"))
+//                } label: {
+//                    Image(systemName: "info.circle")
+//                        .modifier(ToolButtonModifier())
+//                }
+                
+                
+//                除了 像上面那样最简单的 init(destination:label:) 以外，NavigationLink 还有另外的接受 一个 Binding<Bool> 的初始化方法。
+                NavigationLink(isActive: expanded ? pokemonListBinding.isSFViewActive : .constant(false)) {
+                    SafariView(url: URL(string: "http://news.baidu.com/")!) {
+                        store.dispatch(.closeSafariView)
+                    }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(Text("我是一个标题"))
                 } label: {
                     Image(systemName: "info.circle")
                         .modifier(ToolButtonModifier())

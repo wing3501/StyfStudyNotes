@@ -19,4 +19,5 @@ enum AppAction {
     case clearCache
     case expandPokemonInfoRow(id: Int)
     case togglePanelPresenting(presenting: Bool)
+    case closeSafariView
 }

@@ -102,6 +102,8 @@ class Store: ObservableObject {
             }
         case .togglePanelPresenting(let target):
             appState.pokemonList.selectionState.panelPresented = target
+        case .closeSafariView:
+            appState.pokemonList.isSFViewActive = false
         }
         return (appState,appCommand)
     }

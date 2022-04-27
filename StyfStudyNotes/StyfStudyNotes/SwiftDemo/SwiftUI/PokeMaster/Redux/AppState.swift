@@ -127,5 +127,7 @@ extension AppState {
             var panelPresented = false
         }
         var selectionState = SelectionState()
+        
+        var isSFViewActive = false
     }
 }
