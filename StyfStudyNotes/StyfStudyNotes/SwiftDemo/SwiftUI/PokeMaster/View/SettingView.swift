@@ -54,7 +54,7 @@ struct SettingView: View {
                     if !settings.loginRequesting {
                         Button(settings.checker.accountBehavior.text) {
                             if settings.checker.accountBehavior == .register {
-                                
+                                store.dispatch(.register(email: settings.checker.email, password: settings.checker.password))
                             }else {
                                 store.dispatch(.login(email: settings.checker.email, password: settings.checker.password))
                             }

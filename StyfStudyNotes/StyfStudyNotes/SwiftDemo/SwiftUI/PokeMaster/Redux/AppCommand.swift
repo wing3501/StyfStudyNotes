@@ -48,3 +48,21 @@ struct LoadPokemonsCommand: AppCommand {
         .store(in: &anyCancellableSet)
     }
 }
+
+struct RegisterAppCommand: AppCommand {
+    let email: String
+    let password: String
+    
+    func execute(in store: Store) {
+        RegisterRequest(email: email, password: password)
+            .publisher
+            .sink { complete in
+                if case .failure(let error) = complete {
+                    store.dispatch(.accountBehaviorDone(result: .failure(error)))
+                }
+            } receiveValue: { user in
+                store.dispatch(.accountBehaviorDone(result: .success(user)))
+            }
+            .store(in: &anyCancellableSet)
+    }
+}

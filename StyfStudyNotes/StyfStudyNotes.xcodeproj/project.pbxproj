@@ -51,6 +51,7 @@
 		92154602281819C3009781D2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 92154601281819C3009781D2 /* Kingfisher */; };
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
+		921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
 		9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58D26AA941D007E8B6A /* SaleCell.m */; };
@@ -241,6 +242,7 @@
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
+		921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
 		9220D58326AA92A1007E8B6A /* DiffableDataSourceDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffableDataSourceDemo.h; sourceTree = "<group>"; };
 		9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffableDataSourceDemo.m; sourceTree = "<group>"; };
@@ -1030,6 +1032,7 @@
 			isa = PBXGroup;
 			children = (
 				92CA9CC52816770100246D51 /* LoginRequest.swift */,
+				921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */,
 				921545D02817CA96009781D2 /* EmailCheckingRequest.swift */,
 				921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */,
 				92CA9CC7281678EF00246D51 /* AppError.swift */,
@@ -1399,6 +1402,7 @@
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
+				921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */,
 				920E41B225E8DDC700DE2990 /* 其他.swift in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				92B265A226353BE500C4D16D /* SystemNotify.m in Sources */,

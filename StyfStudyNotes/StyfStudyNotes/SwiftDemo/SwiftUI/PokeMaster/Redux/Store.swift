@@ -57,7 +57,12 @@ class Store: ObservableObject {
             }
             appState.settings.loginRequesting = true
             appCommand = LoginAppCommand(email: email, password: password)
-            
+        case .register(let email,let password):
+            guard !appState.settings.loginRequesting else {
+                break
+            }
+            appState.settings.loginRequesting = true
+            appCommand = RegisterAppCommand(email: email, password: password)
         case .accountBehaviorDone(let result):
             appState.settings.loginRequesting = false
             
