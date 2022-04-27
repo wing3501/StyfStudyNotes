@@ -30,6 +30,7 @@ extension AppState {
 //        var verifyPassword = ""
         
         var isEmailValid = false
+        var isButtonDisabled = true
         
         class AcountChecker {
             @Published var accountBehavior = AccountBehavior.login
@@ -58,11 +59,34 @@ extension AppState {
                             return Just(true).eraseToAnyPublisher()
                         }
                     }
-                    
+                
                 let emailLocalValid = $email.map { $0.isValidEmailAddress }
                 let canSkipRemoteVerify = $accountBehavior.map { $0 == .login }
                 return Publishers.CombineLatest3(emailLocalValid, canSkipRemoteVerify, remoteVerify)
                     .map { $0 && ($1 || $2) }
+                    .eraseToAnyPublisher()
+            }
+            
+            var isPasswordValid: AnyPublisher<Bool,Never> {
+                return $password
+                    .combineLatest($verifyPassword)
+                    .flatMap { (str1,str2) -> AnyPublisher<Bool,Never> in
+                        let canSkip = self.accountBehavior == .login
+                        if (!str1.isEmpty && !str2.isEmpty && str1 == str2 && !canSkip) || (!str1.isEmpty && canSkip) {
+                            return Just(true).eraseToAnyPublisher()
+                        }else {
+                            return Just(false).eraseToAnyPublisher()
+                        }
+                    }
+                    .eraseToAnyPublisher()
+            }
+            
+            var isButtonDisabled: AnyPublisher<Bool,Never> {
+                return isEmailValid
+                    .combineLatest(isPasswordValid)
+                    .flatMap { (emailValid,passwordValid) in
+                        return Just(emailValid && passwordValid).eraseToAnyPublisher()
+                    }
                     .eraseToAnyPublisher()
             }
         }

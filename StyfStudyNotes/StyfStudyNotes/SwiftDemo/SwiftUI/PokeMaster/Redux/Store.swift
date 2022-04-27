@@ -18,9 +18,15 @@ class Store: ObservableObject {
     }
     
     func setupObservers() {
+        //驱动邮箱文字颜色
         appState.settings.checker.isEmailValid.sink { [weak self] isValid in
 //            和通过 UI 事件改变状态一样，想要变更 Settings.isEmailValid，并以此影响 UI 状 态，我们只能通过发送 Action 来进行。
             self?.dispatch(.emailValid(valid: isValid))
+        }.store(in: &disposeBag)
+        
+        //驱动按钮是否可用
+        appState.settings.checker.isPasswordValid.sink { [weak self] isValid in
+            self?.dispatch(.passwordValid(valid: isValid))
         }.store(in: &disposeBag)
     }
     
@@ -79,6 +85,8 @@ class Store: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+        case .passwordValid(let valid):
+            appState.settings.isButtonDisabled = !valid
         }
         return (appState,appCommand)
     }

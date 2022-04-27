@@ -14,4 +14,5 @@ enum AppAction {
     case emailValid(valid: Bool)
     case loadPokemons
     case loadPokemonsDone(result: Result<[PokemonViewModel],AppError>)
+    case passwordValid(valid: Bool)
 }
