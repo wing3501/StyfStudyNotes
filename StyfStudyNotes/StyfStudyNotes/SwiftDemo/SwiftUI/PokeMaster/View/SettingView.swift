@@ -89,7 +89,7 @@ struct SettingView: View {
     
     var actionSection: some View {
         Button {
-            
+            store.dispatch(.clearCache)
         } label: {
             Text("清空缓存")
                 .foregroundColor(.red)

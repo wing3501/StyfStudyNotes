@@ -92,6 +92,8 @@ class Store: ObservableObject {
             }
         case .passwordValid(let valid):
             appState.settings.isButtonDisabled = !valid
+        case .clearCache:
+            appState.pokemonList.pokemons = nil
         }
         return (appState,appCommand)
     }
