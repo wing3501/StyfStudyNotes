@@ -49,6 +49,14 @@ struct PokemonList: View {
 //            }
 //                .edgesIgnoringSafeArea(.bottom)//忽略 safe area
 //        )
+        .alert("需要账户", isPresented: pokemonListBinding.showCollectAlert) {
+            Button("取消") {
+                
+            }
+            Button("登录") {
+                store.dispatch(.changeTap(tapIndex: AppState.MainTab.Index.settings))
+            }
+        }
     }
 }
 

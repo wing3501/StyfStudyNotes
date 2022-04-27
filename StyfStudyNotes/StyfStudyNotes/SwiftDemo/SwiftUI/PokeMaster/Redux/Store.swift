@@ -106,6 +106,10 @@ class Store: ObservableObject {
             appState.pokemonList.isSFViewActive = false
         case .sheetOpenSafariView:
             appState.pokemonList.isSFViewActive = true
+        case .collect:
+            appState.pokemonList.showCollectAlert = true
+        case .changeTap(let tapIndex):
+            appState.mainTab.selection = tapIndex
         }
         return (appState,appCommand)
     }

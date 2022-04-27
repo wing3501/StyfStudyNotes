@@ -130,6 +130,8 @@ extension AppState {
         var selectionState = SelectionState()
         
         var isSFViewActive = false
+        
+        var showCollectAlert = false
     }
 }
 

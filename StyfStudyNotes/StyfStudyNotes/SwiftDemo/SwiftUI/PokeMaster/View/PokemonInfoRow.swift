@@ -52,7 +52,7 @@ struct PokemonInfoRow: View {
             HStack(spacing: expanded ? 20: -30) {//按钮部分
                 Spacer()
                 Button {
-                    
+                    store.dispatch(.collect)
                 } label: {
                     Image(systemName: "star") //加载系统内置的 SF Symbol
                         .modifier(ToolButtonModifier())

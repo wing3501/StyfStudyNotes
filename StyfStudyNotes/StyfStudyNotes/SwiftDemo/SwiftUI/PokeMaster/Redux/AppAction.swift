@@ -21,4 +21,6 @@ enum AppAction {
     case togglePanelPresenting(presenting: Bool)
     case closeSafariView
     case sheetOpenSafariView
+    case collect
+    case changeTap(tapIndex: AppState.MainTab.Index)
 }
