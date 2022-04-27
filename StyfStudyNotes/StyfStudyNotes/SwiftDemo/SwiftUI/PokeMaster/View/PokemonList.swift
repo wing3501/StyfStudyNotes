@@ -12,7 +12,7 @@ struct PokemonList: View {
     @EnvironmentObject var store: Store
     
 //    添加 @State 将会使该属性被修改时触发 ScrollView 的计算 和重绘，以保证尺寸正确。
-    @State var expandingIndex: Int?
+//    @State var expandingIndex: Int?
     var body: some View {
         //List 接受一个数组，数组中的元素需要遵守 Identifiable 协议
 //        List(PokemonViewModel.all) { pokemon in
@@ -22,13 +22,9 @@ struct PokemonList: View {
         //ScrollView 暂时没有内建的 cell 重用机制
         ScrollView {
             ForEach(store.appState.pokemonList.allPokemonsByID) { pokemon in
-                PokemonInfoRow(model: pokemon, expanded: expandingIndex == pokemon.id)
+                PokemonInfoRow(model: pokemon, expanded: store.appState.pokemonList.expandingIndex == pokemon.id)
                     .onTapGesture {
-                        if expandingIndex == pokemon.id {
-                            expandingIndex = nil
-                        }else {
-                            expandingIndex = pokemon.id
-                        }
+                        store.dispatch(.expandPokemonInfoRow(id: pokemon.id))
                     }
             }
         }

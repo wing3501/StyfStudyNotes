@@ -94,6 +94,12 @@ class Store: ObservableObject {
             appState.settings.isButtonDisabled = !valid
         case .clearCache:
             appState.pokemonList.pokemons = nil
+        case .expandPokemonInfoRow(let id):
+            if appState.pokemonList.expandingIndex == id {
+                appState.pokemonList.expandingIndex = nil
+            }else {
+                appState.pokemonList.expandingIndex = id
+            }
         }
         return (appState,appCommand)
     }
