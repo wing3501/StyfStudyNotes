@@ -37,8 +37,11 @@ struct PokemonInfoPanel: View {
             }
 
             topIndicator
-            Header(model: model)
-            pokemonDescription
+            Group {
+                Header(model: model)
+                pokemonDescription
+            }
+            .animation(nil, value: false)//显示指明这部分不要动画
             Divider()
             AbilityList(model: model, abilityModels: abilities)
         }

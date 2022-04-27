@@ -24,6 +24,8 @@ struct OverlaySheet<Content: View>: View {
             makeContent()
         }
         .offset(y: isPresented.wrappedValue ? 0 : UIScreen.main.bounds.height)
+        // 添加动画
+        .animation(.interpolatingSpring(stiffness: 70, damping: 12), value: isPresented.wrappedValue)
         .edgesIgnoringSafeArea(.bottom)
     }
 }
