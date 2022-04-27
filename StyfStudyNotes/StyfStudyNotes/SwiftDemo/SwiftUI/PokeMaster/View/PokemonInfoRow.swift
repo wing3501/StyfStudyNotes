@@ -13,6 +13,8 @@ struct PokemonInfoRow: View {
     let expanded: Bool
 //    @State var expanded: Bool
     
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         VStack {
             HStack {//图片，名字
@@ -46,7 +48,8 @@ struct PokemonInfoRow: View {
                         .modifier(ToolButtonModifier())
                 }
                 Button {
-                    
+                    let target = !store.appState.pokemonList.selectionState.panelPresented
+                    store.dispatch(.togglePanelPresenting(presenting: target))
                 } label: {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())

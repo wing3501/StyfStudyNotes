@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct MainTab: View {
+    
+    @EnvironmentObject var store: Store
+    
+    var pokemonListBinding: Binding<AppState.PokemonList> {
+        $store.appState.pokemonList
+    }
+    var pokemonList: AppState.PokemonList {
+        store.appState.pokemonList
+    }
+    
     var body: some View {
         TabView {
             PokemonRootView().tabItem {
@@ -22,6 +32,35 @@ struct MainTab: View {
         }
         //TabView 默认会尊重 safe area 的顶部，这会导致 TabView 里的宝可梦列表 在滚动时无法达到 “刘海屏” 上部的状态栏，这不是我们需要的。使用 .edgesIgnoringSafeArea(.top) 忽略掉 safe area，让界面占满屏幕。
         .edgesIgnoringSafeArea(.top)
+        
+        .overlay(panel)
+    }
+    
+    var panel: some View {
+//        使用 Group，在内层利用 @ViewBuilder 支持 if...else 语句的特性，可以把不同类型的 View 包装到 Group View 里。 另一种方式是使用 AnyView 把它们的具体类型抹消掉。
+        Group {
+            if pokemonList.selectionState.panelPresented {
+                if pokemonList.expandingIndex != nil && pokemonList.pokemons != nil {
+                    PokemonInfoPanelOverlay(model: pokemonList.pokemons![pokemonList.expandingIndex!]!)
+                }else {
+                    EmptyView()
+                }
+            }else {
+                EmptyView()
+            }
+        }
+    }
+}
+
+struct PokemonInfoPanelOverlay: View {
+    let model: PokemonViewModel
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            PokemonInfoPanel(model: model)
+        }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

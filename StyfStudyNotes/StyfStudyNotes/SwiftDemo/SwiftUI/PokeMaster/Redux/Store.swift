@@ -100,6 +100,8 @@ class Store: ObservableObject {
             }else {
                 appState.pokemonList.expandingIndex = id
             }
+        case .togglePanelPresenting(let target):
+            appState.pokemonList.selectionState.panelPresented = target
         }
         return (appState,appCommand)
     }

@@ -13,7 +13,7 @@ struct PokemonInfoPanel: View {
     
     let model: PokemonViewModel
     
-    var abilities: [AbilityViewModel]
+    var abilities: [AbilityViewModel] = []
     
     var pokemonDescription: some View {
         Text("最后一行的 fixedSize 修饰符用来告诉 SwiftUI 保持 View 的理想尺寸，让它不被上层 View “截断”")
@@ -53,6 +53,6 @@ struct PokemonInfoPanel: View {
 struct PokemonInfoPanel_Previews: PreviewProvider {
     static var previews: some View {
 //        PokemonInfoPanel(model: PokemonViewModel(), abilities: [AbilityViewModel()])
-        PokemonInfoPanel(model: PokemonViewModel(Pokemon(id: 1, species: PokemonSpecies(name: "", url: "")), PokemonSpecies(name: "", url: "")), abilities: [])
+        PokemonInfoPanel(model: PokemonViewModel(Pokemon(id: 1, species: PokemonSpecies(name: "", url: "")), PokemonSpecies(name: "", url: "")))
     }
 }

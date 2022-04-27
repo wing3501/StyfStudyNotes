@@ -111,10 +111,10 @@ extension AppState {
 extension AppState {
     struct PokemonList {
         @FileStorage(directory: .cachesDirectory, fileName: "pokemons.json")
-        var pokemons: [Int: PokemonViewModel]?
+        var pokemons: [Int: PokemonViewModel]? //id: model
         var loadingPokemons = false
         
-        var expandingIndex: Int?
+        var expandingIndex: Int? //id
         
         var allPokemonsByID: [PokemonViewModel] {
             guard let pokemons = pokemons?.values else {
@@ -122,5 +122,10 @@ extension AppState {
             }
             return pokemons.sorted { $0.id < $1.id }
         }
+        
+        struct SelectionState {
+            var panelPresented = false
+        }
+        var selectionState = SelectionState()
     }
 }

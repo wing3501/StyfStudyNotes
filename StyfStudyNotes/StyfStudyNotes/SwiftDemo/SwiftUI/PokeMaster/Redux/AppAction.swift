@@ -18,4 +18,5 @@ enum AppAction {
     case passwordValid(valid: Bool)
     case clearCache
     case expandPokemonInfoRow(id: Int)
+    case togglePanelPresenting(presenting: Bool)
 }
