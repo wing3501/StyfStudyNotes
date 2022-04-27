@@ -33,7 +33,12 @@ struct MainTab: View {
         //TabView 默认会尊重 safe area 的顶部，这会导致 TabView 里的宝可梦列表 在滚动时无法达到 “刘海屏” 上部的状态栏，这不是我们需要的。使用 .edgesIgnoringSafeArea(.top) 忽略掉 safe area，让界面占满屏幕。
         .edgesIgnoringSafeArea(.top)
         
-        .overlay(panel)
+//        .overlay(panel)
+        .overlaySheet(isPresented: pokemonListBinding.selectionState.panelPresented) {
+            if pokemonList.expandingIndex != nil && pokemonList.pokemons != nil {
+                PokemonInfoPanelOverlay(model: pokemonList.pokemons![pokemonList.expandingIndex!]!)
+            }
+        }
     }
     
     var panel: some View {
