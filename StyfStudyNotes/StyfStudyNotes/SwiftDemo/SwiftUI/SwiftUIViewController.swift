@@ -16,24 +16,25 @@ class SwiftUIViewController: UIViewController {
         view.backgroundColor = .white
 //        let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
 //        let vc = UIHostingController(rootView: PokemonList())
+        let vc = UIHostingController(rootView: TestView())
         
-        
-        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
+//        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
 //        self.navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+struct TestView: View {
+    var body: some View {
+//        TriangleArrow()
+//            .fill(.blue)
+//            .frame(width: 80, height: 80, alignment: .center)
+        
+        FlowRectangle()
+            .frame(width: 200, height: 100, alignment: .center)
+    }
+}
+
+
 

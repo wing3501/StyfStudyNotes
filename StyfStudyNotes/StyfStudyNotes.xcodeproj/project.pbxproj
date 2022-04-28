@@ -41,6 +41,9 @@
 		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
+		921167B3281A3A150061086E /* TriangleArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B2281A3A150061086E /* TriangleArrow.swift */; };
+		921167B5281A404F0061086E /* FlowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B4281A404F0061086E /* FlowRectangle.swift */; };
+		92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92116BE4281A6C2A0061086E /* LayoutTestView.swift */; };
 		921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545CE2817C8FB009781D2 /* StringExtension.swift */; };
 		921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D02817CA96009781D2 /* EmailCheckingRequest.swift */; };
 		921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */; };
@@ -234,6 +237,9 @@
 		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
+		921167B2281A3A150061086E /* TriangleArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleArrow.swift; sourceTree = "<group>"; };
+		921167B4281A404F0061086E /* FlowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowRectangle.swift; sourceTree = "<group>"; };
+		92116BE4281A6C2A0061086E /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
 		921545CE2817C8FB009781D2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		921545D02817CA96009781D2 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
@@ -1020,6 +1026,9 @@
 				92A417E52812A48000603DCE /* SettingView.swift */,
 				92CA9CB928164C0B00246D51 /* MainTab.swift */,
 				92B848C32819316F00D46185 /* SafariView.swift */,
+				921167B2281A3A150061086E /* TriangleArrow.swift */,
+				921167B4281A404F0061086E /* FlowRectangle.swift */,
+				92116BE4281A6C2A0061086E /* LayoutTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1355,6 +1364,7 @@
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
+				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
 				92B848C228191CA600D46185 /* ViewExtension.swift in Sources */,
@@ -1370,6 +1380,7 @@
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
+				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
@@ -1400,6 +1411,7 @@
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
+				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
 				92F2EFC12815170B00773B17 /* Utils.swift in Sources */,
