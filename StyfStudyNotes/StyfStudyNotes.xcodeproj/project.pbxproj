@@ -44,6 +44,7 @@
 		921167B3281A3A150061086E /* TriangleArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B2281A3A150061086E /* TriangleArrow.swift */; };
 		921167B5281A404F0061086E /* FlowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B4281A404F0061086E /* FlowRectangle.swift */; };
 		92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92116BE4281A6C2A0061086E /* LayoutTestView.swift */; };
+		92116BE7281A87200061086E /* MyTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92116BE6281A871F0061086E /* MyTestView.swift */; };
 		921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545CE2817C8FB009781D2 /* StringExtension.swift */; };
 		921545D12817CA96009781D2 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D02817CA96009781D2 /* EmailCheckingRequest.swift */; };
 		921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */; };
@@ -240,6 +241,7 @@
 		921167B2281A3A150061086E /* TriangleArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleArrow.swift; sourceTree = "<group>"; };
 		921167B4281A404F0061086E /* FlowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowRectangle.swift; sourceTree = "<group>"; };
 		92116BE4281A6C2A0061086E /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
+		92116BE6281A871F0061086E /* MyTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestView.swift; sourceTree = "<group>"; };
 		921545CE2817C8FB009781D2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		921545D02817CA96009781D2 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		921545D22817DCE5009781D2 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
@@ -611,6 +613,16 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		92116BE8281A8C510061086E /* SwiftUI 与 Combine */ = {
+			isa = PBXGroup;
+			children = (
+				92F2EFBF281516F400773B17 /* Combine */,
+				92AC5D1D2811532E000BE001 /* PokeMaster */,
+				9215A8D8280FD54B00344F40 /* Calculator */,
+			);
+			path = "SwiftUI 与 Combine";
+			sourceTree = "<group>";
+		};
 		921545DC2818154C009781D2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,9 +635,7 @@
 			isa = PBXGroup;
 			children = (
 				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
-				92F2EFBF281516F400773B17 /* Combine */,
-				92AC5D1D2811532E000BE001 /* PokeMaster */,
-				9215A8D8280FD54B00344F40 /* Calculator */,
+				92116BE8281A8C510061086E /* SwiftUI 与 Combine */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1029,6 +1039,7 @@
 				921167B2281A3A150061086E /* TriangleArrow.swift */,
 				921167B4281A404F0061086E /* FlowRectangle.swift */,
 				92116BE4281A6C2A0061086E /* LayoutTestView.swift */,
+				92116BE6281A871F0061086E /* MyTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1286,6 +1297,7 @@
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
+				92116BE7281A87200061086E /* MyTestView.swift in Sources */,
 				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
