@@ -623,6 +623,13 @@
 			path = "SwiftUI 与 Combine";
 			sourceTree = "<group>";
 		};
+		92116BE9281A8D260061086E /* SwiftUI编程思想 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "SwiftUI编程思想";
+			sourceTree = "<group>";
+		};
 		921545DC2818154C009781D2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
+				92116BE9281A8D260061086E /* SwiftUI编程思想 */,
 				92116BE8281A8C510061086E /* SwiftUI 与 Combine */,
 			);
 			path = SwiftUI;
