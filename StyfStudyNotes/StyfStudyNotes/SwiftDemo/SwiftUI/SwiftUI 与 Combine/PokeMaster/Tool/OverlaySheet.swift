@@ -18,7 +18,7 @@ struct OverlaySheet<Content: View>: View {
     @GestureState private var translation = CGPoint.zero
     
 //    对于只和 View 相关，且是用户操作造成的 UI 暂态，使用 private 的 @State 把状态限制在 View 的内部，对维护 app 状态 (或者称为模型状态) 的简洁，无疑是更明智的 选择。
-
+//    @State 非常适合用来表示局部 view 的状态
     
     init(isPresented: Binding<Bool>,
          @ViewBuilder content: @escaping () -> Content) {

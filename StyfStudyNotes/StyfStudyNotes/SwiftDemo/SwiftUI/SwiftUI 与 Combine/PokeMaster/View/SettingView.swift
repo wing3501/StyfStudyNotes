@@ -34,6 +34,7 @@ struct SettingView: View {
         Section(header: Text("账户")) {
             if settings.loginUser == nil {
                 Picker(selection: settingsBinding.checker.accountBehavior) {
+//                    第二个参数是键路径 (keypath)，它指定应该使用哪个属性来标识元素 (集合的元素要么必须遵 守 Identifiable 协议，要么我们需要为它指定标识符的键路径)。我们通过指定 \.self 作为标识 键路径，将元素本身用作标识符。
                     ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
                         Text($0.text)
                     }

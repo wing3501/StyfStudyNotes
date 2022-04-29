@@ -16,9 +16,10 @@ class SwiftUIViewController: UIViewController {
         view.backgroundColor = .white
 //        let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
 //        let vc = UIHostingController(rootView: PokemonList())
-        let vc = UIHostingController(rootView: TestView())
+//        let vc = UIHostingController(rootView: TestView())
         
 //        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
+        let vc = UIHostingController(rootView: ThinkingInSwiftUI())
 //        self.navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
