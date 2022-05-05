@@ -68,6 +68,8 @@
 		922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */; };
 		922A00DB2823BB62009CBCA3 /* CollapsibleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */; };
 		922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DC2823C48F009CBCA3 /* BadgesExample.swift */; };
+		922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */; };
+		922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E02823D202009CBCA3 /* AnchorExample.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
@@ -282,6 +284,8 @@
 		922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyleExample.swift; sourceTree = "<group>"; };
 		922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleExample.swift; sourceTree = "<group>"; };
 		922A00DC2823C48F009CBCA3 /* BadgesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesExample.swift; sourceTree = "<group>"; };
+		922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExample.swift; sourceTree = "<group>"; };
+		922A00E02823D202009CBCA3 /* AnchorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorExample.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
@@ -659,6 +663,8 @@
 				922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */,
 				922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */,
 				922A00DC2823C48F009CBCA3 /* BadgesExample.swift */,
+				922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */,
+				922A00E02823D202009CBCA3 /* AnchorExample.swift */,
 			);
 			path = "SwiftUI编程思想";
 			sourceTree = "<group>";
@@ -1330,6 +1336,7 @@
 			files = (
 				924C7157281BC85400B4AEE8 /* Preference.swift in Sources */,
 				92F36646273381A20013FB92 /* UIImage+scale.m in Sources */,
+				922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */,
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
 				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
 				92A417DE28128F8000603DCE /* PokemonInfoPanelHeader.swift in Sources */,
@@ -1430,6 +1437,7 @@
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
+				922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */,
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
 				92A417E028128FBB00603DCE /* PokemonInfoPanelAbilityList.swift in Sources */,
