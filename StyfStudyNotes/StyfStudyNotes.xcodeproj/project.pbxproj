@@ -67,6 +67,7 @@
 		922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */; };
 		922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */; };
 		922A00DB2823BB62009CBCA3 /* CollapsibleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */; };
+		922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DC2823C48F009CBCA3 /* BadgesExample.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
@@ -280,6 +281,7 @@
 		922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignment.swift; sourceTree = "<group>"; };
 		922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyleExample.swift; sourceTree = "<group>"; };
 		922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleExample.swift; sourceTree = "<group>"; };
+		922A00DC2823C48F009CBCA3 /* BadgesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesExample.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */,
 				922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */,
 				922A00DA2823BB62009CBCA3 /* CollapsibleExample.swift */,
+				922A00DC2823C48F009CBCA3 /* BadgesExample.swift */,
 			);
 			path = "SwiftUI编程思想";
 			sourceTree = "<group>";
@@ -1481,6 +1484,7 @@
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
+				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
