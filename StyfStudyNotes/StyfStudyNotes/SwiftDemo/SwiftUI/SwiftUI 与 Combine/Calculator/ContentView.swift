@@ -72,7 +72,7 @@ struct ContentView: View {
 //            Text(brain.output)
             Text(model.brain.output)
                 .font(.system(size: 76))
-                .minimumScaleFactor(0.5)//字体自适应缩放因子
+                .minimumScaleFactor(0.5)//字体自适应缩放因子   允许 Text (在文本无法适配尺寸时) 以更小的字号进行渲染。
                 .padding(.trailing,24)//右边距
                 .lineLimit(1)//限制1行
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)//填满一行

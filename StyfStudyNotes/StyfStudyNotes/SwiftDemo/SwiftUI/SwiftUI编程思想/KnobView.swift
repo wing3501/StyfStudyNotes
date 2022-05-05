@@ -13,7 +13,7 @@ struct KnobView: View {
         VStack {
             Knob(value: $volume)
             .frame(width: 100, height: 100, alignment: .center)
-            .knobPointerSize(0.2)
+            .knobPointerSize(0.1)
         Slider(value: $volume, in: (0...1))
                 
         }
@@ -36,6 +36,18 @@ struct KnobView: View {
                 .onTapGesture {
                     value = value < 0.5 ? 1 : 0
                 }
+                .frame(width: 32, height: 32, alignment: .center)
+        }
+        
+        func resizable() -> some View {
+            KnobShape(pointerSize: pointerSize ?? envPointerSize)
+                .fill(colorScheme == .dark ? Color.white : Color.black)
+                .rotationEffect(Angle(degrees: value * 330))
+                .onTapGesture {
+                    value = value < 0.5 ? 1 : 0
+                }
+                .aspectRatio(1, contentMode: .fit)
+                .frame(idealWidth: 32, idealHeight: 32)
         }
     }
     

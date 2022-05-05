@@ -91,6 +91,7 @@
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
 		924C7155281BBA1800B4AEE8 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7154281BBA1800B4AEE8 /* EnvironmentView.swift */; };
 		924C7157281BC85400B4AEE8 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7156281BC85400B4AEE8 /* Preference.swift */; };
+		924C7159281BD54200B4AEE8 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7158281BD54200B4AEE8 /* Measure.swift */; };
 		925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925447782816C01B00058CBD /* UserDefaultsStorage.swift */; };
 		925810222806C452008AF141 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810212806C452008AF141 /* GithubAPI.swift */; };
 		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
@@ -320,6 +321,7 @@
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		924C7154281BBA1800B4AEE8 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
 		924C7156281BC85400B4AEE8 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		924C7158281BD54200B4AEE8 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		925447782816C01B00058CBD /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		925810212806C452008AF141 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
@@ -644,6 +646,7 @@
 				924C7152281BB02F00B4AEE8 /* TimerView.swift */,
 				924C7154281BBA1800B4AEE8 /* EnvironmentView.swift */,
 				924C7156281BC85400B4AEE8 /* Preference.swift */,
+				924C7158281BD54200B4AEE8 /* Measure.swift */,
 			);
 			path = "SwiftUI编程思想";
 			sourceTree = "<group>";
@@ -1411,6 +1414,7 @@
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
 				92B848C228191CA600D46185 /* ViewExtension.swift in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
+				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
