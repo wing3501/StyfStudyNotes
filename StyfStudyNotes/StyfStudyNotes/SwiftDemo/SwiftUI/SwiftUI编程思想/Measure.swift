@@ -41,10 +41,10 @@ struct Measure: View {
         
 //        Stack View
         
-//        MeasureBehavior(content: HStack {
-//            Text("Hello, World")
-//            Rectangle().fill(Color.red).frame(minWidth: 200)
-//            })
+        MeasureBehavior(content: HStack {
+            Text("Hello, World")
+            Rectangle().fill(Color.red).frame(minWidth: 200)
+            })
         
 //        布局优先级
 //        HStack(spacing: 0) {

@@ -64,6 +64,8 @@
 		9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59526AA94CC007E8B6A /* SaleHeaderFooterView.m */; };
 		9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
+		922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */; };
+		922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
@@ -274,6 +276,8 @@
 		9220D59826AA97D1007E8B6A /* SaleHeaderFooterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleHeaderFooterModel.h; sourceTree = "<group>"; };
 		9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleHeaderFooterModel.m; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
+		922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignment.swift; sourceTree = "<group>"; };
+		922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyleExample.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
@@ -647,6 +651,8 @@
 				924C7154281BBA1800B4AEE8 /* EnvironmentView.swift */,
 				924C7156281BC85400B4AEE8 /* Preference.swift */,
 				924C7158281BD54200B4AEE8 /* Measure.swift */,
+				922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */,
+				922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */,
 			);
 			path = "SwiftUI编程思想";
 			sourceTree = "<group>";
@@ -1369,6 +1375,7 @@
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
 				92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */,
+				922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
@@ -1379,6 +1386,7 @@
 				92116BEB281ABE690061086E /* ThinkingInSwiftUI.swift in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
+				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
