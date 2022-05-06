@@ -10,7 +10,8 @@ import SwiftUI
 struct ThinkingInSwiftUI: View {
     
     var body: some View {
-        return CounterView()
+//        CounterView()
+        AnimationExample()
     }
 }
 
