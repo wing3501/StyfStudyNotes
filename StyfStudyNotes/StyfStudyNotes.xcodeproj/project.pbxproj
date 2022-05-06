@@ -12,6 +12,10 @@
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
 		920A7BC22824B9A60011A12D /* TableExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC12824B9A60011A12D /* TableExample.swift */; };
 		920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC32824F0830011A12D /* AnimationExample.swift */; };
+		920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC6282522A30011A12D /* SwiftUIByExample.swift */; };
+		920A7BCA282526D70011A12D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC9282526D70011A12D /* Helper.swift */; };
+		920A7BCD282526DD0011A12D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BCB282526DD0011A12D /* Menu.swift */; };
+		920A7BCE282526DD0011A12D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BCC282526DD0011A12D /* Order.swift */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -197,6 +201,10 @@
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
 		920A7BC12824B9A60011A12D /* TableExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExample.swift; sourceTree = "<group>"; };
 		920A7BC32824F0830011A12D /* AnimationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExample.swift; sourceTree = "<group>"; };
+		920A7BC6282522A30011A12D /* SwiftUIByExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIByExample.swift; sourceTree = "<group>"; };
+		920A7BC9282526D70011A12D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		920A7BCB282526DD0011A12D /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		920A7BCC282526DD0011A12D /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -513,6 +521,25 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
+			isa = PBXGroup;
+			children = (
+				920A7BC8282526CA0011A12D /* idine */,
+				920A7BC6282522A30011A12D /* SwiftUIByExample.swift */,
+			);
+			path = "《SwiftUI by Example》";
+			sourceTree = "<group>";
+		};
+		920A7BC8282526CA0011A12D /* idine */ = {
+			isa = PBXGroup;
+			children = (
+				920A7BCB282526DD0011A12D /* Menu.swift */,
+				920A7BCC282526DD0011A12D /* Order.swift */,
+				920A7BC9282526D70011A12D /* Helper.swift */,
+			);
+			path = idine;
+			sourceTree = "<group>";
+		};
 		920B9BD625DF59A40098B1BA /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,17 +672,17 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		92116BE8281A8C510061086E /* SwiftUI 与 Combine */ = {
+		92116BE8281A8C510061086E /* 《SwiftUI 与 Combine》 */ = {
 			isa = PBXGroup;
 			children = (
 				92F2EFBF281516F400773B17 /* Combine */,
 				92AC5D1D2811532E000BE001 /* PokeMaster */,
 				9215A8D8280FD54B00344F40 /* Calculator */,
 			);
-			path = "SwiftUI 与 Combine";
+			path = "《SwiftUI 与 Combine》";
 			sourceTree = "<group>";
 		};
-		92116BE9281A8D260061086E /* SwiftUI编程思想 */ = {
+		92116BE9281A8D260061086E /* 《SwiftUI编程思想》 */ = {
 			isa = PBXGroup;
 			children = (
 				92116BEA281ABE690061086E /* ThinkingInSwiftUI.swift */,
@@ -675,7 +702,7 @@
 				920A7BC12824B9A60011A12D /* TableExample.swift */,
 				920A7BC32824F0830011A12D /* AnimationExample.swift */,
 			);
-			path = "SwiftUI编程思想";
+			path = "《SwiftUI编程思想》";
 			sourceTree = "<group>";
 		};
 		921545DC2818154C009781D2 /* Packages */ = {
@@ -690,8 +717,9 @@
 			isa = PBXGroup;
 			children = (
 				92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */,
-				92116BE9281A8D260061086E /* SwiftUI编程思想 */,
-				92116BE8281A8C510061086E /* SwiftUI 与 Combine */,
+				920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */,
+				92116BE9281A8D260061086E /* 《SwiftUI编程思想》 */,
+				92116BE8281A8C510061086E /* 《SwiftUI 与 Combine》 */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -804,7 +832,7 @@
 			path = Locks;
 			sourceTree = "<group>";
 		};
-		925810202806C434008AF141 /* Combine */ = {
+		925810202806C434008AF141 /* 《Using Combine》 */ = {
 			isa = PBXGroup;
 			children = (
 				92CF232F27F8179B00EE725C /* CombineViewController.swift */,
@@ -814,7 +842,7 @@
 				9208CC112807FAAF0095E1C1 /* Form */,
 				9208CC102807FA980095E1C1 /* GithubAPI */,
 			);
-			path = Combine;
+			path = "《Using Combine》";
 			sourceTree = "<group>";
 		};
 		926EE2532626B8270008F924 /* Mach-O */ = {
@@ -1144,7 +1172,7 @@
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
 				9215A8D7280FD44700344F40 /* SwiftUI */,
-				925810202806C434008AF141 /* Combine */,
+				925810202806C434008AF141 /* 《Using Combine》 */,
 				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
 				923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */,
 				921FE16227ED8FBB00760625 /* MetadataViewController.swift */,
@@ -1438,14 +1466,17 @@
 				92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */,
 				92A417DA2812828A00603DCE /* PokemonInfoPanel.swift in Sources */,
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
+				920A7BCE282526DD0011A12D /* Order.swift in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
 				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
+				920A7BCA282526D70011A12D /* Helper.swift in Sources */,
 				92B848C228191CA600D46185 /* ViewExtension.swift in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
+				920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */,
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
@@ -1455,6 +1486,7 @@
 				92AC589C28113E44000BE001 /* HistoryView.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
+				920A7BCD282526DD0011A12D /* Menu.swift in Sources */,
 				924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,

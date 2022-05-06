@@ -19,7 +19,8 @@ class SwiftUIViewController: UIViewController {
 //        let vc = UIHostingController(rootView: TestView())
         
 //        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
-        let vc = UIHostingController(rootView: ThinkingInSwiftUI())
+//        let vc = UIHostingController(rootView: ThinkingInSwiftUI())
+        let vc = UIHostingController(rootView: SwiftUIByExample())
 //        self.navigationController?.pushViewController(vc, animated: true)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
