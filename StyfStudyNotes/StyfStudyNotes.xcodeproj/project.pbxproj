@@ -70,6 +70,7 @@
 		922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DC2823C48F009CBCA3 /* BadgesExample.swift */; };
 		922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */; };
 		922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E02823D202009CBCA3 /* AnchorExample.swift */; };
+		922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
@@ -286,6 +287,7 @@
 		922A00DC2823C48F009CBCA3 /* BadgesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesExample.swift; sourceTree = "<group>"; };
 		922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExample.swift; sourceTree = "<group>"; };
 		922A00E02823D202009CBCA3 /* AnchorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorExample.swift; sourceTree = "<group>"; };
+		922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectLayoutExample.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				922A00DC2823C48F009CBCA3 /* BadgesExample.swift */,
 				922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */,
 				922A00E02823D202009CBCA3 /* AnchorExample.swift */,
+				922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */,
 			);
 			path = "SwiftUI编程思想";
 			sourceTree = "<group>";
@@ -1467,6 +1470,7 @@
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				924C7155281BBA1800B4AEE8 /* EnvironmentView.swift in Sources */,
+				922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */,
 				92A417D62812724700603DCE /* PokemonList.swift in Sources */,
