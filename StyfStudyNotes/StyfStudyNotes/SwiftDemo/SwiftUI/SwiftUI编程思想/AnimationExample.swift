@@ -20,7 +20,11 @@ struct AnimationExample: View {
         
 //        ShakeExample()
         
-        TransitionExample1()
+//        TransitionExample1()
+        
+//        BounceExample()
+        
+        LineGraphExample()
     }
     
 }
@@ -200,6 +204,109 @@ struct TransitionExample1: View {
     }
 }
 
+//反弹动画
+struct Bounce: AnimatableModifier {
+    var times: CGFloat = 0
+    var amplitude: CGFloat = 30
+    var animatableData: CGFloat {
+        get { times }
+        set { times = newValue }
+    }
+    func body(content: Content) -> some View {
+        return content.offset(y: -abs(sin(times * .pi)) * amplitude)
+    }
+}
+
+extension View {
+    func bounce(times: Int) -> some View {
+        return modifier(Bounce(times: CGFloat(times)))
+    }
+}
+
+struct BounceExample: View {
+    @State private var taps: Int = 0
+    var body: some View {
+        Button("点击") {
+            withAnimation(.linear(duration: 0.9)) {
+                taps += 1
+            }
+        }
+        .background(.yellow)
+        .bounce(times: taps * 3)
+    }
+}
+
+//路径动画
+struct LineGraph: Shape {
+    let dataPoints: [CGFloat]
+    func path(in rect: CGRect) -> Path {
+        let perWidth = rect.size.width / Double((dataPoints.count - 1))
+        return Path { path in
+            path.move(to: CGPoint(x: 0, y: rect.maxY - rect.size.height * dataPoints[0]))
+            var i = 1
+            while i < dataPoints.count {
+                path.addLine(to: CGPoint(x: Double(i) * perWidth, y: rect.maxY - rect.size.height * dataPoints[i]))
+                i += 1
+            }
+        }
+    }
+}
+
+fileprivate struct PositionOnShapeEffect: GeometryEffect {
+    var path: Path
+    var at: CGFloat
+    
+    var animatableData: CGFloat {
+        get { at }
+        set { at = newValue }
+    }
+    
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        // at 进度 0-1
+        let trimmed = path.trimmedPath(from: 0, to: at == 0 ? 0.00001 : at)//路径
+        let point = trimmed.currentPoint ?? .zero
+        return ProjectionTransform(.init(translationX: point.x - size.width/2, y: point.y - size.height/2))
+    }
+}
+
+extension View {
+    func position<S: Shape>(on shape: S, at amount: CGFloat) -> some View {
+        GeometryReader { proxy in
+            self
+                .modifier(PositionOnShapeEffect(path: shape.path(in: CGRect(origin: .zero, size: proxy.size)), at: amount))
+                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
+        }
+    }
+}
+
+
+struct LineGraphExample: View {
+    @State var visible = false
+    
+    let graph = LineGraph(dataPoints: [0.1, 0.7, 0.3, 0.6, 0.45, 1.1])
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                graph
+                    .trim(from: 0, to: visible ? 1 : 0)//裁剪图形显示
+                    .stroke(Color.red, lineWidth: 2)
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 10, height: 10)
+                    .position(on: graph, at: visible ? 1 : 0)
+            }
+            .aspectRatio(16/9, contentMode: .fit)
+            .border(Color.gray, width: 1)
+            .padding()
+            Button(action: {
+                withAnimation(Animation.easeInOut(duration: 2)) {
+                    self.visible.toggle()
+                }
+            }) { Text("Animate") }
+        }
+    }
+}
 
 struct AnimationExample_Previews: PreviewProvider {
     static var previews: some View {
