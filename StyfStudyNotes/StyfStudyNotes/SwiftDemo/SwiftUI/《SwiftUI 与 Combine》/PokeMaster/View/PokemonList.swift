@@ -75,6 +75,7 @@ struct PokemonRootView: View {
             }
         }
     }
+
 }
 
 struct PokemonList_Previews: PreviewProvider {

@@ -16,6 +16,7 @@
 		920A7BCA282526D70011A12D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC9282526D70011A12D /* Helper.swift */; };
 		920A7BCD282526DD0011A12D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BCB282526DD0011A12D /* Menu.swift */; };
 		920A7BCE282526DD0011A12D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BCC282526DD0011A12D /* Order.swift */; };
+		920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BD0282540FA0011A12D /* BluetoothDemo.swift */; };
 		920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */; };
 		920B9BDE25DF5FF80098B1BA /* Other.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BDD25DF5FF80098B1BA /* Other.m */; };
 		920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B9BE425DFB0640098B1BA /* DesignPatten.m */; };
@@ -189,6 +190,9 @@
 		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
 		92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368522733AE8E0013FB92 /* SMCPUMonitor.m */; };
 		92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368542733AE8F0013FB92 /* SMLagMonitor.m */; };
+		92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */; };
+		92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */; };
+		92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B92826511400854EA4 /* CharacteristicsView.swift */; };
 		92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */; };
 		92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */; };
 		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
@@ -205,6 +209,7 @@
 		920A7BC9282526D70011A12D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		920A7BCB282526DD0011A12D /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		920A7BCC282526DD0011A12D /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		920A7BD0282540FA0011A12D /* BluetoothDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDemo.swift; sourceTree = "<group>"; };
 		920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCExceptionHandler.h"; sourceTree = "<group>"; };
 		920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCExceptionHandler.m"; sourceTree = "<group>"; };
 		920B9BDC25DF5FF80098B1BA /* Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Other.h; sourceTree = "<group>"; };
@@ -468,6 +473,9 @@
 		92F368532733AE8E0013FB92 /* SMLagMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLagMonitor.h; sourceTree = "<group>"; };
 		92F368542733AE8F0013FB92 /* SMLagMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLagMonitor.m; sourceTree = "<group>"; };
 		92F368552733AE8F0013FB92 /* SMCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallStack.h; sourceTree = "<group>"; };
+		92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
+		92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralServicesView.swift; sourceTree = "<group>"; };
+		92F635B92826511400854EA4 /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
 		92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
 		92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -538,6 +546,17 @@
 				920A7BC9282526D70011A12D /* Helper.swift */,
 			);
 			path = idine;
+			sourceTree = "<group>";
+		};
+		920A7BCF282540B90011A12D /* 蓝牙 */ = {
+			isa = PBXGroup;
+			children = (
+				920A7BD0282540FA0011A12D /* BluetoothDemo.swift */,
+				92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */,
+				92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */,
+				92F635B92826511400854EA4 /* CharacteristicsView.swift */,
+			);
+			path = "蓝牙";
 			sourceTree = "<group>";
 		};
 		920B9BD625DF59A40098B1BA /* Other */ = {
@@ -937,6 +956,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				920A7BCF282540B90011A12D /* 蓝牙 */,
 				92E2359027671CF7003B7C85 /* CPPNote */,
 				920C4FEB273275F90091487B /* KVO */,
 				92C1D92427293C6500FF3398 /* 问题 */,
@@ -1392,6 +1412,7 @@
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */,
+				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A417D8281272F700603DCE /* Pokemon.swift in Sources */,
@@ -1445,6 +1466,7 @@
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
 				92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
+				92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */,
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
@@ -1522,6 +1544,7 @@
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
+				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
@@ -1539,6 +1562,7 @@
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
+				92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
