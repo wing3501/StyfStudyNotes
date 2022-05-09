@@ -116,6 +116,11 @@
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
+		9288BED62828FF73005A903A /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 9288BED52828FF72005A903A /* menu.json */; };
+		9288BED92829034C005A903A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BED82829034C005A903A /* ItemRow.swift */; };
+		9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEDA28290B61005A903A /* ItemDetail.swift */; };
+		9288BEDD2829186C005A903A /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEDC2829186C005A903A /* OrderView.swift */; };
+		9288BEE128293054005A903A /* SEContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEE028293054005A903A /* SEContentView.swift */; };
 		928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */; };
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
@@ -365,6 +370,11 @@
 		9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAPIViewController.swift; sourceTree = "<group>"; };
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
+		9288BED52828FF72005A903A /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		9288BED82829034C005A903A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		9288BEDA28290B61005A903A /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		9288BEDC2829186C005A903A /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		9288BEE028293054005A903A /* SEContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEContentView.swift; sourceTree = "<group>"; };
 		928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNSOperation.h; sourceTree = "<group>"; };
 		928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNSOperation.m; sourceTree = "<group>"; };
 		928D8B032644CA0900B3E4AE /* WebViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewDemo.h; sourceTree = "<group>"; };
@@ -532,6 +542,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				9288BED72829033B005A903A /* View */,
 				920A7BC8282526CA0011A12D /* idine */,
 				920A7BC6282522A30011A12D /* SwiftUIByExample.swift */,
 			);
@@ -541,6 +552,7 @@
 		920A7BC8282526CA0011A12D /* idine */ = {
 			isa = PBXGroup;
 			children = (
+				9288BED52828FF72005A903A /* menu.json */,
 				920A7BCB282526DD0011A12D /* Menu.swift */,
 				920A7BCC282526DD0011A12D /* Order.swift */,
 				920A7BC9282526D70011A12D /* Helper.swift */,
@@ -881,6 +893,17 @@
 				9273F62B26368A9C00B78638 /* thunktemplate.s */,
 			);
 			path = mmap;
+			sourceTree = "<group>";
+		};
+		9288BED72829033B005A903A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9288BED82829034C005A903A /* ItemRow.swift */,
+				9288BEDA28290B61005A903A /* ItemDetail.swift */,
+				9288BEDC2829186C005A903A /* OrderView.swift */,
+				9288BEE028293054005A903A /* SEContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		928934F2263A4A9900BAF8E2 /* NSOperation */ = {
@@ -1310,6 +1333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 			);
@@ -1408,6 +1432,7 @@
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
+				9288BEDD2829186C005A903A /* OrderView.swift in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
@@ -1491,6 +1516,7 @@
 				920A7BCE282526DD0011A12D /* Order.swift in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
+				9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */,
 				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
@@ -1526,6 +1552,7 @@
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */,
 				92CA9CC62816770100246D51 /* LoginRequest.swift in Sources */,
+				9288BED92829034C005A903A /* ItemRow.swift in Sources */,
 				92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */,
 				92A417E228129B1700603DCE /* BlurView.swift in Sources */,
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
@@ -1565,6 +1592,7 @@
 				92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
+				9288BEE128293054005A903A /* SEContentView.swift in Sources */,
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
 				921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */,
 				920E41B225E8DDC700DE2990 /* 其他.swift in Sources */,
