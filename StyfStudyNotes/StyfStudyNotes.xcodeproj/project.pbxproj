@@ -121,6 +121,7 @@
 		9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEDA28290B61005A903A /* ItemDetail.swift */; };
 		9288BEDD2829186C005A903A /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEDC2829186C005A903A /* OrderView.swift */; };
 		9288BEE128293054005A903A /* SEContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEE028293054005A903A /* SEContentView.swift */; };
+		9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEE2282934E6005A903A /* CheckoutView.swift */; };
 		928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */; };
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
@@ -375,6 +376,7 @@
 		9288BEDA28290B61005A903A /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		9288BEDC2829186C005A903A /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		9288BEE028293054005A903A /* SEContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEContentView.swift; sourceTree = "<group>"; };
+		9288BEE2282934E6005A903A /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		928934F4263A4ACD00BAF8E2 /* DemoNSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoNSOperation.h; sourceTree = "<group>"; };
 		928934F5263A4ACD00BAF8E2 /* DemoNSOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoNSOperation.m; sourceTree = "<group>"; };
 		928D8B032644CA0900B3E4AE /* WebViewDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewDemo.h; sourceTree = "<group>"; };
@@ -902,6 +904,7 @@
 				9288BEDA28290B61005A903A /* ItemDetail.swift */,
 				9288BEDC2829186C005A903A /* OrderView.swift */,
 				9288BEE028293054005A903A /* SEContentView.swift */,
+				9288BEE2282934E6005A903A /* CheckoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1437,6 +1440,7 @@
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */,
+				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
