@@ -78,6 +78,8 @@
 		922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */; };
 		922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E02823D202009CBCA3 /* AnchorExample.swift */; };
 		922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */; };
+		923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E5282A69750004A969 /* OrderFoodAPP.swift */; };
+		923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E8282A6B7A0004A969 /* StaticTextApp.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
@@ -311,6 +313,8 @@
 		922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExample.swift; sourceTree = "<group>"; };
 		922A00E02823D202009CBCA3 /* AnchorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorExample.swift; sourceTree = "<group>"; };
 		922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectLayoutExample.swift; sourceTree = "<group>"; };
+		923176E5282A69750004A969 /* OrderFoodAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodAPP.swift; sourceTree = "<group>"; };
+		923176E8282A6B7A0004A969 /* StaticTextApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTextApp.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
@@ -544,8 +548,8 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
-				9288BED72829033B005A903A /* View */,
-				920A7BC8282526CA0011A12D /* idine */,
+				923176E7282A69B20004A969 /* static text */,
+				923176E4282A69500004A969 /* 点单案例 */,
 				920A7BC6282522A30011A12D /* SwiftUIByExample.swift */,
 			);
 			path = "《SwiftUI by Example》";
@@ -795,6 +799,24 @@
 				9220D59126AA942A007E8B6A /* SaleModel.m */,
 			);
 			path = DiffableDataSource;
+			sourceTree = "<group>";
+		};
+		923176E4282A69500004A969 /* 点单案例 */ = {
+			isa = PBXGroup;
+			children = (
+				9288BED72829033B005A903A /* View */,
+				920A7BC8282526CA0011A12D /* idine */,
+				923176E5282A69750004A969 /* OrderFoodAPP.swift */,
+			);
+			path = "点单案例";
+			sourceTree = "<group>";
+		};
+		923176E7282A69B20004A969 /* static text */ = {
+			isa = PBXGroup;
+			children = (
+				923176E8282A6B7A0004A969 /* StaticTextApp.swift */,
+			);
+			path = "static text";
 			sourceTree = "<group>";
 		};
 		92426DD726246238002062B7 /* 内存泄漏 */ = {
@@ -1488,6 +1510,7 @@
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
+				923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
@@ -1573,6 +1596,7 @@
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92B848C42819316F00D46185 /* SafariView.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
+				923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
