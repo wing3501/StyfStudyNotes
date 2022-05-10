@@ -46,6 +46,7 @@ struct CheckoutView: View {
             
             Section(header:
                 Text("TOTAL: \(totalPrice)")
+                .font(.largeTitle)
             ) {
                 Button("Confirm order") { //如果你点击它，整行闪烁灰色。这是SwiftUI表单系统改变其内部组件的设计和行为的另一个例子
                     showingPaymentAlert.toggle()

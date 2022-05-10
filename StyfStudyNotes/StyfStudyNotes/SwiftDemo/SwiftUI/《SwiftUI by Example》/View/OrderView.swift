@@ -21,6 +21,9 @@ struct OrderView : View {
                             Text("$\(item.price)")
                         }
                     }
+                    // 滑动删除列表项功能
+                    //  1. 这个闭包接受一个IndexSet参数
+                    .onDelete(perform: deleteItems(at:))
                 }
 
                 Section {
@@ -28,10 +31,21 @@ struct OrderView : View {
                         Text("Place Order")
                     }
                 }
+                // 不可用
+                .disabled(order.items.isEmpty)
             }
             .navigationTitle("Order")
             .listStyle(.insetGrouped)
+            .toolbar {
+                //2.给导航栏添加一个编辑按钮
+                //3.没了，剩下的工作，SwiftUI都做好了
+                EditButton()
+            }
         }
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        order.items.remove(atOffsets: offsets)
     }
 }
 
