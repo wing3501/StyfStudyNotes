@@ -116,6 +116,7 @@
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
+		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
 		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
@@ -374,6 +375,7 @@
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
 		9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAPIViewController.swift; sourceTree = "<group>"; };
+		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
 		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
@@ -925,6 +927,7 @@
 		927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */ = {
 			isa = PBXGroup;
 			children = (
+				927F0530282BD824001E39B7 /* IMG_1599.MP4 */,
 				927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */,
 			);
 			path = "Images, shapes, and media";
@@ -1372,6 +1375,7 @@
 				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
+				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

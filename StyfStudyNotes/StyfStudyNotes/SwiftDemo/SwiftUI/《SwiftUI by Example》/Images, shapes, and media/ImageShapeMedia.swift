@@ -6,20 +6,150 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ImageShapeMedia: View {
     var body: some View {
         ScrollView {
-            FillStrokeShapes()
-            ShapesTest()
-            BackgroundTest()
-            GradientTest()
-            SFSymbolsImage()
-            TileAnImage()
-            AdjustImageSpace()
-            ImageBaseUse()
+            VStack {
+                SymbolRenderingModeTest()
+                LoadARemoteImage()
+                PlayMovies()
+                ContainerRelativeShapeTest()
+                VStack {
+                    TrimShape()
+                    FillStrokeShapes()
+                    ShapesTest()
+                    BackgroundTest()
+                    GradientTest()
+                    SFSymbolsImage()
+                    TileAnImage()
+                    AdjustImageSpace()
+                    ImageBaseUse()
+                }
+            }
         }
     }
+}
+
+struct SymbolRenderingModeTest: View {
+    var body: some View {
+        TestWrap("SF Symbols的颜色控制") {
+            VStack {
+                Image(systemName: "theatermasks")
+                    .symbolRenderingMode(.hierarchical)//分层
+                    .foregroundColor(.blue)
+                    .font(.system(size: 144))
+                
+                //使用palette完全控制
+                Image(systemName: "shareplay")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.blue, .black)
+                    .font(.system(size: 144))
+                //颜色的个数取决于符号本身的图层的个数
+                Image(systemName: "person.3.sequence.fill")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.blue, .green, .red)
+                    .font(.system(size: 144))
+
+            }
+        }
+    }
+}
+
+struct LoadARemoteImage: View {
+    var body: some View {
+        TestWrap("AsyncImage的使用") {
+//            VStack {
+//                AsyncImage(url: URL(string: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"))
+//            }
+//            .frame(height: 100, alignment: .center)
+            
+            AsyncImage(url: URL(string: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png")) { image in
+                image.resizable()
+            } placeholder: {
+                Color.red
+            }
+            .frame(width: 128, height: 128)
+            .clipShape(RoundedRectangle(cornerRadius: 25))
+            
+            //系统默认当图片是1倍图，如果有需要的话，可以指定为2倍图
+//            AsyncImage(url: URL(string: "https://www.hackingwithswift.com/img/paul@2x.png"), scale: 2)
+        }
+    }
+}
+
+struct PlayMovies: View {
+    var body: some View {
+        TestWrap("VideoPlayer播放视频") {
+            //本地视频
+//            VideoPlayer(player: AVPlayer(url:  Bundle.main.url(forResource: "IMG_1599", withExtension: "MP4")!))
+//                .frame(height: 400)
+            //网络视频
+//            VideoPlayer(player: AVPlayer(url:  URL(string: "https://bit.ly/swswift")!))
+//                .frame(height: 400)
+            //在视频上绘制控制按钮、水印   会在视频控制组件的下方绘制，但可以响应
+            VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: "IMG_1599", withExtension: "MP4")!)) {
+                Text("水印")
+                    .foregroundColor(.black)
+                    .background(Color.white.opacity(0.7))
+                Spacer()
+            }
+            .frame(height: 400)
+        }
+    }
+}
+
+struct ContainerRelativeShapeTest: View {
+    var body: some View {
+        TestWrap("ContainerRelativeShape的使用") {
+            ZStack {
+                ContainerRelativeShape()
+                    .inset(by: 10)
+                    .fill(Color.blue)
+
+                Text("Hello, World!")
+                    .font(.title)
+            }
+            .frame(width: 300, height: 200)
+            .background(Color.red)
+            .clipShape(Capsule())
+        }
+    }
+}
+
+struct TrimShape: View {
+    var body: some View {
+        TestWrap("使用trim绘制填充部分Shape") {
+            Circle()
+                .trim(from: 0, to: 0.75)//提供一个起点和终点的值  0度在右边，从右边开始，所以要从上开始绘制
+                                        //就要使用rotationEffect()
+                .frame(width: 50, height: 50)
+            TrimShape1()
+        }
+    }
+}
+
+struct TrimShape1: View {
+    @State private var completionAmount: CGFloat = 0.0
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+        var body: some View {
+            Rectangle()
+                .trim(from: 0, to: completionAmount)
+                .stroke(Color.red, lineWidth: 20)
+                .frame(width: 200, height: 200)
+                .rotationEffect(.degrees(-90))//正常从左上角开始
+                .onReceive(timer) { _ in
+                    withAnimation {
+                        if completionAmount == 1 {
+                            completionAmount = 0
+                        } else {
+                            completionAmount += 0.2
+                        }
+                    }
+                }
+        }
 }
 
 struct FillStrokeShapes: View {

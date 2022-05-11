@@ -10,15 +10,47 @@ import SwiftUI
 struct StaticTextApp: View {
     var body: some View {
         ScrollView {
-            TextSelectionTest()
-            MarkdownTest()
-            PrivacySensitiveTest()
-            RedactedTest()
-            LabelTest()
-            TextCaseTest()
-            DateStyleTest()
-            
-            Part1()
+            VStack {
+                TextSelectionTest()
+                MarkdownTest()
+                PrivacySensitiveTest()
+                RedactedTest()
+                LabelTest()
+                TextCaseTest()
+                DateStyleTest()
+                
+                VStack {
+                    Text("格式化日期范围：\(Date()...Date().addingTimeInterval(600))")
+
+                    KerningAndTracking()
+
+                    Text("文字增加空隙20pt")
+                        .tracking(20)
+
+                    DateFormatterTest()
+
+                    MeasurementTest()
+
+                    TextListTest()
+
+                    MultilineTextAlignmentTest()
+
+                    Text("This is an extremely long text string that will never fit even the widest of phones without wrapping")
+                        .font(.largeTitle)
+                        .lineSpacing(20)
+                        .frame(width: 300)
+
+                    Text("This is an extremely long string of text that will never fit even the widest of iOS devices even if the user has their Dynamic Type setting as small as is possible, so in theory it should definitely demonstrate truncationMode().")
+                        .lineLimit(1)
+                        .truncationMode(.middle)
+
+                    Text("The best laid plans")
+                        .padding()
+                        .background(Color.yellow)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                }
+            }
         }
     }
 }
@@ -213,44 +245,6 @@ struct DateStyleTest: View {
 
             // make a timer style, automatically updating
             Text(Date().addingTimeInterval(600), style: .timer)
-        }
-    }
-}
-
-
-
-struct Part1: View {
-    var body: some View {
-        VStack {
-            Text("格式化日期范围：\(Date()...Date().addingTimeInterval(600))")
-
-            KerningAndTracking()
-
-            Text("文字增加空隙20pt")
-                .tracking(20)
-
-            DateFormatterTest()
-
-            MeasurementTest()
-
-            TextListTest()
-
-            MultilineTextAlignmentTest()
-
-            Text("This is an extremely long text string that will never fit even the widest of phones without wrapping")
-                .font(.largeTitle)
-                .lineSpacing(20)
-                .frame(width: 300)
-
-            Text("This is an extremely long string of text that will never fit even the widest of iOS devices even if the user has their Dynamic Type setting as small as is possible, so in theory it should definitely demonstrate truncationMode().")
-                .lineLimit(1)
-                .truncationMode(.middle)
-
-            Text("The best laid plans")
-                .padding()
-                .background(Color.yellow)
-                .foregroundColor(.white)
-                .font(.headline)
         }
     }
 }
