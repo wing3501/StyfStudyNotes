@@ -116,6 +116,7 @@
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
+		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
 		9288BED62828FF73005A903A /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 9288BED52828FF72005A903A /* menu.json */; };
@@ -373,6 +374,7 @@
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
 		9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAPIViewController.swift; sourceTree = "<group>"; };
+		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
 		9288BED52828FF72005A903A /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */,
 				923176E7282A69B20004A969 /* static text */,
 				923176E4282A69500004A969 /* 点单案例 */,
 				920A7BC6282522A30011A12D /* SwiftUIByExample.swift */,
@@ -917,6 +920,14 @@
 				9273F62B26368A9C00B78638 /* thunktemplate.s */,
 			);
 			path = mmap;
+			sourceTree = "<group>";
+		};
+		927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */ = {
+			isa = PBXGroup;
+			children = (
+				927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */,
+			);
+			path = "Images, shapes, and media";
 			sourceTree = "<group>";
 		};
 		9288BED72829033B005A903A /* View */ = {
@@ -1497,6 +1508,7 @@
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
 				92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */,
+				927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */,
 				922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */,
