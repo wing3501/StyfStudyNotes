@@ -556,10 +556,11 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				92876937282CFF9F006BFE5A /* User interface controls */,
 				92876934282CDA9E006BFE5A /* Stacks, grids, scrollviews */,
 				927F0532282BE43A001E39B7 /* View layout */,
 				927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */,
-				923176E7282A69B20004A969 /* static text */,
+				923176E7282A69B20004A969 /* Working with static text */,
 				923176E4282A69500004A969 /* 点单案例 */,
 				920A7BC6282522A30011A12D /* SwiftUIByExample.swift */,
 			);
@@ -822,12 +823,12 @@
 			path = "点单案例";
 			sourceTree = "<group>";
 		};
-		923176E7282A69B20004A969 /* static text */ = {
+		923176E7282A69B20004A969 /* Working with static text */ = {
 			isa = PBXGroup;
 			children = (
 				923176E8282A6B7A0004A969 /* StaticTextApp.swift */,
 			);
-			path = "static text";
+			path = "Working with static text";
 			sourceTree = "<group>";
 		};
 		92426DD726246238002062B7 /* 内存泄漏 */ = {
@@ -953,6 +954,13 @@
 				92876935282CDABE006BFE5A /* StacksGridsScrollviews.swift */,
 			);
 			path = "Stacks, grids, scrollviews";
+			sourceTree = "<group>";
+		};
+		92876937282CFF9F006BFE5A /* User interface controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User interface controls";
 			sourceTree = "<group>";
 		};
 		9288BED72829033B005A903A /* View */ = {
