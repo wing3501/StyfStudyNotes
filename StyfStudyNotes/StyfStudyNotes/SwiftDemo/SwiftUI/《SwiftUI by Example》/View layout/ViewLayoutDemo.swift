@@ -10,17 +10,17 @@ import SwiftUI
 struct ViewLayoutDemo: View {
     var body: some View {
 //        OutsideTheSafeArea()
-//        UsingSafeAreaInset()
-        ScrollView {
-            UsingForegroundStyle()
-            MakeTwoViewsSameWidthHeight()
-            UsingLayoutPriority()
-            UsingForEach()
-            ReturnDifferentViewTypes()
-            UsingGeometryReader()
-            UsingPadding()
-            ViewCustomFrame()
-        }
+        UsingSafeAreaInset()
+//        ScrollView {
+//            UsingForegroundStyle()
+//            MakeTwoViewsSameWidthHeight()
+//            UsingLayoutPriority()
+//            UsingForEach()
+//            ReturnDifferentViewTypes()
+//            UsingGeometryReader()
+//            UsingPadding()
+//            ViewCustomFrame()
+//        }
     }
 }
 
