@@ -167,6 +167,7 @@ struct TestWrap<Content>: View where Content: View{
         VStack(spacing: 8) {
             Divider()
             Text(title)
+                .font(.headline)
             content
             Divider()
         }

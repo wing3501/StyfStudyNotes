@@ -117,6 +117,7 @@
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
 		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
+		927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */; };
 		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
@@ -376,6 +377,7 @@
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
 		9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAPIViewController.swift; sourceTree = "<group>"; };
 		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
+		927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutDemo.swift; sourceTree = "<group>"; };
 		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				927F0532282BE43A001E39B7 /* View layout */,
 				927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */,
 				923176E7282A69B20004A969 /* static text */,
 				923176E4282A69500004A969 /* 点单案例 */,
@@ -922,6 +925,14 @@
 				9273F62B26368A9C00B78638 /* thunktemplate.s */,
 			);
 			path = mmap;
+			sourceTree = "<group>";
+		};
+		927F0532282BE43A001E39B7 /* View layout */ = {
+			isa = PBXGroup;
+			children = (
+				927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */,
+			);
+			path = "View layout";
 			sourceTree = "<group>";
 		};
 		927FFCF3282B9CA7001E39B7 /* Images, shapes, and media */ = {
@@ -1488,6 +1499,7 @@
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
+				927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
