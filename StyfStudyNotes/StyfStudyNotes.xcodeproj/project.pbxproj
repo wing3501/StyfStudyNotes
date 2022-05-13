@@ -966,6 +966,14 @@
 			path = "User interface controls";
 			sourceTree = "<group>";
 		};
+		9287E0AC282E373100AA87FE /* 《Swift Concurrency by Example》 */ = {
+			isa = PBXGroup;
+			children = (
+				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
+			);
+			path = "《Swift Concurrency by Example》";
+			sourceTree = "<group>";
+		};
 		9288BED72829033B005A903A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,7 +1296,7 @@
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
 				9215A8D7280FD44700344F40 /* SwiftUI */,
 				925810202806C434008AF141 /* 《Using Combine》 */,
-				923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */,
+				9287E0AC282E373100AA87FE /* 《Swift Concurrency by Example》 */,
 				923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */,
 				921FE16227ED8FBB00760625 /* MetadataViewController.swift */,
 				9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */,
