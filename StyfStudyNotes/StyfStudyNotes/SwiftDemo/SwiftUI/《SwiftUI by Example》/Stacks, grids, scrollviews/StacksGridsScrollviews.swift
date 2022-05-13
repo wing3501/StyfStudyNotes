@@ -10,14 +10,23 @@ import SwiftUI
 struct StacksGridsScrollviews: View {
     var body: some View {
         ScrollView {
+            //模糊效果
             VisualEffectBlurs()
+            //LazyVStack、LazyHStack使用
             LazyVStackAndLazyHStack()
+            //网格布局
             LazyVGridAndLazyHGrid()
+            //滚动视图的3D效果
             ScrollView3DEffects()
+            //滚动到指定位置
             UsingScrollViewReader()
+            //滚动视图的使用
             UsingScrollView()
+            //使用SizeClasses来适配屏幕
             UsingSizeClasses()
+            //使用ZStack
             UsingZStack()
+            //使用固定尺寸的Spacer
             FixedSizeSpacer()
             UsingVStackAndHStack()
         }

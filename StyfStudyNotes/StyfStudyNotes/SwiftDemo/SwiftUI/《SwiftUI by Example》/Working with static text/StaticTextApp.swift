@@ -11,12 +11,19 @@ struct StaticTextApp: View {
     var body: some View {
         ScrollView {
             VStack {
+                //文字的选中
                 TextSelectionTest()
+                //对Markdown的支持
                 MarkdownTest()
+                //标记文本为敏感信息
                 PrivacySensitiveTest()
+                //标记文本为占位信息
                 RedactedTest()
+                //使用label来显示一个图片和文字
                 LabelTest()
+                //文字的大小写转换
                 TextCaseTest()
+                //日期格式化
                 DateStyleTest()
                 
                 VStack {
@@ -28,11 +35,11 @@ struct StaticTextApp: View {
                         .tracking(20)
 
                     DateFormatterTest()
-
+                    //度量尺寸的格式化
                     MeasurementTest()
-
+                    //list拼接内容
                     TextListTest()
-
+                    //多行文本对齐
                     MultilineTextAlignmentTest()
 
                     Text("This is an extremely long text string that will never fit even the widest of phones without wrapping")

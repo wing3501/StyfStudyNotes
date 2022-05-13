@@ -9,18 +9,29 @@ import SwiftUI
 
 struct ViewLayoutDemo: View {
     var body: some View {
+        //在安全区域放置内容
+//        UsingSafeAreaInset()
+        //突破安全区域
 //        OutsideTheSafeArea()
-        UsingSafeAreaInset()
-//        ScrollView {
-//            UsingForegroundStyle()
-//            MakeTwoViewsSameWidthHeight()
-//            UsingLayoutPriority()
-//            UsingForEach()
-//            ReturnDifferentViewTypes()
-//            UsingGeometryReader()
-//            UsingPadding()
-//            ViewCustomFrame()
-//        }
+
+        ScrollView {
+            //使用foregroundStyle设置预设样式、或者统一设置渐变色等
+            UsingForegroundStyle()
+            //让多个视图尺寸相同的技巧
+            MakeTwoViewsSameWidthHeight()
+            //布局优先级的使用
+            UsingLayoutPriority()
+            //使用ForEach
+            UsingForEach()
+            //返回不同View报错的几种解决办法
+            ReturnDifferentViewTypes()
+            //获取建议尺寸
+            UsingGeometryReader()
+            //使用边距
+            UsingPadding()
+            //使用frame
+            ViewCustomFrame()
+        }
     }
 }
 

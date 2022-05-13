@@ -122,6 +122,7 @@
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
 		92876936282CDABE006BFE5A /* StacksGridsScrollviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92876935282CDABE006BFE5A /* StacksGridsScrollviews.swift */; };
+		92876939282D021A006BFE5A /* UserInterfaceControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92876938282D021A006BFE5A /* UserInterfaceControls.swift */; };
 		9288BED62828FF73005A903A /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 9288BED52828FF72005A903A /* menu.json */; };
 		9288BED92829034C005A903A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BED82829034C005A903A /* ItemRow.swift */; };
 		9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288BEDA28290B61005A903A /* ItemDetail.swift */; };
@@ -383,6 +384,7 @@
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
 		92876935282CDABE006BFE5A /* StacksGridsScrollviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksGridsScrollviews.swift; sourceTree = "<group>"; };
+		92876938282D021A006BFE5A /* UserInterfaceControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceControls.swift; sourceTree = "<group>"; };
 		9288BED52828FF72005A903A /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		9288BED82829034C005A903A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		9288BEDA28290B61005A903A /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
@@ -959,6 +961,7 @@
 		92876937282CFF9F006BFE5A /* User interface controls */ = {
 			isa = PBXGroup;
 			children = (
+				92876938282D021A006BFE5A /* UserInterfaceControls.swift */,
 			);
 			path = "User interface controls";
 			sourceTree = "<group>";
@@ -1495,6 +1498,7 @@
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
+				92876939282D021A006BFE5A /* UserInterfaceControls.swift in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				92116BE7281A87200061086E /* MyTestView.swift in Sources */,

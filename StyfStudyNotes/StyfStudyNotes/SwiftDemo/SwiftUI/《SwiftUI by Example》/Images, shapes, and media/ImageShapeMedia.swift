@@ -12,18 +12,30 @@ struct ImageShapeMedia: View {
     var body: some View {
         ScrollView {
             VStack {
+                //设置SF Symbols多种颜色
                 SymbolRenderingModeTest()
+                //异步加载网络图片
                 LoadARemoteImage()
+                //播放视频
                 PlayMovies()
+                
                 ContainerRelativeShapeTest()
                 VStack {
+                    //使用trim绘制填充部分Shape
                     TrimShape()
+                    //填充绘制形状
                     FillStrokeShapes()
+                    //Shape的基本使用
                     ShapesTest()
+                    //.background的基本使用
                     BackgroundTest()
+                    //渐变色的使用
                     GradientTest()
+                    //使用SF Symbols
                     SFSymbolsImage()
+                    //平铺图片
                     TileAnImage()
+                    //图片的基本使用
                     AdjustImageSpace()
                     ImageBaseUse()
                 }
