@@ -112,6 +112,7 @@
 		925810222806C452008AF141 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810212806C452008AF141 /* GithubAPI.swift */; };
 		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
 		925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5C2831FAEB00066389 /* AdvancedState.swift */; };
+		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
@@ -375,6 +376,7 @@
 		925810212806C452008AF141 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
 		925D6E5C2831FAEB00066389 /* AdvancedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedState.swift; sourceTree = "<group>"; };
+		925D6E5F2832281D00066389 /* ListsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsDemo.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				925D6E5E2832280F00066389 /* Lists */,
 				925D6E5B2831FAD500066389 /* Advanced state */,
 				9287E0B0282E4C7A00AA87FE /* Taps and gestures */,
 				9287E0AD282E397D00AA87FE /* Responding to events */,
@@ -929,6 +932,14 @@
 				925D6E5C2831FAEB00066389 /* AdvancedState.swift */,
 			);
 			path = "Advanced state";
+			sourceTree = "<group>";
+		};
+		925D6E5E2832280F00066389 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				925D6E5F2832281D00066389 /* ListsDemo.swift */,
+			);
+			path = Lists;
 			sourceTree = "<group>";
 		};
 		926EE2532626B8270008F924 /* Mach-O */ = {
@@ -1567,6 +1578,7 @@
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
+				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
