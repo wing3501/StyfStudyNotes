@@ -111,6 +111,7 @@
 		925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925447782816C01B00058CBD /* UserDefaultsStorage.swift */; };
 		925810222806C452008AF141 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810212806C452008AF141 /* GithubAPI.swift */; };
 		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
+		925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5C2831FAEB00066389 /* AdvancedState.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
@@ -373,6 +374,7 @@
 		925447782816C01B00058CBD /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		925810212806C452008AF141 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
+		925D6E5C2831FAEB00066389 /* AdvancedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedState.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				925D6E5B2831FAD500066389 /* Advanced state */,
 				9287E0B0282E4C7A00AA87FE /* Taps and gestures */,
 				9287E0AD282E397D00AA87FE /* Responding to events */,
 				92876937282CFF9F006BFE5A /* User interface controls */,
@@ -918,6 +921,14 @@
 				9208CC102807FA980095E1C1 /* GithubAPI */,
 			);
 			path = "《Using Combine》";
+			sourceTree = "<group>";
+		};
+		925D6E5B2831FAD500066389 /* Advanced state */ = {
+			isa = PBXGroup;
+			children = (
+				925D6E5C2831FAEB00066389 /* AdvancedState.swift */,
+			);
+			path = "Advanced state";
 			sourceTree = "<group>";
 		};
 		926EE2532626B8270008F924 /* Mach-O */ = {
@@ -1563,6 +1574,7 @@
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
+				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,

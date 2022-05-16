@@ -10,7 +10,7 @@ import SwiftUI
 struct TapsAndGestures: View {
     var body: some View {
         ScrollView {
-            //观察点击视图位置
+            //观察点击视图位置，借助UIKit
             DetectTheLocationOfATap()
             //禁止手势
             UsingAllowsHitTesting()
