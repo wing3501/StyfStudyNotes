@@ -167,6 +167,8 @@
 		92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F625D28DFD0008EFAA /* BFS.swift */; };
 		92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7F925D28E1A0008EFAA /* 二分查找.swift */; };
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
+		92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A9A56F28324FDA0018F2DA /* FormsDemo.swift */; };
+		92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A9A57228326B690018F2DA /* ContainersDemo.swift */; };
 		92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589928112F75000BE001 /* CalculatorModel.swift */; };
 		92AC589C28113E44000BE001 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589B28113E43000BE001 /* HistoryView.swift */; };
 		92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */; };
@@ -450,6 +452,8 @@
 		92A8D7F625D28DFD0008EFAA /* BFS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFS.swift; sourceTree = "<group>"; };
 		92A8D7F925D28E1A0008EFAA /* 二分查找.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二分查找.swift"; sourceTree = "<group>"; };
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
+		92A9A56F28324FDA0018F2DA /* FormsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsDemo.swift; sourceTree = "<group>"; };
+		92A9A57228326B690018F2DA /* ContainersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersDemo.swift; sourceTree = "<group>"; };
 		92AC589928112F75000BE001 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		92AC589B28113E43000BE001 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92AC5D1E28115505000BE001 /* pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				92A9A57128326B5F0018F2DA /* Containers */,
+				92A9A56E28324FCC0018F2DA /* Forms */,
 				925D6E5E2832280F00066389 /* Lists */,
 				925D6E5B2831FAD500066389 /* Advanced state */,
 				9287E0B0282E4C7A00AA87FE /* Taps and gestures */,
@@ -1165,6 +1171,22 @@
 			path = __attribute__;
 			sourceTree = "<group>";
 		};
+		92A9A56E28324FCC0018F2DA /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				92A9A56F28324FDA0018F2DA /* FormsDemo.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		92A9A57128326B5F0018F2DA /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				92A9A57228326B690018F2DA /* ContainersDemo.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 		92AC5D1D2811532E000BE001 /* PokeMaster */ = {
 			isa = PBXGroup;
 			children = (
@@ -1572,6 +1594,7 @@
 				92CA9CBF2816505500246D51 /* Store.swift in Sources */,
 				923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */,
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
+				92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
 				927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */,
@@ -1581,6 +1604,7 @@
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
+				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
