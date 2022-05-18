@@ -83,6 +83,7 @@
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
+		923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */; };
 		92426DDA26246289002062B7 /* LeaksDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DD926246288002062B7 /* LeaksDemo.m */; };
 		92426DDF262464EA002062B7 /* LeaksObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426DDE262464EA002062B7 /* LeaksObj.m */; };
 		92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 92426F1E26246BFD002062B7 /* ShowDebugBlock.m */; };
@@ -330,6 +331,7 @@
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
 		923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyViewController.swift; sourceTree = "<group>"; };
+		923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndMenus.swift; sourceTree = "<group>"; };
 		92426DD826246288002062B7 /* LeaksDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksDemo.h; sourceTree = "<group>"; };
 		92426DD926246288002062B7 /* LeaksDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksDemo.m; sourceTree = "<group>"; };
 		92426DDD262464E9002062B7 /* LeaksObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksObj.h; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				923EBA062833C1950082B91D /* Alerts and menus */,
 				92A9A57128326B5F0018F2DA /* Containers */,
 				92A9A56E28324FCC0018F2DA /* Forms */,
 				925D6E5E2832280F00066389 /* Lists */,
@@ -849,6 +852,14 @@
 				923176E8282A6B7A0004A969 /* StaticTextApp.swift */,
 			);
 			path = "Working with static text";
+			sourceTree = "<group>";
+		};
+		923EBA062833C1950082B91D /* Alerts and menus */ = {
+			isa = PBXGroup;
+			children = (
+				923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */,
+			);
+			path = "Alerts and menus";
 			sourceTree = "<group>";
 		};
 		92426DD726246238002062B7 /* 内存泄漏 */ = {
@@ -1729,6 +1740,7 @@
 				92B848C42819316F00D46185 /* SafariView.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */,
+				923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,

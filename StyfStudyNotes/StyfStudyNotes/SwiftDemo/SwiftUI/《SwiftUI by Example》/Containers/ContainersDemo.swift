@@ -10,13 +10,13 @@ import SwiftUI
 struct ContainersDemo: View {
     var body: some View {
         //GroupBox的使用
-        UsingGroupBox()
+//        UsingGroupBox()
         //TabView和List的角标
 //        AddBadge()
         //在NavigationView中创建底部工具条
 //        CreateAToolbar()
         //使用DisclosureGroup收起和展开内容
-//        UsingDisclosureGroup()
+        UsingDisclosureGroup()
         //隐藏、显示状态栏
 //        HideStatusBar()
         //创建滚动型TabView

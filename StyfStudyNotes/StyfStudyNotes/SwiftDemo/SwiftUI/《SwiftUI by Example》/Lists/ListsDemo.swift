@@ -297,6 +297,10 @@ struct ScrollToASpecificRow: View {
                     List(0..<100, id: \.self) { i in
                         Text("Example \(i)")
                         .id(i)
+                        //注意id会导致全渲染，数据量过大时会出现卡顿
+                        
+//                        优化在 SwiftUI List 中显示大数据集的响应效率
+//                    https://www.fatbobman.com/posts/optimize_the_response_efficiency_of_List/
                     }
                 }
             }
