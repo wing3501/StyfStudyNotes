@@ -13,7 +13,7 @@ extension CBCharacteristic: Identifiable {
 }
 
 struct CharacteristicsView: View {
-    var service: CBService
+    var service: CBService?
     @State var characteristics: [CBCharacteristic] = []
     var body: some View {
         List(characteristics) { characteristic in
@@ -27,7 +27,9 @@ struct CharacteristicsView: View {
             }
         }
         .onAppear {
-            characteristics = PeripheralDelegate.shared.characteristicsDic[service]!
+            if let service = service {
+                characteristics = PeripheralDelegate.shared.characteristicsDic[service]!
+            }
         }
     }
 }
