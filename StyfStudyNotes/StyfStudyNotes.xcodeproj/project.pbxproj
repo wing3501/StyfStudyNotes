@@ -205,6 +205,7 @@
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
+		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
 		92F2EFC12815170B00773B17 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2EFC02815170B00773B17 /* Utils.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
 		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
@@ -503,6 +504,7 @@
 		92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDelegateProxy.m; sourceTree = "<group>"; };
 		92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo.swift; sourceTree = "<group>"; };
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
+		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
 		92F2EFC02815170B00773B17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		92F2EFC22815182800773B17 /* CombinePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombinePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				92EAF0982834EF3F00AA6420 /* Transforming views */,
 				9256DE852834C18F007391D7 /* Presenting views */,
 				923EBA062833C1950082B91D /* Alerts and menus */,
 				92A9A57128326B5F0018F2DA /* Containers */,
@@ -1404,6 +1407,14 @@
 			path = CPPNote;
 			sourceTree = "<group>";
 		};
+		92EAF0982834EF3F00AA6420 /* Transforming views */ = {
+			isa = PBXGroup;
+			children = (
+				92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */,
+			);
+			path = "Transforming views";
+			sourceTree = "<group>";
+		};
 		92F2EFBF281516F400773B17 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -1624,6 +1635,7 @@
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
+				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,

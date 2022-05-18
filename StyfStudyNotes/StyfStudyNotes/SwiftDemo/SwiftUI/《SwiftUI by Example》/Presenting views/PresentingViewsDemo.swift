@@ -10,9 +10,9 @@ import SwiftUI
 struct PresentingViewsDemo: View {
     var body: some View {
         //禁止手势下拉关闭sheet
-        InteractiveDismissDisabled()
+//        InteractiveDismissDisabled()
         //用Popover弹出一个新页面
-//        UsingPopover()
+        UsingPopover()
         //用sheet弹出一个新页面
 //        PresentANewViewUsingSheets()
         //代码控制push到一个新的View
