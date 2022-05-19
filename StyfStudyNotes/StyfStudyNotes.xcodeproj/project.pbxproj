@@ -106,6 +106,9 @@
 		9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */; };
 		9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */; };
 		9246CAA82836260D00E6FB65 /* ComposingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAA72836260D00E6FB65 /* ComposingViews.swift */; };
+		9246CAAC2836325300E6FB65 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAB2836325300E6FB65 /* HandleData.swift */; };
+		9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */; };
+		9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB0283635B200E6FB65 /* PersistenceController.swift */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -378,6 +381,9 @@
 		9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDemo.swift; sourceTree = "<group>"; };
 		9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemo1.swift; sourceTree = "<group>"; };
 		9246CAA72836260D00E6FB65 /* ComposingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingViews.swift; sourceTree = "<group>"; };
+		9246CAAB2836325300E6FB65 /* HandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleData.swift; sourceTree = "<group>"; };
+		9246CAAE283634B200E6FB65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		9246CAB0283635B200E6FB65 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -582,6 +588,8 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				9246CAAA28362EE800E6FB65 /* Data */,
+				9246CAA928362D5700E6FB65 /* Cross-platform SwiftUI */,
 				9246CAA62836260200E6FB65 /* Composing views */,
 				9246CAA12835DE8900E6FB65 /* Animation */,
 				9246CA9E2835D8A500E6FB65 /* Drawing */,
@@ -967,6 +975,23 @@
 				9246CAA72836260D00E6FB65 /* ComposingViews.swift */,
 			);
 			path = "Composing views";
+			sourceTree = "<group>";
+		};
+		9246CAA928362D5700E6FB65 /* Cross-platform SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cross-platform SwiftUI";
+			sourceTree = "<group>";
+		};
+		9246CAAA28362EE800E6FB65 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9246CAAB2836325300E6FB65 /* HandleData.swift */,
+				9246CAB0283635B200E6FB65 /* PersistenceController.swift */,
+				9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		9256DE852834C18F007391D7 /* Presenting views */ = {
@@ -1767,11 +1792,13 @@
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
+				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A417D2281248C100603DCE /* PokemonViewModel.swift in Sources */,
 				921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */,
+				9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */,
 				92CA9CBA28164C0B00246D51 /* MainTab.swift in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				92E2359227671D17003B7C85 /* myCpp.cpp in Sources */,
@@ -1784,6 +1811,7 @@
 				928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */,
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				924C7155281BBA1800B4AEE8 /* EnvironmentView.swift in Sources */,
+				9246CAAC2836325300E6FB65 /* HandleData.swift in Sources */,
 				922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */,
@@ -2041,6 +2069,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9246CAAE283634B200E6FB65 /* Main.xcdatamodel */,
+			);
+			currentVersion = 9246CAAE283634B200E6FB65 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 92A8D7C025D288DA0008EFAA /* Project object */;
 }
