@@ -103,6 +103,8 @@
 		9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03025E63DA00008D6BB /* SerialQueueDemo.m */; };
 		9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03125E63DA00008D6BB /* MutexDemo2.m */; };
 		9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */; };
+		9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */; };
+		9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -372,6 +374,8 @@
 		9244F03125E63DA00008D6BB /* MutexDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
 		9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo2.m; sourceTree = "<group>"; };
 		9244F03325E63DA00008D6BB /* NSLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
+		9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDemo.swift; sourceTree = "<group>"; };
+		9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemo1.swift; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -576,6 +580,8 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				9246CAA12835DE8900E6FB65 /* Animation */,
+				9246CA9E2835D8A500E6FB65 /* Drawing */,
 				92EAF0982834EF3F00AA6420 /* Transforming views */,
 				9256DE852834C18F007391D7 /* Presenting views */,
 				923EBA062833C1950082B91D /* Alerts and menus */,
@@ -934,6 +940,22 @@
 				9244F02125E63DA00008D6BB /* NSConditionLockDemo.m */,
 			);
 			path = Locks;
+			sourceTree = "<group>";
+		};
+		9246CA9E2835D8A500E6FB65 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		9246CAA12835DE8900E6FB65 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		9256DE852834C18F007391D7 /* Presenting views */ = {
@@ -1653,6 +1675,7 @@
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */,
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
+				9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */,
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
@@ -1672,6 +1695,7 @@
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
+				9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
 				923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
