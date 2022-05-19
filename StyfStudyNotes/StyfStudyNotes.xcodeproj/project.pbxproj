@@ -105,6 +105,7 @@
 		9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9244F03225E63DA00008D6BB /* OSSpinLockDemo2.m */; };
 		9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */; };
 		9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */; };
+		9246CAA82836260D00E6FB65 /* ComposingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAA72836260D00E6FB65 /* ComposingViews.swift */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -376,6 +377,7 @@
 		9244F03325E63DA00008D6BB /* NSLockDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLockDemo.h; sourceTree = "<group>"; };
 		9246CA9F2835D8B100E6FB65 /* DrawingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDemo.swift; sourceTree = "<group>"; };
 		9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemo1.swift; sourceTree = "<group>"; };
+		9246CAA72836260D00E6FB65 /* ComposingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposingViews.swift; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				9246CAA62836260200E6FB65 /* Composing views */,
 				9246CAA12835DE8900E6FB65 /* Animation */,
 				9246CA9E2835D8A500E6FB65 /* Drawing */,
 				92EAF0982834EF3F00AA6420 /* Transforming views */,
@@ -956,6 +959,14 @@
 				9246CAA42835DEE900E6FB65 /* AnimationDemo1.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		9246CAA62836260200E6FB65 /* Composing views */ = {
+			isa = PBXGroup;
+			children = (
+				9246CAA72836260D00E6FB65 /* ComposingViews.swift */,
+			);
+			path = "Composing views";
 			sourceTree = "<group>";
 		};
 		9256DE852834C18F007391D7 /* Presenting views */ = {
@@ -1789,6 +1800,7 @@
 				923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */,
 				923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
+				9246CAA82836260D00E6FB65 /* ComposingViews.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
