@@ -109,6 +109,7 @@
 		9246CAAC2836325300E6FB65 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAB2836325300E6FB65 /* HandleData.swift */; };
 		9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */; };
 		9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB0283635B200E6FB65 /* PersistenceController.swift */; };
+		9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -384,6 +385,7 @@
 		9246CAAB2836325300E6FB65 /* HandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleData.swift; sourceTree = "<group>"; };
 		9246CAAE283634B200E6FB65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		9246CAB0283635B200E6FB65 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolingDemo.swift; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				9246CAB228366D1A00E6FB65 /* Tooling */,
 				9246CAAA28362EE800E6FB65 /* Data */,
 				9246CAA928362D5700E6FB65 /* Cross-platform SwiftUI */,
 				9246CAA62836260200E6FB65 /* Composing views */,
@@ -992,6 +995,14 @@
 				9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9246CAB228366D1A00E6FB65 /* Tooling */ = {
+			isa = PBXGroup;
+			children = (
+				9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */,
+			);
+			path = Tooling;
 			sourceTree = "<group>";
 		};
 		9256DE852834C18F007391D7 /* Presenting views */ = {
@@ -1790,6 +1801,7 @@
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
+				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
