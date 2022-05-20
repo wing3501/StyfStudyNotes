@@ -178,6 +178,8 @@
 		92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7FC25D28E7A0008EFAA /* 双指针.swift */; };
 		92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A9A56F28324FDA0018F2DA /* FormsDemo.swift */; };
 		92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A9A57228326B690018F2DA /* ContainersDemo.swift */; };
+		92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA70362837303300EB5C7E /* TipsAndTricks.swift */; };
+		92AA703C28377D9500EB5C7E /* AsyncSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA703B28377D9500EB5C7E /* AsyncSwiftViewController.swift */; };
 		92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589928112F75000BE001 /* CalculatorModel.swift */; };
 		92AC589C28113E44000BE001 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589B28113E43000BE001 /* HistoryView.swift */; };
 		92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */; };
@@ -473,6 +475,8 @@
 		92A8D7FC25D28E7A0008EFAA /* 双指针.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "双指针.swift"; sourceTree = "<group>"; };
 		92A9A56F28324FDA0018F2DA /* FormsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsDemo.swift; sourceTree = "<group>"; };
 		92A9A57228326B690018F2DA /* ContainersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersDemo.swift; sourceTree = "<group>"; };
+		92AA70362837303300EB5C7E /* TipsAndTricks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsAndTricks.swift; sourceTree = "<group>"; };
+		92AA703B28377D9500EB5C7E /* AsyncSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncSwiftViewController.swift; sourceTree = "<group>"; };
 		92AC589928112F75000BE001 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		92AC589B28113E43000BE001 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92AC5D1E28115505000BE001 /* pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
@@ -590,6 +594,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				92AA70352837301500EB5C7E /* Tips and tricks */,
 				9246CAB228366D1A00E6FB65 /* Tooling */,
 				9246CAAA28362EE800E6FB65 /* Data */,
 				9246CAA928362D5700E6FB65 /* Cross-platform SwiftUI */,
@@ -1281,6 +1286,22 @@
 			path = Containers;
 			sourceTree = "<group>";
 		};
+		92AA70352837301500EB5C7E /* Tips and tricks */ = {
+			isa = PBXGroup;
+			children = (
+				92AA70362837303300EB5C7E /* TipsAndTricks.swift */,
+			);
+			path = "Tips and tricks";
+			sourceTree = "<group>";
+		};
+		92AA7038283735AF00EB5C7E /* 《Swift异步与并发》 */ = {
+			isa = PBXGroup;
+			children = (
+				92AA703B28377D9500EB5C7E /* AsyncSwiftViewController.swift */,
+			);
+			path = "《Swift异步与并发》";
+			sourceTree = "<group>";
+		};
 		92AC5D1D2811532E000BE001 /* PokeMaster */ = {
 			isa = PBXGroup;
 			children = (
@@ -1454,6 +1475,7 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				92AA7038283735AF00EB5C7E /* 《Swift异步与并发》 */,
 				9215A8D7280FD44700344F40 /* SwiftUI */,
 				925810202806C434008AF141 /* 《Using Combine》 */,
 				9287E0AC282E373100AA87FE /* 《Swift Concurrency by Example》 */,
@@ -1687,6 +1709,7 @@
 				928934F6263A4ACD00BAF8E2 /* DemoNSOperation.m in Sources */,
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */,
+				92AA703C28377D9500EB5C7E /* AsyncSwiftViewController.swift in Sources */,
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
@@ -1803,6 +1826,7 @@
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
 				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
+				92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,

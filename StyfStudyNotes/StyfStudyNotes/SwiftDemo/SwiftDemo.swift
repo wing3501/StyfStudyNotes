@@ -26,7 +26,8 @@ class SwiftDemo: UIViewController {
                      "ClassLifeViewController",
                      "ConcurrencyViewController",
                      "CombineViewController",
-                     "SwiftUIViewController"]
+                     "SwiftUIViewController",
+                     "AsyncSwiftViewController"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
