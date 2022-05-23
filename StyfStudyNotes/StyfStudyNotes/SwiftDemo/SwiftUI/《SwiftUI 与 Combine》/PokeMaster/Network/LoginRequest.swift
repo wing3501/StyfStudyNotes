@@ -12,6 +12,8 @@ struct LoginRequest {
     let email: String
     let password: String
     
+    
+    
     var publisher: AnyPublisher<User,AppError> {
         Future<User, AppError> { promise in
 //            把新建的 Future Publisher 发送到后台队列，并延时 1.5 秒执行。这用来模拟 网络请求的延时状况。

@@ -304,6 +304,8 @@ func loadPage(url: URL,handler: @escaping (Data?, URLResponse?, Error?) -> Void)
 //    }
 //}
 
+//在一定程度上，笔者认为 async 函数 (或者更准确说，由续体转换的异步函数) 可以取代 Future:同样是在返回一个未来的值，async 显然提供了更加简洁的写法。相对于 Combine 基 于订阅的使用方式和 Scheduler 决定的线程模型，直接使用异步函数需要操心的地方要少很 多。但是续体异步函数和 Future 依然有不同。异步函数必定在一定的任务上下文之中执行，这 个上下文决定了任务的取消状态、优先级等;单个 Future 如果不和 Combine 框架中的其他 Publisher 或者 Operators 结合 (combine) 使用的话，它能提供的特性远远不及异步函数丰富。
+
 //使用Subject
 //包装通知
 //var observer: NSObjectProtocol?
