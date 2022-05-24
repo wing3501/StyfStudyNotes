@@ -136,7 +136,7 @@ class ConcurrencyViewController: UIViewController {
         //var user  ❌Reference to captured var 'user' in concurrently-executing code
         let user = User(id: UUID(), name: "Jack", age: 18)
         async let favorites = fetchFavorites(for: user)
-        await print("\(favorites.count)")
+         print("\(await favorites.count)")
     }
     //-----------------------------------
     //使用continuations将以前的闭包回调式异步代码转换为async/await的异步调用
