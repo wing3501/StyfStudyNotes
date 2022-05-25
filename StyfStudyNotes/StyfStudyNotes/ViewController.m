@@ -40,7 +40,8 @@
                    @{@"title":@"DiffableDataSource",@"class":@"DiffableDataSourceDemo"},
                    @{@"title":@"问题",@"class":@"Question"},
                    @{@"title":@"KVO",@"class":@"KVO"},
-                   @{@"title":@"蓝牙",@"class":@"BluetoothDemo"}
+                   @{@"title":@"蓝牙",@"class":@"BluetoothDemo"},
+                   @{@"title":@"PDF",@"class":@"PDFDemo"}
     ];
     [self.view addSubview:self.tableView];
     

@@ -124,6 +124,7 @@
 		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
+		92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92701A29283E1FBA00295028 /* PDFDemo.swift */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
@@ -403,6 +404,7 @@
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
+		92701A29283E1FBA00295028 /* PDFDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDemo.swift; sourceTree = "<group>"; };
 		9273F4E826365D8800B78638 /* MMAPNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAPNote.h; sourceTree = "<group>"; };
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
@@ -1056,6 +1058,22 @@
 			path = "Mach-O";
 			sourceTree = "<group>";
 		};
+		92701A26283E1F7000295028 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				92701A29283E1FBA00295028 /* PDFDemo.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		92701A2B283E246F00295028 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				92CA9D0228168FE300246D51 /* FileHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9273F4E726365D5600B78638 /* mmap */ = {
 			isa = PBXGroup;
 			children = (
@@ -1208,6 +1226,8 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92701A2B283E246F00295028 /* Utils */,
+				92701A26283E1F7000295028 /* PDF */,
 				920A7BCF282540B90011A12D /* 蓝牙 */,
 				92E2359027671CF7003B7C85 /* CPPNote */,
 				920C4FEB273275F90091487B /* KVO */,
@@ -1460,7 +1480,6 @@
 			children = (
 				92CA9D0028168F6600246D51 /* FileStorage.swift */,
 				925447782816C01B00058CBD /* UserDefaultsStorage.swift */,
-				92CA9D0228168FE300246D51 /* FileHelper.swift */,
 				921545CE2817C8FB009781D2 /* StringExtension.swift */,
 				921545D62817E4CB009781D2 /* ArrayExtension.swift */,
 				921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */,
@@ -1695,6 +1714,7 @@
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
+				92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */,
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				92876939282D021A006BFE5A /* UserInterfaceControls.swift in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
