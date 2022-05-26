@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 @objc(PDFDemo)
 @objcMembers class PDFDemo: UIViewController {
@@ -64,13 +65,19 @@ import UIKit
         createScrollViewToPDF()
         
         //view生成PDF
-        createViewToPDF()
+//        createViewToPDF()
     }
     
     func sharePDF() {
         if let pdfPath = pdfPath {
-            let activityItems = [URL(string: pdfPath)!]
-            let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+//            let img = UIImage(named: "mexican-mocha-thumb")!
+//            let activityItems: [Any] = ["文字",img,URL(string: "")!]
+            let activityItems = [URL(fileURLWithPath: pdfPath)]
+//            let activityItems = [URL(fileURLWithPath: Bundle.main.path(forResource: "IMG_1599", ofType: "MP4")!)]
+            let activity = MyActivity()
+            
+            let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: [activity])
+//            activityVC.excludedActivityTypes = [.print,.message,.mail] //需要排除的activity
 //            UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError
             activityVC.completionWithItemsHandler = { (activityType,completed,returnedItems,activityError) in
                 if completed {
@@ -80,6 +87,38 @@ import UIKit
                 }
             }
             present(activityVC, animated: true)
+        }
+    }
+    
+    class MyActivity: UIActivity {
+        override class var activityCategory: UIActivity.Category {
+            .share
+//            .action
+        }
+        
+        override var activityType: UIActivity.ActivityType? {
+            ActivityType("蛤?")
+        }
+        
+        override var activityTitle: String? {
+            "activity标题"
+        }
+        
+        override var activityImage: UIImage? {
+            UIImage(named: "porridge-deluxe-thumb")
+        }
+        
+        override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
+            activityItems.count > 0
+        }
+        
+        override func prepare(withActivityItems activityItems: [Any]) {
+            
+        }
+        
+        override func perform() {
+            UIApplication.shared.open(URL(string: "https://baidu.com")!)
+            activityDidFinish(true)
         }
     }
     
