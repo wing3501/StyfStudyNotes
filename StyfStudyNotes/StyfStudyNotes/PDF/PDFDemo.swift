@@ -60,8 +60,11 @@ import UIKit
 //        let filePath = dirPath + "/" + UUID().uuidString + ".pdf"
 //        createImagesToPDF(filePath)
     
-        //view生成PDF
+        //scrollView生成PDF
         createScrollViewToPDF()
+        
+        //view生成PDF
+        createViewToPDF()
     }
     
     func sharePDF() {
@@ -113,6 +116,17 @@ import UIKit
         
         let pdfData = Data(referencing: data)
         
+        pdfPath = FileHelper.create(fileName: UUID().uuidString + ".pdf", to: .cachesDirectory, with: pdfData)
+        print("生成结束：\(String(describing: pdfPath))")
+    }
+    
+    func createViewToPDF() {
+        let data = NSMutableData()
+        UIGraphicsBeginPDFContextToData(data, view.bounds, nil)
+        UIGraphicsBeginPDFPage()
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        UIGraphicsEndPDFContext()
+        let pdfData = Data(referencing: data)
         pdfPath = FileHelper.create(fileName: UUID().uuidString + ".pdf", to: .cachesDirectory, with: pdfData)
         print("生成结束：\(String(describing: pdfPath))")
     }
