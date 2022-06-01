@@ -21,6 +21,7 @@ struct AnchorExample: View {
                 } label: {
                     tabs[tabIndex]
                 }
+                .background(.random)
                 .anchorPreference(key: BoundsKey.self, value: .bounds) { anchor in
                     selectedTabIndex == tabIndex ? anchor : nil
                 }

@@ -26,7 +26,7 @@ struct ListsDemo: View {
 //        AllowRowSelection()
         //滚动到指定行
 //        ScrollToASpecificRow()
-        //展开列表
+        //展开二级列表
 //        CreateExpandingLists()
         //列表样式
 //        CreateGroupedLists()
@@ -312,7 +312,7 @@ struct CreateExpandingLists: View {
     let items: [Bookmark] = [.example1, .example2, .example3]
     
     var body: some View {
-        TestWrap("展开列表") {
+        TestWrap("展开二级列表") {
             List(items, children: \.items) { row in
                 Image(systemName: row.icon)
                 Text(row.name)

@@ -57,7 +57,6 @@ class PropertyWrapperViewController: UIViewController {
         
         print("\(usd_cny) = \($usd_cny)")
         
-        
     }
 }
 

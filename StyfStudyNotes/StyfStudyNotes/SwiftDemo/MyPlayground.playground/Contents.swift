@@ -1544,7 +1544,8 @@ person123.countNumber(toValue: 50)
 
 
 // https://zxfcumtcs.github.io/2022/02/01/SwiftProtocol1/
-// 协议类型擦除
+// 协议类型擦除   把实现协议的多个类型，放到同一个数组里
+
 public protocol MarkdownBuilder: Equatable, Identifiable {
   var style: String { get }
   func build(from text: String) -> String
