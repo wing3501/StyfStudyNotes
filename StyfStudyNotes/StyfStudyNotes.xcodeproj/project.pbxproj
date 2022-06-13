@@ -215,6 +215,7 @@
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
+		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
 		92F2EFC12815170B00773B17 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2EFC02815170B00773B17 /* Utils.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
@@ -524,6 +525,7 @@
 		92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionDelegateProxy.m; sourceTree = "<group>"; };
 		92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemo.swift; sourceTree = "<group>"; };
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
+		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
 		92F2EFC02815170B00773B17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		92F2EFC22815182800773B17 /* CombinePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombinePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1226,6 +1228,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92E8A3462856CF93009D3690 /* 字符串安全 */,
 				92701A2B283E246F00295028 /* Utils */,
 				92701A26283E1F7000295028 /* PDF */,
 				920A7BCF282540B90011A12D /* 蓝牙 */,
@@ -1515,6 +1518,14 @@
 				92E2359127671D17003B7C85 /* myCpp.cpp */,
 			);
 			path = CPPNote;
+			sourceTree = "<group>";
+		};
+		92E8A3462856CF93009D3690 /* 字符串安全 */ = {
+			isa = PBXGroup;
+			children = (
+				92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */,
+			);
+			path = "字符串安全";
 			sourceTree = "<group>";
 		};
 		92EAF0982834EF3F00AA6420 /* Transforming views */ = {
@@ -1818,6 +1829,7 @@
 				92A417DA2812828A00603DCE /* PokemonInfoPanel.swift in Sources */,
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				920A7BCE282526DD0011A12D /* Order.swift in Sources */,
+				92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */,
 				9244F03825E63DA00008D6BB /* SynchronizedDemo.m in Sources */,
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
 				9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */,
