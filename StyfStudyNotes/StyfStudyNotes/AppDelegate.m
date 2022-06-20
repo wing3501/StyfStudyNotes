@@ -73,5 +73,8 @@
     self.window.rootViewController = nativeNav;
     [self.window makeKeyAndVisible];
 }
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
+    NSLog(@"openURL----->%@ ----%@",url,options);
+    return YES;
+}
 @end

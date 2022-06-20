@@ -54,9 +54,10 @@ import SwiftUI
         //截图生成PDF长图
 //        UIApplication.shared.keyWindow?.windowScene?.screenshotService?.delegate = self
         
-        PDFShareManager.shared.downloadImageToAlbum("https://i.picsum.photos/id/969/200/400.jpg?hmac=T0PiygU0tMT9G4ajp8J-n3P6OD_nmYePs3aIRdajVG0") { result in
-            print("回调结果---\(result)")
-        }
+//        PDFShareManager.shared.downloadImageToAlbum("https://i.picsum.photos/id/969/200/400.jpg?hmac=T0PiygU0tMT9G4ajp8J-n3P6OD_nmYePs3aIRdajVG0") { result in
+//            print("回调结果---\(result)")
+//        }
+        PDFShareManager.shared.shareImagePDF("https://i.picsum.photos/id/969/200/400.jpg?hmac=T0PiygU0tMT9G4ajp8J-n3P6OD_nmYePs3aIRdajVG0")
     }
     
     func createPDF() {
@@ -111,15 +112,29 @@ import SwiftUI
         override var activityImage: UIImage? {
             UIImage(named: "porridge-deluxe-thumb")
         }
-        
+        //是否显示分享按钮，这里一般根据用户是否授权,或分享内容是否正确等来决定是否要隐藏分享按钮
         override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
+//            for item in activityItems {
+//                if item is UIImage {
+//                    return true
+//                }
+//                if item is String {
+//                    return true
+//                }
+//                if item is URL {
+//                    return true
+//                }
+//            }
+//            return false
             activityItems.count > 0
         }
-        
+        //解析分享数据时调用，可以进行一定的处理
         override func prepare(withActivityItems activityItems: [Any]) {
             
         }
-        
+        //执行分享行为
+        //这里根据自己的应用做相应的处理
+        //例如你可以分享到另外的app例如微信分享，也可以保存数据到照片或其他地方，甚至分享到网络
         override func perform() {
             UIApplication.shared.open(URL(string: "https://baidu.com")!)
             activityDidFinish(true)
