@@ -43,6 +43,7 @@ class PDFShareManager: NSObject {
             }else {
                 block(true)
             }
+            saveAlbumCompletion = nil
         }
     }
     
