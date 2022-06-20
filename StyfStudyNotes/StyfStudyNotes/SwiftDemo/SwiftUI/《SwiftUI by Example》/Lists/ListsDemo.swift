@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+        //List消除每一行内边距
+//        List{
+//            Image("自己的图片")//此处可以换成其他控件
+//            .listRowInsets(EdgeInsets())//重点在这句话
+//        }
+        
         //直接从绑定的数据创建列表
-        CreateFromBinding()
+//        CreateFromBinding()
         //searchable给NavigationView添加搜索栏
 //        AddASearchBar()
         
@@ -27,7 +33,7 @@ struct ListsDemo: View {
         //滚动到指定行
 //        ScrollToASpecificRow()
         //展开二级列表
-//        CreateExpandingLists()
+        CreateExpandingLists()
         //列表样式
 //        CreateGroupedLists()
         //给行添加背景色
