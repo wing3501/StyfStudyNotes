@@ -13,7 +13,7 @@ class PDFShareManager: NSObject {
         shared
     }
     
-    public func shareImagePDF(_ imageURL: String,to target: String) {
+    public func shareImagePDF(_ imageURL: String) {
         downloadImage(imageURL) {[self] image, error in
             if let image = image {
                 createPDF(with: image) {[self] url, error in
@@ -24,14 +24,35 @@ class PDFShareManager: NSObject {
             }
         }
     }
+    private var saveAlbumCompletion: ((Bool) -> Void)?
+    public func downloadImageToAlbum(_ imageURL: String,_ completion: @escaping (Bool) -> Void) {
+        downloadImage(imageURL) {[self] image, error in
+            if let image = image {
+                saveAlbumCompletion = completion
+                UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            }else {
+                completion(false)
+            }
+        }
+    }
     
-    func downloadImage(_ imageURL: String,_ completion: @escaping (UIImage?,Error?) -> Void ) {
+    @objc func image(_ image: UIImage?, didFinishSavingWithError error: Error?, contextInfo: UnsafeMutableRawPointer?) {
+        if let block = saveAlbumCompletion {
+            if let _ = error {
+                block(false)
+            }else {
+                block(true)
+            }
+        }
+    }
+    
+    private func downloadImage(_ imageURL: String,_ completion: @escaping (UIImage?,Error?) -> Void ) {
         SDWebImageDownloader.shared.downloadImage(with: URL(string: imageURL)) {image, data, error, finished in
             completion(image, error)
         }
     }
     
-    func createPDF(with image: UIImage,completion: @escaping (URL?, Error?) -> Void) {
+    private func createPDF(with image: UIImage,completion: @escaping (URL?, Error?) -> Void) {
         if let cgimage = image.cgImage {
             let width = cgimage.width
             let height = cgimage.height
@@ -46,7 +67,7 @@ class PDFShareManager: NSObject {
         }
     }
     
-    func sharePDF(_ fileUrl: URL) {
+    private func sharePDF(_ fileUrl: URL) {
         let activityItems = [fileUrl]
         
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
@@ -57,7 +78,7 @@ class PDFShareManager: NSObject {
                 print("分享取消")
             }
         }
-        if let rootvc = UIApplication.shared.keyWindow?.rootViewController {
+        if let rootvc = keyWindow?.rootViewController {
             rootvc.present(activityVC, animated: true)
         }
     }

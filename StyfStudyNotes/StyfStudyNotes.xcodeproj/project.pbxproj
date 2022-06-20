@@ -212,6 +212,8 @@
 		92CA9D0528169E5300246D51 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */; };
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0934C28588ADA00149598 /* PDFShareManager.swift */; };
+		92E0E5102860118800F18C73 /* VisionDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E50F2860118800F18C73 /* VisionDemo.swift */; };
+		92E0E512286044C000F18C73 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E511286044C000F18C73 /* Global.swift */; };
 		92E1A5EA264CC815007D63D5 /* SessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5E9264CC815007D63D5 /* SessionDelegate.m */; };
 		92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A5EE264CD2ED007D63D5 /* SessionDelegateProxy.m */; };
 		92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */; };
@@ -521,6 +523,8 @@
 		92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92E0934C28588ADA00149598 /* PDFShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFShareManager.swift; sourceTree = "<group>"; };
+		92E0E50F2860118800F18C73 /* VisionDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDemo.swift; sourceTree = "<group>"; };
+		92E0E511286044C000F18C73 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		92E1A5E8264CC815007D63D5 /* SessionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDelegate.h; sourceTree = "<group>"; };
 		92E1A5E9264CC815007D63D5 /* SessionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDelegate.m; sourceTree = "<group>"; };
 		92E1A5ED264CD2ED007D63D5 /* SessionDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionDelegateProxy.h; sourceTree = "<group>"; };
@@ -1075,6 +1079,7 @@
 			isa = PBXGroup;
 			children = (
 				92CA9D0228168FE300246D51 /* FileHelper.swift */,
+				92E0E511286044C000F18C73 /* Global.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1231,6 +1236,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92E0E50C2860103100F18C73 /* Vision */,
 				92E8A3462856CF93009D3690 /* 字符串安全 */,
 				92701A2B283E246F00295028 /* Utils */,
 				92701A26283E1F7000295028 /* PDF */,
@@ -1495,6 +1501,14 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		92E0E50C2860103100F18C73 /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				92E0E50F2860118800F18C73 /* VisionDemo.swift */,
+			);
+			path = Vision;
+			sourceTree = "<group>";
+		};
 		92E1A91B264D2B17007D63D5 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1721,6 +1735,7 @@
 			files = (
 				924C7157281BC85400B4AEE8 /* Preference.swift in Sources */,
 				92F36646273381A20013FB92 /* UIImage+scale.m in Sources */,
+				92E0E512286044C000F18C73 /* Global.swift in Sources */,
 				922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */,
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
 				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
@@ -1818,6 +1833,7 @@
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				920A7BC22824B9A60011A12D /* TableExample.swift in Sources */,
+				92E0E5102860118800F18C73 /* VisionDemo.swift in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,

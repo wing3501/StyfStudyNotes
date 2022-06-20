@@ -52,7 +52,11 @@ import SwiftUI
         scrollView.addSubview(imageView)
         
         //截图生成PDF长图
-        UIApplication.shared.keyWindow?.windowScene?.screenshotService?.delegate = self
+//        UIApplication.shared.keyWindow?.windowScene?.screenshotService?.delegate = self
+        
+        PDFShareManager.shared.downloadImageToAlbum("https://i.picsum.photos/id/969/200/400.jpg?hmac=T0PiygU0tMT9G4ajp8J-n3P6OD_nmYePs3aIRdajVG0") { result in
+            print("回调结果---\(result)")
+        }
     }
     
     func createPDF() {

@@ -1612,6 +1612,7 @@ public func italicsBuilder() -> some MarkdownBuilder {
 //而直接返回协议类型，则是运行时行为，编译器是无法知道的；
 //编译器是明确知道 italicsBuilder 方法的返回值类型是 ItalicsBuilder，但方法调用方却只知道返回值遵守了 MarkdownBuilder 协议。从而也就达到了隐藏实现细节的目的；
 
+// Swift 中的幻象类型:https://mp.weixin.qq.com/s?__biz=MzAxNzgzNTgwMw==&mid=2247488350&idx=1&sn=6f6a8f3842a8957f0233e3c618a758c7&scene=21#wechat_redirect
 //Phantom Types   用于对类型做进一步的强化。
 //Phantom Types 没有严格的定义，一般表述是：出现在泛型参数中，但没有被真正使用。
 //如下代码中的 Role (例子来自 How to use phantom types in Swift)，它只出现在泛型参数中，在 Employee 实现中并未使用：
