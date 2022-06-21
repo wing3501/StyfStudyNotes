@@ -16,14 +16,19 @@ class PDFShareManager: NSObject {
     public func shareImagePDF(_ imageURL: String) {
         downloadImage(imageURL) {[self] image, error in
             if let image = image {
-                createPDF(with: image) {[self] url, error in
-                    if let url = url {
-                        sharePDF(url)
-                    }
-                }
+                shareImagePDF(image)
             }
         }
     }
+    
+    public func shareImagePDF(_ image: UIImage) {
+        createPDF(with: image) {[self] url, error in
+            if let url = url {
+                sharePDF(url)
+            }
+        }
+    }
+    
     private var saveAlbumCompletion: ((Bool) -> Void)?
     public func downloadImageToAlbum(_ imageURL: String,_ completion: @escaping (Bool) -> Void) {
         downloadImage(imageURL) {[self] image, error in
