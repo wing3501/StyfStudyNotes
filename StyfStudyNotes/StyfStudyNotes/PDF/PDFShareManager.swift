@@ -13,18 +13,23 @@ class PDFShareManager: NSObject {
         shared
     }
     
-    public func shareImagePDF(_ imageURL: String) {
+    public func shareImagePDF(_ imageURL: String,_ completion: @escaping (Bool) -> Void) {
         downloadImage(imageURL) {[self] image, error in
             if let image = image {
-                shareImagePDF(image)
+                shareImagePDF(image,completion)
+            }else {
+                completion(false)
             }
         }
     }
     
-    public func shareImagePDF(_ image: UIImage) {
+    public func shareImagePDF(_ image: UIImage,_ completion: @escaping (Bool) -> Void) {
         createPDF(with: image) {[self] url, error in
             if let url = url {
+                completion(true)
                 sharePDF(url)
+            }else {
+                completion(false)
             }
         }
     }
