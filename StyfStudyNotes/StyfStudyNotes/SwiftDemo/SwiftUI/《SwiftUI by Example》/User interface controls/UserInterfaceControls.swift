@@ -459,6 +459,16 @@ struct UsingTextField: View {
                     .padding()
 
                 Text("Your score was \(score).")
+                
+                //通过给TextField赋予参数onEditingChanged可以监听用户是否处于输入状态。
+//                TextField("请输入...", text: $text) { editFlag in
+//                    print("输入状态:\(editFlag)")
+//                }
+                
+                //监控用户是否提交输入
+//                TextField("请输入...", text: $text, onCommit:  {
+//                    print("已提交")
+//                })
             }
         }
     }
