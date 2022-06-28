@@ -1,1 +1,0 @@
-../../../../my_flutter/.ios/.symlinks/plugins/photo_manager/ios/Classes/core/PMFileHelper.h

@@ -102,9 +102,9 @@
 //    函数返回进程内指定映像mhp中的段segname中内容的地址指针，而整个段的尺寸则返回到size所指的指针当中。这个函数的内部实现就是返回段描述信息结构struct segment_command中的vmaddr数据成员的值加上映像mhp的slide值。而size中返回的就是段描述信息结构中的vmsize数据成员。
     
     //⚠️进程中每个映像中的第一个__TEXT段的数据的地址其实就是这个映像的mach_header头结构的地址。这是一个比较特殊的情况。
-    extern const struct mach_header* _NSGetMachExecuteHeader(void);
-    const struct mach_header *machHeader = _NSGetMachExecuteHeader();
-    uint8_t *segmentdata = getsegmentdata((struct mach_header_64 *)machHeader, "__TEXT", &size);
+//    extern const struct mach_header* _NSGetMachExecuteHeader(void);
+//    const struct mach_header *machHeader = _NSGetMachExecuteHeader();
+//    uint8_t *segmentdata = getsegmentdata((struct mach_header_64 *)machHeader, "__TEXT", &size);
 
 //    6.获取进程映像的某段中某节的数据
 //    //获取进程映像中的某段中某节的数据地址和尺寸。
@@ -164,11 +164,11 @@
     //    const struct mach_header* _NSGetMachExecuteHeader()
     //    这个函数返回当前进程的可执行程序映像的头部信息结构体指针。
     //    因为这个函数没有在某个具体的头文件中被声明，所以当你要使用这个函数时需要在源代码文件的开头进行声明处理：
-        extern const struct mach_header* _NSGetMachExecuteHeader(void);
-        const struct mach_header *machHeader1 = _NSGetMachExecuteHeader();
-        Dl_info info1;
-        dladdr(machHeader1, &info1);
-        printf("%s %p\n",info1.dli_fname,info1.dli_fbase);
+//        extern const struct mach_header* _NSGetMachExecuteHeader(void);
+//        const struct mach_header *machHeader1 = _NSGetMachExecuteHeader();
+//        Dl_info info1;
+//        dladdr(machHeader1, &info1);
+//        printf("%s %p\n",info1.dli_fname,info1.dli_fbase);
 
     //    3.获取进程中某个映像加载的Slide值
     //    intptr_t   _dyld_get_image_vmaddr_slide(uint32_t image_index)

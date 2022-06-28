@@ -2,8 +2,8 @@
 platform :ios, '9.0'
 
 # 添加模块所在路径
-flutter_application_path = 'my_flutter'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+#flutter_application_path = 'my_flutter'
+#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target 'StyfStudyNotes' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -16,7 +16,7 @@ target 'StyfStudyNotes' do
   pod 'JXCategoryView'
   
   # 安装Flutter模块
-  install_all_flutter_pods(flutter_application_path)
+ # install_all_flutter_pods(flutter_application_path)
   
 #  pod 'GLResponderChain', '~> 1.0.3'
 #  pod 'Animatable', '~> 1.0.6'

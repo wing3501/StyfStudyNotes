@@ -1594,12 +1594,9 @@
 			buildConfigurationList = 92A8D7E125D288DD0008EFAA /* Build configuration list for PBXNativeTarget "StyfStudyNotes" */;
 			buildPhases = (
 				AFC630EEB1FEE6F4E3D0288F /* [CP] Check Pods Manifest.lock */,
-				169FCF14E8CB95DA34F81505 /* [CP-User] Run Flutter Build my_flutter Script */,
 				92A8D7C425D288DA0008EFAA /* Sources */,
 				92A8D7C525D288DA0008EFAA /* Frameworks */,
 				92A8D7C625D288DA0008EFAA /* Resources */,
-				8A32DCF55F4E38B71F1B0F9B /* [CP] Embed Pods Frameworks */,
-				57E00693B58410392DED3771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1660,50 +1657,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		169FCF14E8CB95DA34F81505 /* [CP-User] Run Flutter Build my_flutter Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] Run Flutter Build my_flutter Script";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
-		};
-		57E00693B58410392DED3771 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A32DCF55F4E38B71F1B0F9B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AFC630EEB1FEE6F4E3D0288F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

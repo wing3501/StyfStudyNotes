@@ -6,12 +6,12 @@
 //
 
 #import "OpenFlutter.h"
-#import <Flutter/Flutter.h>
-#import <flutter_boost/FlutterBoost.h>
+//#import <Flutter/Flutter.h>
+//#import <flutter_boost/FlutterBoost.h>
 
 @interface OpenFlutter ()
 /// <#name#>
-@property (nonatomic, strong) FlutterEngine *flutterEngine;
+//@property (nonatomic, strong) FlutterEngine *flutterEngine;
 @end
 
 @implementation OpenFlutter
@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.brownColor;
+    
+    //❌ 升级Xcode14 beta之后，以前一些flutter第三方库编译报错，所以注释了
     
     
     //FlutterBoost 原生打开Flutter页面
@@ -41,7 +43,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [[FlutterBoost instance]open:@"/" arguments:@{@"present":@(YES),@"animated":@(YES)} completion:nil];
+//    [[FlutterBoost instance]open:@"/" arguments:@{@"present":@(YES),@"animated":@(YES)} completion:nil];
 //    [[FlutterBoost instance]open:@"/callnative" arguments:@{@"animated":@(YES)} completion:nil];
 }
 

@@ -1,6 +1,10 @@
 import UIKit
 
+
+let digits = /\d+/
+
 var str = "Hello, playground"
+let arr = str.utf8
 
 var namesOfIntegers = [Int: String]()
 var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]

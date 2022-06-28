@@ -14,43 +14,6 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - audioplayers (0.0.1):
-    - Flutter
-  - camera (0.0.1):
-    - Flutter
-  - connectivity (0.0.1):
-    - Flutter
-    - Reachability
-  - Flutter (1.0.0)
-  - flutter_boost (0.0.2):
-    - Flutter
-  - flutter_inappwebview (0.0.1):
-    - Flutter
-    - flutter_inappwebview/Core (= 0.0.1)
-    - OrderedSet (~> 5.0)
-  - flutter_inappwebview/Core (0.0.1):
-    - Flutter
-    - OrderedSet (~> 5.0)
-  - FlutterPluginRegistrant (0.0.1):
-    - audioplayers
-    - camera
-    - connectivity
-    - Flutter
-    - flutter_boost
-    - flutter_inappwebview
-    - image_picker
-    - path_provider
-    - permission_handler
-    - photo_manager
-    - shared_preferences
-    - sqflite
-    - video_player
-    - webview_flutter
-  - FMDB (2.7.5):
-    - FMDB/standard (= 2.7.5)
-  - FMDB/standard (2.7.5)
-  - image_picker (0.0.1):
-    - Flutter
   - JXCategoryView (1.5.9)
   - KSCrash (1.15.25):
     - KSCrash/Installations (= 1.15.25)
@@ -117,127 +80,35 @@ PODS:
     - KSCrash/Recording
   - KVOController (1.2.0)
   - Masonry (1.1.0)
-  - my_flutter (0.0.1):
-    - Flutter
-  - OrderedSet (5.0.0)
-  - path_provider (0.0.1):
-    - Flutter
-  - "permission_handler (5.1.0+2)":
-    - Flutter
-  - photo_manager (0.0.1):
-    - Flutter
-    - FlutterMacOS
-  - Reachability (3.2)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
-  - shared_preferences (0.0.1):
-    - Flutter
-  - sqflite (0.0.2):
-    - Flutter
-    - FMDB (>= 2.7.5)
-  - video_player (0.0.1):
-    - Flutter
-  - webview_flutter (0.0.1):
-    - Flutter
 
 DEPENDENCIES:
   - AFNetworking
-  - audioplayers (from `my_flutter/.ios/.symlinks/plugins/audioplayers/ios`)
-  - camera (from `my_flutter/.ios/.symlinks/plugins/camera/ios`)
-  - connectivity (from `my_flutter/.ios/.symlinks/plugins/connectivity/ios`)
-  - Flutter (from `my_flutter/.ios/Flutter/engine`)
-  - flutter_boost (from `my_flutter/.ios/.symlinks/plugins/flutter_boost/ios`)
-  - flutter_inappwebview (from `my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios`)
-  - FlutterPluginRegistrant (from `my_flutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - image_picker (from `my_flutter/.ios/.symlinks/plugins/image_picker/ios`)
   - JXCategoryView
   - KSCrash
   - KVOController
   - Masonry
-  - my_flutter (from `my_flutter/.ios/Flutter`)
-  - path_provider (from `my_flutter/.ios/.symlinks/plugins/path_provider/ios`)
-  - permission_handler (from `my_flutter/.ios/.symlinks/plugins/permission_handler/ios`)
-  - photo_manager (from `my_flutter/.ios/.symlinks/plugins/photo_manager/ios`)
   - SDWebImage
-  - shared_preferences (from `my_flutter/.ios/.symlinks/plugins/shared_preferences/ios`)
-  - sqflite (from `my_flutter/.ios/.symlinks/plugins/sqflite/ios`)
-  - video_player (from `my_flutter/.ios/.symlinks/plugins/video_player/ios`)
-  - webview_flutter (from `my_flutter/.ios/.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - FMDB
     - JXCategoryView
     - KSCrash
     - KVOController
     - Masonry
-    - OrderedSet
-    - Reachability
     - SDWebImage
-
-EXTERNAL SOURCES:
-  audioplayers:
-    :path: my_flutter/.ios/.symlinks/plugins/audioplayers/ios
-  camera:
-    :path: my_flutter/.ios/.symlinks/plugins/camera/ios
-  connectivity:
-    :path: my_flutter/.ios/.symlinks/plugins/connectivity/ios
-  Flutter:
-    :path: my_flutter/.ios/Flutter/engine
-  flutter_boost:
-    :path: my_flutter/.ios/.symlinks/plugins/flutter_boost/ios
-  flutter_inappwebview:
-    :path: my_flutter/.ios/.symlinks/plugins/flutter_inappwebview/ios
-  FlutterPluginRegistrant:
-    :path: my_flutter/.ios/Flutter/FlutterPluginRegistrant
-  image_picker:
-    :path: my_flutter/.ios/.symlinks/plugins/image_picker/ios
-  my_flutter:
-    :path: my_flutter/.ios/Flutter
-  path_provider:
-    :path: my_flutter/.ios/.symlinks/plugins/path_provider/ios
-  permission_handler:
-    :path: my_flutter/.ios/.symlinks/plugins/permission_handler/ios
-  photo_manager:
-    :path: my_flutter/.ios/.symlinks/plugins/photo_manager/ios
-  shared_preferences:
-    :path: my_flutter/.ios/.symlinks/plugins/shared_preferences/ios
-  sqflite:
-    :path: my_flutter/.ios/.symlinks/plugins/sqflite/ios
-  video_player:
-    :path: my_flutter/.ios/.symlinks/plugins/video_player/ios
-  webview_flutter:
-    :path: my_flutter/.ios/.symlinks/plugins/webview_flutter/ios
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
-  camera: 3164201dc344383e62282964016528c4f5a9ad50
-  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
-  Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
-  flutter_boost: 1002395f7c6ec9459d293417e6524ecd29ecdffb
-  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
-  FlutterPluginRegistrant: c77b7cb5c683012fa27e37271cee71386603732e
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  image_picker: e06f7a68f000bd36f552c1847e33cda96ed31f1f
   JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
   KSCrash: 6689ba5c43800f831b68928ccdbcc8b201d4dd86
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  my_flutter: 5f71a42a61a499a9f322f2c0f62fc185a5807c9b
-  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
-  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
-  photo_manager: 61cdd6835af271b9ad1bb533fccf71d5db02fff3
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
-  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
-  video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
-  webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
 
-PODFILE CHECKSUM: caaeded9a2e65a6d0ff87def2928766594c82e9d
+PODFILE CHECKSUM: a9abd52aa055fc38b9d4d4f64a800b182634020b
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

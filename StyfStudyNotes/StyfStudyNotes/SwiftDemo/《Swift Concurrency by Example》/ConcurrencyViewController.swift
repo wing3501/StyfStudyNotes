@@ -292,11 +292,12 @@ class ConcurrencyViewController: UIViewController {
     @available(iOS 15.0, *)
     func printHighestNumber() async throws {
         let url = URL(string: "https://hws.dev/random-numbers.txt")!
-        if let highest = try await url.lines.compactMap(Int.init).max() {
-            print("Highest number: \(highest)")
-        } else {
-            print("No number was the highest.")
-        }
+        //Xcode14 beta报错，暂时注释
+//        if let highest = try await url.lines.compactMap(Int.init).max() {
+//            print("Highest number: \(highest)")
+//        } else {
+//            print("No number was the highest.")
+//        }
     }
     //-----------------------------------
 //    如何自定义一个AsyncSequence

@@ -1,1 +1,0 @@
-../../../../my_flutter/.ios/.symlinks/plugins/image_picker/ios/Classes/FLTImagePickerMetaDataUtil.h

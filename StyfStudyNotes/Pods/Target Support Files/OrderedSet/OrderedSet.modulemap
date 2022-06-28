@@ -1,6 +1,0 @@
-module OrderedSet {
-  umbrella header "OrderedSet-umbrella.h"
-
-  export *
-  module * { export * }
-}

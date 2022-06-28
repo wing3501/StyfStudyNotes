@@ -1,1 +1,0 @@
-../../../Target Support Files/photo_manager/photo_manager-umbrella.h

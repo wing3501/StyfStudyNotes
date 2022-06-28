@@ -52,7 +52,7 @@ extension Publisher {
 
 class Sample {
     func bar() async {
-        let button = UIButton()
+        let button = await UIButton()
         // 注意，`Sample` 不在 `@MainActor` 中
         // 缺少 await 的话，将报错
         await button.setTitle("Click", for: .normal)
