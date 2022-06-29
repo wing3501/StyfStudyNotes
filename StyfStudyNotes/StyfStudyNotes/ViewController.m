@@ -20,7 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _dataArray = @[@{@"title":@"Leetcode",@"class":@"Leetcode"},
+    _dataArray = @[
+                   @{@"title":@"WWDC",@"class":@"WWDCDemo"},
+                   @{@"title":@"Leetcode",@"class":@"Leetcode"},
                    @{@"title":@"__attribute__",@"class":@"AttributeSection"},
                    @{@"title":@"DesignPatten",@"class":@"DesignPatten"},
                    @{@"title":@"Other",@"class":@"Other"},
@@ -42,8 +44,8 @@
                    @{@"title":@"KVO",@"class":@"KVO"},
                    @{@"title":@"蓝牙",@"class":@"BluetoothDemo"},
                    @{@"title":@"PDF",@"class":@"PDFDemo"},
-                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},
-                   @{@"title":@"Vision",@"class":@"VisionDemo"}
+                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"}
+                   
     ];
     [self.view addSubview:self.tableView];
     
