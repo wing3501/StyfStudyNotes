@@ -632,7 +632,6 @@
 				920986AE286D546000B5F418 /* poems-300.json */,
 				920986AC286D43C900B5F418 /* Poem.swift */,
 				920986B0286D546F00B5F418 /* PoemsDataModel.swift */,
-				920986BF286D700200B5F418 /* PoemDetail.swift */,
 			);
 			path = Poems;
 			sourceTree = "<group>";
@@ -644,6 +643,7 @@
 				920986B5286D6FB200B5F418 /* PoemBookStackNavigationModel.swift */,
 				920986B7286D6FB300B5F418 /* PoemList.swift */,
 				920986B8286D6FB300B5F418 /* RelatedPoems.swift */,
+				920986BF286D700200B5F418 /* PoemDetail.swift */,
 				920986B6286D6FB300B5F418 /* Router.swift */,
 			);
 			path = PoemBookStack;
