@@ -12,6 +12,7 @@ struct WWDCDemoList: View {
         NavigationView {
             List {
                 NavigationLink("【WWDC22 110379】创建一个响应速度更快的媒体应用", destination: QuickmediaApp())
+                NavigationLink("【WWDC22 10054】SwiftUI 新导航方案", destination: PoemBookStack())
             }
         }
     }

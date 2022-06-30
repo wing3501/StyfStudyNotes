@@ -10,6 +10,15 @@
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
+		920986AD286D43C900B5F418 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986AC286D43C900B5F418 /* Poem.swift */; };
+		920986AF286D546000B5F418 /* poems-300.json in Resources */ = {isa = PBXBuildFile; fileRef = 920986AE286D546000B5F418 /* poems-300.json */; };
+		920986B1286D546F00B5F418 /* PoemsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B0286D546F00B5F418 /* PoemsDataModel.swift */; };
+		920986BA286D6FB300B5F418 /* PoemBookStackNavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B5286D6FB200B5F418 /* PoemBookStackNavigationModel.swift */; };
+		920986BB286D6FB300B5F418 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B6286D6FB300B5F418 /* Router.swift */; };
+		920986BC286D6FB300B5F418 /* PoemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B7286D6FB300B5F418 /* PoemList.swift */; };
+		920986BD286D6FB300B5F418 /* RelatedPoems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B8286D6FB300B5F418 /* RelatedPoems.swift */; };
+		920986BE286D6FB300B5F418 /* PoemBookStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B9286D6FB300B5F418 /* PoemBookStack.swift */; };
+		920986C0286D700200B5F418 /* PoemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986BF286D700200B5F418 /* PoemDetail.swift */; };
 		920A7BC22824B9A60011A12D /* TableExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC12824B9A60011A12D /* TableExample.swift */; };
 		920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC32824F0830011A12D /* AnimationExample.swift */; };
 		920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC6282522A30011A12D /* SwiftUIByExample.swift */; };
@@ -242,6 +251,15 @@
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
+		920986AC286D43C900B5F418 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		920986AE286D546000B5F418 /* poems-300.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "poems-300.json"; sourceTree = "<group>"; };
+		920986B0286D546F00B5F418 /* PoemsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemsDataModel.swift; sourceTree = "<group>"; };
+		920986B5286D6FB200B5F418 /* PoemBookStackNavigationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemBookStackNavigationModel.swift; sourceTree = "<group>"; };
+		920986B6286D6FB300B5F418 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		920986B7286D6FB300B5F418 /* PoemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemList.swift; sourceTree = "<group>"; };
+		920986B8286D6FB300B5F418 /* RelatedPoems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelatedPoems.swift; sourceTree = "<group>"; };
+		920986B9286D6FB300B5F418 /* PoemBookStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemBookStack.swift; sourceTree = "<group>"; };
+		920986BF286D700200B5F418 /* PoemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemDetail.swift; sourceTree = "<group>"; };
 		920A7BC12824B9A60011A12D /* TableExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExample.swift; sourceTree = "<group>"; };
 		920A7BC32824F0830011A12D /* AnimationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExample.swift; sourceTree = "<group>"; };
 		920A7BC6282522A30011A12D /* SwiftUIByExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIByExample.swift; sourceTree = "<group>"; };
@@ -605,6 +623,30 @@
 				9208CCBD28083E290095E1C1 /* HeadingViewController.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		920986AB286D43A600B5F418 /* Poems */ = {
+			isa = PBXGroup;
+			children = (
+				920986B4286D6FAC00B5F418 /* PoemBookStack */,
+				920986AE286D546000B5F418 /* poems-300.json */,
+				920986AC286D43C900B5F418 /* Poem.swift */,
+				920986B0286D546F00B5F418 /* PoemsDataModel.swift */,
+				920986BF286D700200B5F418 /* PoemDetail.swift */,
+			);
+			path = Poems;
+			sourceTree = "<group>";
+		};
+		920986B4286D6FAC00B5F418 /* PoemBookStack */ = {
+			isa = PBXGroup;
+			children = (
+				920986B9286D6FB300B5F418 /* PoemBookStack.swift */,
+				920986B5286D6FB200B5F418 /* PoemBookStackNavigationModel.swift */,
+				920986B7286D6FB300B5F418 /* PoemList.swift */,
+				920986B8286D6FB300B5F418 /* RelatedPoems.swift */,
+				920986B6286D6FB300B5F418 /* Router.swift */,
+			);
+			path = PoemBookStack;
 			sourceTree = "<group>";
 		};
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
@@ -1510,6 +1552,7 @@
 		92E0E50C2860103100F18C73 /* WWDC */ = {
 			isa = PBXGroup;
 			children = (
+				920986AB286D43A600B5F418 /* Poems */,
 				92E0E50F2860118800F18C73 /* WWDCDemo.swift */,
 				92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */,
 				92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */,
@@ -1656,6 +1699,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920986AF286D546000B5F418 /* poems-300.json in Resources */,
 				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
 				928BDA2F286BED2400D856DA /* 1234.MP4 in Resources */,
@@ -1703,6 +1747,7 @@
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
 				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
 				92A417DE28128F8000603DCE /* PokemonInfoPanelHeader.swift in Sources */,
+				920986B1286D546F00B5F418 /* PoemsDataModel.swift in Sources */,
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
@@ -1730,6 +1775,7 @@
 				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
 				92CA9CBF2816505500246D51 /* Store.swift in Sources */,
 				923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */,
+				920986AD286D43C900B5F418 /* Poem.swift in Sources */,
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
 				92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
@@ -1746,6 +1792,7 @@
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
+				920986BE286D6FB300B5F418 /* PoemBookStack.swift in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
 				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
@@ -1806,6 +1853,7 @@
 				92CA9CC128166D6100246D51 /* User.swift in Sources */,
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
+				920986BA286D6FB300B5F418 /* PoemBookStackNavigationModel.swift in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
@@ -1837,6 +1885,7 @@
 				9287E0B2282E4C8D00AA87FE /* TapsAndGestures.swift in Sources */,
 				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
 				920A7BCD282526DD0011A12D /* Menu.swift in Sources */,
+				920986BC286D6FB300B5F418 /* PoemList.swift in Sources */,
 				924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
@@ -1870,6 +1919,7 @@
 				920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */,
 				921545CF2817C8FB009781D2 /* StringExtension.swift in Sources */,
 				92A417D62812724700603DCE /* PokemonList.swift in Sources */,
+				920986C0286D700200B5F418 /* PoemDetail.swift in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
 				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,
 				9287E0AF282E399900AA87FE /* RespondingToEvents.swift in Sources */,
@@ -1887,6 +1937,7 @@
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
+				920986BD286D6FB300B5F418 /* RelatedPoems.swift in Sources */,
 				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
@@ -1895,6 +1946,7 @@
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
 				9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
+				920986BB286D6FB300B5F418 /* Router.swift in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
@@ -2056,7 +2108,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2080,7 +2132,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
