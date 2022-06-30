@@ -3,6 +3,7 @@
 //  StyfStudyNotes
 //
 //  Created by styf on 2022/6/28.
+//  【WWDC22 110379】创建一个响应速度更快的媒体应用
 //  https://xiaozhuanlan.com/topic/4263197580
 
 import SwiftUI

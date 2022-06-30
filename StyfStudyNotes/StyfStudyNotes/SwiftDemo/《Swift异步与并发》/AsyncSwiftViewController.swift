@@ -212,6 +212,150 @@ class AsyncSwiftViewController: UIViewController {
     func reportRoom(room: isolated Room) {
         print("Room: \(room.visitorCount)")
     }
+    //-----------------------------------
+//    【WWDC22 110350】Swift 并发的可视化和优化   https://xiaozhuanlan.com/topic/0186237549
+//    一个使用actor和nonisolated进行优化的例子
+    // 一个用于表示文件压缩的类
+    
+    struct FileStatus {
+        var url: URL
+        var progress: Double
+        var uncompressedSize: Int
+        var compressedSize: Int
+    }
+    
+    @MainActor
+    class CompressionState: ObservableObject {
+      // UI 监听的属性
+      @Published var files: [FileStatus] = []
+        var compressor: ParallelCompressor!
+
+        init() {
+          self.compressor = ParallelCompressor(status: self)
+        }
+
+      // 更新文件压缩进度，作用是更新 UI
+      func update(url: URL, progress: Double) {
+        if let loc = files.firstIndex(where: {$0.url == url}) {
+          files[loc].progress = progress
+        }
+      }
+
+      // 更新文件还未压缩完的尺寸，作用是更新 UI
+      func update(url: URL, uncompressedSize: Int) {
+        if let loc = files.firstIndex(where: {$0.url == url}) {
+          files[loc].uncompressedSize = uncompressedSize
+        }
+      }
+
+      // 更新文件已经压缩完的尺寸，作用是更新 UI
+      func update(url: URL, compressedSize: Int) {
+        if let loc = files.firstIndex(where: {$0.url == url}) {
+          files[loc].compressedSize = compressedSize
+        }
+      }
+
+      // 压缩所有文件
+      func compressAllFiles() {
+        for file in files {
+          // 为每个文件开启了新任务，实行并行压缩
+//          Task {
+//            let compressedData = compressFile(url: file.url)
+//            await save(compressedData, to: file.url)
+//          }
+//          ✅ 最后我们在创建异步任务的时候，把 Task {} 换成 Task.detached{}，这样做可以让创建出来的任务不继承创建它的那个 Actor 的上下文。
+            // 改成 detached
+//               Task.detached {
+//                 let compressedData = await self.compressor.compressFile(url: file.url)
+//                 await save(compressedData, to: file.url)
+//               }
+        }
+      }
+        // ❎ compressFile在MainActor中，所以会阻塞主线程，需要迁移出去
+//      // 压缩文件并在回调更新 UI 相关属性和记录日志
+//      func compressFile(url: URL) -> Data {
+//        log(update: "Starting for \(url)")
+//        // 可以认为是一个耗时操作
+//        let compressedData = CompressionUtils.compressDataInFile(at: url) { uncompressedSize in
+//          update(url: url, uncompressedSize: uncompressedSize)
+//        } progressNotification: { progress in
+//          update(url: url, progress: progress)
+//          log(update: "Progress for \(url): \(progress)")
+//        } finalNotificaton: { compressedSize in
+//          update(url: url, compressedSize: compressedSize)
+//        }
+//        log(update: "Ending for \(url)")
+//        return compressedData
+//      }
+        // ❎ 虽然logs需要串行访问，但不必在主线程，需要迁移出去
+//      func log(update: String) {
+//        logs.append(update)
+//      }
+    }
+    
+    // 重构后的第二个actor，用于平行压缩多个文件
+    actor ParallelCompressor {
+      // 在actor中 logs属性串行访问，线程安全
+      var logs: [String] = []
+      unowned let status: CompressionState
+
+      init(status: CompressionState) {
+        self.status = status
+      }
+
+//      // 压缩文件逻辑
+//      func compressFile(url: URL) -> Data {
+//        log(update: "Starting for \(url)")
+//        let compressedData = CompressionUtils.compressDataInFile(at: url) { uncompressedSize in
+//          Task { @MainActor in
+//            status.update(url: url, uncompressedSize: uncompressedSize)
+//          }
+//        } progressNotification: { progress in
+//          Task { @MainActor in
+//            status.update(url: url, progress: progress)
+//            await log(update: "Progress for \(url): \(progress)")
+//          }
+//        } finalNotificaton: { compressedSize in
+//          Task { @MainActor in
+//            status.update(url: url, compressedSize: compressedSize)
+//          }
+//        }
+//        log(update: "Ending for \(url)")
+//        return compressedData
+//      }
+        
+        // ✅ compressFile 这个方法其余的部分其实是可以并发执行的，并不一定要在 Actor 中执行。
+        // 通过 nonisolated 等方式让允许并发执行的代码块并发执行，让必须访问 Actor 的代码块串行执行，在保证线程安全的同时又能够提高 CPU 的利用率。
+//        同时这个方法里，我们原先对 Actor 的 logs 属性的同步访问，需要修改成异步访问 （加上 await 关键字），因为这期间需要切换隔离域。
+        
+        // actor ParallelCompressor
+        // 加上了 nonisolated 的关键字
+//        nonisolated func compressFile(url: URL) async -> Data {
+//          // 用 await 改成异步访问
+//          await log(update: "Starting for \(url)")
+//          let compressedData = CompressionUtils.compressDataInFile(at: url) { uncompressedSize in
+//            Task { @MainActor in
+//              status.update(url: url, uncompressedSize: uncompressedSize)
+//            }
+//          } progressNotification: { progress in
+//            Task { @MainActor in
+//              status.update(url: url, progress: progress)
+//              await log(update: "Progress for \(url): \(progress)")
+//            }
+//          } finalNotificaton: { compressedSize in
+//            Task { @MainActor in
+//              status.update(url: url, compressedSize: compressedSize)
+//            }
+//          }
+//          // 用 await 改成异步访问
+//          await log(update: "Ending for \(url)")
+//          return compressedData
+//        }
+
+      func log(update: String) {
+        logs.append(update)
+      }
+    }
     
     //-----------------------------------
 //    → 在 actor 中的声明，默认处于 actor 的隔离域中。
