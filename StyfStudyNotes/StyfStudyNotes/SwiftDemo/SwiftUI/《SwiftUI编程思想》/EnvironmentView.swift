@@ -17,7 +17,7 @@ struct EnvironmentView: View {
 //                .transformEnvironment(\.font) { dump($0) }
         }
 //        .font(.largeTitle)  //font 方法，其 实只是 .environment 函数的一个简单包装而已。
-        .environment(\.font, .largeTitle)
+//        .environment(\.font, .largeTitle)
     }
 }
 

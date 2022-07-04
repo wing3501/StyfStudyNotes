@@ -1592,6 +1592,7 @@ public struct AnyBuilder: MarkdownBuilder {
 }
 // 使用
 private let allBuilders: [AnyBuilder]
+
 // 扩展
 public extension MarkdownBuilder {
   func asAnyBuilder() -> AnyBuilder {
@@ -1600,6 +1601,62 @@ public extension MarkdownBuilder {
 }
 BoldBuilder().asAnyBuilder()
 AnyBuilder(BoldBuilder())
+
+// ⚠️ 更方便的类型擦除 使用any
+private let allBuilders1: [any MarkdownBuilder]
+allBuilders1.append(BoldBuilder())
+
+func getBuilder() -> some MarkdownBuilder {
+    return BoldBuilder()
+}
+
+func getBulder1() -> any MarkdownBuilder {
+    return BoldBuilder()
+}
+
+// any some 使用区别
+protocol Pizza {
+    var size: Int { get }
+    var name: String { get }
+}
+
+func receivePizza(_ pizza: Pizza) {//性能不佳，运行时需要拆箱
+    print("Omnomnom, that's a nice \(pizza.name)")
+}
+
+func receivePizza1<T: Pizza>(_ pizza: T) {//区别在于，编译期就知道具体类型
+    print("Omnomnom, that's a nice \(pizza.name)")
+}
+
+func receivePizza2(_ pizza: any Pizza) {//更为方便
+    print("Omnomnom, that's a nice \(pizza.name)")
+}
+
+//let someCollection: Collection 报错 Use of protocol 'Collection' as a type must be written 'any Collection'
+let someCollection: some Collection = [] //Property declares an opaque return type, but has no initializer expression from which to infer an underlying type
+//let someCollection: any Collection
+
+func receivePizza3(_ pizza: some Pizza) {//some关键字还允许编译器在编译时知道some对象的底层类型
+    print("Omnomnom, that's a nice \(pizza.name)")
+}
+
+//any 需要运行时拆箱  some和泛型则在编译期就知道具体类型
+class MusicPlayer { //支持开始时是数组，但是传给play一个set
+//    var playlist: some Collection<String> = [] //2个地方不能推断
+    var playlist: any Collection<String> = []
+
+    func play(_ playlist: some Collection<String>) {
+        self.playlist = playlist
+    }
+}
+
+//class MusicPlayer1<T: Collection<String>> { //强制2个地方用一样的类型
+//    var playlist: T = []
+//
+//    func play(_ playlist: T) {
+//        self.playlist = playlist
+//    }
+//}
 
 //Opaque Types 就是让函数/方法的返回值是协议，而不是具体的类型。
 //只想对外暴露MarkdownBuilder

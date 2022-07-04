@@ -70,26 +70,139 @@ class AsyncSwiftViewController: UIViewController {
         view.backgroundColor = .white
         
         
-        Task {
-            await TaskGroupSample().start2()
-        }
-        
-        let url = URL(string: "https://example.com")!
-        Task {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            self.updateUI(data)
-            
-//            所以，在 UIViewController 的环境中，如果我们希望开始某个异步操作，然后在主线 程中调用自身成员的话，
-//            Task.init 一般会是更好的选择:它能保证 await 后，后续代 码能通过 actor 跳跃回到 MainActor 中执行。
-        }
-        
-        Task.detached {
-            //如果我们将这里的 Task.init 换为 Task.detached 的话，闭包的运行将无视原有隔离域。
-//            此时，想要调用 updateUI，我们需要添加 await 以确保 actor 跳跃能够发生
-            let (data, _) = try await URLSession.shared.data(from: url)
+//        Task {
+//            await TaskGroupSample().start2()
+//        }
+//
+//        let url = URL(string: "https://example.com")!
+//        Task {
+//            let (data, _) = try await URLSession.shared.data(from: url)
 //            self.updateUI(data)
-            await self.updateUI(data)
+//
+////            所以，在 UIViewController 的环境中，如果我们希望开始某个异步操作，然后在主线 程中调用自身成员的话，
+////            Task.init 一般会是更好的选择:它能保证 await 后，后续代 码能通过 actor 跳跃回到 MainActor 中执行。
+//        }
+//
+//        Task.detached {
+//            //如果我们将这里的 Task.init 换为 Task.detached 的话，闭包的运行将无视原有隔离域。
+////            此时，想要调用 updateUI，我们需要添加 await 以确保 actor 跳跃能够发生
+//            let (data, _) = try await URLSession.shared.data(from: url)
+////            self.updateUI(data)
+//            await self.updateUI(data)
+//        }
+        
+//        Task {
+//            var tasks: [Task<Int, Error>] = []
+//            for i in 1...3 {
+//                tasks.append(Task{
+//                    await doMyWork(i)
+//                })
+//            }
+//
+//            for task in tasks {
+//                do {
+//                    let value = try await task.value
+//                    print("结果：\(value)")
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//        }
+        
+//        Task {
+//            async let v1 = doMyWork(1)
+//            async let v2 = doMyWork(2)
+//            async let v3 = doMyWork(3)
+//
+//            print("结果：\(await v1)")
+//            print("结果：\(await v2)")
+//            print("结果：\(await v3)")
+//
+//        }
+        
+//        Task.detached { [self] in
+//            async let v1 = doMyWork(1)
+//            async let v2 = doMyWork(2)
+//            async let v3 = doMyWork(3)
+//
+//            print("结果：\(await v1)")
+//            print("结果：\(await v2)")
+//            print("结果：\(await v3)")
+//        }
+        
+//        Task.detached { [self] in
+//            var sum = 0
+//            async let v1 = doMyWork1()
+//            sum += await v1
+//            async let v2 = doMyWork2()
+//            sum += await v2
+//            async let v3 = doMyWork3()
+//            sum += await v3
+//            print("结果：\(sum)")
+////            print("结果：\(await v1)")
+////            print("结果：\(await v2)")
+////            print("结果：\(await v3)")
+//        }
+        
+        Task.detached { [self] in
+            
+            async let v1 = doMyWork1()
+            async let v2 = doMyWork2()
+            async let v3 = doMyWork3()
+            
+            print("结果：\(await v1)")
+            print("结果：\(await v2)")
+            print("结果：\(await v3)")
         }
+        
+//        Task.detached {
+//            await withTaskGroup(of: Int.self) { group in
+//                for i in 0..<3 {
+//                    group.addTask { [self] in
+////                        addTaskAPI把新的任务添加到当前任务中。被添加的任务会在调度器获取到可用资源 后立即开始执行
+//                        await doMyWork(i)
+//                    }
+//                }
+//                print("Task added")
+//
+//                for await result in group {
+//                    print("Get result: \(result)")
+//                }
+//                print("Task ended")
+//            }
+//        }
+    }
+    
+    func doMyWork(_ i: Int) async -> Int {
+        NSLog("work:\(i)-------begin----\(Thread.current)")
+//        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        Thread.sleep(forTimeInterval: 2)
+        NSLog("work:\(i)-------end----\(Thread.current)")
+        return i
+    }
+    
+    func doMyWork1() async -> Int {
+        NSLog("-------begin----\(Thread.current)")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+//        Thread.sleep(forTimeInterval: 2)
+        NSLog("-------end----\(Thread.current)")
+        return 1
+    }
+    
+    func doMyWork2() async -> Int {
+        NSLog("-------begin----\(Thread.current)")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+//        Thread.sleep(forTimeInterval: 2)
+        NSLog("-------end----\(Thread.current)")
+        return 2
+    }
+    
+    func doMyWork3() async -> Int {
+        NSLog("-------begin----\(Thread.current)")
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+//        Thread.sleep(forTimeInterval: 2)
+        NSLog("-------end----\(Thread.current)")
+        return 3
     }
     
     private func updateUI(_ data: Data?) {

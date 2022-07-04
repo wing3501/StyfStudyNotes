@@ -19,6 +19,7 @@
 		920986BD286D6FB300B5F418 /* RelatedPoems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B8286D6FB300B5F418 /* RelatedPoems.swift */; };
 		920986BE286D6FB300B5F418 /* PoemBookStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986B9286D6FB300B5F418 /* PoemBookStack.swift */; };
 		920986C0286D700200B5F418 /* PoemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920986BF286D700200B5F418 /* PoemDetail.swift */; };
+		920989A7286DA0F500B5F418 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920989A6286DA0F500B5F418 /* Print.swift */; };
 		920A7BC22824B9A60011A12D /* TableExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC12824B9A60011A12D /* TableExample.swift */; };
 		920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC32824F0830011A12D /* AnimationExample.swift */; };
 		920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920A7BC6282522A30011A12D /* SwiftUIByExample.swift */; };
@@ -260,6 +261,7 @@
 		920986B8286D6FB300B5F418 /* RelatedPoems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelatedPoems.swift; sourceTree = "<group>"; };
 		920986B9286D6FB300B5F418 /* PoemBookStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemBookStack.swift; sourceTree = "<group>"; };
 		920986BF286D700200B5F418 /* PoemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemDetail.swift; sourceTree = "<group>"; };
+		920989A6286DA0F500B5F418 /* Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		920A7BC12824B9A60011A12D /* TableExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExample.swift; sourceTree = "<group>"; };
 		920A7BC32824F0830011A12D /* AnimationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExample.swift; sourceTree = "<group>"; };
 		920A7BC6282522A30011A12D /* SwiftUIByExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIByExample.swift; sourceTree = "<group>"; };
@@ -1128,6 +1130,7 @@
 			children = (
 				92CA9D0228168FE300246D51 /* FileHelper.swift */,
 				92E0E511286044C000F18C73 /* Global.swift */,
+				920989A6286DA0F500B5F418 /* Print.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1807,6 +1810,7 @@
 				9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */,
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				920989A7286DA0F500B5F418 /* Print.swift in Sources */,
 				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
