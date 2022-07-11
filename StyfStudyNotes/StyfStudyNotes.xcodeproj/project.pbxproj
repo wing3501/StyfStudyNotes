@@ -127,6 +127,9 @@
 		924C7157281BC85400B4AEE8 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7156281BC85400B4AEE8 /* Preference.swift */; };
 		924C7159281BD54200B4AEE8 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7158281BD54200B4AEE8 /* Measure.swift */; };
 		925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925447782816C01B00058CBD /* UserDefaultsStorage.swift */; };
+		9255F3F02877CA99009E32FF /* SwiftUI编程思想.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9255F3EF2877CA99009E32FF /* SwiftUI编程思想.pdf */; };
+		9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9255F3F12877CDA0009E32FF /* CreateSharePDF.swift */; };
+		9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9255F3F32877CEDC009E32FF /* PDFKitDemo.swift */; };
 		9256DE872834C1AB007391D7 /* PresentingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9256DE862834C1AA007391D7 /* PresentingViewsDemo.swift */; };
 		925810222806C452008AF141 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810212806C452008AF141 /* GithubAPI.swift */; };
 		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
@@ -423,6 +426,9 @@
 		924C7156281BC85400B4AEE8 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		924C7158281BD54200B4AEE8 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		925447782816C01B00058CBD /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		9255F3EF2877CA99009E32FF /* SwiftUI编程思想.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "SwiftUI编程思想.pdf"; sourceTree = "<group>"; };
+		9255F3F12877CDA0009E32FF /* CreateSharePDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSharePDF.swift; sourceTree = "<group>"; };
+		9255F3F32877CEDC009E32FF /* PDFKitDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitDemo.swift; sourceTree = "<group>"; };
 		9256DE862834C1AA007391D7 /* PresentingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewsDemo.swift; sourceTree = "<group>"; };
 		925810212806C452008AF141 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
@@ -1119,7 +1125,10 @@
 		92701A26283E1F7000295028 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
+				9255F3EF2877CA99009E32FF /* SwiftUI编程思想.pdf */,
 				92701A29283E1FBA00295028 /* PDFDemo.swift */,
+				9255F3F32877CEDC009E32FF /* PDFKitDemo.swift */,
+				9255F3F12877CDA0009E32FF /* CreateSharePDF.swift */,
 				92E0934C28588ADA00149598 /* PDFShareManager.swift */,
 			);
 			path = PDF;
@@ -1708,6 +1717,7 @@
 				928BDA2F286BED2400D856DA /* 1234.MP4 in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
+				9255F3F02877CA99009E32FF /* SwiftUI编程思想.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1790,6 +1800,7 @@
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
+				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
@@ -1848,6 +1859,7 @@
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
+				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
 				920A7BC22824B9A60011A12D /* TableExample.swift in Sources */,
 				92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
