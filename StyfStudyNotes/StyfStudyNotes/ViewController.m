@@ -44,7 +44,8 @@
                    @{@"title":@"KVO",@"class":@"KVO"},
                    @{@"title":@"蓝牙",@"class":@"BluetoothDemo"},
                    @{@"title":@"PDF",@"class":@"PDFDemo"},
-                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"}
+                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},
+                   @{@"title":@"SwiftUI_Other",@"class":@"SwiftUIOther"}
                    
     ];
     [self.view addSubview:self.tableView];

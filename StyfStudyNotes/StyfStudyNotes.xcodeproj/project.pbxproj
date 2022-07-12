@@ -237,6 +237,19 @@
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
 		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
+		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
+		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
+		92F06ABC287D516400ADA9E9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ABB287D516400ADA9E9 /* ProfileView.swift */; };
+		92F06ABE287D559F00ADA9E9 /* ProfileContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ABD287D559F00ADA9E9 /* ProfileContentProvider.swift */; };
+		92F06AC0287D560F00ADA9E9 /* PrivacyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ABF287D560F00ADA9E9 /* PrivacyLevel.swift */; };
+		92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AC1287D56FB00ADA9E9 /* ProfileUser.swift */; };
+		92F06AC4287D596D00ADA9E9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AC3287D596D00ADA9E9 /* DIContainer.swift */; };
+		92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AC5287D604E00ADA9E9 /* UserPreferencesView.swift */; };
+		92F06AC8287D63DE00ADA9E9 /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AC7287D63DE00ADA9E9 /* PreferencesStore.swift */; };
+		92F06ACA287D654B00ADA9E9 /* PrivacySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AC9287D654B00ADA9E9 /* PrivacySetting.swift */; };
+		92F06ACC287D673700ADA9E9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACB287D673700ADA9E9 /* ImageView.swift */; };
+		92F06ACE287D67AF00ADA9E9 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACD287D67AF00ADA9E9 /* Mock.swift */; };
+		92F06AD0287D67ED00ADA9E9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */; };
 		92F2EFC12815170B00773B17 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2EFC02815170B00773B17 /* Utils.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
 		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
@@ -567,6 +580,19 @@
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
 		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
+		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
+		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
+		92F06ABB287D516400ADA9E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		92F06ABD287D559F00ADA9E9 /* ProfileContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentProvider.swift; sourceTree = "<group>"; };
+		92F06ABF287D560F00ADA9E9 /* PrivacyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLevel.swift; sourceTree = "<group>"; };
+		92F06AC1287D56FB00ADA9E9 /* ProfileUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUser.swift; sourceTree = "<group>"; };
+		92F06AC3287D596D00ADA9E9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		92F06AC5287D604E00ADA9E9 /* UserPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesView.swift; sourceTree = "<group>"; };
+		92F06AC7287D63DE00ADA9E9 /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		92F06AC9287D654B00ADA9E9 /* PrivacySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySetting.swift; sourceTree = "<group>"; };
+		92F06ACB287D673700ADA9E9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		92F06ACD287D67AF00ADA9E9 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		92F2EFC02815170B00773B17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		92F2EFC22815182800773B17 /* CombinePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombinePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
@@ -1298,6 +1324,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92F06AB5287D505400ADA9E9 /* SwiftUI */,
 				92E0E50C2860103100F18C73 /* WWDC */,
 				92E8A3462856CF93009D3690 /* 字符串安全 */,
 				92701A2B283E246F00295028 /* Utils */,
@@ -1620,6 +1647,34 @@
 			path = "Transforming views";
 			sourceTree = "<group>";
 		};
+		92F06AB5287D505400ADA9E9 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */,
+				92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */,
+				92F06ABA287D514400ADA9E9 /* Dependency Injection */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		92F06ABA287D514400ADA9E9 /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				92F06ABB287D516400ADA9E9 /* ProfileView.swift */,
+				92F06ABD287D559F00ADA9E9 /* ProfileContentProvider.swift */,
+				92F06ABF287D560F00ADA9E9 /* PrivacyLevel.swift */,
+				92F06AC1287D56FB00ADA9E9 /* ProfileUser.swift */,
+				92F06AC3287D596D00ADA9E9 /* DIContainer.swift */,
+				92F06AC5287D604E00ADA9E9 /* UserPreferencesView.swift */,
+				92F06AC7287D63DE00ADA9E9 /* PreferencesStore.swift */,
+				92F06AC9287D654B00ADA9E9 /* PrivacySetting.swift */,
+				92F06ACD287D67AF00ADA9E9 /* Mock.swift */,
+				92F06ACB287D673700ADA9E9 /* ImageView.swift */,
+				92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
 		92F2EFBF281516F400773B17 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -1773,9 +1828,11 @@
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				92116BE7281A87200061086E /* MyTestView.swift in Sources */,
+				92F06AC0287D560F00ADA9E9 /* PrivacyLevel.swift in Sources */,
 				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
+				92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9288BEDD2829186C005A903A /* OrderView.swift in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
@@ -1805,6 +1862,7 @@
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
+				92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
@@ -1812,12 +1870,14 @@
 				920986BE286D6FB300B5F418 /* PoemBookStack.swift in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
+				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
 				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
 				928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */,
 				9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */,
 				9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */,
+				92F06ACE287D67AF00ADA9E9 /* Mock.swift in Sources */,
 				9244F03F25E63DA00008D6BB /* MutexDemo2.m in Sources */,
 				9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */,
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
@@ -1848,6 +1908,7 @@
 				923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */,
 				920B9C1325DFC0BD0098B1BA /* MediaPlayer.m in Sources */,
 				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
+				92F06ACC287D673700ADA9E9 /* ImageView.swift in Sources */,
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
 				92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
@@ -1855,6 +1916,7 @@
 				92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */,
+				92F06ABE287D559F00ADA9E9 /* ProfileContentProvider.swift in Sources */,
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
@@ -1865,6 +1927,7 @@
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
 				920A7BC22824B9A60011A12D /* TableExample.swift in Sources */,
 				92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */,
+				92F06AD0287D67ED00ADA9E9 /* ImageLoader.swift in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
@@ -1901,6 +1964,7 @@
 				92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
 				92AC589C28113E44000BE001 /* HistoryView.swift in Sources */,
+				92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */,
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				9287E0B2282E4C8D00AA87FE /* TapsAndGestures.swift in Sources */,
 				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
@@ -1923,6 +1987,7 @@
 				9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */,
 				92CA9CBA28164C0B00246D51 /* MainTab.swift in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
+				92F06AC4287D596D00ADA9E9 /* DIContainer.swift in Sources */,
 				92E2359227671D17003B7C85 /* myCpp.cpp in Sources */,
 				9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */,
 				9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */,
@@ -1944,6 +2009,7 @@
 				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,
 				9287E0AF282E399900AA87FE /* RespondingToEvents.swift in Sources */,
 				92CA9CCA28167A1400246D51 /* AppCommand.swift in Sources */,
+				92F06ABC287D516400ADA9E9 /* ProfileView.swift in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92876936282CDABE006BFE5A /* StacksGridsScrollviews.swift in Sources */,
 				92B848C42819316F00D46185 /* SafariView.swift in Sources */,
@@ -1980,7 +2046,9 @@
 				920E3F0B25E8A4A700DE2990 /* FDownLoaderManager.m in Sources */,
 				921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */,
 				9256DE872834C1AB007391D7 /* PresentingViewsDemo.swift in Sources */,
+				92F06AC8287D63DE00ADA9E9 /* PreferencesStore.swift in Sources */,
 				920E41B225E8DDC700DE2990 /* 其他.swift in Sources */,
+				92F06ACA287D654B00ADA9E9 /* PrivacySetting.swift in Sources */,
 				920B9BF325DFB4610098B1BA /* Command.m in Sources */,
 				92B265A226353BE500C4D16D /* SystemNotify.m in Sources */,
 				928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */,
