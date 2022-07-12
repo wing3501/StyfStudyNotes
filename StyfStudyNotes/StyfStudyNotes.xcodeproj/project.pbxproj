@@ -58,6 +58,7 @@
 		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
+		920F5E91287BCABE00ACDAF4 /* ComposeCustomLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */; };
 		921167B3281A3A150061086E /* TriangleArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B2281A3A150061086E /* TriangleArrow.swift */; };
 		921167B5281A404F0061086E /* FlowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B4281A404F0061086E /* FlowRectangle.swift */; };
 		92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92116BE4281A6C2A0061086E /* LayoutTestView.swift */; };
@@ -331,6 +332,7 @@
 		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
+		920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeCustomLayouts.swift; sourceTree = "<group>"; };
 		921167B2281A3A150061086E /* TriangleArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleArrow.swift; sourceTree = "<group>"; };
 		921167B4281A404F0061086E /* FlowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowRectangle.swift; sourceTree = "<group>"; };
 		92116BE4281A6C2A0061086E /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
@@ -1568,6 +1570,7 @@
 				92E0E50F2860118800F18C73 /* WWDCDemo.swift */,
 				92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */,
 				92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */,
+				920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */,
 				928BDA2E286BED2400D856DA /* 1234.MP4 */,
 			);
 			path = WWDC;
@@ -1866,6 +1869,7 @@
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
+				920F5E91287BCABE00ACDAF4 /* ComposeCustomLayouts.swift in Sources */,
 				92CA9CC128166D6100246D51 /* User.swift in Sources */,
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,

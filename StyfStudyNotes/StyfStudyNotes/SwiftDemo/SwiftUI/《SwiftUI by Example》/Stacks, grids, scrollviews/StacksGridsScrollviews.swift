@@ -10,28 +10,164 @@ import SwiftUI
 struct StacksGridsScrollviews: View {
     var body: some View {
         ScrollView {
-            //模糊效果
-            VisualEffectBlurs()
-            //LazyVStack、LazyHStack使用
-            LazyVStackAndLazyHStack()
-            //网格布局
-            LazyVGridAndLazyHGrid()
-            //滚动视图的3D效果
-            ScrollView3DEffects()
-            //滚动到指定位置
-            UsingScrollViewReader()
-            //滚动视图的使用
-            UsingScrollView()
-            //使用SizeClasses来适配屏幕
-            UsingSizeClasses()
-            //使用ZStack
-            UsingZStack()
-            //使用固定尺寸的Spacer
-            FixedSizeSpacer()
-            UsingVStackAndHStack()
+            //ViewThatFits的使用
+            UsingViewThatFits()
+            
+            //新的网格布局
+            NewGrid()
+            Group {
+                //模糊效果
+                VisualEffectBlurs()
+                //LazyVStack、LazyHStack使用
+                LazyVStackAndLazyHStack()
+                //网格布局
+                LazyVGridAndLazyHGrid()
+                //滚动视图的3D效果
+                ScrollView3DEffects()
+                //滚动到指定位置
+                UsingScrollViewReader()
+                //滚动视图的使用
+                UsingScrollView()
+                //使用SizeClasses来适配屏幕
+                UsingSizeClasses()
+                //使用ZStack
+                UsingZStack()
+                //使用固定尺寸的Spacer
+                FixedSizeSpacer()
+                UsingVStackAndHStack()
+            }
         }
     }
 }
+
+struct UsingViewThatFits: View {
+    var body: some View {
+        TestWrap("ViewThatFits的使用") {
+            //需求1：需求是所有按钮的宽度与最宽的那个按钮保持一致。
+            
+            //需求2：可以不可以有什么智能的方式，在合适屏幕空间选择合适的布局容器呢？
+            //        SwiftUI 提供了新的布局容器选择器 ViewThatFits，我们可以把它当做一个容器视图的集合，它可以自动选择合适的容器视图来适配屏幕的空间。
+//            ViewThatFits {
+//                MyEqualWidthHStack {
+//                    Button()
+//                }
+//                MyEqualWidthVStack {
+//                    Button()
+//                }
+//            }
+            //需求3：宠物排名组件
+//            使用 AnyLayout 来让同一个视图的不同布局切换时平滑过渡。使用 AnyLayout 可以避免重新创建一个新的视图，这样过渡动画也会十分的自然
+//            let layout = isThreeWayTie ? AnyLayout(HStack()) : AnyLayout(VStack())
+        }
+    }
+}
+//需求1：需求是所有按钮的宽度与最宽的那个按钮保持一致。
+struct MyEqualWidthHStack: Layout {
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let maxSize = maxSize(subviews: subviews)
+        
+        let spacing = spacing(subviews: subviews)
+        let totalSpacing = spacing.reduce(0) { $0 + $1 }
+        
+        return CGSize(width: maxSize.width * CGFloat(subviews.count) + totalSpacing, height: maxSize.height)
+    }
+    
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let maxSize = maxSize(subviews: subviews)
+        let spacing = spacing(subviews: subviews)
+        
+        let sizeProposal = ProposedViewSize(width: maxSize.width, height: maxSize.height)
+        var x = bounds.minX + maxSize.width / 2
+        
+        for index in subviews.indices {
+            subviews[index].place(at: CGPoint(x: x, y: bounds.midY), anchor: .center, proposal: sizeProposal)
+            x += maxSize.width + spacing[index]
+        }
+    }
+    
+    private func maxSize(subviews: Subviews) -> CGSize {
+        var maxSize: CGSize = .zero
+        for subview in subviews {
+            let size = subview.sizeThatFits(ProposedViewSize.infinity)
+            if (size.width > maxSize.width) || (size.width == maxSize.width && size.height > maxSize.height) {
+                maxSize = size
+            }
+        }
+        return maxSize
+    }
+    
+    private func spacing(subviews: Subviews) -> [CGFloat] {
+        subviews.indices.map { index in
+            guard index < subviews.count - 1 else { return 0 }
+            return subviews[index].spacing.distance(to: subviews[index + 1].spacing, along: .horizontal)
+        }
+    }
+}
+
+//【WWDC22 10056】在 SwiftUI 中组合各种自定义布局  https://xiaozhuanlan.com/topic/1507368249
+struct NewGrid: View {
+    var body: some View {
+        TestWrap("新的网格布局") {
+            //需求一：第一和第三列的宽度取决于它们所在行内容最大的宽度
+            NewGridDemo1()
+            //需求二：第一列名称文本左对齐；第三列的数量文本右对齐。
+            //需求三：每行加分隔线
+            NewGridDemo2()
+        }
+    }
+}
+
+struct NewGridDemo2: View {
+    var body: some View {
+        Grid(alignment: .leading) {//在这里使用的值 .leading 适用于 Grid 中的所有单元格
+            GridRow {
+                Text("Cat")
+                ProgressView(value: 0.5)
+                Text("25")
+                    .gridColumnAlignment(.trailing)//Grid 提供了一个叫 gridColumnAlignment 视图修饰器,它会用该列中的每个单元格生效。
+            }
+            GridRow {
+                Divider().gridCellColumns(3)
+            }
+            
+            GridRow {
+                Text("Goldfish")
+                ProgressView(value: 0.2)
+                Text("9")
+                    .gridColumnAlignment(.trailing)
+            }
+            GridRow {
+                Divider().gridCellColumns(3)
+            }
+            
+        }
+    }
+}
+
+struct NewGridDemo1: View {
+    var body: some View {
+        Grid {
+            //Grid 一次加载其所有视图，因此它可以自动调整其单元格的大小来自动对齐其所在的列和行。
+            //以宽度最长的单元格宽度，为列宽度
+            GridRow {
+                Text("Cat")
+                ProgressView(value: 0.5)
+                Text("25")
+            }
+            GridRow {
+                Text("Goldfish")
+                ProgressView(value: 0.2)
+                Text("9")
+            }
+            GridRow {
+                Text("Dog")
+                ProgressView(value: 0.5)
+                Text("25")
+            }
+        }
+    }
+}
+
 
 struct VisualEffectBlurs: View {
     var body: some View {
