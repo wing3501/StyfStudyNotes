@@ -11,20 +11,22 @@ struct StaticTextApp: View {
     var body: some View {
         ScrollView {
             VStack {
-                //文字的选中
-                TextSelectionTest()
-                //对Markdown的支持
-                MarkdownTest()
-                //标记文本为敏感信息
-                PrivacySensitiveTest()
-                //标记文本为占位信息
-                RedactedTest()
-                //使用label来显示一个图片和文字
-                LabelTest()
-                //文字的大小写转换
-                TextCaseTest()
-                //日期格式化
-                DateStyleTest()
+                Group {
+                    //文字的选中
+                    TextSelectionTest()
+                    //对Markdown的支持
+                    MarkdownTest()
+                    //标记文本为敏感信息
+                    PrivacySensitiveTest()
+                    //标记文本为占位信息
+                    RedactedTest()
+                    //使用label来显示一个图片和文字
+                    LabelTest()
+                    //文字的大小写转换
+                    TextCaseTest()
+                    //日期格式化
+                    DateStyleTest()
+                }
                 
                 VStack {
                     Text("格式化日期范围：\(Date()...Date().addingTimeInterval(600))")
@@ -89,9 +91,36 @@ struct MarkdownTest: View {
                 Text("~~A strikethrough example~~")
                 Text("`Monospaced works too`")
                 Text("Visit Apple: [click here](https://apple.com)")
+                Text(content)
+                Text(attributedString)
             }
         }
     }
+    var content: AttributedString {
+         var attributedString = try! AttributedString(markdown: "**AttributedString内置支持Markdown**")
+         attributedString.foregroundColor = .blue
+         return attributedString
+    }
+    
+    var attributedString: AttributedString = {
+        do {
+            var text = try AttributedString(markdown: "`SwiftUI` has evolved so much in these two years. **Apple has packed even more features and brought more UI components to the `SwiftUI` framework**, which comes alongside with *Xcode 13*. It just takes UI development on iOS, iPadOS, and macOS to the **next level**.")
+
+            if let range = text.range(of: "Apple") {
+                text[range].backgroundColor = .yellow
+            }
+
+            if let range = text.range(of: "iPadOS") {
+                text[range].backgroundColor = .purple
+                text[range].foregroundColor = .white
+            }
+
+            return text
+
+        } catch {
+            return ""
+        }
+    }()
 }
 
 // 将文字标记为敏感信息
