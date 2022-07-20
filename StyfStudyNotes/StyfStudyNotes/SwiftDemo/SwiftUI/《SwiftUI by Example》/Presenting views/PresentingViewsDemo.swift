@@ -88,6 +88,15 @@ struct PresentANewViewUsingSheets: View {
         .fullScreenCover(isPresented: $showingSheet) {
             SheetView()
         }
+        
+//        .sheet(isPresented: $showBudget, content: {
+//                        BudgetView()
+//                            .ignoresSafeArea()
+                                //presentationDetents 跟随参数是一个集合，示例中设置为 [.large, .height(300)]
+                                //可以做到两段滑动，分别处于 300 和全屏状态。
+//                            .presentationDetents([.large, .height(300)])
+//                            .presentationDragIndicator(.visible)
+//                    })
 //        }
     }
 }

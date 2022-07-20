@@ -144,6 +144,22 @@ struct UsingDisclosureGroup: View {
             Text("Long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here.")
         }
         .frame(width: 300)
+        
+        //状态聚合
+//        DisclosureGroup {
+//            Toggle("Balloons", isOn: $includeBalloons)
+//            Toggle("Confetti", isOn: $includeConfetti)
+//            Toggle("Inflatables", isOn: $includeInflatables)
+//            Toggle("Party Horns", isOn: $includePartyHorns)
+//        } label: {
+//            Toggle("All Decorations", isOn: [
+//                $includeBalloons,
+//                $includeConfetti,
+//                $includeInflatables,
+//                $includePartyHorns
+//            ])
+//        }
+        
 //        }
     }
 }
@@ -265,6 +281,17 @@ struct AddBarItems: View {
                         }
                     }
                 }
+            
+            
+//            ToolbarItemPlacement 新增了 secondaryAction 类型，开发者进行导航栏按钮预设后，允许用户自己决定自己的导航栏按钮的顺序位置等。
+//                .toolbar(id: "invitations") {
+//                    ToolbarItem(id: "new", placement: .secondaryAction) {
+//                        Button(action: sendNewInvitation) {
+//                            Label("New Invitation", systemImage: "envelope")
+//                        }
+//                    }
+//                }
+            
         }
         
 //        }

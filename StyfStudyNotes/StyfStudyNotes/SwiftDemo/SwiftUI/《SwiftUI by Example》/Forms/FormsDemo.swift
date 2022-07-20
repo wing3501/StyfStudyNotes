@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FormsDemo: View {
     var body: some View {
+        //Table的使用
+//        UsingTable()
         //显示或隐藏某一行
         HidingFormRows()
         //禁用表单元素
@@ -23,6 +25,34 @@ struct FormsDemo: View {
 }
 //-----------------------------
 
+//struct UsingTable: View {
+//    @State private var attendees: [Attendee]
+//    var body: some View {
+//        Table(attendees) {
+//            TableColumn("Name") { attendee in
+//                AttendeeRow(attendee)
+//            }
+//            TableColumn("City", value: \.city)
+//            TableColumn("Status") { attendee in
+//                StatusRow(attendee)
+//            }
+//        }
+
+//Table(attendees, selection: $selection) {
+//    ...
+//}
+//.contextMenu(forSelectionType: Attendee.ID.self){ selection in
+//    if selection.isEmpty {
+//        Button("New Invitation") { addInvition() }
+//    } else if 1 == section.count {
+//        Button("Mark as VIP") { markVIPs(selection) }
+//    }
+//    ...
+//}
+
+//    }
+//}
+//-----------------------------
 struct HidingFormRows: View {
     @State private var showingAdvancedOptions = false
     @State private var enableLogging = false

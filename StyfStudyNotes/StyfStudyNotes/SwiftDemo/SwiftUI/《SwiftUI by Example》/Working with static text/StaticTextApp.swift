@@ -44,20 +44,25 @@ struct StaticTextApp: View {
                     //多行文本对齐
                     MultilineTextAlignmentTest()
 
-                    Text("This is an extremely long text string that will never fit even the widest of phones without wrapping")
-                        .font(.largeTitle)
-                        .lineSpacing(20)
-                        .frame(width: 300)
+                    Group {
+                        Text("This is an extremely long text string that will never fit even the widest of phones without wrapping")
+                            .font(.largeTitle)
+                            .lineSpacing(20)
+                            .frame(width: 300)
 
-                    Text("This is an extremely long string of text that will never fit even the widest of iOS devices even if the user has their Dynamic Type setting as small as is possible, so in theory it should definitely demonstrate truncationMode().")
-                        .lineLimit(1)
-                        .truncationMode(.middle)
+                        Text("This is an extremely long string of text that will never fit even the widest of iOS devices even if the user has their Dynamic Type setting as small as is possible, so in theory it should definitely demonstrate truncationMode().")
+                            .lineLimit(1)
+                            .truncationMode(.middle)
+                        
+                        Text("Hello World")
+                            .lineLimit(2...3)
 
-                    Text("The best laid plans")
-                        .padding()
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
-                        .font(.headline)
+                        Text("The best laid plans")
+                            .padding()
+                            .background(Color.yellow)
+                            .foregroundColor(.white)
+                            .font(.headline)
+                    }
                 }
             }
         }

@@ -759,6 +759,28 @@ var fn1: (inout Int,inout Int) -> () = swapVal
 func swapVal1<T1,T2>(_ a: inout T1,_ b: inout T2) {
     
 }
+//泛型方法
+func printElement<T: CustomStringConvertible>(_ element: T) {
+    print(element)
+}
+func printElement1<T>(_ element: T) where T: CustomStringConvertible {
+    print(element)
+}
+func printElement2(_ element: some CustomStringConvertible) {
+    print(element.description)
+}
+//返回值使用泛型
+func convertToArray<T>(_ element: T) -> [T] {
+    return [element]
+}
+//协议扩展使用泛型
+extension Array where Element == String {
+    func uppercaseAll() -> [Element] {
+        map { $0.uppercased() }
+    }
+}
+
+
 
 class Stack<T> {
     var elements = [T]()

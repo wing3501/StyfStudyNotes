@@ -11,7 +11,7 @@ struct TransformingViewsDemo: View {
     var body: some View {
         ScrollView {
             Group {
-                //使用PToggleStyle自定义开关样式
+                //使用ToggleStyle自定义开关样式
                 UsingToggleStyleCustomizingToggle()
                 //使用ProgressViewStyle自定义进度条样式
                 UsingProgressViewStyleCustomizingProgressView()
@@ -65,10 +65,24 @@ struct TransformingViewsDemo: View {
 struct UsingToggleStyleCustomizingToggle : View {
     @State private var isOn = false
     var body: some View {
-        TestWrap("使用PToggleStyle自定义开关样式") {
+        TestWrap("使用ToggleStyle自定义开关样式") {
             VStack {
                 Toggle("Switch Me", isOn: $isOn)
                     .toggleStyle(CheckToggleStyle())
+                
+//                VStack(alignment: .leading) {
+//                    HStack {
+//                        Toggle("#Swiftastic", isOn: $useSwiftHashtag)
+//                        Toggle("#WWParty", isOn: $usePartyHashtag)
+//                    }
+//                    HStack {
+//                        Toggle("#OffTheCharts", isOn: $useChartsHashtag)
+//                        Toggle("#OneMoreThing", isOn: $useOMTHHashtag)
+//                    }
+//                }
+//                .padding()
+//                .toggleStyle(.button)
+//                .buttonStyle(.bordered)
             }
         }
     }

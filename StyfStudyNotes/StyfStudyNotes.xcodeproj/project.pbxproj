@@ -58,7 +58,6 @@
 		920E41B225E8DDC700DE2990 /* 其他.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B125E8DDC700DE2990 /* 其他.swift */; };
 		920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B425E8DDF000DE2990 /* 二进制.swift */; };
 		920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920E41B725E8F6BE00DE2990 /* 二叉树.swift */; };
-		920F5E91287BCABE00ACDAF4 /* ComposeCustomLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */; };
 		921167B3281A3A150061086E /* TriangleArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B2281A3A150061086E /* TriangleArrow.swift */; };
 		921167B5281A404F0061086E /* FlowRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921167B4281A404F0061086E /* FlowRectangle.swift */; };
 		92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92116BE4281A6C2A0061086E /* LayoutTestView.swift */; };
@@ -75,6 +74,7 @@
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */; };
+		921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
 		9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58D26AA941D007E8B6A /* SaleCell.m */; };
@@ -237,6 +237,7 @@
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
 		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
+		92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F008B528854E38002BBD22 /* TransferableDemo.swift */; };
 		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
 		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
 		92F06ABC287D516400ADA9E9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ABB287D516400ADA9E9 /* ProfileView.swift */; };
@@ -345,7 +346,6 @@
 		920E41B125E8DDC700DE2990 /* 其他.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "其他.swift"; sourceTree = "<group>"; };
 		920E41B425E8DDF000DE2990 /* 二进制.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二进制.swift"; sourceTree = "<group>"; };
 		920E41B725E8F6BE00DE2990 /* 二叉树.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "二叉树.swift"; sourceTree = "<group>"; };
-		920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeCustomLayouts.swift; sourceTree = "<group>"; };
 		921167B2281A3A150061086E /* TriangleArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleArrow.swift; sourceTree = "<group>"; };
 		921167B4281A404F0061086E /* FlowRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowRectangle.swift; sourceTree = "<group>"; };
 		92116BE4281A6C2A0061086E /* LayoutTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestView.swift; sourceTree = "<group>"; };
@@ -363,6 +363,7 @@
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
 		921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewInSwiftUI.swift; sourceTree = "<group>"; };
 		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
 		9220D58326AA92A1007E8B6A /* DiffableDataSourceDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffableDataSourceDemo.h; sourceTree = "<group>"; };
 		9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffableDataSourceDemo.m; sourceTree = "<group>"; };
@@ -580,6 +581,7 @@
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
 		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
+		92F008B528854E38002BBD22 /* TransferableDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableDemo.swift; sourceTree = "<group>"; };
 		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
 		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
 		92F06ABB287D516400ADA9E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -1597,7 +1599,8 @@
 				92E0E50F2860118800F18C73 /* WWDCDemo.swift */,
 				92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */,
 				92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */,
-				920F5E90287BCABE00ACDAF4 /* ComposeCustomLayouts.swift */,
+				92F008B528854E38002BBD22 /* TransferableDemo.swift */,
+				921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */,
 				928BDA2E286BED2400D856DA /* 1234.MP4 */,
 			);
 			path = WWDC;
@@ -1932,7 +1935,6 @@
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
 				920B9C0B25DFBDFB0098B1BA /* ShapeDecorator.m in Sources */,
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
-				920F5E91287BCABE00ACDAF4 /* ComposeCustomLayouts.swift in Sources */,
 				92CA9CC128166D6100246D51 /* User.swift in Sources */,
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
@@ -1981,6 +1983,7 @@
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
+				921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A417D2281248C100603DCE /* PokemonViewModel.swift in Sources */,
 				921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */,
@@ -1999,6 +2002,7 @@
 				920B9C2325DFC2180098B1BA /* MediaAdapter.m in Sources */,
 				924C7155281BBA1800B4AEE8 /* EnvironmentView.swift in Sources */,
 				9246CAAC2836325300E6FB65 /* HandleData.swift in Sources */,
+				92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */,
 				922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */,
 				9244F03A25E63DA00008D6BB /* NSConditionLockDemo.m in Sources */,
 				920A7BC42824F0830011A12D /* AnimationExample.swift in Sources */,

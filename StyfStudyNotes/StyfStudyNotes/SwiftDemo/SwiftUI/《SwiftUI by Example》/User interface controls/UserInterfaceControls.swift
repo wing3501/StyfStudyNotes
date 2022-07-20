@@ -300,6 +300,13 @@ struct UsingStepper: View {
                 age -= 1
             })
             Text("Your age is \(age)")
+            
+            //支持 format
+//            Stepper(value: $value,
+//                    step: step,
+//                    format: .number) {
+//                Text("Current value: \(value), step: \(step)")
+//            }
         }
     }
 }
@@ -336,6 +343,7 @@ struct SegmentedControl: View {
 
 struct UsingDatePicker: View {
     @State private var birthDate = Date()
+    @State private var activityDates: Set<DateComponents>
     //iOS12
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -363,6 +371,9 @@ struct UsingDatePicker: View {
                 DatePicker("Enter your birthday", selection: $birthDate)
                                 .datePickerStyle(GraphicalDatePickerStyle())
                                 .frame(maxHeight: 400)
+                
+                
+                MultiDatePicker("Dates", selection: $activityDates)
             }
         }
     }
