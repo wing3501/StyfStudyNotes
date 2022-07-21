@@ -343,7 +343,7 @@ struct SegmentedControl: View {
 
 struct UsingDatePicker: View {
     @State private var birthDate = Date()
-    @State private var activityDates: Set<DateComponents>
+    @State private var activityDates: Set<DateComponents> = []
     //iOS12
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
