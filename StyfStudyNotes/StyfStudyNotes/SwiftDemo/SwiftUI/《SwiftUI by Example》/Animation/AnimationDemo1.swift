@@ -244,6 +244,58 @@ struct AsymmetricTransitions : View {
         }
     }
 }
+//点赞动画
+struct FavoriteDemo: View {
+    var body: some View {
+        ZStack(alignment: .bottomTrailing) {
+            Rectangle()
+                .fill(Color.cyan.gradient.opacity(0.5))
+            Favorite()
+                .alignmentGuide(.bottom, computeValue: { $0[.bottom] + 200 })
+                .alignmentGuide(.trailing, computeValue: { $0[.trailing] + 100 })
+        }
+        .ignoresSafeArea()
+    }
+}
+
+struct Favorite: View {
+    @State var hearts = [(String, CGFloat, CGFloat)]()
+    var body: some View {
+        Image(systemName: "hand.thumbsup")
+            .symbolVariant(.fill)
+            .foregroundColor(.blue)
+            .font(.title)
+            .overlay(alignment: .bottom) {
+                ZStack {
+                    Color.clear
+                    ForEach(hearts, id: \.0) { heart in
+                        Text("+1")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .bold()
+                            .transition(.asymmetric(insertion: .move(edge: .bottom).combined(with: .opacity), removal: .move(edge: .top).combined(with: .opacity)))
+                            .offset(x: heart.1, y: heart.2)
+                            .task {
+                                try? await Task.sleep(nanoseconds: 500000000)
+                                if let index = hearts.firstIndex(where: { $0.0 == heart.0 }) {
+                                    let _ = withAnimation(.easeIn) {
+                                        hearts.remove(at: index)
+                                    }
+                                }
+                            }
+                    }
+                }
+                .frame(width: 50, height: 100)
+                .allowsHitTesting(false)
+            }
+            .onTapGesture {
+                withAnimation(.easeOut) {
+                    hearts.append((UUID().uuidString, .random(in: -10...10), .random(in: -10...10)))
+                }
+            }
+    }
+}
+
 //-----------------------------
 struct CombineTransitions : View {
     
