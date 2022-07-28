@@ -18,6 +18,7 @@ struct WWDCDemoList: View {
                 NavigationLink("【WWDC22 10054】SwiftUI 新导航方案", value: 1)
                 NavigationLink("【WWDC22 10062】初见 Transferable", value: 2)
                 NavigationLink("【WWDC22 10052】What's New In SwiftUI", value: 3)
+                NavigationLink("【WWDC22 10026】沟通影像世界的新桥梁——实况文本 API 介绍", value: 4)
             }
             .navigationDestination(for: Int.self) { index in
                 switch index {
@@ -29,6 +30,8 @@ struct WWDCDemoList: View {
                     TransferableDemo()
                 case 3:
                     WhatsNewInSwiftUI()
+                case 4:
+                    LiveTextView()
                 default:
                     EmptyView()
                 }

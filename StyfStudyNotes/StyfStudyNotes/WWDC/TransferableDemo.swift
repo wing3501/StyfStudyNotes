@@ -30,6 +30,7 @@ struct TransferableDemo: View {
 //            ShareLink(item: url, subject: Text("Check out this link"), message: Text("If you want to learn Swift, take a look at this website.")) {
 //                Image(systemName: "square.and.arrow.up")
 //            }
+//            private let photo = Image("bigben")
 //            ShareLink(item: photo, preview: SharePreview("Big Ben", image: photo))
         }
         

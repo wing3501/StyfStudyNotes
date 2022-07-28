@@ -56,7 +56,12 @@ struct StaticTextApp: View {
                         
                         Text("Hello World")
                             .lineLimit(2...3)
-
+                        Text("Hello World")
+                            .lineLimit(nil)//无限制
+                        Text("Lorem ipsum")
+                                .lineLimit(2, reservesSpace: true) //不足2行也留空
+                        Text("Lorem ipsum")
+                                .lineLimit(2...)// 设置一个最小行数
                         Text("The best laid plans")
                             .padding()
                             .background(Color.yellow)

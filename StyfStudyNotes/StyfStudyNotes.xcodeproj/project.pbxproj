@@ -81,6 +81,7 @@
 		9220D59226AA942A007E8B6A /* SaleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59126AA942A007E8B6A /* SaleModel.m */; };
 		9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59526AA94CC007E8B6A /* SaleHeaderFooterView.m */; };
 		9220D59A26AA97D1007E8B6A /* SaleHeaderFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */; };
+		92233589288E8BBF00BD2171 /* LiveTextAPIDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92233588288E8BBF00BD2171 /* LiveTextAPIDemo.swift */; };
 		9229790D25E5DCF800618FDF /* 排序.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9229790C25E5DCF800618FDF /* 排序.swift */; };
 		922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */; };
 		922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */; };
@@ -251,6 +252,7 @@
 		92F06ACC287D673700ADA9E9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACB287D673700ADA9E9 /* ImageView.swift */; };
 		92F06ACE287D67AF00ADA9E9 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACD287D67AF00ADA9E9 /* Mock.swift */; };
 		92F06AD0287D67ED00ADA9E9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */; };
+		92F1E99C28913ADA005E8D85 /* ScrollDismissesKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */; };
 		92F2EFC12815170B00773B17 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2EFC02815170B00773B17 /* Utils.swift */; };
 		92F36646273381A20013FB92 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F36645273381A20013FB92 /* UIImage+scale.m */; };
 		92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F3684F2733AE8E0013FB92 /* SMCallStack.m */; };
@@ -375,6 +377,7 @@
 		9220D59526AA94CC007E8B6A /* SaleHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleHeaderFooterView.m; sourceTree = "<group>"; };
 		9220D59826AA97D1007E8B6A /* SaleHeaderFooterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleHeaderFooterModel.h; sourceTree = "<group>"; };
 		9220D59926AA97D1007E8B6A /* SaleHeaderFooterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleHeaderFooterModel.m; sourceTree = "<group>"; };
+		92233588288E8BBF00BD2171 /* LiveTextAPIDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextAPIDemo.swift; sourceTree = "<group>"; };
 		9229790C25E5DCF800618FDF /* 排序.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "排序.swift"; sourceTree = "<group>"; };
 		922A00D62823AEC2009CBCA3 /* CustomAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlignment.swift; sourceTree = "<group>"; };
 		922A00D82823B38B009CBCA3 /* LayoutStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutStyleExample.swift; sourceTree = "<group>"; };
@@ -595,6 +598,7 @@
 		92F06ACB287D673700ADA9E9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		92F06ACD287D67AF00ADA9E9 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDismissesKeyboard.swift; sourceTree = "<group>"; };
 		92F2EFC02815170B00773B17 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		92F2EFC22815182800773B17 /* CombinePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CombinePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		92F36644273381A20013FB92 /* UIImage+scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
@@ -690,6 +694,7 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
+				92F1E99A28913AB2005E8D85 /* New */,
 				92AA70352837301500EB5C7E /* Tips and tricks */,
 				9246CAB228366D1A00E6FB65 /* Tooling */,
 				9246CAAA28362EE800E6FB65 /* Data */,
@@ -1601,6 +1606,7 @@
 				92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */,
 				92F008B528854E38002BBD22 /* TransferableDemo.swift */,
 				921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */,
+				92233588288E8BBF00BD2171 /* LiveTextAPIDemo.swift */,
 				928BDA2E286BED2400D856DA /* 1234.MP4 */,
 			);
 			path = WWDC;
@@ -1676,6 +1682,14 @@
 				92F06ACF287D67ED00ADA9E9 /* ImageLoader.swift */,
 			);
 			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		92F1E99A28913AB2005E8D85 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */,
+			);
+			path = New;
 			sourceTree = "<group>";
 		};
 		92F2EFBF281516F400773B17 /* Combine */ = {
@@ -1962,6 +1976,7 @@
 				922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */,
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
+				92F1E99C28913ADA005E8D85 /* ScrollDismissesKeyboard.swift in Sources */,
 				92A417E028128FBB00603DCE /* PokemonInfoPanelAbilityList.swift in Sources */,
 				92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */,
 				920E41B525E8DDF000DE2990 /* 二进制.swift in Sources */,
@@ -1970,6 +1985,7 @@
 				92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */,
 				9287E0B2282E4C8D00AA87FE /* TapsAndGestures.swift in Sources */,
 				92B428E3281104740098C4D5 /* CalculatorBrain.swift in Sources */,
+				92233589288E8BBF00BD2171 /* LiveTextAPIDemo.swift in Sources */,
 				920A7BCD282526DD0011A12D /* Menu.swift in Sources */,
 				920986BC286D6FB300B5F418 /* PoemList.swift in Sources */,
 				924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */,

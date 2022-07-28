@@ -1351,6 +1351,9 @@ str1.removeAll { $0 == "6"}
 var str2 = str1.prefix(3)
 str2.base
 
+//拼接
+["A","B"].joined(separator: ",")
+
 //多行字符串
 var str3 = """
 s1
