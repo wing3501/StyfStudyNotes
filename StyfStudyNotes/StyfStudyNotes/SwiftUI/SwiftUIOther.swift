@@ -20,6 +20,10 @@ class SwiftUIOther: UIHostingController<SwiftUIOtherList> {
         super.init(coder: coder, rootView: SwiftUIOtherList())
     }
     
+    init() {
+        super.init(rootView: SwiftUIOtherList())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

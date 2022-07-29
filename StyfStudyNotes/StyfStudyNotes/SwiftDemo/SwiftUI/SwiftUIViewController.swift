@@ -11,20 +11,48 @@ import Combine
 
 class SwiftUIViewController: UIViewController {
 
+    lazy var tableView: UITableView = {
+        var v = UITableView(frame: UIScreen.main.bounds)
+        v.dataSource = self
+        v.delegate = self
+        v.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return v
+    }()
+
+    var dataArray: Array<(String,UIViewController)> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-//        let vc = UIHostingController(rootView: ContentView().environmentObject(Student()))
-//        let vc = UIHostingController(rootView: PokemonList())
-//        let vc = UIHostingController(rootView: TestView())
         
-//        let vc = UIHostingController(rootView: MainTab().environmentObject(Store()))
-        let vc = UIHostingController(rootView: ThinkingInSwiftUI())
-        
-//        let vc = UIHostingController(rootView: SwiftUIByExample())
-//        self.navigationController?.pushViewController(vc, animated: true)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        dataArray = [
+            ("计算器", UIHostingController(rootView: ContentView().environmentObject(Student()))),
+            ("一个GeometryReader案例", UIHostingController(rootView: TestView())),
+            ("宝可梦", UIHostingController(rootView: MainTab().environmentObject(Store()))),
+            ("ThinkingInSwiftUI", UIHostingController(rootView: ThinkingInSwiftUI())),
+            ("SwiftUIByExample", UIHostingController(rootView: SwiftUIByExample())),
+            ("其他案例", SwiftUIOther())
+        ]
+        view.addSubview(tableView)
+    }
+}
+
+extension SwiftUIViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = dataArray[indexPath.row].1
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SwiftUIViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = dataArray[indexPath.row].0
+        return cell
     }
 }
 
