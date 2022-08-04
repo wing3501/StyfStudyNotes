@@ -31,9 +31,14 @@ class SwiftUIViewController: UIViewController {
             ("宝可梦", UIHostingController(rootView: MainTab().environmentObject(Store()))),
             ("ThinkingInSwiftUI", UIHostingController(rootView: ThinkingInSwiftUI())),
             ("SwiftUIByExample", UIHostingController(rootView: SwiftUIByExample())),
-            ("其他案例", SwiftUIOther())
+            ("其他案例", SwiftUIOther()),
+            ("列表收起键盘", UIHostingController(rootView: ScrollDismissesKeyboard())),
+            ("内容转场Content transition", UIHostingController(rootView: UsingContentTransition()))
         ]
-        view.addSubview(tableView)
+        
+    }
+    func wrapVC<T : View>(view: T) -> UIHostingController<T> {
+        UIHostingController(rootView: view)
     }
 }
 

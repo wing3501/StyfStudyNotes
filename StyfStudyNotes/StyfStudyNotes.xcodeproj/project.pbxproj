@@ -93,6 +93,7 @@
 		923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E5282A69750004A969 /* OrderFoodAPP.swift */; };
 		923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E8282A6B7A0004A969 /* StaticTextApp.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
+		92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92337BFE289BB4A000A23363 /* UsingContentTransition.swift */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
 		923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */; };
@@ -390,6 +391,7 @@
 		923176E8282A6B7A0004A969 /* StaticTextApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTextApp.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
+		92337BFE289BB4A000A23363 /* UsingContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingContentTransition.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
 		923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyViewController.swift; sourceTree = "<group>"; };
 		923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndMenus.swift; sourceTree = "<group>"; };
@@ -1688,6 +1690,7 @@
 			isa = PBXGroup;
 			children = (
 				92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */,
+				92337BFE289BB4A000A23363 /* UsingContentTransition.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -1993,6 +1996,7 @@
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
 				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
+				92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,

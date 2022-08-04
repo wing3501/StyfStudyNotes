@@ -20,13 +20,13 @@ struct AnimationExample: View {
         
 //        ShakeExample()
         
-//        TransitionExample1()
+        TransitionExample1()
         
 //        BounceExample()
         
 //        LineGraphExample()
         
-        LikeHeartExample()
+//        LikeHeartExample()
     }
     
 }
