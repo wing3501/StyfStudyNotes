@@ -1057,8 +1057,8 @@ func test4(_ ptr: UnsafeMutableRawPointer) {
 test1(&age)
 test2(&age)
 
-var arr = NSArray(objects: 11,22)
-arr.enumerateObjects { (element, idx, stop) in
+var arr333 = NSArray(objects: 11,22)
+arr333.enumerateObjects { (element, idx, stop) in
     stop.pointee = true
 }
 
@@ -1628,8 +1628,8 @@ BoldBuilder().asAnyBuilder()
 AnyBuilder(BoldBuilder())
 
 // ⚠️ 更方便的类型擦除 使用any
-private let allBuilders1: [any MarkdownBuilder]
-allBuilders1.append(BoldBuilder())
+//private let allBuilders1: [any MarkdownBuilder]
+//allBuilders1.append(BoldBuilder())
 
 func getBuilder() -> some MarkdownBuilder {
     return BoldBuilder()
@@ -1638,6 +1638,147 @@ func getBuilder() -> some MarkdownBuilder {
 func getBulder1() -> any MarkdownBuilder {
     return BoldBuilder()
 }
+
+
+// 理解 any some  https://swiftsenpai.com/swift/understanding-some-and-any/
+
+protocol Vehicle {
+
+    var name: String { get }
+
+    associatedtype FuelType
+    func fillGasTank(with fuel: FuelType)
+}
+
+struct Car: Vehicle {
+
+    let name = "car"
+
+    func fillGasTank(with fuel: Gasoline) {
+        print("Fill \(name) with \(fuel.name)")
+    }
+}
+
+struct Bus: Vehicle {
+
+    let name = "bus"
+
+    func fillGasTank(with fuel: Diesel) {
+        print("Fill \(name) with \(fuel.name)")
+    }
+}
+
+struct Gasoline {
+    let name = "gasoline"
+}
+
+struct Diesel {
+    let name = "diesel"
+}
+
+// 1 some 作为函数参数时，这三个函数签名一样
+
+func wash<T: Vehicle>(_ vehicle: T) {
+    // Wash the given vehicle
+}
+func wash1<T>(_ vehicle: T) where T: Vehicle {
+    // Wash the given vehicle
+}
+func wash2(_ vehicle: some Vehicle)  {
+    // Wash the given vehicle
+}
+// 2 some 作为变量类型时,具体类型在编译期就固定了
+var myCar: some Vehicle = Car()
+//myCar = Bus() // 🔴 Compile error: Cannot assign value of type 'Bus' to type 'some Vehicle'
+// 赋值同类型也报错
+var myCar1: some Vehicle = Car()
+var myCar2: some Vehicle = Car()
+//myCar2 = myCar1 // 🔴 Compile error: Cannot assign value of type 'some Vehicle' (type of 'myCar1') to type 'some Vehicle' (type of 'myCar2')
+// ✅ No compile error
+let vehicles: [some Vehicle] = [
+    Car(),
+    Car(),
+    Car(),
+]
+
+// 🔴 Compile error: Cannot convert value of type 'Bus' to expected element type 'Car'
+//let vehicles: [some Vehicle] = [
+//    Car(),
+//    Car(),
+//    Bus(),
+//]
+
+// 3 some 作为函数返回值时
+// ✅ No compile error
+func createSomeVehicle() -> some Vehicle {
+    return Car()
+}
+
+// 🔴 Compile error: Function declares an opaque return type 'some Vehicle', but the return statements in its body do not have matching underlying types
+//func createSomeVehicle(isPublicTransport: Bool) -> some Vehicle {
+//    if isPublicTransport {
+//        return Bus()
+//    } else {
+//        return Car()
+//    }
+//}
+
+// any 在5.7中不能省略的场景
+// any 用于表示包装类型，表示遵循某个协议的Box
+
+//let myCar33: Vehicle = Car() // 🔴 Compile error in Swift 5.7: Use of protocol 'Vehicle' as a type must be written 'any Vehicle'
+let myCar44: any Vehicle = Car() // ✅ No compile error in Swift 5.7
+
+// 🔴 Compile error in Swift 5.7: Use of protocol 'Vehicle' as a type must be written 'any Vehicle'
+//func wash(_ vehicle: Vehicle)  {
+//    // Wash the given vehicle
+//}
+
+// ✅ No compile error in Swift 5.7
+func wash3(_ vehicle: any Vehicle)  {
+    // Wash the given vehicle
+}
+// 因为是包装类型，所以不会报错
+// ✅ No compile error when changing the underlying data type
+var myCar55: any Vehicle = Car()
+myCar55 = Bus()
+myCar55 = Car()
+
+// ✅ No compile error when returning different kind of concrete type
+func createAnyVehicle(isPublicTransport: Bool) -> any Vehicle {
+    if isPublicTransport {
+        return Bus()
+    } else {
+        return Car()
+    }
+}
+
+// 🔴 Compile error in Swift 5.6: protocol 'Vehicle' can only be used as a generic constraint because it has Self or associated type requirements
+// ✅ No compile error in Swift 5.7
+let vehicles1: [any Vehicle] = [
+    Car(),
+    Car(),
+    Bus(),
+]
+
+// any的主要限制在于，不能使用==进行比较
+//如果你仔细想想，这实际上是有道理的。如前所述，存在类型可以在其“盒子”中存储任何具体类型。对于编译器来说，存在类型只是一个“盒子”，它不知道盒子里是什么。因此，当编译器不能保证“box”的内容具有相同的底层具体类型时，它不可能进行比较。
+let myCar7 = createAnyVehicle(isPublicTransport: false)
+let myCar8 = createAnyVehicle(isPublicTransport: false)
+//let isSameVehicle = myCar7 == myCar8 // 🔴 Compile error: Binary operator '==' cannot be applied to two 'any Vehicle' operands
+
+let myCar9 = createSomeVehicle()
+let myCar10 = createSomeVehicle()
+//let isSameVehicle = myCar9 == myCar10 // ✅ No compile error   这里有疑问❓ Binary operator '==' cannot be applied to two 'some Vehicle' operands
+
+
+//some & any 比较
+//最后，我们来讨论一下 some 与 any 的区别，以及在不同场景下该如何选择。
+//some 会固定其修饰的类型，调用时可以完整访问到其遵循协议的方法与协议的关联类型。
+//any 会进行类型擦除，可以用来存储不同元素类型的集合。
+// 在通常情况下，可以直接使用 some 来修饰类型，除非需要表示任意类型时，再换成 any 即可。
+
+// any some 实现动态派发 https://swiftsenpai.com/swift/dynamic-dispatch-with-generic-protocols/
 
 // any some 使用区别
 protocol Pizza {

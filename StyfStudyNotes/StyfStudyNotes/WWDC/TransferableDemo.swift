@@ -41,16 +41,18 @@ struct PortraitView: View {
   @State var portrait: Image // 👈🏻 Transferable type
 
   var body: some View {
-    portrait
-      .cornerRadius(8)
-      .draggable(portrait) // 👈🏻 支持 drag
-      .dropDestination(payloadType: Image.self) { (images: [Image], _) in // 👈🏻 支持 drop
-        if let image = images.first {
-          portrait = image
-          return true
-        }
-        return false
-      }
+//    portrait
+//      .cornerRadius(8)
+//      .draggable(portrait) // 👈🏻 支持 drag
+//      .dropDestination(payloadType: Image.self) { (images: [Image], _) in // 👈🏻 支持 drop
+//        if let image = images.first {
+//          portrait = image
+//          return true
+//        }
+//        return false
+//      }
+      //报错，暂时注释
+      EmptyView()
   }
 }
 

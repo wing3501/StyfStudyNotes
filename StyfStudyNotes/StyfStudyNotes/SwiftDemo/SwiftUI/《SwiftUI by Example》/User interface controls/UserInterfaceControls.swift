@@ -480,6 +480,10 @@ struct UsingTextField: View {
 //                TextField("请输入...", text: $text, onCommit:  {
 //                    print("已提交")
 //                })
+                
+                //自动多行
+                TextField("Textfield", text: $name, axis: .vertical) // 1
+                    .lineLimit(3...10) // 2
             }
         }
     }
