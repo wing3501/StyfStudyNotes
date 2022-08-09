@@ -165,6 +165,8 @@
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
 		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
 		929A6EF128A2372F00B92E40 /* UsingChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF028A2372F00B92E40 /* UsingChart.swift */; };
+		929A6EF628A2496900B92E40 /* ChangeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF528A2496900B92E40 /* ChangeStack.swift */; };
+		929A6EFA28A2500F00B92E40 /* SyncWidthHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */; };
 		929B470526D86EB100931956 /* 链表.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B470426D86EB100931956 /* 链表.swift */; };
 		92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */; };
 		92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */; };
@@ -489,6 +491,8 @@
 		928D8B2C264535FE00B3E4AE /* TaskService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
 		928D8B2D264535FF00B3E4AE /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
 		929A6EF028A2372F00B92E40 /* UsingChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingChart.swift; sourceTree = "<group>"; };
+		929A6EF528A2496900B92E40 /* ChangeStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeStack.swift; sourceTree = "<group>"; };
+		929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWidthHeight.swift; sourceTree = "<group>"; };
 		929B470426D86EB100931956 /* 链表.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "链表.swift"; sourceTree = "<group>"; };
 		92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingDemoViewController.h; sourceTree = "<group>"; };
 		92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHomeViewController.m; sourceTree = "<group>"; };
@@ -698,7 +702,6 @@
 		920A7BC52825227B0011A12D /* 《SwiftUI by Example》 */ = {
 			isa = PBXGroup;
 			children = (
-				92F1E99A28913AB2005E8D85 /* New */,
 				92AA70352837301500EB5C7E /* Tips and tricks */,
 				9246CAB228366D1A00E6FB65 /* Tooling */,
 				9246CAAA28362EE800E6FB65 /* Data */,
@@ -1664,6 +1667,7 @@
 		92F06AB5287D505400ADA9E9 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				92F1E99A28913AB2005E8D85 /* New */,
 				92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */,
 				92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */,
 				92F06ABA287D514400ADA9E9 /* Dependency Injection */,
@@ -1692,6 +1696,8 @@
 		92F1E99A28913AB2005E8D85 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */,
+				929A6EF528A2496900B92E40 /* ChangeStack.swift */,
 				92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */,
 				92337BFE289BB4A000A23363 /* UsingContentTransition.swift */,
 			);
@@ -1974,6 +1980,7 @@
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
 				920A7BCA282526D70011A12D /* Helper.swift in Sources */,
+				929A6EFA28A2500F00B92E40 /* SyncWidthHeight.swift in Sources */,
 				92B848C228191CA600D46185 /* ViewExtension.swift in Sources */,
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
@@ -1998,6 +2005,7 @@
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
+				929A6EF628A2496900B92E40 /* ChangeStack.swift in Sources */,
 				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
 				92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
