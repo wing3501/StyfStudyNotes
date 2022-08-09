@@ -164,6 +164,7 @@
 		928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B042644CA0900B3E4AE /* WebViewDemo.m */; };
 		928D8B2E264535FF00B3E4AE /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2C264535FE00B3E4AE /* TaskService.m */; };
 		928D8B2F264535FF00B3E4AE /* OperationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D8B2D264535FF00B3E4AE /* OperationTask.m */; };
+		929A6EF128A2372F00B92E40 /* UsingChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF028A2372F00B92E40 /* UsingChart.swift */; };
 		929B470526D86EB100931956 /* 链表.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B470426D86EB100931956 /* 链表.swift */; };
 		92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */; };
 		92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */; };
@@ -487,6 +488,7 @@
 		928D8B2B264535FE00B3E4AE /* TaskService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskService.h; sourceTree = "<group>"; };
 		928D8B2C264535FE00B3E4AE /* TaskService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskService.m; sourceTree = "<group>"; };
 		928D8B2D264535FF00B3E4AE /* OperationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationTask.m; sourceTree = "<group>"; };
+		929A6EF028A2372F00B92E40 /* UsingChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingChart.swift; sourceTree = "<group>"; };
 		929B470426D86EB100931956 /* 链表.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "链表.swift"; sourceTree = "<group>"; };
 		92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingDemoViewController.h; sourceTree = "<group>"; };
 		92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHomeViewController.m; sourceTree = "<group>"; };
@@ -1608,6 +1610,7 @@
 				92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */,
 				92F008B528854E38002BBD22 /* TransferableDemo.swift */,
 				921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */,
+				929A6EF028A2372F00B92E40 /* UsingChart.swift */,
 				92233588288E8BBF00BD2171 /* LiveTextAPIDemo.swift */,
 				928BDA2E286BED2400D856DA /* 1234.MP4 */,
 			);
@@ -2059,6 +2062,7 @@
 				920986BB286D6FB300B5F418 /* Router.swift in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
+				929A6EF128A2372F00B92E40 /* UsingChart.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
