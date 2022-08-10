@@ -281,7 +281,7 @@ struct HGrid1: View {
 struct VGrid1: View {
     let data = (1...100).map { "Item \($0)" }
 
-    let columns = [
+    let columns = [//固定最小宽度
         GridItem(.adaptive(minimum: 80))//意味着我们希望网格在每行中容纳尽可能多的项目，每个项目的最小大小为80。
     ]
 
@@ -300,7 +300,7 @@ struct VGrid1: View {
 
 struct VGrid2: View {
     let data = (1...100).map { "Item \($0)" }
-
+    //固定列数
     let columns = [ //5列
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -325,7 +325,7 @@ struct VGrid2: View {
 struct VGrid3: View {
     let data = (1...100).map { "Item \($0)" }
 
-    let columns = [
+    let columns = [//一列固定宽，一列占满
         GridItem(.fixed(100)),
         GridItem(.flexible()),
     ]

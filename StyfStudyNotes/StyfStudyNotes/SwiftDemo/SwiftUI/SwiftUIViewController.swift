@@ -35,7 +35,7 @@ class SwiftUIViewController: UIViewController {
             ("列表收起键盘", UIHostingController(rootView: ScrollDismissesKeyboard())),
             ("内容转场Content transition", UIHostingController(rootView: UsingContentTransition()))
         ]
-        
+        view.addSubview(tableView)
     }
     func wrapVC<T : View>(view: T) -> UIHostingController<T> {
         UIHostingController(rootView: view)
