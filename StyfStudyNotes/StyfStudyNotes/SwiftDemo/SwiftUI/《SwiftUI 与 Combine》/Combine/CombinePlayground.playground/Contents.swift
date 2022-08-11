@@ -436,3 +436,4 @@ delay(1.4) { searchText.send("Swift") }
 
 
 //throttle 防抖：它在收到一个事件后开始计时，并忽略计时 周期内的后续输入。
+// usernameSubscriber = $username.throttle(for: 0.5, scheduler: DispatchQueue.global(), latest: true)
