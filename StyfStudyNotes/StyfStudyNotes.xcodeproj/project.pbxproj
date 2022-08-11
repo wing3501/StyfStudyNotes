@@ -242,6 +242,14 @@
 		92E2359227671D17003B7C85 /* myCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92E2359127671D17003B7C85 /* myCpp.cpp */; };
 		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
+		92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */; };
+		92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584A28A4F111009D7CB9 /* DogWalk.swift */; };
+		92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */; };
+		92EF585028A4F899009D7CB9 /* Dog Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584E28A4F899009D7CB9 /* Dog Walk.xcdatamodeld */; };
+		92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */; };
+		92EF585628A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */; };
+		92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */; };
+		92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */; };
 		92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F008B528854E38002BBD22 /* TransferableDemo.swift */; };
 		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
 		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
@@ -592,6 +600,14 @@
 		92E2359127671D17003B7C85 /* myCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myCpp.cpp; sourceTree = "<group>"; };
 		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
+		92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemo.swift; sourceTree = "<group>"; };
+		92EF584A28A4F111009D7CB9 /* DogWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalk.swift; sourceTree = "<group>"; };
+		92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		92EF584F28A4F899009D7CB9 /* Dog Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dog Walk.xcdatamodel"; sourceTree = "<group>"; };
+		92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataClass.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		92F008B528854E38002BBD22 /* TransferableDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableDemo.swift; sourceTree = "<group>"; };
 		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
 		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
@@ -1338,6 +1354,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92EF584628A4EB33009D7CB9 /* CoreData */,
 				92F06AB5287D505400ADA9E9 /* SwiftUI */,
 				92E0E50C2860103100F18C73 /* WWDC */,
 				92E8A3462856CF93009D3690 /* 字符串安全 */,
@@ -1664,6 +1681,29 @@
 			path = "Transforming views";
 			sourceTree = "<group>";
 		};
+		92EF584628A4EB33009D7CB9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */,
+				92EF584928A4F0EC009D7CB9 /* Dog Walk */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		92EF584928A4F0EC009D7CB9 /* Dog Walk */ = {
+			isa = PBXGroup;
+			children = (
+				92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */,
+				92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */,
+				92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */,
+				92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */,
+				92EF584A28A4F111009D7CB9 /* DogWalk.swift */,
+				92EF584E28A4F899009D7CB9 /* Dog Walk.xcdatamodeld */,
+				92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */,
+			);
+			path = "Dog Walk";
+			sourceTree = "<group>";
+		};
 		92F06AB5287D505400ADA9E9 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1855,6 +1895,7 @@
 				92A2D36D2679F03300A88F19 /* ScrollViewDemo.m in Sources */,
 				92876939282D021A006BFE5A /* UserInterfaceControls.swift in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
+				92EF585628A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				92116BE7281A87200061086E /* MyTestView.swift in Sources */,
 				92F06AC0287D560F00ADA9E9 /* PrivacyLevel.swift in Sources */,
@@ -1869,6 +1910,7 @@
 				9220D59626AA94CC007E8B6A /* SaleHeaderFooterView.m in Sources */,
 				92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */,
 				92AA703C28377D9500EB5C7E /* AsyncSwiftViewController.swift in Sources */,
+				92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */,
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
@@ -1888,11 +1930,13 @@
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
+				92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
+				92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
@@ -1942,9 +1986,11 @@
 				92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
+				92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */,
 				92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
 				92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */,
+				92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */,
 				92F06ABE287D559F00ADA9E9 /* ProfileContentProvider.swift in Sources */,
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
@@ -2006,6 +2052,7 @@
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
 				929A6EF628A2496900B92E40 /* ChangeStack.swift in Sources */,
+				92EF585028A4F899009D7CB9 /* Dog Walk.xcdatamodeld in Sources */,
 				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
 				92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
@@ -2058,6 +2105,7 @@
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
+				92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */,
 				920986BD286D6FB300B5F418 /* RelatedPoems.swift in Sources */,
 				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
@@ -2307,6 +2355,16 @@
 			);
 			currentVersion = 9246CAAE283634B200E6FB65 /* Main.xcdatamodel */;
 			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		92EF584E28A4F899009D7CB9 /* Dog Walk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92EF584F28A4F899009D7CB9 /* Dog Walk.xcdatamodel */,
+			);
+			currentVersion = 92EF584F28A4F899009D7CB9 /* Dog Walk.xcdatamodel */;
+			path = "Dog Walk.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

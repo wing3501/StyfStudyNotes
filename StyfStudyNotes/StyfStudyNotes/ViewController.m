@@ -33,7 +33,7 @@
                    @{@"title":@"__builtin_",@"class":@"Builtin"},
                    @{@"title":@"mmap",@"class":@"MMAPNote"},
                    @{@"title":@"NSOperation",@"class":@"DemoNSOperation"},
-                   @{@"title":@"嵌套滚动",@"class":@"ScrollViewDemo"},
+//                   @{@"title":@"嵌套滚动",@"class":@"ScrollViewDemo"},
                    @{@"title":@"WebView",@"class":@"WebViewDemo"},
                    @{@"title":@"网络拦截",@"class":@"NetworkDemo"},
                    @{@"title":@"Swift",@"class":@"_TtC14StyfStudyNotes9SwiftDemo"},
@@ -44,7 +44,8 @@
                    @{@"title":@"KVO",@"class":@"KVO"},
                    @{@"title":@"蓝牙",@"class":@"BluetoothDemo"},
                    @{@"title":@"PDF",@"class":@"PDFDemo"},
-                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},                   
+                   @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},
+                   @{@"title":@"CoreData",@"class":@"CoreDataDemo"}
     ];
     [self.view addSubview:self.tableView];
     
