@@ -92,7 +92,23 @@ extension DogWalk: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      return "List of Walks"
+        return "List of Walks"
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let walkToRemove = currentDog?.walks?[indexPath.row] as? Walk,editingStyle == .delete else { return }
+        //删除
+        managedContext.delete(walkToRemove)
+        do {
+            try managedContext.save()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } catch let error as NSError {
+            print("Save error: \(error),description: \(error.userInfo)")
+        }
     }
 }
 

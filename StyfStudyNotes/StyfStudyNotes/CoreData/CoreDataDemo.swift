@@ -21,7 +21,7 @@ import UIKit
 @objc(CoreDataDemo)
 class CoreDataDemo: UIViewController {
 
-    var dataArray: [String] = ["DogWalk"]
+    var dataArray: [UIViewController.Type] = [DogWalk.self]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +41,14 @@ extension CoreDataDemo: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = dataArray[indexPath.row]
+        cell.textLabel?.text = "\(dataArray[indexPath.row])"
         return cell
     }
 }
 
 extension CoreDataDemo: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let projectName = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String
-        let vcClass = NSClassFromString(projectName! + "." + dataArray[indexPath.row]) as! UIViewController.Type
+        let vcClass = dataArray[indexPath.row]
         let vc = vcClass.init()
         self.navigationController?.pushViewController(vc, animated: true)
     }
