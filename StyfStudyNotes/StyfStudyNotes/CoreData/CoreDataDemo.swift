@@ -21,7 +21,7 @@ import UIKit
 @objc(CoreDataDemo)
 class CoreDataDemo: UIViewController {
 
-    var dataArray: [UIViewController.Type] = [DogWalk.self]
+    var dataArray: [UIViewController.Type] = [DogWalk.self,BubbleTea.self]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,5 +51,23 @@ extension CoreDataDemo: UITableViewDelegate {
         let vcClass = dataArray[indexPath.row]
         let vc = vcClass.init()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension CoreDataDemo {
+    // 创建抓取请求的五种方式
+    func fiveFetch() {
+//        // 1
+//        let fetchRequest1 = NSFetchRequest<Venue>()
+//        let entity = NSEntityDescription.entity(forEntityName: "Venue", in: managedContext)!
+//        fetchRequest1.entity = entity
+//        // 2 上一个方法的便利版本
+//        let fetchRequest2 = NSFetchRequest<Venue>(entityName: "Venue")
+//        // 3 生成NSManagedObject subclass，Xcode生成的方法
+//        let fetchRequest3: NSFetchRequest<Venue> = Venue.fetchRequest()
+//        // 4 在Xcode data model editer中可配置的
+//        let fetchRequest4 = managedObjectModel.fetchRequestTemplate(forName: "venueFR")
+//        // 5 和第4个类似。带的参数会用在谓词中
+//        let fetchRequest5 = managedObjectModel.fetchRequestFromTemplate(withName: "venueFR", substitutionVariables: ["NAME" : "Vivi Bubble Tea"])
     }
 }

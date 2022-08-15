@@ -153,7 +153,7 @@ struct OpenWebLinksInSafari: View {
     }
 }
 
-struct Location: Identifiable {
+ struct Location1: Identifiable {
     let id = UUID()
     let name: String
     let coordinate: CLLocationCoordinate2D

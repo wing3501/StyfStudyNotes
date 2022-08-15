@@ -3,7 +3,7 @@
 //  StyfStudyNotes
 //
 //  Created by styf on 2022/8/4.
-//  内容转场动画
+//  内容转场动画  https://swiftwithmajid.com/2022/08/02/content-transition-in-swiftui/
 
 import SwiftUI
 

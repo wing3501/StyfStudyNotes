@@ -56,6 +56,7 @@ class DogWalk: UIViewController {
     }
     
     @objc public func add(_ sender: UIBarButtonItem) {
+        //添加数据
         let walk = Walk(context: managedContext)
         walk.date = Date()
         
@@ -101,7 +102,7 @@ extension DogWalk: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let walkToRemove = currentDog?.walks?[indexPath.row] as? Walk,editingStyle == .delete else { return }
-        //删除
+        //删除数据
         managedContext.delete(walkToRemove)
         do {
             try managedContext.save()
