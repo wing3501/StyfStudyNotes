@@ -161,6 +161,7 @@ extension BubbleTeaFilterViewController {
 extension BubbleTeaFilterViewController {
     // 总订单数
     func populateDealsCountLabel() -> String {
+        // ✅ 内置函数的使用
         let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Venue")
         fetchRequest.resultType = .dictionaryResultType
         

@@ -8,6 +8,16 @@
 import UIKit
 import CoreData
 
+// ☀️总结
+//  1.NSFetchRequest的泛型使用
+//  2.使用Data Model Editor创建不可用的模板请求
+//  3.使用NSFetchRequest的count优化数量的获取
+//  4.使用sum等内置函数抓取数据
+//  5.使用谓词过滤
+//  6.使用排序描述
+//  7.使用异步抓取请求NSAsynchronousFetchRequest
+//  8.使用批量更新 NSBatchUpdateRequest、NSBatchDeleteRequest
+
 class BubbleTea: UIViewController {
     
     class VenueCell: UITableViewCell {
@@ -38,7 +48,10 @@ class BubbleTea: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 从Json导入数据
         importJSONSeedDataIfNeeded()
+        // ✅批量更新的使用
+        batchUpdate()
         
         // NSFetchRequest有一个名为resultType的属性
         // 1.managedObjectResultType 默认值
@@ -83,8 +96,27 @@ class BubbleTea: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "filter", style: .plain, target: self, action: #selector(filter(_:)))
         
 //        fetchAndReload()
+        
+        
     }
 
+    // ✅批量更新的使用:批量处理，绕过了NSManagedObjectContext，避免把所有数据直接加载到内存
+    // 批量删除 ：NSBatchDeleteRequest
+    // ⚠️因为批量更新、删除绕过了上下文，所以上下文中不会有反映
+    func batchUpdate() {
+        let batchUpdate = NSBatchUpdateRequest(entityName: "Venue")
+        batchUpdate.propertiesToUpdate = [#keyPath(Venue.favorite): true] //需要批量更新的属性
+        batchUpdate.affectedStores = coreDataStack.managedContext.persistentStoreCoordinator?.persistentStores
+        // 设置返回类型为 更新的条数
+        batchUpdate.resultType = .updatedObjectsCountResultType
+        
+        do {
+            let batchResult = try coreDataStack.managedContext.execute(batchUpdate) as! NSBatchUpdateResult
+            print("Records updated \(batchResult.result!)")
+        } catch let error as NSError {
+            print("Could not update \(error), \(error.userInfo)")
+        }
+    }
 }
 
 extension BubbleTea {
@@ -97,6 +129,7 @@ extension BubbleTea {
     }
     
     func importJSONSeedDataIfNeeded() {
+        // ✅count的使用
         let fetchRequest = NSFetchRequest<Venue>(entityName: "Venue")
         let count = try! coreDataStack.managedContext.count(for: fetchRequest)
         guard count == 0 else { return }
