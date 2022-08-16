@@ -141,6 +141,13 @@
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
 		92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92701A29283E1FBA00295028 /* PDFDemo.swift */; };
+		92728B6F28AA42B300C51140 /* WorldCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92728B6E28AA42B300C51140 /* WorldCup.swift */; };
+		92728B7128AA42DE00C51140 /* WorldCupSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 92728B7028AA42DE00C51140 /* WorldCupSeed.json */; };
+		92728B7428AA431700C51140 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92728B7228AA431700C51140 /* TeamCell.swift */; };
+		92728B7528AA431700C51140 /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92728B7328AA431700C51140 /* TeamCell.xib */; };
+		92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92728B7628AA498B00C51140 /* WorldCup.xcdatamodeld */; };
+		92728B7F28AA4A1B00C51140 /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92728B7D28AA4A1B00C51140 /* Team+CoreDataProperties.swift */; };
+		92728B8028AA4A1B00C51140 /* Team+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92728B7E28AA4A1B00C51140 /* Team+CoreDataClass.swift */; };
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
@@ -484,6 +491,13 @@
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
 		92701A29283E1FBA00295028 /* PDFDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDemo.swift; sourceTree = "<group>"; };
+		92728B6E28AA42B300C51140 /* WorldCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCup.swift; sourceTree = "<group>"; };
+		92728B7028AA42DE00C51140 /* WorldCupSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WorldCupSeed.json; sourceTree = "<group>"; };
+		92728B7228AA431700C51140 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		92728B7328AA431700C51140 /* TeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		92728B7728AA498B00C51140 /* WorldCup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorldCup.xcdatamodel; sourceTree = "<group>"; };
+		92728B7D28AA4A1B00C51140 /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92728B7E28AA4A1B00C51140 /* Team+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9273F4E826365D8800B78638 /* MMAPNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMAPNote.h; sourceTree = "<group>"; };
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
@@ -1230,6 +1244,28 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		92728B6C28AA41F100C51140 /* World Cup */ = {
+			isa = PBXGroup;
+			children = (
+				92728B6D28AA41FD00C51140 /* Core Data */,
+				92728B6E28AA42B300C51140 /* WorldCup.swift */,
+				92728B7628AA498B00C51140 /* WorldCup.xcdatamodeld */,
+				92728B7228AA431700C51140 /* TeamCell.swift */,
+				92728B7328AA431700C51140 /* TeamCell.xib */,
+				92728B7028AA42DE00C51140 /* WorldCupSeed.json */,
+			);
+			path = "World Cup";
+			sourceTree = "<group>";
+		};
+		92728B6D28AA41FD00C51140 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				92728B7E28AA4A1B00C51140 /* Team+CoreDataClass.swift */,
+				92728B7D28AA4A1B00C51140 /* Team+CoreDataProperties.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		9273F4E726365D5600B78638 /* mmap */ = {
 			isa = PBXGroup;
 			children = (
@@ -1754,6 +1790,7 @@
 			children = (
 				92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */,
 				92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */,
+				92728B6C28AA41F100C51140 /* World Cup */,
 				92E83F2228A6059200194087 /* Bubble Tea */,
 				92EF584928A4F0EC009D7CB9 /* Dog Walk */,
 			);
@@ -1905,10 +1942,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				920986AF286D546000B5F418 /* poems-300.json in Resources */,
+				92728B7128AA42DE00C51140 /* WorldCupSeed.json in Resources */,
 				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92E83F2928A6218500194087 /* seed.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
 				928BDA2F286BED2400D856DA /* 1234.MP4 in Resources */,
+				92728B7528AA431700C51140 /* TeamCell.xib in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
 				9255F3F02877CA99009E32FF /* SwiftUI编程思想.pdf in Resources */,
@@ -2046,6 +2085,7 @@
 				92116BEB281ABE690061086E /* ThinkingInSwiftUI.swift in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
+				92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */,
 				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
 				9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
@@ -2074,6 +2114,7 @@
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
 				920A7BC22824B9A60011A12D /* TableExample.swift in Sources */,
 				92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */,
+				92728B6F28AA42B300C51140 /* WorldCup.swift in Sources */,
 				92F06AD0287D67ED00ADA9E9 /* ImageLoader.swift in Sources */,
 				9244F04025E63DA00008D6BB /* OSSpinLockDemo2.m in Sources */,
 				920B9BEA25DFB0FE0098B1BA /* SingleInstanceObj.m in Sources */,
@@ -2095,9 +2136,11 @@
 				92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */,
 				9288BEDB28290B61005A903A /* ItemDetail.swift in Sources */,
 				92E83F6928A6288800194087 /* PriceInfo+CoreDataProperties.swift in Sources */,
+				92728B7F28AA4A1B00C51140 /* Team+CoreDataProperties.swift in Sources */,
 				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
+				92728B7428AA431700C51140 /* TeamCell.swift in Sources */,
 				920A7BCA282526D70011A12D /* Helper.swift in Sources */,
 				929A6EFA28A2500F00B92E40 /* SyncWidthHeight.swift in Sources */,
 				92B848C228191CA600D46185 /* ViewExtension.swift in Sources */,
@@ -2132,6 +2175,7 @@
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
+				92728B8028AA4A1B00C51140 /* Team+CoreDataClass.swift in Sources */,
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
@@ -2435,6 +2479,16 @@
 			);
 			currentVersion = 9246CAAE283634B200E6FB65 /* Main.xcdatamodel */;
 			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		92728B7628AA498B00C51140 /* WorldCup.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92728B7728AA498B00C51140 /* WorldCup.xcdatamodel */,
+			);
+			currentVersion = 92728B7728AA498B00C51140 /* WorldCup.xcdatamodel */;
+			path = WorldCup.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
