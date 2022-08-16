@@ -123,6 +123,16 @@
 		9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */; };
 		9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB0283635B200E6FB65 /* PersistenceController.swift */; };
 		9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */; };
+		924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */; };
+		924ADBB428AB8C5F0091FA97 /* UnCloudNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */; };
+		924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */; };
+		924ADBB828AB901B0091FA97 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924ADBB628AB901B0091FA97 /* NoteTableViewCell.xib */; };
+		924ADBBA28AB91EF0091FA97 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB928AB91EF0091FA97 /* Note.swift */; };
+		924ADBBD28AB92A60091FA97 /* NoteImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBBB28AB92A60091FA97 /* NoteImageTableViewCell.swift */; };
+		924ADBBE28AB92A60091FA97 /* NoteImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924ADBBC28AB92A60091FA97 /* NoteImageTableViewCell.xib */; };
+		924ADBC028AB95480091FA97 /* NoteCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBBF28AB95480091FA97 /* NoteCoreDataStack.swift */; };
+		924ADBC328AB98010091FA97 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */; };
+		924ADBC428AB98010091FA97 /* CreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -472,6 +482,16 @@
 		9246CAAE283634B200E6FB65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		9246CAB0283635B200E6FB65 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolingDemo.swift; sourceTree = "<group>"; };
+		924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel.xcdatamodel; sourceTree = "<group>"; };
+		924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnCloudNotes.swift; sourceTree = "<group>"; };
+		924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		924ADBB628AB901B0091FA97 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		924ADBB928AB91EF0091FA97 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		924ADBBB28AB92A60091FA97 /* NoteImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageTableViewCell.swift; sourceTree = "<group>"; };
+		924ADBBC28AB92A60091FA97 /* NoteImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteImageTableViewCell.xib; sourceTree = "<group>"; };
+		924ADBBF28AB95480091FA97 /* NoteCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCoreDataStack.swift; sourceTree = "<group>"; };
+		924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNoteViewController.xib; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -1176,6 +1196,23 @@
 			path = Tooling;
 			sourceTree = "<group>";
 		};
+		924ADBAB28AB89DF0091FA97 /* UnCloudNotes */ = {
+			isa = PBXGroup;
+			children = (
+				924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */,
+				924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */,
+				924ADBB928AB91EF0091FA97 /* Note.swift */,
+				924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */,
+				924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */,
+				924ADBBB28AB92A60091FA97 /* NoteImageTableViewCell.swift */,
+				924ADBBC28AB92A60091FA97 /* NoteImageTableViewCell.xib */,
+				924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */,
+				924ADBB628AB901B0091FA97 /* NoteTableViewCell.xib */,
+				924ADBBF28AB95480091FA97 /* NoteCoreDataStack.swift */,
+			);
+			path = UnCloudNotes;
+			sourceTree = "<group>";
+		};
 		9256DE852834C18F007391D7 /* Presenting views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1790,6 +1827,7 @@
 			children = (
 				92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */,
 				92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */,
+				924ADBAB28AB89DF0091FA97 /* UnCloudNotes */,
 				92728B6C28AA41F100C51140 /* World Cup */,
 				92E83F2228A6059200194087 /* Bubble Tea */,
 				92EF584928A4F0EC009D7CB9 /* Dog Walk */,
@@ -1946,7 +1984,10 @@
 				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92E83F2928A6218500194087 /* seed.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
+				924ADBB828AB901B0091FA97 /* NoteTableViewCell.xib in Resources */,
 				928BDA2F286BED2400D856DA /* 1234.MP4 in Resources */,
+				924ADBBE28AB92A60091FA97 /* NoteImageTableViewCell.xib in Resources */,
+				924ADBC428AB98010091FA97 /* CreateNoteViewController.xib in Resources */,
 				92728B7528AA431700C51140 /* TeamCell.xib in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
@@ -2066,6 +2107,7 @@
 				92E1A91D264D2B28007D63D5 /* SwiftDemo.swift in Sources */,
 				9246CAA52835DEE900E6FB65 /* AnimationDemo1.swift in Sources */,
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
+				924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
 				920989A7286DA0F500B5F418 /* Print.swift in Sources */,
 				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
@@ -2111,6 +2153,7 @@
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
+				924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */,
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
 				920A7BC22824B9A60011A12D /* TableExample.swift in Sources */,
 				92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */,
@@ -2122,6 +2165,7 @@
 				9244F03C25E63DA00008D6BB /* OSUnfairLockDemo.m in Sources */,
 				92CA9CC128166D6100246D51 /* User.swift in Sources */,
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
+				924ADBB428AB8C5F0091FA97 /* UnCloudNotes.swift in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
 				920986BA286D6FB300B5F418 /* PoemBookStackNavigationModel.swift in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
@@ -2138,6 +2182,7 @@
 				92E83F6928A6288800194087 /* PriceInfo+CoreDataProperties.swift in Sources */,
 				92728B7F28AA4A1B00C51140 /* Team+CoreDataProperties.swift in Sources */,
 				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
+				924ADBC028AB95480091FA97 /* NoteCoreDataStack.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
 				92728B7428AA431700C51140 /* TeamCell.swift in Sources */,
@@ -2242,7 +2287,10 @@
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				929A6EF128A2372F00B92E40 /* UsingChart.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
+				924ADBC328AB98010091FA97 /* CreateNoteViewController.swift in Sources */,
+				924ADBBD28AB92A60091FA97 /* NoteImageTableViewCell.swift in Sources */,
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
+				924ADBBA28AB91EF0091FA97 /* Note.swift in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				92E83F2728A605B500194087 /* Bubble Tea.xcdatamodeld in Sources */,
 				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
@@ -2479,6 +2527,16 @@
 			);
 			currentVersion = 9246CAAE283634B200E6FB65 /* Main.xcdatamodel */;
 			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */,
+			);
+			currentVersion = 924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */;
+			path = UnCloudNotesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
