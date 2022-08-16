@@ -48,5 +48,7 @@ class CreateNoteViewController: UIViewController,UsesCoreDataObjects {
         if let finishBlock {
             finishBlock()
         }
+        
+        navigationController?.popViewController(animated: true)
     }
 }

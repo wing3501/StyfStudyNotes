@@ -133,6 +133,7 @@
 		924ADBC028AB95480091FA97 /* NoteCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBBF28AB95480091FA97 /* NoteCoreDataStack.swift */; };
 		924ADBC328AB98010091FA97 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */; };
 		924ADBC428AB98010091FA97 /* CreateNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */; };
+		924AE06A28ABBC830091FA97 /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924AE06928ABBC830091FA97 /* ImageTransformer.swift */; };
 		924C714F281B962700B4AEE8 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C714E281B962700B4AEE8 /* CounterView.swift */; };
 		924C7151281B967300B4AEE8 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7150281B967300B4AEE8 /* KnobView.swift */; };
 		924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7152281BB02F00B4AEE8 /* TimerView.swift */; };
@@ -492,6 +493,8 @@
 		924ADBBF28AB95480091FA97 /* NoteCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCoreDataStack.swift; sourceTree = "<group>"; };
 		924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNoteViewController.xib; sourceTree = "<group>"; };
+		924AE06828ABBAAC0091FA97 /* UnCloudNotesDataModel v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "UnCloudNotesDataModel v2.xcdatamodel"; sourceTree = "<group>"; };
+		924AE06928ABBC830091FA97 /* ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransformer.swift; sourceTree = "<group>"; };
 		924C714E281B962700B4AEE8 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		924C7150281B967300B4AEE8 /* KnobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		924C7152281BB02F00B4AEE8 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -1202,6 +1205,7 @@
 				924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */,
 				924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */,
 				924ADBB928AB91EF0091FA97 /* Note.swift */,
+				924AE06928ABBC830091FA97 /* ImageTransformer.swift */,
 				924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */,
 				924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */,
 				924ADBBB28AB92A60091FA97 /* NoteImageTableViewCell.swift */,
@@ -2148,6 +2152,7 @@
 				92E83F6228A6288800194087 /* Stats+CoreDataProperties.swift in Sources */,
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
+				924AE06A28ABBC830091FA97 /* ImageTransformer.swift in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
@@ -2533,9 +2538,10 @@
 		924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				924AE06828ABBAAC0091FA97 /* UnCloudNotesDataModel v2.xcdatamodel */,
 				924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */,
 			);
-			currentVersion = 924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */;
+			currentVersion = 924AE06828ABBAAC0091FA97 /* UnCloudNotesDataModel v2.xcdatamodel */;
 			path = UnCloudNotesDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

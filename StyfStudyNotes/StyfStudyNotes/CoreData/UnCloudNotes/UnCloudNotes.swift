@@ -39,12 +39,23 @@ class UnCloudNotes: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add", style: .plain, target: self, action: #selector(add(_:)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        do {
+            try notes.performFetch()
+        } catch {
+            print("Error: \(error)")
+        }
+        tableView.reloadData()
+    }
+    
     @objc public func add(_ sender: UIBarButtonItem) {
         let createVC = CreateNoteViewController(nibName: "CreateNoteViewController", bundle: nil)
         createVC.managedObjectContext = stack.savingContext
         createVC.finishBlock = { [self] in
             stack.saveContext()
         }
+        navigationController?.pushViewController(createVC, animated: true)
     }
 }
 
