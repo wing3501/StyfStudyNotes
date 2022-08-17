@@ -9,6 +9,16 @@ import UIKit
 import CoreData
 
 
+// 手动数据迁移步骤
+// 1.添加一个新版本的DataModel
+// 2.创建一个新的entity名为Attachment,设置Module为Current Product Module
+// 3.两个实体建立联系
+// 4.完成所有新DataModel的修改后，新建Mapping Model文件
+// 5.删除生成的无用关系，处理属性映射，修改Attachment映射的Source，设置映射的过滤条件比如image != nil
+// 6.处理关系映射，Source Fetch填Auto Generate Value Expression，Key Path填$source，Mapping Name填NoteToNote
+// 7.关闭NSPersistentStoreDescription的自动推断属性
+
+
 // 轻量级数据迁移步骤
 // 1.选中DataModel,点击Editor菜单，选择Add Model Version
 // 2.选中新建的DataModel,右侧菜单Model Verson选中为新建版本

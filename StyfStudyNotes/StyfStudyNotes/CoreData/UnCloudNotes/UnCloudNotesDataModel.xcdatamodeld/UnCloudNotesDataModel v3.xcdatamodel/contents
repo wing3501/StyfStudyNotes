@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21271" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attachment" representedClassName=".Attachment" syncable="YES">
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" attributeType="Transformable" valueTransformerName="ImageTransformer" customClassName="."/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="attachments" inverseEntity="Note"/>
+    </entity>
+    <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="body" attributeType="String"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="displayIndex" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="note" inverseEntity="Attachment"/>
+    </entity>
+</model>

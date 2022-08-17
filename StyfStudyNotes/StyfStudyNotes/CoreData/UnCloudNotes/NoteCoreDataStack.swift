@@ -43,6 +43,10 @@ class NoteCoreDataStack {
     lazy var storeDescription: NSPersistentStoreDescription = {
         let description = NSPersistentStoreDescription(url: self.storeURL)
 //        description.shouldInferMappingModelAutomatically = true //启用shouldInferMappingModelAutomatically标记时，核心数据可以推断映射模型
+        
+        // 手动迁移时，需要设置
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = false // 关闭以后，Core Data就会使用mapping model去实现数据迁移
         return description
     }()
     
