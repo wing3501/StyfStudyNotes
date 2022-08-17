@@ -8,6 +8,11 @@
 import UIKit
 import CoreData
 
+// 复杂手动数据迁移
+// 1.添加一个新版本的DataModel,设置好Entity、属性、parent entity
+// 2.新建mapping model文件.删除不需要的AttachmentToAttachment，修改ImageAttachment映射的Source，删除未填充的属性
+// 3.新建NSEntityMigrationPolicy子类实现自定义迁移策略,在mapping model文件中填写StyfStudyNotes.AttachmentToImageAttachmentMigrationPolicyV3toV4
+
 
 // 手动数据迁移步骤
 // 1.添加一个新版本的DataModel
@@ -62,7 +67,7 @@ class UnCloudNotes: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
         view.addSubview(tableView)
         

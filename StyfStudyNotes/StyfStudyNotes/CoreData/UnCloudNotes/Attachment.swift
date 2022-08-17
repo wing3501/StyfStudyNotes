@@ -10,6 +10,6 @@ import CoreData
 
 class Attachment: NSManagedObject {
     @NSManaged var dateCreated: Date
-    @NSManaged var image: UIImage?
+//    @NSManaged var image: UIImage? //v3-v4
     @NSManaged var note: Note?
 }

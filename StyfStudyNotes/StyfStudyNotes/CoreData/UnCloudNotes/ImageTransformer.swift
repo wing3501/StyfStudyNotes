@@ -7,6 +7,7 @@
 
 import UIKit
 
+@objc(ImageTransformer)
 class ImageTransformer: ValueTransformer {
     
     override class func transformedValueClass() -> AnyClass {

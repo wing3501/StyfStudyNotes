@@ -44,8 +44,11 @@ extension AttachPhotoViewController: UIImagePickerControllerDelegate {
 
 //      note.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
       
-      //升级为一对多
-      let attachment = Attachment(context: context)
+      // 升级为一对多
+//      let attachment = Attachment(context: context)
+      // 升级为子类
+      let attachment = ImageAttachment(context: context)
+      attachment.caption = "New Photo"
       attachment.dateCreated = Date()
       attachment.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
       attachment.note = note

@@ -20,7 +20,8 @@ class Note: NSManagedObject {
     @NSManaged var attachments: Set<Attachment>?
     
     var image: UIImage? {
-        latestAttachment?.image
+        let imageAttachment = latestAttachment as? ImageAttachment
+        return imageAttachment?.image
     }
     
     var latestAttachment: Attachment? {
