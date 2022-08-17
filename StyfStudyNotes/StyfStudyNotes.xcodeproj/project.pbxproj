@@ -75,6 +75,9 @@
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */; };
 		921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */; };
+		921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */; };
+		921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */; };
+		921F35D528AC85B000D79C52 /* AttachPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
 		9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58D26AA941D007E8B6A /* SaleCell.m */; };
@@ -410,6 +413,9 @@
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
 		921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewInSwiftUI.swift; sourceTree = "<group>"; };
+		921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageNoteViewController.swift; sourceTree = "<group>"; };
+		921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateImageNoteViewController.xib; sourceTree = "<group>"; };
+		921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachPhotoViewController.swift; sourceTree = "<group>"; };
 		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
 		9220D58326AA92A1007E8B6A /* DiffableDataSourceDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffableDataSourceDemo.h; sourceTree = "<group>"; };
 		9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffableDataSourceDemo.m; sourceTree = "<group>"; };
@@ -1206,6 +1212,9 @@
 				924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */,
 				924ADBB928AB91EF0091FA97 /* Note.swift */,
 				924AE06928ABBC830091FA97 /* ImageTransformer.swift */,
+				921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */,
+				921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */,
+				921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */,
 				924ADBC128AB98010091FA97 /* CreateNoteViewController.swift */,
 				924ADBC228AB98010091FA97 /* CreateNoteViewController.xib */,
 				924ADBBB28AB92A60091FA97 /* NoteImageTableViewCell.swift */,
@@ -1993,6 +2002,7 @@
 				924ADBBE28AB92A60091FA97 /* NoteImageTableViewCell.xib in Resources */,
 				924ADBC428AB98010091FA97 /* CreateNoteViewController.xib in Resources */,
 				92728B7528AA431700C51140 /* TeamCell.xib in Resources */,
+				921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
 				9255F3F02877CA99009E32FF /* SwiftUI编程思想.pdf in Resources */,
@@ -2121,6 +2131,7 @@
 				927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */,
 				922A00D72823AEC2009CBCA3 /* CustomAlignment.swift in Sources */,
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
+				921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */,
 				921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */,
 				92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
@@ -2157,6 +2168,7 @@
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
+				921F35D528AC85B000D79C52 /* AttachPhotoViewController.swift in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */,
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,

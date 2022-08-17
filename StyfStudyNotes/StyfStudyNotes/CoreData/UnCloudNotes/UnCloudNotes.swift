@@ -8,6 +8,25 @@
 import UIKit
 import CoreData
 
+
+// 轻量级数据迁移步骤
+// 1.选中DataModel,点击Editor菜单，选择Add Model Version
+// 2.选中新建的DataModel,右侧菜单Model Verson选中为新建版本
+// 3.检查一下Module是否为Current Product Module
+
+//https://developer.apple.com/ documentation/coredata/using_lightweight_migration.
+// 满足轻量级数据迁移的一些常见条件：
+// 1.删除实体、属性或关系
+// 2.使用renamingIdentifier重命名实体、属性或关系
+// 3.添加新的可选属性
+// 4.添加新的必需属性,但是有默认值
+// 5.将可选属性更改为非可选属性，并指定默认值
+// 6.将非可选属性更改为可选属性
+// 7.改变实体层次结构
+// 8.添加新的父实体，并在层次结构中上下移动属性
+// 9.将一对一关系改为一对多关系
+// 10.将非有序一对多关系改为有序的一对多关系
+
 class UnCloudNotes: UIViewController {
 
     fileprivate lazy var stack: NoteCoreDataStack = NoteCoreDataStack(modelName: "UnCloudNotesDataModel")
@@ -25,6 +44,7 @@ class UnCloudNotes: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
         tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteCell")
+        tableView.register(UINib(nibName: "NoteImageTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteCellWithImage")
         tableView.dataSource = self
         tableView.rowHeight = 70
         return tableView
@@ -50,7 +70,8 @@ class UnCloudNotes: UIViewController {
     }
     
     @objc public func add(_ sender: UIBarButtonItem) {
-        let createVC = CreateNoteViewController(nibName: "CreateNoteViewController", bundle: nil)
+//        let createVC = CreateNoteViewController(nibName: "CreateNoteViewController", bundle: nil)
+        let createVC = CreateImageNoteViewController(nibName: "CreateImageNoteViewController", bundle: nil)
         createVC.managedObjectContext = stack.savingContext
         createVC.finishBlock = { [self] in
             stack.saveContext()
@@ -66,7 +87,13 @@ extension UnCloudNotes: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as! NoteTableViewCell
+        let note = notes.object(at: indexPath)
+        let cell: NoteTableViewCell
+        if note.image == nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath) as! NoteTableViewCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "NoteCellWithImage", for: indexPath) as! NoteImageTableViewCell
+        }
         cell.note = notes.object(at: indexPath)
         return cell
     }

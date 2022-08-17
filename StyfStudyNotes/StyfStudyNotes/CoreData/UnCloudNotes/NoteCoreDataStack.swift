@@ -42,6 +42,7 @@ class NoteCoreDataStack {
     
     lazy var storeDescription: NSPersistentStoreDescription = {
         let description = NSPersistentStoreDescription(url: self.storeURL)
+//        description.shouldInferMappingModelAutomatically = true //启用shouldInferMappingModelAutomatically标记时，核心数据可以推断映射模型
         return description
     }()
     
