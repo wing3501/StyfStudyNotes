@@ -10,13 +10,14 @@ import CoreData
 import UIKit
 
 let errorDomain = "Migration"
-
+// Attachment映射到ImageAttachment的策略
 class AttachmentToImageAttachmentMigrationPolicyV3toV4: NSEntityMigrationPolicy {
     
     //这个方法是迁移管理器用来创建目标实体的
     override func createDestinationInstances(forSource sInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager) throws {
         let description = NSEntityDescription.entity(forEntityName: "ImageAttachment",in: manager.destinationContext)
         // 迁移管理器使用两个Core Data堆栈，所以这里使用目标上下文
+        // 通过实体描述、目标上下文创建一个目标实体
         let newAttachment = ImageAttachment(entity: description!,insertInto: manager.destinationContext)
         
         func traversePropertyMappings(block:(NSPropertyMapping, String) -> ()) throws {

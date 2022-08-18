@@ -83,6 +83,7 @@
 		921F4A5828ACD5CC00D79C52 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F4A5728ACD5CC00D79C52 /* ImageAttachment.swift */; };
 		921F4C2028ACDD5400D79C52 /* UnCloudNotesMappingModel_v3_to_v4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 921F4C1F28ACDD5400D79C52 /* UnCloudNotesMappingModel_v3_to_v4.xcmappingmodel */; };
 		921F4C2228ACDFFB00D79C52 /* AttachmentToImageAttachmentMigrationPolicyV3toV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F4C2128ACDFFB00D79C52 /* AttachmentToImageAttachmentMigrationPolicyV3toV4.swift */; };
+		921F4C2428ACF08600D79C52 /* DataMigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F4C2328ACF08600D79C52 /* DataMigrationManager.swift */; };
 		921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FE16227ED8FBB00760625 /* MetadataViewController.swift */; };
 		9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */; };
 		9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220D58D26AA941D007E8B6A /* SaleCell.m */; };
@@ -428,6 +429,7 @@
 		921F4A5728ACD5CC00D79C52 /* ImageAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
 		921F4C1F28ACDD5400D79C52 /* UnCloudNotesMappingModel_v3_to_v4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = UnCloudNotesMappingModel_v3_to_v4.xcmappingmodel; sourceTree = "<group>"; };
 		921F4C2128ACDFFB00D79C52 /* AttachmentToImageAttachmentMigrationPolicyV3toV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentToImageAttachmentMigrationPolicyV3toV4.swift; sourceTree = "<group>"; };
+		921F4C2328ACF08600D79C52 /* DataMigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMigrationManager.swift; sourceTree = "<group>"; };
 		921FE16227ED8FBB00760625 /* MetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataViewController.swift; sourceTree = "<group>"; };
 		9220D58326AA92A1007E8B6A /* DiffableDataSourceDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffableDataSourceDemo.h; sourceTree = "<group>"; };
 		9220D58426AA92A1007E8B6A /* DiffableDataSourceDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiffableDataSourceDemo.m; sourceTree = "<group>"; };
@@ -1228,6 +1230,7 @@
 				921F4A5228ACC5D100D79C52 /* Attachment.swift */,
 				921F4A5728ACD5CC00D79C52 /* ImageAttachment.swift */,
 				924ADBB928AB91EF0091FA97 /* Note.swift */,
+				921F4C2328ACF08600D79C52 /* DataMigrationManager.swift */,
 				924AE06928ABBC830091FA97 /* ImageTransformer.swift */,
 				921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */,
 				921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */,
@@ -2171,6 +2174,7 @@
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
 				92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
+				921F4C2428ACF08600D79C52 /* DataMigrationManager.swift in Sources */,
 				920E41B825E8F6BE00DE2990 /* 二叉树.swift in Sources */,
 				92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */,
 				921F4A5328ACC5D100D79C52 /* Attachment.swift in Sources */,
