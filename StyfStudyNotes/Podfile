@@ -22,3 +22,9 @@ target 'StyfStudyNotes' do
 #  pod 'Animatable', '~> 1.0.6'
   pod 'KSCrash'
 end
+
+# StyfStudyNotes-Bridging-Header.h中有这两个库会导致单元测试无法编译通过
+target 'StyfStudyNotesTests' do
+  pod 'SDWebImage'
+  pod 'Masonry'
+end

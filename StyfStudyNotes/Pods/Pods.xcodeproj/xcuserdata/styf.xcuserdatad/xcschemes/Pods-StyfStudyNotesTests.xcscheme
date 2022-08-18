@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92A8D7C725D288DA0008EFAA"
-               BuildableName = "StyfStudyNotes.app"
-               BlueprintName = "StyfStudyNotes"
-               ReferencedContainer = "container:StyfStudyNotes.xcodeproj">
+               BlueprintIdentifier = "F67E9134F74A96492D936B5E18C7F898"
+               BuildableName = "libPods-StyfStudyNotesTests.a"
+               BlueprintName = "Pods-StyfStudyNotesTests"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,17 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9276473C28ADEA0200970310"
-               BuildableName = "StyfStudyNotesTests.xctest"
-               BlueprintName = "StyfStudyNotesTests"
-               ReferencedContainer = "container:StyfStudyNotes.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -51,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92A8D7C725D288DA0008EFAA"
-            BuildableName = "StyfStudyNotes.app"
-            BlueprintName = "StyfStudyNotes"
-            ReferencedContainer = "container:StyfStudyNotes.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -68,16 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "92A8D7C725D288DA0008EFAA"
-            BuildableName = "StyfStudyNotes.app"
-            BlueprintName = "StyfStudyNotes"
-            ReferencedContainer = "container:StyfStudyNotes.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

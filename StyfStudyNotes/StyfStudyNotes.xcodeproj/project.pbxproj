@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
@@ -171,6 +172,20 @@
 		9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273F4E926365D8800B78638 /* MMAPNote.m */; };
 		9273F62C26368A9C00B78638 /* thunktemplate.s in Sources */ = {isa = PBXBuildFile; fileRef = 9273F62B26368A9C00B78638 /* thunktemplate.s */; };
 		9275052A27EAFAEA00F909A6 /* PointerAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */; };
+		9276474028ADEA0300970310 /* StyfStudyNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276473F28ADEA0300970310 /* StyfStudyNotesTests.swift */; };
+		9276474728ADEA7700970310 /* CampgroundCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276474628ADEA7700970310 /* CampgroundCoreDataStack.swift */; };
+		9276474928ADEBD200970310 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276474828ADEBD200970310 /* TestCoreDataStack.swift */; };
+		9276474C28AE0C1A00970310 /* CampgroundManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9276474A28AE0C1A00970310 /* CampgroundManager.xcdatamodeld */; };
+		9276475328AE0DD900970310 /* Reservation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276474D28AE0DD900970310 /* Reservation+CoreDataClass.swift */; };
+		9276475428AE0DD900970310 /* Camper+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276474E28AE0DD900970310 /* Camper+CoreDataProperties.swift */; };
+		9276475528AE0DD900970310 /* Reservation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276474F28AE0DD900970310 /* Reservation+CoreDataProperties.swift */; };
+		9276475628AE0DD900970310 /* CampSite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475028AE0DD900970310 /* CampSite+CoreDataClass.swift */; };
+		9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475128AE0DD900970310 /* Camper+CoreDataClass.swift */; };
+		9276475828AE0DD900970310 /* CampSite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475228AE0DD900970310 /* CampSite+CoreDataProperties.swift */; };
+		9276475C28AE0E5000970310 /* CamperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475B28AE0E5000970310 /* CamperService.swift */; };
+		9276475E28AE100B00970310 /* CamperServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475D28AE100B00970310 /* CamperServiceTests.swift */; };
+		9276492628AE214700970310 /* CampSiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492528AE214700970310 /* CampSiteService.swift */; };
+		9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492728AE223200970310 /* CampSiteServiceTests.swift */; };
 		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
 		927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */; };
 		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
@@ -320,8 +335,20 @@
 		9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9276474128ADEA0300970310 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A8D7C025D288DA0008EFAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92A8D7C725D288DA0008EFAA;
+			remoteInfo = StyfStudyNotes;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
@@ -545,6 +572,21 @@
 		9273F4E926365D8800B78638 /* MMAPNote.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMAPNote.m; sourceTree = "<group>"; };
 		9273F62B26368A9C00B78638 /* thunktemplate.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = thunktemplate.s; sourceTree = "<group>"; };
 		9275052927EAFAEA00F909A6 /* PointerAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerAPIViewController.swift; sourceTree = "<group>"; };
+		9276473D28ADEA0300970310 /* StyfStudyNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StyfStudyNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9276473F28ADEA0300970310 /* StyfStudyNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyfStudyNotesTests.swift; sourceTree = "<group>"; };
+		9276474628ADEA7700970310 /* CampgroundCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampgroundCoreDataStack.swift; sourceTree = "<group>"; };
+		9276474828ADEBD200970310 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		9276474B28AE0C1A00970310 /* CampgroundManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CampgroundManager.xcdatamodel; sourceTree = "<group>"; };
+		9276474D28AE0DD900970310 /* Reservation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9276474E28AE0DD900970310 /* Camper+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Camper+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9276474F28AE0DD900970310 /* Reservation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reservation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9276475028AE0DD900970310 /* CampSite+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CampSite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9276475128AE0DD900970310 /* Camper+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Camper+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9276475228AE0DD900970310 /* CampSite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CampSite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9276475B28AE0E5000970310 /* CamperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamperService.swift; sourceTree = "<group>"; };
+		9276475D28AE100B00970310 /* CamperServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamperServiceTests.swift; sourceTree = "<group>"; };
+		9276492528AE214700970310 /* CampSiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteService.swift; sourceTree = "<group>"; };
+		9276492728AE223200970310 /* CampSiteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteServiceTests.swift; sourceTree = "<group>"; };
 		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
 		927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutDemo.swift; sourceTree = "<group>"; };
 		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
@@ -725,11 +767,20 @@
 		92F635B92826511400854EA4 /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
 		92F9D3A1280FE39D002504A1 /* SwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewController.swift; sourceTree = "<group>"; };
 		92F9D3A3280FEE26002504A1 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
+		93B28E14A625C414B8D95B42 /* Pods-StyfStudyNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.debug.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9276473A28ADEA0200970310 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92A8D7C525D288DA0008EFAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -746,6 +797,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */,
+				7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1346,6 +1398,50 @@
 			path = mmap;
 			sourceTree = "<group>";
 		};
+		9276473828ADE99600970310 /* CampgroundManager */ = {
+			isa = PBXGroup;
+			children = (
+				9276475A28AE0E3300970310 /* Services */,
+				9276475928AE0DE500970310 /* Model */,
+				9276474628ADEA7700970310 /* CampgroundCoreDataStack.swift */,
+				9276474A28AE0C1A00970310 /* CampgroundManager.xcdatamodeld */,
+			);
+			path = CampgroundManager;
+			sourceTree = "<group>";
+		};
+		9276473E28ADEA0300970310 /* StyfStudyNotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				9276473F28ADEA0300970310 /* StyfStudyNotesTests.swift */,
+				9276474828ADEBD200970310 /* TestCoreDataStack.swift */,
+				9276475D28AE100B00970310 /* CamperServiceTests.swift */,
+				9276492728AE223200970310 /* CampSiteServiceTests.swift */,
+			);
+			path = StyfStudyNotesTests;
+			sourceTree = "<group>";
+		};
+		9276475928AE0DE500970310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9276475128AE0DD900970310 /* Camper+CoreDataClass.swift */,
+				9276474E28AE0DD900970310 /* Camper+CoreDataProperties.swift */,
+				9276475028AE0DD900970310 /* CampSite+CoreDataClass.swift */,
+				9276475228AE0DD900970310 /* CampSite+CoreDataProperties.swift */,
+				9276474D28AE0DD900970310 /* Reservation+CoreDataClass.swift */,
+				9276474F28AE0DD900970310 /* Reservation+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9276475A28AE0E3300970310 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9276475B28AE0E5000970310 /* CamperService.swift */,
+				9276492528AE214700970310 /* CampSiteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		927F0532282BE43A001E39B7 /* View layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,6 +1563,7 @@
 			children = (
 				921545DC2818154C009781D2 /* Packages */,
 				92A8D7CA25D288DA0008EFAA /* StyfStudyNotes */,
+				9276473E28ADEA0300970310 /* StyfStudyNotesTests */,
 				92A8D7C925D288DA0008EFAA /* Products */,
 				E79A4B88C018268A4AA9ED07 /* Pods */,
 				68CC14C85F7CE063169348C8 /* Frameworks */,
@@ -1477,6 +1574,7 @@
 			isa = PBXGroup;
 			children = (
 				92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */,
+				9276473D28ADEA0300970310 /* StyfStudyNotesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1860,6 +1958,7 @@
 			children = (
 				92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */,
 				92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */,
+				9276473828ADE99600970310 /* CampgroundManager */,
 				924ADBAB28AB89DF0091FA97 /* UnCloudNotes */,
 				92728B6C28AA41F100C51140 /* World Cup */,
 				92E83F2228A6059200194087 /* Bubble Tea */,
@@ -1947,6 +2046,8 @@
 			children = (
 				C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */,
 				4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */,
+				93B28E14A625C414B8D95B42 /* Pods-StyfStudyNotesTests.debug.xcconfig */,
+				1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1954,6 +2055,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9276473C28ADEA0200970310 /* StyfStudyNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9276474328ADEA0300970310 /* Build configuration list for PBXNativeTarget "StyfStudyNotesTests" */;
+			buildPhases = (
+				F486759222F712ED2CEF1621 /* [CP] Check Pods Manifest.lock */,
+				9276473928ADEA0200970310 /* Sources */,
+				9276473A28ADEA0200970310 /* Frameworks */,
+				9276473B28ADEA0200970310 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9276474228ADEA0300970310 /* PBXTargetDependency */,
+			);
+			name = StyfStudyNotesTests;
+			productName = StyfStudyNotesTests;
+			productReference = 9276473D28ADEA0300970310 /* StyfStudyNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		92A8D7C725D288DA0008EFAA /* StyfStudyNotes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92A8D7E125D288DD0008EFAA /* Build configuration list for PBXNativeTarget "StyfStudyNotes" */;
@@ -1981,8 +2101,13 @@
 		92A8D7C025D288DA0008EFAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					9276473C28ADEA0200970310 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 92A8D7C725D288DA0008EFAA;
+					};
 					92A8D7C725D288DA0008EFAA = {
 						CreatedOnToolsVersion = 12.3;
 						LastSwiftMigration = 1230;
@@ -2003,11 +2128,19 @@
 			projectRoot = "";
 			targets = (
 				92A8D7C725D288DA0008EFAA /* StyfStudyNotes */,
+				9276473C28ADEA0200970310 /* StyfStudyNotesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9276473B28ADEA0200970310 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92A8D7C625D288DA0008EFAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2054,9 +2187,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F486759222F712ED2CEF1621 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StyfStudyNotesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9276473928ADEA0200970310 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9276474028ADEA0300970310 /* StyfStudyNotesTests.swift in Sources */,
+				9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */,
+				9276475E28AE100B00970310 /* CamperServiceTests.swift in Sources */,
+				9276474928ADEBD200970310 /* TestCoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92A8D7C425D288DA0008EFAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2085,6 +2251,7 @@
 				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
+				9276492628AE214700970310 /* CampSiteService.swift in Sources */,
 				92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9288BEDD2829186C005A903A /* OrderView.swift in Sources */,
@@ -2130,6 +2297,7 @@
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
 				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
+				9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */,
 				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */,
@@ -2144,9 +2312,11 @@
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
 				924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				9276474C28AE0C1A00970310 /* CampgroundManager.xcdatamodeld in Sources */,
 				920989A7286DA0F500B5F418 /* Print.swift in Sources */,
 				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
+				9276475628AE0DD900970310 /* CampSite+CoreDataClass.swift in Sources */,
 				92A417E42812A26700603DCE /* Settings.swift in Sources */,
 				92CA9D0128168F6600246D51 /* FileStorage.swift in Sources */,
 				927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */,
@@ -2257,9 +2427,11 @@
 				92EF585028A4F899009D7CB9 /* Dog Walk.xcdatamodeld in Sources */,
 				9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */,
 				92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */,
+				9276475C28AE0E5000970310 /* CamperService.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
 				92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
+				9276475828AE0DD900970310 /* CampSite+CoreDataProperties.swift in Sources */,
 				92728B8028AA4A1B00C51140 /* Team+CoreDataClass.swift in Sources */,
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
@@ -2270,6 +2442,7 @@
 				921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */,
 				9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */,
 				92E83F6428A6288800194087 /* VenueCategory+CoreDataProperties.swift in Sources */,
+				9276474728ADEA7700970310 /* CampgroundCoreDataStack.swift in Sources */,
 				92CA9CBA28164C0B00246D51 /* MainTab.swift in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				92F06AC4287D596D00ADA9E9 /* DIContainer.swift in Sources */,
@@ -2302,6 +2475,7 @@
 				92B848C42819316F00D46185 /* SafariView.swift in Sources */,
 				928D8B052644CA0900B3E4AE /* WebViewDemo.m in Sources */,
 				923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */,
+				9276475428AE0DD900970310 /* Camper+CoreDataProperties.swift in Sources */,
 				923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */,
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				9246CAA82836260D00E6FB65 /* ComposingViews.swift in Sources */,
@@ -2309,6 +2483,7 @@
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				92E83F2428A605A700194087 /* BubbleTea.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				9276475328AE0DD900970310 /* Reservation+CoreDataClass.swift in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
 				92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */,
@@ -2329,6 +2504,7 @@
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
 				921F4C2228ACDFFB00D79C52 /* AttachmentToImageAttachmentMigrationPolicyV3toV4.swift in Sources */,
 				924ADBC328AB98010091FA97 /* CreateNoteViewController.swift in Sources */,
+				9276475528AE0DD900970310 /* Reservation+CoreDataProperties.swift in Sources */,
 				924ADBBD28AB92A60091FA97 /* NoteImageTableViewCell.swift in Sources */,
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				924ADBBA28AB91EF0091FA97 /* Note.swift in Sources */,
@@ -2361,6 +2537,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9276474228ADEA0300970310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92A8D7C725D288DA0008EFAA /* StyfStudyNotes */;
+			targetProxy = 9276474128ADEA0300970310 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		92A8D7D925D288DD0008EFAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -2373,6 +2557,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9276474428ADEA0300970310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93B28E14A625C414B8D95B42 /* Pods-StyfStudyNotesTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = styf.StyfStudyNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StyfStudyNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StyfStudyNotes";
+			};
+			name = Debug;
+		};
+		9276474528ADEA0300970310 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = styf.StyfStudyNotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StyfStudyNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StyfStudyNotes";
+			};
+			name = Release;
+		};
 		92A8D7DF25D288DD0008EFAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2535,6 +2767,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9276474328ADEA0300970310 /* Build configuration list for PBXNativeTarget "StyfStudyNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9276474428ADEA0300970310 /* Debug */,
+				9276474528ADEA0300970310 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92A8D7C325D288DA0008EFAA /* Build configuration list for PBXProject "StyfStudyNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2593,6 +2834,16 @@
 			);
 			currentVersion = 92728B7728AA498B00C51140 /* WorldCup.xcdatamodel */;
 			path = WorldCup.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9276474A28AE0C1A00970310 /* CampgroundManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9276474B28AE0C1A00970310 /* CampgroundManager.xcdatamodel */,
+			);
+			currentVersion = 9276474B28AE0C1A00970310 /* CampgroundManager.xcdatamodel */;
+			path = CampgroundManager.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
