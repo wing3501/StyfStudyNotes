@@ -186,6 +186,8 @@
 		9276475E28AE100B00970310 /* CamperServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276475D28AE100B00970310 /* CamperServiceTests.swift */; };
 		9276492628AE214700970310 /* CampSiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492528AE214700970310 /* CampSiteService.swift */; };
 		9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492728AE223200970310 /* CampSiteServiceTests.swift */; };
+		9276492C28AE2E3F00970310 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492B28AE2E3F00970310 /* ReservationService.swift */; };
+		9276492E28AE302400970310 /* ReservationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492D28AE302300970310 /* ReservationServiceTests.swift */; };
 		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
 		927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */; };
 		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
@@ -587,6 +589,8 @@
 		9276475D28AE100B00970310 /* CamperServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamperServiceTests.swift; sourceTree = "<group>"; };
 		9276492528AE214700970310 /* CampSiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteService.swift; sourceTree = "<group>"; };
 		9276492728AE223200970310 /* CampSiteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteServiceTests.swift; sourceTree = "<group>"; };
+		9276492B28AE2E3F00970310 /* ReservationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
+		9276492D28AE302300970310 /* ReservationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationServiceTests.swift; sourceTree = "<group>"; };
 		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
 		927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutDemo.swift; sourceTree = "<group>"; };
 		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
@@ -1416,6 +1420,7 @@
 				9276474828ADEBD200970310 /* TestCoreDataStack.swift */,
 				9276475D28AE100B00970310 /* CamperServiceTests.swift */,
 				9276492728AE223200970310 /* CampSiteServiceTests.swift */,
+				9276492D28AE302300970310 /* ReservationServiceTests.swift */,
 			);
 			path = StyfStudyNotesTests;
 			sourceTree = "<group>";
@@ -1438,6 +1443,7 @@
 			children = (
 				9276475B28AE0E5000970310 /* CamperService.swift */,
 				9276492528AE214700970310 /* CampSiteService.swift */,
+				9276492B28AE2E3F00970310 /* ReservationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2216,6 +2222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9276492E28AE302400970310 /* ReservationServiceTests.swift in Sources */,
 				9276474028ADEA0300970310 /* StyfStudyNotesTests.swift in Sources */,
 				9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */,
 				9276475E28AE100B00970310 /* CamperServiceTests.swift in Sources */,
@@ -2497,6 +2504,7 @@
 				9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */,
 				920E3F0D25E8A4A700DE2990 /* FDownLoader.m in Sources */,
 				92E83F6828A6288800194087 /* VenueCategory+CoreDataClass.swift in Sources */,
+				9276492C28AE2E3F00970310 /* ReservationService.swift in Sources */,
 				920986BB286D6FB300B5F418 /* Router.swift in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
