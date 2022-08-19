@@ -190,6 +190,7 @@
 		9276492E28AE302400970310 /* ReservationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492D28AE302300970310 /* ReservationServiceTests.swift */; };
 		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
 		927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */; };
+		927F8E6128AF3D0500330616 /* MixTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F8E6028AF3D0500330616 /* MixTextImage.swift */; };
 		927FFCF5282B9CDE001E39B7 /* ImageShapeMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */; };
 		928052DD27E3038100F8C1CD /* DynamicMemberLookupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */; };
 		928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */; };
@@ -300,6 +301,15 @@
 		92E83F6C28A6354800194087 /* BubbleTeaFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E83F6B28A6354800194087 /* BubbleTeaFilterViewController.swift */; };
 		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
+		92EDCB7828AE3CF500889F36 /* EmployeeDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCB7728AE3CF500889F36 /* EmployeeDirectory.swift */; };
+		92EDCD4028AE5D2C00889F36 /* EmployeeSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 92EDCD3F28AE5D2C00889F36 /* EmployeeSeed.json */; };
+		92EDCD4228AE5E2A00889F36 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */; };
+		92EDCD4428AE5E4300889F36 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */; };
+		92EDCD4828AE608600889F36 /* EmployeeDirectory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4628AE608600889F36 /* EmployeeDirectory.xcdatamodeld */; };
+		92EDCD4D28AE61DD00889F36 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */; };
+		92EDCD4E28AE61DD00889F36 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */; };
+		92EDCD4F28AE61DD00889F36 /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */; };
+		92EDCD5028AE61DD00889F36 /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */; };
 		92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */; };
 		92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584A28A4F111009D7CB9 /* DogWalk.swift */; };
 		92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */; };
@@ -593,6 +603,7 @@
 		9276492D28AE302300970310 /* ReservationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationServiceTests.swift; sourceTree = "<group>"; };
 		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
 		927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutDemo.swift; sourceTree = "<group>"; };
+		927F8E6028AF3D0500330616 /* MixTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixTextImage.swift; sourceTree = "<group>"; };
 		927FFCF4282B9CDE001E39B7 /* ImageShapeMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShapeMedia.swift; sourceTree = "<group>"; };
 		928052DC27E3038100F8C1CD /* DynamicMemberLookupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupController.swift; sourceTree = "<group>"; };
 		928052DE27E32B6D00F8C1CD /* ResultBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBuilderViewController.swift; sourceTree = "<group>"; };
@@ -731,6 +742,15 @@
 		92E83F6B28A6354800194087 /* BubbleTeaFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaFilterViewController.swift; sourceTree = "<group>"; };
 		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
+		92EDCB7728AE3CF500889F36 /* EmployeeDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDirectory.swift; sourceTree = "<group>"; };
+		92EDCD3F28AE5D2C00889F36 /* EmployeeSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmployeeSeed.json; sourceTree = "<group>"; };
+		92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
+		92EDCD4728AE608600889F36 /* EmployeeDirectory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeDirectory.xcdatamodel; sourceTree = "<group>"; };
+		92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = "<group>"; };
 		92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemo.swift; sourceTree = "<group>"; };
 		92EF584A28A4F111009D7CB9 /* DogWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalk.swift; sourceTree = "<group>"; };
 		92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -1959,11 +1979,36 @@
 			path = "Transforming views";
 			sourceTree = "<group>";
 		};
+		92EDCB7628AE389800889F36 /* EmployeeDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				92EDCD4528AE607800889F36 /* Model */,
+				92EDCD3F28AE5D2C00889F36 /* EmployeeSeed.json */,
+				92EDCB7728AE3CF500889F36 /* EmployeeDirectory.swift */,
+				92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */,
+				92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */,
+				92EDCD4628AE608600889F36 /* EmployeeDirectory.xcdatamodeld */,
+			);
+			path = EmployeeDirectory;
+			sourceTree = "<group>";
+		};
+		92EDCD4528AE607800889F36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */,
+				92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */,
+				92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */,
+				92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		92EF584628A4EB33009D7CB9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */,
 				92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */,
+				92EDCB7628AE389800889F36 /* EmployeeDirectory */,
 				9276473828ADE99600970310 /* CampgroundManager */,
 				924ADBAB28AB89DF0091FA97 /* UnCloudNotes */,
 				92728B6C28AA41F100C51140 /* World Cup */,
@@ -2015,6 +2060,7 @@
 		92F1E99A28913AB2005E8D85 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				927F8E6028AF3D0500330616 /* MixTextImage.swift */,
 				929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */,
 				929A6EF528A2496900B92E40 /* ChangeStack.swift */,
 				92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */,
@@ -2160,6 +2206,7 @@
 				928BDA2F286BED2400D856DA /* 1234.MP4 in Resources */,
 				924ADBBE28AB92A60091FA97 /* NoteImageTableViewCell.xib in Resources */,
 				924ADBC428AB98010091FA97 /* CreateNoteViewController.xib in Resources */,
+				92EDCD4028AE5D2C00889F36 /* EmployeeSeed.json in Resources */,
 				92728B7528AA431700C51140 /* TeamCell.xib in Resources */,
 				921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
@@ -2272,6 +2319,7 @@
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
+				92EDCD4F28AE61DD00889F36 /* Sale+CoreDataProperties.swift in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A417D8281272F700603DCE /* Pokemon.swift in Sources */,
 				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
@@ -2281,6 +2329,7 @@
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
 				92E83F6728A6288800194087 /* Venue+CoreDataClass.swift in Sources */,
 				92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */,
+				92EDCB7828AE3CF500889F36 /* EmployeeDirectory.swift in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
 				927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */,
@@ -2319,8 +2368,10 @@
 				925447792816C01C00058CBD /* UserDefaultsStorage.swift in Sources */,
 				924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */,
 				920B9C0F25DFBE900098B1BA /* RedShapeDecorator.m in Sources */,
+				92EDCD4428AE5E4300889F36 /* DepartmentListViewController.swift in Sources */,
 				9276474C28AE0C1A00970310 /* CampgroundManager.xcdatamodeld in Sources */,
 				920989A7286DA0F500B5F418 /* Print.swift in Sources */,
+				92EDCD4828AE608600889F36 /* EmployeeDirectory.xcdatamodeld in Sources */,
 				921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */,
 				92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */,
 				9276475628AE0DD900970310 /* CampSite+CoreDataClass.swift in Sources */,
@@ -2338,6 +2389,7 @@
 				92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */,
 				920C4FEE273276140091487B /* KVO.m in Sources */,
 				92116BEB281ABE690061086E /* ThinkingInSwiftUI.swift in Sources */,
+				92EDCD4D28AE61DD00889F36 /* Employee+CoreDataProperties.swift in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */,
@@ -2369,6 +2421,7 @@
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				921F35D528AC85B000D79C52 /* AttachPhotoViewController.swift in Sources */,
+				92EDCD4E28AE61DD00889F36 /* Employee+CoreDataClass.swift in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */,
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
@@ -2490,6 +2543,8 @@
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				92E83F2428A605A700194087 /* BubbleTea.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
+				927F8E6128AF3D0500330616 /* MixTextImage.swift in Sources */,
+				92EDCD5028AE61DD00889F36 /* Sale+CoreDataClass.swift in Sources */,
 				9276475328AE0DD900970310 /* Reservation+CoreDataClass.swift in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
@@ -2517,6 +2572,7 @@
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				924ADBBA28AB91EF0091FA97 /* Note.swift in Sources */,
 				921F4A5828ACD5CC00D79C52 /* ImageAttachment.swift in Sources */,
+				92EDCD4228AE5E2A00889F36 /* EmployeeListViewController.swift in Sources */,
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				92E83F2728A605B500194087 /* Bubble Tea.xcdatamodeld in Sources */,
 				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
@@ -2862,6 +2918,16 @@
 			);
 			currentVersion = 92E83F2628A605B500194087 /* Bubble Tea.xcdatamodel */;
 			path = "Bubble Tea.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		92EDCD4628AE608600889F36 /* EmployeeDirectory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92EDCD4728AE608600889F36 /* EmployeeDirectory.xcdatamodel */,
+			);
+			currentVersion = 92EDCD4728AE608600889F36 /* EmployeeDirectory.xcdatamodel */;
+			path = EmployeeDirectory.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

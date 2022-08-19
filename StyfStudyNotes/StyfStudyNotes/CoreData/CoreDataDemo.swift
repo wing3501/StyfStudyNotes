@@ -21,7 +21,7 @@ import UIKit
 @objc(CoreDataDemo)
 class CoreDataDemo: UIViewController {
 
-    var dataArray: [UIViewController.Type] = [DogWalk.self,BubbleTea.self,WorldCup.self,UnCloudNotes.self]
+    var dataArray: [UIViewController.Type] = [DogWalk.self,BubbleTea.self,WorldCup.self,UnCloudNotes.self,EmployeeDirectory.self]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,12 @@ extension CoreDataDemo: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vcClass = dataArray[indexPath.row]
         let vc = vcClass.init()
-        self.navigationController?.pushViewController(vc, animated: true)
+        if vcClass is EmployeeDirectory.Type {
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }else {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
