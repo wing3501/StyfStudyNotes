@@ -30,7 +30,7 @@ class EmployeeDirectory: UITabBarController {
         vc2.coreDataStack = coreDataStack
         vc2.title = "departments"
         
-        self.viewControllers = [vc1,vc2]
+        self.viewControllers = [UINavigationController(rootViewController: vc1),UINavigationController(rootViewController: vc2)]
         
         self.tabBar.isTranslucent = false
     }

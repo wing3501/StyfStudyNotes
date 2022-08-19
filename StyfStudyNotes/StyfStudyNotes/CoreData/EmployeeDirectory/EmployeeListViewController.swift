@@ -18,11 +18,11 @@ class EmployeeListViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
-        let cellNib = UINib(nibName: "TeamCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: "teamCellIdentifier")
+        let cellNib = UINib(nibName: "EmployeeTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "EmployeeCellReuseIdentifier")
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 88
+        tableView.rowHeight = 120
         return tableView
     }()
     
@@ -95,21 +95,26 @@ extension EmployeeListViewController: UITableViewDataSource,UITableViewDelegate 
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell(coder: NSCoder())!
-      
-//    let reuseIdentifier = "EmployeeCellReuseIdentifier"
-//
-//    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
-//                                             for: indexPath) as! EmployeeTableViewCell
-//
-//    let employee = fetchedResultController.object(at: indexPath)
-//
-//    cell.nameLabel.text = employee.name
-//    cell.departmentLabel.text = employee.department
-//    cell.emailLabel.text = employee.email
-//    cell.phoneNumberLabel.text = employee.phone
-//    cell.pictureImageView.image = UIImage(data: employee.picture!)
-//
-//    return cell
+    let reuseIdentifier = "EmployeeCellReuseIdentifier"
+
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
+                                             for: indexPath) as! EmployeeTableViewCell
+
+    let employee = fetchedResultController.object(at: indexPath)
+
+    cell.nameLabel.text = employee.name
+    cell.departmentLabel.text = employee.department
+    cell.emailLabel.text = employee.email
+    cell.phoneNumberLabel.text = employee.phone
+    cell.pictureImageView.image = UIImage(data: employee.picture!)
+
+    return cell
   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = EmployeeDetailViewController(nibName: nil, bundle: nil)
+        let selectedEmployee = fetchedResultController.object(at: indexPath)
+        vc.employee = selectedEmployee
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
