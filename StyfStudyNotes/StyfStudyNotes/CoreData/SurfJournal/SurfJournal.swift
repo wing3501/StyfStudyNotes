@@ -10,7 +10,15 @@ import CoreData
 
 // 一般需要多个上下文的场景
 // 1 阻塞主线程的场景比如数据导出
+    // 传统的优化方法可能是使用GCD把导出操作扔到后台队列，但是托管对象上下文不是线程安全的，所以不能仅仅是用同一个Core Data堆栈，派发的后台线程
 // 2 可能需要放弃修改，比如修改用户信息
+    // 每个上下文有一个父存储，用于检索、修改数据。通常这个父存储是persistent store coordinator。
+    // 但是也可以设置父存储为其他上下文，成为它的子上下文
+    // 保存子上下文时，修改会同步到父上下文。保存父上下文时才会发送到persistent store coordinator。
+
+// 优化
+// 1. 使用coreDataStack.storeContainer.performBackgroundTask，用后台上下文来处理阻塞主线程的操作
+// 2. 使用子上下文来优化编辑。解决取消新增的记录仍然存在的问题。
 
 class SurfJournal: UIViewController {
     
@@ -48,17 +56,89 @@ private extension SurfJournal {
     }
     
     @objc private func exportButtonTapped(_ sender: UIBarButtonItem) {
-        exportCSVFile()
+//        exportCSVFile()
+        exportCSVFileAsync()
     }
     
     @objc private func add(_ sender: UIBarButtonItem) {
         let vc = JournalEntryViewController()
-        let newJournalEntry = JournalEntry(context: coreDataStack.mainContext)
-
-        vc.journalEntry = newJournalEntry
-        vc.context = newJournalEntry.managedObjectContext
+//        let newJournalEntry = JournalEntry(context: coreDataStack.mainContext)
+//
+//        vc.journalEntry = newJournalEntry
+//        vc.context = newJournalEntry.managedObjectContext
+//        vc.delegate = self
+        
+        // ✅ 修改为使用子上下文
+        // 1 创建一个子上下文
+        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = coreDataStack.mainContext
+        // 2
+        let childEntry = JournalEntry(context: childContext)
+        // 3 设置参数
+        vc.journalEntry = childEntry
+        vc.context = childContext
         vc.delegate = self
+        
         navigationController?.pushViewController(vc, animated: true)
+    }
+    //✅ 优化为后台抓取
+    func exportCSVFileAsync() {
+        navigationItem.leftBarButtonItem = activityIndicatorBarButtonItem()
+          // performBackgroundTask会创建一个新的上下文，传到闭包
+          // performBackgroundTask在一个私有队列上，不会阻塞主线程
+          coreDataStack.storeContainer.performBackgroundTask { context in
+              var results: [JournalEntry] = []
+              do {
+                results = try context.fetch(self.surfJournalFetchRequest())
+              } catch let error as NSError {
+                print("ERROR: \(error.localizedDescription)")
+              }
+              
+              // 2
+              let exportFilePath = NSTemporaryDirectory() + "export.csv"
+              let exportFileURL = URL(fileURLWithPath: exportFilePath)
+              FileManager.default.createFile(atPath: exportFilePath, contents: Data(), attributes: nil)
+              
+              // 3
+              let fileHandle: FileHandle?
+              do {
+                fileHandle = try FileHandle(forWritingTo: exportFileURL)
+              } catch let error as NSError {
+                print("ERROR: \(error.localizedDescription)")
+                fileHandle = nil
+              }
+
+              if let fileHandle = fileHandle {
+                // 4
+                for journalEntry in results {
+                  fileHandle.seekToEndOfFile()
+                  guard let csvData = journalEntry
+                    .csv()
+                    .data(using: .utf8, allowLossyConversion: false) else {
+                      continue
+                  }
+
+                  fileHandle.write(csvData)
+                }
+                  
+
+                // 5
+                fileHandle.closeFile()
+
+                print("Export Path: \(exportFilePath)")
+                  
+                  DispatchQueue.main.async {
+                      self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
+                      self.showExportFinishedAlertView(exportFilePath)
+                  }
+              } else {
+                  DispatchQueue.main.async {
+                      self.navigationItem.leftBarButtonItem = self.exportBarButtonItem()
+                  }
+              }
+              
+              
+          }
     }
     
     func exportCSVFile() {
@@ -246,9 +326,21 @@ extension SurfJournal: UITableViewDelegate,UITableViewDataSource {
         let vc = JournalEntryViewController()
         let surfJournalEntry = fetchedResultsController.object(at: indexPath)
 
-        vc.journalEntry = surfJournalEntry
-        vc.context = surfJournalEntry.managedObjectContext
+//        vc.journalEntry = surfJournalEntry
+//        vc.context = surfJournalEntry.managedObjectContext
+//        vc.delegate = self
+        
+        // ✅ 修改为使用子上下文
+        // 1 创建一个子上下文
+        let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = coreDataStack.mainContext
+        // 2 ⚠️用id在检索出在子上下文中的对象。 因为托管对象在创建它的上下文中是特定的，但是对象Id是唯一的
+        let childEntry = childContext.object(with: surfJournalEntry.objectID) as? JournalEntry
+        // 3 设置参数
+        vc.journalEntry = childEntry
+        vc.context = childContext
         vc.delegate = self
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -264,7 +356,8 @@ extension SurfJournal: JournalEntryDelegate {
           navigationController?.popViewController(animated: true)
           return
       }
-
+        //如果一个上下文的类型是MainQueueConcurrencyType，则不必使用perform来包起来
+        // 如果我们不知道这个上下文是什么类型，那最好还是用perform包一下，可以同时支持父、子上下文
       context.perform {
         do {
           try context.save()

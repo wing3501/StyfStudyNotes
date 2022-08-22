@@ -46,6 +46,8 @@ extension SurfCoreDataStack {
 }
 
 private extension SurfCoreDataStack {
+    
+    // 拷贝数据库到目标地址
     func seedCoreDataContainerIfFirstLaunch() {
 
         // 1
