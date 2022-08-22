@@ -81,6 +81,7 @@
 		921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D028B31EBC0075B93C /* Sale+CoreDataClass.swift */; };
 		921D54D728B31EBC0075B93C /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D128B31EBC0075B93C /* Employee+CoreDataClass.swift */; };
 		921D54D828B31EBC0075B93C /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */; };
+		921D54DC28B333600075B93C /* DepartmentListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54DB28B333600075B93C /* DepartmentListViewControllerTests.swift */; };
 		921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */; };
 		921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */; };
 		921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */; };
@@ -328,6 +329,7 @@
 		92E83F6C28A6354800194087 /* BubbleTeaFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E83F6B28A6354800194087 /* BubbleTeaFilterViewController.swift */; };
 		92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */; };
 		92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */; };
+		92EC411D28B3581C004EC671 /* EmployeeDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC411C28B3581C004EC671 /* EmployeeDetailViewControllerTests.swift */; };
 		92EDCB7828AE3CF500889F36 /* EmployeeDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCB7728AE3CF500889F36 /* EmployeeDirectory.swift */; };
 		92EDCD4028AE5D2C00889F36 /* EmployeeSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 92EDCD3F28AE5D2C00889F36 /* EmployeeSeed.json */; };
 		92EDCD4228AE5E2A00889F36 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */; };
@@ -486,6 +488,7 @@
 		921D54D028B31EBC0075B93C /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = "<group>"; };
 		921D54D128B31EBC0075B93C /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
 		921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		921D54DB28B333600075B93C /* DepartmentListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewControllerTests.swift; sourceTree = "<group>"; };
 		921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewInSwiftUI.swift; sourceTree = "<group>"; };
 		921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageNoteViewController.swift; sourceTree = "<group>"; };
 		921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateImageNoteViewController.xib; sourceTree = "<group>"; };
@@ -792,6 +795,7 @@
 		92E83F6B28A6354800194087 /* BubbleTeaFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaFilterViewController.swift; sourceTree = "<group>"; };
 		92E8A3472856CFAF009D3690 /* SaveKeyDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveKeyDemo.swift; sourceTree = "<group>"; };
 		92EAF0992834EF5400AA6420 /* TransformingViewsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingViewsDemo.swift; sourceTree = "<group>"; };
+		92EC411C28B3581C004EC671 /* EmployeeDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		92EDCB7728AE3CF500889F36 /* EmployeeDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDirectory.swift; sourceTree = "<group>"; };
 		92EDCD3F28AE5D2C00889F36 /* EmployeeSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmployeeSeed.json; sourceTree = "<group>"; };
 		92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
@@ -1181,6 +1185,26 @@
 			path = Flutter;
 			sourceTree = "<group>";
 		};
+		921D54D928B333270075B93C /* CampgroundManager */ = {
+			isa = PBXGroup;
+			children = (
+				9276474828ADEBD200970310 /* TestCoreDataStack.swift */,
+				9276475D28AE100B00970310 /* CamperServiceTests.swift */,
+				9276492728AE223200970310 /* CampSiteServiceTests.swift */,
+				9276492D28AE302300970310 /* ReservationServiceTests.swift */,
+			);
+			path = CampgroundManager;
+			sourceTree = "<group>";
+		};
+		921D54DA28B333330075B93C /* EmployeeDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				921D54DB28B333600075B93C /* DepartmentListViewControllerTests.swift */,
+				92EC411C28B3581C004EC671 /* EmployeeDetailViewControllerTests.swift */,
+			);
+			path = EmployeeDirectory;
+			sourceTree = "<group>";
+		};
 		9220D57F26AA91FF007E8B6A /* DiffableDataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1499,11 +1523,9 @@
 		9276473E28ADEA0300970310 /* StyfStudyNotesTests */ = {
 			isa = PBXGroup;
 			children = (
+				921D54DA28B333330075B93C /* EmployeeDirectory */,
+				921D54D928B333270075B93C /* CampgroundManager */,
 				9276473F28ADEA0300970310 /* StyfStudyNotesTests.swift */,
-				9276474828ADEBD200970310 /* TestCoreDataStack.swift */,
-				9276475D28AE100B00970310 /* CamperServiceTests.swift */,
-				9276492728AE223200970310 /* CampSiteServiceTests.swift */,
-				9276492D28AE302300970310 /* ReservationServiceTests.swift */,
 			);
 			path = StyfStudyNotesTests;
 			sourceTree = "<group>";
@@ -2365,6 +2387,8 @@
 				9276474028ADEA0300970310 /* StyfStudyNotesTests.swift in Sources */,
 				9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */,
 				9276475E28AE100B00970310 /* CamperServiceTests.swift in Sources */,
+				921D54DC28B333600075B93C /* DepartmentListViewControllerTests.swift in Sources */,
+				92EC411D28B3581C004EC671 /* EmployeeDetailViewControllerTests.swift in Sources */,
 				9276474928ADEBD200970310 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

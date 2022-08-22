@@ -29,7 +29,7 @@ class DepartmentListViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(tableView)
-        items = totalEmployeesPerDepartment()
+        items = totalEmployeesPerDepartmentFast()
     }
     
 }
@@ -39,7 +39,7 @@ extension DepartmentListViewController {
 
   func totalEmployeesPerDepartment() -> [[String: String]] {
 
-      // 1
+      // 1 抓取所有员工
       let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
 
       var fetchResults: [Employee] = []
@@ -50,17 +50,42 @@ extension DepartmentListViewController {
           return [[String: String]]()
       }
 
-      // 2
+      // 2 统计各部门人数
       var uniqueDepartments: [String: Int] = [:]
       for employee in fetchResults where employee.department != nil {
           uniqueDepartments[employee.department!, default: 0] += 1
       }
 
-      // 3
+      // 3 整理数据到数组
       return uniqueDepartments.map { (department, headCount) in
           ["department": department,
            "headCount": String(headCount)]
       }
+    }
+    
+    // 优化版本✅
+    func totalEmployeesPerDepartmentFast() -> [[String: String]] {
+      //1
+      let expressionDescription = NSExpressionDescription()
+      expressionDescription.name = "headCount"
+    //2
+      let arguments = [NSExpression(forKeyPath: #keyPath(Employee.department))]//"department"
+      expressionDescription.expression = NSExpression(forFunction: "count:", arguments: arguments)
+    //3
+      let fetchRequest: NSFetchRequest<NSDictionary> = NSFetchRequest(entityName: "Employee")
+      fetchRequest.propertiesToFetch = ["department", expressionDescription] //只抓取最少的属性
+      fetchRequest.propertiesToGroupBy = ["department"] //按属性分组
+      fetchRequest.resultType = .dictionaryResultType
+    //4
+      var fetchResults: [NSDictionary] = []
+      do {
+        fetchResults =
+          try coreDataStack.mainContext.fetch(fetchRequest)
+      } catch let error as NSError {
+        print("ERROR: \(error.localizedDescription)")
+        return [[String: String]]()
+      }
+      return fetchResults as! [[String: String]]
     }
 }
 

@@ -9,10 +9,14 @@ import UIKit
 import CoreData
 
 // binary data类型的属性一般保存在数据库，如果打开Allows External Storage，Core Data会自动决定保存在数据到一个单独的磁盘文件中还是保留在数据库中
+// fetchBatchSize可以限制抓取请求的数量，当需要更多数据的时候，Core Data会自动执行更多批操作   。限制抓取条数 = 先抓取总条数，访问到了再懒加载数据
+//      也可以使用谓词来限制抓取，更严格的谓词条件放在最前面更有高效。特别是涉及字符串比较的条件。"(active == YES) AND (name CONTAINS[cd] %@)" 比 "(name CONTAINS[cd] %@) AND (active == YES)"高效
 
 // 优化步骤：
-// 1 优化图片内存占用
-//          大图单独放一个entity,使用缩略图代替原来不必要使用原图的属性
+// 1 优化图片内存占用，懒加载二进制图片数据。大图单独放一个entity,使用缩略图代替原来不必要使用原图的属性
+// 2 抓取列表数据的，使用fetchBatchSize 懒加载数据
+// 3 计算分组后，每组数量的。 只抓取用来分组的属性，配合count函数
+// 4 只需要抓取条数的，使用count方法代替fetch方法
 
 class EmployeeDirectory: UITabBarController {
 
