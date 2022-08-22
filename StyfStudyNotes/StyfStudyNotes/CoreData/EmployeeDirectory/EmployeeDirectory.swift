@@ -8,6 +8,12 @@
 import UIKit
 import CoreData
 
+// binary data类型的属性一般保存在数据库，如果打开Allows External Storage，Core Data会自动决定保存在数据到一个单独的磁盘文件中还是保留在数据库中
+
+// 优化步骤：
+// 1 优化图片内存占用
+//          大图单独放一个entity,使用缩略图代替原来不必要使用原图的属性
+
 class EmployeeDirectory: UITabBarController {
 
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeeDirectory")
@@ -137,7 +143,11 @@ class EmployeeDirectory: UITabBarController {
         employee.phone = phone
         employee.address = address
         employee.about = about
-        employee.picture = pictureData
+        employee.pictureThumbnail = imageDataScaledToHeight(pictureData, height: 120)
+          
+        let pictureObject = EmployeePicture(context: coreDataStack.mainContext)
+        pictureObject.picture = pictureData
+        employee.picture = pictureObject
 
         if addSalesRecords {
           addSalesRecordsToEmployee(employee)
@@ -156,6 +166,23 @@ class EmployeeDirectory: UITabBarController {
       coreDataStack.saveContext()
       coreDataStack.mainContext.reset()
       print("Imported \(counter) employees.")
+    }
+    
+    func imageDataScaledToHeight(_ imageData: Data, height: CGFloat) -> Data {
+
+      let image = UIImage(data: imageData)!
+      let oldHeight = image.size.height
+      let scaleFactor = height / oldHeight
+      let newWidth = image.size.width * scaleFactor
+      let newSize = CGSize(width: newWidth, height: height)
+      let newRect = CGRect(x: 0, y: 0, width: newWidth, height: height)
+
+      UIGraphicsBeginImageContext(newSize)
+      image.draw(in: newRect)
+      let newImage = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+
+      return newImage!.jpegData(compressionQuality: 0.8)!
     }
     
     func addSalesRecordsToEmployee(_ employee: Employee) {

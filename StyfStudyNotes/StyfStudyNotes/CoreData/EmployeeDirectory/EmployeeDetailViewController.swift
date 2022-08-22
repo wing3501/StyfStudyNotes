@@ -52,7 +52,7 @@ private extension EmployeeDetailViewController {
 
     title = employee.name
 
-    let image = UIImage(data: employee.picture!)
+    let image = UIImage(data: employee.pictureThumbnail!)
     headShotImageView.image = image
 
     nameLabel.text = employee.name

@@ -75,6 +75,12 @@
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */; };
+		921D54D328B31EBC0075B93C /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54CD28B31EBC0075B93C /* Employee+CoreDataProperties.swift */; };
+		921D54D428B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54CE28B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift */; };
+		921D54D528B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54CF28B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift */; };
+		921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D028B31EBC0075B93C /* Sale+CoreDataClass.swift */; };
+		921D54D728B31EBC0075B93C /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D128B31EBC0075B93C /* Employee+CoreDataClass.swift */; };
+		921D54D828B31EBC0075B93C /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */; };
 		921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */; };
 		921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */; };
 		921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */; };
@@ -327,10 +333,6 @@
 		92EDCD4228AE5E2A00889F36 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */; };
 		92EDCD4428AE5E4300889F36 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */; };
 		92EDCD4828AE608600889F36 /* EmployeeDirectory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4628AE608600889F36 /* EmployeeDirectory.xcdatamodeld */; };
-		92EDCD4D28AE61DD00889F36 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */; };
-		92EDCD4E28AE61DD00889F36 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */; };
-		92EDCD4F28AE61DD00889F36 /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */; };
-		92EDCD5028AE61DD00889F36 /* Sale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */; };
 		92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */; };
 		92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584A28A4F111009D7CB9 /* DogWalk.swift */; };
 		92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */; };
@@ -478,6 +480,12 @@
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
 		921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		921D54CD28B31EBC0075B93C /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		921D54CE28B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmployeePicture+CoreDataClass.swift"; sourceTree = "<group>"; };
+		921D54CF28B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmployeePicture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		921D54D028B31EBC0075B93C /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = "<group>"; };
+		921D54D128B31EBC0075B93C /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewInSwiftUI.swift; sourceTree = "<group>"; };
 		921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageNoteViewController.swift; sourceTree = "<group>"; };
 		921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateImageNoteViewController.xib; sourceTree = "<group>"; };
@@ -789,10 +797,6 @@
 		92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 		92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
 		92EDCD4728AE608600889F36 /* EmployeeDirectory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeDirectory.xcdatamodel; sourceTree = "<group>"; };
-		92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
-		92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataClass.swift"; sourceTree = "<group>"; };
 		92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemo.swift; sourceTree = "<group>"; };
 		92EF584A28A4F111009D7CB9 /* DogWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalk.swift; sourceTree = "<group>"; };
 		92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -2065,10 +2069,12 @@
 		92EDCD4528AE607800889F36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				92EDCD4A28AE61DD00889F36 /* Employee+CoreDataClass.swift */,
-				92EDCD4928AE61DD00889F36 /* Employee+CoreDataProperties.swift */,
-				92EDCD4C28AE61DD00889F36 /* Sale+CoreDataClass.swift */,
-				92EDCD4B28AE61DD00889F36 /* Sale+CoreDataProperties.swift */,
+				921D54D128B31EBC0075B93C /* Employee+CoreDataClass.swift */,
+				921D54CD28B31EBC0075B93C /* Employee+CoreDataProperties.swift */,
+				921D54CE28B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift */,
+				921D54CF28B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift */,
+				921D54D028B31EBC0075B93C /* Sale+CoreDataClass.swift */,
+				921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2404,8 +2410,8 @@
 				92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */,
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
+				921D54D328B31EBC0075B93C /* Employee+CoreDataProperties.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
-				92EDCD4F28AE61DD00889F36 /* Sale+CoreDataProperties.swift in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A417D8281272F700603DCE /* Pokemon.swift in Sources */,
 				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
@@ -2425,8 +2431,10 @@
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
+				921D54D528B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift in Sources */,
 				92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
+				921D54D728B31EBC0075B93C /* Employee+CoreDataClass.swift in Sources */,
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */,
@@ -2440,6 +2448,7 @@
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
 				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
 				9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */,
+				921D54D428B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift in Sources */,
 				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
 				927F8E6728AF6B3A00330616 /* UsingAttributedString.swift in Sources */,
@@ -2477,7 +2486,6 @@
 				92F368562733AE8F0013FB92 /* SMCallStack.m in Sources */,
 				920C4FEE273276140091487B /* KVO.m in Sources */,
 				92116BEB281ABE690061086E /* ThinkingInSwiftUI.swift in Sources */,
-				92EDCD4D28AE61DD00889F36 /* Employee+CoreDataProperties.swift in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */,
@@ -2506,12 +2514,12 @@
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				924AE06A28ABBC830091FA97 /* ImageTransformer.swift in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
+				921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */,
 				924C638D28AF787E0019D5E0 /* EmployeeDetailViewController.swift in Sources */,
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
 				921F35D528AC85B000D79C52 /* AttachPhotoViewController.swift in Sources */,
-				92EDCD4E28AE61DD00889F36 /* Employee+CoreDataClass.swift in Sources */,
 				926EE2562626B84A0008F924 /* MachO_Note.m in Sources */,
 				924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */,
 				9255F3F42877CEDC009E32FF /* PDFKitDemo.swift in Sources */,
@@ -2635,7 +2643,6 @@
 				92E83F2428A605A700194087 /* BubbleTea.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,
 				927F8E6128AF3D0500330616 /* MixTextImage.swift in Sources */,
-				92EDCD5028AE61DD00889F36 /* Sale+CoreDataClass.swift in Sources */,
 				9276475328AE0DD900970310 /* Reservation+CoreDataClass.swift in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
@@ -2659,6 +2666,7 @@
 				921F4C2228ACDFFB00D79C52 /* AttachmentToImageAttachmentMigrationPolicyV3toV4.swift in Sources */,
 				924ADBC328AB98010091FA97 /* CreateNoteViewController.swift in Sources */,
 				9276475528AE0DD900970310 /* Reservation+CoreDataProperties.swift in Sources */,
+				921D54D828B31EBC0075B93C /* Sale+CoreDataProperties.swift in Sources */,
 				924ADBBD28AB92A60091FA97 /* NoteImageTableViewCell.swift in Sources */,
 				922A00DD2823C48F009CBCA3 /* BadgesExample.swift in Sources */,
 				924ADBBA28AB91EF0091FA97 /* Note.swift in Sources */,

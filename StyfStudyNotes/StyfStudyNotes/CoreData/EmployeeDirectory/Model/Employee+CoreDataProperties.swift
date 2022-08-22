@@ -2,7 +2,7 @@
 //  Employee+CoreDataProperties.swift
 //  
 //
-//  Created by styf on 2022/8/18.
+//  Created by styf on 2022/8/22.
 //
 //
 
@@ -24,10 +24,11 @@ extension Employee {
     @NSManaged public var guid: String?
     @NSManaged public var name: String?
     @NSManaged public var phone: String?
-    @NSManaged public var picture: Data?
+    @NSManaged public var pictureThumbnail: Data?
     @NSManaged public var startDate: Date?
     @NSManaged public var vacationDays: Int16
     @NSManaged public var sales: NSSet?
+    @NSManaged public var picture: EmployeePicture?
 
 }
 

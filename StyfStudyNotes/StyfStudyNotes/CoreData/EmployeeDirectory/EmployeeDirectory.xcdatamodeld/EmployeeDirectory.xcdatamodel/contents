@@ -9,10 +9,15 @@
         <attribute name="guid" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
-        <attribute name="picture" optional="YES" attributeType="Binary"/>
+        <attribute name="pictureThumbnail" optional="YES" attributeType="Binary"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="vacationDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="picture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EmployeePicture" inverseName="employee" inverseEntity="EmployeePicture"/>
         <relationship name="sales" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sale" inverseName="employee" inverseEntity="Sale"/>
+    </entity>
+    <entity name="EmployeePicture" representedClassName=".EmployeePicture" syncable="YES">
+        <attribute name="picture" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="employee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="picture" inverseEntity="Employee"/>
     </entity>
     <entity name="Sale" representedClassName="Sale" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
