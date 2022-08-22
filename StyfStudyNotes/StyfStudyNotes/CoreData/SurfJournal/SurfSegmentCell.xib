@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SurfSegmentCell" customModule="StyfStudyNotes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAP-Mx-bsw">
+                        <rect key="frame" x="8" y="11.666666666666664" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fuy-fx-W53">
+                        <rect key="frame" x="58" y="6.6666666666666679" width="253" height="32"/>
+                        <segments>
+                            <segment title="1"/>
+                            <segment title="2"/>
+                            <segment title="3"/>
+                            <segment title="4"/>
+                            <segment title="5"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Fuy-fx-W53" secondAttribute="trailing" constant="9" id="3jU-IZ-Gb8"/>
+                    <constraint firstItem="Fuy-fx-W53" firstAttribute="leading" secondItem="qAP-Mx-bsw" secondAttribute="trailing" constant="8" symbolic="YES" id="DQs-KJ-3ZK"/>
+                    <constraint firstItem="qAP-Mx-bsw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="PVm-4z-9ez"/>
+                    <constraint firstItem="Fuy-fx-W53" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="arm-Wm-Pi4"/>
+                    <constraint firstItem="qAP-Mx-bsw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ifK-8f-fTX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="label" destination="qAP-Mx-bsw" id="ov7-NO-TSW"/>
+                <outlet property="segment" destination="Fuy-fx-W53" id="f77-mA-7tc"/>
+            </connections>
+            <point key="canvasLocation" x="130.76923076923077" y="-11.374407582938389"/>
+        </tableViewCell>
+    </objects>
+</document>

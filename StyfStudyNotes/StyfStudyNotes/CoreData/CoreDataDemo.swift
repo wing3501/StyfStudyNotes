@@ -21,7 +21,7 @@ import UIKit
 @objc(CoreDataDemo)
 class CoreDataDemo: UIViewController {
 
-    var dataArray: [UIViewController.Type] = [DogWalk.self,BubbleTea.self,WorldCup.self,UnCloudNotes.self,EmployeeDirectory.self]
+    var dataArray: [UIViewController.Type] = [DogWalk.self,BubbleTea.self,WorldCup.self,UnCloudNotes.self,EmployeeDirectory.self,SurfJournal.self]
     
     override func viewDidLoad() {
         super.viewDidLoad()
