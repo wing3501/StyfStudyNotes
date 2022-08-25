@@ -279,6 +279,10 @@
 		92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A9A57228326B690018F2DA /* ContainersDemo.swift */; };
 		92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA70362837303300EB5C7E /* TipsAndTricks.swift */; };
 		92AA703C28377D9500EB5C7E /* AsyncSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA703B28377D9500EB5C7E /* AsyncSwiftViewController.swift */; };
+		92ABFB1828B747CD00C3BF29 /* ChangeNavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB1728B747CD00C3BF29 /* ChangeNavigationBarColor.swift */; };
+		92ABFB2028B750D700C3BF29 /* UserDefaults+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB1F28B750D600C3BF29 /* UserDefaults+++.swift */; };
+		92ABFB2228B750DD00C3BF29 /* SaveEnumInUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB2128B750DD00C3BF29 /* SaveEnumInUserDefaults.swift */; };
+		92ABFB2428B7526900C3BF29 /* UsingCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */; };
 		92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589928112F75000BE001 /* CalculatorModel.swift */; };
 		92AC589C28113E44000BE001 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589B28113E43000BE001 /* HistoryView.swift */; };
 		92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */; };
@@ -750,6 +754,10 @@
 		92A9A57228326B690018F2DA /* ContainersDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersDemo.swift; sourceTree = "<group>"; };
 		92AA70362837303300EB5C7E /* TipsAndTricks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsAndTricks.swift; sourceTree = "<group>"; };
 		92AA703B28377D9500EB5C7E /* AsyncSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncSwiftViewController.swift; sourceTree = "<group>"; };
+		92ABFB1728B747CD00C3BF29 /* ChangeNavigationBarColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeNavigationBarColor.swift; sourceTree = "<group>"; };
+		92ABFB1F28B750D600C3BF29 /* UserDefaults+++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+++.swift"; sourceTree = "<group>"; };
+		92ABFB2128B750DD00C3BF29 /* SaveEnumInUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveEnumInUserDefaults.swift; sourceTree = "<group>"; };
+		92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingCustomLayout.swift; sourceTree = "<group>"; };
 		92AC589928112F75000BE001 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		92AC589B28113E43000BE001 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92AC5D1E28115505000BE001 /* pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
@@ -2222,12 +2230,16 @@
 		92F1E99A28913AB2005E8D85 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				92ABFB2128B750DD00C3BF29 /* SaveEnumInUserDefaults.swift */,
+				92ABFB1F28B750D600C3BF29 /* UserDefaults+++.swift */,
+				92ABFB1728B747CD00C3BF29 /* ChangeNavigationBarColor.swift */,
 				927F8E6028AF3D0500330616 /* MixTextImage.swift */,
 				929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */,
 				929A6EF528A2496900B92E40 /* ChangeStack.swift */,
 				92F1E99B28913ADA005E8D85 /* ScrollDismissesKeyboard.swift */,
 				92337BFE289BB4A000A23363 /* UsingContentTransition.swift */,
 				927F8E6628AF6B3A00330616 /* UsingAttributedString.swift */,
+				92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -2585,6 +2597,7 @@
 				92116BEB281ABE690061086E /* ThinkingInSwiftUI.swift in Sources */,
 				92CA9CC8281678EF00246D51 /* AppError.swift in Sources */,
 				92EC412C28B36823004EC671 /* SurfJournalModel.xcdatamodeld in Sources */,
+				92ABFB2028B750D700C3BF29 /* UserDefaults+++.swift in Sources */,
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */,
 				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
@@ -2633,6 +2646,7 @@
 				92426F2F26246C77002062B7 /* RAMExport.m in Sources */,
 				92EC413328B3696F004EC671 /* SurfEntryTableViewCell.swift in Sources */,
 				924ADBB428AB8C5F0091FA97 /* UnCloudNotes.swift in Sources */,
+				92ABFB2428B7526900C3BF29 /* UsingCustomLayout.swift in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
 				920986BA286D6FB300B5F418 /* PoemBookStackNavigationModel.swift in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
@@ -2651,6 +2665,7 @@
 				921167B5281A404F0061086E /* FlowRectangle.swift in Sources */,
 				924ADBC028AB95480091FA97 /* NoteCoreDataStack.swift in Sources */,
 				92A8D7EC25D28C020008EFAA /* Leetcode.m in Sources */,
+				92ABFB2228B750DD00C3BF29 /* SaveEnumInUserDefaults.swift in Sources */,
 				92A417DC281282EF00603DCE /* AbilityViewModel.swift in Sources */,
 				92728B7428AA431700C51140 /* TeamCell.swift in Sources */,
 				920A7BCA282526D70011A12D /* Helper.swift in Sources */,
@@ -2698,6 +2713,7 @@
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */,
 				92EC412028B3629D004EC671 /* SurfJournal.swift in Sources */,
+				92ABFB1828B747CD00C3BF29 /* ChangeNavigationBarColor.swift in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A417D2281248C100603DCE /* PokemonViewModel.swift in Sources */,
 				921545D32817DCE5009781D2 /* LoadPokemonRequest.swift in Sources */,

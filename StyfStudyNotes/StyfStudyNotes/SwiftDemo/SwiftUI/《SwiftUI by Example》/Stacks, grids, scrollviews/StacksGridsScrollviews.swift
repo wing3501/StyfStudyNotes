@@ -43,6 +43,9 @@ struct StacksGridsScrollviews: View {
 struct UsingViewThatFits: View {
     var body: some View {
         TestWrap("ViewThatFits的使用") {
+            //【WWDC22 10056】在 SwiftUI 中组合各种自定义布局
+        // https://xiaozhuanlan.com/topic/1507368249
+            
             //需求1：需求是所有按钮的宽度与最宽的那个按钮保持一致。
             
             //需求2：可以不可以有什么智能的方式，在合适屏幕空间选择合适的布局容器呢？

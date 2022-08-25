@@ -3,7 +3,7 @@
 //  UsingChart
 //
 //  Created by styf on 2022/8/9.
-//  4种方式动态切换Stack布局
+//  4种方式动态切换Stack布局，根据屏幕大小
 //  https://www.swiftbysundell.com/articles/switching-between-swiftui-hstack-vstack/
 
 import SwiftUI
