@@ -437,3 +437,40 @@ delay(1.4) { searchText.send("Swift") }
 
 //throttle 防抖：它在收到一个事件后开始计时，并忽略计时 周期内的后续输入。
 // usernameSubscriber = $username.throttle(for: 0.5, scheduler: DispatchQueue.global(), latest: true)
+
+
+//  从响应式编程到 Combine 实践：https://mp.weixin.qq.com/s/b_q6R64xkq8Rl9EiIde4MA
+// ⚠️ 常见的一些使用问题
+// ⚠️1.立即开始的 Just 和 Future
+func makeMyPublisher () -> AnyPublisher<Int, Never> {
+    // ❌
+    return Just(calculateTimeConsumingResult()) //Just 和 Future 在初始化完成后会立即执行闭包生产事件
+        .eraseToAnyPublisher()
+    
+    // ✅
+    return Deferred { //封装一层 Defferred，让它在接收到订阅之后再开始执行内部的闭包。
+        return Just(calculateTimeConsumingResult())
+    }.eraseToAnyPublisher()
+}
+func calculateTimeConsumingResult() -> Int { 1 }
+
+// ⚠️2.发生错误导致 Subscription 意外结束
+func requestingAPI() -> AnyPublisher<String, Error> {
+    return URLSession.shared
+        .dataTaskPublisher(for: URL(string: "https://resso.com")!)
+        .map { $0.data }
+        .decode(type: String.self, decoder: JSONDecoder())
+        .eraseToAnyPublisher()
+}
+
+//cancellable = NotificationCenter.default
+//    .publisher(for: UserCenter.userStateChanged)
+//    .flatMap({ _ in   // 把通知转化为请求
+//        return requestingAPI() // ❌ 一旦某次网络请求发生错误，整个订阅会被结束掉，后续新的通知并不会被转化为请求
+//        return requestingAPI().materialize() //✅  materialize 将事件从 Publisher<Output, MyError> 转换为 Publisher<Event<Output, MyError>, Never> 从而避免了错误发生。   CombineExt 提供了materialize开源的实现。
+//    })
+//    .sink { completion in
+//
+//    } receiveValue: { value in
+//        textLabel.text = value
+//    }

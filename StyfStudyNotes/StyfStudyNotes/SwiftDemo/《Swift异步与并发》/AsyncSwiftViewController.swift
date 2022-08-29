@@ -891,10 +891,7 @@ class AsyncSwiftViewController: UIViewController {
     //通知转异步序列
     func testNotifications()  {
         Task {
-            let backgroundNotifications =
-            NotificationCenter.default.notifications(
-            named: UIApplication.didEnterBackgroundNotification, object: nil
-            )
+            let backgroundNotifications = NotificationCenter.default.notifications(named: UIApplication.didEnterBackgroundNotification, object: nil)
             for await notification in backgroundNotifications {
                 print(notification)
                 break

@@ -140,6 +140,8 @@
 		9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAAD283634B200E6FB65 /* Main.xcdatamodeld */; };
 		9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB0283635B200E6FB65 /* PersistenceController.swift */; };
 		9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */; };
+		92490C6128BC8F9A0031A83E /* UsingTaskModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */; };
+		92490E4E28BCA7070031A83E /* UsingOnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92490E4D28BCA7070031A83E /* UsingOnChange.swift */; };
 		924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */; };
 		924ADBB428AB8C5F0091FA97 /* UnCloudNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */; };
 		924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */; };
@@ -246,6 +248,10 @@
 		929A6EF628A2496900B92E40 /* ChangeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF528A2496900B92E40 /* ChangeStack.swift */; };
 		929A6EFA28A2500F00B92E40 /* SyncWidthHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */; };
 		929B470526D86EB100931956 /* 链表.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929B470426D86EB100931956 /* 链表.swift */; };
+		929E4B4128B8705E006592F1 /* SomeTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E4B4028B8705E006592F1 /* SomeTips.swift */; };
+		929E4B4D28B8AB44006592F1 /* MenuStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E4B4A28B8AB44006592F1 /* MenuStyle.swift */; };
+		929E4B4E28B8AB44006592F1 /* UsingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E4B4B28B8AB44006592F1 /* UsingButton.swift */; };
+		929E4B4F28B8AB44006592F1 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E4B4C28B8AB44006592F1 /* ButtonStyle.swift */; };
 		92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */; };
 		92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */; };
 		92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D20F2679EE5300A88F19 /* WPTSlidingViewController.m */; };
@@ -596,6 +602,8 @@
 		9246CAAE283634B200E6FB65 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		9246CAB0283635B200E6FB65 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolingDemo.swift; sourceTree = "<group>"; };
+		92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTaskModifier.swift; sourceTree = "<group>"; };
+		92490E4D28BCA7070031A83E /* UsingOnChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingOnChange.swift; sourceTree = "<group>"; };
 		924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnCloudNotes.swift; sourceTree = "<group>"; };
 		924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -710,6 +718,10 @@
 		929A6EF528A2496900B92E40 /* ChangeStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeStack.swift; sourceTree = "<group>"; };
 		929A6EF928A2500F00B92E40 /* SyncWidthHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncWidthHeight.swift; sourceTree = "<group>"; };
 		929B470426D86EB100931956 /* 链表.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "链表.swift"; sourceTree = "<group>"; };
+		929E4B4028B8705E006592F1 /* SomeTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTips.swift; sourceTree = "<group>"; };
+		929E4B4A28B8AB44006592F1 /* MenuStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuStyle.swift; sourceTree = "<group>"; };
+		929E4B4B28B8AB44006592F1 /* UsingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingButton.swift; sourceTree = "<group>"; };
+		929E4B4C28B8AB44006592F1 /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		92A2D2092679EE5300A88F19 /* WPTSlidingDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTSlidingDemoViewController.h; sourceTree = "<group>"; };
 		92A2D20A2679EE5300A88F19 /* WPTSlidingHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHomeViewController.m; sourceTree = "<group>"; };
 		92A2D20B2679EE5300A88F19 /* WPTSlidingHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTSlidingHeaderViewController.m; sourceTree = "<group>"; };
@@ -1692,6 +1704,16 @@
 			path = Webview;
 			sourceTree = "<group>";
 		};
+		929E4B4928B8AB44006592F1 /* ButtonKitchenSink */ = {
+			isa = PBXGroup;
+			children = (
+				929E4B4A28B8AB44006592F1 /* MenuStyle.swift */,
+				929E4B4B28B8AB44006592F1 /* UsingButton.swift */,
+				929E4B4C28B8AB44006592F1 /* ButtonStyle.swift */,
+			);
+			path = ButtonKitchenSink;
+			sourceTree = "<group>";
+		};
 		92A2D2082679EE4400A88F19 /* 嵌套滚动(有问题) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2234,6 +2256,7 @@
 		92F1E99A28913AB2005E8D85 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				929E4B4928B8AB44006592F1 /* ButtonKitchenSink */,
 				92ABFB2128B750DD00C3BF29 /* SaveEnumInUserDefaults.swift */,
 				92ABFB1F28B750D600C3BF29 /* UserDefaults+++.swift */,
 				92ABFB1728B747CD00C3BF29 /* ChangeNavigationBarColor.swift */,
@@ -2245,7 +2268,10 @@
 				927F8E6628AF6B3A00330616 /* UsingAttributedString.swift */,
 				92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */,
 				92ABFB2728B75C4600C3BF29 /* UsingTimelineView.swift */,
+				92490E4D28BCA7070031A83E /* UsingOnChange.swift */,
 				92ABFB2928B7608B00C3BF29 /* UsingGrid.swift */,
+				92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */,
+				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -2487,6 +2513,7 @@
 			files = (
 				924C7157281BC85400B4AEE8 /* Preference.swift in Sources */,
 				92F36646273381A20013FB92 /* UIImage+scale.m in Sources */,
+				92490E4E28BCA7070031A83E /* UsingOnChange.swift in Sources */,
 				92E0E512286044C000F18C73 /* Global.swift in Sources */,
 				922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */,
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
@@ -2494,6 +2521,7 @@
 				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
 				92A417DE28128F8000603DCE /* PokemonInfoPanelHeader.swift in Sources */,
 				920986B1286D546F00B5F418 /* PoemsDataModel.swift in Sources */,
+				929E4B4128B8705E006592F1 /* SomeTips.swift in Sources */,
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
@@ -2525,6 +2553,7 @@
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				921D54D328B31EBC0075B93C /* Employee+CoreDataProperties.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
+				929E4B4F28B8AB44006592F1 /* ButtonStyle.swift in Sources */,
 				920B9C0325DFBD970098B1BA /* Rectangle.m in Sources */,
 				92A417D8281272F700603DCE /* Pokemon.swift in Sources */,
 				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
@@ -2545,6 +2574,7 @@
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
+				929E4B4D28B8AB44006592F1 /* MenuStyle.swift in Sources */,
 				921D54D528B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift in Sources */,
 				92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
@@ -2564,6 +2594,7 @@
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
 				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
 				9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */,
+				92490C6128BC8F9A0031A83E /* UsingTaskModifier.swift in Sources */,
 				921D54D428B31EBC0075B93C /* EmployeePicture+CoreDataClass.swift in Sources */,
 				925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */,
 				9229790D25E5DCF800618FDF /* 排序.swift in Sources */,
@@ -2703,6 +2734,7 @@
 				924C7153281BB03000B4AEE8 /* TimerView.swift in Sources */,
 				92E1A5EF264CD2ED007D63D5 /* SessionDelegateProxy.m in Sources */,
 				925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */,
+				929E4B4E28B8AB44006592F1 /* UsingButton.swift in Sources */,
 				92CA9CC328166EDE00246D51 /* AppAction.swift in Sources */,
 				929A6EF628A2496900B92E40 /* ChangeStack.swift in Sources */,
 				92EF585028A4F899009D7CB9 /* Dog Walk.xcdatamodeld in Sources */,
