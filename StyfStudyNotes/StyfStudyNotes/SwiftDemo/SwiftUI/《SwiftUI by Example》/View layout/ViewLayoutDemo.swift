@@ -76,6 +76,18 @@ struct UsingSafeAreaInset: View {
     }
 }
 
+struct OutsideTheSafeArea: View {
+    var body: some View {
+//        TestWrap("把视图放到SafeArea之外") {
+            Text("Hello World")
+                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
+                .background(Color.red)
+                .ignoresSafeArea()
+//                .safeAreaInset(edge: <#T##VerticalEdge#>, alignment: <#T##HorizontalAlignment#>, spacing: <#T##CGFloat?#>, content: <#T##() -> View#>)  //它允许我们在安全区域外放置不同的内容，同时调整剩余的安全区域，使其所有内容保持可见。
+//        }
+    }
+}
+
 struct UsingForegroundStyle: View {
     var body: some View {
         TestWrap("使用foregroundStyle控制整体样式") {
@@ -274,18 +286,6 @@ struct TossResult: View {
             Text("4.封装出去，效果最好，可重用")
                 .font(.title)
         }
-    }
-}
-
-struct OutsideTheSafeArea: View {
-    var body: some View {
-//        TestWrap("把视图放到SafeArea之外") {
-            Text("Hello World")
-                .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
-                .background(Color.red)
-                .ignoresSafeArea()
-//                .safeAreaInset(edge: <#T##VerticalEdge#>, alignment: <#T##HorizontalAlignment#>, spacing: <#T##CGFloat?#>, content: <#T##() -> View#>)  //它允许我们在安全区域外放置不同的内容，同时调整剩余的安全区域，使其所有内容保持可见。
-//        }
     }
 }
 

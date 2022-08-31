@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct UsingOnChange: View {
+struct UsingOnChange1: View {
     var body: some View {
         NonStateDemo()
     }

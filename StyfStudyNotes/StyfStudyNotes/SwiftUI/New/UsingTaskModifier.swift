@@ -161,7 +161,7 @@ struct TimerView1: View { //运行在子线程上
     }
 }
 //------------------------------------------------------------------------------------
-struct TimerView:View{ //运行在主线程上
+struct TimerView0:View{ //运行在主线程上
     @State var date = Date.now
     @State var show = true
     var body: some View{

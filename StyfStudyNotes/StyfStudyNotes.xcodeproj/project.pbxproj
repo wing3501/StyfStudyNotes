@@ -142,6 +142,7 @@
 		9246CAB428366D2A00E6FB65 /* ToolingDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */; };
 		92490C6128BC8F9A0031A83E /* UsingTaskModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */; };
 		92490E4E28BCA7070031A83E /* UsingOnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92490E4D28BCA7070031A83E /* UsingOnChange.swift */; };
+		9249122428BCE9E10031A83E /* OpenUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9249122328BCE9E10031A83E /* OpenUrl.swift */; };
 		924ADBAE28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBAC28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodeld */; };
 		924ADBB428AB8C5F0091FA97 /* UnCloudNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */; };
 		924ADBB728AB901B0091FA97 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */; };
@@ -218,6 +219,10 @@
 		9276492828AE223200970310 /* CampSiteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492728AE223200970310 /* CampSiteServiceTests.swift */; };
 		9276492C28AE2E3F00970310 /* ReservationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492B28AE2E3F00970310 /* ReservationService.swift */; };
 		9276492E28AE302400970310 /* ReservationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9276492D28AE302300970310 /* ReservationServiceTests.swift */; };
+		9279A9F328BE0B0B004B379E /* CenteringTheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279A9F228BE0B0B004B379E /* CenteringTheView.swift */; };
+		9279ABE428BE3B9F004B379E /* UIApplication+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279ABE328BE3B9E004B379E /* UIApplication+++.swift */; };
+		9279ABE628BE3BA6004B379E /* View+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279ABE528BE3BA6004B379E /* View+++.swift */; };
+		9279ABE828BE3BAC004B379E /* UsingSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279ABE728BE3BAC004B379E /* UsingSafeArea.swift */; };
 		927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 927F0530282BD824001E39B7 /* IMG_1599.MP4 */; };
 		927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */; };
 		927F8E6128AF3D0500330616 /* MixTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F8E6028AF3D0500330616 /* MixTextImage.swift */; };
@@ -363,6 +368,8 @@
 		92EDCD4228AE5E2A00889F36 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */; };
 		92EDCD4428AE5E4300889F36 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */; };
 		92EDCD4828AE608600889F36 /* EmployeeDirectory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92EDCD4628AE608600889F36 /* EmployeeDirectory.xcdatamodeld */; };
+		92EDE3F428BF08DA008DD188 /* Publisher+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDE3F328BF08DA008DD188 /* Publisher+++.swift */; };
+		92EDE3F628BF08F2008DD188 /* CombineAndAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EDE3F528BF08F2008DD188 /* CombineAndAsync.swift */; };
 		92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */; };
 		92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584A28A4F111009D7CB9 /* DogWalk.swift */; };
 		92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */; };
@@ -604,6 +611,7 @@
 		9246CAB328366D2A00E6FB65 /* ToolingDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolingDemo.swift; sourceTree = "<group>"; };
 		92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTaskModifier.swift; sourceTree = "<group>"; };
 		92490E4D28BCA7070031A83E /* UsingOnChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingOnChange.swift; sourceTree = "<group>"; };
+		9249122328BCE9E10031A83E /* OpenUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenUrl.swift; sourceTree = "<group>"; };
 		924ADBAD28AB8A000091FA97 /* UnCloudNotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnCloudNotesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		924ADBB328AB8C5F0091FA97 /* UnCloudNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnCloudNotes.swift; sourceTree = "<group>"; };
 		924ADBB528AB901B0091FA97 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -684,6 +692,10 @@
 		9276492728AE223200970310 /* CampSiteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSiteServiceTests.swift; sourceTree = "<group>"; };
 		9276492B28AE2E3F00970310 /* ReservationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationService.swift; sourceTree = "<group>"; };
 		9276492D28AE302300970310 /* ReservationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationServiceTests.swift; sourceTree = "<group>"; };
+		9279A9F228BE0B0B004B379E /* CenteringTheView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteringTheView.swift; sourceTree = "<group>"; };
+		9279ABE328BE3B9E004B379E /* UIApplication+++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+++.swift"; sourceTree = "<group>"; };
+		9279ABE528BE3BA6004B379E /* View+++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+++.swift"; sourceTree = "<group>"; };
+		9279ABE728BE3BAC004B379E /* UsingSafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingSafeArea.swift; sourceTree = "<group>"; };
 		927F0530282BD824001E39B7 /* IMG_1599.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1599.MP4; sourceTree = "<group>"; };
 		927F0533282BE45C001E39B7 /* ViewLayoutDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutDemo.swift; sourceTree = "<group>"; };
 		927F8E6028AF3D0500330616 /* MixTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixTextImage.swift; sourceTree = "<group>"; };
@@ -857,6 +869,8 @@
 		92EDCD4128AE5E2A00889F36 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 		92EDCD4328AE5E4300889F36 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
 		92EDCD4728AE608600889F36 /* EmployeeDirectory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeDirectory.xcdatamodel; sourceTree = "<group>"; };
+		92EDE3F328BF08DA008DD188 /* Publisher+++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+++.swift"; sourceTree = "<group>"; };
+		92EDE3F528BF08F2008DD188 /* CombineAndAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineAndAsync.swift; sourceTree = "<group>"; };
 		92EF584728A4EBFD009D7CB9 /* CoreDataDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDemo.swift; sourceTree = "<group>"; };
 		92EF584A28A4F111009D7CB9 /* DogWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalk.swift; sourceTree = "<group>"; };
 		92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -2271,6 +2285,13 @@
 				92490E4D28BCA7070031A83E /* UsingOnChange.swift */,
 				92ABFB2928B7608B00C3BF29 /* UsingGrid.swift */,
 				92490C6028BC8F9A0031A83E /* UsingTaskModifier.swift */,
+				9249122328BCE9E10031A83E /* OpenUrl.swift */,
+				9279A9F228BE0B0B004B379E /* CenteringTheView.swift */,
+				9279ABE328BE3B9E004B379E /* UIApplication+++.swift */,
+				9279ABE528BE3BA6004B379E /* View+++.swift */,
+				9279ABE728BE3BAC004B379E /* UsingSafeArea.swift */,
+				92EDE3F328BF08DA008DD188 /* Publisher+++.swift */,
+				92EDE3F528BF08F2008DD188 /* CombineAndAsync.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2524,6 +2545,7 @@
 				929E4B4128B8705E006592F1 /* SomeTips.swift in Sources */,
 				92A8D7FA25D28E1A0008EFAA /* 二分查找.swift in Sources */,
 				92A2D2112679EE5400A88F19 /* WPTSlidingHomeViewController.m in Sources */,
+				92EDE3F428BF08DA008DD188 /* Publisher+++.swift in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
 				92E83F6328A6288800194087 /* Stats+CoreDataClass.swift in Sources */,
 				92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */,
@@ -2558,6 +2580,7 @@
 				92A417D8281272F700603DCE /* Pokemon.swift in Sources */,
 				92AE63052809413F0082505B /* ReactiveForm.swift in Sources */,
 				92CA9CBF2816505500246D51 /* Store.swift in Sources */,
+				9279A9F328BE0B0B004B379E /* CenteringTheView.swift in Sources */,
 				923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */,
 				920986AD286D43C900B5F418 /* Poem.swift in Sources */,
 				9220D59226AA942A007E8B6A /* SaleModel.m in Sources */,
@@ -2565,6 +2588,7 @@
 				92A9A57328326B690018F2DA /* ContainersDemo.swift in Sources */,
 				92EDCB7828AE3CF500889F36 /* EmployeeDirectory.swift in Sources */,
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
+				9279ABE628BE3BA6004B379E /* View+++.swift in Sources */,
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
 				92ABFB2A28B7608B00C3BF29 /* UsingGrid.swift in Sources */,
 				927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */,
@@ -2592,6 +2616,7 @@
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				92EC412928B366DB004EC671 /* SurfCoreDataStack.swift in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
+				9249122428BCE9E10031A83E /* OpenUrl.swift in Sources */,
 				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
 				9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */,
 				92490C6128BC8F9A0031A83E /* UsingTaskModifier.swift in Sources */,
@@ -2693,6 +2718,7 @@
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
 				92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */,
 				92A417DA2812828A00603DCE /* PokemonInfoPanel.swift in Sources */,
+				9279ABE428BE3B9F004B379E /* UIApplication+++.swift in Sources */,
 				92A2D2142679EE5400A88F19 /* WPTSlidingDemoViewController.m in Sources */,
 				920A7BCE282526DD0011A12D /* Order.swift in Sources */,
 				92E8A3482856CFAF009D3690 /* SaveKeyDemo.swift in Sources */,
@@ -2760,6 +2786,7 @@
 				9246CAAF283634B200E6FB65 /* Main.xcdatamodeld in Sources */,
 				92E83F6428A6288800194087 /* VenueCategory+CoreDataProperties.swift in Sources */,
 				9276474728ADEA7700970310 /* CampgroundCoreDataStack.swift in Sources */,
+				92EDE3F628BF08F2008DD188 /* CombineAndAsync.swift in Sources */,
 				92CA9CBA28164C0B00246D51 /* MainTab.swift in Sources */,
 				92A2D3752679F1C700A88F19 /* UIColor+Ext.m in Sources */,
 				92F06AC4287D596D00ADA9E9 /* DIContainer.swift in Sources */,
@@ -2797,6 +2824,7 @@
 				929B470526D86EB100931956 /* 链表.swift in Sources */,
 				9246CAA82836260D00E6FB65 /* ComposingViews.swift in Sources */,
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
+				9279ABE828BE3BAC004B379E /* UsingSafeArea.swift in Sources */,
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				92E83F2428A605A700194087 /* BubbleTea.swift in Sources */,
 				920B9BF825DFB6280098B1BA /* BusinessObject.m in Sources */,

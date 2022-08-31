@@ -9,6 +9,14 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+        
+        //最小行高
+//        List {
+//            ....
+//        }
+//        .listStyle(.plain)
+//        .environment(\.defaultMinListRowHeight, 80) // 设置 List 最小行高度
+        
         //List消除每一行内边距
 //        List{
 //            Image("自己的图片")//此处可以换成其他控件
