@@ -296,6 +296,7 @@
 		92ABFB2428B7526900C3BF29 /* UsingCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */; };
 		92ABFB2828B75C4700C3BF29 /* UsingTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB2728B75C4600C3BF29 /* UsingTimelineView.swift */; };
 		92ABFB2A28B7608B00C3BF29 /* UsingGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABFB2928B7608B00C3BF29 /* UsingGrid.swift */; };
+		92AC18B628C1D3B4009CAB64 /* UsingGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC18B528C1D3B4009CAB64 /* UsingGauge.swift */; };
 		92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589928112F75000BE001 /* CalculatorModel.swift */; };
 		92AC589C28113E44000BE001 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC589B28113E43000BE001 /* HistoryView.swift */; };
 		92AC5D2028115FE3000BE001 /* PokemonInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC5D1F28115FE3000BE001 /* PokemonInfoRow.swift */; };
@@ -786,6 +787,7 @@
 		92ABFB2328B7526900C3BF29 /* UsingCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingCustomLayout.swift; sourceTree = "<group>"; };
 		92ABFB2728B75C4600C3BF29 /* UsingTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingTimelineView.swift; sourceTree = "<group>"; };
 		92ABFB2928B7608B00C3BF29 /* UsingGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingGrid.swift; sourceTree = "<group>"; };
+		92AC18B528C1D3B4009CAB64 /* UsingGauge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingGauge.swift; sourceTree = "<group>"; };
 		92AC589928112F75000BE001 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		92AC589B28113E43000BE001 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		92AC5D1E28115505000BE001 /* pokemon.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
@@ -2292,6 +2294,7 @@
 				9279ABE728BE3BAC004B379E /* UsingSafeArea.swift */,
 				92EDE3F328BF08DA008DD188 /* Publisher+++.swift */,
 				92EDE3F528BF08F2008DD188 /* CombineAndAsync.swift */,
+				92AC18B528C1D3B4009CAB64 /* UsingGauge.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2606,6 +2609,7 @@
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */,
+				92AC18B628C1D3B4009CAB64 /* UsingGauge.swift in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
 				92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,

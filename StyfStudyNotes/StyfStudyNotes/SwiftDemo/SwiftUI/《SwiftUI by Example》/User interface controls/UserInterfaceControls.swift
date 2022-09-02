@@ -484,6 +484,9 @@ struct UsingTextField: View {
                 //自动多行
                 TextField("Textfield", text: $name, axis: .vertical) // 1
                     .lineLimit(3...10) // 2
+//                    .lineLimit(2...)
+//                TextField("Address", text: $address, axis: .vertical)
+//                            .lineLimit(3, reservesSpace: true) //不足3行也留空
             }
         }
     }
