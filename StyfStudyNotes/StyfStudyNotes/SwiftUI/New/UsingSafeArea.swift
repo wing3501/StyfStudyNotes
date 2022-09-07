@@ -248,7 +248,7 @@ struct IgnoresSafeAreaTest: View {
             }
         }
         //.ignoresSafeArea() //❌ 失去了键盘避让功能
-        //.ignoresSafeArea(.container) //❌ 北京还是变化了
+        //.ignoresSafeArea(.container) //❌ 背景还是变化了
     }
 }
 
