@@ -55,7 +55,7 @@ struct PickerMenu: View {
 
 struct ShowMenu: View {
     var body: some View {
-        TestWrap("显示Menu") {
+        TestWrap("显示Menu") { //在macOS 上是下拉框的形式
 //            Menu("Options") {
 //                Button("Order Now", action: placeOrder)
 //                Button("Adjust Order", action: adjustOrder)

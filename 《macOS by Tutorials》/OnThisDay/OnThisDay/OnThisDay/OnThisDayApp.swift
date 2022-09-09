@@ -17,11 +17,22 @@ import SwiftUI
 struct OnThisDayApp: App {
     
     @StateObject var appState = AppState() //多个窗口共享
+    @AppStorage("displayMode") var displayMode = DisplayMode.auto //应用内部管理显示模式
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(appState)
+                .onAppear {
+                    DisplayMode.changeDisplayMode(to: displayMode)
+                }
+                .onChange(of: displayMode) { newValue in
+                    DisplayMode.changeDisplayMode(to: newValue)
+                }
+        }
+        .commands {
+            // ✅ 添加系统菜单
+            Menus()
         }
     }
 }
