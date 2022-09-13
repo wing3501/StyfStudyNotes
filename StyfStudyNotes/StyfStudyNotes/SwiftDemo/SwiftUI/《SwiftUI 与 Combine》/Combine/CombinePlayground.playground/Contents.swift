@@ -235,6 +235,8 @@ check("collect") {
 //    return subject
 //}
 
+// merge 有一个publisher发布值，就会发布值
+
 let subject_example1 = PassthroughSubject<Int, Never>()
 let subject_example2 = PassthroughSubject<Int, Never>()
 check("Subject Order") {
