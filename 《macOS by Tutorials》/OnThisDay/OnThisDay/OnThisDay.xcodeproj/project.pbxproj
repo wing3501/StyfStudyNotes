@@ -24,6 +24,7 @@
 		92733D4728CAE572001683EF /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92733D4628CAE572001683EF /* Menus.swift */; };
 		92733D4928CB24D0001683EF /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92733D4828CB24D0001683EF /* DisplayMode.swift */; };
 		92733D4C28CB2EF3001683EF /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92733D4B28CB2EF3001683EF /* Toolbar.swift */; };
+		92EFF54228D054DC001176EE /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF54128D054DC001176EE /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		92733D4628CAE572001683EF /* Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menus.swift; sourceTree = "<group>"; };
 		92733D4828CB24D0001683EF /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
 		92733D4B28CB2EF3001683EF /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		92EFF54128D054DC001176EE /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				9255D1C128C9CED9001B5402 /* SidebarView.swift */,
 				9255D1C828C9E68B001B5402 /* GridView.swift */,
 				9255D1C328C9D7D6001B5402 /* EventView.swift */,
+				92EFF54128D054DC001176EE /* TableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				9200F36728C89E71007EF412 /* OnThisDayApp.swift in Sources */,
 				9255D1C428C9D7D6001B5402 /* EventView.swift in Sources */,
 				92733D4C28CB2EF3001683EF /* Toolbar.swift in Sources */,
+				92EFF54228D054DC001176EE /* TableView.swift in Sources */,
 				9255D1C928C9E68B001B5402 /* GridView.swift in Sources */,
 				9255D1C728C9D8CD001B5402 /* SampleEvent.swift in Sources */,
 			);

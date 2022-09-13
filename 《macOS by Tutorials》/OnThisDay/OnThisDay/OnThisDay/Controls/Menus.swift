@@ -41,7 +41,7 @@ struct Menus: Commands {
                         .tag($0)
                 }
             }
-            // 解决Picker不支持快捷键的问题
+            //✅ 解决Picker不支持快捷键的问题
             Menu("Appearance") {
                 Button("Light") {
                     displayMode = .light

@@ -19,7 +19,7 @@ struct SidebarView: View {
             Section("TODAY") {
                 ForEach(EventType.allCases,id: \.self) { type in
                     Text(type.rawValue)
-                        .badge(showTotals ? appState.countFor(eventType: type) : 0) // 数字角标
+                        .badge(showTotals ? appState.countFor(eventType: type) : 0) //✅ 数字角标
                 }
             }
         }

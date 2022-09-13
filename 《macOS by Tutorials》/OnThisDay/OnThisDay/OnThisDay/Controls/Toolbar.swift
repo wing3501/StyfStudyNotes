@@ -9,6 +9,8 @@ import SwiftUI
 
 //struct Toolbar: ToolbarContent { ✅ 解决View菜单下Customize Toolbar不可用的问题
 struct Toolbar: CustomizableToolbarContent {
+    @Binding var viewMode: ViewMode
+    
 //    var body: some ToolbarContent {
     var body: some CustomizableToolbarContent {
         // navigation 导航栏左侧
@@ -31,6 +33,18 @@ struct Toolbar: CustomizableToolbarContent {
                 Label("Toggle Sidebar", systemImage: "sidebar.left")
             }
             .help("Toggle Sidebar") //提示信息
+        }
+        
+        // 切换数据显示模式
+        ToolbarItem(id: "viewMode") {
+            Picker("View Mode", selection: $viewMode) {
+                Label("Grid", systemImage: "square.grid.3x2")
+                    .tag(ViewMode.grid)
+                Label("Table", systemImage: "tablecells")
+                    .tag(ViewMode.table)
+            }
+            .pickerStyle(.segmented)
+            .help("在Grid和Table之间切换")
         }
     }
     
