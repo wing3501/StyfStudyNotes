@@ -16,9 +16,10 @@ struct ContentView: View {
     
     @EnvironmentObject var appState: AppState
     
-    @State private var eventType: EventType? = .events
-    @State private var searchText = ""
-    @State private var viewMode: ViewMode = .grid
+    // ✅ 使用 @SceneStorage 来保存不同window各自的数据。 @SceneStorage也是对UserDefaults的封装，但是每个window保存独一份
+    @SceneStorage("eventType") private var eventType: EventType?
+    @SceneStorage("searchText") private var searchText = ""
+    @SceneStorage("viewMode") private var viewMode: ViewMode = .grid
     
     var windowTitle: String {
         if let eventType {
@@ -47,6 +48,11 @@ struct ContentView: View {
             Toolbar(viewMode: $viewMode) //✅ 工具条
         }
         .searchable(text: $searchText, prompt: "")//✅ 搜索框
+        .onAppear {
+            if eventType == nil {
+                eventType = .events
+            }
+        }
     }
 }
 
