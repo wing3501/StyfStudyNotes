@@ -379,6 +379,7 @@
 		92EF585628A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */; };
 		92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */; };
 		92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */; };
+		92EFF53C28D023D1001176EE /* CustomizingToolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */; };
 		92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F008B528854E38002BBD22 /* TransferableDemo.swift */; };
 		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
 		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
@@ -881,6 +882,7 @@
 		92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataClass.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingToolbars.swift; sourceTree = "<group>"; };
 		92F008B528854E38002BBD22 /* TransferableDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableDemo.swift; sourceTree = "<group>"; };
 		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
 		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
@@ -2295,6 +2297,7 @@
 				92EDE3F328BF08DA008DD188 /* Publisher+++.swift */,
 				92EDE3F528BF08F2008DD188 /* CombineAndAsync.swift */,
 				92AC18B528C1D3B4009CAB64 /* UsingGauge.swift */,
+				92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2675,6 +2678,7 @@
 				92C84BCA26735C3C002C2387 /* MyFlutterBoostDelegate.m in Sources */,
 				92F06ACC287D673700ADA9E9 /* ImageView.swift in Sources */,
 				92ABFB2828B75C4700C3BF29 /* UsingTimelineView.swift in Sources */,
+				92EFF53C28D023D1001176EE /* CustomizingToolbars.swift in Sources */,
 				920CD01026521002007E4E2E /* PropertyWrapperViewController.swift in Sources */,
 				92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */,
 				92B1AFDC265B3A2E0029C502 /* OpenSetting.m in Sources */,
