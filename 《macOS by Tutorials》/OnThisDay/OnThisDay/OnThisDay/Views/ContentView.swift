@@ -21,6 +21,8 @@ struct ContentView: View {
     @SceneStorage("searchText") private var searchText = ""
     @SceneStorage("viewMode") private var viewMode: ViewMode = .grid
     
+    @SceneStorage("selectedDate") var selectedDate: String?
+    
     var windowTitle: String {
         if let eventType {
             return "On This Day - \(eventType.rawValue)"
@@ -30,7 +32,8 @@ struct ContentView: View {
     
     var events: [Event] {
 //        appState.dataFor(eventType: eventType)
-        appState.dataFor(eventType: eventType,searchText: searchText)
+//        appState.dataFor(eventType: eventType,searchText: searchText)
+        appState.dataFor(eventType: eventType, date: selectedDate, searchText: searchText)
     }
     
     var body: some View {

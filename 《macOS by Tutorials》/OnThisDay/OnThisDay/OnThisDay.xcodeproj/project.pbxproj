@@ -25,6 +25,8 @@
 		92733D4928CB24D0001683EF /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92733D4828CB24D0001683EF /* DisplayMode.swift */; };
 		92733D4C28CB2EF3001683EF /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92733D4B28CB2EF3001683EF /* Toolbar.swift */; };
 		92EFF54228D054DC001176EE /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF54128D054DC001176EE /* TableView.swift */; };
+		92EFFBF528D07C60001176EE /* DatePickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFBF428D07C60001176EE /* DatePickerViews.swift */; };
+		92EFFBF728D07F1A001176EE /* DayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFBF628D07F1A001176EE /* DayPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		92733D4828CB24D0001683EF /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
 		92733D4B28CB2EF3001683EF /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		92EFF54128D054DC001176EE /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		92EFFBF428D07C60001176EE /* DatePickerViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViews.swift; sourceTree = "<group>"; };
+		92EFFBF628D07F1A001176EE /* DayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				9255D1C828C9E68B001B5402 /* GridView.swift */,
 				9255D1C328C9D7D6001B5402 /* EventView.swift */,
 				92EFF54128D054DC001176EE /* TableView.swift */,
+				92EFFBF428D07C60001176EE /* DatePickerViews.swift */,
+				92EFFBF628D07F1A001176EE /* DayPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 				9255D1B828C9C194001B5402 /* AppState.swift in Sources */,
 				92733D4728CAE572001683EF /* Menus.swift in Sources */,
 				9255D1C028C9C19C001B5402 /* Networker.swift in Sources */,
+				92EFFBF728D07F1A001176EE /* DayPicker.swift in Sources */,
 				9255D1BB28C9C194001B5402 /* Day.swift in Sources */,
 				9255D1C228C9CED9001B5402 /* SidebarView.swift in Sources */,
 				9200F36928C89E71007EF412 /* ContentView.swift in Sources */,
@@ -226,6 +233,7 @@
 				9200F36728C89E71007EF412 /* OnThisDayApp.swift in Sources */,
 				9255D1C428C9D7D6001B5402 /* EventView.swift in Sources */,
 				92733D4C28CB2EF3001683EF /* Toolbar.swift in Sources */,
+				92EFFBF528D07C60001176EE /* DatePickerViews.swift in Sources */,
 				92EFF54228D054DC001176EE /* TableView.swift in Sources */,
 				9255D1C928C9E68B001B5402 /* GridView.swift in Sources */,
 				9255D1C728C9D8CD001B5402 /* SampleEvent.swift in Sources */,
