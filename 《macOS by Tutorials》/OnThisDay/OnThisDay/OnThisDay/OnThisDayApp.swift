@@ -13,6 +13,8 @@ import SwiftUI
 // SwiftUI在macOS app上的预览有些不同
 // Mac 默认情况下会禁用网络连接
 
+// ✅修改target名称，可以便捷地使用带空格的应用名   也可以修改Build Setting中的Product Name
+
 @main
 struct OnThisDayApp: App {
     

@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9200F36328C89E71007EF412 /* OnThisDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnThisDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9200F36328C89E71007EF412 /* On This Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On This Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9200F36628C89E71007EF412 /* OnThisDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnThisDayApp.swift; sourceTree = "<group>"; };
 		9200F36828C89E71007EF412 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9200F36A28C89E74007EF412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		9200F36428C89E71007EF412 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9200F36328C89E71007EF412 /* OnThisDay.app */,
+				9200F36328C89E71007EF412 /* On This Day.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9200F36228C89E71007EF412 /* OnThisDay */ = {
+		9200F36228C89E71007EF412 /* On This Day */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9200F37228C89E74007EF412 /* Build configuration list for PBXNativeTarget "OnThisDay" */;
+			buildConfigurationList = 9200F37228C89E74007EF412 /* Build configuration list for PBXNativeTarget "On This Day" */;
 			buildPhases = (
 				9200F35F28C89E71007EF412 /* Sources */,
 				9200F36028C89E71007EF412 /* Frameworks */,
@@ -167,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = OnThisDay;
+			name = "On This Day";
 			productName = OnThisDay;
-			productReference = 9200F36328C89E71007EF412 /* OnThisDay.app */;
+			productReference = 9200F36328C89E71007EF412 /* On This Day.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9200F36228C89E71007EF412 /* OnThisDay */,
+				9200F36228C89E71007EF412 /* On This Day */,
 			);
 		};
 /* End PBXProject section */
@@ -426,7 +426,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9200F37228C89E74007EF412 /* Build configuration list for PBXNativeTarget "OnThisDay" */ = {
+		9200F37228C89E74007EF412 /* Build configuration list for PBXNativeTarget "On This Day" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9200F37328C89E74007EF412 /* Debug */,
