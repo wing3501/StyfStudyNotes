@@ -34,5 +34,9 @@ struct OnThisDayApp: App {
             // ✅ 添加系统菜单
             Menus()
         }
+        // ✅ 添加偏好设置
+        Settings {
+            PreferencesView()
+        }
     }
 }
