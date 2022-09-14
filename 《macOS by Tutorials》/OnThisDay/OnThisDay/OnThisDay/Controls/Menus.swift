@@ -18,7 +18,8 @@ struct Menus: Commands {
         ToolbarCommands()
         
         //✅ 在已有的菜单中加入一项，最多10项
-        CommandGroup(before: .help) {
+//        CommandGroup(before: .help) {
+        CommandGroup(replacing: .help) {// ✅暂时先隐藏帮助
             Button("ZenQuotes.io web site") {
                 showAPIWebSite()
             }
