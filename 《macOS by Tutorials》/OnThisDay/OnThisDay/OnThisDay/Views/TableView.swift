@@ -33,6 +33,7 @@ struct TableView: View {
         // ✅ Table的使用
         HStack {
             Table(sortedTableData,selection: $selectedEventID,sortOrder: $sortOrder) { //Table排序的使用 2 绑定 Table选中的使用 2
+                
                 TableColumn("Year",value: \.year) { //Table排序的使用 3 设置keypath
                     Text($0.year)
                 }
@@ -42,6 +43,11 @@ struct TableView: View {
     //            }
                 TableColumn("Title", value: \.text)// 简写
             }
+            //  .tableStyle(.automatic)
+            //  .tableStyle(.inset)
+//              .tableStyle(.inset(alternatesRowBackgrounds: false))
+            //  .tableStyle(.bordered)
+            //  .tableStyle(.inset(alternatesRowBackgrounds: false))
             
             if let selectedEvent {
                 EventView(event: selectedEvent)
