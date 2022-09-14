@@ -18,10 +18,10 @@ struct SidebarView: View {
     var body: some View {
         VStack {
             List(selection: $selection) {
-                Section("TODAY") {
+                Section(selectedDate?.uppercased() ?? "TODAY") {
                     ForEach(EventType.allCases,id: \.self) { type in
                         Text(type.rawValue)
-                            .badge(showTotals ? appState.countFor(eventType: type) : 0) //✅ 数字角标
+                            .badge(showTotals ? appState.countFor(eventType: type,date: selectedDate) : 0) //✅ 数字角标
                     }
                 }
                 //已下载的数据
