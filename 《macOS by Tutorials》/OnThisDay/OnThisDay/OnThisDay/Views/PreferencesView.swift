@@ -15,7 +15,7 @@ struct PreferencesView: View {
                     Image(systemName: "checkmark.circle")
                     Text("Show") // ⚠️ 这里的文字会作为window的标题。这也是偏好window的不同之处
                 }
-            Text("Tab 2 content here")
+            AppearanceView()
                 .tabItem {
                     Image(systemName: "sun.min")
                     Text("Appearance")
@@ -33,10 +33,25 @@ struct ShowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            // 多选
             Toggle("Show Births", isOn: $showBirths)
             Toggle("Show Deaths", isOn: $showDeaths)
             Toggle("Show Totals", isOn: $showTotals)
         }
+    }
+}
+
+struct AppearanceView: View {
+    @AppStorage("displayMode") var displayMode = DisplayMode.auto
+    
+    var body: some View {
+        Picker("", selection: $displayMode) {
+            //单选
+            Text("Light").tag(DisplayMode.light)
+            Text("Dark").tag(DisplayMode.dark)
+            Text("Automatic").tag(DisplayMode.auto)
+        }
+        .pickerStyle(.radioGroup)
     }
 }
 
