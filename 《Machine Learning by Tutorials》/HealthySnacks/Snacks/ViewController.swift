@@ -31,7 +31,11 @@ import UIKit
 import CoreML
 import Vision
 
-// CoreML的基本使用
+// ✅CoreML的基本使用
+// 1、搞个模型，导入Xcode
+// 2、创建VNCoreMLRequest对象（仅一次）,提供处理结果回调
+// 3、异步创建VNImageRequestHandler，执行VNCoreMLRequest
+
 // 🐔 模型要求像素227
 // 🐟 拖入模型文件，自动生成模型类
 
@@ -49,8 +53,11 @@ class ViewController: UIViewController {
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
             let configuration = MLModelConfiguration()
-            let healthySnacks = try HealthySnacks(configuration: configuration)
-            let visonModel = try VNCoreMLModel(for: healthySnacks.model)
+//            let healthySnacks = try HealthySnacks(configuration: configuration)
+//            let visonModel = try VNCoreMLModel(for: healthySnacks.model)
+            
+            let multiSnacks = try MultiSnacks(configuration: configuration)
+            let visonModel = try VNCoreMLModel(for: multiSnacks.model)
             
             let request = VNCoreMLRequest(model: visonModel) {[weak self] request, error in
                 //print("Request is finished!", request.results ?? "no result")
@@ -156,7 +163,12 @@ class ViewController: UIViewController {
                     self.resultsLabel.text = "nothing found"
                 } else {
                     // ✅ Vision自动按置信度对结果进行排序，因此结果[0]包含置信度最高的类-获胜类
-                    self.resultsLabel.text = String(format: "%@ %.1f%%",results[0].identifier, results[0].confidence * 100)
+                    // self.resultsLabel.text = String(format: "%@ %.1f%%",results[0].identifier, results[0].confidence * 100)
+                        
+                    let top3 = results.prefix(3).map { observation in
+                        String(format: "%@ %.1f%%", observation.identifier, observation.confidence * 100)
+                    }
+                    self.resultsLabel.text = top3.joined(separator: "\n")
                 }
                 
                 // ✅ 手动控制阈值

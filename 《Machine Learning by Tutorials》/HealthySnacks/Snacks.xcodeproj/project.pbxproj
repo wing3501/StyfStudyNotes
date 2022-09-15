@@ -14,6 +14,7 @@
 		7BF6C667204818ED00606217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6C666204818ED00606217 /* Assets.xcassets */; };
 		7BF6C66A204818ED00606217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6C668204818ED00606217 /* LaunchScreen.storyboard */; };
 		9292421728D30AAB0082616D /* HealthySnacks.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9292421628D30AAB0082616D /* HealthySnacks.mlmodel */; };
+		9292421928D320600082616D /* MultiSnacks.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9292421828D3205F0082616D /* MultiSnacks.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7BF6C669204818ED00606217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BF6C66B204818ED00606217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9292421628D30AAB0082616D /* HealthySnacks.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = HealthySnacks.mlmodel; sourceTree = "<group>"; };
+		9292421828D3205F0082616D /* MultiSnacks.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MultiSnacks.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				7BF6C661204818EC00606217 /* ViewController.swift */,
 				7B11BA822048333700D790AA /* CGImagePropertyOrientation.swift */,
 				9292421628D30AAB0082616D /* HealthySnacks.mlmodel */,
+				9292421828D3205F0082616D /* MultiSnacks.mlmodel */,
 				7BF6C663204818EC00606217 /* Main.storyboard */,
 				7BF6C668204818ED00606217 /* LaunchScreen.storyboard */,
 				7BF6C666204818ED00606217 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				7BF6C662204818EC00606217 /* ViewController.swift in Sources */,
 				7BF6C660204818EC00606217 /* AppDelegate.swift in Sources */,
 				7B11BA832048333700D790AA /* CGImagePropertyOrientation.swift in Sources */,
+				9292421928D320600082616D /* MultiSnacks.mlmodel in Sources */,
 				9292421728D30AAB0082616D /* HealthySnacks.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
