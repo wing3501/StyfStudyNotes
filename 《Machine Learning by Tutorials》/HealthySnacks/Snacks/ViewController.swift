@@ -72,6 +72,7 @@ class ViewController: UIViewController {
         }
     }()
 
+    let healthySnacks = HealthySnacks()
     
   var firstTime = true
 
@@ -184,6 +185,51 @@ class ViewController: UIViewController {
             }
             self.showResultsView()
         }
+    }
+    
+    
+    
+    // UIImage转换为CVPixelBuffer
+    func pixelBuffer(for image: UIImage) -> CVPixelBuffer? {
+        let model = healthySnacks.model
+        // 约束是一个MLImageConstraint对象，用于描述模型输入预期的图像大小
+        let imageConstraint = model.modelDescription.inputDescriptionsByName["image"]!.imageConstraint!
+        // 选项字典允许您指定图像的大小和裁剪方式。这使用了与Vision相同的选项，但您也可以为它提供一个带有自定义裁剪区域的CGRect
+        let imageOptions: [MLFeatureValue.ImageOption: Any] = [.cropAndScale: VNImageCropAndScaleOption.scaleFill.rawValue]
+        // ⚠️iOS13以前，使用UIImage扩展中的方法
+        return try? MLFeatureValue(cgImage: image.cgImage!, constraint: imageConstraint, options: imageOptions).imageBufferValue
+    }
+    
+    // 不使用Vision的分析: ⚠️ Vision还做了很多其他工作：例如颜色空间匹配；这将照片的颜色空间（通常是sRGB或P3甚至YUV）转换为模型使用的通用RGB空间。
+    func classify1(image: UIImage) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let pixelBuffer = self.pixelBuffer(for: image) {
+                if let prediction = try? self.healthySnacks.prediction(image: pixelBuffer) {
+                    let results = self.top(1, prediction.labelProbability)
+                    self.processObservations1(results: results)
+                }else {
+                    self.processObservations1(results: [])
+                }
+            }
+        }
+    }
+    
+    func top(_ k: Int,_ prob: [String: Double]) -> [(String, Double)] {
+        return Array(prob.sorted(by: { $0.value > $1.value}).prefix(min(k, prob.count)))
+    }
+    
+    func processObservations1(results: [(identifier: String, confidence: Double)]) {
+      DispatchQueue.main.async {
+        if results.isEmpty {
+          self.resultsLabel.text = "nothing found"
+        } else if results[0].confidence < 0.8 {
+          self.resultsLabel.text = "not sure"
+        } else {
+          self.resultsLabel.text = String(format: "%@ %.1f%%",
+                                          results[0].identifier,
+    100) }
+        self.showResultsView()
+      }
     }
 }
 
