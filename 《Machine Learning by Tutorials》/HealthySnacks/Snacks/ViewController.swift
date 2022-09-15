@@ -36,6 +36,8 @@ import Vision
 // 2、创建VNCoreMLRequest对象（仅一次）,提供处理结果回调
 // 3、异步创建VNImageRequestHandler，执行VNCoreMLRequest
 
+// ✅ 不借助Vision，直接驱动CoreML
+
 // 🐔 模型要求像素227
 // 🐟 拖入模型文件，自动生成模型类
 
