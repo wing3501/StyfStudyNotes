@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../&#x300a;macOS by Tutorials&#x300b;/OnThisDay/OnThisDay.playground">
+   </FileRef>
+   <FileRef
       location = "group:StyfStudyNotes.xcodeproj">
    </FileRef>
    <FileRef

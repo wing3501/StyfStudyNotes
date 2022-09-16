@@ -58,7 +58,7 @@ class LiveTextAPIDemo: UIViewController {
                     // 开始执行分析
                     let analysis = try await imageDataAnalyzer.analyze(image, configuration: configuration)
                     // 检查 `analysis` 是否成功生成，图片是否有被修改
-                    if let analysis = analysis, image == self.image {
+                    if image == self.image {
                         // 分析信息结果接收
                         interaction.analysis = analysis
                         // 设置我们期望的交互方式类型
