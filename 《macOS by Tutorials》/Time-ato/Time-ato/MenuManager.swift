@@ -43,7 +43,7 @@ class MenuManager: NSObject {
             taskCounter += 1
             
             if taskCounter.isMultiple(of: 4) {
-                statusMenu.insertItem(NSMenuItem.separator(), at: index)//插入分隔线
+                statusMenu.insertItem(NSMenuItem.separator(), at: index)// ✅ 插入分隔线
                 index += 1
             }
         }

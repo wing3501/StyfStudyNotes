@@ -17,6 +17,7 @@ import Cocoa
 //3 在info.plist配置
 //        添加一项 Application is agent = YES
 
+// ✅ 坐标系起点是左下角
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
