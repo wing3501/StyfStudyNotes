@@ -50,8 +50,8 @@ class TaskView: NSView {
     let titleFrame = NSRect(x: 40, y: 20, width: 220, height: 16)
     titleLabel = NSTextField(frame: titleFrame)
     titleLabel.backgroundColor = .clear
-    titleLabel.isBezeled = true
-    titleLabel.isEditable = true
+    titleLabel.isBezeled = false
+    titleLabel.isEditable = false
     titleLabel.font = NSFont.systemFont(ofSize: 14)
     titleLabel.lineBreakMode = .byTruncatingTail //✅ 文字有可能超出，所以设置了截断
 
@@ -102,9 +102,7 @@ class TaskView: NSView {
             progressBar.doubleValue = task.progressPercent
             progressBar.isHidden = false
         case .complete:
-            progressBar.isHidden = true
-        default:
-            <#code#>
+            progressBar.isHidden = true    
         }
     }
   }
