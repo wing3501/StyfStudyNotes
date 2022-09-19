@@ -15,6 +15,7 @@ import Cocoa
 //        删除ViewController.swift文件
 //2 设置链接到菜单的状态栏项
 //3 在info.plist配置
+//        添加一项 Application is agent = YES
 
 
 @main
