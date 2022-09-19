@@ -13,6 +13,7 @@
 		927888B728D85CDD008BDE3C /* TaskTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927888B428D85CDD008BDE3C /* TaskTimes.swift */; };
 		927888B828D85CDD008BDE3C /* TaskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927888B528D85CDD008BDE3C /* TaskStatus.swift */; };
 		927888B928D85CDD008BDE3C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927888B628D85CDD008BDE3C /* Task.swift */; };
+		927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927888BA28D85F2C008BDE3C /* MenuManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		927888B428D85CDD008BDE3C /* TaskTimes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimes.swift; sourceTree = "<group>"; };
 		927888B528D85CDD008BDE3C /* TaskStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStatus.swift; sourceTree = "<group>"; };
 		927888B628D85CDD008BDE3C /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		927888BA28D85F2C008BDE3C /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				927888A428D84EA6008BDE3C /* AppDelegate.swift */,
+				927888BA28D85F2C008BDE3C /* MenuManager.swift */,
 				927888B328D85CDD008BDE3C /* Models */,
 				927888A828D84EA8008BDE3C /* Assets.xcassets */,
 				927888AA28D84EA8008BDE3C /* Main.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */,
 				927888B928D85CDD008BDE3C /* Task.swift in Sources */,
 				927888B828D85CDD008BDE3C /* TaskStatus.swift in Sources */,
 				927888A528D84EA6008BDE3C /* AppDelegate.swift in Sources */,

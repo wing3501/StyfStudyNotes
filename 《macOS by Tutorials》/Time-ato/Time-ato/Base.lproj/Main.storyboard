@@ -13,7 +13,7 @@
                         <items>
                             <menuItem title="Time-ato" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Time-ato" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Time-ato" systemMenu="apple" autoenablesItems="NO" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About Time-ato" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>

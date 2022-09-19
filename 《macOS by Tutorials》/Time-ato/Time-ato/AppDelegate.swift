@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem?
     @IBOutlet weak var statusMenu: NSMenu! // 连接到storyboard中Main Menu -> Time-ato -> Menu
     
+    var menuManager: MenuManager?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // 1 初始化一个可变长度的状态项
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -38,6 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 4 设置等宽的字体
         statusItem?.button?.font = NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+        // ⚠️ 默认菜单项全是灰色，因为默认启用了Auto Enables Items,没有附加action就会置灰
+        menuManager = MenuManager(statusMenu: statusMenu)
+        statusMenu.delegate = menuManager
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
