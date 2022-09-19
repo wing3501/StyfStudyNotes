@@ -19,11 +19,24 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    
+    // ✅ 创建状态栏项
+    var statusItem: NSStatusItem?
+    @IBOutlet weak var statusMenu: NSMenu! // 连接到storyboard中Main Menu -> Time-ato -> Menu
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // 1 初始化一个可变长度的状态项
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        
+        // 2 设置菜单
+        statusItem?.menu = statusMenu
+        
+        // 3
+        statusItem?.button?.title = "Time-ato"
+        statusItem?.button?.imagePosition = .imageLeading
+        statusItem?.button?.image = NSImage(systemSymbolName: "timer", accessibilityDescription: "Time-ato")
+        
+        // 4 设置等宽的字体
+        statusItem?.button?.font = NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
