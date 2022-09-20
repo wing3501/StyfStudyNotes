@@ -64,6 +64,7 @@ struct Alerter {
 
   @discardableResult
   func openAlert(title: String, message: String, buttonTitles: [String] = []) -> NSApplication.ModalResponse {
+      // ✅ 弹窗使用
       let alert = NSAlert()
       
       alert.messageText = title

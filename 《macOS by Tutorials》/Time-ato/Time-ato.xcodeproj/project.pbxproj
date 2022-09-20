@@ -19,6 +19,7 @@
 		92EF189228D95B950032069E /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF189128D95B950032069E /* TimerState.swift */; };
 		92EF18C128D969F80032069E /* TaskManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C028D969F80032069E /* TaskManagerExt.swift */; };
 		92EF18C328D99E4F0032069E /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C228D99E4F0032069E /* Alerter.swift */; };
+		92EF18C528D9A7600032069E /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C428D9A75F0032069E /* Notifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		92EF189128D95B950032069E /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		92EF18C028D969F80032069E /* TaskManagerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerExt.swift; sourceTree = "<group>"; };
 		92EF18C228D99E4F0032069E /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
+		92EF18C428D9A75F0032069E /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				927888BC28D86B65008BDE3C /* TaskView.swift */,
 				92EF18C028D969F80032069E /* TaskManagerExt.swift */,
 				92EF18C228D99E4F0032069E /* Alerter.swift */,
+				92EF18C428D9A75F0032069E /* Notifier.swift */,
 				927888B328D85CDD008BDE3C /* Models */,
 				927888A828D84EA8008BDE3C /* Assets.xcassets */,
 				927888AA28D84EA8008BDE3C /* Main.storyboard */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */,
+				92EF18C528D9A7600032069E /* Notifier.swift in Sources */,
 				92EF18C328D99E4F0032069E /* Alerter.swift in Sources */,
 				927888B928D85CDD008BDE3C /* Task.swift in Sources */,
 				927888B828D85CDD008BDE3C /* TaskStatus.swift in Sources */,
@@ -309,10 +313,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Time-ato/Time_ato.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 248E7966L8;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -337,10 +343,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Time-ato/Time_ato.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 248E7966L8;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
