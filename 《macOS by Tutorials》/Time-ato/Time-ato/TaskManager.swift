@@ -18,6 +18,7 @@ class TaskManager {
     
     var timerCancellable: AnyCancellable? //析构的时候会自动调用cancel()，去取消订阅，释放资源
     var timerState = TimerState.waiting //管理定时器的状态  用于更新状态栏项的标题和图片
+    let interaction = Alerter() // 弹窗
     
     init() {
         startTimer()
@@ -90,6 +91,11 @@ class TaskManager {
         let activeTask = tasks[activeTaskIndex]
         if activeTask.progressPercent >= 100 {
             // 提醒用户任务结束
+            if activeTaskIndex == tasks.count - 1 {
+                interaction.allTasksComplete()
+            }else {
+                interaction.taskComplete(title: activeTask.title, index: activeTaskIndex)
+            }
             
             stopRunningTask(at: activeTaskIndex)
         }
@@ -101,6 +107,10 @@ class TaskManager {
             timerState = .waiting
             
             // 提醒用户休息结束
+            let response = interaction.breakOver()
+            if response == .alertFirstButtonReturn {
+                startNextTask()
+            }
         }
     }
     /// 开始休息

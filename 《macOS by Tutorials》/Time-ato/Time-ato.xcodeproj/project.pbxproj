@@ -18,6 +18,7 @@
 		92EF189028D952D90032069E /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF188F28D952D90032069E /* TaskManager.swift */; };
 		92EF189228D95B950032069E /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF189128D95B950032069E /* TimerState.swift */; };
 		92EF18C128D969F80032069E /* TaskManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C028D969F80032069E /* TaskManagerExt.swift */; };
+		92EF18C328D99E4F0032069E /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C228D99E4F0032069E /* Alerter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		92EF188F28D952D90032069E /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		92EF189128D95B950032069E /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		92EF18C028D969F80032069E /* TaskManagerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerExt.swift; sourceTree = "<group>"; };
+		92EF18C228D99E4F0032069E /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				92EF188F28D952D90032069E /* TaskManager.swift */,
 				927888BC28D86B65008BDE3C /* TaskView.swift */,
 				92EF18C028D969F80032069E /* TaskManagerExt.swift */,
+				92EF18C228D99E4F0032069E /* Alerter.swift */,
 				927888B328D85CDD008BDE3C /* Models */,
 				927888A828D84EA8008BDE3C /* Assets.xcassets */,
 				927888AA28D84EA8008BDE3C /* Main.storyboard */,
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */,
+				92EF18C328D99E4F0032069E /* Alerter.swift in Sources */,
 				927888B928D85CDD008BDE3C /* Task.swift in Sources */,
 				927888B828D85CDD008BDE3C /* TaskStatus.swift in Sources */,
 				927888BD28D86B65008BDE3C /* TaskView.swift in Sources */,
