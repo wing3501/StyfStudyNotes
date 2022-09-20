@@ -60,7 +60,7 @@ extension TaskManager {
       return ("Time-ato", "timer")
     }
   }
-  // 将剩余时间转换为 分秒
+  // ✅ DateComponentsFormatter 将剩余时间转换为 分秒
   func differenceToHourMinFormat(start: Date, duration: TimeInterval) -> String {
     let endTime = start.addingTimeInterval(duration)
     let remainingTime = endTime.timeIntervalSince(Date())

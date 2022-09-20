@@ -39,7 +39,7 @@ class MenuManager: NSObject {
         for task in taskManager.tasks {
             let item = NSMenuItem()
 //            item.title = task.title
-            // ✅ 使用 自定义视图
+            // ✅ 使用 自定义视图 设置菜单项
             let view = TaskView(frame: itemFrame)
             view.task = task
             item.view = view
@@ -51,6 +51,15 @@ class MenuManager: NSObject {
             if taskCounter.isMultiple(of: 4) {
                 statusMenu.insertItem(NSMenuItem.separator(), at: index)// ✅ 插入分隔线
                 index += 1
+            }
+        }
+    }
+    /// 更新菜单项
+    func updateMenuItems() {
+        for item in statusMenu.items {
+            if let view = item.view as? TaskView {
+                // ✅ 告诉view需要更新整个显示，触发view的draw(_:)方法
+                view.setNeedsDisplay(.infinite)
             }
         }
     }

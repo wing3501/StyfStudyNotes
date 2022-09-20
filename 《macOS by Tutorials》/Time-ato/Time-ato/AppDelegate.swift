@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
         // 1 初始化一个可变长度的状态项
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
@@ -80,6 +81,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem?.button?.title = title
         statusItem?.button?.image = NSImage(systemSymbolName: icon, accessibilityDescription: title)
         updateMenuItemTitles(taskIsRunning: taskIsRunning)
+        
+        // 刷新任务菜单项
+        if menuManager?.menuIsOpen == true {
+            menuManager?.updateMenuItems()
+        }
     }
     
     func updateMenuItemTitles(taskIsRunning: Bool) {
