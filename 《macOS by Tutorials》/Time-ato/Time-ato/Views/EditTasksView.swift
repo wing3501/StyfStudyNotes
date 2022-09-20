@@ -34,7 +34,7 @@ struct EditTasksView: View {
             .padding(.horizontal)
             
             Spacer()
-            EditButtonsView()
+            EditButtonsView(tasks: $tasks, dataStore: dataStore)
         }
         .frame(minWidth: 400, minHeight: 430)
         .onAppear {
@@ -47,13 +47,14 @@ struct EditTasksView: View {
         
         addEmptyTasks()
     }
-    
+    ///  补齐10个任务
     func addEmptyTasks() {
         while tasks.count < 10 {
             tasks.append(Task(id: UUID(), title: ""))
         }
     }
     
+    /// 删除任务
     func deleteTask(id: UUID) {
         let taskIndex = tasks.firstIndex {
             $0.id == id
@@ -63,29 +64,51 @@ struct EditTasksView: View {
             addEmptyTasks()
         }
     }
+    
 }
 
 struct EditButtonsView: View {
+    @Binding var tasks: [Task]
+    let dataStore: DataStore
+    
     var body: some View {
         HStack {
             Button("取消",role: .cancel) {
-                
+                closeWindow()
             }
             .keyboardShortcut(.cancelAction) // 快捷键
             
             Spacer()
             
             Button("标记所有为未完成") {
-                
+                markAllTasksIncomplate()
             }
             
             Spacer()
             
             Button("保存") {
-                
+                saveTasks()
             }
         }
         .padding(12)
+    }
+    
+    func closeWindow() {
+        NSApp.keyWindow?.close()
+    }
+    
+    func saveTasks() {
+        tasks = tasks.filter({
+            !$0.title.isEmpty
+        })
+        dataStore.save(tasks: tasks)
+        closeWindow()
+    }
+    
+    func markAllTasksIncomplate() {
+        for index in 0 ..< tasks.count {
+            tasks[index].reset()
+        }
     }
 }
 

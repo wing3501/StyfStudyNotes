@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import SwiftUI
 
 // ✅ 把一个基于window的APP转换为基于菜单的APP
 //1 删除window和大部分菜单
@@ -67,7 +68,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func showEditTasksWindow(_ sender: Any) {
+        // ✅ 在AppKit中使用SwiftUI
+        let hostingController = NSHostingController(rootView: EditTasksView())
         
+        let window = NSWindow(contentViewController: hostingController)
+        window.title = "Edit Tasks"
+        
+        let controller = NSWindowController(window: window)
+        
+        NSApp.activate(ignoringOtherApps: true)// 窗口置前
+        
+        controller.showWindow(nil)
     }
     
     @IBAction func toggleLaunchOnLogin(_ sender: Any) {
