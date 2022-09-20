@@ -50,12 +50,12 @@ extension TaskManager {
       let remainingTime = differenceToHourMinFormat(
         start: startTime,
         duration: TaskTimes.shortBreakTime)
-      return ("Short Break - \(remainingTime)", "cup.and.saucer")
+      return ("小憩一会儿 - \(remainingTime)", "cup.and.saucer")
     case .takingLongBreak(let startTime):
       let remainingTime = differenceToHourMinFormat(
         start: startTime,
         duration: TaskTimes.longBreakTime)
-      return ("Long Break - \(remainingTime)", "figure.walk")
+      return ("大咪一会儿 - \(remainingTime)", "figure.walk")
     case .waiting:
       return ("Time-ato", "timer")
     }
