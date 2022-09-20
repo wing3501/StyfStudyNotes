@@ -25,12 +25,21 @@
                                         <menuItem isSeparatorItem="YES" id="1oh-R3-Ii1"/>
                                         <menuItem title="Start Next Task" id="pDi-h2-8Km">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="startStopTask:" target="Voe-Tx-rLC" id="L8C-hF-stU"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Edit Tasks…" id="kca-XR-rLA">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showEditTasksWindow:" target="Voe-Tx-rLC" id="Tlb-HZ-4SM"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Launch on Login" id="vQh-fT-CaT">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleLaunchOnLogin:" target="Voe-Tx-rLC" id="lWo-E6-Ykj"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
                                         <menuItem title="Quit Time-ato" id="4sb-4s-VLi">
@@ -50,6 +59,8 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Time_ato" customModuleProvider="target">
                     <connections>
+                        <outlet property="launchOnLoginMenuItem" destination="vQh-fT-CaT" id="cF2-gM-Scb"/>
+                        <outlet property="startStopMenuItem" destination="pDi-h2-8Km" id="FU3-pD-cMs"/>
                         <outlet property="statusMenu" destination="uQy-DD-JDr" id="p08-0y-pbn"/>
                     </connections>
                 </customObject>

@@ -27,6 +27,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var menuManager: MenuManager?
     
+    @IBOutlet weak var startStopMenuItem: NSMenuItem!
+    @IBOutlet weak var launchOnLoginMenuItem: NSMenuItem!
+    
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // 1 初始化一个可变长度的状态项
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -54,6 +58,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-
+    /// 完成当前任务或者开始下一个任务
+    @IBAction func startStopTask(_ sender: Any) {
+        menuManager?.taskManager.toggleTask()
+    }
+    
+    @IBAction func showEditTasksWindow(_ sender: Any) {
+        
+    }
+    
+    @IBAction func toggleLaunchOnLogin(_ sender: Any) {
+        
+    }
+    
 }
 

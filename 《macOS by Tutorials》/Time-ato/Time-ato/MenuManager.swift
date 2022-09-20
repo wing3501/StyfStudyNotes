@@ -11,7 +11,8 @@ class MenuManager: NSObject {
     let statusMenu: NSMenu
     var menuIsOpen = false
     
-    var tasks = Task.sampleTasksWithStatus
+//    var tasks = Task.sampleTasksWithStatus
+    let taskManager = TaskManager()
     
     let itemsBeforeTasks = 2
     let itemsAfterTasks = 6
@@ -35,7 +36,7 @@ class MenuManager: NSObject {
         var taskCounter = 0
         
         let itemFrame = NSRect(x: 0, y: 0, width: 270, height: 40)
-        for task in tasks {
+        for task in taskManager.tasks {
             let item = NSMenuItem()
 //            item.title = task.title
             // ✅ 使用 自定义视图
