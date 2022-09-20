@@ -33,6 +33,7 @@ struct Menus: Commands {
             }
             .keyboardShortcut("t", modifiers: .command)//⚠️ 不能重写和响应标准的快捷键，多个同名只会响应一个
 //            .keyboardShortcut("t", modifiers: [.command,.shift,.option]) //多个修饰键 .all
+//            .keyboardShortcut(.cancelAction)
             
             Divider()
             

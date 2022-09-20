@@ -25,6 +25,7 @@ class TaskManager {
     init() {
         startTimer()
         dataStore.save(tasks: tasks)
+        tasks = dataStore.readTasks()
     }
     
     func startTimer() {

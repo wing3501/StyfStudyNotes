@@ -21,6 +21,7 @@
 		92EF18C328D99E4F0032069E /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C228D99E4F0032069E /* Alerter.swift */; };
 		92EF18C528D9A7600032069E /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C428D9A75F0032069E /* Notifier.swift */; };
 		92EF18CA28D9B4160032069E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C928D9B4160032069E /* DataStore.swift */; };
+		92EF18CC28D9C14D0032069E /* EditTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18CB28D9C14C0032069E /* EditTasksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		92EF18C228D99E4F0032069E /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
 		92EF18C428D9A75F0032069E /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		92EF18C928D9B4160032069E /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		92EF18CB28D9C14C0032069E /* EditTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTasksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				927888BC28D86B65008BDE3C /* TaskView.swift */,
+				92EF18CB28D9C14C0032069E /* EditTasksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EF18CC28D9C14D0032069E /* EditTasksView.swift in Sources */,
 				927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */,
 				92EF18CA28D9B4160032069E /* DataStore.swift in Sources */,
 				92EF18C528D9A7600032069E /* Notifier.swift in Sources */,
