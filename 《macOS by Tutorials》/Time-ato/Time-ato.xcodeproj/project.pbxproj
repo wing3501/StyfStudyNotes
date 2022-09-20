@@ -20,6 +20,7 @@
 		92EF18C128D969F80032069E /* TaskManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C028D969F80032069E /* TaskManagerExt.swift */; };
 		92EF18C328D99E4F0032069E /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C228D99E4F0032069E /* Alerter.swift */; };
 		92EF18C528D9A7600032069E /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C428D9A75F0032069E /* Notifier.swift */; };
+		92EF18CA28D9B4160032069E /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C928D9B4160032069E /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		92EF18C028D969F80032069E /* TaskManagerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerExt.swift; sourceTree = "<group>"; };
 		92EF18C228D99E4F0032069E /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
 		92EF18C428D9A75F0032069E /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		92EF18C928D9B4160032069E /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				927888A428D84EA6008BDE3C /* AppDelegate.swift */,
-				927888BA28D85F2C008BDE3C /* MenuManager.swift */,
-				92EF188F28D952D90032069E /* TaskManager.swift */,
-				927888BC28D86B65008BDE3C /* TaskView.swift */,
-				92EF18C028D969F80032069E /* TaskManagerExt.swift */,
-				92EF18C228D99E4F0032069E /* Alerter.swift */,
-				92EF18C428D9A75F0032069E /* Notifier.swift */,
+				92EF18C828D9B3E70032069E /* Interactions */,
+				92EF18C728D9B3D70032069E /* Managers */,
+				92EF18C628D9B3C70032069E /* Views */,
 				927888B328D85CDD008BDE3C /* Models */,
 				927888A828D84EA8008BDE3C /* Assets.xcassets */,
 				927888AA28D84EA8008BDE3C /* Main.storyboard */,
@@ -88,12 +87,40 @@
 		927888B328D85CDD008BDE3C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				92EF18C928D9B4160032069E /* DataStore.swift */,
 				92EF189128D95B950032069E /* TimerState.swift */,
 				927888B428D85CDD008BDE3C /* TaskTimes.swift */,
 				927888B528D85CDD008BDE3C /* TaskStatus.swift */,
 				927888B628D85CDD008BDE3C /* Task.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		92EF18C628D9B3C70032069E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				927888BC28D86B65008BDE3C /* TaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92EF18C728D9B3D70032069E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				92EF188F28D952D90032069E /* TaskManager.swift */,
+				92EF18C028D969F80032069E /* TaskManagerExt.swift */,
+				927888BA28D85F2C008BDE3C /* MenuManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		92EF18C828D9B3E70032069E /* Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				92EF18C228D99E4F0032069E /* Alerter.swift */,
+				92EF18C428D9A75F0032069E /* Notifier.swift */,
+			);
+			path = Interactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927888BB28D85F2C008BDE3C /* MenuManager.swift in Sources */,
+				92EF18CA28D9B4160032069E /* DataStore.swift in Sources */,
 				92EF18C528D9A7600032069E /* Notifier.swift in Sources */,
 				92EF18C328D99E4F0032069E /* Alerter.swift in Sources */,
 				927888B928D85CDD008BDE3C /* Task.swift in Sources */,

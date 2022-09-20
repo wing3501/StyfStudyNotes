@@ -20,9 +20,11 @@ class TaskManager {
     var timerState = TimerState.waiting //管理定时器的状态  用于更新状态栏项的标题和图片
     let interaction = Alerter() // 弹窗
 //    let interaction = Notifier() // 通知
+    let dataStore = DataStore()
     
     init() {
         startTimer()
+        dataStore.save(tasks: tasks)
     }
     
     func startTimer() {

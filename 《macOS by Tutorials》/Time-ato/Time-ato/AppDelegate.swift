@@ -19,6 +19,8 @@ import Cocoa
 
 // ✅ 坐标系起点是左下角
 
+// ✅ 沙盒位置： ~/Library/Containers
+
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     // ✅ 创建状态栏项
