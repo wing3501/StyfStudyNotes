@@ -30,43 +30,50 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import AppKit
+import Foundation
 
-enum TaskStatus: Int, Codable {
-  case notStarted
-  case inProgress
-  case complete
-
-  var statusText: String {
-    switch self {
-    case .notStarted:
-      return "未开始"
-    case .inProgress:
-      return ""
-    case .complete:
-      return "已完成"
+extension TaskManager {
+  // 状态栏项的标题图片
+  var menuTitleAndIcon: (title: String, icon: String) {
+    switch timerState {
+    case .runningTask(let taskIndex):
+      let task = tasks[taskIndex]
+      if let startTime = task.startTime {
+        let remainingTime = differenceToHourMinFormat(
+          start: startTime,
+          duration: TaskTimes.taskTime)
+        return ("\(task.title) - \(remainingTime)", task.status.iconName)
+      } else {
+        return ("Time-ato", "timer")
+      }
+    case .takingShortBreak(let startTime):
+      let remainingTime = differenceToHourMinFormat(
+        start: startTime,
+        duration: TaskTimes.shortBreakTime)
+      return ("Short Break - \(remainingTime)", "cup.and.saucer")
+    case .takingLongBreak(let startTime):
+      let remainingTime = differenceToHourMinFormat(
+        start: startTime,
+        duration: TaskTimes.longBreakTime)
+      return ("Long Break - \(remainingTime)", "figure.walk")
+    case .waiting:
+      return ("Time-ato", "timer")
     }
   }
-
-  var textColor: NSColor {
-    switch self {
-    case .notStarted:
-      return .labelColor
-    case .inProgress:
-      return .controlAccentColor
-    case .complete:
-      return .placeholderTextColor
+  // 将剩余时间转换为 分秒
+  func differenceToHourMinFormat(start: Date, duration: TimeInterval) -> String {
+    let endTime = start.addingTimeInterval(duration)
+    let remainingTime = endTime.timeIntervalSince(Date())
+    if let difference = dateFormatter.string(from: remainingTime) {
+      return difference
     }
-  }
-
-  var iconName: String {
-    switch self {
-    case .notStarted:
-      return "square"
-    case .inProgress:
-      return "timer"
-    case .complete:
-      return "checkmark.square"
-    }
+    return ""
   }
 }
+
+var dateFormatter: DateComponentsFormatter = {
+  let formatter = DateComponentsFormatter()
+  formatter.allowedUnits = [.minute, .second]
+  formatter.zeroFormattingBehavior = .pad
+  return formatter
+}()

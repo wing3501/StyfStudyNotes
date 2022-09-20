@@ -71,5 +71,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    func update(title: String,icon: String,taskIsRunning: Bool) {
+        
+    }
+    
+    func updateMenu(title: String,icon: String,taskIsRunning: Bool) {
+        // 更新状态栏项的标题、图片
+        statusItem?.button?.title = title
+        statusItem?.button?.image = NSImage(systemSymbolName: icon, accessibilityDescription: title)
+        updateMenuItemTitles(taskIsRunning: taskIsRunning)
+    }
+    
+    func updateMenuItemTitles(taskIsRunning: Bool) {
+        if taskIsRunning {
+            startStopMenuItem.title = "标记任务为完成"
+        }else {
+            startStopMenuItem.title = "开始下一个任务"
+        }
+    }
 }
 

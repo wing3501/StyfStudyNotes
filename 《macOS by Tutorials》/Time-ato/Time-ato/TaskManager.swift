@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import AppKit
 
 // ✅ 两种使用定时器的选择
 // 1. scheduledTimer
@@ -16,7 +17,7 @@ class TaskManager {
     var tasks: [Task] = Task.sampleTasks
     
     var timerCancellable: AnyCancellable? //析构的时候会自动调用cancel()，去取消订阅，释放资源
-    var timerState = TimerState.waiting
+    var timerState = TimerState.waiting //管理定时器的状态
     
     init() {
         startTimer()
@@ -31,7 +32,7 @@ class TaskManager {
                                                                         // eventTracking: 当有事件被跟踪，比如菜单打开
             .autoconnect() //作用是：当有第一个订阅者时就自动连接
             .sink(receiveValue: { time in
-                print(time)
+                self.checkTimings()
             })
     }
     /// 完成当前任务或者开始下一个任务
@@ -52,9 +53,20 @@ class TaskManager {
             timerState = .runningTask(taskIndex: nextTaskIndex)
         }
     }
-    /// 完成某个任务
+    /// 标记任务为完成
     func stopRunningTask(at taskIndex: Int) {
         tasks[taskIndex].complete()
         timerState = .waiting
+    }
+    
+    func checkTimings() {
+        let taskIsRunning = timerState.activeTaskIndex != nil
+        // more checks here
+        
+        if let appDelegate = NSApp.delegate as? AppDelegate {
+            let (title, icon) = menuTitleAndIcon
+            // 更新状态栏项的文字图片 和 开始停止任务菜单项的文字
+            appDelegate.updateMenu(title: title, icon: icon, taskIsRunning: taskIsRunning)
+        }
     }
 }

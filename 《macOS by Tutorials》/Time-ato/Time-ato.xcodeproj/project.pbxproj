@@ -17,6 +17,7 @@
 		927888BD28D86B65008BDE3C /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927888BC28D86B65008BDE3C /* TaskView.swift */; };
 		92EF189028D952D90032069E /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF188F28D952D90032069E /* TaskManager.swift */; };
 		92EF189228D95B950032069E /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF189128D95B950032069E /* TimerState.swift */; };
+		92EF18C128D969F80032069E /* TaskManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF18C028D969F80032069E /* TaskManagerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		927888BC28D86B65008BDE3C /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		92EF188F28D952D90032069E /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		92EF189128D95B950032069E /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
+		92EF18C028D969F80032069E /* TaskManagerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskManagerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				927888BA28D85F2C008BDE3C /* MenuManager.swift */,
 				92EF188F28D952D90032069E /* TaskManager.swift */,
 				927888BC28D86B65008BDE3C /* TaskView.swift */,
+				92EF18C028D969F80032069E /* TaskManagerExt.swift */,
 				927888B328D85CDD008BDE3C /* Models */,
 				927888A828D84EA8008BDE3C /* Assets.xcassets */,
 				927888AA28D84EA8008BDE3C /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				92EF189228D95B950032069E /* TimerState.swift in Sources */,
 				92EF189028D952D90032069E /* TaskManager.swift in Sources */,
 				927888B728D85CDD008BDE3C /* TaskTimes.swift in Sources */,
+				92EF18C128D969F80032069E /* TaskManagerExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
