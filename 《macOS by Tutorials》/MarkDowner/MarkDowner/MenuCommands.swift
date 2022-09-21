@@ -17,9 +17,10 @@ struct MenuCommands: Commands {
                 Button {
                     styleSheet = style
                 } label: {
-                    Text(style.rawValue)
+                    Text(style.rawValue) //⚠️ 菜单项中的文字会忽略许多修饰符，但是可以使用颜色
+                        .foregroundColor(style == styleSheet ? .accentColor : .primary)
                 }
-                // keyboard shortcu
+                .keyboardShortcut(KeyEquivalent(style.rawValue.first!))
             }
             // more menu ietms
         }
