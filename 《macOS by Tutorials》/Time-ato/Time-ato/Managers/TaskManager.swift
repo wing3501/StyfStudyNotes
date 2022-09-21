@@ -22,10 +22,27 @@ class TaskManager {
 //    let interaction = Notifier() // 通知
     let dataStore = DataStore()
     
+    var refreshNeededSub: AnyCancellable?
+    
     init() {
-        startTimer()
-        dataStore.save(tasks: tasks)
         tasks = dataStore.readTasks()
+        
+        // 如果有任务进行中，就继续任务
+        let activeTaskIndex = tasks.firstIndex {
+            $0.status == .inProgress
+        }
+        if let activeTaskIndex {
+            timerState = .runningTask(taskIndex: activeTaskIndex)
+        }
+        
+        startTimer()
+        
+        // ✅ 订阅通知 
+        refreshNeededSub = NotificationCenter.default
+            .publisher(for: .dataRefreshNeeded)
+            .sink(receiveValue: { _ in
+                self.tasks = self.dataStore.readTasks()
+            })
     }
     
     func startTimer() {
@@ -57,6 +74,9 @@ class TaskManager {
             tasks[nextTaskIndex].start()
             timerState = .runningTask(taskIndex: nextTaskIndex)
         }
+        
+        // 持久化
+        dataStore.save(tasks: tasks)
     }
     /// 标记任务为完成，并开始一段休息
     func stopRunningTask(at taskIndex: Int) {
@@ -66,6 +86,9 @@ class TaskManager {
         if taskIndex < tasks.count - 1 {
             startBreak(after: taskIndex)
         }
+        
+        // 持久化
+        dataStore.save(tasks: tasks)
     }
     /// 定时器检查
     func checkTimings() {

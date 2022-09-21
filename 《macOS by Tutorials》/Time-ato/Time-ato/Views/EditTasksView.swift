@@ -103,6 +103,7 @@ struct EditButtonsView: View {
         })
         dataStore.save(tasks: tasks)
         closeWindow()
+        NotificationCenter.default.post(name: .dataRefreshNeeded, object: nil)
     }
     
     func markAllTasksIncomplate() {

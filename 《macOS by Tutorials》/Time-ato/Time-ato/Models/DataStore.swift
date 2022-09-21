@@ -32,6 +32,10 @@
 
 import Foundation
 
+extension Notification.Name {
+    static let dataRefreshNeeded = Notification.Name("dataRefreshNeeded")
+}
+
 struct DataStore {
   func dataFileURL() -> URL? {
       let fileManager = FileManager.default

@@ -29,7 +29,7 @@
                                                 <action selector="startStopTask:" target="Voe-Tx-rLC" id="L8C-hF-stU"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Edit Tasks…" id="kca-XR-rLA">
+                                        <menuItem title="开始任务…" id="kca-XR-rLA">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="showEditTasksWindow:" target="Voe-Tx-rLC" id="Tlb-HZ-4SM"/>
