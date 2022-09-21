@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import LaunchAtLogin
 
 // ✅ 把一个基于window的APP转换为基于菜单的APP
 //1 删除window和大部分菜单
@@ -82,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func toggleLaunchOnLogin(_ sender: Any) {
-        
+        LaunchAtLogin.isEnabled.toggle()
     }
     
     func update(title: String,icon: String,taskIsRunning: Bool) {
@@ -107,6 +108,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }else {
             startStopMenuItem.title = "开始下一个任务"
         }
+        
+        launchOnLoginMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
     }
 }
 
