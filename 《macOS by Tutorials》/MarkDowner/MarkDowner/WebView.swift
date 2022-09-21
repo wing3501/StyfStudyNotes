@@ -7,7 +7,7 @@
 
 import SwiftUI
 import WebKit
-
+// ✅ SwiftUI调用AppKit组件
 struct WebView: NSViewRepresentable {
     typealias NSViewType = WKWebView
    

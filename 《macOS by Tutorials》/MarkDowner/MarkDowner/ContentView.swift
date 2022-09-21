@@ -11,7 +11,10 @@ struct ContentView: View {
     @Binding var document: MarkDownerDocument
 
     var body: some View {
-        TextEditor(text: $document.text)
+        HSplitView {
+            TextEditor(text: $document.text)
+            WebView(html: document.html)// ✅ WKWebview加载本地HTML，依赖需要打开沙盒权限
+        }
     }
 }
 
