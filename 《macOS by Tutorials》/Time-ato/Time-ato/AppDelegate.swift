@@ -36,6 +36,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // ✅ 可以从这里取出一个临时开发版本来用
+        print(Bundle.main.bundlePath)
         
         // 1 初始化一个可变长度的状态项
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
