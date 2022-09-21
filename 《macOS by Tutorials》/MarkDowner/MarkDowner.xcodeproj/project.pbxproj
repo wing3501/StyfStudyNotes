@@ -12,6 +12,7 @@
 		92128A2128DAF39C004154CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A2028DAF39C004154CB /* ContentView.swift */; };
 		92128A2328DAF39D004154CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92128A2228DAF39D004154CB /* Assets.xcassets */; };
 		92128A2628DAF39D004154CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92128A2528DAF39D004154CB /* Preview Assets.xcassets */; };
+		92128A3228DB033F004154CB /* MarkdownKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92128A3128DB033F004154CB /* MarkdownKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		92128A2528DAF39D004154CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92128A2728DAF39D004154CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92128A2828DAF39D004154CB /* MarkDowner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarkDowner.entitlements; sourceTree = "<group>"; };
+		92128A2F28DB0323004154CB /* swift-markdownkit-1.1.5 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-markdownkit-1.1.5"; path = "SPM/swift-markdownkit-1.1.5"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92128A3228DB033F004154CB /* MarkdownKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,8 +42,10 @@
 		92128A1028DAF39C004154CB = {
 			isa = PBXGroup;
 			children = (
+				92128A2E28DB0323004154CB /* Packages */,
 				92128A1B28DAF39C004154CB /* MarkDowner */,
 				92128A1A28DAF39C004154CB /* Products */,
+				92128A3028DB033F004154CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +79,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		92128A2E28DB0323004154CB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				92128A2F28DB0323004154CB /* swift-markdownkit-1.1.5 */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		92128A3028DB033F004154CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,6 +110,9 @@
 			dependencies = (
 			);
 			name = MarkDowner;
+			packageProductDependencies = (
+				92128A3128DB033F004154CB /* MarkdownKit */,
+			);
 			productName = MarkDowner;
 			productReference = 92128A1928DAF39C004154CB /* MarkDowner.app */;
 			productType = "com.apple.product-type.application";
@@ -344,6 +367,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92128A3128DB033F004154CB /* MarkdownKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MarkdownKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92128A1128DAF39C004154CB /* Project object */;
 }

@@ -14,6 +14,8 @@ import UniformTypeIdentifiers
 // 1. 在Targets——info——Document Types 中添加 新类型
 // 2. 在imported Type Identifiers 中添加 新类型
 
+import MarkdownKit
+
 extension UTType {
     static var exampleText: UTType {
         UTType(importedAs: "com.example.plain-text")
@@ -26,6 +28,11 @@ extension UTType {
 
 struct MarkDownerDocument: FileDocument {
     var text: String
+    
+    var html: String {
+        let markdown = MarkdownParser.standard.parse(text)
+        return HtmlGenerator.standard.generate(doc: markdown)
+    }
 
     init(text: String = "Hello, world!") {// 文档默认内容
         self.text = text
