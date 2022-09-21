@@ -113,5 +113,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         launchOnLoginMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
     }
+    
+    @IBAction func orderFrontStandardAboutPanel(_ sender: Any) {
+        NSApp.activate(ignoringOtherApps: true)// 窗口置前
+        NSApp.orderFrontStandardAboutPanel(nil)// ✅ 打开关于
+    }
 }
 
