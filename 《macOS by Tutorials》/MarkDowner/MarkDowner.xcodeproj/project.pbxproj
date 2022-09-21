@@ -13,6 +13,7 @@
 		92128A2328DAF39D004154CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92128A2228DAF39D004154CB /* Assets.xcassets */; };
 		92128A2628DAF39D004154CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92128A2528DAF39D004154CB /* Preview Assets.xcassets */; };
 		92128A3228DB033F004154CB /* MarkdownKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92128A3128DB033F004154CB /* MarkdownKit */; };
+		92128A3428DB04CE004154CB /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A3328DB04CE004154CB /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		92128A2728DAF39D004154CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92128A2828DAF39D004154CB /* MarkDowner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarkDowner.entitlements; sourceTree = "<group>"; };
 		92128A2F28DB0323004154CB /* swift-markdownkit-1.1.5 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-markdownkit-1.1.5"; path = "SPM/swift-markdownkit-1.1.5"; sourceTree = "<group>"; };
+		92128A3328DB04CE004154CB /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				92128A1C28DAF39C004154CB /* MarkDownerApp.swift */,
 				92128A1E28DAF39C004154CB /* MarkDownerDocument.swift */,
 				92128A2028DAF39C004154CB /* ContentView.swift */,
+				92128A3328DB04CE004154CB /* WebView.swift */,
 				92128A2228DAF39D004154CB /* Assets.xcassets */,
 				92128A2728DAF39D004154CB /* Info.plist */,
 				92128A2828DAF39D004154CB /* MarkDowner.entitlements */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92128A1F28DAF39C004154CB /* MarkDownerDocument.swift in Sources */,
+				92128A3428DB04CE004154CB /* WebView.swift in Sources */,
 				92128A1D28DAF39C004154CB /* MarkDownerApp.swift in Sources */,
 				92128A2128DAF39C004154CB /* ContentView.swift in Sources */,
 			);
