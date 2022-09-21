@@ -14,6 +14,13 @@
 		92128A2628DAF39D004154CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92128A2528DAF39D004154CB /* Preview Assets.xcassets */; };
 		92128A3228DB033F004154CB /* MarkdownKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92128A3128DB033F004154CB /* MarkdownKit */; };
 		92128A3428DB04CE004154CB /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A3328DB04CE004154CB /* WebView.swift */; };
+		92128A3C28DB1459004154CB /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A3628DB1459004154CB /* StyleSheet.swift */; };
+		92128A3D28DB1459004154CB /* ulysses.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3728DB1459004154CB /* ulysses.css */; };
+		92128A3E28DB1459004154CB /* darksolarized.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3828DB1459004154CB /* darksolarized.css */; };
+		92128A3F28DB1459004154CB /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3928DB1459004154CB /* github.css */; };
+		92128A4028DB1459004154CB /* lopash.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3A28DB1459004154CB /* lopash.css */; };
+		92128A4128DB1459004154CB /* raywenderlich.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3B28DB1459004154CB /* raywenderlich.css */; };
+		92128A4328DB2ED7004154CB /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A4228DB2ED6004154CB /* MenuCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,13 @@
 		92128A2828DAF39D004154CB /* MarkDowner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarkDowner.entitlements; sourceTree = "<group>"; };
 		92128A2F28DB0323004154CB /* swift-markdownkit-1.1.5 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-markdownkit-1.1.5"; path = "SPM/swift-markdownkit-1.1.5"; sourceTree = "<group>"; };
 		92128A3328DB04CE004154CB /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		92128A3628DB1459004154CB /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		92128A3728DB1459004154CB /* ulysses.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ulysses.css; sourceTree = "<group>"; };
+		92128A3828DB1459004154CB /* darksolarized.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darksolarized.css; sourceTree = "<group>"; };
+		92128A3928DB1459004154CB /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		92128A3A28DB1459004154CB /* lopash.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = lopash.css; sourceTree = "<group>"; };
+		92128A3B28DB1459004154CB /* raywenderlich.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = raywenderlich.css; sourceTree = "<group>"; };
+		92128A4228DB2ED6004154CB /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,8 @@
 				92128A1E28DAF39C004154CB /* MarkDownerDocument.swift */,
 				92128A2028DAF39C004154CB /* ContentView.swift */,
 				92128A3328DB04CE004154CB /* WebView.swift */,
+				92128A4228DB2ED6004154CB /* MenuCommands.swift */,
+				92128A3528DB1459004154CB /* StyleSheets */,
 				92128A2228DAF39D004154CB /* Assets.xcassets */,
 				92128A2728DAF39D004154CB /* Info.plist */,
 				92128A2828DAF39D004154CB /* MarkDowner.entitlements */,
@@ -95,6 +111,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92128A3528DB1459004154CB /* StyleSheets */ = {
+			isa = PBXGroup;
+			children = (
+				92128A3628DB1459004154CB /* StyleSheet.swift */,
+				92128A3728DB1459004154CB /* ulysses.css */,
+				92128A3828DB1459004154CB /* darksolarized.css */,
+				92128A3928DB1459004154CB /* github.css */,
+				92128A3A28DB1459004154CB /* lopash.css */,
+				92128A3B28DB1459004154CB /* raywenderlich.css */,
+			);
+			path = StyleSheets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +187,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92128A4028DB1459004154CB /* lopash.css in Resources */,
 				92128A2628DAF39D004154CB /* Preview Assets.xcassets in Resources */,
+				92128A3F28DB1459004154CB /* github.css in Resources */,
+				92128A3D28DB1459004154CB /* ulysses.css in Resources */,
+				92128A4128DB1459004154CB /* raywenderlich.css in Resources */,
 				92128A2328DAF39D004154CB /* Assets.xcassets in Resources */,
+				92128A3E28DB1459004154CB /* darksolarized.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92128A1F28DAF39C004154CB /* MarkDownerDocument.swift in Sources */,
+				92128A3C28DB1459004154CB /* StyleSheet.swift in Sources */,
+				92128A4328DB2ED7004154CB /* MenuCommands.swift in Sources */,
 				92128A3428DB04CE004154CB /* WebView.swift in Sources */,
 				92128A1D28DAF39C004154CB /* MarkDownerApp.swift in Sources */,
 				92128A2128DAF39C004154CB /* ContentView.swift in Sources */,

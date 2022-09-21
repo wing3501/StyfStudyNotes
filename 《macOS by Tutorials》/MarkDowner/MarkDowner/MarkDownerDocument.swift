@@ -11,6 +11,7 @@ import UniformTypeIdentifiers
 // ✅文件统一标识符： https://developer.apple.com/documentation/uniformtypeidentifiers/system-declared_uniform_type_identifiers
 // ✅ 对于Markdown文件，是 net.daringfireball.markdown 遵循 public.plain-text。文件扩展名为 .markdown .md
 
+// ✅ 添加一种文件类型的支持
 // 1. 在Targets——info——Document Types 中添加 新类型
 // 2. 在imported Type Identifiers 中添加 新类型
 

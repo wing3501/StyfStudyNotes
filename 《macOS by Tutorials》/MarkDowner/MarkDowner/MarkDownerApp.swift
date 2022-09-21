@@ -13,5 +13,8 @@ struct MarkDownerApp: App {
         DocumentGroup(newDocument: MarkDownerDocument()) { file in
             ContentView(document: file.$document)
         }
+        .commands {
+            MenuCommands()
+        }
     }
 }
