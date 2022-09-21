@@ -17,6 +17,8 @@ struct ContentView: View {
     @Binding var document: MarkDownerDocument
     
     @State private var previewState = PreviewState.web
+    
+    @AppStorage("editorFontSize") var editorFontSize: Double = 14
 
     var body: some View {
         HSplitView {
@@ -43,6 +45,7 @@ struct ContentView: View {
                minHeight: 300,
                idealHeight: 400,
                maxHeight: .infinity)
+        .font(.system(size: editorFontSize))
         .toolbar {
             // 工具栏项目-切换源码和预览
             ToolbarItem {

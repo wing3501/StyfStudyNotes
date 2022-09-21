@@ -10,9 +10,11 @@ import SwiftUI
 struct MenuCommands: Commands {
     
     @AppStorage("styleSheet") var styleSheet: StyleSheet = .raywenderlich
+    @AppStorage("editorFontSize") var editorFontSize: Double = 14
     
     var body: some Commands {
         CommandMenu("Display") {
+            // 改变css的菜单项
             ForEach(StyleSheet.allCases,id: \.self) { style in
                 Button {
                     styleSheet = style
@@ -22,7 +24,29 @@ struct MenuCommands: Commands {
                 }
                 .keyboardShortcut(KeyEquivalent(style.rawValue.first!))
             }
-            // more menu ietms
+            
+            Divider()
+            
+            // ✅ 子菜单  改变字体
+            Menu("Font Size") {
+                Button("Smaller") {
+                    if editorFontSize > 8 {
+                        editorFontSize -= 1
+                    }
+                }
+                .keyboardShortcut("-")
+                
+                Button("Reset") {
+                    editorFontSize = 14
+                }
+                .keyboardShortcut("0")
+                
+                Button("Larger") {
+                    editorFontSize += 1
+                }
+                .keyboardShortcut("+")
+            }
+            
         }
         
         // more menus
