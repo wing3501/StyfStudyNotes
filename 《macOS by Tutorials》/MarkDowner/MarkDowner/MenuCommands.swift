@@ -48,7 +48,16 @@ struct MenuCommands: Commands {
             }
             
         }
-        
-        // more menus
+        // 替换help菜单项
+        CommandGroup(replacing: .help) {// ✅ CommandGroup插入菜单项到标准菜单中
+            // ✅ NavigationLink在菜单栏项中的使用
+            NavigationLink(isActive: .constant(true)) {
+                WebView(html: nil, address: "https://baidu.com")
+                    .frame(minWidth: 600,minHeight: 600)
+            } label: {
+                Text("Markdown Help")
+            }
+
+        }
     }
 }
