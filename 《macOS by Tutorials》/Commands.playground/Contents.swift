@@ -40,11 +40,12 @@ func pathTo(command: String) async -> String {
     await runCommand("/bin/zsh", with: ["-c", "which \(command)"])
 }
 
-Task {
-    let commandPath = await pathTo(command: "cal")
-    let cal = await runCommand(commandPath, with: ["-h"])
-    print(cal)
-}
+// ✅ 使用案例
+//Task {
+//    let commandPath = await pathTo(command: "cal")
+//    let cal = await runCommand(commandPath, with: ["-h"])
+//    print(cal)
+//}
 
 //--------------------------
 
