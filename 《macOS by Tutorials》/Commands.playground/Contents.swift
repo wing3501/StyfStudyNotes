@@ -10,10 +10,14 @@ func getAvailableData(from fileHandle: FileHandle) -> String {
 
 let process = Process()
 
-process.executableURL = URL(fileURLWithPath: "/sbin/ping")
+// 硬编码
+//process.executableURL = URL(fileURLWithPath: "/sbin/ping")
 
 // ✅ 传入参数
-process.arguments = ["-c","5","baidu.com"]
+//process.arguments = ["-c","5","baidu.com"]
+
+process.executableURL = URL(fileURLWithPath: "/bin/zsh")
+process.arguments = ["-c", "which whoami"]
 
 // ✅ 使用自己的输出管道
 let outPipe = Pipe()
