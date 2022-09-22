@@ -63,6 +63,10 @@ struct ContentView: View {
                 .help("Hide preview,show Html or web view") //可达性提示条
             }
         }
+        .touchBar {
+            // ✅ 支持touchbar
+            TouchbarCommands()
+        }
     }
 }
 
