@@ -15,6 +15,7 @@ struct MenuCommands: Commands {
     @KeyWindowValueBinding(MarkDownerDocument.self) var document: MarkDownerDocument?
     
     var body: some Commands {
+        // 切换css样式
         CommandMenu("Display") {
             // 改变css的菜单项
             ForEach(StyleSheet.allCases,id: \.self) { style in
@@ -51,7 +52,6 @@ struct MenuCommands: Commands {
             
         }
         
-        
         // ✅ 只针对活跃窗口的设置
         CommandMenu("Markdown") {
             Button("Bold") {
@@ -73,6 +73,16 @@ struct MenuCommands: Commands {
             }
         }
         
+        // 导出html
+        CommandGroup(after: .importExport) {
+            Button("Export HTML…") {
+                Task {
+                    await exportHTML()
+                }
+            }
+            .disabled(document == nil)
+        }
+        
         // 替换help菜单项
         CommandGroup(replacing: .help) {// ✅ CommandGroup插入菜单项到标准菜单中
             // ✅ NavigationLink在菜单栏项中的使用
@@ -85,6 +95,19 @@ struct MenuCommands: Commands {
             ) {
               Text("Markdown Help")
             }
+        }
+    }
+    
+    @MainActor func exportHTML() async {
+        guard let document else { return }
+        // ✅ 保存面板的使用
+        let savePanel = NSSavePanel()
+        savePanel.title = "Save HTML"
+        savePanel.nameFieldStringValue = "Export.html" //默认文件名
+        
+        let response = await savePanel.begin()
+        if response == .OK, let url = savePanel.url {
+            try? document.html.write(to: url, atomically: true, encoding: .utf8)
         }
     }
 }
