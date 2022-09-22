@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import KeyWindow
 
 struct MenuCommands: Commands {
     
     @AppStorage("styleSheet") var styleSheet: StyleSheet = .raywenderlich
     @AppStorage("editorFontSize") var editorFontSize: Double = 14
+    @KeyWindowValueBinding(MarkDownerDocument.self) var document: MarkDownerDocument?
     
     var body: some Commands {
         CommandMenu("Display") {
@@ -48,16 +50,41 @@ struct MenuCommands: Commands {
             }
             
         }
+        
+        
+        // ✅ 只针对活跃窗口的设置
+        CommandMenu("Markdown") {
+            Button("Bold") {
+                document?.text += "**Bold**"
+            }
+            .keyboardShortcut("b")
+            
+            Button("Italic") {
+                document?.text += "_Italic_"
+            }
+            .keyboardShortcut("i",modifiers: .command)
+            
+            Button("Link") {
+                document?.text += "[Title](https://link_to_page)"
+            }
+            
+            Button("Image") {
+                document?.text += "![alt text](https://link_to_image)"
+            }
+        }
+        
         // 替换help菜单项
         CommandGroup(replacing: .help) {// ✅ CommandGroup插入菜单项到标准菜单中
             // ✅ NavigationLink在菜单栏项中的使用
-            NavigationLink(isActive: .constant(true)) {
-                WebView(html: nil, address: "https://baidu.com")
-                    .frame(minWidth: 600,minHeight: 600)
-            } label: {
-                Text("Markdown Help")
+            NavigationLink(
+              destination:
+                WebView(
+                  html: nil,
+                  address: "https://baidu.com")
+                .frame(minWidth: 600, minHeight: 600)
+            ) {
+              Text("Markdown Help")
             }
-
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeyWindow
 
 enum PreviewState {
     case web
@@ -46,6 +47,7 @@ struct ContentView: View {
                idealHeight: 400,
                maxHeight: .infinity)
         .font(.system(size: editorFontSize))
+        .keyWindow(MarkDownerDocument.self, $document)
         .toolbar {
             // 工具栏项目-切换源码和预览
             ToolbarItem {

@@ -16,6 +16,11 @@ import UniformTypeIdentifiers
 // 2. 在imported Type Identifiers 中添加 新类型
 
 import MarkdownKit
+import KeyWindow
+
+extension MarkDownerDocument: KeyWindowValueKey {
+    public typealias Value = Binding<Self>
+}
 
 extension UTType {
     static var exampleText: UTType {

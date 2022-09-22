@@ -22,6 +22,7 @@
 		92128A4128DB1459004154CB /* raywenderlich.css in Resources */ = {isa = PBXBuildFile; fileRef = 92128A3B28DB1459004154CB /* raywenderlich.css */; };
 		92128A4328DB2ED7004154CB /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92128A4228DB2ED6004154CB /* MenuCommands.swift */; };
 		92156B5328DBF73E007C6E89 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92156B5228DBF73E007C6E89 /* WebView.swift */; };
+		92156B5928DC0838007C6E89 /* KeyWindow in Frameworks */ = {isa = PBXBuildFile; productRef = 92156B5828DC0838007C6E89 /* KeyWindow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		92128A3B28DB1459004154CB /* raywenderlich.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = raywenderlich.css; sourceTree = "<group>"; };
 		92128A4228DB2ED6004154CB /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
 		92156B5228DBF73E007C6E89 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		92156B5728DC082D007C6E89 /* KeyWindow-0.0.4 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "KeyWindow-0.0.4"; path = "SPM/KeyWindow-0.0.4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92156B5928DC0838007C6E89 /* KeyWindow in Frameworks */,
 				92128A3228DB033F004154CB /* MarkdownKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				92128A2F28DB0323004154CB /* swift-markdownkit-1.1.5 */,
+				92156B5728DC082D007C6E89 /* KeyWindow-0.0.4 */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -147,6 +151,7 @@
 			name = MarkDowner;
 			packageProductDependencies = (
 				92128A3128DB033F004154CB /* MarkdownKit */,
+				92156B5828DC0838007C6E89 /* KeyWindow */,
 			);
 			productName = MarkDowner;
 			productReference = 92128A1928DAF39C004154CB /* MarkDowner.app */;
@@ -416,6 +421,10 @@
 		92128A3128DB033F004154CB /* MarkdownKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MarkdownKit;
+		};
+		92156B5828DC0838007C6E89 /* KeyWindow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KeyWindow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
