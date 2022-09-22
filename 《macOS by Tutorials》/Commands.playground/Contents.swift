@@ -49,6 +49,18 @@ func pathTo(command: String) async -> String {
 
 //--------------------------
 
+let imagePath = "/Users/styf/Downloads/rosella.png"
+let imagePathSmall = "/Users/styf/Downloads/rosella_small.png"
+
+Task {
+    let sipsPath = await runCommand("/bin/zsh", with: ["-c", "which sips"])
+    
+    let args = ["--getProperty", "all", imagePath]
+    let imageData = await runCommand(sipsPath, with: args)
+    print(imageData)
+}
+
+//--------------------------
 let process = Process()
 
 // 硬编码
