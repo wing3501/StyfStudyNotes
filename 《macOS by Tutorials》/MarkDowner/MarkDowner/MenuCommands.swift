@@ -95,6 +95,7 @@ struct MenuCommands: Commands {
             ) {
               Text("Markdown Help")
             }
+            .keyboardShortcut("/")
         }
     }
     
