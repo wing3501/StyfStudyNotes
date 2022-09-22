@@ -7,6 +7,46 @@ func getAvailableData(from fileHandle: FileHandle) -> String {
     }
     return ""
 }
+// 封装一下
+func runCommand(_ command: String, with arguments: [String] = []) async -> String {
+    let process = Process()
+    
+    process.executableURL = URL(fileURLWithPath: command)
+    process.arguments = arguments
+    
+    let outPipe = Pipe()
+    let outFile = outPipe.fileHandleForReading
+    process.standardOutput = outPipe
+    
+    do {
+        try process.run()
+        
+        var returnValue = ""
+        while process.isRunning {
+            let newString = getAvailableData(from: outFile)
+            returnValue += newString
+        }
+        let newString = getAvailableData(from: outFile)
+        returnValue += newString
+        return returnValue.trimmingCharacters(in: .whitespacesAndNewlines)
+    }catch {
+        print(error)
+    }
+    
+    return ""
+}
+
+func pathTo(command: String) async -> String {
+    await runCommand("/bin/zsh", with: ["-c", "which \(command)"])
+}
+
+Task {
+    let commandPath = await pathTo(command: "cal")
+    let cal = await runCommand(commandPath, with: ["-h"])
+    print(cal)
+}
+
+//--------------------------
 
 let process = Process()
 
