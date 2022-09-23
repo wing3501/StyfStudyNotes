@@ -382,6 +382,8 @@
 		92EFF53C28D023D1001176EE /* CustomizingToolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */; };
 		92EFF54028D02D63001176EE /* ScrollViewIsScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */; };
 		92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */; };
+		92EFFE7728DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFE7528DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift */; };
+		92EFFE7828DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFE7628DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift */; };
 		92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F008B528854E38002BBD22 /* TransferableDemo.swift */; };
 		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
 		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
@@ -887,6 +889,8 @@
 		92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingToolbars.swift; sourceTree = "<group>"; };
 		92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewIsScrolling.swift; sourceTree = "<group>"; };
 		92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryManagementInCombine.swift; sourceTree = "<group>"; };
+		92EFFE7528DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnLayoutProtocolPart2.swift; sourceTree = "<group>"; };
+		92EFFE7628DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnLayoutProtocolPart1.swift; sourceTree = "<group>"; };
 		92F008B528854E38002BBD22 /* TransferableDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableDemo.swift; sourceTree = "<group>"; };
 		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
 		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
@@ -2304,6 +2308,8 @@
 				92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */,
 				92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */,
 				92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */,
+				92EFFE7628DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift */,
+				92EFFE7528DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2610,6 +2616,7 @@
 				92E83F6028A6288800194087 /* Venue+CoreDataProperties.swift in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
+				92EFFE7728DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
 				929E4B4D28B8AB44006592F1 /* MenuStyle.swift in Sources */,
 				921D54D528B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift in Sources */,
@@ -2878,6 +2885,7 @@
 				9220D58E26AA941D007E8B6A /* SaleCell.m in Sources */,
 				92E83F2728A605B500194087 /* Bubble Tea.xcdatamodeld in Sources */,
 				921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */,
+				92EFFE7828DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift in Sources */,
 				92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */,
 				9244F03E25E63DA00008D6BB /* SerialQueueDemo.m in Sources */,
 				920B9C2725DFC3590098B1BA /* AudioPlayer.m in Sources */,
