@@ -381,6 +381,7 @@
 		92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */; };
 		92EFF53C28D023D1001176EE /* CustomizingToolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */; };
 		92EFF54028D02D63001176EE /* ScrollViewIsScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */; };
+		92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */; };
 		92F008B628854E38002BBD22 /* TransferableDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F008B528854E38002BBD22 /* TransferableDemo.swift */; };
 		92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */; };
 		92F06AB9287D50EB00ADA9E9 /* SwiftUIOtherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */; };
@@ -885,6 +886,7 @@
 		92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingToolbars.swift; sourceTree = "<group>"; };
 		92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewIsScrolling.swift; sourceTree = "<group>"; };
+		92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryManagementInCombine.swift; sourceTree = "<group>"; };
 		92F008B528854E38002BBD22 /* TransferableDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferableDemo.swift; sourceTree = "<group>"; };
 		92F06AB6287D50CB00ADA9E9 /* SwiftUIOther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOther.swift; sourceTree = "<group>"; };
 		92F06AB8287D50EB00ADA9E9 /* SwiftUIOtherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOtherList.swift; sourceTree = "<group>"; };
@@ -2301,6 +2303,7 @@
 				92AC18B528C1D3B4009CAB64 /* UsingGauge.swift */,
 				92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */,
 				92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */,
+				92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2849,6 +2852,7 @@
 				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */,
 				92F2EFC12815170B00773B17 /* Utils.swift in Sources */,
 				922A00DB2823BB62009CBCA3 /* CollapsibleExample.swift in Sources */,
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
