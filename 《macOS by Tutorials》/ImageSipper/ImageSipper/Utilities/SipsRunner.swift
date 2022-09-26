@@ -21,4 +21,26 @@ class SipsRunner: ObservableObject {
         let imageData = await commandRunner.runCommand(sipsCommandPath, with: args)
         return imageData
     }
+    
+    func resizeImage(picture: Picture, newWidth: String, newHeight: String, newFormat: PicFormat) async -> URL? {
+        guard let sipsCommandPath = await checkSipsCommandPath() else {
+            return nil
+        }
+        let fileManager = FileManager.default
+        let suffix = "-> \(newWidth) x \(newHeight)"
+        var newURL = fileManager.addSuffix(of: suffix, to: picture.url)
+        newURL = fileManager.changeFileExtension(of: newURL, to: newFormat.rawValue)
+        
+        let args = [
+            "--resampleHeightWidth", newHeight, newWidth,
+            "--setProperty", newFormat.rawValue,
+            picture.url.path,
+            "--out", newURL.path
+        ]
+        // ✅ 使用 Process 去保存新图片，绕过了所有通常的机制
+        // 解决方案是，关闭(删除)沙盒。 ⚠️缺点是，不能发布到appStore
+        _ = await commandRunner.runCommand(sipsCommandPath, with: args)
+        
+        return newURL
+    }
 }

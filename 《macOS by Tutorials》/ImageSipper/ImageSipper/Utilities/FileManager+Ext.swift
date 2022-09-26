@@ -82,7 +82,7 @@ extension FileManager {
     let newURL = url.deletingPathExtension().appendingPathExtension(newExt)
     return newURL
   }
-
+  // 生成带后缀的新路径
   func addSuffix(of suffix: String, to url: URL) -> URL {
     let ext = url.pathExtension
     let fileName = url

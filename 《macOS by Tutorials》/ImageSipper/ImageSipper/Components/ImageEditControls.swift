@@ -41,6 +41,8 @@ struct ImageEditControls: View {
   @State private var lockAspectRatio = true
   @State private var picFormat = PicFormat.png
 
+    @EnvironmentObject var sipsRunner: SipsRunner
+    
   var body: some View {
     GroupBox {
       HStack {
@@ -97,6 +99,11 @@ struct ImageEditControls: View {
   }
 
   func resizeImage() async {
+      guard let picture else {
+          return
+      }
+      
+      imageURL = await sipsRunner.resizeImage(picture: picture, newWidth: picWidth, newHeight: picHeight, newFormat: picFormat)
   }
 }
 
