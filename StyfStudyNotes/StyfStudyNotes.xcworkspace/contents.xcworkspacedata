@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../&#x300a;macOS by Tutorials&#x300b;/ImageSipper/ImageSipper.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../&#x300a;macOS by Tutorials&#x300b;/Commands.playground">
    </FileRef>
    <FileRef
