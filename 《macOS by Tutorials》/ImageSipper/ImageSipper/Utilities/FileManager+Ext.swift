@@ -44,7 +44,8 @@ extension FileManager {
 
     return false
   }
-
+    
+    // ✅ 判断一个本地文件路径是图片文件
   func isImageFile(url: URL) -> Bool {
     guard let contentTypeKey = try? url.resourceValues(
       forKeys: [.contentTypeKey]) else {
@@ -63,7 +64,7 @@ extension FileManager {
       let files = try self.contentsOfDirectory(atPath: url.path)
       let imageFiles = files
         .map { file in
-          url.appendingPathComponent(file)
+          url.appendingPathComponent(file) // 拼接成完整路径
         }
         .filter { url in
           isImageFile(url: url)

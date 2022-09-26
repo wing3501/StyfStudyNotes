@@ -53,7 +53,7 @@ struct PortraitView: View {
 //        }
 //        return false
 //      }
-      //报错，暂时注释
+      //报错，暂时注释  需要等macOS 13
       EmptyView()
   }
 }

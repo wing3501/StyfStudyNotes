@@ -36,6 +36,7 @@ struct ThumbsView: View {
   @State private var folderURL: URL?
   @State private var imageURLs: [URL] = []
   @Binding var selectedTab: TabSelection
+  @State private var dragOver = false
 
   var body: some View {
     VStack {
@@ -87,7 +88,14 @@ struct ThumbsView: View {
         imageURLs = []
       }
     }
-    // onDrop here
+    .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers in
+        if let provider = providers.first {
+            provider.loadDataRepresentation(forTypeIdentifier: "public.file-url") { data, _ in
+                loadURL(from: data)
+            }
+        }
+        return true
+    }
   }
 
   func selectImagesFolder() {
@@ -105,6 +113,18 @@ struct ThumbsView: View {
           }
       }
   }
+    
+    func loadURL(from data: Data?) {
+        guard
+            let data,
+            let filePath = String(data: data, encoding: .ascii),// 这里的编码不一样
+            let url = URL(string: filePath) else {
+            return
+        }
+        if FileManager.default.isFolder(url: url) {
+            folderURL = url
+        }
+    }
 }
 
 struct ThumbsView_Previews: PreviewProvider {

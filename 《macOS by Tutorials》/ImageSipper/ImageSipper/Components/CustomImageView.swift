@@ -58,7 +58,7 @@ struct CustomImageView: View {
               }
           }
           return true
-      }
+      }      
   }
 
   func loadImage() {
