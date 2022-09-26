@@ -117,6 +117,10 @@ struct EditSizeView: View {
   @Binding var picWidth: String
   @Binding var picHeight: String
   @Binding var lockAspectRatio: Bool
+    // ✅ 通过监听第一响应者，修改另一个输入框来保持宽高比锁定
+    @FocusState private var widthFieldHasFocus: Bool
+    @FocusState private var heightFieldHasFocus: Bool
+    
   var aspectRatio: Double
 
   var body: some View {
@@ -125,11 +129,13 @@ struct EditSizeView: View {
         HStack {
           Text("Width:").frame(width: 50)
           TextField("", text: $picWidth)
+                .focused($widthFieldHasFocus)
             .frame(maxWidth: 60)
         }
         HStack {
           Text("Height:").frame(width: 50)
           TextField("", text: $picHeight)
+                .focused($heightFieldHasFocus)
             .frame(maxWidth: 60)
         }
       }
@@ -147,7 +153,16 @@ struct EditSizeView: View {
       .buttonStyle(.plain)
       .frame(width: 50)
     }
-    // onChanges here
+    .onChange(of: picWidth) { newValue in
+        if widthFieldHasFocus {
+            adjustAspectRatio(newWidth: newValue, newHeight: nil)
+        }
+    }
+    .onChange(of: picHeight) { newValue in
+        if heightFieldHasFocus {
+            adjustAspectRatio(newWidth: nil, newHeight: newValue)
+        }
+    }
   }
 
   func toggleAspectRatioLock() {
