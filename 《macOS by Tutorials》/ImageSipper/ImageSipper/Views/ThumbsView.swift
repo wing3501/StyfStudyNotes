@@ -91,6 +91,19 @@ struct ThumbsView: View {
   }
 
   func selectImagesFolder() {
+      // ✅ 使用NSOpenPanel 选取一个文件
+      let openPanel = NSOpenPanel()
+      openPanel.message = "Select a folder of images:"
+      
+      openPanel.canChooseDirectories = true
+      openPanel.canChooseFiles = false
+      openPanel.allowsMultipleSelection = false
+      
+      openPanel.begin { response in
+          if response == .OK {
+              folderURL = openPanel.url
+          }
+      }
   }
 }
 

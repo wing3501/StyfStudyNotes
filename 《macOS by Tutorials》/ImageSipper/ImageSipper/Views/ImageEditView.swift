@@ -66,6 +66,19 @@ struct ImageEditView: View {
   }
 
   func selectImageFile() {
+      // ✅ 使用NSOpenPanel 选取一个文件
+      let openPanel = NSOpenPanel()
+      openPanel.message = "Select an image file:" //标题
+      
+      openPanel.canChooseDirectories = false
+      openPanel.allowsMultipleSelection = false
+      openPanel.allowedContentTypes = [.image]
+      
+      openPanel.begin { response in
+          if response == .OK {
+              imageURL = openPanel.url
+          }
+      }
   }
 
   func getImageData() async {
