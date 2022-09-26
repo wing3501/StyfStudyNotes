@@ -14,6 +14,8 @@ struct TransferableDemo: View {
     var body: some View {
         
         VStack {
+            // SwiftUI 也新增了 PasteButton 和 ShareLink 两种系统的视图来方便开发者实现复制和分享的功能，两者也都只需要提供支持 Transferable 的类型即可：
+            // 👇🏻 实现 Transferable 的类型
             PasteButton(payloadType: String.self) { pastedString in
                 
             }
@@ -36,10 +38,10 @@ struct TransferableDemo: View {
         
     }
 }
-
+// ✅ 正确的方式
 struct PortraitView: View {
   @State var portrait: Image // 👈🏻 Transferable type
-
+//    因为 String、Image、Data、URL、AttributedString 这几个系统的类型都已经默认实现了 Transferable
   var body: some View {
 //    portrait
 //      .cornerRadius(8)
@@ -56,13 +58,17 @@ struct PortraitView: View {
   }
 }
 
+// 🤔 以前的处理方式
 struct NSItemProviderDemo: View {
     var body: some View {
         VStack {
+            // 比如下面的例子就是支持把文本拖拽到别的 app 的实现，还需要将 String 转换成 NSString：
+            // 除了不够 Swift，回调也没有类型保证
             Text("Hello World")
                 .onDrag {
                     NSItemProvider(object: "Hello World" as NSString)
                 }
+            // 比如下面的例子，只是接收图片就得处理一堆分支，非常蛋疼，更不用说支持多个类型的内容了
             Rectangle()
                 .fill(.gray)
                 .frame(width: 200, height: 200)

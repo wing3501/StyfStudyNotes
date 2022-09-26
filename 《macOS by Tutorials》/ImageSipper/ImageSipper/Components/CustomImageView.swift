@@ -35,6 +35,7 @@ import SwiftUI
 struct CustomImageView: View {
   @Binding var imageURL: URL?
   @State private var image: NSImage?
+  @State private var dragOver = false
 
   var body: some View {
     Image(nsImage: image ?? NSImage())
@@ -49,7 +50,15 @@ struct CustomImageView: View {
       .onChange(of: imageURL) { _ in
         loadImage()
       }
-    // onDrop here
+      // ✅ 拖动文件进来   使用NSItemProvider
+      .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers in
+          if let provider = providers.first {
+              provider.loadDataRepresentation(forTypeIdentifier: "public.file-url") { data, _ in
+                  loadURL(from: data)
+              }
+          }
+          return true
+      }
   }
 
   func loadImage() {
@@ -59,6 +68,16 @@ struct CustomImageView: View {
       image = nil
     }
   }
+    // Data转URL
+    func loadURL(from data: Data?) {
+        guard
+            let data,
+            let filePath = String(data: data, encoding: .utf8),
+            let url = URL(string: filePath) else { // 🈲 这里不可使用 URL(fileURLWithPath: filePath)
+            return
+        }
+        imageURL = url
+    }
 }
 
 struct CustomImageView_Previews: PreviewProvider {
