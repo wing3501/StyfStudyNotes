@@ -187,6 +187,7 @@
 		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
 		926EE2562626B84A0008F924 /* MachO_Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EE2552626B84A0008F924 /* MachO_Note.m */; };
+		926FBC9F28E145A6009511A9 /* ViewDidLoadInSU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FBC9E28E145A6009511A9 /* ViewDidLoadInSU.swift */; };
 		92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92701A29283E1FBA00295028 /* PDFDemo.swift */; };
 		92728B6F28AA42B300C51140 /* WorldCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92728B6E28AA42B300C51140 /* WorldCup.swift */; };
 		92728B7128AA42DE00C51140 /* WorldCupSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 92728B7028AA42DE00C51140 /* WorldCupSeed.json */; };
@@ -664,6 +665,7 @@
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
 		926EE2542626B84A0008F924 /* MachO_Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachO_Note.h; sourceTree = "<group>"; };
 		926EE2552626B84A0008F924 /* MachO_Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachO_Note.m; sourceTree = "<group>"; };
+		926FBC9E28E145A6009511A9 /* ViewDidLoadInSU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDidLoadInSU.swift; sourceTree = "<group>"; };
 		92701A29283E1FBA00295028 /* PDFDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDemo.swift; sourceTree = "<group>"; };
 		92728B6E28AA42B300C51140 /* WorldCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCup.swift; sourceTree = "<group>"; };
 		92728B7028AA42DE00C51140 /* WorldCupSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WorldCupSeed.json; sourceTree = "<group>"; };
@@ -2310,6 +2312,7 @@
 				92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */,
 				92EFFE7628DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift */,
 				92EFFE7528DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift */,
+				926FBC9E28E145A6009511A9 /* ViewDidLoadInSU.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2735,6 +2738,7 @@
 				92ABFB2428B7526900C3BF29 /* UsingCustomLayout.swift in Sources */,
 				92F9D3A4280FEE26002504A1 /* CalculatorButtonItem.swift in Sources */,
 				920986BA286D6FB300B5F418 /* PoemBookStackNavigationModel.swift in Sources */,
+				926FBC9F28E145A6009511A9 /* ViewDidLoadInSU.swift in Sources */,
 				920B9BFE25DFBD7E0098B1BA /* Shape.m in Sources */,
 				920E3F0025E8A4A000DE2990 /* TestViewController.m in Sources */,
 				92426DDF262464EA002062B7 /* LeaksObj.m in Sources */,
