@@ -36,6 +36,7 @@ struct PathView: NSViewRepresentable {
   var url: URL?
 
   func makeNSView(context: Context) -> NSPathControl {
+      // ✅ 使用NSPathControl来显示文件路径 避免路径显示不全的问题
     let pathControl = NSPathControl()
 
     pathControl.isEditable = false

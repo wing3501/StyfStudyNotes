@@ -47,7 +47,7 @@ struct ThumbsView: View {
           Text("Select Folder of Images")
         }
 
-        // path view here
+          ScrollingPathView(url: $folderURL)
       }
       .padding()
 

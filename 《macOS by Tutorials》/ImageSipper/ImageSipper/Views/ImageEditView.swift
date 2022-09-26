@@ -47,7 +47,7 @@ struct ImageEditView: View {
           Text("Select Image File")
         }
 
-        // path view here
+        ScrollingPathView(url: $imageURL)
       }
       .padding()
 
