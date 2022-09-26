@@ -33,7 +33,7 @@ class SipsRunner: ObservableObject {
         
         let args = [
             "--resampleHeightWidth", newHeight, newWidth,
-            "--setProperty", newFormat.rawValue,
+            "--setProperty", "format" , newFormat.rawValue,
             picture.url.path,
             "--out", newURL.path
         ]
