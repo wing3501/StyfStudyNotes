@@ -36,6 +36,8 @@ struct ContentView: View {
   @State private var showTerminalOutput = true
   @State private var selectedTab = TabSelection.editImage
 
+    @EnvironmentObject var sipsRunner: SipsRunner
+    
   var body: some View {
     HSplitView {
       VStack {
@@ -69,7 +71,7 @@ struct ContentView: View {
       }
 
       if showTerminalOutput {
-        TerminalView()
+          TerminalView(commandRunner: sipsRunner.commandRunner)
       }
     }
   }

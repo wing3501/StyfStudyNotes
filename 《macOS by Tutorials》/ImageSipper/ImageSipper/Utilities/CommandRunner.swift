@@ -84,6 +84,7 @@ class CommandRunner: ObservableObject {
 
   func publishOutput(_ text: String) {
     Task {
+        // ✅ 切到主线程 
       await MainActor.run {
         self.output += text
       }

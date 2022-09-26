@@ -34,14 +34,19 @@ import SwiftUI
 
 struct TerminalView: View {
   @State private var output = "Terminal output goes here."
-
+    
+    @ObservedObject var commandRunner: CommandRunner 
+    @EnvironmentObject var sipsRunner: SipsRunner
+    
+    
   var body: some View {
     VStack {
       Text("Terminal")
         .font(.headline)
 
       ScrollView {
-        Text(output)
+          Text(commandRunner.output)
+//          Text(sipsRunner.commandRunner.output)
           .textSelection(.enabled)
           .font(.system(size: 12, weight: .regular, design: .monospaced))
           .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -52,7 +57,7 @@ struct TerminalView: View {
       .border(Color.gray.opacity(0.3))
 
       Button("Clear Terminal") {
-        output = ""
+          commandRunner.clearOutput()
       }
     }
     .frame(minWidth: 300)
@@ -62,6 +67,6 @@ struct TerminalView: View {
 
 struct TerminalView_Previews: PreviewProvider {
   static var previews: some View {
-    TerminalView()
+    TerminalView(commandRunner: CommandRunner())
   }
 }
