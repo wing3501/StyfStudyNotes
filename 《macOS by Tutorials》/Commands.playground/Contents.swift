@@ -55,9 +55,18 @@ let imagePathSmall = "/Users/styf/Downloads/rosella_small.png"
 Task {
     let sipsPath = await runCommand("/bin/zsh", with: ["-c", "which sips"])
     
-    let args = ["--getProperty", "all", imagePath]
-    let imageData = await runCommand(sipsPath, with: args)
-    print(imageData)
+    // 打印图片信息
+//    let args = ["--getProperty", "all", imagePath]
+//    let imageData = await runCommand(sipsPath, with: args)
+//    print(imageData)
+    
+    let resizeArgs = [ "--resampleWidth","800",
+                       imagePath,
+                       "--out",
+                       imagePathSmall
+    ]
+    let output = await runCommand(sipsPath,with: resizeArgs)
+    print("Output: \(output)")
 }
 
 //--------------------------
