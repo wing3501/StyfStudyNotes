@@ -83,6 +83,13 @@ struct ImageEditView: View {
   }
 
   func getImageData() async {
+      guard
+        let imageURL,
+        FileManager.default.isImageFile(url: imageURL) else {
+          return
+      }
+      let imageData = await sipsRunner.getImageData(for: imageURL)
+      picture = Picture(url: imageURL, sipsData: imageData)
   }
 }
 
