@@ -37,6 +37,7 @@ struct ImageEditView: View {
   @State private var image: NSImage?
   @State private var picture: Picture?
   @Binding var selectedTab: TabSelection
+    @EnvironmentObject var sipsRunner: SipsRunner
 
   var body: some View {
     VStack {
@@ -88,5 +89,6 @@ struct ImageEditView: View {
 struct ImageEditView_Previews: PreviewProvider {
   static var previews: some View {
     ImageEditView(selectedTab: .constant(.editImage))
+          .environmentObject(SipsRunner())
   }
 }
