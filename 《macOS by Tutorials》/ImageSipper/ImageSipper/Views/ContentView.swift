@@ -32,6 +32,20 @@
 
 import SwiftUI
 
+// ✅ 添加一项服务到服务菜单
+// 1. 在info.plist 添加一行 Services
+// 2. 填入服务配置
+//    Instance method name 服务会调用的方法名
+//    Incoming service port name 服务会唤起的应用
+//    Send Types 本服务方法接收的参数类型  NSPasteboard.PasteboardType
+//    Send File Types 本服务支持的文件类型
+//    设置服务的context告诉系统，什么时候最合适显示我的特有服务  NSRequiredContext
+//    NSTextContext = FilePath: 服务只有当你选中一个文件路径，并且指向一个图片或者文件夹时，才显示我的菜单项
+// 3. （可选）如果服务里没出现，因为系统定期扫描服务。使用pbs强制系统刷新
+//    /System/Library/CoreServices/pbs -flush
+//    /System/Library/CoreServices/pbs -update
+// 4. 设置ServiceProvider
+
 struct ContentView: View {
   @State private var showTerminalOutput = true
   @State private var selectedTab = TabSelection.editImage

@@ -45,6 +45,7 @@
 		26E382C12786ABF600317CEA /* PicFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicFormat.swift; sourceTree = "<group>"; };
 		26E382C32786AC1000317CEA /* CommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandRunner.swift; sourceTree = "<group>"; };
 		26E382C52786AC3200317CEA /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
+		925B27C628E2CFF700349EE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		926FC77A28E1A5DD009511A9 /* SipsRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SipsRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +79,7 @@
 		26E3829A2786A7EC00317CEA /* ImageSipper */ = {
 			isa = PBXGroup;
 			children = (
+				925B27C628E2CFF700349EE9 /* Info.plist */,
 				26E3829B2786A7EC00317CEA /* ImageSipperApp.swift */,
 				26E382AB2786A87200317CEA /* Views */,
 				26E382B22786A9CF00317CEA /* Components */,
@@ -381,6 +383,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ImageSipper/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageSipper/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,6 +409,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ImageSipper/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageSipper/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

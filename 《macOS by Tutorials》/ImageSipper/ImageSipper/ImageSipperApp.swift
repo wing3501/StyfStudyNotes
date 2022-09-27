@@ -35,12 +35,42 @@ import SwiftUI
 @main
 struct ImageSipperApp: App {
     
+    var serviceProvider = ServiceProvider()
+    
     @StateObject var sipsRunner = SipsRunner()
     
   var body: some Scene {
     WindowGroup {
       ContentView()
             .environmentObject(sipsRunner)
+            .onAppear {
+                // ✅ 设置服务的响应 NSApp = NSApplication.shared
+                NSApp.servicesProvider = serviceProvider
+            }
     }
   }
+}
+
+class ServiceProvider {
+    @objc func openFromService(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+        let fileType = NSPasteboard.PasteboardType.fileURL
+        guard
+            let filePath = pboard.pasteboardItems?.first?.string(forType: fileType),
+            let url = URL(string: filePath) else {
+            return
+        }
+        NSApp.activate(ignoringOtherApps: true) // ✅ 将窗口置前
+        // 检查一下传进来的url是否是文件夹或者图片
+        let fileManager = FileManager.default
+        if fileManager.isFolder(url: url) {
+            NotificationCenter.default.post(name: .serviceReceivedFolder, object: url)
+        }else if fileManager.isImageFile(url: url) {
+            NotificationCenter.default.post(name: .serviceReceivedImage, object: url)
+        }
+    }
+}
+
+extension Notification.Name {
+    static let serviceReceivedImage = NSNotification.Name("serviceReceivedImage")
+    static let serviceReceivedFolder = NSNotification.Name("serviceReceivedFolder")
 }

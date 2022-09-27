@@ -37,6 +37,10 @@ struct ThumbsView: View {
   @State private var imageURLs: [URL] = []
   @Binding var selectedTab: TabSelection
   @State private var dragOver = false
+    
+    let serviceReceivedFolderNotification = NotificationCenter.default
+        .publisher(for: .serviceReceivedFolder)
+        .receive(on: RunLoop.main)
 
   var body: some View {
     VStack {
@@ -96,6 +100,13 @@ struct ThumbsView: View {
         }
         return true
     }
+    .onReceive(serviceReceivedFolderNotification) { notification in
+        if let url = notification.object as? URL {
+            selectedTab = .makeThumbs
+            folderURL = url
+        }
+    }
+      
   }
 
   func selectImagesFolder() {

@@ -38,6 +38,10 @@ struct ImageEditView: View {
   @State private var picture: Picture?
   @Binding var selectedTab: TabSelection
     @EnvironmentObject var sipsRunner: SipsRunner
+    // ✅ 接收通知
+    let serviceReceivedImageNotification = NotificationCenter.default
+        .publisher(for: .serviceReceivedImage)
+        .receive(on: RunLoop.main)
 
   var body: some View {
     VStack {
@@ -63,6 +67,12 @@ struct ImageEditView: View {
       Task {
         await getImageData()
       }
+    }
+    .onReceive(serviceReceivedImageNotification) { notification in
+        if let url = notification.object as? URL {
+            selectedTab = .editImage
+            imageURL = url
+        }
     }
   }
 
