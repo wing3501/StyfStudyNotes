@@ -23,6 +23,7 @@
 		26E382C22786ABF600317CEA /* PicFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E382C12786ABF600317CEA /* PicFormat.swift */; };
 		26E382C42786AC1000317CEA /* CommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E382C32786AC1000317CEA /* CommandRunner.swift */; };
 		26E382C62786AC3200317CEA /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E382C52786AC3200317CEA /* FileManager+Ext.swift */; };
+		925B27C828E2E2D300349EE9 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 925B27C728E2E2D300349EE9 /* Intents.intentdefinition */; };
 		926FC77B28E1A5DE009511A9 /* SipsRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926FC77A28E1A5DD009511A9 /* SipsRunner.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		26E382C32786AC1000317CEA /* CommandRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandRunner.swift; sourceTree = "<group>"; };
 		26E382C52786AC3200317CEA /* FileManager+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 		925B27C628E2CFF700349EE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		925B27C728E2E2D300349EE9 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		926FC77A28E1A5DD009511A9 /* SipsRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SipsRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				26E3829F2786A7ED00317CEA /* Assets.xcassets */,
 				26E382A42786A7ED00317CEA /* ImageSipper.entitlements */,
 				26E382A12786A7ED00317CEA /* Preview Content */,
+				925B27C728E2E2D300349EE9 /* Intents.intentdefinition */,
 			);
 			path = ImageSipper;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				26E382B42786A9F200317CEA /* CustomImageView.swift in Sources */,
 				26E382C02786ABE000317CEA /* Picture.swift in Sources */,
 				26E382B82786AA8500317CEA /* ThumbControls.swift in Sources */,
+				925B27C828E2E2D300349EE9 /* Intents.intentdefinition in Sources */,
 				26E3829E2786A7EC00317CEA /* ContentView.swift in Sources */,
 				26E382C62786AC3200317CEA /* FileManager+Ext.swift in Sources */,
 				26E382BA2786AAEA00317CEA /* PathView.swift in Sources */,

@@ -31,9 +31,12 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import Intents
 
 @main
 struct ImageSipperApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDel
     
     var serviceProvider = ServiceProvider()
     
@@ -50,7 +53,7 @@ struct ImageSipperApp: App {
     }
   }
 }
-
+// ✅ 服务响应处理
 class ServiceProvider {
     @objc func openFromService(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
         let fileType = NSPasteboard.PasteboardType.fileURL
@@ -73,4 +76,40 @@ class ServiceProvider {
 extension Notification.Name {
     static let serviceReceivedImage = NSNotification.Name("serviceReceivedImage")
     static let serviceReceivedFolder = NSNotification.Name("serviceReceivedFolder")
+}
+// ✅ 快捷指令响应处理
+class PrepareForWebIntentHandler: NSObject,PrepareForWebIntentHandling {
+//    func handle(intent: PrepareForWebIntent, completion: @escaping (PrepareForWebIntentResponse) -> Void) {
+//        <#code#>
+//    }
+    
+    func handle(intent: PrepareForWebIntent) async -> PrepareForWebIntentResponse {
+        guard let fileURL = intent.url?.fileURL else {// 确认url有一个文件路径
+            return PrepareForWebIntentResponse(code: .continueInApp, userActivity: nil)// 打开app
+        }
+        
+        // 调用服务
+        await SipsRunner().prepareForWeb(fileURL)
+        
+        return PrepareForWebIntentResponse(code: .success, userActivity: nil)
+    }
+    
+//    func resolveUrl(for intent: PrepareForWebIntent, with completion: @escaping (INFileResolutionResult) -> Void) {
+//        <#code#>
+//    }
+    
+    func resolveUrl(for intent: PrepareForWebIntent) async -> INFileResolutionResult {
+        // 确认提供了正确的参数
+        guard let url = intent.url else { return .confirmationRequired(with: nil) }
+        return .success(with: url)
+    }
+}
+// ✅ 设置代理接收Intent
+class AppDelegate: NSObject,NSApplicationDelegate {
+    func application(_ application: NSApplication, handlerFor intent: INIntent) -> Any? {
+        if intent is PrepareForWebIntent {
+            return PrepareForWebIntentHandler()
+        }
+        return nil
+    }
 }

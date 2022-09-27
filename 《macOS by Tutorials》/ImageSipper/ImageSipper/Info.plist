@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>INIntentsSupported</key>
+	<array>
+		<string>PrepareForWebIntent</string>
+	</array>
 	<key>NSServices</key>
 	<array>
 		<dict>
@@ -14,21 +18,25 @@
 			<string>openFromService</string>
 			<key>NSPortName</key>
 			<string>ImageSipper</string>
-			<key>NSSendTypes</key>
-			<array>
-				<string>string</string>
-			</array>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>public.folder</string>
-				<string>public.image</string>
-			</array>
 			<key>NSRequiredContext</key>
 			<dict>
 				<key>NSTextContext</key>
 				<string>FilePath</string>
 			</dict>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>public.folder</string>
+				<string>public.image</string>
+			</array>
+			<key>NSSendTypes</key>
+			<array>
+				<string>string</string>
+			</array>
 		</dict>
+	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>PrepareForWebIntent</string>
 	</array>
 </dict>
 </plist>

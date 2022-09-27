@@ -46,6 +46,26 @@ import SwiftUI
 //    /System/Library/CoreServices/pbs -update
 // 4. 设置ServiceProvider
 
+
+// ✅ 添加一项快捷指令
+// 1. 新建Intent模板文件   intent是发布给Siri和快捷指令的服务
+// 2. 选中模板文件，新建intent，配置Parameter部分
+// 表示预期一个url参数，类型是URL,指向一个图片文件
+//        新建参数url
+//        修改Display Name,修改Type
+//        修改File Type
+//        修改Siri Dialog
+// 3. 配置 Shortcuts app部分. Input Parameter和Key Parameter 都设为url。设置summary，url自动填充
+// 4. 编译 Intent
+// 5. 选择 target - General - Supported Intents,填入编译好的PrepareForWebIntent
+// 6. 实现 PrepareForWebIntentHandler
+// 7. 使用appDelegate代理方法接收intent
+
+// ✅ 关于 快捷指令的调试问题
+// 1 如果没有在“快捷指令”中看到你的intent，则 rm -rf ~/Library/Developer/Xcode/DerivedData 然后重新构建
+// 2 确保代码没有问题，写个按钮调用一下代码
+// 3 如果你的快捷指令挂起了，重启电脑
+
 struct ContentView: View {
   @State private var showTerminalOutput = true
   @State private var selectedTab = TabSelection.editImage

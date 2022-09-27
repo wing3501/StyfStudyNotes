@@ -59,4 +59,15 @@ class SipsRunner: ObservableObject {
             _ = await commandRunner.runCommand(sipsCommandPath, with: args)
         }
     }
+    
+    func prepareForWeb(_ url: URL) async {
+        guard let sipsCommandPath = await checkSipsCommandPath() else {
+            return
+        }
+        let args = [
+            "--resampleHeightWidthMax", "800", //确保不超出800px
+            url.path
+        ]
+        _ = await commandRunner.runCommand(sipsCommandPath, with: args)
+    }
 }
