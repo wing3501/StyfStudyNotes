@@ -43,4 +43,20 @@ class SipsRunner: ObservableObject {
         
         return newURL
     }
+    
+    func createThumbs(in folder: URL, from imageURLs: [URL], maxDimension: String) async {
+        guard let sipsCommandPath = await checkSipsCommandPath() else {
+            return
+        }
+        
+        for imageURL in imageURLs {
+            let args = [
+                "--resampleHeightWidthMax", maxDimension,
+                imageURL.path,
+                "--out", folder.path
+            ]
+            
+            _ = await commandRunner.runCommand(sipsCommandPath, with: args)
+        }
+    }
 }

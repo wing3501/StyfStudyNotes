@@ -59,7 +59,7 @@ struct PathView: NSViewRepresentable {
         // ✅ 双击打开一个路径
         @objc func handDoubleClick(sender: NSPathControl) {
             if let url = sender.clickedPathItem?.url {// 是否有一个url被双击了
-                // 用Finer 显示这个路径
+                //✅ 用Finer 显示这个路径
                 NSWorkspace.shared.selectFile(url.path, inFileViewerRootedAtPath: "")
             }
         }

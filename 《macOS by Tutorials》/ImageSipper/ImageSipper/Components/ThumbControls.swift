@@ -38,6 +38,7 @@ struct ThumbControls: View {
   @State private var maxDimension = "128"
   @State private var showAlert = false
   @State private var outputFolder: URL?
+    @EnvironmentObject var sipsRunner: SipsRunner
 
   var body: some View {
     GroupBox {
@@ -56,13 +57,47 @@ struct ThumbControls: View {
     }
     .padding([.horizontal, .bottom])
 
-    // alert goes here
+    
+    .alert(Text("Thumbnails created"), isPresented: $showAlert) {
+        if let outputFolder {
+            Button("Show in Finder") {
+                //✅ 用Finer 显示这个路径
+                NSWorkspace.shared.selectFile(outputFolder.path, inFileViewerRootedAtPath: "")
+            }
+        }
+        Button("OK") {
+            
+        }
+    } message: {
+        Text("\(imageURLs.count) thumbnails have been create.")
+    }
   }
 
   func selectThumbsFolder() {
+      let openPanel = NSOpenPanel()
+      openPanel.message = "Select the thumbnails folder:"
+      
+      openPanel.canCreateDirectories = true // 允许建新文件夹
+      openPanel.canChooseDirectories = true
+      openPanel.canChooseFiles = false
+      openPanel.allowsMultipleSelection = false
+      
+      openPanel.begin { reponse in
+          if reponse == .OK, let url = openPanel.url {
+              Task {
+                  await createThumbs(in: url)
+              }
+          }
+      }
+      
   }
 
   func createThumbs(in folder: URL) async {
+      await sipsRunner.createThumbs(in: folder, from: imageURLs, maxDimension: maxDimension)
+      
+      outputFolder = folder
+      
+      showAlert = true
   }
 }
 

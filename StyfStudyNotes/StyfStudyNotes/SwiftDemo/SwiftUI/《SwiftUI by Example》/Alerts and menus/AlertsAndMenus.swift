@@ -322,6 +322,14 @@ struct AlertDemo1: View {
 //                dismissButton: .default(Text("Got it!"))
 //            )
 //        }
+        //15.0
+//            .alert(Text(""), isPresented: $showingAlert) {
+//                Button("First") { }
+//                Button("Second") { }
+//            } message: {
+//                Text("Wear sunscreen")
+//            }
+
     }
 }
 
