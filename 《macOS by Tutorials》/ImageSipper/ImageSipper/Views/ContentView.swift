@@ -66,6 +66,21 @@ import SwiftUI
 // 2 确保代码没有问题，写个按钮调用一下代码
 // 3 如果你的快捷指令挂起了，重启电脑
 
+// ✅ dmg打包步骤
+// 1 打开“磁盘工具”，文件-新建映像-空白映像
+// 2 填入名称、大小比文件略大,保存
+// 3 打开dmg,拖入app,cmd+option拖入Applications路径
+// 4 拖入背景图，按Shift-Command-.显示隐藏文件，给文件名加.如.background.png让它成为隐藏文件
+// 5 按Command-1 to View > as Icons,然后按Command-J打开View options
+// 6 勾选 Always open in icon View,Group By和Sort By 设为None
+// 7 icon size 设为80X80
+// 8 选择Picture in View Options > Background，并拖入隐藏文件背景图
+// 9 可以在Find > View中隐藏各类Bar
+// 10 拖动文件到合适的位置
+// 11 在另一个Finder 窗口，按Command-E弹出新映像
+// 12 重新打开“磁盘工具”，在Images-Convert中选择DMG文件，权限设置为只读，点击转换
+// 如果映像不显示背景图，则弹出、删除刚刚创建的只读映像，打开读写映像，确认设置正确，移动一下窗口，再尝试
+
 struct ContentView: View {
   @State private var showTerminalOutput = true
   @State private var selectedTab = TabSelection.editImage
@@ -109,6 +124,16 @@ struct ContentView: View {
       }
     }
   }
+    
+    // ✅ 联系开发者邮箱
+    func emailDeveloper() {
+        let subject = "主题"
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let link = "mailto:dev@example.com?subject=\(subject)"
+        if let url = URL(string: link) {
+            NSWorkspace.shared.open(url)
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
