@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "8aa140ef52a1fdb9c35d6416d32a7bc0aa9cfebc27fb83a63c5bd7c0a446f71f"
+build_start_time: [1664441773, 130062103]
+build_end_time: [1664441774, 82617044]
+inputs:
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/NIOAtomic.swift"
+  : [1664441723, 998875379]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/NIOLock.swift"
+  : [1664441723, 999120712]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/NIOLockedValueBox.swift"
+  : [1664441723, 999248981]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/atomics.swift"
+  : [1664441723, 999379634]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOConcurrencyHelpers/lock.swift"
+  : [1664441723, 999541759]

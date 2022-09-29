@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIO.build/master.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio/Sources/NIO/Exports.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIO.build/Exports.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIO.build/Exports.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIO.build/Exports~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIO.build/Exports.swiftdeps"
+  }
+}

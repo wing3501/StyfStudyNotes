@@ -1,0 +1,4 @@
+module MultipartKit {
+    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/MultipartKit.build/MultipartKit-Swift.h"
+    requires objc
+}

@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/master.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-backtrace/Sources/Backtrace/Backtrace.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Backtrace.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Backtrace.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Backtrace~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Backtrace.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-backtrace/Sources/Backtrace/Demangle.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Demangle.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Demangle.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Demangle~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Backtrace.build/Demangle.swiftdeps"
+  }
+}

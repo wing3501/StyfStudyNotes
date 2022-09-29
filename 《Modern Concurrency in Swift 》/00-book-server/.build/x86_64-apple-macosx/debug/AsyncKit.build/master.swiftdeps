@@ -1,0 +1,51 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "384b1c082a9c5b7480aac3d4e0eb1bb9901f2a160feb5f46b657fb27e99f8910"
+build_start_time: [1664441785, 157332897]
+build_end_time: [1664441808, 667001962]
+inputs:
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolError.swift"
+  : [1664441722, 608633518]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolItem.swift"
+  : [1664441722, 608803749]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/ConnectionPoolSource.swift"
+  : [1664441722, 608988761]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/EventLoopConnectionPool.swift"
+  : [1664441722, 609309196]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/ConnectionPool/EventLoopGroupConnectionPool.swift"
+  : [1664441722, 610068082]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Concurrency.swift"
+  : [1664441722, 610686302]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Flatten.swift"
+  : [1664441722, 611034393]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoop+Future.swift"
+  : [1664441722, 611250877]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoopGroup+Concurrency.swift"
+  : [1664441722, 611519336]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoop/EventLoopGroup+Throwing.swift"
+  : [1664441722, 611720561]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Collection+Flatten.swift"
+  : [1664441722, 611940860]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/EventLoopFutureQueue+Sequence.swift"
+  : [1664441722, 612196683]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/EventLoopFutureQueue.swift"
+  : [1664441722, 612387657]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Collection.swift"
+  : [1664441722, 612613916]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Conjunctions.swift"
+  : [1664441722, 612892150]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Miscellaneous.swift"
+  : [1664441722, 613063335]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Nonempty.swift"
+  : [1664441722, 613201618]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Optional.swift"
+  : [1664441722, 613353252]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Transform.swift"
+  : [1664441722, 613470554]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Future+Try.swift"
+  : [1664441722, 613596439]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/FutureOperators.swift"
+  : [1664441722, 613730907]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/EventLoopFuture/Optional+StrictMap.swift"
+  : [1664441722, 613908290]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/async-kit/Sources/AsyncKit/Exports.swift"
+  : [1664441722, 614058256]

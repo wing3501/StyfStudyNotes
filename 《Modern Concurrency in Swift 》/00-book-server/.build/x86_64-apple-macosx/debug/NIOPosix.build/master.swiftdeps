@@ -1,0 +1,93 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "ffd8b373145e33ca25d7510a56c2c0cb312bc0684395736210ece8e195022dc9"
+build_start_time: [1664441781, 476027965]
+build_end_time: [1664441784, 649567127]
+inputs:
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPICommon.swift"
+  : [1664441724, 26764392]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIPosix.swift"
+  : [1664441724, 27325868]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BSDSocketAPIWindows.swift"
+  : [1664441724, 27502059]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocket.swift"
+  : [1664441724, 27747154]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel+SocketOptionProvider.swift"
+  : [1664441724, 27963638]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseSocketChannel.swift"
+  : [1664441724, 28376102]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/BaseStreamSocketChannel.swift"
+  : [1664441724, 28677940]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Bootstrap.swift"
+  : [1664441724, 29019832]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ControlMessage.swift"
+  : [1664441724, 29541969]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/DatagramVectorReadManager.swift"
+  : [1664441724, 29767513]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/FileDescriptor.swift"
+  : [1664441724, 29950380]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/GetaddrinfoResolver.swift"
+  : [1664441724, 30117511]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/HappyEyeballs.swift"
+  : [1664441724, 30368328]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IO.swift"
+  : [1664441724, 30621528]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerBitPacking.swift"
+  : [1664441724, 30736923]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/IntegerTypes.swift"
+  : [1664441724, 30949115]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Linux.swift"
+  : [1664441724, 31100273]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxCPUSet.swift"
+  : [1664441724, 31242370]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/LinuxUring.swift"
+  : [1664441724, 31492471]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/MultiThreadedEventLoopGroup.swift"
+  : [1664441724, 31830787]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/NIOThreadPool.swift"
+  : [1664441724, 32401561]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/NonBlockingFileIO.swift"
+  : [1664441724, 32641887]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PendingDatagramWritesManager.swift"
+  : [1664441724, 32969474]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PendingWritesManager.swift"
+  : [1664441724, 33257722]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PipeChannel.swift"
+  : [1664441724, 33718109]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PipePair.swift"
+  : [1664441724, 33852100]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/PointerHelpers.swift"
+  : [1664441724, 33962726]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Resolver.swift"
+  : [1664441724, 34207582]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Selectable.swift"
+  : [1664441724, 34339904]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableChannel.swift"
+  : [1664441724, 34464597]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectableEventLoop.swift"
+  : [1664441724, 34857749]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorEpoll.swift"
+  : [1664441724, 35107612]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorGeneric.swift"
+  : [1664441724, 35337448]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorKqueue.swift"
+  : [1664441724, 35602569]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SelectorUring.swift"
+  : [1664441724, 35813570]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ServerSocket.swift"
+  : [1664441724, 36077260]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Socket.swift"
+  : [1664441724, 36328554]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SocketChannel.swift"
+  : [1664441724, 36511421]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/SocketProtocols.swift"
+  : [1664441724, 36681652]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/System.swift"
+  : [1664441724, 36934852]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Thread.swift"
+  : [1664441724, 37126064]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadPosix.swift"
+  : [1664441724, 37260055]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/ThreadWindows.swift"
+  : [1664441724, 37385940]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOPosix/Utilities.swift"
+  : [1664441724, 37509441]

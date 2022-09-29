@@ -1,0 +1,347 @@
+{
+  "": {
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/master.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClient+execute.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+execute.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+execute.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+execute~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+execute.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClient+shutdown.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+shutdown.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+shutdown.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+shutdown~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClient+shutdown.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientRequest+Prepared.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest+Prepared.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest+Prepared.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest+Prepared~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest+Prepared.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientRequest.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientRequest.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/HTTPClientResponse.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientResponse.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientResponse.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientResponse~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/HTTPClientResponse.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/Transaction+StateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction+StateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction+StateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction+StateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction+StateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/AsyncAwait/Transaction.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/AsyncAwait/Transaction.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Base64.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Base64.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Base64.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Base64~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Base64.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/BestEffortHashableTLSConfiguration.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/BestEffortHashableTLSConfiguration.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/BestEffortHashableTLSConfiguration.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/BestEffortHashableTLSConfiguration~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/BestEffortHashableTLSConfiguration.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/HTTP1ProxyConnectHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/SOCKSEventsHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/SOCKSEventsHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/SOCKSEventsHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/SOCKSEventsHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/SOCKSEventsHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/ChannelHandler/TLSEventsHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/TLSEventsHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/TLSEventsHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/TLSEventsHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/ChannelHandler/TLSEventsHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1ClientChannelHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ClientChannelHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ClientChannelHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ClientChannelHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ClientChannelHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1Connection.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1Connection.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1Connection.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1Connection~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1Connection.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP1/HTTP1ConnectionStateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2ClientRequestHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2ClientRequestHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2ClientRequestHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2ClientRequestHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2ClientRequestHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2Connection.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2Connection.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2Connection.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2Connection~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2Connection.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTP2/HTTP2IdleHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2IdleHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2IdleHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2IdleHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTP2/HTTP2IdleHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionEvent.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionEvent.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionEvent.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionEvent.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool+Factory.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Factory.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Factory.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Factory~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Factory.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool+Manager.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Manager.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Manager.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Manager~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool+Manager.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPConnectionPool.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPConnectionPool.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPExecutableRequest.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPExecutableRequest.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPExecutableRequest.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPExecutableRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPExecutableRequest.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPRequestStateMachine+Demand.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine+Demand.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine+Demand.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine+Demand~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine+Demand.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/HTTPRequestStateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/HTTPRequestStateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestBodyLength.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestBodyLength.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestBodyLength.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestBodyLength~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestBodyLength.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestFramingMetadata.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestFramingMetadata.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestFramingMetadata.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestFramingMetadata~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestFramingMetadata.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/RequestOptions.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestOptions.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestOptions.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestOptions~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/RequestOptions.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+Backoff.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+Backoff.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+Backoff.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+Backoff~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+Backoff.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1Connections.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP1StateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2Connections.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+HTTP2StateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+RequestQueue.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionPool/State Machine/HTTPConnectionPool+StateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/ConnectionTarget.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionTarget.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionTarget.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionTarget~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/ConnectionTarget.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/DeconstructedURL.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/DeconstructedURL.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/DeconstructedURL.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/DeconstructedURL~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/DeconstructedURL.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/FileDownloadDelegate.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FileDownloadDelegate.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FileDownloadDelegate.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FileDownloadDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FileDownloadDelegate.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/FoundationExtensions.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FoundationExtensions.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FoundationExtensions.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FoundationExtensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/FoundationExtensions.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient+HTTPCookie.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+HTTPCookie.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+HTTPCookie.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+HTTPCookie~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+HTTPCookie.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient+Proxy.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+Proxy.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+Proxy.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+Proxy~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient+Proxy.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPClient.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPClient.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/HTTPHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/HTTPHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/LRUCache.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/LRUCache.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/LRUCache.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/LRUCache~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/LRUCache.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/NIOTransportServices/NWErrorHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWErrorHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWErrorHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWErrorHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWErrorHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/NIOTransportServices/NWWaitingHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWWaitingHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWWaitingHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWWaitingHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/NWWaitingHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/NIOTransportServices/TLSConfiguration.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/TLSConfiguration.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/TLSConfiguration.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/TLSConfiguration~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/NIOTransportServices/TLSConfiguration.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RedirectState.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RedirectState.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RedirectState.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RedirectState~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RedirectState.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestBag+StateMachine.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag+StateMachine.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag+StateMachine.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag+StateMachine~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag+StateMachine.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestBag.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestBag.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/RequestValidation.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestValidation.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestValidation.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestValidation~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/RequestValidation.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/SSLContextCache.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/SSLContextCache.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/SSLContextCache.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/SSLContextCache~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/SSLContextCache.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Scheme.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Scheme.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Scheme.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Scheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Scheme.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/StringConvertibleInstances.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/StringConvertibleInstances.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/StringConvertibleInstances.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/StringConvertibleInstances~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/StringConvertibleInstances.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/UnsafeTransfer.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/UnsafeTransfer.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/UnsafeTransfer.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/UnsafeTransfer~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/UnsafeTransfer.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/async-http-client/Sources/AsyncHTTPClient/Utils.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Utils.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Utils.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Utils~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncHTTPClient.build/Utils.swiftdeps"
+  }
+}

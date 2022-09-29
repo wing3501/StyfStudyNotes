@@ -1,0 +1,4 @@
+module App {
+    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/App-Swift.h"
+    requires objc
+}

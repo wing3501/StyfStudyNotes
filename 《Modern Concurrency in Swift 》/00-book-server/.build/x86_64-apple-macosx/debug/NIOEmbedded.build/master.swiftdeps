@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "df2973bf7262a66076d2ac13a4aa658a6f855468a9303847ba1d8761cbddd1f1"
+build_start_time: [1664441781, 429931163]
+build_end_time: [1664441782, 993864059]
+inputs:
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOEmbedded/AsyncTestingChannel.swift"
+  : [1664441724, 17590999]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOEmbedded/AsyncTestingEventLoop.swift"
+  : [1664441724, 17825365]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOEmbedded/Embedded.swift"
+  : [1664441724, 18112182]

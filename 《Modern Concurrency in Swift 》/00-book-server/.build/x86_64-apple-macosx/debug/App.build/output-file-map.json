@@ -1,0 +1,59 @@
+{
+  "": {
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/master.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/Blabber.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Blabber.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Blabber.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Blabber~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Blabber.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/Clipper.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Clipper.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Clipper.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Clipper~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Clipper.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/EasterEgg.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/EasterEgg.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/EasterEgg.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/EasterEgg~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/EasterEgg.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/Gallery.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Gallery.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Gallery.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Gallery~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Gallery.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/Hello.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Hello.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Hello.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Hello~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/Hello.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/LittleJohn.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/LittleJohn.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/LittleJohn.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/LittleJohn~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/LittleJohn.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/Routes/SuperStorage.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/SuperStorage.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/SuperStorage.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/SuperStorage~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/Routes/SuperStorage.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/configure.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/configure.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/configure.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/configure~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/configure.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/Sources/App/routes.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/routes.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/routes.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/routes~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/App.build/routes.swiftdeps"
+  }
+}

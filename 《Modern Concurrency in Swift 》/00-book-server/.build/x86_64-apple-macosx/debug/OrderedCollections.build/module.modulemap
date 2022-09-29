@@ -1,0 +1,4 @@
+module OrderedCollections {
+    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/OrderedCollections.build/OrderedCollections-Swift.h"
+    requires objc
+}

@@ -1,0 +1,89 @@
+{
+  "": {
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/master.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/DebugInboundEventsHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugInboundEventsHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugInboundEventsHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugInboundEventsHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugInboundEventsHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/DebugOutboundEventsHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugOutboundEventsHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugOutboundEventsHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugOutboundEventsHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/DebugOutboundEventsHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/FixedLengthFrameDecoder.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/FixedLengthFrameDecoder.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/FixedLengthFrameDecoder.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/FixedLengthFrameDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/FixedLengthFrameDecoder.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/JSONRPCFraming+ContentLengthHeader.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming+ContentLengthHeader.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming+ContentLengthHeader.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming+ContentLengthHeader~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming+ContentLengthHeader.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/JSONRPCFraming.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/JSONRPCFraming.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LengthFieldBasedFrameDecoder.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldBasedFrameDecoder.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldBasedFrameDecoder.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldBasedFrameDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldBasedFrameDecoder.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LengthFieldPrepender.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldPrepender.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldPrepender.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldPrepender~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LengthFieldPrepender.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/LineBasedFrameDecoder.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LineBasedFrameDecoder.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LineBasedFrameDecoder.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LineBasedFrameDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/LineBasedFrameDecoder.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/NIOExtrasError.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOExtrasError.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOExtrasError.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOExtrasError~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOExtrasError.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/NIOLengthFieldBitLength.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOLengthFieldBitLength.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOLengthFieldBitLength.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOLengthFieldBitLength~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/NIOLengthFieldBitLength.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/PCAPRingBuffer.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/PCAPRingBuffer.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/PCAPRingBuffer.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/PCAPRingBuffer~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/PCAPRingBuffer.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/QuiescingHelper.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/QuiescingHelper.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/QuiescingHelper.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/QuiescingHelper~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/QuiescingHelper.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/RequestResponseHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/RequestResponseHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/RequestResponseHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/RequestResponseHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/RequestResponseHandler.swiftdeps"
+  },
+  "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOExtras/WritePCAPHandler.swift": {
+    "dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/WritePCAPHandler.d",
+    "object": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/WritePCAPHandler.swift.o",
+    "swiftmodule": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/WritePCAPHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/NIOExtras.build/WritePCAPHandler.swiftdeps"
+  }
+}

@@ -82,6 +82,13 @@ struct SymbolListView: View {
           Text(lastErrorMessage)
         })
         .padding(.horizontal)
+        .task { // ✅ 这个异步task就是其他任务的父任务，也因此，当页面返回时，所有异步任务都被取消了
+          do {
+            symbols = try await model.availableSymbols()
+          } catch {
+            lastErrorMessage = error.localizedDescription
+          }
+        }
       }
     }
   }

@@ -1,0 +1,55 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "735dedfcfc2f22cb4b74715a342915bf13f97c52942316dcf7419ea5e230356f"
+build_start_time: [1664441739, 836266040]
+build_end_time: [1664441745, 978052139]
+inputs:
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/AdjacentPairs.swift"
+  : [1664441722, 342230319]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Chain.swift"
+  : [1664441722, 342409610]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Chunked.swift"
+  : [1664441722, 342695474]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Combinations.swift"
+  : [1664441722, 342890739]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Compacted.swift"
+  : [1664441722, 343106746]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Cycle.swift"
+  : [1664441722, 343414306]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/EitherSequence.swift"
+  : [1664441722, 343886375]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/FirstNonNil.swift"
+  : [1664441722, 344127655]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/FlattenCollection.swift"
+  : [1664441722, 344290256]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Indexed.swift"
+  : [1664441722, 344776868]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Intersperse.swift"
+  : [1664441722, 344994783]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Joined.swift"
+  : [1664441722, 345198631]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/MinMax.swift"
+  : [1664441722, 345421314]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Partition.swift"
+  : [1664441722, 345637559]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Permutations.swift"
+  : [1664441722, 345988750]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Product.swift"
+  : [1664441722, 346251010]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/RandomSample.swift"
+  : [1664441722, 346412658]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Reductions.swift"
+  : [1664441722, 346649408]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Rotate.swift"
+  : [1664441722, 346833705]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Split.swift"
+  : [1664441722, 347119808]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Stride.swift"
+  : [1664441722, 347329616]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Suffix.swift"
+  : [1664441722, 347462177]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Trim.swift"
+  : [1664441722, 347605705]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Unique.swift"
+  : [1664441722, 347767829]
+  ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/Windows.swift"
+  : [1664441722, 348021268]

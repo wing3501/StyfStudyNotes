@@ -70,5 +70,11 @@ struct TickerView: View {
     .listStyle(PlainListStyle())
     .font(.custom("FantasqueSansMono-Regular", size: 18))
     .padding(.horizontal)
+    .task { do {
+        try await model.startTicker(selectedSymbols)
+      } catch {
+        lastErrorMessage = error.localizedDescription
+      }
+    }
   }
 }

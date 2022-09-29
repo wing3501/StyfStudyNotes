@@ -46,12 +46,38 @@ class LittleJohnModel: ObservableObject {
     guard let url = URL(string: "http://localhost:8080/littlejohn/ticker?\(selectedSymbols.joined(separator: ","))") else {
       throw "The URL could not be created."
     }
+    // ✅ URLSession.bytes(from:delegate:) 返回异步序列，steam是字节序列
+    let (stream, response) = try await liveURLSession.bytes(from: url)
+    guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+      throw "The server responded with an error."
+    }
+    for try await line in stream.lines { // ✅ line 行是对该序列的抽象，它逐行给出响应的文本行。
+      let sortedSymbols = try JSONDecoder()
+        .decode([Stock].self, from: Data(line.utf8))
+        .sorted(by: { $0.name < $1.name })
+      await MainActor.run {
+        tickerSymbols = sortedSymbols
+        print("Updated: \(Date())")
+      }
+    }
+  }
+  
+  func availableSymbols() async throws -> [String] {
+    guard let url = URL(string: "http://localhost:8080/littlejohn/symbols")
+    else {
+      throw "The URL could not be created."
+    }
+    let (data, response) = try await URLSession.shared.data(from:url)
+    guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+      throw "The server responded with an error."
+    }
+    return try JSONDecoder().decode([String].self, from: data)
   }
 
   /// A URL session that lets requests run indefinitely so we can receive live updates from server.
   private lazy var liveURLSession: URLSession = {
     var configuration = URLSessionConfiguration.default
-    configuration.timeoutIntervalForRequest = .infinity
+    configuration.timeoutIntervalForRequest = .infinity // ✅ 设置永不超时，以便于无期限接收一个超长服务器响应
     return URLSession(configuration: configuration)
   }()
 }
