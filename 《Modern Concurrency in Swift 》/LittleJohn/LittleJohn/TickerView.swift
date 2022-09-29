@@ -73,6 +73,13 @@ struct TickerView: View {
     .task { do {
         try await model.startTicker(selectedSymbols)
       } catch {
+        // ✅ 解决办法是，处理掉这个错误，像URLSession等API会有一个取消code
+        if let error = error as? URLError,
+           error.code == .cancelled {
+          return
+        }
+        
+        // ⚠️ 导航返回时，task取消，这里试图弹出一个alert，导致 Attempt to present xxx on xxxx whose view is not in the window hierarchy.
         lastErrorMessage = error.localizedDescription
       }
     }
