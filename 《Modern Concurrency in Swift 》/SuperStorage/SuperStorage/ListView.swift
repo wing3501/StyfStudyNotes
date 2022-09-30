@@ -103,6 +103,7 @@ struct ListView: View {
           
           // ✅ 同时获取他们的值有两种办法：
           // 1.把他们放入一个集合类型中，比如数组
+          let _ = try await [files,status] as [Any]
           // 2.使用元组，析构返回值
           
           let (filesResult, statusResult) = try await (files, status)
