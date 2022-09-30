@@ -42,7 +42,10 @@ class LittleJohnModel: ObservableObject {
 
   /// Start live updates for the provided stock symbols.
   func startTicker(_ selectedSymbols: [String]) async throws {
-    tickerSymbols = []
+    await MainActor.run(body: {
+      tickerSymbols = []
+    })
+    
     guard let url = URL(string: "http://localhost:8080/littlejohn/ticker?\(selectedSymbols.joined(separator: ","))") else {
       throw "The URL could not be created."
     }
@@ -60,6 +63,11 @@ class LittleJohnModel: ObservableObject {
         print("Updated: \(Date())")
       }
     }
+    print("异步序列遍历结束------")
+    await MainActor.run(body: {
+        tickerSymbols = []
+    })
+    
   }
   
   func availableSymbols() async throws -> [String] {

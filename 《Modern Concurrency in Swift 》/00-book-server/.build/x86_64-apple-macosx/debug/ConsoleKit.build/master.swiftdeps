@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
 options: "22acb37af6e54d7ca3b1bc1df539d5d23667aba0734a43b4f688e14427906dd7"
-build_start_time: [1664441742, 547003030]
-build_end_time: [1664441751, 785693168]
+build_start_time: [1664506404, 458534002]
+build_end_time: [1664506404, 640460968]
 inputs:
   ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/console-kit/Sources/ConsoleKit/Activity/ActivityBar.swift"
   : [1664441722, 52931785]

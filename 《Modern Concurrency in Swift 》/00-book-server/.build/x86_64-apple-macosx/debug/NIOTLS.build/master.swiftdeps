@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
 options: "50e6b40702b073e7d16dcebe3f3f698d2c3fdaf1c5e6a2698def7ea9136693f7"
-build_start_time: [1664441785, 105823040]
-build_end_time: [1664441788, 348716020]
+build_start_time: [1664506427, 241122007]
+build_end_time: [1664506427, 395277976]
 inputs:
   ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio/Sources/NIOTLS/ApplicationProtocolNegotiationHandler.swift"
   : [1664441724, 37793159]
