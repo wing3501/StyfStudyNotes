@@ -98,9 +98,11 @@ struct ListView: View {
         guard files.isEmpty else { return }
         do {
           files = try await model.availableFiles()
-      } catch {
+          status = try await model.status()
+        } catch {
           lastErrorMessage = error.localizedDescription
         }
+        
       }
     }
   }
