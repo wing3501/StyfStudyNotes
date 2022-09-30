@@ -30,6 +30,29 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+// ✅ async/await的几种用法
+// 1 基本使用
+//func myFunction() async throws -> String {
+//    ...
+//}
+//let myVar = try await myFunction()
+
+// 2 异步属性
+//var myProperty: String {
+//  get async {
+//    ...
+//  }
+//}
+//print(await myProperty)
+
+// 3 异步闭包
+//func myFunction(worker: (Int) async -> Int) -> Int {
+//  ...
+//}
+//myFunction {
+//  return await computeNumbers($0)
+//}
+
 import SwiftUI
 
 @main
