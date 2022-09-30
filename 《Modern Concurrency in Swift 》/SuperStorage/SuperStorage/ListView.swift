@@ -97,8 +97,21 @@ struct ListView: View {
         print("list task....")
         guard files.isEmpty else { return }
         do {
-          files = try await model.availableFiles()
-          status = try await model.status()
+          // ✅ 使用 async let ,类似promise绑定，需要使用await才能访问值
+          async let files = try model.availableFiles()
+          async let status = try model.status()
+          
+          // ✅ 同时获取他们的值有两种办法：
+          // 1.把他们放入一个集合类型中，比如数组
+          // 2.使用元组，析构返回值
+          
+          let (filesResult, statusResult) = try await (files, status)
+          self.files = filesResult
+          self.status = statusResult
+          
+          // ⚠️ 两个接口没有并发，需要并发
+//          files = try await model.availableFiles()
+//          status = try await model.status()
         } catch {
           lastErrorMessage = error.localizedDescription
         }
