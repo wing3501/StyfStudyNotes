@@ -53,6 +53,14 @@
 //  return await computeNumbers($0)
 //}
 
+// ✅ Task API
+// 1. Task(priority:operation) 按给定优先级，安排异步执行。从当前同步上下文继承默认值。（当你的代码在主线程创建一个Task,Task也会运行在主线程）
+// 2. Task.detached(priority:operation) 同上，除了不继承
+// 3. Task.value 类似一个任务值的promise
+// 4. Task.isCancelled 从上一个暂停点到现在是否任务被取消了。
+// 5. Task.checkCancellation() 如果任务被取消了，抛出一个CancellationError
+// 6. Task.sleep(nanoseconds:) 让任务休眠指定时间，不会阻塞线程
+
 import SwiftUI
 
 @main

@@ -97,7 +97,7 @@ struct ListView: View {
         print("list task....")
         guard files.isEmpty else { return }
         do {
-          // ✅ 使用 async let ,类似promise绑定，需要使用await才能访问值
+          // ✅ 使用 async let 结构化并发,类似promise绑定，需要使用await才能访问值
           async let files = try model.availableFiles()
           async let status = try model.status()
           
