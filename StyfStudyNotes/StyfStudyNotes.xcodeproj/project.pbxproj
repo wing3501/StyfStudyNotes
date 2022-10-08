@@ -185,6 +185,7 @@
 		925810242806CB2C008AF141 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925810232806CB2C008AF141 /* GithubViewController.swift */; };
 		925CB17928F113AC00F772A6 /* DynamicDateWithMonospace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */; };
 		925CB17B28F1152800F772A6 /* DismissAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17A28F1152800F772A6 /* DismissAction.swift */; };
+		925CB17D28F11A4600F772A6 /* NeverKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17C28F11A4600F772A6 /* NeverKeyword.swift */; };
 		925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5C2831FAEB00066389 /* AdvancedState.swift */; };
 		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
@@ -664,6 +665,7 @@
 		925810232806CB2C008AF141 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
 		925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDateWithMonospace.swift; sourceTree = "<group>"; };
 		925CB17A28F1152800F772A6 /* DismissAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAction.swift; sourceTree = "<group>"; };
+		925CB17C28F11A4600F772A6 /* NeverKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverKeyword.swift; sourceTree = "<group>"; };
 		925D6E5C2831FAEB00066389 /* AdvancedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedState.swift; sourceTree = "<group>"; };
 		925D6E5F2832281D00066389 /* ListsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsDemo.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
@@ -2319,6 +2321,7 @@
 				926FBC9E28E145A6009511A9 /* ViewDidLoadInSU.swift */,
 				925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */,
 				925CB17A28F1152800F772A6 /* DismissAction.swift */,
+				925CB17C28F11A4600F772A6 /* NeverKeyword.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2623,6 +2626,7 @@
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				92E83F6028A6288800194087 /* Venue+CoreDataProperties.swift in Sources */,
+				925CB17D28F11A4600F772A6 /* NeverKeyword.swift in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EFFE7728DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift in Sources */,
