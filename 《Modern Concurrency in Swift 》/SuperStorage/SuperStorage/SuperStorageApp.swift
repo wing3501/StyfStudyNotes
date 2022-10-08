@@ -61,6 +61,36 @@
 // 5. Task.checkCancellation() 如果任务被取消了，抛出一个CancellationError
 // 6. Task.sleep(nanoseconds:) 让任务休眠指定时间，不会阻塞线程
 
+// ✅ 异步序列
+// for遍历
+//for try await item in asyncSequence {
+// // Next item from `asyncSequence`
+//}
+
+// while遍历
+//var iterator = asyncSequence.makeAsyncIterator()
+//while let item = try await iterator.next() {
+//  ...
+//}
+
+// 使用标准序列相同的方法
+//for await item in asyncSequence
+//  .dropFirst(5)
+//  .prefix(10)
+//  .filter { $0 > 10 }
+//  .map { "Item: \($0)" } {
+//    ...
+//  }
+
+// 使用字节序列相关方法
+//let bytes = URL(fileURLWithPath: "myFile.txt").resourceBytes
+//for await character in bytes.characters {
+//  ...
+//}
+//for await line in bytes.lines {
+//  ...
+//}
+
 import SwiftUI
 
 @main

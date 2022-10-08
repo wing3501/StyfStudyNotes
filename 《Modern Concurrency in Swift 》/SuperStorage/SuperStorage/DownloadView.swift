@@ -59,7 +59,13 @@ struct DownloadView: View {
           }
         },
         downloadWithUpdatesAction: {
-          // Download a file with UI progress updates.
+          isDownloadActive = true
+          Task {
+            do {
+              fileData = try await model.downloadWithProgress(file: file)
+          } catch { }
+            isDownloadActive = false
+          }
         },
         downloadMultipleAction: {
           // Download a file in multiple concurrent parts.
