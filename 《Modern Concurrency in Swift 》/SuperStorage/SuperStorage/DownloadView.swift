@@ -42,6 +42,9 @@ struct DownloadView: View {
   @State var fileData: Data?
   /// Should display a download activity indicator.
   @State var isDownloadActive = false
+  
+  @State var downloadTask: Task<Void, Error>?
+  
   var body: some View {
     List {
       // Show the details of the selected file and download buttons.
@@ -60,7 +63,7 @@ struct DownloadView: View {
         },
         downloadWithUpdatesAction: {
           isDownloadActive = true
-          Task {
+          downloadTask = Task { // ⚠️ 跟.task不同，不负责自动取消任务
             do {
               fileData = try await model.downloadWithProgress(file: file)
           } catch { }
@@ -90,6 +93,7 @@ struct DownloadView: View {
     .onDisappear {
       fileData = nil
       model.reset()
+      downloadTask?.cancel()
     }
     
   }

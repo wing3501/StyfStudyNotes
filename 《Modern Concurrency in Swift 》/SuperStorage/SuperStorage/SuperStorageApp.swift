@@ -61,6 +61,13 @@
 // 5. Task.checkCancellation() 如果任务被取消了，抛出一个CancellationError
 // 6. Task.sleep(nanoseconds:) 让任务休眠指定时间，不会阻塞线程
 
+// ✅ Task 取消相关API
+// Task.isCancelled 如果任务仍处于活动状态，但自上一个挂起点以来已取消，则返回true。
+// Task.currentPriority 返回当前任务的优先级。
+// Task.cancel() 尝试取消任务及其子任务。
+// Task.checkCancellation() 如果任务被取消，则抛出CancellationError，从而更容易退出抛出上下文。
+// Task.yield() 挂起当前任务的执行，使系统有机会自动取消它以执行其他具有更高优先级的任务
+
 // ✅ 异步序列
 // for遍历
 //for try await item in asyncSequence {
