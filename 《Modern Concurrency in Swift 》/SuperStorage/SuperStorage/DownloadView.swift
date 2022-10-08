@@ -32,6 +32,7 @@
 
 import SwiftUI
 import UIKit
+import Combine
 
 /// The file download view.
 struct DownloadView: View {
@@ -41,9 +42,35 @@ struct DownloadView: View {
   /// The downloaded data.
   @State var fileData: Data?
   /// Should display a download activity indicator.
-  @State var isDownloadActive = false
+  
+  @State var duration = ""
+  
+  @State var isDownloadActive = false {
+    didSet {
+      timerTask?.cancel()
+      guard isDownloadActive else { return }
+      let startTime = Date().timeIntervalSince1970
+      let timerSequence = Timer
+        .publish(every: 1, tolerance: 1, on: .main, in: .common)
+        .autoconnect()
+        .map { date -> String in
+          let duration = Int(date.timeIntervalSince1970 - startTime)
+          return "\(duration)s"
+        }
+      .values // ✅ values返回异步序列。可以使用for await 访问任何Combine publisher的values
+              //  类似的Future类型提供了 value,可以使用await
+      
+      timerTask = Task {
+        for await duration in timerSequence {
+          self.duration = duration
+        }
+      }
+    }
+  }
   
   @State var downloadTask: Task<Void, Error>?
+  @State var timerTask: Task<Void, Error>?
+  
   
   var body: some View {
     List {
@@ -82,6 +109,12 @@ struct DownloadView: View {
         // Show progress for any ongoing downloads.
         Downloads(downloads: model.downloads)
       }
+      
+      if !duration.isEmpty {
+        Text("Duration: \(duration)")
+          .font(.caption)
+      }
+      
       if let fileData = fileData {
         // Show a preview of the file if it's a valid image.
         FilePreview(fileData: fileData)
@@ -92,6 +125,7 @@ struct DownloadView: View {
     .toolbar(content: {
       Button(action: {
         model.stopDownloads = true
+        timerTask?.cancel()
         
       }, label: { Text("Cancel All") })
         .disabled(model.downloads.isEmpty)
