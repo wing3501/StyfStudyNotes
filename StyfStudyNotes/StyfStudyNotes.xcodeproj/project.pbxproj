@@ -186,6 +186,7 @@
 		925CB17928F113AC00F772A6 /* DynamicDateWithMonospace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */; };
 		925CB17B28F1152800F772A6 /* DismissAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17A28F1152800F772A6 /* DismissAction.swift */; };
 		925CB17D28F11A4600F772A6 /* NeverKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17C28F11A4600F772A6 /* NeverKeyword.swift */; };
+		925CB18128F1245C00F772A6 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB18028F1245C00F772A6 /* RoundedCorners.swift */; };
 		925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5C2831FAEB00066389 /* AdvancedState.swift */; };
 		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
@@ -666,6 +667,7 @@
 		925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDateWithMonospace.swift; sourceTree = "<group>"; };
 		925CB17A28F1152800F772A6 /* DismissAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAction.swift; sourceTree = "<group>"; };
 		925CB17C28F11A4600F772A6 /* NeverKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverKeyword.swift; sourceTree = "<group>"; };
+		925CB18028F1245C00F772A6 /* RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		925D6E5C2831FAEB00066389 /* AdvancedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedState.swift; sourceTree = "<group>"; };
 		925D6E5F2832281D00066389 /* ListsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsDemo.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
@@ -2322,6 +2324,7 @@
 				925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */,
 				925CB17A28F1152800F772A6 /* DismissAction.swift */,
 				925CB17C28F11A4600F772A6 /* NeverKeyword.swift */,
+				925CB18028F1245C00F772A6 /* RoundedCorners.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2650,6 +2653,7 @@
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				92EC412928B366DB004EC671 /* SurfCoreDataStack.swift in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
+				925CB18128F1245C00F772A6 /* RoundedCorners.swift in Sources */,
 				9249122428BCE9E10031A83E /* OpenUrl.swift in Sources */,
 				92F06AB7287D50CB00ADA9E9 /* SwiftUIOther.swift in Sources */,
 				9276475728AE0DD900970310 /* Camper+CoreDataClass.swift in Sources */,
