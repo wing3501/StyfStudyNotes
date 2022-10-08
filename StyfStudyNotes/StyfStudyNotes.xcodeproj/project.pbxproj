@@ -187,6 +187,7 @@
 		925CB17B28F1152800F772A6 /* DismissAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17A28F1152800F772A6 /* DismissAction.swift */; };
 		925CB17D28F11A4600F772A6 /* NeverKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB17C28F11A4600F772A6 /* NeverKeyword.swift */; };
 		925CB18128F1245C00F772A6 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB18028F1245C00F772A6 /* RoundedCorners.swift */; };
+		925CB18328F1250E00F772A6 /* ChangeFontWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB18228F1250E00F772A6 /* ChangeFontWidth.swift */; };
 		925D6E5D2831FAEB00066389 /* AdvancedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5C2831FAEB00066389 /* AdvancedState.swift */; };
 		925D6E602832281D00066389 /* ListsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D6E5F2832281D00066389 /* ListsDemo.swift */; };
 		925EB83D27E84C23007C86D4 /* DynamicStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */; };
@@ -668,6 +669,7 @@
 		925CB17A28F1152800F772A6 /* DismissAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAction.swift; sourceTree = "<group>"; };
 		925CB17C28F11A4600F772A6 /* NeverKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverKeyword.swift; sourceTree = "<group>"; };
 		925CB18028F1245C00F772A6 /* RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		925CB18228F1250E00F772A6 /* ChangeFontWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFontWidth.swift; sourceTree = "<group>"; };
 		925D6E5C2831FAEB00066389 /* AdvancedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedState.swift; sourceTree = "<group>"; };
 		925D6E5F2832281D00066389 /* ListsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsDemo.swift; sourceTree = "<group>"; };
 		925EB83C27E84C23007C86D4 /* DynamicStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStructViewController.swift; sourceTree = "<group>"; };
@@ -2325,6 +2327,7 @@
 				925CB17A28F1152800F772A6 /* DismissAction.swift */,
 				925CB17C28F11A4600F772A6 /* NeverKeyword.swift */,
 				925CB18028F1245C00F772A6 /* RoundedCorners.swift */,
+				925CB18228F1250E00F772A6 /* ChangeFontWidth.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2810,6 +2813,7 @@
 				92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */,
 				9276475C28AE0E5000970310 /* CamperService.swift in Sources */,
 				92116BE5281A6C2A0061086E /* LayoutTestView.swift in Sources */,
+				925CB18328F1250E00F772A6 /* ChangeFontWidth.swift in Sources */,
 				92AA70372837303300EB5C7E /* TipsAndTricks.swift in Sources */,
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				9276475828AE0DD900970310 /* CampSite+CoreDataProperties.swift in Sources */,
