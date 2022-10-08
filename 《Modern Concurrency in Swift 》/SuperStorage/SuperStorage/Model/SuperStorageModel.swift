@@ -36,7 +36,9 @@ import Foundation
 class SuperStorageModel: ObservableObject {
   /// The list of currently running downloads.
   @Published var downloads: [DownloadInfo] = []
-
+  // ✅ 任务本地值，需要是静态变量或者全局变量，使用withValue()往任务层级中注入一个值，类似SwiftUI的环境值
+  @TaskLocal static var supportsPartialDownloads = false
+  
   /// Downloads a file and returns its content.
   func download(file: DownloadFile) async throws -> Data {
     guard let url = URL(string: "http://localhost:8080/files/download?\(file.name)") else {
@@ -92,8 +94,11 @@ class SuperStorageModel: ObservableObject {
         await self?.updateDownload(name: name, progress: progress)
       }
       print(accumulator.description)
+      // ✅ 手动取消任务
+      if await stopDownloads, !Self.supportsPartialDownloads {
+       throw CancellationError()
+     }
     }
-    
     return accumulator.data
   }
 

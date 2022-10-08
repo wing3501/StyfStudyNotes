@@ -65,7 +65,11 @@ struct DownloadView: View {
           isDownloadActive = true
           downloadTask = Task { // ⚠️ 跟.task不同，不负责自动取消任务
             do {
-              fileData = try await model.downloadWithProgress(file: file)
+//              fileData = try await model.downloadWithProgress(file: file)
+              // ✅ 使用任务本地值 绑定了当前这个下载任务是否支持部分下载
+              try await SuperStorageModel.$supportsPartialDownloads.withValue(file.name.hasSuffix(".jpeg")) {
+                  fileData = try await model.downloadWithProgress(file: file)
+                }
           } catch { }
             isDownloadActive = false
           }
@@ -87,6 +91,8 @@ struct DownloadView: View {
     .listStyle(InsetGroupedListStyle())
     .toolbar(content: {
       Button(action: {
+        model.stopDownloads = true
+        
       }, label: { Text("Cancel All") })
         .disabled(model.downloads.isEmpty)
     })
