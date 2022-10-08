@@ -93,7 +93,7 @@ class SuperStorageModel: ObservableObject {
       Task.detached(priority: .medium) { [weak self] in
         await self?.updateDownload(name: name, progress: progress)
       }
-      print(accumulator.description)
+      
       // ✅ 手动取消任务
       if await stopDownloads, !Self.supportsPartialDownloads {
        throw CancellationError()
@@ -113,8 +113,13 @@ class SuperStorageModel: ObservableObject {
     }
     let total = 4
     let parts = (0..<total).map { partInfo(index: $0, of: total) }
-    // Add challenge code here.
-    return Data()
+    
+    async let part1 = downloadWithProgress(fileName: file.name, name: parts[0].name, size: parts[0].size, offset: parts[0].offset)
+    async let part2 = downloadWithProgress(fileName: file.name, name: parts[1].name, size: parts[1].size, offset: parts[1].offset)
+    async let part3 = downloadWithProgress(fileName: file.name, name: parts[2].name, size: parts[2].size, offset: parts[2].offset)
+    async let part4 = downloadWithProgress(fileName: file.name, name: parts[3].name, size: parts[3].size, offset: parts[3].offset)
+    
+    return try await [part1, part2, part3, part4].reduce(Data(), +)
   }
   
   func availableFiles() async throws -> [DownloadFile] {
