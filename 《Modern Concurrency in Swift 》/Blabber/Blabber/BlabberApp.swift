@@ -32,6 +32,66 @@
 
 import SwiftUI
 
+// ✅ 一个简单地自定义AsyncSequence
+//    仍然需要添加两个新类型，可以考虑让一个类同时实现两个协议
+struct Typewriter: AsyncSequence {
+  typealias Element = String
+  let phrase: String
+  func makeAsyncIterator() -> TypewriterIterator {
+    return TypewriterIterator(phrase)
+  }
+}
+
+struct TypewriterIterator: AsyncIteratorProtocol {
+  typealias Element = String
+  let phrase: String
+  var index: String.Index
+  init(_ phrase: String) {
+    self.phrase = phrase
+    self.index = phrase.startIndex
+  }
+  mutating func next() async throws -> String? {
+    guard index < phrase.endIndex else {
+return nil
+    }
+    try await Task.sleep(nanoseconds: 1_000_000_000)
+    defer {
+      index = phrase.index(after: index)
+    }
+      return String(phrase[phrase.startIndex...index])
+    }
+  }
+
+//for try await item in Typewriter(phrase: "Hello, world!") {
+// print(item)
+//}
+
+// ✅ 使用AsyncStream 简化AsyncSequence的使用
+// init(_:bufferingPolicy:_:) 需要指定类型。使用continuation控制序列。 不设置缓冲区选项，则所有未消费的值都会被放到缓冲区
+// init(unfolding:onCancel:): 通过unfolding闭包返回值生产值。
+
+struct AsyncStreamDemo1{
+  func test() async {
+    var phrase = "Hello, world!"
+    var index = phrase.startIndex
+    // 这里使用了unfolding的初始化方式
+    let stream = AsyncStream<String> {
+      guard index < phrase.endIndex else { return nil }
+      do {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+      } catch {
+        return nil
+      }
+      defer { index = phrase.index(after: index) }
+      return String(phrase[phrase.startIndex...index])
+    }
+    
+    for try await item in stream {
+     print(item)
+   }
+  }
+}
+
 @main
 struct BlabberApp: App {
   var body: some Scene {
