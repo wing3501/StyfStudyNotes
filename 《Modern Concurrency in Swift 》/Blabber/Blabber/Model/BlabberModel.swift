@@ -50,9 +50,31 @@ class BlabberModel: ObservableObject {
   func shareLocation() async throws {
   }
 
+  var countdown = 3
   /// Does a countdown and sends the message.
   func countdown(to message: String) async throws {
     guard !message.isEmpty else { return }
+    // ✅ 使用continuation闭包的方式初始化AsyncStream
+    let counter = AsyncStream<String> { continuation in
+      
+      Timer.scheduledTimer(withTimeInterval: 1.0,repeats: true) { timer in
+        guard self.countdown > 0 else {
+          self.countdown = 3
+          timer.invalidate()
+//          continuation.yield("💐" + message)
+//          continuation.finish() // 调用finish结束序列
+//          ==
+          continuation.yield(with: .success("💐" + message))
+          return
+        }
+        continuation.yield("\(self.countdown) ...") // 使用yield生产一个值
+        self.countdown -= 1
+      }
+    }
+    // 消费数据，否则数据都保存在缓冲区
+    for await countdownMessage in counter {
+      try await say(countdownMessage)
+    }
   }
 
   /// Start live chat updates
