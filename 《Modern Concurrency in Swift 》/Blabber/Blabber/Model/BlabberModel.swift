@@ -83,6 +83,25 @@ class BlabberModel: ObservableObject {
   /// Reads the server chat stream and updates the data model.
   @MainActor
   private func readMessages(stream: URLSession.AsyncBytes) async throws {
+    // 第一行是状态信息,迭代器只为读取第一行
+    var iterator = stream.lines.makeAsyncIterator()
+    guard let first = try await iterator.next() else {
+      throw "No response from server"
+    }
+    guard let data = first.data(using: .utf8),
+          let status = try? JSONDecoder().decode(ServerStatus.self, from: data) else {
+      throw "Invalid response from server"
+    }
+    messages.append(
+      Message(message: "\(status.activeUsers) active users")
+    )
+    // 读取无限的消息列表
+    for try await line in stream.lines {
+      if let data = line.data(using: .utf8),
+        let update = try? JSONDecoder().decode(Message.self, from: data) {
+        messages.append(update)
+      }
+    }
   }
 
   /// Sends the user's message to the chat server
