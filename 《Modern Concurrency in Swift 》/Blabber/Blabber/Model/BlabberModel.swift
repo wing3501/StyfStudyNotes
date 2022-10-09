@@ -52,11 +52,12 @@ class BlabberModel: ObservableObject {
 
   var countdown = 3
   /// Does a countdown and sends the message.
+  @MainActor
   func countdown(to message: String) async throws {
     guard !message.isEmpty else { return }
     // ✅ 使用continuation闭包的方式初始化AsyncStream
     let counter = AsyncStream<String> { continuation in
-      
+
       Timer.scheduledTimer(withTimeInterval: 1.0,repeats: true) { timer in
         guard self.countdown > 0 else {
           self.countdown = 3
