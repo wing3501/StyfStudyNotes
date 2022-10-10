@@ -92,6 +92,19 @@ struct AsyncStreamDemo1{
   }
 }
 
+// ✅ 手动创建continuation的两个API：CheckedContinuation、UnsafeContinuation
+//   CheckedContinuation检查运行时错误，打印误用的日志
+//   当只考虑性能，不需要额外安全性的时候使用UnsafeContinuation
+// ✅ 使用 withCheckedContinuation(_:): 和 withCheckedThrowingContinuation(_:): 创建闭包
+// ⚠️ 只能恢复continuation一次
+//• resume(): 恢复没有返回值
+//• resume(returning:): 恢复暂停的任务，带有一个返回值
+//• resume(throwing:): 恢复暂停的任务，抛出一个错误
+//• resume(with:): 恢复暂停的任务，带一个包含值或者异常的Result
+
+
+
+
 @main
 struct BlabberApp: App {
   var body: some Scene {
