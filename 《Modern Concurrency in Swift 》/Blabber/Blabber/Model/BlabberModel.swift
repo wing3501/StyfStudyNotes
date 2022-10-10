@@ -45,9 +45,18 @@ class BlabberModel: ObservableObject {
 
   /// Current live updates
   @Published var messages: [Message] = []
+  
+  /// A chat location delegate
+  private var delegate: ChatLocationDelegate?
 
   /// Shares the current user's address in chat.
+  @MainActor  //❌ 不在主线程初始化，定位不回调
   func shareLocation() async throws {
+    // ✅ 使用withCheckedThrowingContinuation创建Continuation
+    let location: CLLocation = try await withCheckedThrowingContinuation { [weak self] continuation in
+      self?.delegate = ChatLocationDelegate(continuation:continuation)
+    }
+    print(location.description)
   }
 
 //  var countdown = 3
