@@ -50,6 +50,9 @@ struct LoginView: View {
         Button(action: {
           model.username = username
           self.isDisplayingChat = true
+//          Task {
+//            try? await model.shareLocation()
+//          }
         }, label: {
           Image(systemName: "arrow.right.circle.fill")
             .font(.title)

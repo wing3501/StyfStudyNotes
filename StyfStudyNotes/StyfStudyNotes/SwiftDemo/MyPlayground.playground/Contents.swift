@@ -142,6 +142,21 @@ default:
     break
 }
 
+// 可选类型绑定
+//AddressEncoder.addressFor(location: location) { address, error in
+//          switch (address, error) {
+//          case (nil, let error?):
+//            continuation.resume(throwing: error)
+//          case (let address?, nil):
+//            continuation.resume(returning: address)
+//          case (nil, nil):
+//            continuation.resume(throwing: "Address encoding failed")
+//          case let (address?, error?):
+//            continuation.resume(returning: address)
+//            print(error)
+//          }
+//        }
+
 //标签语句
 outer: for i in 1...4 {
     for k in 1...4 {
