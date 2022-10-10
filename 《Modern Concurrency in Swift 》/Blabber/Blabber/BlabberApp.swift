@@ -68,7 +68,7 @@ return nil
 
 // ✅ 使用AsyncStream 简化AsyncSequence的使用
 // init(_:bufferingPolicy:_:) 需要指定类型。使用continuation控制序列。 不设置缓冲区选项，则所有未消费的值都会被放到缓冲区
-// init(unfolding:onCancel:): 通过unfolding闭包返回值生产值。
+// init(unfolding:onCancel:): 通过unfolding闭包返回值生产值。unfolding闭包就相当于是next()
 
 struct AsyncStreamDemo1{
   func test() async {

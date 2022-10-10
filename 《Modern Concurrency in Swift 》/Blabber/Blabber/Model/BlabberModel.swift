@@ -50,32 +50,50 @@ class BlabberModel: ObservableObject {
   func shareLocation() async throws {
   }
 
-  var countdown = 3
+//  var countdown = 3
   /// Does a countdown and sends the message.
   @MainActor
   func countdown(to message: String) async throws {
     guard !message.isEmpty else { return }
     // ✅ 使用continuation闭包的方式初始化AsyncStream
-    let counter = AsyncStream<String> { continuation in
-
-      Timer.scheduledTimer(withTimeInterval: 1.0,repeats: true) { timer in
-        guard self.countdown > 0 else {
-          self.countdown = 3
-          timer.invalidate()
-//          continuation.yield("💐" + message)
-//          continuation.finish() // 调用finish结束序列
-//          ==
-          continuation.yield(with: .success("💐" + message))
-          return
-        }
-        continuation.yield("\(self.countdown) ...") // 使用yield生产一个值
-        self.countdown -= 1
-      }
-    }
+//    let counter = AsyncStream<String> { continuation in
+//
+//      Timer.scheduledTimer(withTimeInterval: 1.0,repeats: true) { timer in
+//        guard self.countdown > 0 else {
+//          self.countdown = 3
+//          timer.invalidate()
+////          continuation.yield("💐" + message)
+////          continuation.finish() // 调用finish结束序列
+////          ==
+//          continuation.yield(with: .success("💐" + message))
+//          return
+//        }
+//        continuation.yield("\(self.countdown) ...") // 使用yield生产一个值
+//        self.countdown -= 1
+//      }
+//    }
     // 消费数据，否则数据都保存在缓冲区
 //    for await countdownMessage in counter {
 //      try await say(countdownMessage)
 //    }
+    
+    // ✅ 使用unfolding闭包的方式实现同样的倒计时功能
+    var countdown = 3
+    let counter = AsyncStream<String> {
+      do {
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+      } catch {
+        return nil
+      }
+
+      defer { countdown -= 1 }
+
+      switch countdown {
+      case (1...): return "\(countdown)..."
+      case 0: return "🎉 " + message
+      default: return nil
+      }
+    }
     
     try await counter.forEach { [weak self] in
       try await self?.say($0)
