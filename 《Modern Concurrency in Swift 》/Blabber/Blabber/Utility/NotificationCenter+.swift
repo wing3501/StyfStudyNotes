@@ -32,5 +32,17 @@
 
 import Foundation
 
+extension Notification.Name {
+  static let XXXXNotification = NSNotification.Name("XXXX")
+}
+// ✅ 苹果API中已经包含了NotificationCenter.default.notifications(named: .XXXXNotification) 返回一个异步序列
+// ✅ 但是Notifications仍然是非常适合作为包装异步API为异步序列的例子
 extension NotificationCenter {
+  func notifications(for name: Notification.Name) -> AsyncStream<Notification> {
+    AsyncStream<Notification> { continuation in
+      NotificationCenter.default.addObserver(forName: name,object: nil,queue: nil) { notification in
+        continuation.yield(notification) // 通知流是无限的
+      }
+    }
+  }
 }

@@ -152,4 +152,11 @@ class BlabberModel: ObservableObject {
     configuration.timeoutIntervalForRequest = .infinity
     return URLSession(configuration: configuration)
   }()
+  
+  /// 监听app状态
+  func observeAppStatus() async {
+    for await _ in await NotificationCenter.default.notifications(for: UIApplication.willResignActiveNotification) {
+      
+    }
+  }
 }
