@@ -48,7 +48,15 @@ Task {
   let url = URL(string: "http://localhost:8080/cli/chat?\(username)")!
   do {
     // Loop over the server response lines and print them.
-    
+      let (stream, response) = try await liveURLSession.bytes(from: url, delegate: nil)
+      guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+        print("The server responded with an error.")
+        exit(1)
+      }
+      
+      for try await line in stream.lines {
+          print(line)
+      }
   } catch {
     print(error.localizedDescription)
     exit(1)
@@ -59,7 +67,18 @@ Task {
   let url = URL(string: "http://localhost:8080/cli/say")!
   
   // Loop over the lines in the standard input and send them to the server.
-  
+    for try await line in FileHandle.standardInput.bytes.lines {
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.httpBody = "[\(username)] \(line)".data(using: .utf8)
+
+      do {
+        _ = try await URLSession.shared.data(for: request, delegate: nil)
+      } catch {
+        print(error.localizedDescription)
+        exit(1)
+      }
+    }
 }
 
 RunLoop.main.run()
