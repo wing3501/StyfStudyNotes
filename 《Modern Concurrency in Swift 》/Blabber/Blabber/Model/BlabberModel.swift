@@ -73,8 +73,12 @@ class BlabberModel: ObservableObject {
       }
     }
     // 消费数据，否则数据都保存在缓冲区
-    for await countdownMessage in counter {
-      try await say(countdownMessage)
+//    for await countdownMessage in counter {
+//      try await say(countdownMessage)
+//    }
+    
+    try await counter.forEach { [weak self] in
+      try await self?.say($0)
     }
   }
 
@@ -178,6 +182,14 @@ class BlabberModel: ObservableObject {
       for await _ in await NotificationCenter.default.notifications(for: UIApplication.didBecomeActiveNotification) {
         try? await say("\(username) came back", isSystemMessage: true)
       }
+    }
+  }
+}
+
+extension AsyncSequence {
+  func forEach(_ body: (Element) async throws -> Void) async throws {
+    for try await element in self {
+      try await body(element)
     }
   }
 }
