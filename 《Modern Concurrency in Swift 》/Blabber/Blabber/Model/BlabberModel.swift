@@ -118,6 +118,15 @@ class BlabberModel: ObservableObject {
     messages.append(
       Message(message: "\(status.activeUsers) active users")
     )
+    
+    let notifications = Task {
+     await observeAppStatus()
+    }
+    
+    defer {
+     notifications.cancel() // for await抛出异常或者正常结束时，会取消任务
+    }
+    
     // 读取无限的消息列表
     for try await line in stream.lines {
       if let data = line.data(using: .utf8),
@@ -155,8 +164,20 @@ class BlabberModel: ObservableObject {
   
   /// 监听app状态
   func observeAppStatus() async {
-    for await _ in await NotificationCenter.default.notifications(for: UIApplication.willResignActiveNotification) {
-      
+//    for await _ in await NotificationCenter.default.notifications(for: UIApplication.willResignActiveNotification) {
+//      try? await say("\(username) went away", isSystemMessage: true)
+//    }
+    // ✅ 必须包在task中，否则第二个循环会等待第一个循环完成
+    Task {
+      for await _ in await NotificationCenter.default.notifications(for: UIApplication.willResignActiveNotification) {
+        try? await say("\(username) went away", isSystemMessage: true)
+      }
+    }
+    
+    Task {
+      for await _ in await NotificationCenter.default.notifications(for: UIApplication.didBecomeActiveNotification) {
+        try? await say("\(username) came back", isSystemMessage: true)
+      }
     }
   }
 }
