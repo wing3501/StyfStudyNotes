@@ -57,4 +57,17 @@ class BlabberTests: XCTestCase {
     let message = try XCTUnwrap(try? JSONDecoder().decode(Message.self, from: httpBody))
     XCTAssertEqual(message.message, "Hello!")
   }
+  
+  func testModelCountdown() async throws {
+//    try await model.countdown(to: "Tada!")
+    // ❌ countdown方法已经结束，所以for await遍历不到请求
+    // ❌ for await永远不会结束
+//    for await request in TestURLProtocol.requests {
+//      print(request)
+//    }
+    
+    for await request in TestURLProtocol.requests {
+        print(request)
+    }
+  }
 }

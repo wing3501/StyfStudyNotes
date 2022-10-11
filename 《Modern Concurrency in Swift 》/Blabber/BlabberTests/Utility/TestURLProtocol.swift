@@ -35,7 +35,20 @@ import Foundation
 /// A catch-all URL protocol that returns successful response and records all requests.
 class TestURLProtocol: URLProtocol {
   
-  static var lastRequest: URLRequest?
+  static var lastRequest: URLRequest? {
+    didSet {
+      if let request = lastRequest {
+        continuation?.yield(request)
+      }
+    }
+  }
+  
+  static private var continuation: AsyncStream<URLRequest>.Continuation?
+  static var requests: AsyncStream<URLRequest> = {
+    return AsyncStream { continuation in
+      TestURLProtocol.continuation = continuation
+    }
+  }()
   
   override class func canInit(with request: URLRequest) -> Bool {
     return true // 如果当前的URLProtocol可以处理给定的URLRequest，则返回true
