@@ -34,26 +34,40 @@ import Foundation
 
 /// A catch-all URL protocol that returns successful response and records all requests.
 class TestURLProtocol: URLProtocol {
+  
+  static var lastRequest: URLRequest?
+  
   override class func canInit(with request: URLRequest) -> Bool {
-    return true
+    return true // 如果当前的URLProtocol可以处理给定的URLRequest，则返回true
   }
 
   override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-    return request
+    return request // 如有需要，修改URLRequest
   }
 
   /// Store the URL request and send success response back to the client.
   override func startLoading() {
+    // 加载请求，给client返回一个response
+    
+    guard let stream = request.httpBodyStream else {
+      fatalError("Unexpected test scenario")
+    }
+    var request = request // 创建一个可变请求
+    request.httpBody = stream.data // 读取流中的字节，返回Data
+    Self.lastRequest = request
+    
+    
     guard let client = client,
       let url = request.url,
       let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
       else { fatalError("Client or URL missing") }
 
     client.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-    client.urlProtocol(self, didLoad: Data())
+    client.urlProtocol(self, didLoad: Data()) // 测试不关心服务侧返回的数据
     client.urlProtocolDidFinishLoading(self)
   }
 
   override func stopLoading() {
+    // 操作被取消，或session停止请求
   }
 }
