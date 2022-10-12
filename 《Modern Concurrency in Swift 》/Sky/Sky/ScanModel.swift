@@ -67,19 +67,24 @@ class ScanModel: ObservableObject {
 //    }
 //    print(scans)
     // ✅ 并发 需要真机测试
-    let scans = await withTaskGroup(of: String.self, body: {[unowned self] group -> [String] in
+    await withTaskGroup(of: String.self, body: {[unowned self] group in
       for number in 0..<total {
         group.addTask {
           await self.worker(number: number)
         }
       }
-      
-      return await group.reduce(into: [String]()) { result, string in
-          result.append(string)
-        }
+      // ✅ 处理最终结果
+//      return await group.reduce(into: [String]()) { result, string in
+//          result.append(string)
+//      }
+      // ✅ 分别处理每个子任务的结果，一有任务完成，就会执行一次遍历
+      for await result in group {
+        print("Completed: \(result)")
+      }
+      print("Done.")
     })
     
-    print(scans)
+    
   }
   
   func worker(number: Int) async -> String {
