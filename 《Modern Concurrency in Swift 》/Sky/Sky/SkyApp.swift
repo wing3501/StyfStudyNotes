@@ -33,6 +33,47 @@
 import SwiftUI
 import Combine
 
+// ✅ 当有动态数量的异步任务需要并发执行，使用TaskGroup
+// 两个变体： TaskGroup  ThrowingTaskGroup
+// withTaskGroup(of:returning:body:):
+// withThrowingTaskGroup(of:returning:body:):
+// 这些Group都是所有任务完成后才返回
+
+// 一个🌰
+//struct TaskGroupExample {
+//  func test() {
+//    //1
+//    let images = try await withThrowingTaskGroup(
+//      of: Data.self // 每个Task返回Data
+//      returning: [UIImage].self // 整个TaskGroup返回[UIImage]
+//    ) { group in
+//      // 2
+//      for index in 0..<numberOfImages {
+//        let url = baseURL.appendingPathComponent("image\(index).png")
+//        // 3 添加任务
+//        group.addTask {
+//          // 4
+//          return try await URLSession.shared.data(from: url, delegate: nil).0
+//        }
+//      }
+//      // 5 TaskGroup遵循AsyncSequence，所以可以使用reduce
+//      return try await group.reduce(into: [UIImage]()) { result, data in
+//        if let image = UIImage(data: data) {
+//          result.append(image)
+//        }
+//      }
+//    }
+//  }
+//}
+
+// ✅ 管理子任务的API
+// addTask(priority:operation:):
+// addTaskUnlessCancelled(priority:operation:): 同上，除了当group取消时，不做任何处理
+// cancelAll(): 取消group
+// isCancelled: group是否已取消
+// isEmpty: 如果group已经完成了所有任务，或者没有任务可以开始则返回true
+// waitForAll(): 等待所有子任务完成。如果需要在group完成执行后做一些事情，可以使用
+
 @main
 struct SkyApp: App {
   @ObservedObject

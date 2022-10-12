@@ -39,13 +39,13 @@ class ScanModel: ObservableObject {
 
   // MARK: - Public, bindable state
 
-  /// Currently scheduled for execution tasks.
+  /// Currently scheduled for execution tasks.  并发任务数量
   @MainActor @Published var scheduled = 0
 
-  /// Completed scan tasks per second.
+  /// Completed scan tasks per second.  每秒完成的任务数量
   @MainActor @Published var countPerSecond: Double = 0
 
-  /// Completed scan tasks.
+  /// Completed scan tasks. 已经完成的个数
   @MainActor @Published var completed = 0
 
   @Published var total: Int
@@ -60,6 +60,28 @@ class ScanModel: ObservableObject {
 
   func runAllTasks() async throws {
     started = Date()
+    // ❌ 串行
+//    var scans: [String] = []
+//    for number in 0..<total {
+//      scans.append(await worker(number: number))
+//    }
+//    print(scans)
+    // ✅ 并发
+    await withTaskGroup(of: String.self, body: {[unowned self] group in
+      for number in 0..<total {
+        group.addTask {
+          await self.worker(number: number)
+        }
+      }
+    })
+  }
+  
+  func worker(number: Int) async -> String {
+    await onScheduled()
+    let task = ScanTask(input: number)
+    let result = await task.run()
+    await onTaskCompleted()
+    return result
   }
 }
 
