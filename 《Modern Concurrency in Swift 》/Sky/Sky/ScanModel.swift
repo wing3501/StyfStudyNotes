@@ -66,14 +66,20 @@ class ScanModel: ObservableObject {
 //      scans.append(await worker(number: number))
 //    }
 //    print(scans)
-    // ✅ 并发
-    await withTaskGroup(of: String.self, body: {[unowned self] group in
+    // ✅ 并发 需要真机测试
+    let scans = await withTaskGroup(of: String.self, body: {[unowned self] group -> [String] in
       for number in 0..<total {
         group.addTask {
           await self.worker(number: number)
         }
       }
+      
+      return await group.reduce(into: [String]()) { result, string in
+          result.append(string)
+        }
     })
+    
+    print(scans)
   }
   
   func worker(number: Int) async -> String {
