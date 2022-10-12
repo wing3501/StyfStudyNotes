@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
 options: "a1a0dfc670fe03151225102876b3d6d11fecf49137d60332cdbd9bac56920530"
-build_start_time: [1665282397, 36528110]
-build_end_time: [1665282397, 215373039]
+build_start_time: [1665541166, 265117168]
+build_end_time: [1665541166, 481501102]
 inputs:
   ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOSOCKS/Channel Handlers/SOCKSClientHandler.swift"
   : [1664441728, 571396350]

@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
 options: "dc0def5a3bd44683b864d8bd12f70e3448d4b0ddd3f276180d104c5468ca5af3"
-build_start_time: [1665282397, 376507997]
-build_end_time: [1665282397, 539775848]
+build_start_time: [1665541166, 762390136]
+build_end_time: [1665541166, 974875926]
 inputs:
   ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-nio-extras/Sources/NIOHTTPCompression/HTTPCompression.swift"
   : [1664441728, 569952011]

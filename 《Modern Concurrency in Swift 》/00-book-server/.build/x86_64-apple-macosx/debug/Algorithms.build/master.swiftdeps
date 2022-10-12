@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
 options: "735dedfcfc2f22cb4b74715a342915bf13f97c52942316dcf7419ea5e230356f"
-build_start_time: [1665282375, 917808055]
-build_end_time: [1665282376, 81096172]
+build_start_time: [1665541135, 741334915]
+build_end_time: [1665541136, 154902935]
 inputs:
   ? "/Users/styf/Documents/workspace/StyfStudyNotes/\u300AModern Concurrency in Swift \u300B/00-book-server/.build/checkouts/swift-algorithms/Sources/Algorithms/AdjacentPairs.swift"
   : [1664441722, 342230319]
