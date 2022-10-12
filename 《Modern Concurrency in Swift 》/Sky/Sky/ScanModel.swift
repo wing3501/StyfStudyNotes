@@ -89,23 +89,23 @@ class ScanModel: ObservableObject {
     // 1.通过不断添加任务，使group无限执行
     // 2.通过添加任务，重试失败的任务
     // 3.找到特定结果后，插入高优先级的UI更新任务
-    await withTaskGroup(of: String.self, body: {[unowned self] group in
+    try await withThrowingTaskGroup(of: String.self, body: {[unowned self] group in
       // 限制并发4个任务
       let batchSize = 4
       for index in 0..<batchSize {
         group.addTask {
-          await self.worker(number: index)
+          try await self.worker(number: index)
         }
       }
       // 1
       var index = batchSize
       // 2 每当一个任务完成，
-      for await result in group {
+      for try await result in group {
         print("Completed: \(result)")
         // 3 就加入另一个任务
         if index < total {
           group.addTask { [index] in
-            await self.worker(number: index)
+            try await self.worker(number: index)
           }
           index += 1
         }
@@ -121,10 +121,10 @@ class ScanModel: ObservableObject {
     
   }
   
-  func worker(number: Int) async -> String {
+  func worker(number: Int) async throws -> String {
     await onScheduled()
     let task = ScanTask(input: number)
-    let result = await task.run()// 第一个task.run完成后，并发系统需要做出选择，是开始另一个任务，还是恢复任何一个完成的
+    let result = try await task.run()// 第一个task.run完成后，并发系统需要做出选择，是开始另一个任务，还是恢复任何一个完成的
     await onTaskCompleted() // ✅ 需要告诉并发系统，更新UI更重要
     return result
   }

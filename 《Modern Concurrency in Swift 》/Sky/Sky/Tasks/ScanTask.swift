@@ -44,7 +44,10 @@ struct ScanTask: Identifiable {
 
   /// A method that performs the scanning.
   /// > Note: This is a mock method that just suspends for a second.
-  func run() async -> String {
+//  func run() async -> String {
+  func run() async throws -> String {// 抛出异常的任务
+    try await UnreliableAPI.shared.action(failingEvery: 10)
+    
 //    await Task { // ✅ 不设优先级的话，就会从父任务继承，最初始的任务从主线程来，所以是userInitiated
     await Task(priority: .medium) { //✅ 需要告诉并发系统，更新UI更重要
       // Block the thread as a real heavy-computation functon will.
