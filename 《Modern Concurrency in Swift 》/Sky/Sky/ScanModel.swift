@@ -84,7 +84,33 @@ class ScanModel: ObservableObject {
       print("Done.")
     })
     
-    
+    // ✅ 限制并发数
+    // 使用这种方式，还可以做很多事情，比如
+    // 1.通过不断添加任务，使group无限执行
+    // 2.通过添加任务，重试失败的任务
+    // 3.找到特定结果后，插入高优先级的UI更新任务
+    await withTaskGroup(of: String.self, body: {[unowned self] group in
+      // 限制并发4个任务
+      let batchSize = 4
+      for index in 0..<batchSize {
+        group.addTask {
+          await self.worker(number: index)
+        }
+      }
+      // 1
+      var index = batchSize
+      // 2 每当一个任务完成，
+      for await result in group {
+        print("Completed: \(result)")
+        // 3 就加入另一个任务
+        if index < total {
+          group.addTask { [index] in
+            await self.worker(number: index)
+          }
+          index += 1
+        }
+      }
+    })
   }
   
   func worker(number: Int) async -> String {
