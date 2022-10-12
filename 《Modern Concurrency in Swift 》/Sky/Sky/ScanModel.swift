@@ -79,8 +79,8 @@ class ScanModel: ObservableObject {
   func worker(number: Int) async -> String {
     await onScheduled()
     let task = ScanTask(input: number)
-    let result = await task.run()
-    await onTaskCompleted()
+    let result = await task.run()// 第一个task.run完成后，并发系统需要做出选择，是开始另一个任务，还是恢复任何一个完成的
+    await onTaskCompleted() // ✅ 需要告诉并发系统，更新UI更重要
     return result
   }
 }
