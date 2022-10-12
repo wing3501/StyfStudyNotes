@@ -67,22 +67,22 @@ class ScanModel: ObservableObject {
 //    }
 //    print(scans)
     // ✅ 并发 需要真机测试
-    await withTaskGroup(of: String.self, body: {[unowned self] group in
-      for number in 0..<total {
-        group.addTask {
-          await self.worker(number: number)
-        }
-      }
-      // ✅ 处理最终结果
-//      return await group.reduce(into: [String]()) { result, string in
-//          result.append(string)
+//    await withTaskGroup(of: String.self, body: {[unowned self] group in
+//      for number in 0..<total {
+//        group.addTask {
+//          await self.worker(number: number)
+//        }
 //      }
-      // ✅ 分别处理每个子任务的结果，一有任务完成，就会执行一次遍历
-      for await result in group {
-        print("Completed: \(result)")
-      }
-      print("Done.")
-    })
+//      // ✅ 处理最终结果
+////      return await group.reduce(into: [String]()) { result, string in
+////          result.append(string)
+////      }
+//      // ✅ 分别处理每个子任务的结果，一有任务完成，就会执行一次遍历
+//      for await result in group {
+//        print("Completed: \(result)")
+//      }
+//      print("Done.")
+//    })
     
     // ✅ 限制并发数
     // 使用这种方式，还可以做很多事情，比如
@@ -110,7 +110,15 @@ class ScanModel: ObservableObject {
           index += 1
         }
       }
+      
+      // group中的for await会保证任务全部结束，所以不必使用TaskGroup.waitForAll()
+      await MainActor.run {
+        completed = 0
+        countPerSecond = 0
+        scheduled = 0
+      }
     })
+    
   }
   
   func worker(number: Int) async -> String {
