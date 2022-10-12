@@ -66,8 +66,34 @@ class BlabberTests: XCTestCase {
 //      print(request)
 //    }
     
-    for await request in TestURLProtocol.requests {
-        print(request)
+    // ✅ 使用TimeoutTask解决超时
+//    try await TimeoutTask(seconds: 10) {
+//      for await request in TestURLProtocol.requests {
+//        print(request)
+//      }
+//    } .value
+    
+    // ✅ 用async let解决遍历不到请求的问题
+    async let countdown: Void = model.countdown(to: "Tada!") // 📢因为countdown没有返回值，所以需要明确指明Void
+    async let messages = TimeoutTask(seconds: 10) {
+      await TestURLProtocol.requests
+        .prefix(4) // 如果实际代码只发出3个请求，测试仍然挂起，需要 TimeoutTask
+        .reduce(into: []) { partialResult, request in
+          partialResult.append(request) // 把4个请求收集到数组中
+        }
+        .compactMap(\.httpBody)
+        .compactMap { data in
+          try? JSONDecoder()
+            .decode(Message.self, from: data)
+            .message
+        }
     }
+      .value
+    
+    let (messagesResult, _) = try await (messages, countdown)
+    XCTAssertEqual(
+    ["3...", "2...", "1...", "🎉 Tada!"],
+      messagesResult
+    )
   }
 }

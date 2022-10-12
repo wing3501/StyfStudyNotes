@@ -1463,6 +1463,11 @@ var arr123 = [1, 2, 3, 4]
 var arr2 = arr123.reduce(0) { (result, element) -> Int in
     return result + element //result从初始值开始，第二次result是上一次的返回值
 }//累加结果
+
+//reduce(into: []) { partialResult, request in
+//        partialResult.append(request) // 把4个请求收集到数组中
+//      }
+
 //[1,2,2,3,3,3]
 //arr123.flatMap { (Int) -> Sequence in
 //
@@ -1471,6 +1476,9 @@ var arr2 = arr123.reduce(0) { (result, element) -> Int in
 //arr123.compactMap { (Int) -> ElementOfResult? in
 //
 //}
+// 取出httpBody属性
+//    .compactMap(\.httpBody)
+
     
 //lazy的优化
 //let result = arr123.lazy.map { (Int) -> T in
