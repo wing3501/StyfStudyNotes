@@ -42,7 +42,8 @@ class BlabberModel: ObservableObject {
 
   init() {
   }
-
+  var sleep: (UInt64) async throws -> Void = Task.sleep(nanoseconds:)
+  
   /// Current live updates
   @Published var messages: [Message] = []
   
@@ -102,11 +103,13 @@ class BlabberModel: ObservableObject {
 //      try await say(countdownMessage)
 //    }
     
+    let sleep = sleep
+    
     // ✅ 使用unfolding闭包的方式实现同样的倒计时功能
     var countdown = 3
     let counter = AsyncStream<String> {
       do {
-        try await Task.sleep(nanoseconds: 1_000_000_000)
+        try await sleep(1_000_000_000)
       } catch {
         return nil
       }
