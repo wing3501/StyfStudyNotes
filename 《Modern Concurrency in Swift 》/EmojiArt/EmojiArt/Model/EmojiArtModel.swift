@@ -33,25 +33,34 @@
 import Foundation
 import UIKit
 
-class EmojiArtModel: ObservableObject {
-  @Published private(set) var imageFeed: [ImageFile] = []
+actor EmojiArtModel: ObservableObject {
+  @Published @MainActor private(set) var imageFeed: [ImageFile] = [] // 将imageFeed从EmojiArtModel的串行执行器，移到了MainActor
 
   private(set) var verifiedCount = 0
   
   func verifyImages() async throws {
     try await withThrowingTaskGroup(of: Void.self) { group in
-      imageFeed.forEach { file in
+      await imageFeed.forEach { file in
         group.addTask { [unowned self] in
           try await Checksum.verify(file.checksum)
-          self.verifiedCount += 1 // ❌ 并发修改状态，触发数据竞争
+//          self.verifiedCount += 1 // ❌ 并发修改状态，触发数据竞争
+//          ❌ Actor-isolated property 'verifiedCount' can not be mutated from a Sendable closure
+          // ✅ 解决在actor外部环境，修改actor属性
+          await self.increaseVerifiedCount()
         }
       }
       try await group.waitForAll() // ✅ 这里必须使用try,否则编译器觉得是一个不抛出异常的group，而不再往上抛出异常
     }
   }
   
+  private func increaseVerifiedCount() {
+   verifiedCount += 1
+ }
+  
   func loadImages() async throws {
-    imageFeed.removeAll()
+    await MainActor.run {
+     imageFeed.removeAll()
+    }
     guard let url = URL(string: "http://localhost:8080/gallery/images") else {
       throw "Could not create endpoint URL"
     }
@@ -62,7 +71,9 @@ class EmojiArtModel: ObservableObject {
     guard let list = try? JSONDecoder().decode([ImageFile].self, from: data) else {
       throw "The server response was not recognized."
     }
-    imageFeed = list
+    await MainActor.run {
+     imageFeed = list
+   }
   }
 
   /// Downloads an image and returns its content.
