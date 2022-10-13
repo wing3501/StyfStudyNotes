@@ -99,4 +99,8 @@ import UIKit
     }
     storedImagesIndex.removeAll()
   }
+  
+  func clearInMemoryAssets() async {
+   await imageLoader.clear()
+ }
 }
