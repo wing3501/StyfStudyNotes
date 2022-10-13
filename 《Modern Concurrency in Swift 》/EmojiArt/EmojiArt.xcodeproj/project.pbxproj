@@ -11,6 +11,7 @@
 		18D775C522AD944300AE281E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D775C422AD944300AE281E /* LoadingView.swift */; };
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		9270CD4328F7E0FD003C67D6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270CD4228F7E0FD003C67D6 /* ImageLoader.swift */; };
 		9C11323526FF73CB00571AB3 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11323426FF73CB00571AB3 /* Checksum.swift */; };
 		9C12FDB427011CD300A4AC4F /* YoungSerif-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C12FDB327011CD300A4AC4F /* YoungSerif-Regular.otf */; };
 		9C12FDB727011D0300A4AC4F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9C12FDB627011D0300A4AC4F /* LICENSE */; };
@@ -31,6 +32,7 @@
 		18D775C622AD944400AE281E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9270CD4228F7E0FD003C67D6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9C11323426FF73CB00571AB3 /* Checksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
 		9C12FDB327011CD300A4AC4F /* YoungSerif-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YoungSerif-Regular.otf"; sourceTree = "<group>"; };
 		9C12FDB627011D0300A4AC4F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				9C8AFE1826FCDCB000EC76D3 /* Utility.swift */,
 				9C11323426FF73CB00571AB3 /* Checksum.swift */,
 				9C659CD22700FDE00048C168 /* DataModels.swift */,
+				9270CD4228F7E0FD003C67D6 /* ImageLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			files = (
 				9C659CD32700FDE00048C168 /* DataModels.swift in Sources */,
 				9C8AFE1926FCDCB000EC76D3 /* Utility.swift in Sources */,
+				9270CD4328F7E0FD003C67D6 /* ImageLoader.swift in Sources */,
 				18D775C522AD944300AE281E /* LoadingView.swift in Sources */,
 				9CD905E62701BCCB00D77741 /* DiskStorage.swift in Sources */,
 				9C11323526FF73CB00571AB3 /* Checksum.swift in Sources */,
