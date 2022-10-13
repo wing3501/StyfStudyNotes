@@ -32,6 +32,11 @@
 
 import SwiftUI
 
+// ✅ 理解Sendable (https://developer.apple.com/ documentation/swift/sendable).
+// Sendable 协议表示可以安全地在并发代码中使用的类型
+// Actor协议遵循Sendable，所以actor实例可以在并发代码中使用
+// Bool, Double, Int, StaticString, UnsafePointer等等
+
 @main
 struct AppMain: App {
   private var model = EmojiArtModel()

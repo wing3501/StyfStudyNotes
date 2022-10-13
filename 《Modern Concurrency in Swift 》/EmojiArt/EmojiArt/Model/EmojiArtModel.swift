@@ -56,8 +56,8 @@ actor EmojiArtModel: ObservableObject {
   private func increaseVerifiedCount() {
    verifiedCount += 1
  }
-  
-  func loadImages() async throws {
+  // ✅ loadImages和downloadImage没有修改状态，所以是安全的，可以标记为非隔离。性能上会有提升，并发调用的时候，速度会提升
+  nonisolated func loadImages() async throws {
     await MainActor.run {
      imageFeed.removeAll()
     }
@@ -77,7 +77,7 @@ actor EmojiArtModel: ObservableObject {
   }
 
   /// Downloads an image and returns its content.
-  func downloadImage(_ image: ImageFile) async throws -> Data {
+  nonisolated func downloadImage(_ image: ImageFile) async throws -> Data {
     guard let url = URL(string: "http://localhost:8080\(image.url)") else {
       throw "Could not create image URL"
     }
