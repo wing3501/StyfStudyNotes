@@ -62,11 +62,20 @@ struct BottomToolbar: View {
     .padding(.vertical, 2)
     .padding(.horizontal, 5)
     .task {
-      guard let memoryAccessSequence = ImageDatabase.shared.imageLoader.inMemoryAccess else {
+      guard let memoryAccessSequence = ImageDatabase.shared.imageLoader.inMemoryAccess,
+            let diskAccessSequence = ImageDatabase.shared.inDiskAccess else {
         return
       }
-      for await count in memoryAccessSequence {
-        inMemoryAccessCount = count
+      Task {
+        for await count in memoryAccessSequence {
+          inMemoryAccessCount = count
+        }
+      }
+      
+      Task {
+        for await count in diskAccessSequence {
+          onDiskAccessCount = count
+        }
       }
     }
   }

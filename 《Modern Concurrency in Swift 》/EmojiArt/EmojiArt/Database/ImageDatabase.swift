@@ -43,9 +43,21 @@ import UIKit
   private var storage: DiskStorage!
   private var storedImagesIndex: [String] = []
   
+  @MainActor private(set) var inDiskAccess: AsyncStream<Int>? // ✅ 使用MainActor在主线程上给异步序列生产值
+    private var inDiskAcccessContinuation: AsyncStream<Int>.Continuation?
+    private var inDiskAccessCounter = 0 {
+      didSet {
+        inDiskAcccessContinuation?.yield(inDiskAccessCounter)
+      }
+    }
+  
   // 防止外部创建
   private init() {
     
+  }
+  
+  deinit {
+    inDiskAcccessContinuation?.finish()
   }
   
   func setUp() async throws {
@@ -53,6 +65,12 @@ import UIKit
     for fileURL in try await storage.persistedFiles() {
       storedImagesIndex.append(fileURL.lastPathComponent)
     }
+    
+    let accessStream = AsyncStream<Int> { continuation in
+      inDiskAcccessContinuation = continuation
+    }
+    await MainActor.run { inDiskAccess = accessStream }
+    
     await imageLoader.setUp()
   }
   
@@ -84,6 +102,7 @@ import UIKit
       print("Cached on disk")
       // 3
       await imageLoader.add(image, forKey: key)
+      inDiskAccessCounter += 1
       return image
     } catch {
       // 4
