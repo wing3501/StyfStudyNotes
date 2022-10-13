@@ -37,6 +37,15 @@ import SwiftUI
 // Actor协议遵循Sendable，所以actor实例可以在并发代码中使用
 // Bool, Double, Int, StaticString, UnsafePointer等等
 
+// ✅ 使用 GlobalActor，只要一个要求，暴露一个名为shared的actor实例
+//@globalActor actor myActor {
+//  ...
+//}
+
+//@MyActor func say(_ text: String) {
+// ... automatically runs on MyActor ...
+//}
+
 @main
 struct AppMain: App {
   private var model = EmojiArtModel()
