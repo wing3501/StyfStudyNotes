@@ -41,7 +41,7 @@ actor ImageLoader: ObservableObject {
   }
   private(set) var cache: [String: DownloadState] = [:]
   
-  @MainActor private(set) var inMemoryAccess: AsyncStream<Int>?
+  @MainActor private(set) var inMemoryAccess: AsyncStream<Int>? // ✅ 使用MainActor在主线程上给异步序列生产值
   private var inMemoryAcccessContinuation: AsyncStream<Int>.Continuation?
   private var inMemoryAccessCounter = 0 {
     didSet {

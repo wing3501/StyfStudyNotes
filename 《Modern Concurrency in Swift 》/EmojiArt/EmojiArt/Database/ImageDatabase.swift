@@ -53,6 +53,7 @@ import UIKit
     for fileURL in try await storage.persistedFiles() {
       storedImagesIndex.append(fileURL.lastPathComponent)
     }
+    await imageLoader.setUp()
   }
   
   func store(image: UIImage, forKey key: String) async throws {
