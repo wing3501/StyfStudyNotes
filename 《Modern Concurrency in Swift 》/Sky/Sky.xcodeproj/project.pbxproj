@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9270CD4728F81126003C67D6 /* ScanSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270CD4628F81126003C67D6 /* ScanSystem.swift */; };
+		9270CD4928F8148A003C67D6 /* Systems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270CD4828F8148A003C67D6 /* Systems.swift */; };
 		9C04757826EB5534009EA1EC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9C04757726EB5534009EA1EC /* LICENSE */; };
 		9C594C4326BD84520027B2C4 /* Datalegreya-Gradient.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C594C4226BD84520027B2C4 /* Datalegreya-Gradient.otf */; };
 		9C594C4826BD9F880027B2C4 /* ScanTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C594C4726BD9F880027B2C4 /* ScanTask.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9270CD4628F81126003C67D6 /* ScanSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSystem.swift; sourceTree = "<group>"; };
+		9270CD4828F8148A003C67D6 /* Systems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Systems.swift; sourceTree = "<group>"; };
 		9C04757726EB5534009EA1EC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9C594C4226BD84520027B2C4 /* Datalegreya-Gradient.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Datalegreya-Gradient.otf"; sourceTree = "<group>"; };
 		9C594C4726BD9F880027B2C4 /* ScanTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTask.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				9CD5AE8326A186BB0010330C /* ScanTransport.swift */,
+				9270CD4628F81126003C67D6 /* ScanSystem.swift */,
+				9270CD4828F8148A003C67D6 /* Systems.swift */,
 			);
 			path = Transport;
 			sourceTree = "<group>";
@@ -224,10 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9270CD4928F8148A003C67D6 /* Systems.swift in Sources */,
 				9CD5AE8426A186BB0010330C /* ScanTransport.swift in Sources */,
 				9CD220CD26EA00D2007F8A1E /* Utility.swift in Sources */,
 				9CD5AE6E26A13FB10010330C /* SkyApp.swift in Sources */,
 				9CD5AE7E26A144E50010330C /* ScanningView.swift in Sources */,
+				9270CD4728F81126003C67D6 /* ScanSystem.swift in Sources */,
 				9C594C4826BD9F880027B2C4 /* ScanTask.swift in Sources */,
 				9C934CEF26EA124F0046A00D /* TitleView.swift in Sources */,
 				9C92C33726EA61C600115EC7 /* TimeoutTask.swift in Sources */,

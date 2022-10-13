@@ -32,7 +32,7 @@
 
 import Foundation
 import MultipeerConnectivity
-/*
+
 /// Handles the discovery and data transport between systems.
 class ScanTransport: NSObject {
   private let systemNetworkName = "skynet"
@@ -138,4 +138,4 @@ extension ScanTransport {
   func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) { }
   func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) { }
 }
-*/
+
