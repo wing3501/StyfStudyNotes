@@ -85,9 +85,24 @@ class ScanTransport: NSObject {
       }
     let payload = try JSONEncoder().encode(task)
     try session.send(payload, toPeers: [targetPeer],with: .reliable)
+    
     let networkRequest = TimeoutTask(seconds: 5) { () -> String in
-      
+      for await notification in NotificationCenter.default.notifications(named: .response) {
+        guard let response = notification.object as? TaskResponse,
+              response.id == task.id else { continue }
+        return "\(response.result) by \(recipient)"
+      }
+      fatalError("Will never execute")
     }
+    
+    Task {
+      for await notification in NotificationCenter.default.notifications(named: .disconnected) {
+        guard notification.object as? String == recipient else { continue }
+        await networkRequest.cancel()
+      }
+    }
+    
+    return try await networkRequest.value
   }
 }
 
