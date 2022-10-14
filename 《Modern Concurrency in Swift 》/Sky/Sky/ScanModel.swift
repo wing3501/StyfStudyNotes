@@ -40,7 +40,14 @@ class ScanModel: ObservableObject {
   // MARK: - Public, bindable state
 
   /// Currently scheduled for execution tasks.  并发任务数量
-  @MainActor @Published var scheduled = 0
+  @MainActor @Published var scheduled = 0 {
+    didSet {
+      Task {
+        let systemCount = await systems.systems.count
+        isCollaborating = scheduled > 0 && systemCount > 1
+      }
+    }
+  }
 
   /// Completed scan tasks per second.  每秒完成的任务数量
   @MainActor @Published var countPerSecond: Double = 0
@@ -141,7 +148,7 @@ class ScanModel: ObservableObject {
   // 分布式任务版本
   func runAllTasks1() async throws {
     started = Date()
-    try await withThrowingTaskGroup(of: Result<String, Error>.self) { [unowned self] group in
+    try await withThrowingTaskGroup(of: Result<String, ScanTaskError>.self) { [unowned self] group in
       
       for number in 0 ..< total {
         let system = await systems.firstAvailableSystem()
@@ -155,7 +162,13 @@ class ScanModel: ObservableObject {
         case .success(let result):
           print("Completed: \(result)")
         case .failure(let error):
-          print("Failed: \(error.localizedDescription)")
+          group.addTask(priority: .high) { // 重试任务
+            print("Re-run task: \(error.task.input).",
+                  "Failed with: \(error.underlyingError)")
+            return await self.worker(
+              number: error.task.input,
+              system: self.systems.localSystem)
+          }
         }
       }
       await MainActor.run {
@@ -182,7 +195,7 @@ class ScanModel: ObservableObject {
     return .success(result)
   }
   
-  func worker(number: Int, system: ScanSystem) async -> Result<String, Error> { // ✅ 使用Result处理异常，使得一个子任务出错时，其他子任务可以继续
+  func worker(number: Int, system: ScanSystem) async -> Result<String, ScanTaskError> { // ✅ 使用Result处理异常，使得一个子任务出错时，其他子任务可以继续
     await onScheduled()
     let task = ScanTask(input: number)
 //    let result = try await task.run()// 第一个task.run完成后，并发系统需要做出选择，是开始另一个任务，还是恢复任何一个完成的
@@ -190,7 +203,7 @@ class ScanModel: ObservableObject {
     do {
       result = try await system.run(task)
     } catch {
-      return .failure(error)
+      return .failure(.init(underlyingError: error,task: task ))
     }
     await onTaskCompleted() // ✅ 需要告诉并发系统，更新UI更重要
     return .success(result)
@@ -250,4 +263,9 @@ extension ScanModel {
   private func onScheduled() {
     scheduled += 1
   }
+}
+
+struct ScanTaskError: Error {
+  let underlyingError: Error
+  let task: ScanTask
 }
