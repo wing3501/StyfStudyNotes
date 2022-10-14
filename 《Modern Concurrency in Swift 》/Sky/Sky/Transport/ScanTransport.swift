@@ -132,6 +132,23 @@ extension ScanTransport: MCSessionDelegate {
 
   /// Handles incoming data.
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    let decoder = JSONDecoder()
+    if let task = try? decoder.decode(ScanTask.self, from: data) {
+      Task { [weak self] in
+        guard let self = self,
+              let taskModel = self.taskModel else { return }
+        let result = try await taskModel.run(task)
+        let response = TaskResponse(result: result, id: task.id)
+        try self.send(response: response, to: peerID)
+      }
+    }
+    
+    if let response = try? decoder.decode(TaskResponse.self, from: data) {
+      NotificationCenter.default.post(
+        name: .response,
+        object: response
+      )
+    }
   }
 }
 
