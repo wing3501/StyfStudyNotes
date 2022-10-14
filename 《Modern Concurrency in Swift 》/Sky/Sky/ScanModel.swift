@@ -182,6 +182,15 @@ class ScanModel: ObservableObject {
       }
     }
   }
+  
+  
+  func run(_ task: ScanTask) async throws -> String {
+    Task { @MainActor in scheduled += 1 }
+    defer {
+      Task { @MainActor in scheduled -= 1 }
+    }
+    return try await systems.localSystem.run(task)
+  }
 }
 
 // MARK: - Tracking task progress.

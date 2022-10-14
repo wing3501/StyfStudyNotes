@@ -104,6 +104,14 @@ class ScanTransport: NSObject {
     
     return try await networkRequest.value
   }
+  
+  func send(response: TaskResponse, to peerID: MCPeerID) throws {
+    guard session.connectedPeers.contains(peerID) else {
+      throw "Peer '\(peerID)' not connected anymore."
+    }
+    let payload = try JSONEncoder().encode(response)
+    try session.send(payload, toPeers: [peerID], with: .reliable)
+  }
 }
 
 /// Handles changes in connectivity and asynchronously receiving data.
