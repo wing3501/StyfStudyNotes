@@ -22,6 +22,10 @@ actor ScanSystem {
   
   func run(_ task: ScanTask) async throws -> String {
     defer { count -= 1 }
-    return try await task.run()
+    if let service = service {
+      return try await service.send(task: task, to: name)
+    } else {
+      return try await task.run()
+    }
   }
 }

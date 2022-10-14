@@ -129,9 +129,10 @@ extension ScanTransport: MCSessionDelegate {
     default: break
     }
   }
-
-  /// Handles incoming data.
+ 
+  /// Handles incoming data. 
   func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    // 处理收到的任务或者响应 
     let decoder = JSONDecoder()
     if let task = try? decoder.decode(ScanTask.self, from: data) {
       Task { [weak self] in
