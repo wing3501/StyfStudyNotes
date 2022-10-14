@@ -271,6 +271,18 @@ struct UsingTextEditor: View {
         }
     }
 }
+//https://mp.weixin.qq.com/s/0mAKYvVuPLKEA2qnsNfCvQ
+//从iOS 16开始，我们可以使用 scrollContentBackground() 和 background() 视图修饰符的组合在SwiftUI中为 TextEditor 设置自定义背景。我们首先必须通过应用 scrollContentBackground(.hidden) 来隐藏 TextEditor 上的默认背景，否则我们的自定义背景将不可见。然后，我们可以轻松地使用 background() 方法设置新的背景。
+struct UsingTextEditorBackground: View {
+    @State private var text = "Some text"
+    
+    var body: some View {
+        TextEditor(text: $text)
+            .frame(width: 300, height: 200)
+            .scrollContentBackground(.hidden)
+            .background(.indigo)
+    }
+}
 
 struct UsingLabelsHidden: View {
     @State private var selectedNumber = 0
