@@ -78,6 +78,17 @@ class ScanTransport: NSObject {
     serviceBrowser.stopBrowsingForPeers()
     serviceBrowser.delegate = nil
   }
+  
+  func send(task: ScanTask,to recipient: String ) async throws -> String {
+    guard let targetPeer = session.connectedPeers.first(where: { $0.displayName == recipient }) else {
+        throw "Peer '\(recipient)' not connected anymore."
+      }
+    let payload = try JSONEncoder().encode(task)
+    try session.send(payload, toPeers: [targetPeer],with: .reliable)
+    let networkRequest = TimeoutTask(seconds: 5) { () -> String in
+      
+    }
+  }
 }
 
 /// Handles changes in connectivity and asynchronously receiving data.

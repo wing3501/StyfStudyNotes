@@ -32,7 +32,7 @@
 
 import Foundation
 
-class TimeoutTask<Success> {
+actor TimeoutTask<Success> {
   struct TimeoutError: LocalizedError {
     var errorDescription: String? {
       return "The operation timed out."
@@ -63,6 +63,8 @@ class TimeoutTask<Success> {
         withCheckedThrowingContinuation { continuation in
           self.continuation = continuation
 
+          // ⚠️极端情况下，这里仍然有可能两个task都正在使用continuation而导致崩溃
+          
           Task {
             try await Task.sleep(nanoseconds: nanoseconds)
             self.continuation?.resume(throwing: TimeoutError())
