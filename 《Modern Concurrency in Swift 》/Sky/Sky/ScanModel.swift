@@ -52,10 +52,21 @@ class ScanModel: ObservableObject {
 
   @MainActor @Published var isCollaborating = false
 
+  @MainActor @Published var isConnected = false
+  private var systems: Systems
+  private(set) var service: ScanTransport
+  
   // MARK: - Methods
 
   init(total: Int, localName: String) {
     self.total = total
+    
+    let localSystem = ScanSystem(name: localName)
+    systems = Systems(localSystem)
+    service = ScanTransport(localSystem: localSystem)
+    service.taskModel = self
+    
+    systemConnectivityHandler()
   }
 
   func runAllTasks() async throws {
@@ -141,6 +152,35 @@ class ScanModel: ObservableObject {
     }
     await onTaskCompleted() // ✅ 需要告诉并发系统，更新UI更重要
     return .success(result)
+  }
+  
+  
+  func systemConnectivityHandler() {
+    Task {
+      for await notification in NotificationCenter.default.notifications(named: .connected) {
+        guard let name = notification.object as? String else { continue }
+        print("[Notification] Connected: \(name)")
+        await systems.addSystem(name: name, service: self.service)
+        // ✅ 这里需要回到主线程更新isConnected，但是使用MainActor.run(...)的话，内部是一个同步的闭包
+        //   而这里异步地访问systems.systems.count
+        //  所以这里使用Task+@MainActor。既能让代码在main actor执行，又能使用await
+        Task { @MainActor in
+          isConnected = await systems.systems.count > 1
+        }
+      }
+    }
+    
+    
+    Task {
+      for await notification in NotificationCenter.default.notifications(named: .disconnected) {
+        guard let name = notification.object as? String else { return }
+        print("[Notification] Disconnected: \(name)")
+        await systems.removeSystem(name: name)
+        Task { @MainActor in
+          isConnected = await systems.systems.count > 1
+        }
+      }
+    }
   }
 }
 
