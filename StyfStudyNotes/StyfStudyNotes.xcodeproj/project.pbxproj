@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
+		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
@@ -433,6 +434,7 @@
 		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
@@ -1075,6 +1077,7 @@
 		920B9BD625DF59A40098B1BA /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */,
 				920B9BD725DF59D40098B1BA /* NSObject+KVCExceptionHandler.h */,
 				920B9BD825DF59D40098B1BA /* NSObject+KVCExceptionHandler.m */,
 				920B9BDC25DF5FF80098B1BA /* Other.h */,
@@ -2788,6 +2791,7 @@
 				92EC413628B36BCC004EC671 /* JournalEntry+Helper.swift in Sources */,
 				92C1D92B27293D6F00FF3398 /* CrashHelper.m in Sources */,
 				920B9BD925DF59D40098B1BA /* NSObject+KVCExceptionHandler.m in Sources */,
+				9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */,
 				92F1E99C28913ADA005E8D85 /* ScrollDismissesKeyboard.swift in Sources */,
 				92A417E028128FBB00603DCE /* PokemonInfoPanelAbilityList.swift in Sources */,
 				92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */,
