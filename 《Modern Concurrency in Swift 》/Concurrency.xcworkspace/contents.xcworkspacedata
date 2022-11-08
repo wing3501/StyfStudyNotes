@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SuperStorage/SuperStorage.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Sky/Sky.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LittleJohn/LittleJohn.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EmojiArt/EmojiArt.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Blabber/Blabber.xcodeproj">
+   </FileRef>
+</Workspace>
