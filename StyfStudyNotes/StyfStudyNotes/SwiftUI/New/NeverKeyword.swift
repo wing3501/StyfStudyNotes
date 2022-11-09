@@ -4,7 +4,7 @@
 //
 //  Created by styf on 2022/10/8.
 //  Never keyword in Swift: return type explained with code examples
-//  https://www.avanderlee.com/swift/never-keyword/
+//  https://www.avanderlee.com/swift/never-keyword/ never关键词使用
 
 import SwiftUI
 import Combine

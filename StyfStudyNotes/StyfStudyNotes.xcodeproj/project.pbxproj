@@ -84,6 +84,8 @@
 		921D54D828B31EBC0075B93C /* Sale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */; };
 		921D54DC28B333600075B93C /* DepartmentListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D54DB28B333600075B93C /* DepartmentListViewControllerTests.swift */; };
 		921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */; };
+		921F3124291B8D1C00EF7EFE /* ConcurrencyTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F3123291B8D1C00EF7EFE /* ConcurrencyTips.swift */; };
+		921F3141291BD5E700EF7EFE /* UsingNavigationSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F3140291BD5E700EF7EFE /* UsingNavigationSplitView.swift */; };
 		921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */; };
 		921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */; };
 		921F35D528AC85B000D79C52 /* AttachPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */; };
@@ -108,6 +110,8 @@
 		922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */; };
 		922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E02823D202009CBCA3 /* AnchorExample.swift */; };
 		922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */; };
+		923008F1291A7C6A005912DA /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923008F0291A7C6A005912DA /* Badges.swift */; };
+		923008F5291A7FC2005912DA /* ListStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923008F4291A7FC2005912DA /* ListStyles.swift */; };
 		923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E5282A69750004A969 /* OrderFoodAPP.swift */; };
 		923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E8282A6B7A0004A969 /* StaticTextApp.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
@@ -554,6 +558,8 @@
 		921D54D228B31EBC0075B93C /* Sale+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sale+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		921D54DB28B333600075B93C /* DepartmentListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListViewControllerTests.swift; sourceTree = "<group>"; };
 		921F229D2886A01B00B322F6 /* WhatsNewInSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewInSwiftUI.swift; sourceTree = "<group>"; };
+		921F3123291B8D1C00EF7EFE /* ConcurrencyTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyTips.swift; sourceTree = "<group>"; };
+		921F3140291BD5E700EF7EFE /* UsingNavigationSplitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingNavigationSplitView.swift; sourceTree = "<group>"; };
 		921F35D028AC840300D79C52 /* CreateImageNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageNoteViewController.swift; sourceTree = "<group>"; };
 		921F35D128AC840400D79C52 /* CreateImageNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateImageNoteViewController.xib; sourceTree = "<group>"; };
 		921F35D428AC85B000D79C52 /* AttachPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachPhotoViewController.swift; sourceTree = "<group>"; };
@@ -585,6 +591,8 @@
 		922A00DE2823CCEF009CBCA3 /* GeometryReaderExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderExample.swift; sourceTree = "<group>"; };
 		922A00E02823D202009CBCA3 /* AnchorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorExample.swift; sourceTree = "<group>"; };
 		922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectLayoutExample.swift; sourceTree = "<group>"; };
+		923008F0291A7C6A005912DA /* Badges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
+		923008F4291A7FC2005912DA /* ListStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStyles.swift; sourceTree = "<group>"; };
 		923176E5282A69750004A969 /* OrderFoodAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodAPP.swift; sourceTree = "<group>"; };
 		923176E8282A6B7A0004A969 /* StaticTextApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTextApp.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
@@ -2400,6 +2408,10 @@
 				925CB17C28F11A4600F772A6 /* NeverKeyword.swift */,
 				925CB18028F1245C00F772A6 /* RoundedCorners.swift */,
 				925CB18228F1250E00F772A6 /* ChangeFontWidth.swift */,
+				923008F0291A7C6A005912DA /* Badges.swift */,
+				923008F4291A7FC2005912DA /* ListStyles.swift */,
+				921F3123291B8D1C00EF7EFE /* ConcurrencyTips.swift */,
+				921F3140291BD5E700EF7EFE /* UsingNavigationSplitView.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2689,6 +2701,7 @@
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				921D54D328B31EBC0075B93C /* Employee+CoreDataProperties.swift in Sources */,
+				923008F5291A7FC2005912DA /* ListStyles.swift in Sources */,
 				92A2D2132679EE5400A88F19 /* WPTSlidingViewController.m in Sources */,
 				9271AD0229094E7D002DF880 /* AVAsset+++.swift in Sources */,
 				929E4B4F28B8AB44006592F1 /* ButtonStyle.swift in Sources */,
@@ -2712,6 +2725,7 @@
 				92426F352624745F002062B7 /* LazyLoadDynamicFramework.m in Sources */,
 				92E83F6028A6288800194087 /* Venue+CoreDataProperties.swift in Sources */,
 				925CB17D28F11A4600F772A6 /* NeverKeyword.swift in Sources */,
+				921F3124291B8D1C00EF7EFE /* ConcurrencyTips.swift in Sources */,
 				9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */,
 				925D6E602832281D00066389 /* ListsDemo.swift in Sources */,
 				92EFFE7728DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift in Sources */,
@@ -2864,6 +2878,7 @@
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
 				920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */,
+				921F3141291BD5E700EF7EFE /* UsingNavigationSplitView.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */,
 				92EC413628B36BCC004EC671 /* JournalEntry+Helper.swift in Sources */,
@@ -2944,6 +2959,7 @@
 				9271AD0129094E7D002DF880 /* YFMediaEditManager.swift in Sources */,
 				92CA9CCA28167A1400246D51 /* AppCommand.swift in Sources */,
 				92E83F6128A6288800194087 /* VenueLocation+CoreDataClass.swift in Sources */,
+				923008F1291A7C6A005912DA /* Badges.swift in Sources */,
 				92F06ABC287D516400ADA9E9 /* ProfileView.swift in Sources */,
 				92A8D7FD25D28E7A0008EFAA /* 双指针.swift in Sources */,
 				92876936282CDABE006BFE5A /* StacksGridsScrollviews.swift in Sources */,
