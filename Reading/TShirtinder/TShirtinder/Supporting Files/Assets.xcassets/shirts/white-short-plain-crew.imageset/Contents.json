@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "white-short-plain-crew.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
