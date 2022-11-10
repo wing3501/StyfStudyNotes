@@ -258,8 +258,10 @@ struct ListRowSeparator: View {
             List {
                 ForEach(1..<3) { index in
                     Text("Row \(index)")
-//                        .listRowSeparator(.hidden)
-                        .listRowSeparatorTint(.red)
+//                        .listRowSeparator(.hidden)// 隐藏分隔线
+//                        .listRowSeparator(.hidden, edges: .top) // 隐藏某一侧的分隔线
+                        .listRowSeparatorTint(.red)//分隔线颜色
+//                        .listRowSeparatorTint(.pink, edges: .top)//处理顶部、底部的分隔线
                     //如果要更多控制，就去调整row本身
                 }
             }
