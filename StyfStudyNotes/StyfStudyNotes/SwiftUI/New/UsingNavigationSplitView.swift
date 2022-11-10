@@ -227,8 +227,8 @@ struct UsingNavigationSplitView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        UsingNavigationSplitView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UsingNavigationSplitView()
+//    }
+//}

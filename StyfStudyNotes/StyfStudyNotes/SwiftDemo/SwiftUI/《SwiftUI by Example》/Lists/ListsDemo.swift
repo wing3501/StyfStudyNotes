@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+        // 禁止滚动 scrollDisabled  外部设置禁止滚动，内部所有滚动视图都会被禁止滚动，内部设置.scrollDisabled(false)不起作用
+//        ScrollView {
+//        }
+//        .scrollDisabled(true)
+        // 内部想对禁止滚动做出反应，可以使用
+//        @Environment(\.isScrollEnabled) private var isScrollEnabled
         
         //最小行高
 //        List {
