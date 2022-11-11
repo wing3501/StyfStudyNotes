@@ -434,6 +434,15 @@
 		92F368572733AE8F0013FB92 /* SMCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368502733AE8E0013FB92 /* SMCallLib.m */; };
 		92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368522733AE8E0013FB92 /* SMCPUMonitor.m */; };
 		92F368592733AE8F0013FB92 /* SMLagMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F368542733AE8F0013FB92 /* SMLagMonitor.m */; };
+		92F3D71E291DFB3700FC86BB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F3D71D291DFB3600FC86BB /* WidgetKit.framework */; };
+		92F3D720291DFB3700FC86BB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F3D71F291DFB3700FC86BB /* SwiftUI.framework */; };
+		92F3D723291DFB3700FC86BB /* YFWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D722291DFB3700FC86BB /* YFWidgetBundle.swift */; };
+		92F3D725291DFB3700FC86BB /* YFWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D724291DFB3700FC86BB /* YFWidgetLiveActivity.swift */; };
+		92F3D727291DFB3700FC86BB /* YFWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D726291DFB3700FC86BB /* YFWidget.swift */; };
+		92F3D72A291DFB3800FC86BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F3D729291DFB3800FC86BB /* Assets.xcassets */; };
+		92F3D72C291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */; };
+		92F3D72D291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */; };
+		92F3D730291DFB3800FC86BB /* YFWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92F3D71C291DFB3600FC86BB /* YFWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */; };
 		92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */; };
 		92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B92826511400854EA4 /* CharacteristicsView.swift */; };
@@ -450,7 +459,28 @@
 			remoteGlobalIDString = 92A8D7C725D288DA0008EFAA;
 			remoteInfo = StyfStudyNotes;
 		};
+		92F3D72E291DFB3800FC86BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A8D7C025D288DA0008EFAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92F3D71B291DFB3600FC86BB;
+			remoteInfo = YFWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		92F3D731291DFB3800FC86BB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				92F3D730291DFB3800FC86BB /* YFWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -976,6 +1006,15 @@
 		92F368532733AE8E0013FB92 /* SMLagMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLagMonitor.h; sourceTree = "<group>"; };
 		92F368542733AE8F0013FB92 /* SMLagMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLagMonitor.m; sourceTree = "<group>"; };
 		92F368552733AE8F0013FB92 /* SMCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCallStack.h; sourceTree = "<group>"; };
+		92F3D71C291DFB3600FC86BB /* YFWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YFWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F3D71D291DFB3600FC86BB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		92F3D71F291DFB3700FC86BB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		92F3D722291DFB3700FC86BB /* YFWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFWidgetBundle.swift; sourceTree = "<group>"; };
+		92F3D724291DFB3700FC86BB /* YFWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		92F3D726291DFB3700FC86BB /* YFWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFWidget.swift; sourceTree = "<group>"; };
+		92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = YFWidget.intentdefinition; sourceTree = "<group>"; };
+		92F3D729291DFB3800FC86BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92F3D72B291DFB3800FC86BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralServicesView.swift; sourceTree = "<group>"; };
 		92F635B92826511400854EA4 /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
@@ -1004,6 +1043,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92F3D719291DFB3600FC86BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F3D720291DFB3700FC86BB /* SwiftUI.framework in Frameworks */,
+				92F3D71E291DFB3700FC86BB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1012,6 +1060,8 @@
 			children = (
 				B4DC4E29CAF001B0C7815D59 /* libPods-StyfStudyNotes.a */,
 				7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */,
+				92F3D71D291DFB3600FC86BB /* WidgetKit.framework */,
+				92F3D71F291DFB3700FC86BB /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1618,7 +1668,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		9271ACEB29094E7C002DF880 /* MediaEditManager */ = {
+		9271ACEB29094E7C002DF880 /* 视频编辑拼接 */ = {
 			isa = PBXGroup;
 			children = (
 				9271ACEC29094E7C002DF880 /* BaseAsset */,
@@ -1634,7 +1684,7 @@
 				9271ACFA29094E7C002DF880 /* Double+++.swift */,
 				9271AD0829094ECC002DF880 /* Empty.md */,
 			);
-			path = MediaEditManager;
+			path = "视频编辑拼接";
 			sourceTree = "<group>";
 		};
 		9271ACEC29094E7C002DF880 /* BaseAsset */ = {
@@ -1864,6 +1914,7 @@
 				921545DC2818154C009781D2 /* Packages */,
 				92A8D7CA25D288DA0008EFAA /* StyfStudyNotes */,
 				9276473E28ADEA0300970310 /* StyfStudyNotesTests */,
+				92F3D721291DFB3700FC86BB /* YFWidget */,
 				92A8D7C925D288DA0008EFAA /* Products */,
 				E79A4B88C018268A4AA9ED07 /* Pods */,
 				68CC14C85F7CE063169348C8 /* Frameworks */,
@@ -1875,6 +1926,7 @@
 			children = (
 				92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */,
 				9276473D28ADEA0300970310 /* StyfStudyNotesTests.xctest */,
+				92F3D71C291DFB3600FC86BB /* YFWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1886,7 +1938,8 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
-				9271ACEB29094E7C002DF880 /* MediaEditManager */,
+				92F3D961291E49C800FC86BB /* Live Activity */,
+				9271ACEB29094E7C002DF880 /* 视频编辑拼接 */,
 				92EF584628A4EB33009D7CB9 /* CoreData */,
 				92F06AB5287D505400ADA9E9 /* SwiftUI */,
 				92E0E50C2860103100F18C73 /* WWDC */,
@@ -2450,6 +2503,26 @@
 			path = SMLagMonitor;
 			sourceTree = "<group>";
 		};
+		92F3D721291DFB3700FC86BB /* YFWidget */ = {
+			isa = PBXGroup;
+			children = (
+				92F3D722291DFB3700FC86BB /* YFWidgetBundle.swift */,
+				92F3D724291DFB3700FC86BB /* YFWidgetLiveActivity.swift */,
+				92F3D726291DFB3700FC86BB /* YFWidget.swift */,
+				92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */,
+				92F3D729291DFB3800FC86BB /* Assets.xcassets */,
+				92F3D72B291DFB3800FC86BB /* Info.plist */,
+			);
+			path = YFWidget;
+			sourceTree = "<group>";
+		};
+		92F3D961291E49C800FC86BB /* Live Activity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Live Activity";
+			sourceTree = "<group>";
+		};
 		E79A4B88C018268A4AA9ED07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2491,10 +2564,12 @@
 				92A8D7C425D288DA0008EFAA /* Sources */,
 				92A8D7C525D288DA0008EFAA /* Frameworks */,
 				92A8D7C625D288DA0008EFAA /* Resources */,
+				92F3D731291DFB3800FC86BB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				92F3D72F291DFB3800FC86BB /* PBXTargetDependency */,
 			);
 			name = StyfStudyNotes;
 			packageProductDependencies = (
@@ -2504,13 +2579,30 @@
 			productReference = 92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		92F3D71B291DFB3600FC86BB /* YFWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92F3D734291DFB3800FC86BB /* Build configuration list for PBXNativeTarget "YFWidgetExtension" */;
+			buildPhases = (
+				92F3D718291DFB3600FC86BB /* Sources */,
+				92F3D719291DFB3600FC86BB /* Frameworks */,
+				92F3D71A291DFB3600FC86BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YFWidgetExtension;
+			productName = YFWidgetExtension;
+			productReference = 92F3D71C291DFB3600FC86BB /* YFWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		92A8D7C025D288DA0008EFAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					9276473C28ADEA0200970310 = {
@@ -2520,6 +2612,9 @@
 					92A8D7C725D288DA0008EFAA = {
 						CreatedOnToolsVersion = 12.3;
 						LastSwiftMigration = 1230;
+					};
+					92F3D71B291DFB3600FC86BB = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -2538,6 +2633,7 @@
 			targets = (
 				92A8D7C725D288DA0008EFAA /* StyfStudyNotes */,
 				9276473C28ADEA0200970310 /* StyfStudyNotesTests */,
+				92F3D71B291DFB3600FC86BB /* YFWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -2594,6 +2690,14 @@
 				924C639228AF7ADF0019D5E0 /* EmployeePictureViewController.xib in Resources */,
 				92EC412728B366A3004EC671 /* SurfJournalModel.sqlite-shm in Resources */,
 				9272917528B377C200DDB42F /* SurfSegmentCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F3D71A291DFB3600FC86BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F3D72A291DFB3800FC86BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2670,6 +2774,7 @@
 				92490E4E28BCA7070031A83E /* UsingOnChange.swift in Sources */,
 				92E0E512286044C000F18C73 /* Global.swift in Sources */,
 				922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */,
+				92F3D72D291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */,
 				928052DF27E32B6D00F8C1CD /* ResultBuilderViewController.swift in Sources */,
 				92EC412F28B368E5004EC671 /* JournalEntry+CoreDataClass.swift in Sources */,
 				9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */,
@@ -3051,6 +3156,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92F3D718291DFB3600FC86BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F3D723291DFB3700FC86BB /* YFWidgetBundle.swift in Sources */,
+				92F3D72C291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */,
+				92F3D725291DFB3700FC86BB /* YFWidgetLiveActivity.swift in Sources */,
+				92F3D727291DFB3700FC86BB /* YFWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -3058,6 +3174,11 @@
 			isa = PBXTargetDependency;
 			target = 92A8D7C725D288DA0008EFAA /* StyfStudyNotes */;
 			targetProxy = 9276474128ADEA0300970310 /* PBXContainerItemProxy */;
+		};
+		92F3D72F291DFB3800FC86BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92F3D71B291DFB3600FC86BB /* YFWidgetExtension */;
+			targetProxy = 92F3D72E291DFB3800FC86BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3237,6 +3358,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6038A62DA1B839E3908F75B /* Pods-StyfStudyNotes.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -3261,6 +3383,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -3275,6 +3398,68 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.styf.StyfStudyNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StyfStudyNotes/leetcode/StyfStudyNotes-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		92F3D732291DFB3800FC86BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YFWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YFWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.styf.StyfStudyNotes.YFWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92F3D733291DFB3800FC86BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YFWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = YFWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.styf.StyfStudyNotes.YFWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3306,6 +3491,15 @@
 			buildConfigurations = (
 				92A8D7E225D288DD0008EFAA /* Debug */,
 				92A8D7E325D288DD0008EFAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92F3D734291DFB3800FC86BB /* Build configuration list for PBXNativeTarget "YFWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F3D732291DFB3800FC86BB /* Debug */,
+				92F3D733291DFB3800FC86BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
