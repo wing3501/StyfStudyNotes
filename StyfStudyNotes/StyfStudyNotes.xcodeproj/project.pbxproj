@@ -443,6 +443,8 @@
 		92F3D72C291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */; };
 		92F3D72D291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */; };
 		92F3D730291DFB3800FC86BB /* YFWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 92F3D71C291DFB3600FC86BB /* YFWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		92F3D963291E4DA500FC86BB /* LiveActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D962291E4DA400FC86BB /* LiveActivityViewController.swift */; };
+		92F3DB90291E4F8300FC86BB /* YFWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D724291DFB3700FC86BB /* YFWidgetLiveActivity.swift */; };
 		92F635B628261C0D00854EA4 /* PeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */; };
 		92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */; };
 		92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F635B92826511400854EA4 /* CharacteristicsView.swift */; };
@@ -1015,6 +1017,7 @@
 		92F3D728291DFB3700FC86BB /* YFWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = YFWidget.intentdefinition; sourceTree = "<group>"; };
 		92F3D729291DFB3800FC86BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92F3D72B291DFB3800FC86BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F3D962291E4DA400FC86BB /* LiveActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityViewController.swift; sourceTree = "<group>"; };
 		92F635B528261C0D00854EA4 /* PeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralDelegate.swift; sourceTree = "<group>"; };
 		92F635B728261FBD00854EA4 /* PeripheralServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralServicesView.swift; sourceTree = "<group>"; };
 		92F635B92826511400854EA4 /* CharacteristicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacteristicsView.swift; sourceTree = "<group>"; };
@@ -2519,6 +2522,7 @@
 		92F3D961291E49C800FC86BB /* Live Activity */ = {
 			isa = PBXGroup;
 			children = (
+				92F3D962291E4DA400FC86BB /* LiveActivityViewController.swift */,
 			);
 			path = "Live Activity";
 			sourceTree = "<group>";
@@ -2852,7 +2856,9 @@
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
 				92A2D2122679EE5400A88F19 /* WPTSlidingHeaderViewController.m in Sources */,
 				92F06AC2287D56FB00ADA9E9 /* ProfileUser.swift in Sources */,
+				92F3D963291E4DA500FC86BB /* LiveActivityViewController.swift in Sources */,
 				92AC18B628C1D3B4009CAB64 /* UsingGauge.swift in Sources */,
+				92F3DB90291E4F8300FC86BB /* YFWidgetLiveActivity.swift in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
 				92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,

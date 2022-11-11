@@ -45,7 +45,9 @@
                    @{@"title":@"蓝牙",@"class":@"BluetoothDemo"},
                    @{@"title":@"PDF",@"class":@"PDFDemo"},
                    @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},
-                   @{@"title":@"CoreData",@"class":@"CoreDataDemo"}
+                   @{@"title":@"CoreData",@"class":@"CoreDataDemo"},
+                   @{@"title":@"Live Activity",@"class":@"LiveActivityViewController"},
+                   
     ];
     [self.view addSubview:self.tableView];
     

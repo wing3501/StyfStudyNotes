@@ -14,6 +14,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 // 1. 设置用于描述静态、动态的数据模型
+@available(iOS 16.1, *)
 struct YFWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
@@ -29,6 +30,7 @@ struct YFWidgetAttributes: ActivityAttributes {
     var orderNumber: String
 }
 
+@available(iOS 16.1, *)
 struct YFWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         // 2. 创建配置
@@ -127,7 +129,7 @@ struct YFWidgetLiveActivity: Widget {
 //        .activitySystemActionForegroundColor(Color.black)
 //    }
 //}
-
+@available(iOS 16.1, *)
 struct LockScreenLiveActivityView: View {
     let context: ActivityViewContext<YFWidgetAttributes>
     
