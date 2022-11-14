@@ -50,7 +50,19 @@ class LiveActivityViewController: UIViewController {
             // deliveryActivity 可用于更新、结束
             // 只能通过APP在前台时启动，但是可以在APP处于后台时，更新、结束活动
             deliveryActivity = try Activity.request(attributes: activityAttributes, contentState: initialContentState)
+            // ⚠️ 1 需要通过通知更新活动，就必须传pushType
+            // 2 启动成功后的Activity带有pushToken，把pushToken传给推送服务器，服务器后续使用pushToken来发送推送更新活动
+            // 3 把推送内容 content-state里的字段内容与自定义Activity.ContentState 里的一致，保证解析成功
+            // 4 请求头字段apns-push-type设置为liveactivity
+            // 5 请求头字段apns-topic格式设置为<your bundleID>.push-type.liveactivity.
+            // 6 设置payload’s event的值为update,结束时设为end.结束时要包含一个最终content state，用于结束后的显示
+            // 7 观察pushTokenUpdates的变化，push token更新时发送到服务器
+            // 8 活动结束时，把服务器的push token无效
+            // 每小时推送更新次数有限，可以使用低优先级的推送
+            // 结束后，会在锁屏保留一段时间，要修改移除时间。就在"aps" 字典中加入"dismissal-date"。想马上移除就填一个过去的时间。或者修改为4小时内的其他时间
             
+            
+//            request(attributes:contentState:pushType:)
             print("Requested a pizza delivery Live Activity \(String(describing: deliveryActivity?.id)).")
             
             // 使用异步序列进行观察
@@ -103,4 +115,21 @@ class LiveActivityViewController: UIViewController {
             await deliveryActivity?.end(using:finalDeliveryStatus, dismissalPolicy: .default)
         }
     }
+    
+//     一个推送更新活动的例子
+//    {
+//        "aps": {
+//            "timestamp": 1168364460,
+//            "event": "update",
+//            "content-state": {
+//                "driverName": "Anne Johnson",
+//                "estimatedDeliveryTime": 1659416400
+//            },
+//            "alert": {
+//                "title": "Delivery Update",
+//                "body": "Your pizza order will arrive soon.",
+//                "sound": "example.aiff"
+//            }
+//        }
+//    }
 }
