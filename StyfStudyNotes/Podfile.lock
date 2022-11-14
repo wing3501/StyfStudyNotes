@@ -83,6 +83,7 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SSZipArchive (2.4.2)
 
 DEPENDENCIES:
   - AFNetworking
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - KVOController
   - Masonry
   - SDWebImage
+  - SSZipArchive
 
 SPEC REPOS:
   trunk:
@@ -100,6 +102,7 @@ SPEC REPOS:
     - KVOController
     - Masonry
     - SDWebImage
+    - SSZipArchive
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -108,7 +111,8 @@ SPEC CHECKSUMS:
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SSZipArchive: e7b4f3d9e780c2acc1764cd88fbf2de28f26e5b2
 
-PODFILE CHECKSUM: bd8af31f330c2ba91a279cf4e760e772a1bffb4b
+PODFILE CHECKSUM: 0c3a606a0f96df2ec96bfb9bc44aef116f0a98f5
 
 COCOAPODS: 1.11.3

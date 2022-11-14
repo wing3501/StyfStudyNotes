@@ -14,6 +14,7 @@ target 'StyfStudyNotes' do
   pod 'AFNetworking'
   pod 'KVOController'
   pod 'JXCategoryView'
+  pod 'SSZipArchive'
   
   # 安装Flutter模块
  # install_all_flutter_pods(flutter_application_path)
