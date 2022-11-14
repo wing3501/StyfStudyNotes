@@ -28,6 +28,8 @@ struct YFWidgetAttributes: ActivityAttributes {
     var numberOfPizzas: Int
     var totalAmount: String
     var orderNumber: String
+    
+    
 }
 
 @available(iOS 16.1, *)
