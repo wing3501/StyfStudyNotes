@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
+		92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92040DCA2922086100800273 /* CoreMLViewController.swift */; };
+		92040DCF2922091C00800273 /* WPTImageClassifier.zip in Resources */ = {isa = PBXBuildFile; fileRef = 92040DCE2922091C00800273 /* WPTImageClassifier.zip */; };
+		92041455292211DB00800273 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92041454292211DB00800273 /* VideoCapture.swift */; };
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
@@ -489,6 +492,9 @@
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
+		92040DCA2922086100800273 /* CoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLViewController.swift; sourceTree = "<group>"; };
+		92040DCE2922091C00800273 /* WPTImageClassifier.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = WPTImageClassifier.zip; sourceTree = "<group>"; };
+		92041454292211DB00800273 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
@@ -1067,6 +1073,16 @@
 				92F3D71F291DFB3700FC86BB /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92040DC92921F1C400800273 /* Core ML */ = {
+			isa = PBXGroup;
+			children = (
+				92040DCA2922086100800273 /* CoreMLViewController.swift */,
+				92041454292211DB00800273 /* VideoCapture.swift */,
+				92040DCE2922091C00800273 /* WPTImageClassifier.zip */,
+			);
+			path = "Core ML";
 			sourceTree = "<group>";
 		};
 		9208CC102807FA980095E1C1 /* GithubAPI */ = {
@@ -1941,6 +1957,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				92040DC92921F1C400800273 /* Core ML */,
 				92F3D961291E49C800FC86BB /* Live Activity */,
 				9271ACEB29094E7C002DF880 /* 视频编辑拼接 */,
 				92EF584628A4EB33009D7CB9 /* CoreData */,
@@ -2679,6 +2696,7 @@
 				921F35D328AC840400D79C52 /* CreateImageNoteViewController.xib in Resources */,
 				92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */,
 				927F8E6B28AF6D1D00330616 /* EmployeeTableViewCell.xib in Resources */,
+				92040DCF2922091C00800273 /* WPTImageClassifier.zip in Resources */,
 				924C63A328AF7CAC0019D5E0 /* face03.jpg in Resources */,
 				9271AD0D29095009002DF880 /* 41436.MP4 in Resources */,
 				927F0531282BD825001E39B7 /* IMG_1599.MP4 in Resources */,
@@ -2804,6 +2822,7 @@
 				92F06AC0287D560F00ADA9E9 /* PrivacyLevel.swift in Sources */,
 				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
+				92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */,
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
 				9276492628AE214700970310 /* CampSiteService.swift in Sources */,
 				92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */,
@@ -3156,6 +3175,7 @@
 				92AC589A28112F75000BE001 /* CalculatorModel.swift in Sources */,
 				92CA9D0528169E5300246D51 /* ActivityIndicatorView.swift in Sources */,
 				924C639128AF7ADF0019D5E0 /* EmployeePictureViewController.swift in Sources */,
+				92041455292211DB00800273 /* VideoCapture.swift in Sources */,
 				9244F03D25E63DA00008D6BB /* OSSpinLockDemo.m in Sources */,
 				92C3747A2738F8A00026BC15 /* MemoryHelper.m in Sources */,
 				92426DDA26246289002062B7 /* LeaksDemo.m in Sources */,

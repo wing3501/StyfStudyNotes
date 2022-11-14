@@ -47,7 +47,7 @@
                    @{@"title":@"字符串安全",@"class":@"SaveKeyDemo"},
                    @{@"title":@"CoreData",@"class":@"CoreDataDemo"},
                    @{@"title":@"Live Activity",@"class":@"LiveActivityViewController"},
-                   
+                   @{@"title":@"CoreML",@"class":@"CoreMLViewController"},
     ];
     [self.view addSubview:self.tableView];
     
