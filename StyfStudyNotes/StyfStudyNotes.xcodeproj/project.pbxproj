@@ -12,6 +12,7 @@
 		92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92040DCA2922086100800273 /* CoreMLViewController.swift */; };
 		92040DCF2922091C00800273 /* WPTImageClassifier.zip in Resources */ = {isa = PBXBuildFile; fileRef = 92040DCE2922091C00800273 /* WPTImageClassifier.zip */; };
 		92041455292211DB00800273 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92041454292211DB00800273 /* VideoCapture.swift */; };
+		92041689292261FE00800273 /* ImageDecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92041688292261FE00800273 /* ImageDecodeViewController.swift */; };
 		9208CC132807FADB0095E1C1 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CC122807FADB0095E1C1 /* FormViewController.swift */; };
 		9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */; };
 		9208CCBE28083E290095E1C1 /* HeadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9208CCBD28083E290095E1C1 /* HeadingViewController.swift */; };
@@ -495,6 +496,7 @@
 		92040DCA2922086100800273 /* CoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLViewController.swift; sourceTree = "<group>"; };
 		92040DCE2922091C00800273 /* WPTImageClassifier.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = WPTImageClassifier.zip; sourceTree = "<group>"; };
 		92041454292211DB00800273 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		92041688292261FE00800273 /* ImageDecodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDecodeViewController.swift; sourceTree = "<group>"; };
 		9208CC122807FADB0095E1C1 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		9208CCBB28083C790095E1C1 /* LocationHeadingProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHeadingProxy.swift; sourceTree = "<group>"; };
 		9208CCBD28083E290095E1C1 /* HeadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingViewController.swift; sourceTree = "<group>"; };
@@ -1199,6 +1201,7 @@
 				92F36645273381A20013FB92 /* UIImage+scale.m */,
 				9231DFD027DB47C000607C03 /* CALayer+Ext.h */,
 				9231DFD127DB47C000607C03 /* CALayer+Ext.m */,
+				92041688292261FE00800273 /* ImageDecodeViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3094,6 +3097,7 @@
 				92A417D62812724700603DCE /* PokemonList.swift in Sources */,
 				920986C0286D700200B5F418 /* PoemDetail.swift in Sources */,
 				92A8D7DE25D288DD0008EFAA /* main.m in Sources */,
+				92041689292261FE00800273 /* ImageDecodeViewController.swift in Sources */,
 				920C4FEA2732303C0091487B /* SingleWKProcessPool.m in Sources */,
 				9287E0AF282E399900AA87FE /* RespondingToEvents.swift in Sources */,
 				9271AD0129094E7D002DF880 /* YFMediaEditManager.swift in Sources */,
