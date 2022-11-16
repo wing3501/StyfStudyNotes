@@ -224,7 +224,12 @@ struct TestWrap<Content>: View where Content: View{
 struct LabelTest: View {
     var body: some View {
         VStack {
-            Divider()
+            Divider()//分隔线使用
+//            Divider()
+//                    .background(Color.purple) //分割线的默认颜色为灰色，此处设置分割线的默认颜色为紫色
+//                    .scaleEffect(CGSize(width: 1, height: 10)) //分割线高度放大10倍
+//                        .padding(Edge.Set.init(arrayLiteral: .top, .bottom), 20) //将分割线的上下内边距设置为20，以增加分割线和上下两侧的视图的距离
+            
             Label("Label的使用案例", image: "")
             
             Label("使用SF Symbols", systemImage: "folder.circle")
