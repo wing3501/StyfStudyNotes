@@ -11,6 +11,9 @@ struct StaticTextApp: View {
     var body: some View {
         ScrollView {
             VStack {
+                // Text基本使用
+                BaseUse()
+                
                 Group {
                     //文字的选中
                     TextSelectionTest()
@@ -69,6 +72,106 @@ struct StaticTextApp: View {
                             .font(.headline)
                     }
                 }
+            }
+        }
+    }
+}
+// Text基本使用
+struct BaseUse: View {
+    var body: some View {
+        Group {
+            VStack {
+                // 添加文本视图，文本加粗
+                Text("Hello, world!").bold()
+                // 添加文本视图，文本倾斜
+                Text("Hello, world!").italic()
+                // 添加文本视图，文本下划线
+                Text("Hello, world!").underline()
+                // 添加文本视图，文本下划线的颜色为橙色
+                Text("Hello, world!").underline(true,color: .orange)
+                // 添加文本视图，文本添加删除线
+                Text("Hello, world!").strikethrough()
+                // 添加文本视图，文本添加删除线，设置删除线为橙色
+                Text("Hello, world!").strikethrough(true,color: .orange)
+                // 添加文本视图，设置文本颜色为橙色
+                Text("Hello, world!").foregroundColor(.orange)
+                // 添加文本视图，设置文本向上的偏移值为15，设置文本的背景色为橙色
+                Text("Hello, world!").baselineOffset(15).background(Color.orange)
+                // 添加文本视图，设置背景图片，设置文本在视图底部
+                Text("Hello, Pic!").background(Image("Pic"),alignment: .bottom).foregroundColor(.white).font(.system(size: 13))
+            }
+            
+            VStack{
+                // 添加文本视图，设置文字的字体尺寸为脚注样式
+                Text("Hello, world!,footnote").font(.footnote)
+                // 添加文本视图，设置字体大小为36
+                Text("Hello, world!").font(.system(size:36))
+                // 添加文本视图，设置文字的字体为标题样式，该样式可以根据屏幕尺寸的大小，自动调整自身的尺寸
+                Text("Hello, world!,Automatic").font(.system(.title,design: .monospaced)).lineLimit(2)
+                // 添加文本视图，设置文字的字体，尺寸为36
+                Text("Hello, world!").font(.custom("BradleyHandITCTT-Bold", size: 36))
+                // 添加文本视图，通过字体粗细属性设置加粗效果
+                Text("Hello, world!").fontWeight(Font.Weight.heavy)
+                // 添加文本视图，通过字体粗细属性设置显示纤细文字
+                Text("Hello, world!").fontWeight(Font.Weight.ultraLight)
+            }
+            
+            // 通过段落属性可以调整文字的间距、行距、偏移值、框架和对齐方式等视觉样式
+            VStack(spacing: 4.0){
+                // 添加文本视图，文本加粗
+                Text("Hello, world!")
+                // 添加文本视图，设置字体属性的字距为10
+                Text("www.hdjc8.com").tracking(10)
+                // 添加文本视图，设置字体属性的字距为10。字距调整属性表示一对字元的字距
+                Text("www.hdjc8.com").kerning(10)
+                // 添加文本视图，给文本视图添加模糊效果，并设置模糊效的半径为1
+                Text("www.hdjc8.com").blur(radius: 1)
+                // 添加一个具有长文字内容的文本视图，设置文本视图的行距为20，同时不限制文字的行数
+                Text("www.hdjc8.com,www.hdjc8.com,www.hdjc8.com,www.hdjc8.com,www.hdjc8.com,www.hdjc8.com,").multilineTextAlignment(.leading).lineSpacing(11).lineLimit(nil)
+                // 添加文本视图，设置文字向右侧偏移40的距离
+                Text("www.hdjc8.com").offset(x: 40, y: 0)
+                // 添加文本视图，设置宽度为200，高度为80，文字位于文本视图的右下角，颜色为橙色
+                Text("www.hdjc8.com").frame(width: 200, height: 80, alignment: .bottomTrailing).background(Color.orange)
+                VStack{
+                    // 添加文本视图，设置宽度为300，高度为100，文字位于文本视图的右下角
+                    // position方法会使对其属性失效，因此文字不再位于视图的右下角，会向右和向下各偏移50点的位置
+                    Text("www.hdjc8.com").position(x: 50, y: 50).frame(width: 300, height: 100, alignment: .bottomTrailing).background(Color.orange)
+                    // 添加文本视图，设置可以显示4行文字
+                    // 最后调用多行文字的对齐方法
+                    // multilineTextAlignment:多行文本对齐
+                    Text("西瓜\n香蕉\n苹果\n车厘子").frame(width: 200, height: 100).lineLimit(4).multilineTextAlignment(.center)
+                }
+            }
+            
+            // 使用填充属性，修改文字内容和文本视图边框之间的距离，即修改文本视图的上下左右的内边距
+            VStack(spacing: 4.0){
+                // 添加文本视图，文本加粗
+                // background：背景颜色
+                // foregroundColor:前景颜色
+                Text("Hello, world!")
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .padding(20)
+                
+                // 链式调用的顺序由上而下，
+                // 所以首先设置第二个文本视图的那边句，
+                // 然后再给文本视图设置背景颜色和字体颜色，
+                // 这时那边句也会有有相应的背景颜色
+                Text("Hello, world!")
+                    .padding(20)
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                
+                // 创建多个填充属性，创建由外向内颜色渐变的边框
+                // 设置文字样式为巨型标题样式
+                Text("Hello, world!")
+                    .font(.largeTitle)
+                    .padding(15)
+                    .background(Color.yellow)
+                    .padding(15)
+                    .background(Color.orange)
+                    .padding(10)
+                    .background(Color.red)
             }
         }
     }
