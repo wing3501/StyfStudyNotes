@@ -1,0 +1,7 @@
+
+All images © 2019 Razeware LLC
+
+The copyright for all images in this tutorial is owned by Razeware LLC. Images may be used in raywenderlich.com
+tutorials, including video tutorials, written tutorials, books, and advertising materials. raywenderlich.com team
+members may use, alter, and modify the images for use within raywenderlich.com tutorials. They may also use the
+images in any slides or other materials for conference talks. No other use is permitted without permission.
