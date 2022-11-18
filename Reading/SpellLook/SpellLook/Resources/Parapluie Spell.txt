@@ -1,0 +1,15 @@
+Getting Started with the Parapluie Spell
+In this tutorial, you'll learn about the Parapluie Spell, a handy spell for when you're out in the rain.
+
+Getting Started
+Parapluie is the incantation of a spell that creates an umbrella at the tip of the wand of its caster. It is a very simple and straightforward spell that every sorcerer learns.
+
+Incantation: Parapluie
+Pronunciation: pa-HA-plwui
+Type: Spell
+Light: Depends on the caster's favorite color
+Description: Creates an umbrella at the tip of the caster's wand
+Hand movement: Point want towards the skies
+
+Where to Go From Here?
+For more tutorials keep coming back to https://www.raywenderlich.com/
