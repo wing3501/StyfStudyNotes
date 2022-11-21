@@ -363,6 +363,7 @@
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */; };
 		92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */; };
+		92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */; };
 		92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0934C28588ADA00149598 /* PDFShareManager.swift */; };
 		92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E50F2860118800F18C73 /* WWDCDemo.swift */; };
 		92E0E512286044C000F18C73 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E511286044C000F18C73 /* Global.swift */; };
@@ -934,6 +935,7 @@
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemoList.swift; sourceTree = "<group>"; };
 		92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickmediaApp.swift; sourceTree = "<group>"; };
+		92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlacement.swift; sourceTree = "<group>"; };
 		92E0934C28588ADA00149598 /* PDFShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFShareManager.swift; sourceTree = "<group>"; };
 		92E0E50F2860118800F18C73 /* WWDCDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemo.swift; sourceTree = "<group>"; };
 		92E0E511286044C000F18C73 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -2500,6 +2502,7 @@
 				9266EF38291CAA9F00CF05A5 /* WindowManagement.swift */,
 				9266EF3B291CC36C00CF05A5 /* StateVariable.swift */,
 				92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */,
+				92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2833,6 +2836,7 @@
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
 				9276492628AE214700970310 /* CampSiteService.swift in Sources */,
 				92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */,
+				92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
 				9288BEDD2829186C005A903A /* OrderView.swift in Sources */,
 				9244F03625E63DA00008D6BB /* SemaphoreDemo.m in Sources */,
