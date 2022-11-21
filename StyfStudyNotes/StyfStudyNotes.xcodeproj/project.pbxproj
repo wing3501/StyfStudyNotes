@@ -364,6 +364,7 @@
 		92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */; };
 		92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */; };
 		92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */; };
+		92DD30F3292B9BFE00E2E431 /* OpaqueReturnTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD30F2292B9BFE00E2E431 /* OpaqueReturnTypes.swift */; };
 		92E0934D28588ADA00149598 /* PDFShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0934C28588ADA00149598 /* PDFShareManager.swift */; };
 		92E0E5102860118800F18C73 /* WWDCDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E50F2860118800F18C73 /* WWDCDemo.swift */; };
 		92E0E512286044C000F18C73 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E0E511286044C000F18C73 /* Global.swift */; };
@@ -936,6 +937,7 @@
 		92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemoList.swift; sourceTree = "<group>"; };
 		92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickmediaApp.swift; sourceTree = "<group>"; };
 		92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlacement.swift; sourceTree = "<group>"; };
+		92DD30F2292B9BFE00E2E431 /* OpaqueReturnTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueReturnTypes.swift; sourceTree = "<group>"; };
 		92E0934C28588ADA00149598 /* PDFShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFShareManager.swift; sourceTree = "<group>"; };
 		92E0E50F2860118800F18C73 /* WWDCDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemo.swift; sourceTree = "<group>"; };
 		92E0E511286044C000F18C73 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -2503,6 +2505,7 @@
 				9266EF3B291CC36C00CF05A5 /* StateVariable.swift */,
 				92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */,
 				92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */,
+				92DD30F2292B9BFE00E2E431 /* OpaqueReturnTypes.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2978,6 +2981,7 @@
 				925CB17B28F1152800F772A6 /* DismissAction.swift in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
 				921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */,
+				92DD30F3292B9BFE00E2E431 /* OpaqueReturnTypes.swift in Sources */,
 				924C638D28AF787E0019D5E0 /* EmployeeDetailViewController.swift in Sources */,
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
