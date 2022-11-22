@@ -11,7 +11,10 @@
 #import "TaskService.h"
 #import <QuartzCore/QuartzCore.h>
 @interface DemoNSOperation ()
-
+/// 串行队列
+@property (nonatomic, strong) NSOperationQueue *serialQueue;
+/// 并发队列
+@property (nonatomic, strong) NSOperationQueue *concurrentQueue;
 @end
 
 @implementation DemoNSOperation
@@ -23,12 +26,85 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self serviceTest];
-    [self test];
+    [self serviceTest];
+//    [self test];
 }
 
 - (void)serviceTest {
+    _serialQueue = [[NSOperationQueue alloc] init];
+    _serialQueue.maxConcurrentOperationCount = 1;
+
+    _concurrentQueue = [[NSOperationQueue alloc] init];
+    _concurrentQueue.maxConcurrentOperationCount = 4;
     
+    OperationTask *A1 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A1开始，当前线程%@", [NSThread currentThread]);
+            sleep(1);
+            NSLog(@"任务A1完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *A2 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A2开始，当前线程%@", [NSThread currentThread]);
+            sleep(2);
+            NSLog(@"任务A2完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *A3 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A3开始，当前线程%@", [NSThread currentThread]);
+            sleep(3);
+            NSLog(@"任务A3完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *B1 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务B1开始，当前线程%@", [NSThread currentThread]);
+            sleep(0.5);
+            NSLog(@"任务B1完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *B2 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务B2开始，当前线程%@", [NSThread currentThread]);
+            sleep(4);
+            NSLog(@"任务B2完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *B3 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务B3开始，当前线程%@", [NSThread currentThread]);
+            sleep(5);
+            NSLog(@"任务B3完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    [_concurrentQueue addOperation:A1];
+    [_concurrentQueue addOperation:A2];
+    [_concurrentQueue addOperation:A3];
+    [_concurrentQueue addBarrierBlock:^{
+        NSLog(@"所有A任务已经完成----%@",[NSThread currentThread]);
+    }];
+
+    [_concurrentQueue addOperation:B1];
+    [_concurrentQueue addOperation:B2];
+    [_concurrentQueue addOperation:B3];
+    [_concurrentQueue addBarrierBlock:^{
+        NSLog(@"所有B任务已经完成----%@",[NSThread currentThread]);
+    }];
+    //------------
 //    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"微博SDK" executionBlock:^{
 //        NSLog(@"微博SDK--初始化start");
 //        sleep(2);
@@ -113,6 +189,96 @@
 }
 
 - (void)test {
+    
+    //------------并发+串行
+//    _serialQueue = [[NSOperationQueue alloc] init];
+//    _serialQueue.maxConcurrentOperationCount = 1;
+//
+//    _concurrentQueue = [[NSOperationQueue alloc] init];
+//    _concurrentQueue.maxConcurrentOperationCount = 4;
+//
+//    NSBlockOperation *A1 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务A1开始，当前线程%@", [NSThread currentThread]);
+//        sleep(1);
+//        NSLog(@"任务A1完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *A2 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务A2开始，当前线程%@", [NSThread currentThread]);
+//        sleep(3);
+//        NSLog(@"任务A2完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *A3 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务A3开始，当前线程%@", [NSThread currentThread]);
+//        sleep(2);
+//        NSLog(@"任务A3完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *A = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务A开始，当前线程%@", [NSThread currentThread]);
+//        sleep(1);
+//        NSLog(@"任务A完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *B1 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务B1开始，当前线程%@", [NSThread currentThread]);
+//        sleep(0.5);
+//        NSLog(@"任务B1完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *B2 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务B2开始，当前线程%@", [NSThread currentThread]);
+//        sleep(1);
+//        NSLog(@"任务B2完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *B3 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务B3开始，当前线程%@", [NSThread currentThread]);
+//        sleep(4);
+//        NSLog(@"任务B3完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *C1 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务C1开始，当前线程%@", [NSThread currentThread]);
+//        sleep(3);
+//        NSLog(@"任务C1完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *C2 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务C2开始，当前线程%@", [NSThread currentThread]);
+//        sleep(4);
+//        NSLog(@"任务C2完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    NSBlockOperation *C3 = [NSBlockOperation blockOperationWithBlock:^{
+//        NSLog(@"任务C3开始，当前线程%@", [NSThread currentThread]);
+//        sleep(5);
+//        NSLog(@"任务C3完成，当前线程%@", [NSThread currentThread]);
+//    }];
+//
+//    [_concurrentQueue addOperation:A1];
+//    [_concurrentQueue addOperation:A2];
+//    [_concurrentQueue addOperation:A3];
+//    [_concurrentQueue addBarrierBlock:^{
+//        NSLog(@"所有A任务已经完成----%@",[NSThread currentThread]);
+//    }];
+//
+//    [_concurrentQueue addOperation:B1];
+//    [_concurrentQueue addOperation:B2];
+//    [_concurrentQueue addOperation:B3];
+//    [_concurrentQueue addBarrierBlock:^{
+//        NSLog(@"所有B任务已经完成----%@",[NSThread currentThread]);
+//    }];
+//
+//    [_concurrentQueue addOperation:C1];
+//    [_concurrentQueue addOperation:C2];
+//    [_concurrentQueue addOperation:C3];
+//    [_concurrentQueue addBarrierBlock:^{
+//        NSLog(@"所有C任务已经完成----%@",[NSThread currentThread]);
+//    }];
+    
+    //---------------------
 //        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 //        queue.maxConcurrentOperationCount = 2;
 //        for (int i = 1; i < 5; i++) {
@@ -150,29 +316,29 @@
         
         //创建操作队列
             //创建最后一个操作
-    //        NSBlockOperation *AOperation=[NSBlockOperation blockOperationWithBlock:^{
-    //            NSLog(@"任务A开始，当前线程%@", [NSThread currentThread]);
-    //            sleep(1);
-    //            NSLog(@"任务A完成，当前线程%@", [NSThread currentThread]);
-    //        }];
-    //        [queue addOperation:AOperation];
-    //        NSBlockOperation *BOperation=[NSBlockOperation blockOperationWithBlock:^{
-    //            NSLog(@"任务B开始，当前线程%@", [NSThread currentThread]);
-    //            sleep(3);
-    //            NSLog(@"任务B完成，当前线程%@", [NSThread currentThread]);
-    //        }];
-    //        [queue addOperation:BOperation];
-    //        NSBlockOperation *COperation = [NSBlockOperation blockOperationWithBlock:^{
-    //            NSLog(@"任务C开始，当前线程%@", [NSThread currentThread]);
-    //            sleep(1);
-    //            NSLog(@"任务C完成，当前线程%@", [NSThread currentThread]);
-    //        }];
-    //        //让操作C依赖操作A
-    //        [COperation addDependency:AOperation];
-    //        //让操作C依赖操作B
-    //        [COperation addDependency:BOperation];
-    //        //将操作C加入队列
-    //        [queue addOperation:COperation];
+//            NSBlockOperation *AOperation=[NSBlockOperation blockOperationWithBlock:^{
+//                NSLog(@"任务A开始，当前线程%@", [NSThread currentThread]);
+//                sleep(1);
+//                NSLog(@"任务A完成，当前线程%@", [NSThread currentThread]);
+//            }];
+//            [queue addOperation:AOperation];
+//            NSBlockOperation *BOperation=[NSBlockOperation blockOperationWithBlock:^{
+//                NSLog(@"任务B开始，当前线程%@", [NSThread currentThread]);
+//                sleep(3);
+//                NSLog(@"任务B完成，当前线程%@", [NSThread currentThread]);
+//            }];
+//            [queue addOperation:BOperation];
+//            NSBlockOperation *COperation = [NSBlockOperation blockOperationWithBlock:^{
+//                NSLog(@"任务C开始，当前线程%@", [NSThread currentThread]);
+//                sleep(1);
+//                NSLog(@"任务C完成，当前线程%@", [NSThread currentThread]);
+//            }];
+//            //让操作C依赖操作A
+//            [COperation addDependency:AOperation];
+//            //让操作C依赖操作B
+//            [COperation addDependency:BOperation];
+//            //将操作C加入队列
+//            [queue addOperation:COperation];
         
     //    for (int i = 1; i < 2; i++) {
     //            dispatch_async(dispatch_get_global_queue(0, 0), ^{
