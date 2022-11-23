@@ -35,16 +35,7 @@
     _serialQueue.maxConcurrentOperationCount = 1;
 
     _concurrentQueue = [[NSOperationQueue alloc] init];
-    _concurrentQueue.maxConcurrentOperationCount = 4;
-    
-    OperationTask *A1 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSLog(@"任务A1开始，当前线程%@", [NSThread currentThread]);
-            sleep(1);
-            NSLog(@"任务A1完成，当前线程%@", [NSThread currentThread]);
-            doneBlock();
-        });
-    }];
+    _concurrentQueue.maxConcurrentOperationCount = 2;
     
     OperationTask *A2 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -60,6 +51,35 @@
             NSLog(@"任务A3开始，当前线程%@", [NSThread currentThread]);
             sleep(3);
             NSLog(@"任务A3完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *A4 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A4开始，当前线程%@", [NSThread currentThread]);
+            sleep(4);
+            NSLog(@"任务A4完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *A5 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A5开始，当前线程%@", [NSThread currentThread]);
+            sleep(5);
+            NSLog(@"任务A5完成，当前线程%@", [NSThread currentThread]);
+            doneBlock();
+        });
+    }];
+    
+    OperationTask *A1 = [[OperationTask alloc]initWithAsyncTaskBlock:^(void (^ _Nonnull doneBlock)(void)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"任务A1开始，当前线程%@", [NSThread currentThread]);
+            sleep(1);
+            NSLog(@"任务A1完成，当前线程%@", [NSThread currentThread]);
+            [A4 cancel];
+            [A5 cancel];
             doneBlock();
         });
     }];
@@ -94,16 +114,21 @@
     [_concurrentQueue addOperation:A1];
     [_concurrentQueue addOperation:A2];
     [_concurrentQueue addOperation:A3];
+    [_concurrentQueue addOperation:A4];
+    [_concurrentQueue addOperation:A5];
     [_concurrentQueue addBarrierBlock:^{
         NSLog(@"所有A任务已经完成----%@",[NSThread currentThread]);
     }];
 
-    [_concurrentQueue addOperation:B1];
-    [_concurrentQueue addOperation:B2];
-    [_concurrentQueue addOperation:B3];
-    [_concurrentQueue addBarrierBlock:^{
-        NSLog(@"所有B任务已经完成----%@",[NSThread currentThread]);
-    }];
+//    [_concurrentQueue addOperation:B1];
+//    [_concurrentQueue addOperation:B2];
+//    [_concurrentQueue addOperation:B3];
+//    [_concurrentQueue addBarrierBlock:^{
+//        NSLog(@"所有B任务已经完成----%@",[NSThread currentThread]);
+//    }];
+    
+   
+    
     //------------
 //    [[TaskService sharedInstance]addSyncTaskOnMainQueue:@"微博SDK" executionBlock:^{
 //        NSLog(@"微博SDK--初始化start");
