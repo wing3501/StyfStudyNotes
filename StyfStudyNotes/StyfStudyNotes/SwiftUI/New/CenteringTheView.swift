@@ -5,6 +5,8 @@
 //  Created by styf on 2022/8/30.
 //  在 SwiftUI 中实现视图居中的若干种方法 https://www.fatbobman.com/posts/centering_the_View_in_SwiftUI/
 
+//  How to make a SwiftUI view to fill its container width and height
+//  https://sarunw.com/posts/how-to-make-swiftui-view-fill-container-width-and-height/
 import SwiftUI
 
 struct CenteringTheView: View {

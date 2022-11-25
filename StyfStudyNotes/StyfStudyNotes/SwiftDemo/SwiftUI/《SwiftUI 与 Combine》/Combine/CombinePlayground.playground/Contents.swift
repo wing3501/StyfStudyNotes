@@ -1,6 +1,9 @@
 import UIKit
 import Combine
 
+// Cheat sheet on Combine operators for iOS development
+// https://tanaschita.com/20221121-cheatsheet-combine-operators/
+
 //Empty 是一个最简单的发布者，它只在被订阅的时候发布一个完成事件 (receive finished)。这个 publisher 不会输出任何的 output 值，只能用于表示某个事件已经 发生。
 check("Empty") {
     Empty<Int,SampleError>()

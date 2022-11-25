@@ -307,6 +307,7 @@
 		92A417E228129B1700603DCE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E128129B1600603DCE /* BlurView.swift */; };
 		92A417E42812A26700603DCE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E32812A26700603DCE /* Settings.swift */; };
 		92A417E62812A48000603DCE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A417E52812A48000603DCE /* SettingView.swift */; };
+		92A7D54929305E5A003A7DB0 /* UsingGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A7D54829305E5A003A7DB0 /* UsingGestures.swift */; };
 		92A8D7CD25D288DA0008EFAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7CC25D288DA0008EFAA /* AppDelegate.m */; };
 		92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8D7D225D288DA0008EFAA /* ViewController.m */; };
 		92A8D7D825D288DD0008EFAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A8D7D725D288DD0008EFAA /* Assets.xcassets */; };
@@ -865,6 +866,7 @@
 		92A417E128129B1600603DCE /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		92A417E32812A26700603DCE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		92A417E52812A48000603DCE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		92A7D54829305E5A003A7DB0 /* UsingGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingGestures.swift; sourceTree = "<group>"; };
 		92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyfStudyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A8D7CB25D288DA0008EFAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A8D7CC25D288DA0008EFAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2506,6 +2508,7 @@
 				92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */,
 				92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */,
 				92DD30F2292B9BFE00E2E431 /* OpaqueReturnTypes.swift */,
+				92A7D54829305E5A003A7DB0 /* UsingGestures.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2806,6 +2809,7 @@
 				924C7157281BC85400B4AEE8 /* Preference.swift in Sources */,
 				92F36646273381A20013FB92 /* UIImage+scale.m in Sources */,
 				92490E4E28BCA7070031A83E /* UsingOnChange.swift in Sources */,
+				92A7D54929305E5A003A7DB0 /* UsingGestures.swift in Sources */,
 				92E0E512286044C000F18C73 /* Global.swift in Sources */,
 				922A00DF2823CCEF009CBCA3 /* GeometryReaderExample.swift in Sources */,
 				92F3D72D291DFB3800FC86BB /* YFWidget.intentdefinition in Sources */,
