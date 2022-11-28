@@ -120,6 +120,9 @@
 		923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E8282A6B7A0004A969 /* StaticTextApp.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
 		92337BFF289BB4A000A23363 /* UsingContentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92337BFE289BB4A000A23363 /* UsingContentTransition.swift */; };
+		9238005A29345A11003E760B /* ClippedTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238005929345A11003E760B /* ClippedTips.swift */; };
+		9238006329347EF0003E760B /* ScrollViewGestureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238006129347EEF003E760B /* ScrollViewGestureButton.swift */; };
+		9238006429347EF0003E760B /* ScrollViewGestureButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
 		923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */; };
@@ -645,6 +648,9 @@
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
 		9231DFD127DB47C000607C03 /* CALayer+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Ext.m"; sourceTree = "<group>"; };
 		92337BFE289BB4A000A23363 /* UsingContentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingContentTransition.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		9238005929345A11003E760B /* ClippedTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClippedTips.swift; sourceTree = "<group>"; };
+		9238006129347EEF003E760B /* ScrollViewGestureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewGestureButton.swift; sourceTree = "<group>"; };
+		9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewGestureButtonStyle.swift; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
 		923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyViewController.swift; sourceTree = "<group>"; };
 		923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndMenus.swift; sourceTree = "<group>"; };
@@ -2509,6 +2515,9 @@
 				92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */,
 				92DD30F2292B9BFE00E2E431 /* OpaqueReturnTypes.swift */,
 				92A7D54829305E5A003A7DB0 /* UsingGestures.swift */,
+				9238006129347EEF003E760B /* ScrollViewGestureButton.swift */,
+				9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */,
+				9238005929345A11003E760B /* ClippedTips.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2853,6 +2862,7 @@
 				92B848C028191B1100D46185 /* OverlaySheet.swift in Sources */,
 				92AA703C28377D9500EB5C7E /* AsyncSwiftViewController.swift in Sources */,
 				92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */,
+				9238005A29345A11003E760B /* ClippedTips.swift in Sources */,
 				9288BEE3282934E6005A903A /* CheckoutView.swift in Sources */,
 				92F635BA2826511400854EA4 /* CharacteristicsView.swift in Sources */,
 				921D54D328B31EBC0075B93C /* Employee+CoreDataProperties.swift in Sources */,
@@ -2904,6 +2914,7 @@
 				9271ACFE29094E7D002DF880 /* PlayVideoViewController.swift in Sources */,
 				920986BE286D6FB300B5F418 /* PoemBookStack.swift in Sources */,
 				92EC413028B368E5004EC671 /* JournalEntry+CoreDataProperties.swift in Sources */,
+				9238006329347EF0003E760B /* ScrollViewGestureButton.swift in Sources */,
 				9220D58526AA92A1007E8B6A /* DiffableDataSourceDemo.m in Sources */,
 				92EC412928B366DB004EC671 /* SurfCoreDataStack.swift in Sources */,
 				921545D928180C37009781D2 /* UserModel.swift in Sources */,
@@ -3147,6 +3158,7 @@
 				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
 				920B9C1725DFC1070098B1BA /* AdvancedMediaPlayer.m in Sources */,
+				9238006429347EF0003E760B /* ScrollViewGestureButtonStyle.swift in Sources */,
 				92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */,
 				92F2EFC12815170B00773B17 /* Utils.swift in Sources */,
 				922A00DB2823BB62009CBCA3 /* CollapsibleExample.swift in Sources */,

@@ -278,6 +278,7 @@ struct GestureChains: View {
     }
 }
 //--------------------------------
+//SwiftUI 提供了三种对手势进行组合的方式，分别是代表手势需要顺次发生的 SequenceGesture、需要同时发生的 SimultaneousGesture 和只能有一个发 生的 ExclusiveGesture。
 struct UsingSimultaneousGesture: View {
     var body: some View {
         TestWrap("让两个手势同时识别") {
