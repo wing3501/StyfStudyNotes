@@ -12,7 +12,7 @@ struct UsingGestures: View {
     var body: some View {
         VStack {
             TapGestures()
-            LongPressGesture()
+            LongPressGesture1()
             MagnificationGestures()
         }
     }
@@ -35,7 +35,7 @@ struct TapGestures: View {
     }
 }
 
-struct LongPressGesture: View {
+struct LongPressGesture1: View {
     @State var backgroundColor = Color.orange
     
     var body: some View {
