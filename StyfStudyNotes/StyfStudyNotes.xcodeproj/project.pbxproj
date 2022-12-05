@@ -365,6 +365,7 @@
 		92CA9D0528169E5300246D51 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */; };
 		92CED5512924E84600E9DD16 /* AvoidRepeatedCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */; };
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
+		92D94AEC293D8B180096FA2B /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D94AEB293D8B170096FA2B /* SwiftRegex.swift */; };
 		92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */; };
 		92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */; };
 		92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */; };
@@ -942,6 +943,7 @@
 		92CA9D0428169E5300246D51 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvoidRepeatedCalculations.swift; sourceTree = "<group>"; };
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
+		92D94AEB293D8B170096FA2B /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 		92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemoList.swift; sourceTree = "<group>"; };
 		92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickmediaApp.swift; sourceTree = "<group>"; };
 		92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlacement.swift; sourceTree = "<group>"; };
@@ -2518,6 +2520,7 @@
 				9238006129347EEF003E760B /* ScrollViewGestureButton.swift */,
 				9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */,
 				9238005929345A11003E760B /* ClippedTips.swift */,
+				92D94AEB293D8B170096FA2B /* SwiftRegex.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2998,6 +3001,7 @@
 				921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */,
 				92DD30F3292B9BFE00E2E431 /* OpaqueReturnTypes.swift in Sources */,
 				924C638D28AF787E0019D5E0 /* EmployeeDetailViewController.swift in Sources */,
+				92D94AEC293D8B180096FA2B /* SwiftRegex.swift in Sources */,
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
 				924C7151281B967300B4AEE8 /* KnobView.swift in Sources */,
 				92A8D7D325D288DA0008EFAA /* ViewController.m in Sources */,
