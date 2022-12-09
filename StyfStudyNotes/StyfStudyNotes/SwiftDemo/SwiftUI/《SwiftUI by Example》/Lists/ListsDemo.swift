@@ -9,6 +9,17 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+        // 如何隐藏指示器  https://stackoverflow.com/questions/58320037/is-there-a-way-to-hide-scroll-indicators-in-a-swiftui-list
+        // 1. 使用全局隐藏 UITableView.appearance().showsVerticalScrollIndicator = false
+        // 2. 使用 ScrollView+LazyVStack
+//        ScrollView(.vertical, showsIndicators: false) { // <- This argument
+//                    LazyVStack {
+//                        ForEach(1...100, id: \.self) {
+//                            Text("\($0)").frame(height: 40)
+//                        }
+//                    }
+//                }
+        
         // 禁止滚动 scrollDisabled  外部设置禁止滚动，内部所有滚动视图都会被禁止滚动，内部设置.scrollDisabled(false)不起作用
 //        ScrollView {
 //        }

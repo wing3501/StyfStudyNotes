@@ -116,6 +116,7 @@
 		922A00E32823F878009CBCA3 /* CollectLayoutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */; };
 		923008F1291A7C6A005912DA /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923008F0291A7C6A005912DA /* Badges.swift */; };
 		923008F5291A7FC2005912DA /* ListStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923008F4291A7FC2005912DA /* ListStyles.swift */; };
+		9230BEFD29431B8800521405 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230BEFC29431B8800521405 /* CustomLayout.swift */; };
 		923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E5282A69750004A969 /* OrderFoodAPP.swift */; };
 		923176E9282A6B7A0004A969 /* StaticTextApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923176E8282A6B7A0004A969 /* StaticTextApp.swift */; };
 		9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231DFD127DB47C000607C03 /* CALayer+Ext.m */; };
@@ -366,6 +367,7 @@
 		92CED5512924E84600E9DD16 /* AvoidRepeatedCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */; };
 		92CF233027F8179B00EE725C /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CF232F27F8179B00EE725C /* CombineViewController.swift */; };
 		92D94AEC293D8B180096FA2B /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D94AEB293D8B170096FA2B /* SwiftRegex.swift */; };
+		92D94D1C293DCB530096FA2B /* IMG_2816.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 92D94D1B293DCB530096FA2B /* IMG_2816.PNG */; };
 		92DCF6D7286B25B3000BC8CC /* WWDCDemoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */; };
 		92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */; };
 		92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */; };
@@ -644,6 +646,7 @@
 		922A00E22823F878009CBCA3 /* CollectLayoutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectLayoutExample.swift; sourceTree = "<group>"; };
 		923008F0291A7C6A005912DA /* Badges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		923008F4291A7FC2005912DA /* ListStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStyles.swift; sourceTree = "<group>"; };
+		9230BEFC29431B8800521405 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		923176E5282A69750004A969 /* OrderFoodAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodAPP.swift; sourceTree = "<group>"; };
 		923176E8282A6B7A0004A969 /* StaticTextApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTextApp.swift; sourceTree = "<group>"; };
 		9231DFD027DB47C000607C03 /* CALayer+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Ext.h"; sourceTree = "<group>"; };
@@ -944,6 +947,7 @@
 		92CED5502924E84600E9DD16 /* AvoidRepeatedCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvoidRepeatedCalculations.swift; sourceTree = "<group>"; };
 		92CF232F27F8179B00EE725C /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		92D94AEB293D8B170096FA2B /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
+		92D94D1B293DCB530096FA2B /* IMG_2816.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2816.PNG; sourceTree = "<group>"; };
 		92DCF6D6286B25B3000BC8CC /* WWDCDemoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWDCDemoList.swift; sourceTree = "<group>"; };
 		92DCF6D8286B26E0000BC8CC /* QuickmediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickmediaApp.swift; sourceTree = "<group>"; };
 		92DD30F0292B751A00E2E431 /* AnimationPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlacement.swift; sourceTree = "<group>"; };
@@ -2500,6 +2504,7 @@
 				92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */,
 				92EFFE7628DDA58F006EA5EE /* LearnLayoutProtocolPart1.swift */,
 				92EFFE7528DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift */,
+				9230BEFC29431B8800521405 /* CustomLayout.swift */,
 				926FBC9E28E145A6009511A9 /* ViewDidLoadInSU.swift */,
 				925CB17828F113AC00F772A6 /* DynamicDateWithMonospace.swift */,
 				925CB17A28F1152800F772A6 /* DismissAction.swift */,
@@ -2521,6 +2526,7 @@
 				9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */,
 				9238005929345A11003E760B /* ClippedTips.swift */,
 				92D94AEB293D8B170096FA2B /* SwiftRegex.swift */,
+				92D94D1B293DCB530096FA2B /* IMG_2816.PNG */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2704,6 +2710,7 @@
 				92EC412628B366A3004EC671 /* SurfJournalModel.sqlite in Resources */,
 				9271ACFB29094E7D002DF880 /* silence.mp3 in Resources */,
 				9288BED62828FF73005A903A /* menu.json in Resources */,
+				92D94D1C293DCB530096FA2B /* IMG_2816.PNG in Resources */,
 				9272917128B376A900DDB42F /* SurfTextFieldCell.xib in Resources */,
 				92E83F2928A6218500194087 /* seed.json in Resources */,
 				92A8D7DB25D288DD0008EFAA /* LaunchScreen.storyboard in Resources */,
@@ -2854,6 +2861,7 @@
 				92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */,
 				924C714F281B962700B4AEE8 /* CounterView.swift in Sources */,
 				9276492628AE214700970310 /* CampSiteService.swift in Sources */,
+				9230BEFD29431B8800521405 /* CustomLayout.swift in Sources */,
 				92F06AC6287D604E00ADA9E9 /* UserPreferencesView.swift in Sources */,
 				92DD30F1292B751A00E2E431 /* AnimationPlacement.swift in Sources */,
 				9244F03725E63DA00008D6BB /* MutexDemo.m in Sources */,
