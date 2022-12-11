@@ -67,6 +67,9 @@ class NoteEditorViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
       updateTimeIndicatorFrame()
+        
+        textStorage.update()
+
     }
       
     func updateTimeIndicatorFrame() {

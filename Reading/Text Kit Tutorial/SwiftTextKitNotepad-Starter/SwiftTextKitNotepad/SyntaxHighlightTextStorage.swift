@@ -34,7 +34,15 @@ class SyntaxHighlightTextStorage: NSTextStorage {
     
     private var replacements: [String: [NSAttributedString.Key: Any]] = [:]
 
-    
+    override init() {
+      super.init()
+      createHighlightPatterns()
+    }
+      
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+    }
+
     // 重写以下两个计算属性、方法。
     override var string: String {
       return backingStore.string
@@ -68,32 +76,65 @@ class SyntaxHighlightTextStorage: NSTextStorage {
     }
 
     // 给*文字*加粗体样式
+//    func applyStylesToRange(searchRange: NSRange) {
+//      // 1 用字体描述符创建普通字体和粗体字体
+//      let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
+//      let boldFontDescriptor = fontDescriptor.withSymbolicTraits(.traitBold)
+//      let boldFont = UIFont(descriptor: boldFontDescriptor!, size: 0)
+//      let normalFont = UIFont.preferredFont(forTextStyle: .body)
+//
+//      // 2 样式
+//      let regexStr = "(\\*\\w+(\\s\\w+)*\\*)"
+//      let regex = try! NSRegularExpression(pattern: regexStr)
+//      let boldAttributes = [NSAttributedString.Key.font: boldFont]
+//      let normalAttributes = [NSAttributedString.Key.font: normalFont]
+//
+//      // 3
+//      regex.enumerateMatches(in: backingStore.string, range: searchRange) {
+//        match, flags, stop in
+//        if let matchRange = match?.range(at: 1) {
+//          addAttributes(boldAttributes, range: matchRange)
+//          // 4 将匹配字符串中最后一个星号后面的字符的文本样式重置为“正常”。这可以确保在结束星号之后添加的任何文本都不会以粗体显示。
+//          let maxRange = matchRange.location + matchRange.length
+//          if maxRange + 1 < length {
+//            addAttributes(normalAttributes, range: NSMakeRange(maxRange, 1))
+//          }
+//        }
+//      }
+//    }
+    
+    // 支持更多样式
     func applyStylesToRange(searchRange: NSRange) {
-      // 1 用字体描述符创建普通字体和粗体字体
-      let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
-      let boldFontDescriptor = fontDescriptor.withSymbolicTraits(.traitBold)
-      let boldFont = UIFont(descriptor: boldFontDescriptor!, size: 0)
-      let normalFont = UIFont.preferredFont(forTextStyle: .body)
-        
-      // 2 样式
-      let regexStr = "(\\*\\w+(\\s\\w+)*\\*)"
-      let regex = try! NSRegularExpression(pattern: regexStr)
-      let boldAttributes = [NSAttributedString.Key.font: boldFont]
-      let normalAttributes = [NSAttributedString.Key.font: normalFont]
-        
-      // 3
-      regex.enumerateMatches(in: backingStore.string, range: searchRange) {
-        match, flags, stop in
-        if let matchRange = match?.range(at: 1) {
-          addAttributes(boldAttributes, range: matchRange)
-          // 4 将匹配字符串中最后一个星号后面的字符的文本样式重置为“正常”。这可以确保在结束星号之后添加的任何文本都不会以粗体显示。
-          let maxRange = matchRange.location + matchRange.length
-          if maxRange + 1 < length {
-            addAttributes(normalAttributes, range: NSMakeRange(maxRange, 1))
+      let normalAttrs =
+        [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+      addAttributes(normalAttrs, range: searchRange)
+
+      // iterate over each replacement
+      for (pattern, attributes) in replacements {
+        do {
+          let regex = try NSRegularExpression(pattern: pattern)
+          regex.enumerateMatches(in: backingStore.string, range: searchRange) {
+            match, flags, stop in
+            // apply the style
+            if let matchRange = match?.range(at: 1) {
+              print("Matched pattern: \(pattern)")
+              addAttributes(attributes, range: matchRange)
+                
+              // reset the style to the original
+              let maxRange = matchRange.location + matchRange.length
+              if maxRange + 1 < length {
+                addAttributes(normalAttrs, range: NSMakeRange(maxRange, 1))
+              }
+            }
           }
+        }
+        catch {
+          print("An error occurred attempting to locate pattern: " +
+                "\(error.localizedDescription)")
         }
       }
     }
+
 
     // 将改动的范围扩展到一整行,changedRange通常是1个字符
     func performReplacementsForRange(changedRange: NSRange) {
@@ -152,6 +193,16 @@ class SyntaxHighlightTextStorage: NSTextStorage {
         "(~\\w+(\\s\\w+)*~)": scriptAttributes,
         "\\s([A-Z]{2,})\\s": redTextAttributes
       ]
+    }
+
+    
+    // ✅ 7 响应动态字体
+    func update() {
+      let bodyFont = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+      addAttributes(bodyFont, range: NSMakeRange(0, length))
+        
+      createHighlightPatterns()
+      applyStylesToRange(searchRange: NSMakeRange(0, length))
     }
 
 }
