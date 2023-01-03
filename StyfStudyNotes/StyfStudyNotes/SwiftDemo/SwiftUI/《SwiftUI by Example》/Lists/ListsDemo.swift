@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+        // 如何关闭弹性 https://stackoverflow.com/questions/59629390/swiftui-is-there-any-way-to-turn-off-bouncing-while-scrolling-the-scrollview/61851231?r=SearchResults#61851231
+//        UITableView.appearance().bounces = false
+        
         // 如何隐藏指示器  https://stackoverflow.com/questions/58320037/is-there-a-way-to-hide-scroll-indicators-in-a-swiftui-list
         // 1. 使用全局隐藏 UITableView.appearance().showsVerticalScrollIndicator = false
         // 2. 使用 ScrollView+LazyVStack
