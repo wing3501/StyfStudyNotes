@@ -124,6 +124,7 @@
 		9238005A29345A11003E760B /* ClippedTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238005929345A11003E760B /* ClippedTips.swift */; };
 		9238006329347EF0003E760B /* ScrollViewGestureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238006129347EEF003E760B /* ScrollViewGestureButton.swift */; };
 		9238006429347EF0003E760B /* ScrollViewGestureButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */; };
+		923BF93329654C8C00675424 /* UsingOptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923BF93229654C8C00675424 /* UsingOptionSet.swift */; };
 		923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */; };
 		923C60A827F1807D00DB49EA /* ConcurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */; };
 		923EBA082833C1AC0082B91D /* AlertsAndMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */; };
@@ -655,6 +656,7 @@
 		9238005929345A11003E760B /* ClippedTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClippedTips.swift; sourceTree = "<group>"; };
 		9238006129347EEF003E760B /* ScrollViewGestureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewGestureButton.swift; sourceTree = "<group>"; };
 		9238006229347EF0003E760B /* ScrollViewGestureButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewGestureButtonStyle.swift; sourceTree = "<group>"; };
+		923BF93229654C8C00675424 /* UsingOptionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsingOptionSet.swift; sourceTree = "<group>"; };
 		923C60A527F15BB500DB49EA /* ClassLifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassLifeViewController.swift; sourceTree = "<group>"; };
 		923C60A727F1807C00DB49EA /* ConcurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyViewController.swift; sourceTree = "<group>"; };
 		923EBA072833C1AC0082B91D /* AlertsAndMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsAndMenus.swift; sourceTree = "<group>"; };
@@ -2527,6 +2529,7 @@
 				9238005929345A11003E760B /* ClippedTips.swift */,
 				92D94AEB293D8B170096FA2B /* SwiftRegex.swift */,
 				92D94D1B293DCB530096FA2B /* IMG_2816.PNG */,
+				923BF93229654C8C00675424 /* UsingOptionSet.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
 			);
 			path = New;
@@ -2856,6 +2859,7 @@
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				92116BE7281A87200061086E /* MyTestView.swift in Sources */,
 				92F06AC0287D560F00ADA9E9 /* PrivacyLevel.swift in Sources */,
+				923BF93329654C8C00675424 /* UsingOptionSet.swift in Sources */,
 				92A417E62812A48000603DCE /* SettingView.swift in Sources */,
 				920C4FF1273276480091487B /* KVODemoViewController.m in Sources */,
 				92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */,
