@@ -32,6 +32,7 @@ class Renderer: NSObject {
             let commandQueue = device.makeCommandQueue() else {
             fatalError("GPU not available")
         }
+        // 在可以进入初始化阶段的位置，分离Metal任务。在应用程序启动时初始化设备、命令队列、管道状态和模型数据缓冲区一次。
         Renderer.device = device
         Renderer.commandQueue = commandQueue
         metalView.device = device
@@ -119,6 +120,7 @@ extension Renderer: MTKViewDelegate {
         
     }
     // 调用每帧。这是编写渲染代码的地方。
+    // 每帧创建一个命令缓冲区和一个或多个命令编码器。
     func draw(in view: MTKView) {
         // 您将向包含在命令编码器command encoders中的GPU发送一系列命令。
         // 在一个帧中，可能有多个命令编码器，命令缓冲区command buffer管理这些编码器。
