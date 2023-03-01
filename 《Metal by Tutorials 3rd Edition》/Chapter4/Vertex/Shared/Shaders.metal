@@ -87,16 +87,34 @@ struct VertexOut {
     float pointSize [[point_size]];
 };
 
-vertex VertexOut vertex_main(VertexIn in [[stage_in]],
-                          constant float &timer [[buffer(11)]]) {
-//    现在，您将返回位置和颜色，而不是仅从顶点函数返回位置。指定一个位置属性，让GPU知道此结构中的哪个属性是位置。
-    VertexOut out {
-        .position = in.position,
-        .color = in.color,
-        .pointSize = 30
-    };
-    return out;
-}
+//vertex VertexOut vertex_main(VertexIn in [[stage_in]],
+//                          constant float &timer [[buffer(11)]]) {
+////    现在，您将返回位置和颜色，而不是仅从顶点函数返回位置。指定一个位置属性，让GPU知道此结构中的哪个属性是位置。
+//    VertexOut out {
+//        .position = in.position,
+//        .color = in.color,
+//        .pointSize = 30
+//    };
+//    return out;
+//}
+
+vertex VertexOut vertex_main(
+  constant uint &count [[buffer(0)]],
+  constant float &timer [[buffer(11)]],
+  uint vertexID [[vertex_id]])
+{
+  float radius = 0.8;
+  float pi = 3.14159;
+  float current = float(vertexID) / float(count);
+  float2 position;
+  position.x = radius * cos(2 * pi * current);
+  position.y = radius * sin(2 * pi * current);
+  VertexOut out {
+      .position = float4(position, 0, 1),
+      .color = float4(1, 0, 0, 1),
+      .pointSize = 20
+};
+return out; }
 
 fragment float4 fragment_main(VertexOut in [[stage_in]]) {
     // [[stage_in]]属性表示GPU应该从顶点函数获取VertexOut输出，并将其与光栅化片段匹配。在这里，返回顶点颜色。请记住，在第3章“渲染管道”中，每个片段的输入都是插值的。

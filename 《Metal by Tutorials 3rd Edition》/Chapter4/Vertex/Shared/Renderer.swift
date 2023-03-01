@@ -42,6 +42,8 @@ class Renderer: NSObject {
     
     var timer: Float = 0
     
+    var count: UInt = 50
+    
     lazy var quad: Quad = {
         Quad(device: Renderer.device, scale: 0.8)
     }()
@@ -70,7 +72,7 @@ class Renderer: NSObject {
     pipelineDescriptor.colorAttachments[0].pixelFormat =
       metalView.colorPixelFormat
     // 使用顶点描述符 GPU现在将期望该顶点描述符所描述的格式的顶点。
-    pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultLayout
+//    pipelineDescriptor.vertexDescriptor = MTLVertexDescriptor.defaultLayout
     do {
       pipelineState =
         try device.makeRenderPipelineState(
@@ -105,6 +107,8 @@ extension Renderer: MTKViewDelegate {
           descriptor: descriptor) else {
         return
     }
+      
+      renderEncoder.setVertexBytes(&count, length: MemoryLayout<UInt>.stride, index: 0)
     // 1 对于每一帧，您都会更新计时器。您希望立方体在屏幕上上下移动，因此将使用介于-1和1之间的值。使用sin（）是实现这种平衡的好方法，因为正弦值总是-1到1。可以通过更改为每帧添加到此计时器的值来更改动画的速度。
     timer += 0.005
     var currentTime = sin(timer)
@@ -114,11 +118,11 @@ extension Renderer: MTKViewDelegate {
     renderEncoder.setRenderPipelineState(pipelineState)
 
     // do drawing here
-    renderEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: 0)
+//    renderEncoder.setVertexBuffer(quad.vertexBuffer, offset: 0, index: 0)
     // 使用顶点下标    使用顶点描述符后删除
 //    renderEncoder.setVertexBuffer(quad.indexBuffer, offset: 0, index: 1)
     // 设置颜色缓存  使用缓冲区索引1将颜色缓冲区发送到GPU，该索引必须与顶点描述符布局中的索引匹配。
-      renderEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: 1)
+//      renderEncoder.setVertexBuffer(quad.colorBuffer, offset: 0, index: 1)
       
     // 绘制quad的6个顶点
 //    renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: quad.vertices.count)
@@ -127,7 +131,9 @@ extension Renderer: MTKViewDelegate {
     // 使用顶点描述符后的绘制
 //      renderEncoder.drawIndexedPrimitives(type: .triangle, indexCount: quad.indices.count, indexType: .uint16, indexBuffer: quad.indexBuffer, indexBufferOffset: 0)
       // 渲染点
-      renderEncoder.drawIndexedPrimitives(type: .point, indexCount: quad.indices.count, indexType: .uint16, indexBuffer: quad.indexBuffer, indexBufferOffset: 0)
+//      renderEncoder.drawIndexedPrimitives(type: .point, indexCount: quad.indices.count, indexType: .uint16, indexBuffer: quad.indexBuffer, indexBufferOffset: 0)
+      
+      renderEncoder.drawPrimitives(type: .point, vertexStart: 0, vertexCount: Int(count))
 
     renderEncoder.endEncoding()
     guard let drawable = view.currentDrawable else {
