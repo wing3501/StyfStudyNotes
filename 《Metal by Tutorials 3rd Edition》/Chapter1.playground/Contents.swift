@@ -18,7 +18,7 @@ view.clearColor = MTLClearColor(red: 1, green: 1, blue: 0.8, alpha: 1)
 // 1 分配器管理网格数据的内存。
 let allocator = MTKMeshBufferAllocator(device: device)
 // 2 Model I/O创建具有指定大小的球体，并返回包含数据缓冲区中所有顶点信息的MDLMesh。
-let mdlMesh = MDLMesh(sphereWithExtent: [0.75, 0.75, 0.75],
+let mdlMesh = MDLMesh(sphereWithExtent: [0.75, 0.75, 0.75], //球体大小
                       segments: [100, 100],
                       inwardNormals: false,
                       geometryType: .triangles,
