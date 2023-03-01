@@ -93,8 +93,8 @@ class Renderer: NSObject {
         pipelineDescriptor.vertexFunction = vertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
         pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat
-        pipelineDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mdlMesh.vertexDescriptor)
-        
+//        pipelineDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mdlMesh.vertexDescriptor)
+        pipelineDescriptor.vertexDescriptor = vertexDescriptor
         do {
             //为了提高效率，您应该设置缠绕顺序，并在管道状态下启用背面剔除。
             pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
