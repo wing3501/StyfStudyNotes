@@ -38,18 +38,44 @@ class Renderer: NSObject {
         
         // create the mesh 此代码创建立方体网格
         let allocator = MTKMeshBufferAllocator(device: device)
-        let size: Float = 0.8
-        let mdlMesh = MDLMesh(boxWithExtent: [size, size, size],
-                              segments: [1, 1, 1],
-                              inwardNormals: false,
-                              geometryType: .triangles,
-                              allocator: allocator)
+//        let size: Float = 0.8
+//        let mdlMesh = MDLMesh(boxWithExtent: [size, size, size],
+//                              segments: [1, 1, 1],
+//                              inwardNormals: false,
+//                              geometryType: .triangles,
+//                              allocator: allocator)
+//        do {
+//            mesh = try MTKMesh(mesh: mdlMesh, device: device)
+//        } catch let error {
+//            print(error.localizedDescription)
+//        }
+//        // 设置包含要发送到GPU的顶点数据的MTLBuffer。
+//        vertexBuffer = mesh.vertexBuffers[0].buffer
+        // 火车模型
+        guard let assetURL = Bundle.main.url(
+          forResource: "train",
+          withExtension: "usd") else {
+          fatalError()
+        }
+        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].offset = 0
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.layouts[0].stride = MemoryLayout<SIMD3<Float>>.stride
+        let meshDescriptor = MTKModelIOVertexDescriptorFromMetal(vertexDescriptor)
+        (meshDescriptor.attributes[0] as! MDLVertexAttribute).name = MDLVertexAttributePosition
+        let asset = MDLAsset(
+          url: assetURL,
+          vertexDescriptor: meshDescriptor,
+          bufferAllocator: allocator)
+        let mdlMesh =
+          asset.childObjects(of: MDLMesh.self).first as! MDLMesh
+
         do {
             mesh = try MTKMesh(mesh: mdlMesh, device: device)
         } catch let error {
             print(error.localizedDescription)
         }
-        // 设置包含要发送到GPU的顶点数据的MTLBuffer。
         vertexBuffer = mesh.vertexBuffers[0].buffer
         
         // 接下来，您需要设置管道状态，以便GPU知道如何渲染数据。

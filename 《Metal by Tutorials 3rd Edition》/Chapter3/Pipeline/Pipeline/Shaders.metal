@@ -18,7 +18,12 @@ struct VertexIn {
 vertex float4 vertex_main(const VertexIn vertexIn [[stage_in]])
 {
     // 请记住，顶点在顶点缓冲区中进行索引。顶点着色器通过[[stage_in]]属性获取当前顶点索引，并在当前索引处解开为顶点缓存的VertexIn结构。
-  return vertexIn.position;
+//  return vertexIn.position;
+    
+    // 火车垂直位置
+    float4 position = vertexIn.position;
+    position.y -= 1.0;
+    return position;
 }
 
 fragment float4 fragment_main() {

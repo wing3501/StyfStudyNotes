@@ -14,6 +14,7 @@
 		6217B4DF29AEFECD0003AB02 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217B4DE29AEFECD0003AB02 /* MetalView.swift */; };
 		6217B4E129AF002F0003AB02 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217B4E029AF002F0003AB02 /* Renderer.swift */; };
 		6217B4E329AF19BF0003AB02 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6217B4E229AF19BF0003AB02 /* Shaders.metal */; };
+		6217B4E529AF23ED0003AB02 /* train.usd in Resources */ = {isa = PBXBuildFile; fileRef = 6217B4E429AF23ED0003AB02 /* train.usd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6217B4DE29AEFECD0003AB02 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		6217B4E029AF002F0003AB02 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		6217B4E229AF19BF0003AB02 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		6217B4E429AF23ED0003AB02 /* train.usd */ = {isa = PBXFileReference; lastKnownFileType = file; path = train.usd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6217B4DE29AEFECD0003AB02 /* MetalView.swift */,
 				6217B4E029AF002F0003AB02 /* Renderer.swift */,
 				6217B4E229AF19BF0003AB02 /* Shaders.metal */,
+				6217B4E429AF23ED0003AB02 /* train.usd */,
 				6217B4D329AEFE2E0003AB02 /* Assets.xcassets */,
 				6217B4D529AEFE2E0003AB02 /* Pipeline.entitlements */,
 				6217B4D629AEFE2E0003AB02 /* Preview Content */,
@@ -138,6 +141,7 @@
 			files = (
 				6217B4D829AEFE2E0003AB02 /* Preview Assets.xcassets in Resources */,
 				6217B4D429AEFE2E0003AB02 /* Assets.xcassets in Resources */,
+				6217B4E529AF23ED0003AB02 /* train.usd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
