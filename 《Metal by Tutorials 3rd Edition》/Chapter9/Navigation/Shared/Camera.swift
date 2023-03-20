@@ -50,8 +50,13 @@ struct FPCamera: Camera {
         float4x4(projectionFov: fov, near: near, far: far, aspect: aspect)
     }
     
+//    var viewMatrix: float4x4 {
+//        (float4x4(rotation: rotation) * float4x4(translation: position)).inverse
+//    }
+    //然而，你不希望第一人称相机中的相机绕着世界原点旋转：你希望它绕着自己的原点旋转
+    //在这里，您可以反转矩阵乘法的顺序，以便相机绕其自身原点旋转。
     var viewMatrix: float4x4 {
-        (float4x4(rotation: rotation) * float4x4(translation: position)).inverse
+        (float4x4(translation: position) * float4x4(rotation: rotation)).inverse
     }
     
     mutating func update(size: CGSize) {
