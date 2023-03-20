@@ -30,34 +30,35 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import MetalKit
-
-struct GameScene {
-    lazy var house: Model = {
-        Model(name: "lowpoly-house.obj")
-    }()
+import CoreGraphics
+// 摄影机有一个位置和旋转，因此它们应该符合“可变换”。所有相机都有一个投影和视图矩阵，以及在窗口大小更改和每个帧更新时执行的方法。
+protocol Camera: Transformable {
+    var projectionMatrix: float4x4 { get }
+    var viewMatrix: float4x4 { get }
+    mutating func update(size: CGSize)
+    mutating func update(deltaTime: Float)
+}
+// 您创建了第一人称相机。最终，当您按下W键时，此相机将向前移动。
+struct FPCamera: Camera {
+    var transform = Transform()
     
-    lazy var ground: Model = {
-        var ground = Model(name: "plane.obj")
-        ground.tiling = 16
-        ground.scale = 40
-        return ground
-    }()
-    lazy var models: [Model] = [ground, house]
-    var camera = FPCamera()
-    init() {
-        camera.position = [0, 1.5, -5]
+    var aspect: Float = 1.0
+    var fov = Float(70).degreesToRadians
+    var near: Float = 0.1
+    var far: Float = 100
+    var projectionMatrix: float4x4 {
+        float4x4(projectionFov: fov, near: near, far: far, aspect: aspect)
     }
     
-    mutating func update(deltaTime: Float) {
-        ground.scale = 40
-//        ground.rotation.y = sin(deltaTime)
-//        house.rotation.y = sin(deltaTime)
-        // 现在，你可以很容易地旋转相机，而不是旋转地面和房子。
-        camera.rotation.y = sin(deltaTime)
+    var viewMatrix: float4x4 {
+        (float4x4(rotation: rotation) * float4x4(translation: position)).inverse
     }
     
     mutating func update(size: CGSize) {
-        camera.update(size: size)
+        aspect = Float(size.width / size.height)
+    }
+    // 此方法在每帧重新定位相机
+    mutating func update(deltaTime: Float) {
+        
     }
 }
