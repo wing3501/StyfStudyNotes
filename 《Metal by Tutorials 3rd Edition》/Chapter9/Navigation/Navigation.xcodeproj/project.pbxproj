@@ -11,6 +11,8 @@
 		6273E17229C886F100829043 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17029C886F100829043 /* GameScene.swift */; };
 		6273E17429C88B4000829043 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17329C88B4000829043 /* Camera.swift */; };
 		6273E17529C88B4000829043 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17329C88B4000829043 /* Camera.swift */; };
+		6273E17729C8950C00829043 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17629C8950C00829043 /* InputController.swift */; };
+		6273E17829C8950C00829043 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17629C8950C00829043 /* InputController.swift */; };
 		82044E4226C8B6B5008347C1 /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3E26C8B6B5008347C1 /* lowpoly-house.mtl */; };
 		82044E4326C8B6B5008347C1 /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3E26C8B6B5008347C1 /* lowpoly-house.mtl */; };
 		82044E4426C8B6B5008347C1 /* lowpoly-house.obj in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3F26C8B6B5008347C1 /* lowpoly-house.obj */; };
@@ -54,6 +56,7 @@
 /* Begin PBXFileReference section */
 		6273E17029C886F100829043 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6273E17329C88B4000829043 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		6273E17629C8950C00829043 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		82044E3E26C8B6B5008347C1 /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
 		82044E3F26C8B6B5008347C1 /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
 		82044E4626C8BA80008347C1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 				820B882C26B8E5290070A134 /* VertexDescriptor.swift */,
 				8245BA99274DBEB0005E559B /* TextureController.swift */,
 				6273E17029C886F100829043 /* GameScene.swift */,
+				6273E17629C8950C00829043 /* InputController.swift */,
 				6273E17329C88B4000829043 /* Camera.swift */,
 				820B884026B90B770070A134 /* Common.h */,
 				820B883D26B90B530070A134 /* Shaders.metal */,
@@ -335,6 +339,7 @@
 				820B882D26B8E5290070A134 /* VertexDescriptor.swift in Sources */,
 				820B882A26B8E51B0070A134 /* Model.swift in Sources */,
 				820B883426B8E54A0070A134 /* MathLibrary.swift in Sources */,
+				6273E17729C8950C00829043 /* InputController.swift in Sources */,
 				820B882726B8E50F0070A134 /* Renderer.swift in Sources */,
 				8224335426CB7C6A00F627C5 /* Mesh.swift in Sources */,
 				820B882426B8E4FE0070A134 /* MetalView.swift in Sources */,
@@ -357,6 +362,7 @@
 				820B882E26B8E5290070A134 /* VertexDescriptor.swift in Sources */,
 				820B882B26B8E51B0070A134 /* Model.swift in Sources */,
 				820B883526B8E54A0070A134 /* MathLibrary.swift in Sources */,
+				6273E17829C8950C00829043 /* InputController.swift in Sources */,
 				820B882826B8E50F0070A134 /* Renderer.swift in Sources */,
 				8224335526CB7C6A00F627C5 /* Mesh.swift in Sources */,
 				820B882526B8E4FE0070A134 /* MetalView.swift in Sources */,

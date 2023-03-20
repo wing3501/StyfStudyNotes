@@ -30,38 +30,33 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import MetalKit
+import GameController
 
-struct GameScene {
-    lazy var house: Model = {
-        Model(name: "lowpoly-house.obj")
-    }()
-    
-    lazy var ground: Model = {
-        var ground = Model(name: "plane.obj")
-        ground.tiling = 16
-        ground.scale = 40
-        return ground
-    }()
-    lazy var models: [Model] = [ground, house]
-    var camera = FPCamera()
-    init() {
-        camera.position = [0, 1.5, -5]
-    }
-    
-    mutating func update(deltaTime: Float) {
-        ground.scale = 40
-//        ground.rotation.y = sin(deltaTime)
-//        house.rotation.y = sin(deltaTime)
-        // 现在，你可以很容易地旋转相机，而不是旋转地面和房子。
-        camera.rotation.y = sin(deltaTime)
-        
-        if InputController.shared.keysPressed.contains(.keyH) {
-            print("H key pressed")
+class InputController {
+    static let shared = InputController()
+    // 在该set中，InputController会跟踪当前按下的所有键。
+    var keysPressed: Set<GCKeyCode> = []
+    // 要跟踪键盘，您需要设置一个观察者。
+    private init() {
+        // 在这里，当键盘第一次连接到应用程序时，您添加了一个观察者来设置keyChangedHandler。当玩家按下或举起一个键时，keyChangedHandler代码会运行，并从集合中添加或删除该键。
+        let center = NotificationCenter.default
+        center.addObserver(forName: .GCKeyboardDidConnect, object: nil, queue: nil) { notification in
+            let keyboard = notification.object as? GCKeyboard
+            keyboard?.keyboardInput?.keyChangedHandler = { _, _, keyCode, pressed in
+                if pressed {
+                    self.keysPressed.insert(keyCode)
+                }else {
+                    self.keysPressed.remove(keyCode)
+                }
+            }
         }
-    }
-    
-    mutating func update(size: CGSize) {
-        camera.update(size: size)
+        //在这里，仅在macOS上，您可以通过处理任何按键并告诉系统在按键时不需要采取行动来中断视图的响应器链。iPadOS不需要这样做，因为iPad不会发出键盘噪音。
+        
+        // 在这段代码中，您可以将键添加到keysPressed中，而不用使用观察器。然而，这在iPadOS上不起作用，而且GCKeyCode比NSEvent提供的原始键值更容易读取。
+        #if os(macOS)
+        NSEvent.addLocalMonitorForEvents(matching: [.keyUp, .keyDown]) { _ in
+            nil
+        }
+        #endif
     }
 }
