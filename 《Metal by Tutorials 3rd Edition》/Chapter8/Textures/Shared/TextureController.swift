@@ -42,7 +42,8 @@ enum TextureController {
         // 2 更改纹理的原点选项，以确保纹理加载时其原点位于左下角，这正是lowpoly-house-color.png所需要的。
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .origin: MTKTextureLoader.Origin.bottomLeft,
-            .SRGB: false // 解决sRGB纹理颜色偏暗的问题
+            .SRGB: false, // 解决sRGB纹理颜色偏暗的问题
+            .generateMipmaps: NSNumber(value: true) //生成mipmaps
         ]
         // 3
         let fileExtension = URL(fileURLWithPath: filename).pathExtension.isEmpty ? "png" : nil

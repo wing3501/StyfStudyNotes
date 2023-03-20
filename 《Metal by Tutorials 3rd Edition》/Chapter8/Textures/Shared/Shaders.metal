@@ -79,7 +79,10 @@ fragment float4 fragment_main(
     // 在这里，使用顶点函数发送的插值UV坐标对纹理进行采样，然后检索RGB值。在“Metal Shading Language”中，可以使用rgb将浮点元素作为xyz的等效元素进行寻址。然后从fragment函数返回纹理颜色。
 //    float3 baseColor = baseColorTexture.sample(textureSampler, in.uv).rgb;
     // 此代码将UV坐标乘以16，并访问0到1的允许限制之外的纹理。address：：repeat更改采样器的寻址模式，因此它将在平面上重复纹理16次。
-    constexpr sampler textureSampler(filter::linear, address::repeat);
+    //constexpr sampler textureSampler(filter::linear, address::repeat);
+    // 使用mipmap  mip_filter的默认值为none。但是，如果您提供.lineral或.snearless，则GPU将对正确的mipmap进行采样。
+    constexpr sampler textureSampler(filter::linear, address::repeat, mip_filter::linear);
+    
 //    float3 baseColor = baseColorTexture.sample(textureSampler, in.uv * 16).rgb; //房子的纹理也被平铺了
     float3 baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
     return float4(baseColor, 1);
