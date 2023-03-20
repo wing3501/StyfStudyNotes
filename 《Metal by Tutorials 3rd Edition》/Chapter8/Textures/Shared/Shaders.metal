@@ -81,8 +81,8 @@ fragment float4 fragment_main(
     // 此代码将UV坐标乘以16，并访问0到1的允许限制之外的纹理。address：：repeat更改采样器的寻址模式，因此它将在平面上重复纹理16次。
     //constexpr sampler textureSampler(filter::linear, address::repeat);
     // 使用mipmap  mip_filter的默认值为none。但是，如果您提供.lineral或.snearless，则GPU将对正确的mipmap进行采样。
-    constexpr sampler textureSampler(filter::linear, address::repeat, mip_filter::linear);
-    
+    constexpr sampler textureSampler(filter::linear, address::repeat,max_anisotropy(8), mip_filter::linear);
+    // max_anisotropy(8) Metal现在将从纹素中提取八个样本来构建fragment。您最多可以指定16个样本来提高质量。尽可能少地使用以获得所需的质量，因为采样可能会减慢渲染速度。
 //    float3 baseColor = baseColorTexture.sample(textureSampler, in.uv * 16).rgb; //房子的纹理也被平铺了
     float3 baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
     return float4(baseColor, 1);
