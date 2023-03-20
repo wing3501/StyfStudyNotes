@@ -39,6 +39,12 @@ enum TextureController {
     static func loadTexture(filename: String) throws -> MTLTexture? {
         // 1
         let textureLoader = MTKTextureLoader(device: Renderer.device)
+        // 从asset catalog加载纹理 修改asset里的加载方式为data
+        if let texture = try? textureLoader.newTexture(name: filename, scaleFactor: 1.0, bundle: Bundle.main, options: nil) {
+            print("loaded texture: \(filename)")
+            return texture
+        }
+        
         // 2 更改纹理的原点选项，以确保纹理加载时其原点位于左下角，这正是lowpoly-house-color.png所需要的。
         let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
             .origin: MTKTextureLoader.Origin.bottomLeft,

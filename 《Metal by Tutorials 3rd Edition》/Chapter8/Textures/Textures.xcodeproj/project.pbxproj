@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6273E16829C83F0100829043 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E16729C83F0100829043 /* TextureController.swift */; };
 		6273E16929C83F0100829043 /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E16729C83F0100829043 /* TextureController.swift */; };
+		6273E16B29C875C100829043 /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6273E16A29C875C100829043 /* Textures.xcassets */; };
+		6273E16C29C875C100829043 /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6273E16A29C875C100829043 /* Textures.xcassets */; };
 		82044E4026C8B6B5008347C1 /* lowpoly-house-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3D26C8B6B5008347C1 /* lowpoly-house-color.png */; };
 		82044E4126C8B6B5008347C1 /* lowpoly-house-color.png in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3D26C8B6B5008347C1 /* lowpoly-house-color.png */; };
 		82044E4226C8B6B5008347C1 /* lowpoly-house.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 82044E3E26C8B6B5008347C1 /* lowpoly-house.mtl */; };
@@ -55,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		6273E16729C83F0100829043 /* TextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		6273E16A29C875C100829043 /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
 		82044E3D26C8B6B5008347C1 /* lowpoly-house-color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lowpoly-house-color.png"; sourceTree = "<group>"; };
 		82044E3E26C8B6B5008347C1 /* lowpoly-house.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.mtl"; sourceTree = "<group>"; };
 		82044E3F26C8B6B5008347C1 /* lowpoly-house.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "lowpoly-house.obj"; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 				8224335626CB7C7100F627C5 /* Submesh.swift */,
 				820B882C26B8E5290070A134 /* VertexDescriptor.swift */,
 				6273E16729C83F0100829043 /* TextureController.swift */,
+				6273E16A29C875C100829043 /* Textures.xcassets */,
 				820B884026B90B770070A134 /* Common.h */,
 				820B883D26B90B530070A134 /* Shaders.metal */,
 				820B883626B8E5570070A134 /* Models */,
@@ -278,6 +282,7 @@
 				8224334826CB7A9300F627C5 /* ground.png in Resources */,
 				82044E4026C8B6B5008347C1 /* lowpoly-house-color.png in Resources */,
 				8224334A26CB7A9300F627C5 /* plane.obj in Resources */,
+				6273E16B29C875C100829043 /* Textures.xcassets in Resources */,
 				8224334F26CB7AE000F627C5 /* lowpoly-barn-color.png in Resources */,
 				820B881726B8E47E0070A134 /* Assets.xcassets in Resources */,
 				8224334626CB7A9300F627C5 /* plane.mtl in Resources */,
@@ -294,6 +299,7 @@
 				8224334926CB7A9300F627C5 /* ground.png in Resources */,
 				82044E4126C8B6B5008347C1 /* lowpoly-house-color.png in Resources */,
 				8224334B26CB7A9300F627C5 /* plane.obj in Resources */,
+				6273E16C29C875C100829043 /* Textures.xcassets in Resources */,
 				8224335026CB7AE000F627C5 /* lowpoly-barn-color.png in Resources */,
 				820B881826B8E47E0070A134 /* Assets.xcassets in Resources */,
 				8224334726CB7A9300F627C5 /* plane.mtl in Resources */,
