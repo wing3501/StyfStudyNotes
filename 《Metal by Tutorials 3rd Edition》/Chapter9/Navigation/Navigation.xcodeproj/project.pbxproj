@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		623B37D229C9A337007458F4 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B37D129C9A336007458F4 /* Movement.swift */; };
+		623B37D329C9A337007458F4 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623B37D129C9A336007458F4 /* Movement.swift */; };
 		6273E17129C886F100829043 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17029C886F100829043 /* GameScene.swift */; };
 		6273E17229C886F100829043 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17029C886F100829043 /* GameScene.swift */; };
 		6273E17429C88B4000829043 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6273E17329C88B4000829043 /* Camera.swift */; };
@@ -54,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		623B37D129C9A336007458F4 /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		6273E17029C886F100829043 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6273E17329C88B4000829043 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		6273E17629C8950C00829043 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 				820B882C26B8E5290070A134 /* VertexDescriptor.swift */,
 				8245BA99274DBEB0005E559B /* TextureController.swift */,
 				6273E17029C886F100829043 /* GameScene.swift */,
+				623B37D129C9A336007458F4 /* Movement.swift */,
 				6273E17629C8950C00829043 /* InputController.swift */,
 				6273E17329C88B4000829043 /* Camera.swift */,
 				820B884026B90B770070A134 /* Common.h */,
@@ -350,6 +354,7 @@
 				6273E17429C88B4000829043 /* Camera.swift in Sources */,
 				8245BA9A274DBEB1005E559B /* TextureController.swift in Sources */,
 				6273E17129C886F100829043 /* GameScene.swift in Sources */,
+				623B37D229C9A337007458F4 /* Movement.swift in Sources */,
 				820B881326B8E47E0070A134 /* NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +378,7 @@
 				6273E17529C88B4000829043 /* Camera.swift in Sources */,
 				8245BA9B274DBEB1005E559B /* TextureController.swift in Sources */,
 				6273E17229C886F100829043 /* GameScene.swift in Sources */,
+				623B37D329C9A337007458F4 /* Movement.swift in Sources */,
 				820B881426B8E47E0070A134 /* NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

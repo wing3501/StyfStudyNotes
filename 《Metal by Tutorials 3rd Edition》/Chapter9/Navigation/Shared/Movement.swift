@@ -30,44 +30,33 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import CoreGraphics
-// 摄影机有一个位置和旋转，因此它们应该符合“可变换”。所有相机都有一个投影和视图矩阵，以及在窗口大小更改和每个帧更新时执行的方法。
-protocol Camera: Transformable {
-    var projectionMatrix: float4x4 { get }
-    var viewMatrix: float4x4 { get }
-    mutating func update(size: CGSize)
-    mutating func update(deltaTime: Float)
+import Foundation
+
+enum Settings {
+    static var rotationSpeed: Float { 2.0 } // 相机在一秒钟内应该旋转多少弧度。您将计算相机在增量时间内应旋转的量。
+    static var translationSpeed: Float { 3.0 } // 相机每秒应该移动的距离。
+    static var mouseScrollSensitivity: Float { 0.1 } // 用于调整鼠标跟踪和滚动的设置。
+    static var mousePanSensitivity: Float { 0.008 }
 }
-// 您创建了第一人称相机。最终，当您按下W键时，此相机将向前移动。
-struct FPCamera: Camera {
-    var transform = Transform()
+// 你的游戏可能会移动玩家的物体，而不是相机，所以让移动代码尽可能灵活。现在，您可以为任何可变换对象指定“移动”。
+protocol Movement where Self: Transformable {
     
-    var aspect: Float = 1.0
-    var fov = Float(70).degreesToRadians
-    var near: Float = 0.1
-    var far: Float = 100
-    var projectionMatrix: float4x4 {
-        float4x4(projectionFov: fov, near: near, far: far, aspect: aspect)
-    }
-    
-//    var viewMatrix: float4x4 {
-//        (float4x4(rotation: rotation) * float4x4(translation: position)).inverse
-//    }
-    //然而，你不希望第一人称相机中的相机绕着世界原点旋转：你希望它绕着自己的原点旋转
-    //在这里，您可以反转矩阵乘法的顺序，以便相机绕其自身原点旋转。
-    var viewMatrix: float4x4 {
-        (float4x4(translation: position) * float4x4(rotation: rotation)).inverse
-    }
-    
-    mutating func update(size: CGSize) {
-        aspect = Float(size.width / size.height)
-    }
-    // 此方法在每帧重新定位相机
-    mutating func update(deltaTime: Float) {
-        // 使用在“Movement”中计算的变换更新摄影机的旋转。
-        let transform = updateInput(deltaTime: deltaTime)
-        rotation += transform.rotation
+}
+
+extension Movement {
+    // 你会发现按键Pressed是否包含箭头键。如果是，则更改变换旋转值。
+    func updateInput(deltaTime: Float) -> Transform {
+        var transform = Transform()
+        let rotationAmount = deltaTime * Settings.rotationSpeed
+        let input = InputController.shared
+        if input.keysPressed.contains(.leftArrow) {
+            transform.rotation.y -= rotationAmount
+        }
+        if input.keysPressed.contains(.rightArrow) {
+            transform.rotation.y += rotationAmount
+        }
+        return transform
     }
 }
 
-extension FPCamera: Movement {}
+

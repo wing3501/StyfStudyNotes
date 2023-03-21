@@ -54,11 +54,12 @@ struct GameScene {
 //        ground.rotation.y = sin(deltaTime)
 //        house.rotation.y = sin(deltaTime)
         // 现在，你可以很容易地旋转相机，而不是旋转地面和房子。
-        camera.rotation.y = sin(deltaTime)
+//        camera.rotation.y = sin(deltaTime)
+        camera.update(deltaTime: deltaTime)
         
-        if InputController.shared.keysPressed.contains(.keyH) {
-            print("H key pressed")
-        }
+//        if InputController.shared.keysPressed.contains(.keyH) {
+//            print("H key pressed")
+//        }
     }
     
     mutating func update(size: CGSize) {

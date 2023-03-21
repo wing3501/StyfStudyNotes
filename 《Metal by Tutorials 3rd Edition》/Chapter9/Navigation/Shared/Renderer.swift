@@ -43,7 +43,9 @@ class Renderer: NSObject {
   var pipelineState: MTLRenderPipelineState!
   let depthStencilState: MTLDepthStencilState?
 
-  var timer: Float = 0
+//  var timer: Float = 0
+    // lastTime保存上一帧的时间。您可以使用当前时间对其进行初始化。
+    var lastTime: Double = CFAbsoluteTimeGetCurrent()
   var uniforms = Uniforms()
   var params = Params()
 
@@ -145,7 +147,8 @@ extension Renderer: MTKViewDelegate {
         return
     }
 
-    timer += 0.005
+//    timer += 0.005
+      
 //    uniforms.viewMatrix = float4x4(translation: [0, 1.5, -5]).inverse
 
     renderEncoder.setDepthStencilState(depthStencilState)
@@ -161,7 +164,13 @@ extension Renderer: MTKViewDelegate {
 //      encoder: renderEncoder,
 //      uniforms: uniforms,
 //      params: params)
-      scene.update(deltaTime: timer)
+      
+//      scene.update(deltaTime: timer)
+      
+      let currentTime = CFAbsoluteTimeGetCurrent()
+      let deltaTime = Float(currentTime - lastTime)
+      lastTime = currentTime
+      scene.update(deltaTime: deltaTime)
       
       uniforms.viewMatrix = scene.camera.viewMatrix
       uniforms.projectionMatrix = scene.camera.projectionMatrix
