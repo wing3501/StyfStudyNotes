@@ -67,6 +67,7 @@ struct FPCamera: Camera {
         // 使用在“Movement”中计算的变换更新摄影机的旋转。
         let transform = updateInput(deltaTime: deltaTime)
         rotation += transform.rotation
+        position += transform.position
     }
 }
 

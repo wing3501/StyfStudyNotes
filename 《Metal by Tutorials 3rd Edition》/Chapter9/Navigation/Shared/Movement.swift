@@ -55,7 +55,36 @@ extension Movement {
         if input.keysPressed.contains(.rightArrow) {
             transform.rotation.y += rotationAmount
         }
+        // 该代码处理每个按下的键，并创建最终所需的方向向量。例如，如果游戏玩家按下W和A，她想向左斜向前进。最终方向向量为[-1，0，1]。
+        var direction: float3 = .zero
+        if input.keysPressed.contains(.keyW) {
+            direction.z += 1
+        }
+        if input.keysPressed.contains(.keyS) {
+            direction.z -= 1
+        }
+        if input.keysPressed.contains(.keyA) {
+            direction.x -= 1
+        }
+        if input.keysPressed.contains(.keyD) {
+            direction.x += 1
+        }
+        // 在这里，您可以根据变换的当前正向和右向向量以及所需的方向来计算变换的位置。
+        let translationAmount = deltaTime * Settings.translationSpeed
+        if direction != .zero {
+            direction = normalize(direction)
+            transform.position += (direction.z * forwardVector + direction.x * rightVector) * translationAmount
+        }
+        
         return transform
+    }
+    // 这是基于当前旋转的正向矢量。
+    var forwardVector: float3 {
+        normalize([sin(rotation.y), 0, cos(rotation.y)])
+    }
+    // 该矢量指向正向矢量的右侧90o。
+    var rightVector: float3 {
+        [forwardVector.z, forwardVector.y, -forwardVector.x]
     }
 }
 
