@@ -36,6 +36,11 @@ class InputController {
     static let shared = InputController()
     // 在该set中，InputController会跟踪当前按下的所有键。
     var keysPressed: Set<GCKeyCode> = []
+    // 将这些属性添加到InputController以记录鼠标移动：
+    var leftMouseDown = false // 跟踪玩家左键点击
+    var mouseDelta = Point.zero // 自上次追踪到的移动后的移动。
+    var mouseScroll = Point.zero// 跟踪玩家使用鼠标滚轮滚动的次数。
+    
     // 要跟踪键盘，您需要设置一个观察者。
     private init() {
         // 在这里，当键盘第一次连接到应用程序时，您添加了一个观察者来设置keyChangedHandler。当玩家按下或举起一个键时，keyChangedHandler代码会运行，并从集合中添加或删除该键。
@@ -58,5 +63,34 @@ class InputController {
             nil
         }
         #endif
+        
+        center.addObserver(forName: .GCMouseDidConnect, object: nil, queue: nil) { notification in
+            let mouse = notification.object as? GCMouse
+            // 1 当用户按住鼠标左键时进行记录。
+            mouse?.mouseInput?.leftButton.pressedChangedHandler = { _, _, pressed in
+                self.leftMouseDown = pressed
+            }
+            // 2 跟踪鼠标移动。
+            mouse?.mouseInput?.mouseMovedHandler = { _, deltaX, deltaY in
+                self.mouseDelta = Point(x: deltaX, y: deltaY)
+            }
+            // 3 记录滚轮的移动。xValue和yValue是介于-1和1之间的标准化值。如果您使用游戏控制器而不是鼠标，第一个参数是dpad，它会告诉您哪个方向板元素发生了更改
+            mouse?.mouseInput?.scroll.valueChangedHandler = { _, xValue, yValue in
+                self.mouseScroll.x = xValue
+                self.mouseScroll.y = yValue
+            }
+        }
     }
+    
+    struct Point {
+        var x: Float
+        var y: Float
+        static let zero = Point(x: 0, y: 0)
+    }
+    
+    
 }
+
+
+
+
