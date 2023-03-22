@@ -126,3 +126,37 @@ struct ArcballCamera: Camera {
         position = target + rotateVector.xyz
     }
 }
+
+//有时候，在一个大场景中看到正在发生的事情有点困难。为了帮助实现这一点，您将构建一个自上而下的相机，它可以显示整个场景，而不会出现任何透视失真。
+struct OrthographicCamera: Camera, Movement {
+    var transform = Transform()
+    // aspect是窗口的宽度与高度之比。viewSize是场景的单位大小。您将计算出长方体形状的投影截头体。
+    var aspect: CGFloat = 1
+    var viewSize: CGFloat = 10
+    var near: Float = 0.1
+    var far: Float = 100
+    
+    var viewMatrix: float4x4 {
+        (float4x4(translation: position) * float4x4(rotation: rotation)).inverse
+    }
+    
+    var projectionMatrix: float4x4 {
+        // 在这里，您可以使用视图大小和纵横比计算截头体前面的矩形
+        let rect = CGRect(x: -viewSize * aspect * 0.5, y: viewSize * 0.5, width: viewSize * aspect, height: viewSize)
+        return float4x4(orthographic: rect, near: near, far: far)
+    }
+    
+    mutating func update(size: CGSize) {
+        aspect = size.width / size.height
+    }
+    
+    mutating func update(deltaTime: Float) {
+//        使用前面的Movement代码使用WASD键在场景中移动。您不需要旋转，因为您要将相机定位为自上而下。使用鼠标滚动可以更改视图大小，从而可以放大和缩小场景。
+        let transform = updateInput(deltaTime: deltaTime)
+        position += transform.position
+        let input = InputController.shared
+        let zoom = input.mouseScroll.x + input.mouseScroll.y
+        viewSize -= CGFloat(zoom)
+        input.mouseScroll = .zero
+    }
+}

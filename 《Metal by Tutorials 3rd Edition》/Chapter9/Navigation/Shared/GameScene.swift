@@ -45,13 +45,20 @@ struct GameScene {
     }()
     lazy var models: [Model] = [ground, house]
 //    var camera = FPCamera()
-    var camera = ArcballCamera()
+//    var camera = ArcballCamera()
+    var camera = OrthographicCamera()
     
     init() {
         camera.position = [0, 1.5, -5]
         // 使用弧形球相机，可以设置目标和距离以及位置。
-        camera.distance = length(camera.position)
-        camera.target = [0, 1.2, 0]
+//        camera.distance = length(camera.position)
+//        camera.target = [0, 1.2, 0]
+        // 使用自上而下的相机
+//        camera.position = [3, 2, 0]
+//        camera.rotation.y = -.pi / 2
+        
+        camera.position = [0, 2, 0]
+        camera.rotation.x = .pi / 2
     }
     
     mutating func update(deltaTime: Float) {
