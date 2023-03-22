@@ -72,3 +72,57 @@ struct FPCamera: Camera {
 }
 
 extension FPCamera: Movement {}
+
+struct ArcballCamera: Camera {
+    var transform = Transform()
+    
+    var aspect: Float = 1.0
+    var fov = Float(70).degreesToRadians
+    var near: Float = 0.1
+    var far: Float = 100
+    var projectionMatrix: float4x4 {
+        float4x4(projectionFov: fov, near: near, far: far, aspect: aspect)
+    }
+    
+    var viewMatrix: float4x4 {
+        let matrix: float4x4
+        if target == position {
+            matrix = (float4x4(translation: target) * float4x4(rotationYXZ: rotation)).inverse
+        }else {
+            matrix = float4x4(eye: position, center: target, up: [0, 1, 0])
+        }
+        return matrix
+    }
+    
+    let minDistance: Float = 0.0
+    let maxDistance: Float = 20
+    var target: float3 = [0, 0, 0]
+    var distance: Float = 2.5
+    
+    mutating func update(size: CGSize) {
+        aspect = Float(size.width / size.height)
+    }
+    // 此方法在每帧重新定位相机
+    mutating func update(deltaTime: Float) {
+        // 根据鼠标滚动值更改距离。
+        let input = InputController.shared
+        let scrollSensitivity = Settings.mouseScrollSensitivity
+        distance -= (input.mouseScroll.x + input.mouseScroll.y) * scrollSensitivity
+        distance = min(minDistance, distance)
+        distance = max(minDistance, distance)
+        input.mouseScroll = .zero
+        // 如果玩家用鼠标左键拖动，则更新相机的旋转值。
+        if input.leftMouseDown {
+            let sensitivity = Settings.mouseScrollSensitivity
+            rotation.x += input.mouseDelta.y * sensitivity
+            rotation.y += input.mouseDelta.x * sensitivity
+            rotation.x = max(-.pi / 2, min(rotation.x, .pi / 2))
+            input.mouseDelta = .zero
+        }
+        // 完成计算以旋转距离矢量，并将目标位置添加到新矢量中。
+        let rotateMatrix = float4x4(rotationYXZ: [-rotation.x, rotation.y, 0])
+        let distanceVector = float4(0, 0, -distance, 0)
+        let rotateVector = rotateMatrix * distanceVector
+        position = target + rotateVector.xyz
+    }
+}
