@@ -65,6 +65,18 @@ struct SceneLighting {
         light.attenuation = [0.5, 2, 1]
         return light
     }()
+    // 该灯光类似于添加了锥角、方向和锥衰减的点光源。
+    lazy var spotlight: Light = {
+        var light = Self.buildDefaultLight()
+        light.type = Spot
+        light.position = [-0.64, 0.64, -1.07]
+        light.color = [1, 0, 1]
+        light.attenuation = [1, 0.5, 0]
+        light.coneAngle = Float(40).degreesToRadians
+        light.coneDirection = [0.5, -0.7, 1]
+        light.coneAttenuation = 8
+        return light
+    }()
     
     var lights: [Light] = []
     
@@ -72,5 +84,6 @@ struct SceneLighting {
         lights.append(sunlight)
         lights.append(ambientLight)
         lights.append(redLight)
+        lights.append(spotlight)
     }
 }

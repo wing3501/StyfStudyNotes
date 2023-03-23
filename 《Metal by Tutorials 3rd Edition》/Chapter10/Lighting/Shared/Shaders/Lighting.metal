@@ -88,6 +88,23 @@ float3 phongLighting(float3 normal,
                 break;
             }
             case Spot: {
+                // 1 计算距离和方向，就像对点光源所做的那样。这条光线可能在聚光锥的外面。
+                float d = distance(light.position, position);
+                float3 lightDirection = normalize(light.position - position);
+                // 2 计算光线方向和聚光灯指向的方向之间的余弦角（即点积）。
+                float3 coneDirection = normalize(light.coneDirection);
+                float spotResult = dot(lightDirection, -coneDirection);
+                // 3 如果该结果在圆锥体角度之外，则忽略光线。否则，计算点光源的衰减。指向同一方向的矢量的点积为1.0。
+                if (spotResult > cos(light.coneAngle)) {
+                    float attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * d + light.attenuation.z * d * d);
+                    // 4 使用锥形衰减作为功率计算聚光灯边缘的衰减。
+                    attenuation *= pow(spotResult, light.coneAttenuation);
+                    float diffuseIntensity = saturate(dot(lightDirection, normal));
+                    float3 color = light.color * baseColor * diffuseIntensity;
+                    color *= attenuation;
+                    diffuseColor += color;
+                }
+                
                 break;
             }
             case Ambient: {
