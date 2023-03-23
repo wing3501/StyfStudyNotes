@@ -65,6 +65,7 @@ float3 phongLighting(float3 normal,
                 break;
             }
             case Ambient: {
+                ambientColor += light.color;
                 break;
             }
             case unused: {
