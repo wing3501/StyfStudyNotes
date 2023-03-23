@@ -46,6 +46,11 @@ float3 phongLighting(float3 normal,
     float3 diffuseColor = 0;
     float3 ambientColor = 0;
     float3 specularColor = 0;
+    // 这些保持了表面材质的光泽因子和镜面反射颜色的属性。由于这些是曲面属性，您应该从每个模型的材质中获取这些值，您将在下一章中进行此操作。
+    float materialShininess = 32;
+    float3 materialSpecularColor = float3(1, 1, 1);
+    
+    
     for (uint i = 0; i < params.lightCount; i++) {
         Light light = lights[i];
         switch(light.type) {
@@ -56,6 +61,16 @@ float3 phongLighting(float3 normal,
                 float diffuseIntensity = saturate(-dot(lightDirection, normal));
                 // 3 将基础颜色乘以漫反射强度以获得漫反射着色。如果有多个太阳光，diffuseColor将累积漫反射着色。
                 diffuseColor += light.color * baseColor * diffuseIntensity;
+                
+                if (diffuseIntensity > 0) {
+                    // 1 (R)  对于镜面反射颜色的计算，您需要（L）光、（R）反射、（N）法线和（V）视图。您已经有了（L）和（N），所以在这里您可以使用Metal Shading Language函数reflect来获得（R）。
+                    float3 reflection = reflect(lightDirection, normal);
+                    // 2 (V)  对于（V），您需要片段和摄影机之间的视图向量。
+                    float3 viewDirection = normalize(params.cameraPosition);
+                    // 3 现在计算镜面反射强度。使用点积可以找到反射和视图之间的角度，使用饱和将结果夹在0和1之间，并使用pow将结果提高到亮度。然后使用该强度来计算碎片的镜面反射颜色。
+                    float specularIntensity = pow(saturate(dot(reflection, viewDirection)), materialShininess);
+                    specularColor += light.specularColor * materialSpecularColor * specularIntensity;
+                }
                 break;
             }
             case Point: {

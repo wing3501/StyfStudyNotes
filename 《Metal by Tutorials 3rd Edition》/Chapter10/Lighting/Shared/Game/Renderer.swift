@@ -112,6 +112,8 @@ extension Renderer {
     uniforms.projectionMatrix = scene.camera.projectionMatrix
     // 光照数量传参
     params.lightCount = UInt32(scene.lighting.lights.count)
+    // 环境光传入摄像机位置
+    params.cameraPosition = scene.camera.position
   }
 
   func draw(scene: GameScene, in view: MTKView) {
