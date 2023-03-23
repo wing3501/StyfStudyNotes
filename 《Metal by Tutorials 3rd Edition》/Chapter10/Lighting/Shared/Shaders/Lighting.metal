@@ -74,6 +74,17 @@ float3 phongLighting(float3 normal,
                 break;
             }
             case Point: {
+                // 1 你可以找到灯光和fragment位置之间的距离。
+                float d = distance(light.position, position);
+                // 2 对于定向太阳光，您使用该位置作为光的方向。在这里，您可以计算从fragment位置到灯光位置的方向。
+                float3 lightDirection = normalize(light.position - position);
+                // 3 使用衰减公式和距离计算衰减，看看fragment会有多亮。
+                float attenuation = 1.0 / (light.attenuation.x + light.attenuation.y * d + light.attenuation.z * d * d);
+                float diffuseIntensity = saturate(dot(lightDirection, normal));
+                float3 color = light.color * baseColor * diffuseIntensity;
+                // 4 像计算太阳光那样计算漫反射颜色后，将此颜色乘以衰减。
+                color *= attenuation;
+                diffuseColor += color;
                 break;
             }
             case Spot: {

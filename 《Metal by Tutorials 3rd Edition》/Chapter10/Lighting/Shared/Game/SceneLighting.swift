@@ -49,11 +49,20 @@ struct SceneLighting {
         light.position = [1, 2, -2]
         return light
     }()
-    
+    // 在现实世界中，颜色很少是纯黑的。到处都是光。若要模拟此情况，可以使用环境光。您可以找到场景中灯光的平均颜色，并将其应用于场景中的所有曲面。
     var ambientLight: Light = {
         var light = Self.buildDefaultLight()
         light.color = [0.05, 0.1, 0]
         light.type = Ambient
+        return light
+    }()
+    // 与将位置转换为平行方向向量的太阳光不同，点光源向所有方向发射光线。
+    var redLight: Light = {
+        var light = Self.buildDefaultLight()
+        light.type = Point
+        light.position = [-0.8, 0.76, -0.18]
+        light.color = [1, 0, 0]
+        light.attenuation = [0.5, 2, 1]
         return light
     }()
     
@@ -62,5 +71,6 @@ struct SceneLighting {
     init() {
         lights.append(sunlight)
         lights.append(ambientLight)
+        lights.append(redLight)
     }
 }
