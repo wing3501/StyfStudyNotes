@@ -32,7 +32,8 @@
 
 #include <metal_stdlib>
 using namespace metal;
-#import "Common.h"
+//#import "Common.h"
+#import "Lighting.h"
 
 struct VertexIn {
   float4 position [[attribute(Position)]];
@@ -87,5 +88,10 @@ fragment float4 fragment_main(
     textureSampler,
     in.uv * params.tiling).rgb;
   }
-  return float4(baseColor, 1);
+//  return float4(baseColor, 1);
+    // 在这里，您将世界法线设为单位向量，并使用必要的参数调用新的照明函数。
+    float3 normalDirection = normalize(in.worldNormal);
+    float3 color = phongLighting(normalDirection, in.worldPosition, params, lights, baseColor);
+    return float4(color, 1);
+    
 }

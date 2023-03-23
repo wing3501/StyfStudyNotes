@@ -139,6 +139,9 @@ extension Renderer {
         uniforms: uniforms,
         params: params)
     }
+      
+      // 增加光照调试
+      DebugLights.draw(lights: scene.lighting.lights, encoder: renderEncoder, uniforms: uniforms)
 
     renderEncoder.endEncoding()
     guard let drawable = view.currentDrawable else {
