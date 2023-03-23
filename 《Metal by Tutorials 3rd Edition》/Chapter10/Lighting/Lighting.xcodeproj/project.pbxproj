@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6220B3FF29CC2C070027C328 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6220B3FE29CC2C070027C328 /* SceneLighting.swift */; };
+		6220B40029CC2C070027C328 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6220B3FE29CC2C070027C328 /* SceneLighting.swift */; };
 		82044E4726C8BA80008347C1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82044E4626C8BA80008347C1 /* Options.swift */; };
 		82044E4826C8BA80008347C1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82044E4626C8BA80008347C1 /* Options.swift */; };
 		820B881326B8E47E0070A134 /* LightingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B880526B8E47D0070A134 /* LightingApp.swift */; };
@@ -62,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6220B3FE29CC2C070027C328 /* SceneLighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
 		82044E4626C8BA80008347C1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		820B880526B8E47D0070A134 /* LightingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingApp.swift; sourceTree = "<group>"; };
 		820B880626B8E47D0070A134 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 				827DDAED2738DE15000E88B4 /* GameScene.swift */,
 				82D9AD802738F23E003E025A /* Camera.swift */,
 				82D9AD8927390D8C003E025A /* PlayerCamera.swift */,
+				6220B3FE29CC2C070027C328 /* SceneLighting.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -403,6 +407,7 @@
 				820B881526B8E47E0070A134 /* ContentView.swift in Sources */,
 				82044E4726C8BA80008347C1 /* Options.swift in Sources */,
 				82F19CE52740BECA001C5657 /* DebugLights.metal in Sources */,
+				6220B3FF29CC2C070027C328 /* SceneLighting.swift in Sources */,
 				82D9AD812738F23E003E025A /* Camera.swift in Sources */,
 				82F19CE32740BECA001C5657 /* DebugLights.swift in Sources */,
 				82EDE5E626CCC4BB00DE47E4 /* TextureController.swift in Sources */,
@@ -431,6 +436,7 @@
 				820B881626B8E47E0070A134 /* ContentView.swift in Sources */,
 				82044E4826C8BA80008347C1 /* Options.swift in Sources */,
 				82F19CE62740BECA001C5657 /* DebugLights.metal in Sources */,
+				6220B40029CC2C070027C328 /* SceneLighting.swift in Sources */,
 				82D9AD822738F23E003E025A /* Camera.swift in Sources */,
 				82F19CE42740BECA001C5657 /* DebugLights.swift in Sources */,
 				82EDE5E726CCC4BB00DE47E4 /* TextureController.swift in Sources */,

@@ -39,12 +39,17 @@ typedef struct {
   matrix_float4x4 modelMatrix;
   matrix_float4x4 viewMatrix;
   matrix_float4x4 projectionMatrix;
+//    计算法线的新位置与顶点位置计算有点不同。MathLibrary.swift包含一个矩阵方法，用于从另一个矩阵创建法线矩阵。这个法线矩阵是一个3×3的矩阵，因为首先，你将在不需要投影的世界空间中进行照明，其次，平移对象不会影响法线的斜率。因此，您不需要第四个W维度。但是，如果在一个方向（非线性）缩放对象，则对象的法线将不再正交，这种方法将不起作用。只要你决定你的引擎不允许非线性缩放，那么你就可以使用模型矩阵的左上3×3部分，这就是你在这里要做的。
+  matrix_float3x3 normalMatrix; //这将保持世界空间中的法线矩阵。
 } Uniforms;
 
 typedef struct {
   uint width;
   uint height;
   uint tiling;
+  
+  uint lightCount;
+  vector_float3 cameraPosition;
 } Params;
 
 typedef enum {
@@ -60,10 +65,33 @@ typedef enum {
   ColorBuffer = 2,
   UniformsBuffer = 11,
   ParamsBuffer = 12,
+  LightBuffer = 13
 } BufferIndices;
 
 typedef enum {
   BaseColor = 0
 } TextureIndices;
+
+//创建将要使用的灯光类型的枚举：
+typedef enum {
+    unused = 0,
+    Sun = 1,
+    Spot = 2,
+    Point = 3,
+    Ambient = 4
+} LightType;
+
+//添加定义灯光的结构：
+typedef struct {
+    LightType type;
+    vector_float3 position;
+    vector_float3 color;
+    vector_float3 specularColor;
+    float radius;
+    vector_float3 attenuation;
+    float coneAngle;
+    vector_float3 coneDirection;
+    float coneAttenuation;
+} Light;
 
 #endif /* Common_h */

@@ -1,15 +1,15 @@
-/// Copyright (c) 2022 Razeware LLC
-///
+/// Copyright (c) 2023 Razeware LLC
+/// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-///
+/// 
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-///
+/// 
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -17,7 +17,7 @@
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-///
+/// 
 /// This project and source code may use libraries or frameworks that are
 /// released under various Open-Source licenses. Use of those libraries and
 /// frameworks are governed by their own individual licenses.
@@ -30,62 +30,29 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-#include <metal_stdlib>
-using namespace metal;
-#import "Common.h"
+import Foundation
 
-struct VertexIn {
-  float4 position [[attribute(Position)]];
-  float3 normal [[attribute(Normal)]];
-  float2 uv [[attribute(UV)]];
-  float3 color [[attribute(Color)]];
-};
-
-struct VertexOut {
-  float4 position [[position]];
-  float2 uv;
-  float3 color;
-    // 这些将保持世界空间中的顶点位置和顶点法线。
-    float3 worldPosition;
-    float3 worldNormal;
-};
-
-vertex VertexOut vertex_main(
-  const VertexIn in [[stage_in]],
-  constant Uniforms &uniforms [[buffer(UniformsBuffer)]])
-{
-  float4 position =
-    uniforms.projectionMatrix * uniforms.viewMatrix
-    * uniforms.modelMatrix * in.position;
-  VertexOut out {
-    .position = position,
-    .uv = in.uv,
-    .color = in.color,
-      .worldPosition = (uniforms.modelMatrix * in.position).xyz,//在这里，将顶点位置和法线转换为世界空间。
-      .worldNormal = uniforms.normalMatrix * in.normal
-  };
-  return out;
-}
-// 在片段着色器中，您可以获取这些值，并将片段颜色乘以点积，以获得片段的亮度。
-fragment float4 fragment_main(
-  VertexOut in [[stage_in]],
-  constant Params &params [[buffer(ParamsBuffer)]],
-  constant Light *lights [[buffer(LightBuffer)]],
-  texture2d<float> baseColorTexture [[texture(BaseColor)]])
-{
-  constexpr sampler textureSampler(
-    filter::linear,
-    address::repeat,
-    mip_filter::linear,
-    max_anisotropy(8));
-
-  float3 baseColor;
-  if (is_null_texture(baseColorTexture)) {
-    baseColor = in.color;
-  } else {
-    baseColor = baseColorTexture.sample(
-    textureSampler,
-    in.uv * params.tiling).rgb;
-  }
-  return float4(baseColor, 1);
+struct SceneLighting {
+    // 此文件将保存GameScene的照明。您将有多个灯光，buildDefaultLight（）将创建一个基本灯光。
+    static func buildDefaultLight() -> Light {
+        var light = Light()
+        light.position = [0, 0, 0]
+        light.color = [1, 1, 1]
+        light.specularColor = [0.6, 0.6, 0.6]
+        light.attenuation = [1, 0, 0]
+        light.type = Sun
+        return light
+    }
+    //位置在世界空间中。这将在场景的右侧和球体的前方放置一个灯光。球体被放置在世界的原点。
+    var sunlight: Light = {
+        var light = Self.buildDefaultLight()
+        light.position = [1, 2, -2]
+        return light
+    }()
+    
+    var lights: [Light] = []
+    
+    init() {
+        lights.append(sunlight)
+    }
 }

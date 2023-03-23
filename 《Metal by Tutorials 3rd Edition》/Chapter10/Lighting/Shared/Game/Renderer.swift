@@ -110,6 +110,8 @@ extension Renderer {
   func updateUniforms(scene: GameScene) {
     uniforms.viewMatrix = scene.camera.viewMatrix
     uniforms.projectionMatrix = scene.camera.projectionMatrix
+    // 光照数量传参
+    params.lightCount = UInt32(scene.lighting.lights.count)
   }
 
   func draw(scene: GameScene, in view: MTKView) {
@@ -126,6 +128,10 @@ extension Renderer {
 
     renderEncoder.setDepthStencilState(depthStencilState)
     renderEncoder.setRenderPipelineState(pipelineState)
+      
+      // 光照传参
+      var lights = scene.lighting.lights
+      renderEncoder.setFragmentBytes(&lights, length: MemoryLayout<Light>.stride * lights.count, index: LightBuffer.index)
 
     for model in scene.models {
       model.render(
