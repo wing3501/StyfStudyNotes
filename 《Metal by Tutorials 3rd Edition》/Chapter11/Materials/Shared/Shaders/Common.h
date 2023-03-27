@@ -67,7 +67,8 @@ typedef enum {
 } BufferIndices;
 
 typedef enum {
-  BaseColor = 0
+  BaseColor = 0,
+  NormalTexture = 1 // 您将使用该索引将法线纹理发送到片段着色器。
 } TextureIndices;
 
 typedef enum {

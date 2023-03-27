@@ -71,7 +71,8 @@ fragment float4 fragment_main(
   VertexOut in [[stage_in]],
   constant Params &params [[buffer(ParamsBuffer)]],
   constant Light *lights [[buffer(LightBuffer)]],
-  texture2d<float> baseColorTexture [[texture(BaseColor)]])
+  texture2d<float> baseColorTexture [[texture(BaseColor)]],
+  texture2d<float> normalTexture[[texture(NormalTexture)]])
 {
   constexpr sampler textureSampler(
     filter::linear,
@@ -87,7 +88,19 @@ fragment float4 fragment_main(
     textureSampler,
     in.uv * params.tiling).rgb;
   }
-  float3 normalDirection = normalize(in.worldNormal);
+  
+    // 现在您正在传输法线纹理贴图，第一步是将其应用于小屋，就像它是一个颜色纹理一样。
+    // 这将从纹理中读取normalValue（如果有）。如果此模型没有法线贴图纹理，请设置默认法线值。返回只是临时的，以确保应用程序正确加载法线贴图，并且法线贴图和UV匹配。
+    float3 normal;
+    if (is_null_texture(normalTexture)) {
+        normal = in.worldNormal;
+    }else {
+        normal = normalTexture.sample(textureSampler, in.uv * params.tiling).rgb;
+    }
+    normal = normalize(normal);
+//    return float4(normal, 1);
+    
+    float3 normalDirection = normalize(in.worldNormal);
   float3 color = phongLighting(
     normalDirection,
     in.worldPosition,

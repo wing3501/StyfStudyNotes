@@ -101,6 +101,8 @@ extension Model {
         encoder.setFragmentTexture(
           submesh.textures.baseColor,
           index: BaseColor.index)
+        //将法线纹理发送到GPU。
+          encoder.setFragmentTexture(submesh.textures.normal, index: NormalTexture.index)
 
         encoder.drawIndexedPrimitives(
           type: .triangle,
