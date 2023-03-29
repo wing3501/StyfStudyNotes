@@ -54,9 +54,23 @@ class Model: Transformable {
       url: assetURL,
       vertexDescriptor: meshDescriptor,
       bufferAllocator: allocator)
-    let (mdlMeshes, mtkMeshes) = try! MTKMesh.newMeshes(
-      asset: asset,
-      device: Renderer.device)
+//    let (mdlMeshes, mtkMeshes) = try! MTKMesh.newMeshes(
+//      asset: asset,
+//      device: Renderer.device)
+//      尝试重新加载顶点法线并覆盖平滑。
+      
+      var mtkMeshes: [MTKMesh] = []
+      let mdlMeshes = asset.childObjects(of: MDLMesh.self) as? [MDLMesh] ?? []
+      _ = mdlMeshes.map({ mdlMesh in
+          //      现在，您将首先加载MDLMeshe，并在初始化MTKMeshe之前对其进行更改。您要求模型I/O重新计算折痕阈值为1的法线。该折痕阈值介于0和1之间，用于确定平滑度，其中1.0是不平滑的。
+//          mdlMesh.addNormals(withAttributeNamed: MDLVertexAttributeNormal, creaseThreshold: 1.0)
+          
+//          提供的所有模型都有Blender提供的法线，但没有切线和二切线。此新代码生成并加载顶点切线和二切线值。
+          mdlMesh.addTangentBasis(forTextureCoordinateAttributeNamed: MDLVertexAttributeTextureCoordinate, tangentAttributeNamed: MDLVertexAttributeTangent, bitangentAttributeNamed: MDLVertexAttributeBitangent)
+          
+          mtkMeshes.append(try! MTKMesh(mesh: mdlMesh, device: Renderer.device))
+      })
+      
     meshes = zip(mdlMeshes, mtkMeshes).map {
       Mesh(mdlMesh: $0.0, mtkMesh: $0.1)
     }

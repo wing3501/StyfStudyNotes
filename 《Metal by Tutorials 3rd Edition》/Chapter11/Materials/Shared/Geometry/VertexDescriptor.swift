@@ -80,6 +80,14 @@ extension MDLVertexDescriptor {
         bufferIndex: ColorBuffer.index)
     vertexDescriptor.layouts[ColorBuffer.index]
       = MDLVertexBufferLayout(stride: MemoryLayout<float3>.stride)
+      
+    // 当您在Renderer中创建管道状态时，管道描述符现在将通知GPU它需要为这两个额外的缓冲区创建空间。重要的是要记住，模型的顶点描述符布局必须与渲染编码器的管道状态相匹配。此外，着色器的“顶点输入”（VertexIn）属性也应与顶点描述符匹配。
+    vertexDescriptor.attributes[Tangent.index] = MDLVertexAttribute(name: MDLVertexAttributeTangent, format: .float3, offset: 0, bufferIndex: TangentBuffer.index)
+    vertexDescriptor.layouts[TangentBuffer.index] = MDLVertexBufferLayout(stride: MemoryLayout<float3>.stride)
+    
+    vertexDescriptor.attributes[Bitangent.index] = MDLVertexAttribute(name: MDLVertexAttributeBitangent, format: .float3, offset: 0, bufferIndex: BitangentBuffer.index)
+    vertexDescriptor.layouts[BitangentBuffer.index] = MDLVertexBufferLayout(stride: MemoryLayout<float3>.stride)
+    
     return vertexDescriptor
   }()
 }
