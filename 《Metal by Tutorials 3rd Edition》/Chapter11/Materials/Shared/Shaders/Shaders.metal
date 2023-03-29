@@ -102,17 +102,27 @@ fragment float4 fragment_main(
         normal = in.worldNormal;
     }else {
         normal = normalTexture.sample(textureSampler, in.uv * params.tiling).rgb;
+        normal = normal * 2 - 1;
+        //此代码将法线方向重新计算为切线空间，以匹配法线纹理的切线空间。
+        normal = float3x3(in.worldTangent, in.worldBitangent, in.worldNormal) * normal;
     }
     normal = normalize(normal);
 //    return float4(normal, 1);
     
     float3 normalDirection = normalize(in.worldNormal);
-  float3 color = phongLighting(
-    normalDirection,
-    in.worldPosition,
-    params,
-    lights,
-    baseColor
-  );
+//  float3 color = phongLighting(
+//    normalDirection,
+//    in.worldPosition,
+//    params,
+//    lights,
+//    baseColor
+//  );
+    float3 color = phongLighting(
+      normal,
+      in.worldPosition,
+      params,
+      lights,
+      baseColor
+    );
   return float4(color, 1);
 }
