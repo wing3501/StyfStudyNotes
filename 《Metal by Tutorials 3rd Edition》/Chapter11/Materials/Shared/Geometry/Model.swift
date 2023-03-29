@@ -103,6 +103,7 @@ extension Model {
 
     for mesh in meshes {
       for (index, vertexBuffer) in mesh.vertexBuffers.enumerated() {
+//          此代码包括发送切线缓冲区和双切线缓冲区。您应该知道发送到GPU的缓冲区的数量。在Common.h中，您已经将UniformsBuffer设置为索引11，但如果您将其定义为索引4，那么现在将与bitangent缓冲区发生冲突。
         encoder.setVertexBuffer(
           vertexBuffer,
           offset: 0,
