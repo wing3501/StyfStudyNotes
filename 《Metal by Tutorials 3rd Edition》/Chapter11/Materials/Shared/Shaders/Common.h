@@ -67,7 +67,8 @@ typedef enum {
   BitangentBuffer = 4,
   UniformsBuffer = 11,
   ParamsBuffer = 12,
-  LightBuffer = 13
+  LightBuffer = 13,
+  MaterialBuffer = 14
 } BufferIndices;
 
 typedef enum {
@@ -93,5 +94,15 @@ typedef struct {
   vector_float3 coneDirection;
   float coneAttenuation;
 } Light;
+
+// 新结构以保存材质值：
+typedef struct {
+    vector_float3 baseColor;
+    vector_float3 specularColor;
+    float roughness;
+    float metallic;
+    float ambientOcclusion;
+    float shininess;
+} Material;
 
 #endif /* Common_h */

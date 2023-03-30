@@ -78,22 +78,31 @@ fragment float4 fragment_main(
   constant Params &params [[buffer(ParamsBuffer)]],
   constant Light *lights [[buffer(LightBuffer)]],
   texture2d<float> baseColorTexture [[texture(BaseColor)]],
-  texture2d<float> normalTexture[[texture(NormalTexture)]])
-{
+  texture2d<float> normalTexture[[texture(NormalTexture)]],
+  constant Material &_material [[buffer(MaterialBuffer)]]
+                              ){
+                                  
+  Material material = _material;
+                                  
   constexpr sampler textureSampler(
     filter::linear,
     address::repeat,
     mip_filter::linear,
     max_anisotropy(8));
 
-  float3 baseColor;
-  if (is_null_texture(baseColorTexture)) {
-    baseColor = in.color;
-  } else {
-    baseColor = baseColorTexture.sample(
-    textureSampler,
-    in.uv * params.tiling).rgb;
+//  float3 baseColor;
+//  if (is_null_texture(baseColorTexture)) {
+//    baseColor = in.color;
+//  } else {
+//    baseColor = baseColorTexture.sample(
+//    textureSampler,
+//    in.uv * params.tiling).rgb;
+//  }
+    //如果纹理存在，请使用从纹理中提取的颜色替换材质的基本颜色。否则，您已经在材质中加载了基本颜色。
+  if (!is_null_texture(baseColorTexture)) {
+      material.baseColor = baseColorTexture.sample(textureSampler, in.uv * params.tiling).rgb;
   }
+    
   
     // 现在您正在传输法线纹理贴图，第一步是将其应用于小屋，就像它是一个颜色纹理一样。
     // 这将从纹理中读取normalValue（如果有）。如果此模型没有法线贴图纹理，请设置默认法线值。返回只是临时的，以确保应用程序正确加载法线贴图，并且法线贴图和UV匹配。
@@ -122,7 +131,8 @@ fragment float4 fragment_main(
       in.worldPosition,
       params,
       lights,
-      baseColor
+//      baseColor
+      material
     );
   return float4(color, 1);
 }

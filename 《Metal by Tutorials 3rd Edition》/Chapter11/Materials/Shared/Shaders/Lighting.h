@@ -40,6 +40,8 @@ float3 phongLighting(
   float3 position,
   constant Params &params,
   constant Light *lights,
-  float3 baseColor);
+//  float3 baseColor
+   Material material
+                     );
 
 #endif /* Lighting_h */

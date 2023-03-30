@@ -44,6 +44,8 @@ struct Submesh {
   }
 
   let textures: Textures
+    
+  let material: Material
 }
 
 extension Submesh {
@@ -53,6 +55,7 @@ extension Submesh {
     indexBuffer = mtkSubmesh.indexBuffer.buffer
     indexBufferOffset = mtkSubmesh.indexBuffer.offset
     textures = Textures(material: mdlSubmesh.material)
+      material = Material(material: mdlSubmesh.material)
   }
 }
 
@@ -75,4 +78,25 @@ private extension Submesh.Textures {
     baseColor = property(with: MDLMaterialSemantic.baseColor)
     normal = property(with: .tangentSpaceNormal)
   }
+}
+
+
+private extension Material {
+    init(material: MDLMaterial?) {
+        self.init()
+        if let baseColor = material?.property(with: .baseColor),
+           baseColor.type == .float3 {
+            self.baseColor = baseColor.float3Value
+        }
+        if let specular = material?.property(with: .specular),
+           specular.type == .float3 {
+            self.specularColor = specular.float3Value
+        }
+        if let shininess = material?.property(with: .specularExponent),
+           shininess.type == .float {
+            self.shininess = shininess.floatValue
+        }
+        self.ambientOcclusion = 1
+//        在这里，您可以从子网格的材质中读取镜面反射值和光泽度值。当前未加载或使用环境光遮挡，但默认值应为1.0（白色）。
+    }
 }

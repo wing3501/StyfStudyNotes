@@ -34,7 +34,7 @@ import MetalKit
 
 struct GameScene {
   lazy var cottage: Model = {
-    Model(name: "cottage1.obj")
+    Model(name: "cottage2.obj")
   }()
   var models: [Model] = []
   var camera = ArcballCamera()

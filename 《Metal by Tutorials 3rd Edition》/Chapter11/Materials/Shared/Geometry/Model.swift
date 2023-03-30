@@ -118,6 +118,10 @@ extension Model {
           index: BaseColor.index)
         //将法线纹理发送到GPU。
           encoder.setFragmentTexture(submesh.textures.normal, index: NormalTexture.index)
+          
+          // 此代码将材质结构发送到片段着色器。只要你的材料结构步长小于4k字节，那么你就不需要创建和保存特殊的缓冲区。
+          var material = submesh.material
+          encoder.setFragmentBytes(&material, length: MemoryLayout<Material>.stride, index: MaterialBuffer.index)
 
         encoder.drawIndexedPrimitives(
           type: .triangle,

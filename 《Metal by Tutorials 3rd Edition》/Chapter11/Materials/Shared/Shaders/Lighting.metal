@@ -40,13 +40,22 @@ float3 phongLighting(
   float3 position,
   constant Params &params,
   constant Light *lights,
-  float3 baseColor) {
+//  float3 baseColor
+    Material material //现在将材质发送到phongLighting，而不仅仅是基础颜色，因此可以为每个子网格渲染适当的材质财产。
+                     ) {
+                         
+    float3 baseColor = material.baseColor;
+                         
     float3 diffuseColor = 0;
     float3 ambientColor = 0;
     float3 specularColor = 0;
 
-    float materialShininess = 32;
-    float3 materialSpecularColor = float3(1, 1, 1);
+//    float materialShininess = 32;
+//    float3 materialSpecularColor = float3(1, 1, 1);
+                         
+     float materialShininess = material.shininess;
+     float3 materialSpecularColor = material.specularColor;
+                         
 
     for (uint i = 0; i < params.lightCount; i++) {
       Light light = lights[i];
