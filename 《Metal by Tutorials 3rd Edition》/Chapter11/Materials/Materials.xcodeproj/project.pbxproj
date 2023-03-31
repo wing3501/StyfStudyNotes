@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		621115F429D6B36800CE49B1 /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = 82B6707E274771A80085AD26 /* PBR.metal */; };
+		621115F529D6B36900CE49B1 /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = 82B6707E274771A80085AD26 /* PBR.metal */; };
 		82044E4726C8BA80008347C1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82044E4626C8BA80008347C1 /* Options.swift */; };
 		82044E4826C8BA80008347C1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82044E4626C8BA80008347C1 /* Options.swift */; };
 		820B881326B8E47E0070A134 /* MaterialsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B880526B8E47D0070A134 /* MaterialsApp.swift */; };
@@ -441,6 +443,7 @@
 				827DDAEE2738DE15000E88B4 /* GameScene.swift in Sources */,
 				82D9AD87273902D9003E025A /* Movement.swift in Sources */,
 				820B881326B8E47E0070A134 /* MaterialsApp.swift in Sources */,
+				621115F429D6B36800CE49B1 /* PBR.metal in Sources */,
 				82D9AD8A27390D8C003E025A /* PlayerCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +474,7 @@
 				827DDAEF2738DE15000E88B4 /* GameScene.swift in Sources */,
 				82D9AD88273902D9003E025A /* Movement.swift in Sources */,
 				820B881426B8E47E0070A134 /* MaterialsApp.swift in Sources */,
+				621115F529D6B36900CE49B1 /* PBR.metal in Sources */,
 				82D9AD8B27390D8C003E025A /* PlayerCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

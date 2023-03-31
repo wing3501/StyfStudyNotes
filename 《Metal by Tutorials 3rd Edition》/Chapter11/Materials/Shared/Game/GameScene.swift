@@ -34,7 +34,8 @@ import MetalKit
 
 struct GameScene {
   lazy var cottage: Model = {
-    Model(name: "cottage2.obj")
+//    Model(name: "cottage2.obj")
+      Model(name: "cube.obj")
   }()
   var models: [Model] = []
   var camera = ArcballCamera()
@@ -48,8 +49,12 @@ struct GameScene {
   let lighting = SceneLighting()
 
   init() {
-    camera.distance = 6
-    camera.target = [0, 2.2, 0]
+//    camera.distance = 6
+//    camera.target = [0, 2.2, 0]
+      
+      camera.distance = 3.5
+      camera.target = .zero
+      
     camera.transform = defaultView
     models = [cottage]
   }

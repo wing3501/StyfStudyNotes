@@ -41,11 +41,14 @@ struct Submesh {
   struct Textures {
     let baseColor: MTLTexture?
     let normal: MTLTexture?
+    let roughness: MTLTexture?
   }
 
   let textures: Textures
     
   let material: Material
+    
+  
 }
 
 extension Submesh {
@@ -77,6 +80,7 @@ private extension Submesh.Textures {
     }
     baseColor = property(with: MDLMaterialSemantic.baseColor)
     normal = property(with: .tangentSpaceNormal)
+    roughness = property(with: .roughness)
   }
 }
 
@@ -98,5 +102,11 @@ private extension Material {
         }
         self.ambientOcclusion = 1
 //        在这里，您可以从子网格的材质中读取镜面反射值和光泽度值。当前未加载或使用环境光遮挡，但默认值应为1.0（白色）。
+        
+        //除了读取可能的粗糙度纹理外，还需要读取材质值。
+        if let roughness = material?.property(with: .roughness),
+           roughness.type == .float3 {
+            self.roughness = roughness.floatValue
+        }
     }
 }
