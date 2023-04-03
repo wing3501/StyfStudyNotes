@@ -11,6 +11,7 @@
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
 		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
 		628982C429DAFEBA0035BA1F /* Walk+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982C029DAFEBA0035BA1F /* Walk+CoreDataClass.swift */; };
+		628982C729DAFF4F0035BA1F /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982C629DAFF4F0035BA1F /* KeyChainHelper.swift */; };
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
 		92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92040DCA2922086100800273 /* CoreMLViewController.swift */; };
@@ -506,6 +507,7 @@
 		628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		628982C029DAFEBA0035BA1F /* Walk+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		628982C629DAFF4F0035BA1F /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
 		92040DCA2922086100800273 /* CoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLViewController.swift; sourceTree = "<group>"; };
@@ -1088,6 +1090,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		628982C529DAFF330035BA1F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				628982C629DAFF4F0035BA1F /* KeyChainHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		68CC14C85F7CE063169348C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1982,6 +1992,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				628982C529DAFF330035BA1F /* Helper */,
 				92040DC92921F1C400800273 /* Core ML */,
 				92F3D961291E49C800FC86BB /* Live Activity */,
 				9271ACEB29094E7C002DF880 /* 视频编辑拼接 */,
@@ -2999,6 +3010,7 @@
 				921F4A5328ACC5D100D79C52 /* Attachment.swift in Sources */,
 				92CA9D0328168FE300246D51 /* FileHelper.swift in Sources */,
 				920B9BDE25DF5FF80098B1BA /* Other.m in Sources */,
+				628982C729DAFF4F0035BA1F /* KeyChainHelper.swift in Sources */,
 				927F8E6E28AF737C00330616 /* DepartmentTableViewCell.swift in Sources */,
 				92F635B828261FBD00854EA4 /* PeripheralServicesView.swift in Sources */,
 				92EF584828A4EBFD009D7CB9 /* CoreDataDemo.swift in Sources */,
@@ -3437,7 +3449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				DEVELOPMENT_TEAM = 7655ESK844;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3462,7 +3474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K9X5AAY2EF;
+				DEVELOPMENT_TEAM = 7655ESK844;
 				INFOPLIST_FILE = StyfStudyNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
