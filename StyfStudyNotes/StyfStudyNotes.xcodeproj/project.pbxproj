@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
+		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
+		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
+		628982C429DAFEBA0035BA1F /* Walk+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982C029DAFEBA0035BA1F /* Walk+CoreDataClass.swift */; };
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
 		92040DCB2922086100800273 /* CoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92040DCA2922086100800273 /* CoreMLViewController.swift */; };
@@ -419,10 +423,6 @@
 		92EF584B28A4F111009D7CB9 /* DogWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584A28A4F111009D7CB9 /* DogWalk.swift */; };
 		92EF584D28A4F2F3009D7CB9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */; };
 		92EF585028A4F899009D7CB9 /* Dog Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92EF584E28A4F899009D7CB9 /* Dog Walk.xcdatamodeld */; };
-		92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */; };
-		92EF585628A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */; };
-		92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */; };
-		92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */; };
 		92EFF53C28D023D1001176EE /* CustomizingToolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */; };
 		92EFF54028D02D63001176EE /* ScrollViewIsScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */; };
 		92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */; };
@@ -502,6 +502,10 @@
 /* Begin PBXFileReference section */
 		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		628982C029DAFEBA0035BA1F /* Walk+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
 		92040DCA2922086100800273 /* CoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLViewController.swift; sourceTree = "<group>"; };
@@ -1002,10 +1006,6 @@
 		92EF584A28A4F111009D7CB9 /* DogWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogWalk.swift; sourceTree = "<group>"; };
 		92EF584C28A4F2F3009D7CB9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		92EF584F28A4F899009D7CB9 /* Dog Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dog Walk.xcdatamodel"; sourceTree = "<group>"; };
-		92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataClass.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "/Users/styf/Documents/workspace/StyfStudyNotes/StyfStudyNotes/StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		92EFF53B28D023D1001176EE /* CustomizingToolbars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizingToolbars.swift; sourceTree = "<group>"; };
 		92EFF53F28D02D63001176EE /* ScrollViewIsScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewIsScrolling.swift; sourceTree = "<group>"; };
 		92EFFA2328DD5285006EA5EE /* MemoryManagementInCombine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryManagementInCombine.swift; sourceTree = "<group>"; };
@@ -2328,10 +2328,10 @@
 		92E83F6A28A62BFA00194087 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				92EF585128A4FD9A009D7CB9 /* Dog+CoreDataClass.swift */,
-				92EF585228A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift */,
-				92EF585328A4FD9A009D7CB9 /* Walk+CoreDataClass.swift */,
-				92EF585428A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift */,
+				628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */,
+				628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */,
+				628982C029DAFEBA0035BA1F /* Walk+CoreDataClass.swift */,
+				628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -2854,7 +2854,6 @@
 				92876939282D021A006BFE5A /* UserInterfaceControls.swift in Sources */,
 				92CED5512924E84600E9DD16 /* AvoidRepeatedCalculations.swift in Sources */,
 				920E3F0E25E8A4A700DE2990 /* NSString+MD5.m in Sources */,
-				92EF585628A4FD9A009D7CB9 /* Walk+CoreDataProperties.swift in Sources */,
 				92E83F6C28A6354800194087 /* BubbleTeaFilterViewController.swift in Sources */,
 				92C1D92727293C8300FF3398 /* Question.m in Sources */,
 				92116BE7281A87200061086E /* MyTestView.swift in Sources */,
@@ -2899,6 +2898,7 @@
 				92A8D7F425D28DC30008EFAA /* 回溯.swift in Sources */,
 				9279ABE628BE3BA6004B379E /* View+++.swift in Sources */,
 				921FE16327ED8FBB00760625 /* MetadataViewController.swift in Sources */,
+				628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */,
 				92ABFB2A28B7608B00C3BF29 /* UsingGrid.swift in Sources */,
 				927F0534282BE45D001E39B7 /* ViewLayoutDemo.swift in Sources */,
 				9244F03525E63DA00008D6BB /* MutexDemo3.m in Sources */,
@@ -2911,8 +2911,8 @@
 				92EFFE7728DDA58F006EA5EE /* LearnLayoutProtocolPart2.swift in Sources */,
 				92EAF09A2834EF5400AA6420 /* TransformingViewsDemo.swift in Sources */,
 				929E4B4D28B8AB44006592F1 /* MenuStyle.swift in Sources */,
+				628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */,
 				921D54D528B31EBC0075B93C /* EmployeePicture+CoreDataProperties.swift in Sources */,
-				92EF585728A4FD9A009D7CB9 /* Walk+CoreDataClass.swift in Sources */,
 				9244F03925E63DA00008D6BB /* NSConditionDemo.m in Sources */,
 				921D54D728B31EBC0075B93C /* Employee+CoreDataClass.swift in Sources */,
 				9255F3F22877CDA0009E32FF /* CreateSharePDF.swift in Sources */,
@@ -2922,7 +2922,6 @@
 				92AC18B628C1D3B4009CAB64 /* UsingGauge.swift in Sources */,
 				92F3DB90291E4F8300FC86BB /* YFWidgetLiveActivity.swift in Sources */,
 				92A9A57028324FDB0018F2DA /* FormsDemo.swift in Sources */,
-				92EF585528A4FD9A009D7CB9 /* Dog+CoreDataProperties.swift in Sources */,
 				92F9D3A2280FE39D002504A1 /* SwiftUIViewController.swift in Sources */,
 				92AF2F8A273134E200C5C379 /* CookieViewController.m in Sources */,
 				924278BF264CC1C900B518AA /* NetworkDemo.m in Sources */,
@@ -3160,6 +3159,7 @@
 				920B9BE525DFB0640098B1BA /* DesignPatten.m in Sources */,
 				9271ACFD29094E7D002DF880 /* AssetThumbnailsGenerator.swift in Sources */,
 				9279ABE828BE3BAC004B379E /* UsingSafeArea.swift in Sources */,
+				628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */,
 				920A7BD1282540FA0011A12D /* BluetoothDemo.swift in Sources */,
 				9266EF39291CAA9F00CF05A5 /* UsingScenes.swift in Sources */,
 				92E83F2428A605A700194087 /* BubbleTea.swift in Sources */,
@@ -3169,7 +3169,6 @@
 				9276475328AE0DD900970310 /* Reservation+CoreDataClass.swift in Sources */,
 				92F368582733AE8F0013FB92 /* SMCPUMonitor.m in Sources */,
 				9244F03425E63DA00008D6BB /* MJBaseDemo.m in Sources */,
-				92EF585828A4FD9A009D7CB9 /* Dog+CoreDataClass.swift in Sources */,
 				920986BD286D6FB300B5F418 /* RelatedPoems.swift in Sources */,
 				921167B3281A3A150061086E /* TriangleArrow.swift in Sources */,
 				9231DFD227DB47C000607C03 /* CALayer+Ext.m in Sources */,
@@ -3177,6 +3176,7 @@
 				9238006429347EF0003E760B /* ScrollViewGestureButtonStyle.swift in Sources */,
 				92EFFA2428DD5286006EA5EE /* MemoryManagementInCombine.swift in Sources */,
 				92F2EFC12815170B00773B17 /* Utils.swift in Sources */,
+				628982C429DAFEBA0035BA1F /* Walk+CoreDataClass.swift in Sources */,
 				922A00DB2823BB62009CBCA3 /* CollapsibleExample.swift in Sources */,
 				923C60A627F15BB500DB49EA /* ClassLifeViewController.swift in Sources */,
 				9208CCBC28083C790095E1C1 /* LocationHeadingProxy.swift in Sources */,
