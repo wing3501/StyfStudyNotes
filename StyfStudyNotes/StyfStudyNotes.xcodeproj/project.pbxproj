@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622E67F629FBB44200FD4F73 /* URLSessionConfiguration+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */; };
+		622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F729FBB5F300FD4F73 /* Error+++.swift */; };
+		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
 		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
 		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
@@ -503,6 +506,9 @@
 /* Begin PBXFileReference section */
 		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+++.swift"; sourceTree = "<group>"; };
+		622E67F729FBB5F300FD4F73 /* Error+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+++.swift"; sourceTree = "<group>"; };
+		622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -1090,10 +1096,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622E67F429FBB42900FD4F73 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */,
+				622E67F729FBB5F300FD4F73 /* Error+++.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		628982C529DAFF330035BA1F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				628982C629DAFF4F0035BA1F /* KeyChainHelper.swift */,
+				622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1992,6 +2008,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				622E67F429FBB42900FD4F73 /* Extension */,
 				628982C529DAFF330035BA1F /* Helper */,
 				92040DC92921F1C400800273 /* Core ML */,
 				92F3D961291E49C800FC86BB /* Live Activity */,
@@ -3019,6 +3036,7 @@
 				92AE63002809184F0082505B /* NotificationViewController.swift in Sources */,
 				9244F03B25E63DA00008D6BB /* NSLockDemo.m in Sources */,
 				924AE06A28ABBC830091FA97 /* ImageTransformer.swift in Sources */,
+				622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */,
 				925CB17B28F1152800F772A6 /* DismissAction.swift in Sources */,
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
 				921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */,
@@ -3120,6 +3138,7 @@
 				920B9BF225DFB4610098B1BA /* CommandManager.m in Sources */,
 				921F229E2886A01B00B322F6 /* WhatsNewInSwiftUI.swift in Sources */,
 				92EC412028B3629D004EC671 /* SurfJournal.swift in Sources */,
+				622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */,
 				92ABFB1828B747CD00C3BF29 /* ChangeNavigationBarColor.swift in Sources */,
 				920B9C0725DFBDCF0098B1BA /* Circle.m in Sources */,
 				92A417D2281248C100603DCE /* PokemonViewModel.swift in Sources */,
@@ -3197,6 +3216,7 @@
 				9276492C28AE2E3F00970310 /* ReservationService.swift in Sources */,
 				920986BB286D6FB300B5F418 /* Router.swift in Sources */,
 				92B265A9263546D400C4D16D /* Builtin.m in Sources */,
+				622E67F629FBB44200FD4F73 /* URLSessionConfiguration+++.swift in Sources */,
 				925810242806CB2C008AF141 /* GithubViewController.swift in Sources */,
 				929A6EF128A2372F00B92E40 /* UsingChart.swift in Sources */,
 				920E3F0C25E8A4A700DE2990 /* FFileTool.m in Sources */,
