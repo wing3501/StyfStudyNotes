@@ -46,8 +46,8 @@ struct ProductionsListView: View {
 struct ProductionsListView_Previews: PreviewProvider {
   static var previews: some View {
     ProductionsListView(productionsList: [
-      MarvelProductionItem.sample()  ,
-      MarvelProductionItem.sample() ,
+      MarvelProductionItem.sample(),
+      MarvelProductionItem.sample(),
       MarvelProductionItem.sample(),
       MarvelProductionItem.sample()
     ])

@@ -33,7 +33,7 @@
 import Foundation
 
 public enum ProductionYearInfo {
-  case produced(year : Int)
+  case produced(year: Int)
   case onGoing(startYear: Int)
   case finished(startYear: Int, endYear: Int)
   case unknown

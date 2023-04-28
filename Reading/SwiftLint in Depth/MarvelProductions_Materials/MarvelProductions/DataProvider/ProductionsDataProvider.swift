@@ -33,8 +33,6 @@
 import Foundation
 import RegexBuilder
 
-
-
 class ProductionsDataProvider {
 
   func loadData() -> [MarvelProductionItem] {
@@ -54,7 +52,7 @@ class ProductionsDataProvider {
       do {
         content = try String(contentsOf: fileURL)
       } catch {
-            return []
+        return []
       }
     }
 

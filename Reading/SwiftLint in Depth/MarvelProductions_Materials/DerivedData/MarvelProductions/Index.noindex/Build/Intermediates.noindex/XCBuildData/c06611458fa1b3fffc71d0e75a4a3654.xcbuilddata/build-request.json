@@ -1,0 +1,58 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "6b75982a89d9f59b708accabc8e6a16b4c92de4604a52e4929b352db736dd57e"
+    }
+  ],
+  "containerPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.4",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Build/Products",
+      "pchPath" : "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/DerivedData/MarvelProductions/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

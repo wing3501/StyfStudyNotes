@@ -1,0 +1,43 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "c5456135df8057818ab2e2d3b8b1f1567492a69832d59d2570a36268a2d0ac41"
+build_start_time: [1682652599, 375531000]
+build_end_time: [1682652600, 198555000]
+inputs:
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/AnimatedImageView.swift"
+  : [1682649436, 871539564]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/FetchImage.swift"
+  : [1682649436, 871638606]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Classes/AnimatedFrame.swift"
+  : [1682649436, 871791231]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Classes/Animator.swift"
+  : [1682649436, 871877232]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Classes/FrameStore.swift"
+  : [1682649436, 871960940]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Classes/GIFAnimatable.swift"
+  : [1682649436, 872030190]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Classes/GIFImageView.swift"
+  : [1682649436, 872087232]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Extensions/Array.swift"
+  : [1682649436, 872206815]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Extensions/CGSize.swift"
+  : [1682649436, 872274399]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Extensions/UIImage.swift"
+  : [1682649436, 872331399]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Extensions/UIImageView.swift"
+  : [1682649436, 872388607]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Gifu/Helpers/ImageSourceHelpers.swift"
+  : [1682649436, 872487316]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Image.swift"
+  : [1682649436, 872553066]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/ImageView.swift"
+  : [1682649436, 872632941]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/Internal.swift"
+  : [1682649436, 872700108]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/LazyImage.swift"
+  : [1682649436, 872796566]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/LazyImageState.swift"
+  : [1682649436, 872862025]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/LazyImageView.swift"
+  : [1682649436, 872972108]
+  ? "/Users/shentuyunfei/Library/Developer/Xcode/DerivedData/MarvelProductions-gicmxmercicawgabjklxqopoapgf/SourcePackages/checkouts/Nuke/Sources/NukeUI/VideoPlayerView.swift"
+  : [1682649436, 873054567]

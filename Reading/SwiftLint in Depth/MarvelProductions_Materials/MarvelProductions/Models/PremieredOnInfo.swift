@@ -47,10 +47,10 @@ public enum PremieredOnInfo {
     }
 
     if let match = value.wholeMatch(of: yearOnlyRegex) {
-      let result = match.first?.value as! Substring
+      let result = match.first?.value as? Substring ?? ""
       return .estimatedYear(Int(result)!)
     } else if let match = value.wholeMatch(of: datesRegex) {
-      let result = match.first?.value as! Substring
+      let result = match.first?.value as? Substring ?? ""
       let dateStr = String(result)
       let date = Date.fromString(dateStr)
       return .definedDate(date)

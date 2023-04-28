@@ -1,0 +1,19 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "a25b46e19c8c9f9170e696f5c29ea2bd1b1e67d444c71d5747fbe71e582c7e0c"
+build_start_time: [1682663651, 13232000]
+build_end_time: [1682663651, 605095000]
+inputs:
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/AppMain.swift"
+  : [1682663603, 481163071]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/DataProvider/ProductionsDataProvider.swift"
+  : [1682663649, 244670979]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/Models/MarvelProductionItem.swift"
+  : [1682527676, 0]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/Models/PremieredOnInfo.swift"
+  : [1682663565, 727880354]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/Models/ProductionYearInfo.swift"
+  : [1682663583, 151298789]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/Views/ProductionItemView.swift"
+  : [1682527676, 0]
+  ? "/Users/shentuyunfei/Documents/workspace/StyfStudyNotes/Reading/SwiftLint in Depth/MarvelProductions_Materials/MarvelProductions/Views/ProductionsListView.swift"
+  : [1682663578, 495677800]
