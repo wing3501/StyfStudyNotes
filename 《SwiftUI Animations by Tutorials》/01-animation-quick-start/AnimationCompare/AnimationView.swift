@@ -51,6 +51,12 @@ struct AnimationView: View {
                                   damping: animation.damping,//阻尼映射到重力和摩擦力，从而减慢和停止运动。 增加阻尼会更快地减慢动画的速度。
                                   initialVelocity: animation.initialVelocity// initalVelocity反映动画开始时权重的速度 如果设置了初始速度，则会更改动画的初始移动。
       )
+    case .spring:
+      return .spring(response: animation.response,// 响应参数的作用类似于基于物理的模型中的质量。它决定动画对变化速度的抵抗力。值越大，动画的加速或减速速度越慢。
+                     dampingFraction: animation.dampingFraction// dampingFraction参数控制动画减速的速度。大于或等于1的值将导致动画稳定，而不会出现大多数与弹簧动画相关的反弹。
+                     // 介于0和1之间的值将创建一个动画，该动画拍摄经过最终位置并反弹几次，与上一部分类似。
+                     // 接近1的值会比接近0的值慢得更快。零值不会稳定下来，会永远振荡，或者至少直到你的用户感到沮丧并关闭你的应用程序。
+      )
     default:
       return .linear(duration: animation.length)
     }
