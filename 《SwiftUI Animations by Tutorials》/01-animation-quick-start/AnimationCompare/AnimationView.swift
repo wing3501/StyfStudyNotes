@@ -35,6 +35,7 @@ import SwiftUI
 struct AnimationView: View {
   var animation: AnimationData
   @Binding var location: Double
+  var slowMotion = false
 
   var currentAnimation: Animation {
     switch animation.type {
@@ -62,7 +63,9 @@ struct AnimationView: View {
         .font(.title)
 //        .animation(.linear(duration: animation.length), value: location)
 //        .animation(currentAnimation, value: location)
-        .animation(currentAnimation.delay(animation.delay), value: location)
+//        .animation(currentAnimation.delay(animation.delay), value: location)
+        // 值小于1将导致动画速度减慢，而值大于1将加快动画速度。
+        .animation(currentAnimation.delay(animation.delay).speed(slowMotion ? 0.25 : 1.0), value: location)
       }
     }
   }
