@@ -33,17 +33,35 @@
 import SwiftUI
 
 struct TransitionCompareView: View {
-  @State var showSquare = true
+  @State var showSquare = false
+  
+  // 不对称转场
+  var squareTransition: AnyTransition {
+    let insertTransition = AnyTransition.move(edge: .leading)
+    let removeTransition = AnyTransition.scale
+    return AnyTransition.asymmetric(insertion: insertTransition, removal: removeTransition)
+  }
 
   var body: some View {
     VStack {
       Button(showSquare ? "Hide the Square" : "Show the Square") {
-        showSquare.toggle()
+        withAnimation {
+          showSquare.toggle()
+        }
       }
       if showSquare {
         RoundedRectangle(cornerRadius: 15)
           .frame(width: 150, height: 150)
           .foregroundColor(.red)
+        // 转场动画
+//          .transition(.scale)
+//          .transition(.scale(scale: 2.0, anchor: .topLeading))
+//          .transition(.opacity)
+//          .transition(.offset(x: 10, y: 40))
+//          .transition(.move(edge: .trailing))
+//          .transition(.slide)//左入右出
+        // 不对称转场
+          .transition(squareTransition)
       }
       Spacer()
     }
