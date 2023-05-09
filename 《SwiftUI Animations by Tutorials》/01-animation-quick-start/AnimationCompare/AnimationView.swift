@@ -36,10 +36,33 @@ struct AnimationView: View {
   var animation: AnimationData
   @Binding var location: Double
 
+  var currentAnimation: Animation {
+    switch animation.type {
+    case .easeIn:
+      return .easeIn(duration: animation.length)
+    case .easeOut:
+      return .easeOut(duration: animation.length)
+    case .easeInOut:
+      return .easeInOut(duration: animation.length)
+    default:
+      return .linear(duration: animation.length)
+    }
+  }
+  
   var body: some View {
     GeometryReader { proxy in
       Group {
-        Text("Animation")
+        //Text("Animation")
+        HStack {
+          Image(systemName: "gear.circle")
+            .rotationEffect(.degrees(360 * location))
+          Image(systemName: "star.fill")
+            .offset(x: proxy.size.width * location * 0.8)
+        }
+        .font(.title)
+//        .animation(.linear(duration: animation.length), value: location)
+//        .animation(currentAnimation, value: location)
+        .animation(currentAnimation.delay(animation.delay), value: location)
       }
     }
   }
