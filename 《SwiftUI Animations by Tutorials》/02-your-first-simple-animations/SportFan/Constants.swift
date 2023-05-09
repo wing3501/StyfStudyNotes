@@ -34,4 +34,10 @@ import Foundation
 
 enum Constants {
   static let maxOffset = 100.0
+  
+  static let ballSize = 42.0
+  static let ballSpacing = 8.0
+  static let jumpDuration = 0.35
+  
+  
 }
