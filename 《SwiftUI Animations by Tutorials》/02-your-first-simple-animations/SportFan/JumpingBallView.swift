@@ -34,19 +34,37 @@ import SwiftUI
 
 struct JumpingBallView: View {
   @State private var isAnimating = false
+  @State private var rotation = 0.0
+  @State private var scale = 1.0
+  
   var currentYOffset: CGFloat {
     isAnimating ? Constants.maxOffset - Constants.ballSize / 2 - Constants.ballSpacing : -Constants.ballSize / 2 - Constants.ballSpacing
   }
   
     var body: some View {
         Ball()
+        .rotationEffect(Angle(degrees: rotation), anchor: .center)
+        .scaleEffect(x: 1.0 / scale, y: scale, anchor: .bottom)//当球碰到底部的表面时，通过沿x轴与y轴相反的方向缩放球，使球在其底侧挤压。
+      // 顺序很重要
         .offset(y: currentYOffset)
         .onAppear {
-          withAnimation(.linear(duration: Constants.jumpDuration).repeatForever()) {
-            isAnimating = true
-          }
+          animate()
         }
     }
+  
+  private func animate() {
+    withAnimation(.easeInOut(duration: Constants.jumpDuration).repeatForever()) {
+      isAnimating = true
+    }
+    // 若要使球无限期旋转而不改变其方向，请禁用自动反转。通过将持续时间加倍，你可以迫使球在返回顶部位置之前进行一次完整的旋转。
+    withAnimation(.linear(duration: Constants.jumpDuration * 2).repeatForever(autoreverses: false)) {
+      rotation = 360
+    }
+    // 你可以使用.seaseOut来挤压球，因为你希望球在撞击表面时稍微减速，以放大效果。使比例小于1会在水平方向上增加球，在垂直方向上缩小球，模仿挤压。
+    withAnimation(.easeOut(duration: Constants.jumpDuration).repeatForever()) {
+      scale = 0.85
+    }
+  }
 }
 
 struct JumpingBallView_Previews: PreviewProvider {
