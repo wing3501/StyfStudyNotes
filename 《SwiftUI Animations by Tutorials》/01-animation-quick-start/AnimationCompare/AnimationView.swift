@@ -45,6 +45,12 @@ struct AnimationView: View {
       return .easeOut(duration: animation.length)
     case .easeInOut:
       return .easeInOut(duration: animation.length)
+    case .interpolatingSpring:// 插值弹性动画
+      return .interpolatingSpring(mass: animation.mass,//质量  增加质量会使动画持续时间更长，并在端点的每一侧进一步反弹。较小的质量在每次反弹时停止得更快，通过终点的移动也更少。
+                                  stiffness: animation.stiffness,//刚度定义了弹簧被拉伸或压缩的阻力。 增加刚度会导致每次反弹进一步移动超过终点，但对动画长度的影响较小。
+                                  damping: animation.damping,//阻尼映射到重力和摩擦力，从而减慢和停止运动。 增加阻尼会更快地减慢动画的速度。
+                                  initialVelocity: animation.initialVelocity// initalVelocity反映动画开始时权重的速度 如果设置了初始速度，则会更改动画的初始移动。
+      )
     default:
       return .linear(duration: animation.length)
     }
