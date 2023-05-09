@@ -38,6 +38,8 @@ struct BallView: View {
       switch pullToRefresh.state {
       case .ongoing:
         JumpingBallView()
+      case .pulling:
+        RollingBallView(pullToRefresh: $pullToRefresh)
       default:
         EmptyView()
       }
@@ -50,4 +52,33 @@ struct Ball: View {
         .resizable()
         .frame(width: Constants.ballSize, height: Constants.ballSize)
     }
+}
+
+extension UIScreen {
+  static var halfWidth: CGFloat {
+    main.bounds.width / 2
+  }
+}
+
+struct RollingBallView: View {
+  @Binding var pullToRefresh: PullToRefresh
+  private let shadowHeight: CGFloat = 5
+  
+  private let initialOffset = -UIScreen.halfWidth - Constants.ballSize / 2
+  
+  var body: some View {
+    let rollInOffset = initialOffset + (pullToRefresh.progress * -initialOffset)
+    let rollInRotation = pullToRefresh.progress * .pi * 4
+    ZStack {
+      Ellipse()
+        .fill(Color.gray.opacity(0.4))
+        .frame(width: Constants.ballSize * 0.8, height: shadowHeight)
+        .offset(y: -Constants.ballSpacing - shadowHeight / 2)
+      
+      Ball()
+        .rotationEffect(Angle(radians: rollInRotation), anchor: .center)
+        .offset(y: -Constants.ballSize / 2 - Constants.ballSpacing)
+    }
+    .offset(x: rollInOffset)
+  }
 }

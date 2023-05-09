@@ -63,10 +63,7 @@ struct ContentView: View {
         print("Update!")
       }
       ZStack(alignment: .top) {
-        if pullToRefresh.state == .ongoing {
-//          ProgressView()
-          BallView(pullToRefresh: $pullToRefresh)
-        }
+        BallView(pullToRefresh: $pullToRefresh)
         LazyVStack {
           ForEach(events) {
             EventView(event: $0)
