@@ -36,12 +36,23 @@ struct JumpingBallView: View {
   @State private var isAnimating = false
   @State private var rotation = 0.0
   @State private var scale = 1.0
+  private let shadowHeight = Constants.ballSize / 2
+  
   
   var currentYOffset: CGFloat {
     isAnimating ? Constants.maxOffset - Constants.ballSize / 2 - Constants.ballSpacing : -Constants.ballSize / 2 - Constants.ballSpacing
   }
   
     var body: some View {
+      ZStack {
+        Ellipse()
+          .fill(Color.gray.opacity(0.4))
+          .frame(width: Constants.ballSize, height: shadowHeight)
+          .scaleEffect(isAnimating ? 1.2 : 0.3, anchor: .center)
+          .offset(y: Constants.maxOffset - shadowHeight / 2 - Constants.ballSpacing)
+          .opacity(isAnimating ? 1 : 0.3)
+        
+          
         Ball()
         .rotationEffect(Angle(degrees: rotation), anchor: .center)
         .scaleEffect(x: 1.0 / scale, y: scale, anchor: .bottom)//当球碰到底部的表面时，通过沿x轴与y轴相反的方向缩放球，使球在其底侧挤压。
@@ -50,6 +61,7 @@ struct JumpingBallView: View {
         .onAppear {
           animate()
         }
+      }
     }
   
   private func animate() {
