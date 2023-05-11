@@ -69,10 +69,26 @@ struct ScrollViewGeometryReader: View {
       pullToRefresh.progress = 0
       Task {
         await update()
-        pullToRefresh.state = .idle
+        //pullToRefresh.state = .idle
+        pullToRefresh.state = .preparingToFinish
+        after(Constants.timeForTheBallToReturn) {
+          pullToRefresh.state = .finishing
+          after(Constants.timeForTheBallToRollOut) {
+            pullToRefresh.state = .idle
+            startOffset = 0
+          }
+        }
       }
       
     default: return
+    }
+  }
+  
+  func after(_ seconds: Double, execute: @escaping () -> Void) {
+    Task {
+      let delay = UInt64(seconds * Double(NSEC_PER_SEC))
+      try await Task<Never, Never>.sleep(nanoseconds: delay)
+      execute()
     }
   }
 }

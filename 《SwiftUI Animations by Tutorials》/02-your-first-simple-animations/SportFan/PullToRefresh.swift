@@ -33,7 +33,7 @@
 import Foundation
 
 enum AnimationState: Int {
-  case idle = 0, pulling, ongoing
+  case idle = 0, pulling, ongoing, preparingToFinish, finishing
 }
 
 struct PullToRefresh: Equatable {

@@ -39,5 +39,6 @@ enum Constants {
   static let ballSpacing = 8.0
   static let jumpDuration = 0.35
   
-  
+  static let timeForTheBallToReturn = 0.3
+  static let timeForTheBallToRollOut = 1.0
 }

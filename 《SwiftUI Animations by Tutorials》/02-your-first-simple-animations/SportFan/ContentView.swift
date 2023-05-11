@@ -69,7 +69,7 @@ struct ContentView: View {
             EventView(event: $0)
           }
         }
-        .offset(y: pullToRefresh.state == .ongoing ? Constants.maxOffset : 0)
+        .offset(y: [.ongoing, .preparingToFinish].contains(pullToRefresh.state) ? Constants.maxOffset : 0)
       }
     }
   }

@@ -34,11 +34,12 @@ import SwiftUI
 
 struct BallView: View {
   @Binding var pullToRefresh: PullToRefresh
+  
     var body: some View {
       switch pullToRefresh.state {
-      case .ongoing:
-        JumpingBallView()
-      case .pulling:
+      case .ongoing, .preparingToFinish:
+        JumpingBallView(pullToRefresh: $pullToRefresh)
+      case .pulling, .finishing:
         RollingBallView(pullToRefresh: $pullToRefresh)
       default:
         EmptyView()
@@ -62,6 +63,10 @@ extension UIScreen {
 
 struct RollingBallView: View {
   @Binding var pullToRefresh: PullToRefresh
+  
+  @State private var rollOutOffset: CGFloat = 0
+  @State private var rollOutRotation: CGFloat = 0
+  
   private let shadowHeight: CGFloat = 5
   
   private let initialOffset = -UIScreen.halfWidth - Constants.ballSize / 2
@@ -76,9 +81,26 @@ struct RollingBallView: View {
         .offset(y: -Constants.ballSpacing - shadowHeight / 2)
       
       Ball()
-        .rotationEffect(Angle(radians: rollInRotation), anchor: .center)
+//        .rotationEffect(Angle(radians: rollInRotation), anchor: .center)
+        .rotationEffect(Angle(radians: pullToRefresh.state == .finishing ? rollOutRotation : rollInRotation), anchor: .center)
         .offset(y: -Constants.ballSize / 2 - Constants.ballSpacing)
     }
-    .offset(x: rollInOffset)
+//    .offset(x: rollInOffset)
+    .offset(x: pullToRefresh.state == .finishing ? rollOutOffset : rollInOffset)
+    .onAppear {
+      animateRollingOut()
+    }
+  }
+  
+  private func animateRollingOut() {
+    guard pullToRefresh.state == .finishing else {
+      return
+    }
+    withAnimation(.easeIn(duration: Constants.timeForTheBallToRollOut)) {
+      rollOutOffset = UIScreen.main.bounds.width
+    }
+    withAnimation(.linear(duration: Constants.timeForTheBallToRollOut)) {
+      rollOutRotation = .pi * 4
+    }
   }
 }

@@ -33,6 +33,8 @@
 import SwiftUI
 
 struct JumpingBallView: View {
+  @Binding var pullToRefresh: PullToRefresh
+  
   @State private var isAnimating = false
   @State private var rotation = 0.0
   @State private var scale = 1.0
@@ -40,13 +42,14 @@ struct JumpingBallView: View {
   
   
   var currentYOffset: CGFloat {
-    isAnimating ? Constants.maxOffset - Constants.ballSize / 2 - Constants.ballSpacing : -Constants.ballSize / 2 - Constants.ballSpacing
+    isAnimating && pullToRefresh.state == .ongoing ? Constants.maxOffset - Constants.ballSize / 2 - Constants.ballSpacing : -Constants.ballSize / 2 - Constants.ballSpacing
   }
   
     var body: some View {
       ZStack {
         Ellipse()
-          .fill(Color.gray.opacity(0.4))
+//          .fill(Color.gray.opacity(0.4))
+          .fill(Color.gray.opacity( pullToRefresh.state == .ongoing ? 0.4 : 0 ))
           .frame(width: Constants.ballSize, height: shadowHeight)
           .scaleEffect(isAnimating ? 1.2 : 0.3, anchor: .center)
           .offset(y: Constants.maxOffset - shadowHeight / 2 - Constants.ballSpacing)
@@ -58,6 +61,7 @@ struct JumpingBallView: View {
         .scaleEffect(x: 1.0 / scale, y: scale, anchor: .bottom)//当球碰到底部的表面时，通过沿x轴与y轴相反的方向缩放球，使球在其底侧挤压。
       // 顺序很重要
         .offset(y: currentYOffset)
+        .animation(.easeInOut(duration: Constants.timeForTheBallToReturn), value: pullToRefresh.state == .preparingToFinish)
         .onAppear {
           animate()
         }
@@ -79,8 +83,3 @@ struct JumpingBallView: View {
   }
 }
 
-struct JumpingBallView_Previews: PreviewProvider {
-    static var previews: some View {
-        JumpingBallView()
-    }
-}
