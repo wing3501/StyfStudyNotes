@@ -71,6 +71,9 @@ struct RollingBallView: View {
   
   private let initialOffset = -UIScreen.halfWidth - Constants.ballSize / 2
   
+  private let bezierCurve: Animation = .timingCurve(0.24, 1.4, 1, -1)
+  
+  
   var body: some View {
     let rollInOffset = initialOffset + (pullToRefresh.progress * -initialOffset)
     let rollInRotation = pullToRefresh.progress * .pi * 4
@@ -85,11 +88,13 @@ struct RollingBallView: View {
         .rotationEffect(Angle(radians: pullToRefresh.state == .finishing ? rollOutRotation : rollInRotation), anchor: .center)
         .offset(y: -Constants.ballSize / 2 - Constants.ballSpacing)
     }
+    .animation(bezierCurve, value: pullToRefresh.progress)
 //    .offset(x: rollInOffset)
     .offset(x: pullToRefresh.state == .finishing ? rollOutOffset : rollInOffset)
     .onAppear {
       animateRollingOut()
     }
+    
   }
   
   private func animateRollingOut() {
