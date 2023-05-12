@@ -75,9 +75,11 @@ struct ContentView: View {
           FilterView(selectedSports: $selectedSports, isShown: filterShown)
             .padding(.top)
             .zIndex(1)
-          LazyVStack {
+          LazyVStack { // 对于动画内容，有时最好使用VStack而不是LazyVStack，因为后者的惰性意味着你想要动画的元素还不一定可用，这可能会导致动画看起来草率或卡住。
             ForEach(events) {
               EventView(event: $0)
+//                .transition(.scale.combined(with: .opacity))
+                .transition(.move(edge: .leading))
             }
           }
         }
@@ -109,9 +111,11 @@ struct ContentView: View {
   }
   
   func filter() {
-    events = selectedSports.isEmpty ? unfilteredEvents : unfilteredEvents.filter({
-      selectedSports.contains($0.team.sport)
-    })
+    withAnimation(.interpolatingSpring(stiffness: 30, damping: 8)) {
+      events = selectedSports.isEmpty ? unfilteredEvents : unfilteredEvents.filter({
+        selectedSports.contains($0.team.sport)
+      })
+    }
   }
 }
 
