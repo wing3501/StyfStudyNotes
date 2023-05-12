@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2022 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,28 +30,45 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 import SwiftUI
 
-enum Constants {
-  static let maxOffset = 100.0
-  
-  static let ballSize = 42.0
-  static let ballSpacing = 8.0
-  static let jumpDuration = 0.35
-  
-  static let timeForTheBallToReturn = 0.3
-  static let timeForTheBallToRollOut = 1.0
-  
-  static let spacingS = 8.0
-  static let spacingM = 16.0
-  static let spacingL = 24.0
-  static let cornersRadius = 24.0
-  static let iconSizeS = 16.0
-  static let iconSizeL = 24.0
-  static let orange = Color("AccentColor")
-  static let minHeaderOffset = -80.0
-  static let headerHeight = 220.0
-  static let minHeaderHeight = 120.0
-  static let floatingButtonWidth = 110.0
+struct TicketView: View {
+  let info: TicketsInfo
+
+  var body: some View {
+    HStack {
+      VStack(alignment: .leading, spacing: 4) {
+        Text(info.type)
+          .font(.title3)
+          .fontWeight(.heavy)
+          .lineLimit(2)
+          .foregroundColor(Constants.orange)
+
+        Text(info.left > 0 ? "🎫 Tickets left \(info.left)" : "SOLD OUT")
+          .font(.caption)
+          .fontWeight(.medium)
+          .lineLimit(2)
+          .foregroundColor(.primary)
+
+        Text("💵 From $\(info.price)")
+          .font(.caption)
+      }
+      .padding(.leading, Constants.spacingL)
+    }
+    .frame(height: 100)
+    .background(Image("ticket")
+      .resizable()
+      .frame(width: UIScreen.halfWidth * 0.9, height: 100)
+      .scaledToFill()
+      .clipped()
+      .shadow(radius: 0.5)
+      )
+      .padding([.horizontal])
+  }
+}
+
+struct TicketView_Previews: PreviewProvider {
+  static var previews: some View {
+    TicketView(info: TicketsInfo(type: "Category 1", price: 345, left: 23))
+  }
 }

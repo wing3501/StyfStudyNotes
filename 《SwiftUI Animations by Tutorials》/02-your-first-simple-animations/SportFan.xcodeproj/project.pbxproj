@@ -17,6 +17,13 @@
 		624FB72A2A0A29BA00C2CA32 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FB7292A0A29BA00C2CA32 /* Constants.swift */; };
 		624FB72C2A0A340200C2CA32 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FB72B2A0A340200C2CA32 /* BallView.swift */; };
 		624FB72E2A0A34E500C2CA32 /* JumpingBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FB72D2A0A34E500C2CA32 /* JumpingBallView.swift */; };
+		62634EC72A0DE3B1002B551F /* MockTicketsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC02A0DE3B1002B551F /* MockTicketsData.swift */; };
+		62634EC82A0DE3B1002B551F /* EventLocationAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC12A0DE3B1002B551F /* EventLocationAndDate.swift */; };
+		62634EC92A0DE3B1002B551F /* SeatsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC22A0DE3B1002B551F /* SeatsSelectionView.swift */; };
+		62634ECA2A0DE3B1002B551F /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC32A0DE3B1002B551F /* TicketView.swift */; };
+		62634ECB2A0DE3B1002B551F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC42A0DE3B1002B551F /* Extensions.swift */; };
+		62634ECC2A0DE3B1002B551F /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC52A0DE3B1002B551F /* EventDetailsView.swift */; };
+		62634ECD2A0DE3B1002B551F /* TicketsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC62A0DE3B1002B551F /* TicketsInfo.swift */; };
 		835C287F28624B010074D7DE /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C287E28624B010074D7DE /* MockData.swift */; };
 		835C288128624B070074D7DE /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C288028624B070074D7DE /* EventView.swift */; };
 		835C288428624EF70074D7DE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C288328624EF70074D7DE /* Event.swift */; };
@@ -35,6 +42,13 @@
 		624FB7292A0A29BA00C2CA32 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		624FB72B2A0A340200C2CA32 /* BallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		624FB72D2A0A34E500C2CA32 /* JumpingBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingBallView.swift; sourceTree = "<group>"; };
+		62634EC02A0DE3B1002B551F /* MockTicketsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTicketsData.swift; sourceTree = "<group>"; };
+		62634EC12A0DE3B1002B551F /* EventLocationAndDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationAndDate.swift; sourceTree = "<group>"; };
+		62634EC22A0DE3B1002B551F /* SeatsSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatsSelectionView.swift; sourceTree = "<group>"; };
+		62634EC32A0DE3B1002B551F /* TicketView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		62634EC42A0DE3B1002B551F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		62634EC52A0DE3B1002B551F /* EventDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		62634EC62A0DE3B1002B551F /* TicketsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsInfo.swift; sourceTree = "<group>"; };
 		835C287E28624B010074D7DE /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		835C288028624B070074D7DE /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		835C288328624EF70074D7DE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -72,17 +86,15 @@
 		18D775BF22AD944300AE281E /* SportFan */ = {
 			isa = PBXGroup;
 			children = (
-				18D775CE22AD944400AE281E /* Info.plist */,
+				62634ECF2A0DE3FD002B551F /* Refresh */,
+				62634EBF2A0DE3B1002B551F /* EventDetails */,
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
 				18D775C422AD944300AE281E /* ContentView.swift */,
 				835C288328624EF70074D7DE /* Event.swift */,
 				835C288028624B070074D7DE /* EventView.swift */,
 				835C287E28624B010074D7DE /* MockData.swift */,
-				624FB7252A0A244300C2CA32 /* PullToRefresh.swift */,
 				624FB7292A0A29BA00C2CA32 /* Constants.swift */,
-				624FB72B2A0A340200C2CA32 /* BallView.swift */,
-				624FB72D2A0A34E500C2CA32 /* JumpingBallView.swift */,
-				624FB7272A0A259900C2CA32 /* ScrollViewGeometryReader.swift */,
+				18D775CE22AD944400AE281E /* Info.plist */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775C822AD944400AE281E /* Preview Content */,
@@ -96,6 +108,31 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62634EBF2A0DE3B1002B551F /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				62634EC02A0DE3B1002B551F /* MockTicketsData.swift */,
+				62634EC12A0DE3B1002B551F /* EventLocationAndDate.swift */,
+				62634EC22A0DE3B1002B551F /* SeatsSelectionView.swift */,
+				62634EC32A0DE3B1002B551F /* TicketView.swift */,
+				62634EC42A0DE3B1002B551F /* Extensions.swift */,
+				62634EC52A0DE3B1002B551F /* EventDetailsView.swift */,
+				62634EC62A0DE3B1002B551F /* TicketsInfo.swift */,
+			);
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		62634ECF2A0DE3FD002B551F /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				624FB7252A0A244300C2CA32 /* PullToRefresh.swift */,
+				624FB72B2A0A340200C2CA32 /* BallView.swift */,
+				624FB72D2A0A34E500C2CA32 /* JumpingBallView.swift */,
+				624FB7272A0A259900C2CA32 /* ScrollViewGeometryReader.swift */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,16 +229,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62634EC72A0DE3B1002B551F /* MockTicketsData.swift in Sources */,
+				62634EC82A0DE3B1002B551F /* EventLocationAndDate.swift in Sources */,
+				62634EC92A0DE3B1002B551F /* SeatsSelectionView.swift in Sources */,
 				624FB72C2A0A340200C2CA32 /* BallView.swift in Sources */,
+				62634ECC2A0DE3B1002B551F /* EventDetailsView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				624FB7262A0A244300C2CA32 /* PullToRefresh.swift in Sources */,
 				835C287F28624B010074D7DE /* MockData.swift in Sources */,
 				624FB72E2A0A34E500C2CA32 /* JumpingBallView.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
 				835C288128624B070074D7DE /* EventView.swift in Sources */,
+				62634ECB2A0DE3B1002B551F /* Extensions.swift in Sources */,
+				62634ECA2A0DE3B1002B551F /* TicketView.swift in Sources */,
 				835C288428624EF70074D7DE /* Event.swift in Sources */,
 				624FB7282A0A259900C2CA32 /* ScrollViewGeometryReader.swift in Sources */,
 				624FB72A2A0A29BA00C2CA32 /* Constants.swift in Sources */,
+				62634ECD2A0DE3B1002B551F /* TicketsInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

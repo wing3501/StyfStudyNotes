@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2022 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,28 +30,18 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
-import SwiftUI
 
-enum Constants {
-  static let maxOffset = 100.0
-  
-  static let ballSize = 42.0
-  static let ballSpacing = 8.0
-  static let jumpDuration = 0.35
-  
-  static let timeForTheBallToReturn = 0.3
-  static let timeForTheBallToRollOut = 1.0
-  
-  static let spacingS = 8.0
-  static let spacingM = 16.0
-  static let spacingL = 24.0
-  static let cornersRadius = 24.0
-  static let iconSizeS = 16.0
-  static let iconSizeL = 24.0
-  static let orange = Color("AccentColor")
-  static let minHeaderOffset = -80.0
-  static let headerHeight = 220.0
-  static let minHeaderHeight = 120.0
-  static let floatingButtonWidth = 110.0
+func getTicketsInfo(for event: Event) -> [TicketsInfo] {
+  var ticketsLeft = event.ticketsLeft
+  var info: [TicketsInfo] = []
+
+  (1...4).forEach {
+    let random: Int = .random(in: 15...245)
+    let left = random > ticketsLeft ? ticketsLeft : random
+    ticketsLeft -= left
+
+    info.append(TicketsInfo(type: "Category \($0)", price: .random(in: 250...350) / $0, left: left))
+  }
+
+  return info
 }
