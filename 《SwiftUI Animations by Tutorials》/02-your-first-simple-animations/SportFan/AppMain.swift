@@ -32,6 +32,9 @@
 
 import SwiftUI
 
+//  显式动画：适合在一个地方修改一个变量，驱动多个视图动画
+//  隐式动画：适合在多个地方修改一个变量，驱动一个视图动画
+
 @main
 struct AppMain: App {
   var body: some Scene {

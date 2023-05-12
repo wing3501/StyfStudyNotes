@@ -37,6 +37,9 @@ struct ContentView: View {
   
   @State var pullToRefresh = PullToRefresh(progress: 0, state: .idle)
 
+  private let ease: Animation = .easeOut(duration: Constants.timeForTheBallToReturn)
+  private let spring: Animation = .interpolatingSpring(stiffness: 80, damping: 4)
+  
   var body: some View {
     testBody
     
@@ -70,6 +73,7 @@ struct ContentView: View {
           }
         }
         .offset(y: [.ongoing, .preparingToFinish].contains(pullToRefresh.state) ? Constants.maxOffset : 0)
+        .animation(pullToRefresh.state != .finishing ? spring : ease, value: pullToRefresh.state)
       }
     }
   }
