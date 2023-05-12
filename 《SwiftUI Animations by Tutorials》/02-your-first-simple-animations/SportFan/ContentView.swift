@@ -40,6 +40,10 @@ struct ContentView: View {
   private let ease: Animation = .easeOut(duration: Constants.timeForTheBallToReturn)
   private let spring: Animation = .interpolatingSpring(stiffness: 80, damping: 4)
   
+  @State var filterShown = false
+  @State var selectedSports: Set<Sport> = []
+  @State var unfilteredEvents: [Event] = []
+  
   var body: some View {
     testBody
     
@@ -67,20 +71,47 @@ struct ContentView: View {
       }
       ZStack(alignment: .top) {
         BallView(pullToRefresh: $pullToRefresh)
-        LazyVStack {
-          ForEach(events) {
-            EventView(event: $0)
+        VStack {
+          FilterView(selectedSports: $selectedSports, isShown: filterShown)
+            .padding(.top)
+            .zIndex(1)
+          LazyVStack {
+            ForEach(events) {
+              EventView(event: $0)
+            }
           }
         }
         .offset(y: [.ongoing, .preparingToFinish].contains(pullToRefresh.state) ? Constants.maxOffset : 0)
         .animation(pullToRefresh.state != .finishing ? spring : ease, value: pullToRefresh.state)
       }
     }
+    .toolbar {
+      ToolbarItem {
+        Button {
+          filterShown.toggle()
+        } label: {
+          Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+            .foregroundColor(Constants.orange)
+        }
+
+      }
+    }
+    .onChange(of: selectedSports) { _ in
+      filter()
+    }
   }
 
   @MainActor
   func update() async {
-    events = await fetchMoreEvents(toAppend: events)
+//    events = await fetchMoreEvents(toAppend: events)
+    unfilteredEvents = await fetchMoreEvents(toAppend: events)
+    filter()
+  }
+  
+  func filter() {
+    events = selectedSports.isEmpty ? unfilteredEvents : unfilteredEvents.filter({
+      selectedSports.contains($0.team.sport)
+    })
   }
 }
 
