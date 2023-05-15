@@ -10,6 +10,7 @@
 		622E67F629FBB44200FD4F73 /* URLSessionConfiguration+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */; };
 		622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F729FBB5F300FD4F73 /* Error+++.swift */; };
 		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
+		626AB6A72A11D10700AC2F57 /* UIImage+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AB6A62A11D10700AC2F57 /* UIImage+++.swift */; };
 		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
 		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
@@ -509,6 +510,7 @@
 		622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+++.swift"; sourceTree = "<group>"; };
 		622E67F729FBB5F300FD4F73 /* Error+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+++.swift"; sourceTree = "<group>"; };
 		622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		626AB6A62A11D10700AC2F57 /* UIImage+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+++.swift"; sourceTree = "<group>"; };
 		628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataClass.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -1101,6 +1103,7 @@
 			children = (
 				622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */,
 				622E67F729FBB5F300FD4F73 /* Error+++.swift */,
+				626AB6A62A11D10700AC2F57 /* UIImage+++.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3093,6 +3096,7 @@
 				92A8D7F025D28D880008EFAA /* 动态规划.swift in Sources */,
 				924C7159281BD54200B4AEE8 /* Measure.swift in Sources */,
 				920A7BC7282522A30011A12D /* SwiftUIByExample.swift in Sources */,
+				626AB6A72A11D10700AC2F57 /* UIImage+++.swift in Sources */,
 				921F3141291BD5E700EF7EFE /* UsingNavigationSplitView.swift in Sources */,
 				92A8D7F725D28DFD0008EFAA /* BFS.swift in Sources */,
 				922A00E12823D202009CBCA3 /* AnchorExample.swift in Sources */,

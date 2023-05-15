@@ -66,6 +66,7 @@ struct FilterView: View {
                   return currentShift
                 }
             }
+            .transition(.asymmetric(insertion: filterTransition, removal: .scale))
           }
         }
       }
@@ -92,6 +93,19 @@ struct FilterView: View {
     }else {
       selectedSports.insert(sport)
     }
+  }
+  // 自定义转场
+  private let filterTransition = AnyTransition.modifier(active: FilterModifier(active: true), identity: FilterModifier(active: false))
+  
+}
+
+struct FilterModifier: ViewModifier {
+  var active: Bool
+  
+  func body(content: Content) -> some View {
+    content
+      .scaleEffect(active ? 0.75 : 1)
+      .rotationEffect(.degrees(active ? .random(in: -25...25) : 0), anchor: .center)
   }
 }
 

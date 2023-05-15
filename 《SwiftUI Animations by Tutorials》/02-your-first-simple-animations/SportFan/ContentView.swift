@@ -90,7 +90,11 @@ struct ContentView: View {
     .toolbar {
       ToolbarItem {
         Button {
-          filterShown.toggle()
+//          filterShown.toggle()
+          // 过滤项的转场
+          withAnimation(filterShown ? .easeInOut : .interpolatingSpring(stiffness: 20, damping: 3).speed(2.5)) {
+            filterShown.toggle()
+          }
         } label: {
           Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
             .foregroundColor(Constants.orange)
