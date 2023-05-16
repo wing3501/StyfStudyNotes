@@ -76,10 +76,12 @@ struct ContentView: View {
             .padding(.top)
             .zIndex(1)
           LazyVStack { // 对于动画内容，有时最好使用VStack而不是LazyVStack，因为后者的惰性意味着你想要动画的元素还不一定可用，这可能会导致动画看起来草率或卡住。
-            ForEach(events) {
-              EventView(event: $0)
+            ForEach(events) { event in
+              NavigationLink(destination: EventDetailsView(event: event)) {
+                EventView(event: event)
+              }
 //                .transition(.scale.combined(with: .opacity))
-                .transition(.move(edge: .leading))
+                .transition(.move(edge: .leading)) // 给每个cell加转场
             }
           }
         }
