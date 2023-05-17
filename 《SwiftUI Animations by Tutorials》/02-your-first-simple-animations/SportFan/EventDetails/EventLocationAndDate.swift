@@ -34,6 +34,8 @@ import SwiftUI
 
 struct EventLocationAndDate: View {
   var event: Event
+  
+  var collapsed: Bool
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -51,27 +53,25 @@ struct EventLocationAndDate: View {
 
         Spacer()
       }
+      
+      if !collapsed {
+        HStack(spacing: Constants.spacingS) {
+          Image(systemName: "calendar")
+            .resizable()
+            .scaledToFit()
+            .frame(height: Constants.iconSizeL)
+            .clipped()
 
-      HStack(spacing: Constants.spacingS) {
-        Image(systemName: "calendar")
-          .resizable()
-          .scaledToFit()
-          .frame(height: Constants.iconSizeL)
-          .clipped()
-
-        Text(event.date)
-          .lineLimit(1)
-          .fontWeight(.heavy)
-          .font(.subheadline)
-        Spacer()
+          Text(event.date)
+            .lineLimit(1)
+            .fontWeight(.heavy)
+            .font(.subheadline)
+          Spacer()
+        }
       }
+      
     }
     .padding()
   }
 }
 
-struct EventLocationAndDate_Previews: PreviewProvider {
-  static var previews: some View {
-    EventLocationAndDate(event: makeEvent(for: teams[0]))
-  }
-}

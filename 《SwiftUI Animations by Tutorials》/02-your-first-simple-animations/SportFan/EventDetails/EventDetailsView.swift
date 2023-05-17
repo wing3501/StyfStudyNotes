@@ -68,19 +68,21 @@ struct EventDetailsView: View {
 //                ProgressView().frame(height: 300)
 //              }
 //            )
-            Text(event.team.name)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .font(.title2)
-              .fontWeight(.black)
-              .foregroundColor(.primary)
-              .padding()
+            if !collapsed {
+              Text(event.team.name)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.title2)
+                .fontWeight(.black)
+                .foregroundColor(.primary)
+                .padding()
+            }
 
             Text(event.team.description)
               .font(.footnote)
               .foregroundColor(.secondary)
               .padding(.horizontal)
 
-            EventLocationAndDate(event: event)
+            EventLocationAndDate(event: event, collapsed: collapsed)
 
             Button(action: {
               seatingChartVisible = true
