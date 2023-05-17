@@ -39,80 +39,92 @@ struct EventDetailsView: View {
   @State private var info: [TicketsInfo] = []
   @State private var properties: [TicketsInfo: (Double, Double)] = [:]
   @State var seatingChartVisible = false
+  
+  @State private var offset: CGFloat = 0
+  @State private var collapsed = false
 
   var body: some View {
     ZStack(alignment: .top) {
+      HeaderView(event: event, offset: offset, collapsed: collapsed)
+        .zIndex(1)
+      
       ScrollView {
-        VStack {
-          AsyncImage(
-            url: event.team.sport.imageURL,
-            content: { image in
-              image.resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width)
-                .frame(height: 300)
-                .clipped()
-            },
-            placeholder: {
-              ProgressView().frame(height: 300)
-            }
-          )
-          Text(event.team.name)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.title2)
-            .fontWeight(.black)
-            .foregroundColor(.primary)
-            .padding()
-
-          Text(event.team.description)
-            .font(.footnote)
-            .foregroundColor(.secondary)
-            .padding(.horizontal)
-
-          EventLocationAndDate(event: event)
-
-          Button(action: {
-            seatingChartVisible = true
-          }, label: {
-            Text("Seating Chart")
-              .lineLimit(1)
-              .foregroundColor(.white)
-              .frame(minWidth: UIScreen.halfWidth / 2)
-              .padding(.horizontal)
-              .background {
-                RoundedRectangle(cornerRadius: 36)
-                  .fill(Constants.orange)
-                  .shadow(radius: 2)
-                  .frame(height: 48)
-              }
-          })
-          .padding(.vertical, Constants.spacingM)
-
-          Text("Available Tickets")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.title3)
-            .fontWeight(.black)
-            .foregroundColor(.primary)
-            .padding()
-
-          LazyVGrid(columns: [GridItem(), GridItem()]) {
-            ForEach(info, id: \.type) {
-              TicketView(info: $0)
-                .padding(.top, properties[$0]?.0 ?? 0)
-                .rotationEffect(.degrees(properties[$0]?.1 ?? 0))
-            }
-          }.padding()
-
-          Text("Upcoming Events")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.title3)
-            .fontWeight(.black)
-            .foregroundColor(.primary)
-            .padding()
-
+        ZStack {
+          HeaderGeometryReader(offset: $offset, collapsed: $collapsed)
+          
           VStack {
-            ForEach(upcomingEvents) {
-              EventView(event: $0)
+            Spacer()
+              .frame(height: Constants.headerHeight)
+//            AsyncImage(
+//              url: event.team.sport.imageURL,
+//              content: { image in
+//                image.resizable()
+//                  .scaledToFill()
+//                  .frame(width: UIScreen.main.bounds.width)
+//                  .frame(height: 300)
+//                  .clipped()
+//              },
+//              placeholder: {
+//                ProgressView().frame(height: 300)
+//              }
+//            )
+            Text(event.team.name)
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .font(.title2)
+              .fontWeight(.black)
+              .foregroundColor(.primary)
+              .padding()
+
+            Text(event.team.description)
+              .font(.footnote)
+              .foregroundColor(.secondary)
+              .padding(.horizontal)
+
+            EventLocationAndDate(event: event)
+
+            Button(action: {
+              seatingChartVisible = true
+            }, label: {
+              Text("Seating Chart")
+                .lineLimit(1)
+                .foregroundColor(.white)
+                .frame(minWidth: UIScreen.halfWidth / 2)
+                .padding(.horizontal)
+                .background {
+                  RoundedRectangle(cornerRadius: 36)
+                    .fill(Constants.orange)
+                    .shadow(radius: 2)
+                    .frame(height: 48)
+                }
+            })
+            .padding(.vertical, Constants.spacingM)
+
+            Text("Available Tickets")
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .font(.title3)
+              .fontWeight(.black)
+              .foregroundColor(.primary)
+              .padding()
+
+            LazyVGrid(columns: [GridItem(), GridItem()]) {
+              ForEach(info, id: \.type) {
+                TicketView(info: $0)
+                  .padding(.top, properties[$0]?.0 ?? 0)
+                  .rotationEffect(.degrees(properties[$0]?.1 ?? 0))
+              }
+            }.padding()
+
+            Text("Upcoming Events")
+              .frame(maxWidth: .infinity, alignment: .leading)
+              .font(.title3)
+              .fontWeight(.black)
+              .foregroundColor(.primary)
+              .padding()
+
+            VStack {
+              ForEach(upcomingEvents) {
+                EventView(event: $0)
+              }
             }
           }
         }
@@ -123,6 +135,9 @@ struct EventDetailsView: View {
         fetchTicketsAndUpcomingEvents()
       }
     }
+    // 隐藏导航栏
+    .toolbar(.hidden)
+    .edgesIgnoringSafeArea(.top)
   }
 
   private func fetchTicketsAndUpcomingEvents() {
