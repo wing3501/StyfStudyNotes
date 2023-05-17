@@ -42,10 +42,12 @@ struct EventDetailsView: View {
   
   @State private var offset: CGFloat = 0
   @State private var collapsed = false
+  
+  @Namespace var namespace
 
   var body: some View {
     ZStack(alignment: .top) {
-      HeaderView(event: event, offset: offset, collapsed: collapsed)
+      HeaderView(event: event, offset: offset, collapsed: collapsed,namespace: namespace)
         .zIndex(1)
       
       ScrollView {
@@ -75,6 +77,9 @@ struct EventDetailsView: View {
                 .fontWeight(.black)
                 .foregroundColor(.primary)
                 .padding()
+                .matchedGeometryEffect(id: "title", in: namespace, properties: .position)
+              // 默认matchedGeometryEffect对齐两个视图的frame，所以对于文字的话，加上position，防止文字被截断
+                .zIndex(2)// 使动画运动表现在header上面
             }
 
             Text(event.team.description)
@@ -82,7 +87,7 @@ struct EventDetailsView: View {
               .foregroundColor(.secondary)
               .padding(.horizontal)
 
-            EventLocationAndDate(event: event, collapsed: collapsed)
+            EventLocationAndDate(event: event, collapsed: collapsed,namespace: namespace)
 
             Button(action: {
               seatingChartVisible = true

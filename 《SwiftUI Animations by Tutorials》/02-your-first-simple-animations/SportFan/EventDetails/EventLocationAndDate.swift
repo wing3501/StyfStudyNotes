@@ -36,6 +36,8 @@ struct EventLocationAndDate: View {
   var event: Event
   
   var collapsed: Bool
+  
+  var namespace: Namespace.ID
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -61,11 +63,13 @@ struct EventLocationAndDate: View {
             .scaledToFit()
             .frame(height: Constants.iconSizeL)
             .clipped()
+            .matchedGeometryEffect(id: "icon", in: namespace)
 
           Text(event.date)
             .lineLimit(1)
             .fontWeight(.heavy)
             .font(.subheadline)
+            .matchedGeometryEffect(id: "date", in: namespace, properties: .position)
           Spacer()
         }
       }
