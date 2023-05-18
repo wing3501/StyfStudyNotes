@@ -38,7 +38,9 @@ struct SeatsSelectionView: View {
   var body: some View {
     VStack {
       Spacer()
-      Text("// TODO: Implement seating chart")
+      SeatingChartView()
+        .aspectRatio(1.0, contentMode: .fit)
+        .padding()
         .frame(maxWidth: .infinity)
         .padding()
       Spacer()

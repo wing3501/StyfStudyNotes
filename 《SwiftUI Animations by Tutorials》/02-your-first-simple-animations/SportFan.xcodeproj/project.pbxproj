@@ -25,6 +25,7 @@
 		62634ECC2A0DE3B1002B551F /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC52A0DE3B1002B551F /* EventDetailsView.swift */; };
 		62634ECD2A0DE3B1002B551F /* TicketsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634EC62A0DE3B1002B551F /* TicketsInfo.swift */; };
 		62634ED12A0DE53F002B551F /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62634ED02A0DE53F002B551F /* FilterView.swift */; };
+		627559792A15C9FD00D0E364 /* SeatingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627559782A15C9FD00D0E364 /* SeatingChartView.swift */; };
 		6291FE172A147BE8006CE606 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291FE162A147BE8006CE606 /* HeaderView.swift */; };
 		6299BD5A2A131F4600AA5F44 /* HeaderGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299BD592A131F4600AA5F44 /* HeaderGeometryReader.swift */; };
 		835C287F28624B010074D7DE /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C287E28624B010074D7DE /* MockData.swift */; };
@@ -53,6 +54,7 @@
 		62634EC52A0DE3B1002B551F /* EventDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		62634EC62A0DE3B1002B551F /* TicketsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsInfo.swift; sourceTree = "<group>"; };
 		62634ED02A0DE53F002B551F /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		627559782A15C9FD00D0E364 /* SeatingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatingChartView.swift; sourceTree = "<group>"; };
 		6291FE162A147BE8006CE606 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6299BD592A131F4600AA5F44 /* HeaderGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGeometryReader.swift; sourceTree = "<group>"; };
 		835C287E28624B010074D7DE /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		18D775BF22AD944300AE281E /* SportFan */ = {
 			isa = PBXGroup;
 			children = (
+				627559772A15C9BC00D0E364 /* Seat */,
 				62634ECF2A0DE3FD002B551F /* Refresh */,
 				62634EBF2A0DE3B1002B551F /* EventDetails */,
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
@@ -142,6 +145,14 @@
 				624FB7272A0A259900C2CA32 /* ScrollViewGeometryReader.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		627559772A15C9BC00D0E364 /* Seat */ = {
+			isa = PBXGroup;
+			children = (
+				627559782A15C9FD00D0E364 /* SeatingChartView.swift */,
+			);
+			path = Seat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				624FB72E2A0A34E500C2CA32 /* JumpingBallView.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
 				835C288128624B070074D7DE /* EventView.swift in Sources */,
+				627559792A15C9FD00D0E364 /* SeatingChartView.swift in Sources */,
 				62634ECB2A0DE3B1002B551F /* Extensions.swift in Sources */,
 				62634ECA2A0DE3B1002B551F /* TicketView.swift in Sources */,
 				835C288428624EF70074D7DE /* Event.swift in Sources */,

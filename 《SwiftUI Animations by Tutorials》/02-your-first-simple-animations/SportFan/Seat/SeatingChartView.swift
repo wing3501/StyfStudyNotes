@@ -30,29 +30,43 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 import SwiftUI
 
-enum Constants {
-  static let maxOffset = 100.0
-  
-  static let ballSize = 42.0
-  static let ballSpacing = 8.0
-  static let jumpDuration = 0.35
-  
-  static let timeForTheBallToReturn = 0.3
-  static let timeForTheBallToRollOut = 1.0
-  
-  static let spacingS = 8.0
-  static let spacingM = 16.0
-  static let spacingL = 24.0
-  static let cornersRadius = 24.0
-  static let iconSizeS = 16.0
-  static let iconSizeL = 24.0
-  static let orange = Color("AccentColor")
-  static let minHeaderOffset = -80.0
-  static let headerHeight = 220.0
-  static let minHeaderHeight = 120.0
-  static let floatingButtonWidth = 110.0
-  static let stadiumSectorsCount = 4
+struct SeatingChartView: View {
+    var body: some View {
+      ZStack {
+        Stadium()
+          .stroke(.white, lineWidth: 2)
+      }
+    }
+}
+
+struct Stadium: Shape {
+  func path(in rect: CGRect) -> Path {
+    Path { path in
+      let width = rect.width
+      
+      let widthToHeightRatio = 1.3
+      let sectorDiff = width / (CGFloat(Constants.stadiumSectorsCount * 2))
+      
+      (0..<Constants.stadiumSectorsCount).forEach { i in
+        let sectionWidth = width - sectorDiff * Double(i)
+        let sectionHeight = width / widthToHeightRatio - sectorDiff * Double(i)
+        let offsetX = (width - sectionWidth) / 2.0
+        let offsetY = (width - sectionHeight) / 2.0
+        
+        let sectorRect = CGRect(x: offsetX, y: offsetY, width: sectionWidth, height: sectionHeight)
+        
+        path.addRoundedRect(in: sectorRect, cornerSize: CGSize(width: sectorRect.width / 4.0, height: sectorRect.width / 4.0), style: .continuous)
+      }
+    }
+  }
+}
+
+struct SeatingChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        SeatingChartView()
+        .padding()
+        .background(.orange)
+    }
 }
