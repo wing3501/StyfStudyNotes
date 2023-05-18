@@ -33,21 +33,31 @@
 import SwiftUI
 
 struct SeatingChartView: View {
+  
+  @State private var field = CGRect.zero
+  
     var body: some View {
       ZStack {
-        Stadium()
+        Field().path(in: field).fill(.green)
+        Field().path(in: field).stroke(.white, lineWidth: 2)
+        Stadium(field: $field)
           .stroke(.white, lineWidth: 2)
       }
     }
 }
 
 struct Stadium: Shape {
+  
+  @Binding var field: CGRect
+  
   func path(in rect: CGRect) -> Path {
     Path { path in
       let width = rect.width
       
       let widthToHeightRatio = 1.3
       let sectorDiff = width / (CGFloat(Constants.stadiumSectorsCount * 2))
+      
+      var smallestSctorFrame = CGRect.zero
       
       (0..<Constants.stadiumSectorsCount).forEach { i in
         let sectionWidth = width - sectorDiff * Double(i)
@@ -56,9 +66,35 @@ struct Stadium: Shape {
         let offsetY = (width - sectionHeight) / 2.0
         
         let sectorRect = CGRect(x: offsetX, y: offsetY, width: sectionWidth, height: sectionHeight)
+        smallestSctorFrame = sectorRect
         
         path.addRoundedRect(in: sectorRect, cornerSize: CGSize(width: sectorRect.width / 4.0, height: sectorRect.width / 4.0), style: .continuous)
       }
+      
+      computeField(in: smallestSctorFrame)
+    }
+  }
+  
+  private func computeField(in rect: CGRect) {
+    Task {
+      field = CGRect(x: rect.minX + rect.width * 0.25,
+                     y: rect.minY + rect.height * 0.25,
+                     width: rect.width * 0.5,
+                     height: rect.height * 0.5
+      )
+    }
+  }
+  
+}
+
+struct Field: Shape {
+  func path(in rect: CGRect) -> Path {
+    Path { path in
+      path.addRect(rect)
+      path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+      path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+      path.move(to: CGPoint(x: rect.midX, y: rect.midY))
+      path.addEllipse(in: CGRect(x: rect.midX - rect.width / 8.0, y: rect.midY - rect.width / 8.0, width: rect.width / 4.0, height: rect.width / 4.0))
     }
   }
 }
