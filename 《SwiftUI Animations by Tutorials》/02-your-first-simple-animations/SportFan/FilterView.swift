@@ -94,7 +94,7 @@ struct FilterView: View {
       selectedSports.insert(sport)
     }
   }
-  // 自定义转场
+  // ✅ 自定义转场
   private let filterTransition = AnyTransition.modifier(active: FilterModifier(active: true), identity: FilterModifier(active: false))
   
 }
