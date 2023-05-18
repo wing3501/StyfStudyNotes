@@ -47,8 +47,14 @@ struct EventDetailsView: View {
 
   var body: some View {
     ZStack(alignment: .top) {
-      HeaderView(event: event, offset: offset, collapsed: collapsed,namespace: namespace)
-        .zIndex(1)
+      VStack {
+        HeaderView(event: event, offset: offset, collapsed: collapsed,namespace: namespace)
+        Spacer()
+        if collapsed {
+          collapsedButton
+        }
+      }
+      .zIndex(1)
       
       ScrollView {
         ZStack {
@@ -89,22 +95,27 @@ struct EventDetailsView: View {
 
             EventLocationAndDate(event: event, collapsed: collapsed,namespace: namespace)
 
-            Button(action: {
-              seatingChartVisible = true
-            }, label: {
-              Text("Seating Chart")
-                .lineLimit(1)
-                .foregroundColor(.white)
-                .frame(minWidth: UIScreen.halfWidth / 2)
-                .padding(.horizontal)
-                .background {
-                  RoundedRectangle(cornerRadius: 36)
-                    .fill(Constants.orange)
-                    .shadow(radius: 2)
-                    .frame(height: 48)
-                }
-            })
-            .padding(.vertical, Constants.spacingM)
+            
+            if !collapsed {
+              Button(action: {
+                seatingChartVisible = true
+              }, label: {
+                Text("Seating Chart")
+                  .lineLimit(1)
+                  .foregroundColor(.white)
+                  .frame(minWidth: UIScreen.halfWidth / 2)
+                  .padding(.horizontal)
+                  .background {
+                    RoundedRectangle(cornerRadius: 36)
+                      .fill(Constants.orange)
+                      .shadow(radius: 2)
+                      .frame(height: 48)
+                      .frame(width: max(Constants.floatingButtonWidth, min(UIScreen.halfWidth * 1.5, UIScreen.halfWidth * 1.5 + offset * 2)))
+                  }
+                  .matchedGeometryEffect(id: "button", in: namespace, properties: .position)
+              })
+              .padding(.vertical, Constants.spacingM)
+            }
 
             Text("Available Tickets")
               .frame(maxWidth: .infinity, alignment: .leading)
@@ -146,6 +157,33 @@ struct EventDetailsView: View {
     .toolbar(.hidden)
     .edgesIgnoringSafeArea(.top)
   }
+  
+  var collapsedButton: some View {
+    HStack {
+      Spacer()
+      
+      Button {
+        seatingChartVisible = true
+      } label: {
+        Image("seats")
+          .resizable()
+          .renderingMode(.template)
+          .scaledToFit()
+          .frame(width: 32, height: 32)
+          .foregroundColor(.white)
+          .padding(.horizontal)
+          .background {
+            RoundedRectangle(cornerRadius: 36)
+              .fill(Constants.orange)
+              .shadow(radius: 2)
+              .frame(width: Constants.floatingButtonWidth, height: 48)
+          }
+          .matchedGeometryEffect(id: "button", in: namespace, properties: .position)
+      }
+      .padding(36)
+    }
+  }
+  
 
   private func fetchTicketsAndUpcomingEvents() {
     let info = getTicketsInfo(for: event)
