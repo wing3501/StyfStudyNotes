@@ -39,35 +39,54 @@ struct SeatingChartView: View {
   
   @State private var percentage: CGFloat = 0.0
   
+  // 选择座位
+  @State private var selectedTribune: Tribune? = nil
+  @State private var zoom = 1.25
+  @State private var zoomAnchor = UnitPoint.center
+  
     var body: some View {
-      ZStack {
-        Field().path(in: field)
-          .trim(from: 0.0, to: percentage) // ✅ 使用trim实现shape的路径动画
-          .fill(.green)
-        Field().path(in: field)
-          .trim(from: 0.0, to: percentage)
-          .stroke(.white, lineWidth: 2)
-        Stadium(field: $field, tribunes: $tribunes)
-          .trim(from: 0.0, to: percentage)
-          .stroke(.white, lineWidth: 2)
-        
-        ForEach(tribunes.flatMap(\.value),id: \.self) { tribune in
-          tribune.path
+      GeometryReader { proxy in
+        ZStack {
+          Field().path(in: field)
+            .trim(from: 0.0, to: percentage) // ✅ 使用trim实现shape的路径动画
+            .fill(.green)
+          Field().path(in: field)
             .trim(from: 0.0, to: percentage)
-            .stroke(.white, style: StrokeStyle(lineWidth: 1, lineJoin: .round))
-            .background {
-              tribune.path // 背景色的动画
-                .trim(from: 0.0, to: percentage)
-                .fill(.blue)
-            }
+            .stroke(.white, lineWidth: 2)
+          Stadium(field: $field, tribunes: $tribunes)
+            .trim(from: 0.0, to: percentage)
+            .stroke(.white, lineWidth: 2)
+          
+          ForEach(tribunes.flatMap(\.value),id: \.self) { tribune in
+            tribune.path
+              .trim(from: 0.0, to: percentage)
+              .stroke(.white, style: StrokeStyle(lineWidth: 1, lineJoin: .round))
+              .background {
+                tribune.path // 背景色的动画
+                  .trim(from: 0.0, to: percentage)
+                  .fill( selectedTribune == tribune ? .white : .blue)
+              }
+              .onTapGesture(coordinateSpace: .named("stadium")) { tap in
+                let unselected = selectedTribune == tribune
+                withAnimation(.easeInOut(duration: 1)) {
+                  selectedTribune = unselected ? nil : tribune
+                  zoomAnchor = unselected ? .center : UnitPoint(x: tap.x / proxy.size.width, y: tap.y / proxy.size.height) //以点击的位置为锚点进行放大
+                  zoom = unselected ? 1.25 : 12.0
+                }
+              }
+          }
+        }
+        .rotationEffect(.radians(.pi / 2))
+        .coordinateSpace(name: "stadium")// 统一手势的坐标系
+        .scaleEffect(zoom, anchor: zoomAnchor)
+        .onChange(of: tribunes) {
+          guard $0.keys.count == Constants.stadiumSectorsCount else { return } // 座位数变动时检查扇区是否完整
+          withAnimation(.easeInOut(duration: 1.0)) {
+            percentage = 1.0
+          }
         }
       }
-      .onChange(of: tribunes) {
-        guard $0.keys.count == Constants.stadiumSectorsCount else { return } // 座位数变动时检查扇区是否完整
-        withAnimation(.easeInOut(duration: 1.0)) {
-          percentage = 1.0
-        }
-      }
+      
     }
 }
 
