@@ -28,6 +28,7 @@
 		627559792A15C9FD00D0E364 /* SeatingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627559782A15C9FD00D0E364 /* SeatingChartView.swift */; };
 		6291FE172A147BE8006CE606 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291FE162A147BE8006CE606 /* HeaderView.swift */; };
 		6299BD5A2A131F4600AA5F44 /* HeaderGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299BD592A131F4600AA5F44 /* HeaderGeometryReader.swift */; };
+		62D768E42A175A160011D287 /* LinkedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D768E32A175A160011D287 /* LinkedAnimation.swift */; };
 		835C287F28624B010074D7DE /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C287E28624B010074D7DE /* MockData.swift */; };
 		835C288128624B070074D7DE /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C288028624B070074D7DE /* EventView.swift */; };
 		835C288428624EF70074D7DE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835C288328624EF70074D7DE /* Event.swift */; };
@@ -57,6 +58,7 @@
 		627559782A15C9FD00D0E364 /* SeatingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatingChartView.swift; sourceTree = "<group>"; };
 		6291FE162A147BE8006CE606 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6299BD592A131F4600AA5F44 /* HeaderGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGeometryReader.swift; sourceTree = "<group>"; };
+		62D768E32A175A160011D287 /* LinkedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedAnimation.swift; sourceTree = "<group>"; };
 		835C287E28624B010074D7DE /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		835C288028624B070074D7DE /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		835C288328624EF70074D7DE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				627559782A15C9FD00D0E364 /* SeatingChartView.swift */,
+				62D768E32A175A160011D287 /* LinkedAnimation.swift */,
 			);
 			path = Seat;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				62634EC92A0DE3B1002B551F /* SeatsSelectionView.swift in Sources */,
 				624FB72C2A0A340200C2CA32 /* BallView.swift in Sources */,
 				62634ED12A0DE53F002B551F /* FilterView.swift in Sources */,
+				62D768E42A175A160011D287 /* LinkedAnimation.swift in Sources */,
 				62634ECC2A0DE3B1002B551F /* EventDetailsView.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
 				624FB7262A0A244300C2CA32 /* PullToRefresh.swift in Sources */,

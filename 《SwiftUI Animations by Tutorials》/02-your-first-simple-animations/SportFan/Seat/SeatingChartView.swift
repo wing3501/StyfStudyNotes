@@ -68,11 +68,15 @@ struct SeatingChartView: View {
               }
               .onTapGesture(coordinateSpace: .named("stadium")) { tap in
                 let unselected = selectedTribune == tribune
-                withAnimation(.easeInOut(duration: 1)) {
-                  selectedTribune = unselected ? nil : tribune
-                  zoomAnchor = unselected ? .center : UnitPoint(x: tap.x / proxy.size.width, y: tap.y / proxy.size.height) //以点击的位置为锚点进行放大
-                  zoom = unselected ? 1.25 : 12.0
+                let anchor = UnitPoint(x: tap.x / proxy.size.width, y: tap.y / proxy.size.height) //以点击的位置为锚点进行放大
+                // ✅ 使用LinkedAnimation让两个动画有先后顺序
+                LinkedAnimation.easeInOut(for: 0.7) {
+                  zoom = unselected ? 1.25 : 12
                 }
+                .link(to: .easeInOut(for: 0.3, action: {
+                  selectedTribune = unselected ? nil : tribune
+                  zoomAnchor = unselected ? .center : anchor
+                }), reverse: !unselected)
               }
           }
         }
@@ -86,7 +90,7 @@ struct SeatingChartView: View {
           }
         }
       }
-      
+     
     }
 }
 
