@@ -37,16 +37,35 @@ struct SeatingChartView: View {
   @State private var field = CGRect.zero
   @State private var tribunes: [Int: [Tribune]] = [:]
   
+  @State private var percentage: CGFloat = 0.0
+  
     var body: some View {
       ZStack {
-        Field().path(in: field).fill(.green)
-        Field().path(in: field).stroke(.white, lineWidth: 2)
+        Field().path(in: field)
+          .trim(from: 0.0, to: percentage) // ✅ 使用trim实现shape的路径动画
+          .fill(.green)
+        Field().path(in: field)
+          .trim(from: 0.0, to: percentage)
+          .stroke(.white, lineWidth: 2)
         Stadium(field: $field, tribunes: $tribunes)
+          .trim(from: 0.0, to: percentage)
           .stroke(.white, lineWidth: 2)
         
         ForEach(tribunes.flatMap(\.value),id: \.self) { tribune in
           tribune.path
+            .trim(from: 0.0, to: percentage)
             .stroke(.white, style: StrokeStyle(lineWidth: 1, lineJoin: .round))
+            .background {
+              tribune.path // 背景色的动画
+                .trim(from: 0.0, to: percentage)
+                .fill(.blue)
+            }
+        }
+      }
+      .onChange(of: tribunes) {
+        guard $0.keys.count == Constants.stadiumSectorsCount else { return } // 座位数变动时检查扇区是否完整
+        withAnimation(.easeInOut(duration: 1.0)) {
+          percentage = 1.0
         }
       }
     }
