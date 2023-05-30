@@ -297,10 +297,49 @@ struct ArcTribune: Shape {
   }
 }
 
+struct SeatShape: Shape {
+  func path(in rect: CGRect) -> Path {
+    Path { path in
+      let verticalSpacing = rect.height * 0.1
+      let cornerSize = CGSize(width: rect.width / 15.0, height: rect.height / 15.0)
+      let seatBackHeight = rect.height / 3.0 - verticalSpacing
+      let squabHeight = rect.height / 2.0 - verticalSpacing
+      let seatWidth = rect.width
+      
+      let backRect = CGRect(x: 0, y: verticalSpacing, width: seatWidth, height: seatBackHeight)
+      let squabRect = CGRect(x: 0, y: rect.height / 2.0, width: seatWidth, height: squabHeight)
+      path.addRoundedRect(in: backRect, cornerSize: cornerSize)
+      path.addRoundedRect(in: squabRect, cornerSize: cornerSize)
+      
+      path.move(to: CGPoint(x: rect.width / 2.0, y: rect.height / 3.0))
+      path.addLine(to: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0))
+      
+    }
+  }
+}
+
+struct SeatPreview: View {
+  let seatSize = 100.0
+  var body: some View {
+    ZStack {
+      SeatShape()
+        .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
+        .fill(.blue)
+    
+      SeatShape()
+        .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
+        .stroke(lineWidth: 2)
+    }
+    .frame(width: seatSize, height: seatSize)
+  }
+}
+
 struct SeatingChartView_Previews: PreviewProvider {
     static var previews: some View {
-        SeatingChartView()
-        .padding()
-        .background(.orange)
+//        SeatingChartView()
+//        .padding()
+//        .background(.orange)
+      
+      SeatPreview()
     }
 }
