@@ -298,6 +298,9 @@ struct ArcTribune: Shape {
 }
 
 struct SeatShape: Shape {
+  
+  let rotation: CGFloat
+  
   func path(in rect: CGRect) -> Path {
     Path { path in
       let verticalSpacing = rect.height * 0.1
@@ -321,23 +324,42 @@ struct SeatShape: Shape {
       path.move(to: CGPoint(x: rect.width / 2.0, y: rect.height / 3.0))
 //      path.addLine(to: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0))
       path.addLine(to: CGPoint(x: rect.width / 2.0 - skewShift / 2, y: rect.height / 2.0))
+      
+      // 应用旋转矩阵会围绕其原点（minX，minY）旋转对象。要围绕任意点（如其中心）执行变换，首先需要将对象移动到该点，执行旋转，然后将对象平移回来。
+      let rotationCenter = CGPoint(x: rect.width / 2, y: rect.height / 2)
+      let translationToCenter = CGAffineTransform(translationX: rotationCenter.x, y: rotationCenter.y)
+      let initalTranslation = CGAffineTransform(translationX: rect.minX, y: rect.minY)
+      
+      var result = CGAffineTransformRotate(translationToCenter, rotation)
+      result = CGAffineTransformTranslate(result, -rotationCenter.x, -rotationCenter.y)
+      
+//      path = path.applying(CGAffineTransform(rotationAngle: rotation))
+      path = path.applying(result.concatenating(initalTranslation))
     }
   }
 }
 
 struct SeatPreview: View {
   let seatSize = 100.0
+  
+  @State var rotation: Float = 0.0
+  
   var body: some View {
-    ZStack {
-      SeatShape()
-        .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
-        .fill(.blue)
-    
-      SeatShape()
-        .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
-        .stroke(lineWidth: 2)
+    VStack {
+      ZStack {
+        SeatShape(rotation: CGFloat(-rotation))
+          .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
+          .fill(.blue)
+      
+        SeatShape(rotation: CGFloat(-rotation))
+          .path(in: CGRect(x: 0, y: 0, width: seatSize, height: seatSize))
+          .stroke(lineWidth: 2)
+      }
+      .frame(width: seatSize, height: seatSize)
+      
+      Slider(value: $rotation, in: 0.0...(2 * .pi), step: .pi / 20)
+      Text("\(rotation)")
     }
-    .frame(width: seatSize, height: seatSize)
   }
 }
 
