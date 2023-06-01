@@ -304,16 +304,23 @@ struct SeatShape: Shape {
       let cornerSize = CGSize(width: rect.width / 15.0, height: rect.height / 15.0)
       let seatBackHeight = rect.height / 3.0 - verticalSpacing
       let squabHeight = rect.height / 2.0 - verticalSpacing
-      let seatWidth = rect.width
+      let skewAngle = .pi / 4.0
+      let skewShift = seatBackHeight / tan(skewAngle)
+//      let seatWidth = rect.width
+      let seatWidth = rect.width - skewShift
+      
       
       let backRect = CGRect(x: 0, y: verticalSpacing, width: seatWidth, height: seatBackHeight)
       let squabRect = CGRect(x: 0, y: rect.height / 2.0, width: seatWidth, height: squabHeight)
-      path.addRoundedRect(in: backRect, cornerSize: cornerSize)
+      
+      let skew = CGAffineTransform(1, 0, -cos(skewAngle), 1, skewShift + verticalSpacing, 0)
+//      path.addRoundedRect(in: backRect, cornerSize: cornerSize)
+      path.addRoundedRect(in: backRect, cornerSize: cornerSize, transform: skew)
       path.addRoundedRect(in: squabRect, cornerSize: cornerSize)
       
       path.move(to: CGPoint(x: rect.width / 2.0, y: rect.height / 3.0))
-      path.addLine(to: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0))
-      
+//      path.addLine(to: CGPoint(x: rect.width / 2.0, y: rect.height / 2.0))
+      path.addLine(to: CGPoint(x: rect.width / 2.0 - skewShift / 2, y: rect.height / 2.0))
     }
   }
 }
