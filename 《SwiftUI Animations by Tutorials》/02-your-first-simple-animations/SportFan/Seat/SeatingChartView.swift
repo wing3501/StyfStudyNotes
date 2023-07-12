@@ -164,6 +164,7 @@ struct Field: Shape {
 
 struct Tribune: Hashable, Equatable {
   var path: Path
+  var seats: [Seat]
   
   func hash(into hasher: inout Hasher) {
     hasher.combine(path.description)
@@ -268,12 +269,37 @@ struct Sector: Shape {
     }
   }
   
-  private func makeRectTribuneAt(x: CGFloat, y: CGFloat, rotated: Bool = false) -> Tribune {
-    Tribune(path: RectTribune().path(in: CGRect(x: x, y: y, width: rotated ? tribuneSize.height : tribuneSize.width, height: rotated ? tribuneSize.width : tribuneSize.height)))
+//  private func makeRectTribuneAt(x: CGFloat, y: CGFloat, rotated: Bool = false) -> Tribune {
+//    Tribune(path: RectTribune().path(in: CGRect(x: x, y: y, width: rotated ? tribuneSize.height : tribuneSize.width, height: rotated ? tribuneSize.width : tribuneSize.height)))
+//  }
+  
+  private func makeRectTribuneAt(x: CGFloat, y: CGFloat, vertical: Bool, rotation: CGFloat) -> Tribune {
+    let rect = CGRect(x: x, y: y, width: vertical ? tribuneSize.height : tribuneSize.width, height: vertical ? tribuneSize.width : tribuneSize.height)
+    return Tribune(path: RectTribune().path(in: rect), seats: computeSeats(for: rect, at: rotation))
   }
   
   private func computeTribunes(at rect: CGRect, with corner: CGFloat) -> [Tribune] {
     computeRectTribunesPaths(at: rect, corner: corner) + computeArcTribunesPaths(at: rect, corner: corner)
+  }
+  // 该方法最终将根据三角架和旋转的CGRect计算座椅的边界。
+  private func computeSeats(for tribune: CGRect, at rotation: CGFloat) -> [Seat] {
+    var seats: [Seat] = []
+    let seatSize = tribuneSize.height * 0.1
+    let columnsNumber = Int(tribune.width / seatSize)
+    let rowsNumber = Int(tribune.height / seatSize)
+    let spacingH = CGFloat(tribune.width - seatSize * CGFloat(columnsNumber)) / CGFloat(columnsNumber)
+    let spacingV = CGFloat(tribune.height - seatSize * CGFloat(rowsNumber)) / CGFloat(rowsNumber)
+    
+    (0..<columnsNumber).forEach { column in
+      (0..<rowsNumber).forEach { row in
+        let x = tribune.minX + spacingH / 2.0 + (spacingH + seatSize) * CGFloat(column)
+        let y = tribune.minY + spacingV / 2.0 + (spacingV + seatSize) * CGFloat(row)
+        let seatRect = CGRect(x: x, y: y, width: seatSize, height: seatSize)
+        seats.append(Seat(path: SeatShape(rotation: rotation).path(in: seatRect)))
+      }
+    }
+    
+    return seats
   }
 }
 
@@ -371,4 +397,12 @@ struct SeatingChartView_Previews: PreviewProvider {
       
       SeatPreview()
     }
+}
+
+struct Seat: Hashable,Equatable {
+  var path: Path
+  
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(path.description)
+  }
 }
