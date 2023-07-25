@@ -10,6 +10,7 @@
 		622E67F629FBB44200FD4F73 /* URLSessionConfiguration+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */; };
 		622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F729FBB5F300FD4F73 /* Error+++.swift */; };
 		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
+		6236562A2A6FBB1F008A6F77 /* ExpertSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623656292A6FBB1F008A6F77 /* ExpertSwift.swift */; };
 		626AB6A72A11D10700AC2F57 /* UIImage+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AB6A62A11D10700AC2F57 /* UIImage+++.swift */; };
 		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
@@ -510,6 +511,7 @@
 		622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+++.swift"; sourceTree = "<group>"; };
 		622E67F729FBB5F300FD4F73 /* Error+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+++.swift"; sourceTree = "<group>"; };
 		622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		623656292A6FBB1F008A6F77 /* ExpertSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertSwift.swift; sourceTree = "<group>"; };
 		626AB6A62A11D10700AC2F57 /* UIImage+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+++.swift"; sourceTree = "<group>"; };
 		628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Walk+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "StyfStudyNotes/CoreData/Dog Walk/Dog+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -1106,6 +1108,14 @@
 				626AB6A62A11D10700AC2F57 /* UIImage+++.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		623656282A6FBB0B008A6F77 /* ExpertSwift */ = {
+			isa = PBXGroup;
+			children = (
+				623656292A6FBB1F008A6F77 /* ExpertSwift.swift */,
+			);
+			path = ExpertSwift;
 			sourceTree = "<group>";
 		};
 		628982C529DAFF330035BA1F /* Helper */ = {
@@ -2011,6 +2021,7 @@
 				92A8D7CC25D288DA0008EFAA /* AppDelegate.m */,
 				92A8D7D125D288DA0008EFAA /* ViewController.h */,
 				92A8D7D225D288DA0008EFAA /* ViewController.m */,
+				623656282A6FBB0B008A6F77 /* ExpertSwift */,
 				622E67F429FBB42900FD4F73 /* Extension */,
 				628982C529DAFF330035BA1F /* Helper */,
 				92040DC92921F1C400800273 /* Core ML */,
@@ -3135,6 +3146,7 @@
 				925810222806C452008AF141 /* GithubAPI.swift in Sources */,
 				9276475828AE0DD900970310 /* CampSite+CoreDataProperties.swift in Sources */,
 				9272916C28B3761200DDB42F /* JournalEntryViewController.swift in Sources */,
+				6236562A2A6FBB1F008A6F77 /* ExpertSwift.swift in Sources */,
 				92728B8028AA4A1B00C51140 /* Team+CoreDataClass.swift in Sources */,
 				9246CAB1283635B200E6FB65 /* PersistenceController.swift in Sources */,
 				92CA9CBD28164FC300246D51 /* AppState.swift in Sources */,
