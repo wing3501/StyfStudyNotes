@@ -9,10 +9,112 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
-        // 如何关闭弹性 https://stackoverflow.com/questions/59629390/swiftui-is-there-any-way-to-turn-off-bouncing-while-scrolling-the-scrollview/61851231?r=SearchResults#61851231
+        // ✅ scrollTransitions 给滚动的视图加一点过渡动画
+//        ScrollView(.horizontal) {
+//            Button("Flash") {
+//            }
+//            .aspectRatio(16.0 / 9.0, contentMode: .fit)
+//            .containerRelativeFrame([.horizontal], count: 1, spacing: 10)
+//            .clipShape(.rect(cornerRadius: 20.0))
+//            .scrollTransition(axis: .horizontal) { content, phase in
+//                content
+//                    .scaleEffect(x: phase.isIdentity ? 1.0 : 0.75, y: phase.isIdentity ? 1.0 : 0.75)
+//            }
+//        }
+        // 但是并非所有视图修饰符都可以安全地用于 scrollTransition 中。例如，不支持自定义字体并且直接报错。
+//        .scrollTransition(axis: .horizontal) { content, phase in
+//            content
+//                .scaleEffect(
+//                    x: phase.isIdentity ? 1.0 : 0.75,
+//                    y: phase.isIdentity ? 1.0 : 0.75)
+//                .rotationEffect(
+//                    .degrees(phase.isIdentity ? 0.0 : 90.0)
+//                )
+//                .offset(
+//                    x: phase.isIdentity ? 0.0 : 20.0,
+//                    y: phase.isIdentity ? 0.0 : 20.0
+//                )
+//        //        .font(phase.isIdentity ? .body : .title2) // Value of type 'some VisualEffect' has no member 'font'
+//        }
+        
+        // ✅ scrollPosition 滚动到指定位置
+//        @Binding var mainID: Palette.ID?
+//
+//        VStack {
+//            GalleryHeroHeader(palettes: palettes, mainID: $mainID)
+//            ScrollView(.horizontal) { ... }
+//                .scrollPosition(id: $mainID)
+//        }
+//
+//        // in GalleryHeroHeader
+//        GalleryPaddle(edge: .leading) {
+//            mainID = calPreviousID()
+//        }
+//        
+        // ✅ scrollIndicatorsFlash(onAppear:)，它用来控制当滚动视图第一次出现时，是否闪烁其滚动指示器。
+//        ScrollView(.horizontal) {
+//            Button("Flash") {
+//                flashTrigger.toggle()
+//            }
+//        }
+//        .scrollIndicatorsFlash(onAppear: true) //但是经测试，scrollIndicatorsFlash(onAppear:) 只能在垂直方向的视图有效，水平无效
+//        .scrollIndicatorsFlash(trigger: flashTrigger) //如果想使用过程控制滚动指示器的显示，可以设置某个值改变时闪烁滚动指示器，scrollIndicatorsFlash(trigger:) 修饰符帮能我们实现
+        
+        
+        // ✅ 我们可以使用现有的 scrollIndicators 修饰符来实现移除滚动指示器
+//        ScrollView(.horizontal) {
+//            
+//        }
+//        .scrollIndicators(.hidden) // never
+        
+        // ✅ 我们在视图中添加上 containerRelativeFrame 修饰符，并指定了参数为水平轴。它使得该视图只占用其容器的宽度，此时，视图大小会自动适应容器的宽度。
+        // 我们需要在 iOS 上展示一个，而在 iPad 上展示两个，我们可以根据 horizontalSizeClass 判断个数
+//        ScrollView(.horizontal) {
+//            blueView
+//                .aspectRatio(16.0 / 9.0, contentMode: .fit)
+//                .containerRelativeFrame([.horizontal], count: sizeClass == .regular ? 2 : 1, spacing: 10.0)
+//        }
+        
+        
+        // ✅ 我们可以使用 scrollTargetBehavior 修饰符来改变 ScrollView 计算 contentOffset 的方式
+//        ScrollView(.horizontal) {
+//        }
+//        .scrollTargetBehavior(.paging)//分页滚动
+//        .scrollTargetBehavior(.viewAligned)//viewAligned 对齐行为可以将 ScrollView 对齐到视图上。因此 ScrollView 需要知道哪些视图应该被考虑对齐，这些视图被称为滚动目标。
+        //（当使用 lazy stack 时，使用 scrollTargetLayout 非常重要，即使可见区域之外的视图尚未创建，布局也知道将要创建哪些视图，因此它可以确保 ScrollView 滚动到正确的位置）。
+        
+        //✅ 我们可以使用 scrollClipDisabled 修饰符来禁用这种行为，从而避免阴影被裁剪
+//        ScrollView(.horizontal) {
+//            HStack(alignment: .center, spacing: 20) {
+//                ForEach([Color.red,Color.green], id: \.self) { color in
+//                    Rectangle()
+//                        .frame(width: 100, height: 100)
+////                        .clipShape(CustomShape())//自定义形状
+//                        .foregroundColor(color)
+//                        .shadow(color: .primary, radius: 20)
+//                }
+//            }
+//        }
+//        .scrollClipDisabled(true)
+        
+        
+        //✅新的 contentMargins 允许我们给 ScrollView 的内容和滚动指示器分别插入边距
+//        ScrollView {
+//        }
+//        .contentMargins(.vertical, 50)
+//        .contentMargins(.vertical, 50, for: .scrollContent)
+//        .contentMargins(.vertical, 50, for: .scrollIndicators)
+        
+        // 🚗 如何实践 ScrollView 新特性 https://mp.weixin.qq.com/s/48nr36QLqhiiBtphVa_wRw
+        // ScrollView 内容缩进
+//        ScrollView {
+//        }
+//        .safeAreaPadding(.horizontal, 10)
+        
+        //✅ 如何关闭弹性 https://stackoverflow.com/questions/59629390/swiftui-is-there-any-way-to-turn-off-bouncing-while-scrolling-the-scrollview/61851231?r=SearchResults#61851231
 //        UITableView.appearance().bounces = false
         
-        // 如何隐藏指示器  https://stackoverflow.com/questions/58320037/is-there-a-way-to-hide-scroll-indicators-in-a-swiftui-list
+        // ✅如何隐藏指示器  https://stackoverflow.com/questions/58320037/is-there-a-way-to-hide-scroll-indicators-in-a-swiftui-list
         // 1. 使用全局隐藏 UITableView.appearance().showsVerticalScrollIndicator = false
         // 2. 使用 ScrollView+LazyVStack
 //        ScrollView(.vertical, showsIndicators: false) { // <- This argument
@@ -23,14 +125,14 @@ struct ListsDemo: View {
 //                    }
 //                }
         
-        // 禁止滚动 scrollDisabled  外部设置禁止滚动，内部所有滚动视图都会被禁止滚动，内部设置.scrollDisabled(false)不起作用
+        //✅ 禁止滚动 scrollDisabled  外部设置禁止滚动，内部所有滚动视图都会被禁止滚动，内部设置.scrollDisabled(false)不起作用
 //        ScrollView {
 //        }
 //        .scrollDisabled(true)
-        // 内部想对禁止滚动做出反应，可以使用
+        //✅ 内部想对禁止滚动做出反应，可以使用
 //        @Environment(\.isScrollEnabled) private var isScrollEnabled
         
-        //最小行高
+        //✅ 最小行高
 //        List {
 //            ....
 //        }
