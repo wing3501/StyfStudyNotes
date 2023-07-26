@@ -17,3 +17,14 @@ func iselse<V>(_ condition: Bool,
                _ valueFalse: @autoclosure () throws -> V) rethrows -> V {
     condition ? try valueTure() : try valueFalse()
 }
+
+//与其拥有像isValid这样的属性，不如在无法创建有效实例时，通过返回nil或抛出更具体的错误来使自定义类型的初始值设定项失败。这种显式失败模式允许您设置代码，以便编译器强制您检查错误。回报是：当你编写一个使用类型的函数时，你不必担心可能无效的半生不熟的实例。这种模式将数据验证和错误处理推送到软件堆栈的上层，并使下层在没有额外检查的情况下高效运行。
+struct Email: RawRepresentable {
+    var rawValue: String
+    init?(rawValue: String) {
+        guard rawValue.contains("@") else {
+            return nil
+        }
+        self.rawValue = rawValue
+    }
+}
