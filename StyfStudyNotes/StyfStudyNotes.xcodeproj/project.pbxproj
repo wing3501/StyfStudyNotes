@@ -11,8 +11,8 @@
 		622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F729FBB5F300FD4F73 /* Error+++.swift */; };
 		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
 		6236562A2A6FBB1F008A6F77 /* ExpertSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623656292A6FBB1F008A6F77 /* ExpertSwift.swift */; };
+		624F4E802A7CD8890044D69F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 624F4E7F2A7CD8890044D69F /* Kingfisher */; };
 		626AB6A72A11D10700AC2F57 /* UIImage+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AB6A62A11D10700AC2F57 /* UIImage+++.swift */; };
-		6283A0C12A7C946E00CF8356 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6283A0C02A7C946E00CF8356 /* Kingfisher */; };
 		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
 		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
@@ -1082,7 +1082,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6283A0C12A7C946E00CF8356 /* Kingfisher in Frameworks */,
+				624F4E802A7CD8890044D69F /* Kingfisher in Frameworks */,
 				9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2670,7 +2670,7 @@
 			);
 			name = StyfStudyNotes;
 			packageProductDependencies = (
-				6283A0C02A7C946E00CF8356 /* Kingfisher */,
+				624F4E7F2A7CD8890044D69F /* Kingfisher */,
 			);
 			productName = StyfStudyNotes;
 			productReference = 92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */;
@@ -2725,7 +2725,7 @@
 			);
 			mainGroup = 92A8D7BF25D288DA0008EFAA;
 			packageReferences = (
-				6283A0BF2A7C946E00CF8356 /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */,
+				624F4E7E2A7CD8890044D69F /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */,
 			);
 			productRefGroup = 92A8D7C925D288DA0008EFAA /* Products */;
 			projectDirPath = "";
@@ -3630,14 +3630,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6283A0BF2A7C946E00CF8356 /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */ = {
+		624F4E7E2A7CD8890044D69F /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "SPM/Kingfisher-master";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6283A0C02A7C946E00CF8356 /* Kingfisher */ = {
+		624F4E7F2A7CD8890044D69F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Kingfisher;
 		};
