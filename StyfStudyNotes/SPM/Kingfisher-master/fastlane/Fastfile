@@ -7,9 +7,9 @@ platform :ios do
   desc "Runs all the tests"
   lane :tests do
     test(destination: "platform=macOS", swift_version: "5.0")
-    test(destination: "platform=iOS Simulator,name=iPhone 12", swift_version: "5.0")
+    test(destination: "platform=iOS Simulator,name=iPhone 14", swift_version: "5.0")
     test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "5.0")
-    build(destination: "platform=watchOS Simulator,name=Apple Watch Series 6 - 44mm", swift_version: "5.0")
+    build(destination: "platform=watchOS Simulator,name=Apple Watch Series 8 (41mm)", swift_version: "5.0")
   end
     
   lane :test_ci do
@@ -41,8 +41,9 @@ platform :ios do
 
   desc "Lint"
   lane :lint do
-    # carthage(command: "build", no_skip_current: true, platform: "iOS")
-    pod_lib_lint
+    # Allows warnings temporarily before CocoaPods 1.13.0 (visionOS support) and Xcode 15.0
+    # pod_lib_lint
+    pod_lib_lint(allow_warnings: true)
     spm
   end
   
@@ -82,21 +83,16 @@ platform :ios do
       upload_assets: ["build/Kingfisher-#{target_version}.zip"]
     )
     
-    pod_push
+    pod_push(allow_warnings: true)
   end
-  
-  lane :podpush do
-    pod_push
-  end
-  
+
   lane :xcframework do |options|
     target_version = "Kingfisher-#{options[:version]}"
-    supporting_root = "../build/#{target_version}/Supporting Files"
     
-    xcversion(version: "~> 13.0")
+    xcversion(version: "~> 15.0")
     FileUtils.rm_rf '../build'
     
-    frameworks = []
+    frameworks = {}
     
     ["macosx",
      "iphoneos", 
@@ -104,7 +100,9 @@ platform :ios do
      "appletvos", 
      "appletvsimulator", 
      "watchos", 
-     "watchsimulator"
+     "watchsimulator",
+     "xros",
+     "xrsimulator"
     ].each do |sdk|
       archive_path = "build/Kingfisher-#{sdk}.xcarchive"
       xcodebuild(
@@ -117,25 +115,17 @@ platform :ios do
           "SKIP_INSTALL" => "NO"
         }
       )
-      frameworks.push("#{archive_path}/Products/Library/Frameworks/Kingfisher.framework")
 
-      dSYM_path = "../#{archive_path}/dSYMs/Kingfisher.framework.dSYM"
-      FileUtils.mkdir_p("#{supporting_root}/#{sdk}/dSYMs/")
-      FileUtils.cp_r(dSYM_path, "#{supporting_root}/#{sdk}/dSYMs/Kingfisher.framework.dSYM")
+      dSYM_path = "#{Dir.pwd}/../#{archive_path}/dSYMs/Kingfisher.framework.dSYM"
+      frameworks["#{archive_path}/Products/Library/Frameworks/Kingfisher.framework"] = { dsyms: dSYM_path }
+    end
 
-      bitcode_symbol_map_path = "../#{archive_path}/BCSymbolMaps/"
-      if Dir.exist?(bitcode_symbol_map_path)
-        FileUtils.mkdir_p("#{supporting_root}/#{sdk}/BCSymbolMaps/")
-        FileUtils.cp_r(bitcode_symbol_map_path, "#{supporting_root}/#{sdk}")
-      end
-    end
-    # `xcodebuild` action in fastlane does not support `-create-xcframework` arg yet.
-    # Change it back to use fastlane action later when it is prepared.
-    framework_args = frameworks.map { |framework_path| "-framework '#{framework_path}'"}
-    args = "-create-xcframework #{framework_args.join(" ")} -output 'build/#{target_version}/Kingfisher.xcframework'"
-    Dir.chdir("..") do
-      Action.sh "xcodebuild #{args}"
-    end
+    create_xcframework(
+      frameworks_with_dsyms: frameworks, 
+      output: "build/#{target_version}/Kingfisher.xcframework"
+    )
+
+    Actions.sh("codesign --timestamp -v --sign 'Apple Distribution: Wei Wang (A4YJ9MRZ66)' ../build/#{target_version}/Kingfisher.xcframework")
 
     zip(
       path: "build/#{target_version}",

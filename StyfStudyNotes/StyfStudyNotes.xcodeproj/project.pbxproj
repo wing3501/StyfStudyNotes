@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
 		6236562A2A6FBB1F008A6F77 /* ExpertSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623656292A6FBB1F008A6F77 /* ExpertSwift.swift */; };
 		626AB6A72A11D10700AC2F57 /* UIImage+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626AB6A62A11D10700AC2F57 /* UIImage+++.swift */; };
+		6283A0C12A7C946E00CF8356 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6283A0C02A7C946E00CF8356 /* Kingfisher */; };
 		628982C129DAFEBA0035BA1F /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BD29DAFEB90035BA1F /* Walk+CoreDataProperties.swift */; };
 		628982C229DAFEBA0035BA1F /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BE29DAFEBA0035BA1F /* Dog+CoreDataProperties.swift */; };
 		628982C329DAFEBA0035BA1F /* Dog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628982BF29DAFEBA0035BA1F /* Dog+CoreDataClass.swift */; };
@@ -86,7 +87,6 @@
 		921545D72817E4CB009781D2 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D62817E4CB009781D2 /* ArrayExtension.swift */; };
 		921545D928180C37009781D2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545D828180C37009781D2 /* UserModel.swift */; };
 		921545DB28180C8F009781D2 /* JSONDecoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */; };
-		92154602281819C3009781D2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 92154601281819C3009781D2 /* Kingfisher */; };
 		9215A8DA280FD57C00344F40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215A8D9280FD57C00344F40 /* ContentView.swift */; };
 		9218C2E22669D2DE00A932E6 /* OpenFlutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9218C2E12669D2DE00A932E6 /* OpenFlutter.m */; };
 		921CF2CA2818E9D5003DDD7F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921CF2C92818E9D5003DDD7F /* RegisterRequest.swift */; };
@@ -615,7 +615,6 @@
 		921545D62817E4CB009781D2 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		921545D828180C37009781D2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		921545DA28180C8F009781D2 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
-		921545DF2818178D009781D2 /* Kingfisher-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Kingfisher-master"; path = "SPM/Kingfisher-master"; sourceTree = "<group>"; };
 		9215A8D9280FD57C00344F40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9218C2E02669D2DE00A932E6 /* OpenFlutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenFlutter.h; sourceTree = "<group>"; };
 		9218C2E12669D2DE00A932E6 /* OpenFlutter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenFlutter.m; sourceTree = "<group>"; };
@@ -1083,7 +1082,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92154602281819C3009781D2 /* Kingfisher in Frameworks */,
+				6283A0C12A7C946E00CF8356 /* Kingfisher in Frameworks */,
 				9484FE9465E7E47456AE0528 /* libPods-StyfStudyNotes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1420,7 +1419,6 @@
 		921545DC2818154C009781D2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				921545DF2818178D009781D2 /* Kingfisher-master */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -2672,7 +2670,7 @@
 			);
 			name = StyfStudyNotes;
 			packageProductDependencies = (
-				92154601281819C3009781D2 /* Kingfisher */,
+				6283A0C02A7C946E00CF8356 /* Kingfisher */,
 			);
 			productName = StyfStudyNotes;
 			productReference = 92A8D7C825D288DA0008EFAA /* StyfStudyNotes.app */;
@@ -2726,6 +2724,9 @@
 				Base,
 			);
 			mainGroup = 92A8D7BF25D288DA0008EFAA;
+			packageReferences = (
+				6283A0BF2A7C946E00CF8356 /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */,
+			);
 			productRefGroup = 92A8D7C925D288DA0008EFAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3628,8 +3629,15 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		6283A0BF2A7C946E00CF8356 /* XCLocalSwiftPackageReference "SPM/Kingfisher-master" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "SPM/Kingfisher-master";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		92154601281819C3009781D2 /* Kingfisher */ = {
+		6283A0C02A7C946E00CF8356 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Kingfisher;
 		};

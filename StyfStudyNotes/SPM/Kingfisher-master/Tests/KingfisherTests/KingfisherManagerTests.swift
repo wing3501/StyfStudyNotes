@@ -465,6 +465,63 @@ class KingfisherManagerTests: XCTestCase {
         waitForExpectations(timeout: 3, handler: nil)
     }
     
+    func testCouldProcessDoNotHappenWhenSerializerCachesTheProcessedData() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        
+        stub(url, data: testImageData)
+        
+        let s = DefaultCacheSerializer()
+
+        let p1 = SimpleProcessor()
+        let options1: KingfisherOptionsInfo = [.processor(p1), .cacheSerializer(s), .waitForCache]
+        let source = Source.network(url)
+        
+        manager.retrieveImage(with: source, options: options1) { result in
+            XCTAssertTrue(p1.processed)
+            
+            let p2 = SimpleProcessor()
+            let options2: KingfisherOptionsInfo = [.processor(p2), .cacheSerializer(s), .waitForCache]
+            self.manager.cache.clearMemoryCache()
+            
+            self.manager.retrieveImage(with: source, options: options2) { result in
+                XCTAssertEqual(result.value?.cacheType, .disk)
+                XCTAssertFalse(p2.processed)
+                exp.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+    
+    func testCouldProcessAgainWhenSerializerCachesOriginalData() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        
+        stub(url, data: testImageData)
+        
+        var s = DefaultCacheSerializer()
+        s.preferCacheOriginalData = true
+
+        let p1 = SimpleProcessor()
+        let options1: KingfisherOptionsInfo = [.processor(p1), .cacheSerializer(s), .waitForCache]
+        let source = Source.network(url)
+        
+        manager.retrieveImage(with: source, options: options1) { result in
+            XCTAssertTrue(p1.processed)
+            
+            let p2 = SimpleProcessor()
+            let options2: KingfisherOptionsInfo = [.processor(p2), .cacheSerializer(s), .waitForCache]
+            self.manager.cache.clearMemoryCache()
+            
+            self.manager.retrieveImage(with: source, options: options2) { result in
+                XCTAssertEqual(result.value?.cacheType, .disk)
+                XCTAssertTrue(p2.processed)
+                exp.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+    
     func testWaitForCacheOnRetrieveImage() {
         let exp = expectation(description: #function)
         let url = testURLs[0]
@@ -1073,6 +1130,91 @@ class KingfisherManagerTests: XCTestCase {
             }
         waitForExpectations(timeout: 1.0)
     }
+    
+    func testImageResultContainsDataWhenDownloaded() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        stub(url, data: testImageData)
+        
+        manager.retrieveImage(with: url) { result in
+            XCTAssertNotNil(result.value?.data())
+            XCTAssertEqual(result.value!.data(), testImageData)
+            XCTAssertEqual(result.value!.cacheType, .none)
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+    
+    func testImageResultContainsDataWhenLoadFromMemoryCache() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        stub(url, data: testImageData)
+
+        manager.retrieveImage(with: url) { _ in
+            self.manager.retrieveImage(with: url) { result in
+                XCTAssertEqual(result.value!.cacheType, .memory)
+                XCTAssertNotNil(result.value?.data())
+                XCTAssertEqual(
+                    result.value!.data(),
+                    DefaultCacheSerializer.default.data(with: result.value!.image, original: nil)
+                )
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+    
+    func testImageResultContainsDataWhenLoadFromDiskCache() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        stub(url, data: testImageData)
+
+        manager.retrieveImage(with: url) { _ in
+            self.manager.cache.clearMemoryCache()
+            self.manager.retrieveImage(with: url) { result in
+                XCTAssertEqual(result.value!.cacheType, .disk)
+                XCTAssertNotNil(result.value?.data())
+                XCTAssertEqual(
+                    result.value!.data(),
+                    DefaultCacheSerializer.default.data(with: result.value!.image, original: nil)
+                )
+                exp.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+    
+    // https://github.com/onevcat/Kingfisher/issues/1923
+    func testAnimatedImageShouldRecreateFromCache() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+        let data = testImageGIFData
+        stub(url, data: data)
+        let p = SimpleProcessor()
+        manager.retrieveImage(with: url, options: [.processor(p), .onlyLoadFirstFrame]) { result in
+            XCTAssertTrue(p.processed)
+            XCTAssertTrue(result.value!.image.creatingOptions!.onlyFirstFrame)
+            p.processed = false
+            self.manager.retrieveImage(with: url, options: [.processor(p)]) { result in
+                XCTAssertTrue(p.processed)
+                XCTAssertFalse(result.value!.image.creatingOptions!.onlyFirstFrame)
+                exp.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+}
+
+private var imageCreatingOptionsKey: Void?
+
+extension KFCrossPlatformImage {
+    var creatingOptions: ImageCreatingOptions? {
+        get { return getAssociatedObject(self, &imageCreatingOptionsKey) }
+        set { setRetainedAssociatedObject(self, &imageCreatingOptionsKey, newValue) }
+    }
 }
 
 class SimpleProcessor: ImageProcessor {
@@ -1095,7 +1237,10 @@ class SimpleProcessor: ImageProcessor {
         case .image(let image):
             return image
         case .data(let data):
-            return KingfisherWrapper<KFCrossPlatformImage>.image(data: data, options: options.imageCreatingOptions)
+            let creatingOptions = options.imageCreatingOptions
+            let image = KingfisherWrapper<KFCrossPlatformImage>.image(data: data, options: creatingOptions)
+            image?.creatingOptions = creatingOptions
+            return image
         }
     }
 }
