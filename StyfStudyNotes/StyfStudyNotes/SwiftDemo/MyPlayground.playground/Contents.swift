@@ -183,6 +183,21 @@ func sum(_ numbers: Int...) -> Int {
     }
     return total
 }
+struct MyContent {}
+struct MyUser {}
+struct MyBucket {
+    private(set) var content: [MyContent] = []
+    private(set) var users: [MyUser] = []
+    
+    mutating func add(_ newContent: MyContent..., newUsers: MyUser...) {
+        content.append(contentsOf: newContent)
+        users.append(contentsOf: newUsers)
+    }
+    
+    mutating func add(_ newContent: [MyContent]) {
+        content.append(contentsOf: newContent)
+    }
+}
 
 //print
 print(1,2,3,4,5, separator: "_", terminator: ".")

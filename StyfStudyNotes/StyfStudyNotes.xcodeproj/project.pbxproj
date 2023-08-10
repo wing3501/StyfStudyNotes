@@ -24,6 +24,8 @@
 		6291A0B52A848D5A008CCCC9 /* URL+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291A0B42A848D5A008CCCC9 /* URL+++.swift */; };
 		6291A0B72A848EB2008CCCC9 /* ExpressibleByStringLiteral+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291A0B62A848EB2008CCCC9 /* ExpressibleByStringLiteral+++.swift */; };
 		6291A0B92A848FA0008CCCC9 /* String+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291A0B82A848FA0008CCCC9 /* String+++.swift */; };
+		62AED9502A84D97800389992 /* InjectedValuesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AED94E2A84D97700389992 /* InjectedValuesExample.swift */; };
+		62AED9512A84D97800389992 /* InjectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AED94F2A84D97800389992 /* InjectedValues.swift */; };
 		62BF91A42A832B8B00EB1632 /* UseObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF91A32A832B8B00EB1632 /* UseObservation.swift */; };
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
@@ -531,6 +533,8 @@
 		6291A0B42A848D5A008CCCC9 /* URL+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+++.swift"; sourceTree = "<group>"; };
 		6291A0B62A848EB2008CCCC9 /* ExpressibleByStringLiteral+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpressibleByStringLiteral+++.swift"; sourceTree = "<group>"; };
 		6291A0B82A848FA0008CCCC9 /* String+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+++.swift"; sourceTree = "<group>"; };
+		62AED94E2A84D97700389992 /* InjectedValuesExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectedValuesExample.swift; sourceTree = "<group>"; };
+		62AED94F2A84D97800389992 /* InjectedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectedValues.swift; sourceTree = "<group>"; };
 		62BF91A32A832B8B00EB1632 /* UseObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseObservation.swift; sourceTree = "<group>"; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1133,6 +1137,15 @@
 				623656292A6FBB1F008A6F77 /* ExpertSwift.swift */,
 			);
 			path = ExpertSwift;
+			sourceTree = "<group>";
+		};
+		6258A6232A84CA2800FC90BD /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				62AED94F2A84D97800389992 /* InjectedValues.swift */,
+				62AED94E2A84D97700389992 /* InjectedValuesExample.swift */,
+			);
+			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
 		628982C529DAFF330035BA1F /* Helper */ = {
@@ -2331,6 +2344,7 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				6258A6232A84CA2800FC90BD /* Dependency Injection */,
 				92AA7038283735AF00EB5C7E /* 《Swift异步与并发》 */,
 				9215A8D7280FD44700344F40 /* SwiftUI */,
 				925810202806C434008AF141 /* 《Using Combine》 */,
@@ -2913,6 +2927,7 @@
 				92EFF54028D02D63001176EE /* ScrollViewIsScrolling.swift in Sources */,
 				92EDE3F428BF08DA008DD188 /* Publisher+++.swift in Sources */,
 				920B9C1F25DFC1AA0098B1BA /* Mp4Player.m in Sources */,
+				62AED9512A84D97800389992 /* InjectedValues.swift in Sources */,
 				9271AD0029094E7D002DF880 /* VideoTransitionInstruction.swift in Sources */,
 				92E83F6328A6288800194087 /* Stats+CoreDataClass.swift in Sources */,
 				92701A2A283E1FBA00295028 /* PDFDemo.swift in Sources */,
@@ -3035,6 +3050,7 @@
 				920B9C1B25DFC16E0098B1BA /* VlcPlayer.m in Sources */,
 				921F35D228AC840400D79C52 /* CreateImageNoteViewController.swift in Sources */,
 				921545D52817DE21009781D2 /* PokemonSpecies.swift in Sources */,
+				62AED9502A84D97800389992 /* InjectedValuesExample.swift in Sources */,
 				92DCF6D9286B26E0000BC8CC /* QuickmediaApp.swift in Sources */,
 				9273F4EA26365D8800B78638 /* MMAPNote.m in Sources */,
 				92A8D7E825D28BA40008EFAA /* JianZhiOffer.swift in Sources */,
