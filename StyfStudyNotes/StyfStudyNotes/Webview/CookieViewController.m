@@ -59,9 +59,9 @@
     [self.webView loadRequest:request];
 
 
-
 //    NSHTTPCookie *cookie = [DCookieViewController cookieWithDomain:url.host name:@"name" value:@"zhangsan"];
 //    //iOS 11, 正确的方式
+//    WKWebsiteDataStore.defaultDataStore.httpCookieStore addObserver:(nonnull id<WKHTTPCookieStoreObserver>)
 //    //[self.wkHttpCookieStore addObserver:(nonnull id<WKHTTPCookieStoreObserver>)]
 //    __weak typeof(self) weakSelf = self; //block
 //    [self.wkHttpCookieStore setCookie:cookie completionHandler:^{
