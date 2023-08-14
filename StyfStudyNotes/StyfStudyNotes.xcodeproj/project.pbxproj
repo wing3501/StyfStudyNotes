@@ -26,6 +26,8 @@
 		6291A0B92A848FA0008CCCC9 /* String+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291A0B82A848FA0008CCCC9 /* String+++.swift */; };
 		62AED9502A84D97800389992 /* InjectedValuesExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AED94E2A84D97700389992 /* InjectedValuesExample.swift */; };
 		62AED9512A84D97800389992 /* InjectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AED94F2A84D97800389992 /* InjectedValues.swift */; };
+		62B9FCC92A8A032300AC5B19 /* UseKeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B9FCC82A8A032300AC5B19 /* UseKeyPath.swift */; };
+		62B9FCD72A8A122C00AC5B19 /* UnidirectionalFlow in Resources */ = {isa = PBXBuildFile; fileRef = 62B9FCD62A8A122C00AC5B19 /* UnidirectionalFlow */; };
 		62BF91A42A832B8B00EB1632 /* UseObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BF91A32A832B8B00EB1632 /* UseObservation.swift */; };
 		7758C314E81CD8C746EB976F /* libPods-StyfStudyNotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */; };
 		9202A8E728FEA4E6000FD220 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */; };
@@ -535,6 +537,8 @@
 		6291A0B82A848FA0008CCCC9 /* String+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+++.swift"; sourceTree = "<group>"; };
 		62AED94E2A84D97700389992 /* InjectedValuesExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectedValuesExample.swift; sourceTree = "<group>"; };
 		62AED94F2A84D97800389992 /* InjectedValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InjectedValues.swift; sourceTree = "<group>"; };
+		62B9FCC82A8A032300AC5B19 /* UseKeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseKeyPath.swift; sourceTree = "<group>"; };
+		62B9FCD62A8A122C00AC5B19 /* UnidirectionalFlow */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UnidirectionalFlow; sourceTree = "<group>"; };
 		62BF91A32A832B8B00EB1632 /* UseObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseObservation.swift; sourceTree = "<group>"; };
 		7BED7D97A5993EE64C9F47FF /* libPods-StyfStudyNotesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StyfStudyNotesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9202A8E628FEA4E6000FD220 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1155,6 +1159,14 @@
 				622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		62B9FCC72A8A031000AC5B19 /* Read */ = {
+			isa = PBXGroup;
+			children = (
+				62B9FCC82A8A032300AC5B19 /* UseKeyPath.swift */,
+			);
+			path = Read;
 			sourceTree = "<group>";
 		};
 		68CC14C85F7CE063169348C8 /* Frameworks */ = {
@@ -2344,6 +2356,7 @@
 			children = (
 				920B9C2C25DFD9B40098B1BA /* MyPlayground.playground */,
 				92E1A91C264D2B28007D63D5 /* SwiftDemo.swift */,
+				62B9FCC72A8A031000AC5B19 /* Read */,
 				6258A6232A84CA2800FC90BD /* Dependency Injection */,
 				92AA7038283735AF00EB5C7E /* 《Swift异步与并发》 */,
 				9215A8D7280FD44700344F40 /* SwiftUI */,
@@ -2603,6 +2616,7 @@
 				62491DF42A8229FA00256680 /* NavigationBarBackButtonHidden.swift */,
 				62491DF62A822B3A00256680 /* UseContentUnavailableView.swift */,
 				62BF91A32A832B8B00EB1632 /* UseObservation.swift */,
+				62B9FCD62A8A122C00AC5B19 /* UnidirectionalFlow */,
 				92D94D1B293DCB530096FA2B /* IMG_2816.PNG */,
 				923BF93229654C8C00675424 /* UsingOptionSet.swift */,
 				929E4B4028B8705E006592F1 /* SomeTips.swift */,
@@ -2790,6 +2804,7 @@
 				92728B7128AA42DE00C51140 /* WorldCupSeed.json in Resources */,
 				92EC412628B366A3004EC671 /* SurfJournalModel.sqlite in Resources */,
 				9271ACFB29094E7D002DF880 /* silence.mp3 in Resources */,
+				62B9FCD72A8A122C00AC5B19 /* UnidirectionalFlow in Resources */,
 				9288BED62828FF73005A903A /* menu.json in Resources */,
 				92D94D1C293DCB530096FA2B /* IMG_2816.PNG in Resources */,
 				9272917128B376A900DDB42F /* SurfTextFieldCell.xib in Resources */,
@@ -3064,6 +3079,7 @@
 				92426F1F26246BFD002062B7 /* ShowDebugBlock.m in Sources */,
 				92728B7828AA498B00C51140 /* WorldCup.xcdatamodeld in Sources */,
 				922A00D92823B38B009CBCA3 /* LayoutStyleExample.swift in Sources */,
+				62B9FCC92A8A032300AC5B19 /* UseKeyPath.swift in Sources */,
 				9246CAA02835D8B100E6FB65 /* DrawingDemo.swift in Sources */,
 				92A2D3712679F18A00A88F19 /* UIView+Ext.m in Sources */,
 				923176E6282A69750004A969 /* OrderFoodAPP.swift in Sources */,
