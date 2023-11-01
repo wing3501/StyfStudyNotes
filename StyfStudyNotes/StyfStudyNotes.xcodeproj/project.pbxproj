@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622590B92A8F0C22007AE76C /* UseUnevenRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622590B82A8F0C22007AE76C /* UseUnevenRoundedRectangle.swift */; };
 		622E67F629FBB44200FD4F73 /* URLSessionConfiguration+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */; };
 		622E67F829FBB5F300FD4F73 /* Error+++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E67F729FBB5F300FD4F73 /* Error+++.swift */; };
 		622E6C0E29FBB8C700FD4F73 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */; };
@@ -519,6 +520,7 @@
 /* Begin PBXFileReference section */
 		1E73BE1C74391D69547BB1D9 /* Pods-StyfStudyNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotesTests.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotesTests/Pods-StyfStudyNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDE0D3262B8D52DA4F0A5C0 /* Pods-StyfStudyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyfStudyNotes.release.xcconfig"; path = "Target Support Files/Pods-StyfStudyNotes/Pods-StyfStudyNotes.release.xcconfig"; sourceTree = "<group>"; };
+		622590B82A8F0C22007AE76C /* UseUnevenRoundedRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseUnevenRoundedRectangle.swift; sourceTree = "<group>"; };
 		622E67F529FBB44200FD4F73 /* URLSessionConfiguration+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+++.swift"; sourceTree = "<group>"; };
 		622E67F729FBB5F300FD4F73 /* Error+++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+++.swift"; sourceTree = "<group>"; };
 		622E6C0D29FBB8C700FD4F73 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
@@ -2616,6 +2618,7 @@
 				62491DF42A8229FA00256680 /* NavigationBarBackButtonHidden.swift */,
 				62491DF62A822B3A00256680 /* UseContentUnavailableView.swift */,
 				62BF91A32A832B8B00EB1632 /* UseObservation.swift */,
+				622590B82A8F0C22007AE76C /* UseUnevenRoundedRectangle.swift */,
 				62B9FCD62A8A122C00AC5B19 /* UnidirectionalFlow */,
 				92D94D1B293DCB530096FA2B /* IMG_2816.PNG */,
 				923BF93229654C8C00675424 /* UsingOptionSet.swift */,
@@ -3111,6 +3114,7 @@
 				920C4FF4273278140091487B /* UIViewController+KVO.m in Sources */,
 				921D54D628B31EBC0075B93C /* Sale+CoreDataClass.swift in Sources */,
 				92DD30F3292B9BFE00E2E431 /* OpaqueReturnTypes.swift in Sources */,
+				622590B92A8F0C22007AE76C /* UseUnevenRoundedRectangle.swift in Sources */,
 				924C638D28AF787E0019D5E0 /* EmployeeDetailViewController.swift in Sources */,
 				92D94AEC293D8B180096FA2B /* SwiftRegex.swift in Sources */,
 				92AE630328093C520082505B /* ReactiveFormModel.swift in Sources */,
