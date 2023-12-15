@@ -14,6 +14,16 @@ class GameScene: SKScene {
     
     let playerSpeed: CGFloat = 1.5
     
+    var level: Int = 1
+    var numberOfDrops: Int = 10
+    
+    var dropSpeed: CGFloat = 1.0
+    var minDropSpeed: CGFloat = 0.12
+    var maxDropSpeed: CGFloat = 1.0
+    
+    var movingPlayer = false
+    var lastPositon: CGPoint?
+    
     override func didMove(to view: SKView) {
         // 设置背景
         let background = SKSpriteNode(imageNamed: "background_1")
@@ -52,13 +62,69 @@ class GameScene: SKScene {
     }
     
     func spawnMultipleGloops() {
-        let wait = SKAction.wait(forDuration: TimeInterval(1.0))
+        switch level {
+        case 1, 2, 3, 4, 5:
+            numberOfDrops = level * 10
+        case 6:
+            numberOfDrops = 75
+        case 7:
+            numberOfDrops = 100
+        case 8:
+            numberOfDrops = 150
+        default:
+            numberOfDrops = 150
+        }
+        
+        // 下落速度
+        dropSpeed = 1 / (CGFloat(level) + (CGFloat(level) / CGFloat(numberOfDrops)))
+        if dropSpeed < minDropSpeed {
+            dropSpeed = minDropSpeed
+        }else if dropSpeed > maxDropSpeed {
+            dropSpeed = maxDropSpeed
+        }
+        
+        let wait = SKAction.wait(forDuration: TimeInterval(dropSpeed))
         let spawn = SKAction.run { [unowned self] in
             self.spawnGloop()
         }
         let sequence = SKAction.sequence([wait, spawn])
-        let repeatAction = SKAction.repeat(sequence, count: 10)
+        let repeatAction = SKAction.repeat(sequence, count: numberOfDrops)
         run(repeatAction, withKey: "gloop")
+    }
+    
+    func touchDown(atPoint pos: CGPoint) {
+        let touchedNode = atPoint(pos)
+        if touchedNode.name == "player" {
+            movingPlayer = true
+        }
+//        // 根据当前位置和点击位置计算速度
+//        let distance = hypot(pos.x - player.position.x, pos.y - player.position.y)
+//        let calculatedSpeed = TimeInterval(distance / playerSpeed) / 255
+//        if pos.x < player.position.x {
+//            player.moveToPosition(pos: pos, direction: "L", speed: calculatedSpeed)
+//        }else {
+//            player.moveToPosition(pos: pos, direction: "R", speed: calculatedSpeed)
+//        }
+    }
+    
+    func touchMoved(toPoint pos: CGPoint) {
+        if movingPlayer {
+            let newPos = CGPoint(x: pos.x, y: player.position.y)
+            player.position = newPos
+            
+            let recordedPosition = lastPositon ?? player.position
+            if recordedPosition.x > newPos.x {
+                player.xScale = -abs(xScale)
+            }else {
+                player.xScale = abs(xScale)
+            }
+            
+            lastPositon = newPos
+        }
+    }
+    
+    func touchUp(atPoint pos: CGPoint) {
+        movingPlayer = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,15 +133,21 @@ class GameScene: SKScene {
         }
     }
     
-    func touchDown(atPoint pos: CGPoint) {
-        // 根据当前位置和点击位置计算速度
-        let distance = hypot(pos.x - player.position.x, pos.y - player.position.y)
-        let calculatedSpeed = TimeInterval(distance / playerSpeed) / 255
-        if pos.x < player.position.x {
-            player.moveToPosition(pos: pos, direction: "L", speed: calculatedSpeed)
-        }else {
-            player.moveToPosition(pos: pos, direction: "R", speed: calculatedSpeed)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches {
+            touchMoved(toPoint: t.location(in: self))
         }
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches {
+            touchUp(atPoint: t.location(in: self))
+        }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches {
+            touchUp(atPoint: t.location(in: self))
+        }
+    }
 }
