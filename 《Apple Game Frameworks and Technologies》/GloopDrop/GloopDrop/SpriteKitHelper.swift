@@ -15,6 +15,13 @@ enum Layer: CGFloat {
     case collectible
 }
 
+enum PhysicsCategory {
+    static let none: UInt32 = 0
+    static let player: UInt32 = 0b1
+    static let collectible: UInt32 = 0b10
+    static let foreground: UInt32 = 0b100
+}
+
 extension SKSpriteNode {
     
     func loadTextures(atlas: String, prefix: String, startsAt: Int, stopsAt: Int) -> [SKTexture] {

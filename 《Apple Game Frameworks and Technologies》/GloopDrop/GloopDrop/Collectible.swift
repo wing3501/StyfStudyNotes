@@ -34,7 +34,9 @@ class Collectible: SKSpriteNode {
         
         physicsBody = SKPhysicsBody(rectangleOf: size, center: CGPoint(x: 0, y: -size.height / 2))
         physicsBody?.affectedByGravity = false
-        
+        physicsBody?.categoryBitMask = PhysicsCategory.collectible
+        physicsBody?.contactTestBitMask = PhysicsCategory.player | PhysicsCategory.foreground
+        physicsBody?.collisionBitMask = PhysicsCategory.none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,5 +57,15 @@ class Collectible: SKSpriteNode {
         // 先收缩，然后运行跌落动作
         self.scale(to: CGSize(width: 0.25, height: 1))
         self.run(actionSequence, withKey: "drop")
+    }
+    
+    func collected() {
+        let removeFromParent = SKAction.removeFromParent()
+        run(removeFromParent)
+    }
+    
+    func missed() {
+        let removeFromParent = SKAction.removeFromParent()
+        run(removeFromParent)
     }
 }

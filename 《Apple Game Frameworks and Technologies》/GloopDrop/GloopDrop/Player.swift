@@ -30,6 +30,10 @@ class Player: SKSpriteNode {
         //设置玩家物理
         physicsBody = SKPhysicsBody(rectangleOf: size, center: CGPoint(x: 0, y: size.height / 2.0)) // 因为节点的 anchorPoint 属性设置为 CGPoint（x： 0.5， y： 0.0），而物理实体的中心点是 （0.5,0.5），因此您需要一个偏移量。换句话说，如果你不调整这个中心点，你的物理体就不会与你的精灵节点对齐。
         physicsBody?.affectedByGravity = false
+        
+        physicsBody?.categoryBitMask = PhysicsCategory.player
+        physicsBody?.contactTestBitMask = PhysicsCategory.collectible
+        physicsBody?.collisionBitMask = PhysicsCategory.none
     }
     
     required init?(coder aDecoder: NSCoder) {

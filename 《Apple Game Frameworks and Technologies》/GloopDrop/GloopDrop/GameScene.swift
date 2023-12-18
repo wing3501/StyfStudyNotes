@@ -25,6 +25,10 @@ class GameScene: SKScene {
     var lastPositon: CGPoint?
     
     override func didMove(to view: SKView) {
+        
+        // 设置代理
+        physicsWorld.contactDelegate = self
+        
         // 设置背景
         let background = SKSpriteNode(imageNamed: "background_1")
         background.position = CGPoint(x: 0, y: 0)
@@ -40,6 +44,9 @@ class GameScene: SKScene {
         
         foreground.physicsBody = SKPhysicsBody(edgeLoopFrom: foreground.frame)
         foreground.physicsBody?.affectedByGravity = false
+        foreground.physicsBody?.categoryBitMask = PhysicsCategory.foreground
+        foreground.physicsBody?.contactTestBitMask = PhysicsCategory.collectible
+        foreground.physicsBody?.collisionBitMask = PhysicsCategory.none
         
         addChild(foreground)
         
@@ -152,6 +159,28 @@ class GameScene: SKScene {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches {
             touchUp(atPoint: t.location(in: self))
+        }
+    }
+}
+
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.player | PhysicsCategory.collectible {
+            // 玩家碰撞收集品
+            let body = contact.bodyA.categoryBitMask == PhysicsCategory.collectible ? contact.bodyA.node : contact.bodyB.node
+            if let sprite = body as? Collectible {
+                sprite.collected()
+            }
+        }
+        if collision == PhysicsCategory.foreground | PhysicsCategory.collectible {
+            // 地面碰撞收集品
+            let body = contact.bodyA.categoryBitMask == PhysicsCategory.collectible ? contact.bodyA.node : contact.bodyB.node
+            if let sprite = body as? Collectible {
+                sprite.missed()
+            }
         }
     }
 }
