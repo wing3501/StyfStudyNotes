@@ -37,6 +37,10 @@ class GameScene: SKScene {
         foreground.position = CGPoint(x: 0, y: 0)
         foreground.anchorPoint = CGPoint(x: 0, y: 0)
         foreground.zPosition = Layer.foreground.rawValue
+        
+        foreground.physicsBody = SKPhysicsBody(edgeLoopFrom: foreground.frame)
+        foreground.physicsBody?.affectedByGravity = false
+        
         addChild(foreground)
         
         // 设置玩家
