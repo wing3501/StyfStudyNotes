@@ -13,6 +13,7 @@ enum Layer: CGFloat {
     case foreground
     case player
     case collectible
+    case ui
 }
 
 enum PhysicsCategory {
@@ -53,3 +54,15 @@ extension SKSpriteNode {
     }
 }
 
+extension SKScene {
+    //将视图的坐标转换为场景坐标
+    
+    func viewTop() -> CGFloat {
+        convertPoint(fromView: .zero).y
+    }
+    
+    func viewBottom() -> CGFloat {
+        guard let view else { return 0 }
+        return convertPoint(fromView: CGPoint(x: 0, y: view.bounds.height)).y
+    }
+}

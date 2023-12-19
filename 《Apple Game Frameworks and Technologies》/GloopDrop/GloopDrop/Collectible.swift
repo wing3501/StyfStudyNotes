@@ -28,7 +28,7 @@ class Collectible: SKSpriteNode {
         }
         super.init(texture: texture, color: .clear, size: texture.size())
         
-        name = "CO_\(collectibleType)"
+        name = "co_\(collectibleType)"
         anchorPoint = CGPoint(x: 0.5, y: 1)
         zPosition = Layer.collectible.rawValue
         

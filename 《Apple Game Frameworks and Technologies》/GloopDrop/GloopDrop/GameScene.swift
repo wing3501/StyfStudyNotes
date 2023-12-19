@@ -14,7 +14,18 @@ class GameScene: SKScene {
     
     let playerSpeed: CGFloat = 1.5
     
-    var level: Int = 1
+    var level = 1 {
+        didSet {
+            levelLabel.text = "Level: \(level)"
+        }
+    }
+    
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
     var numberOfDrops: Int = 10
     
     var dropSpeed: CGFloat = 1.0
@@ -23,6 +34,9 @@ class GameScene: SKScene {
     
     var movingPlayer = false
     var lastPositon: CGPoint?
+    
+    var scoreLabel = SKLabelNode()
+    var levelLabel = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
@@ -50,6 +64,8 @@ class GameScene: SKScene {
         
         addChild(foreground)
         
+        setupLabels()
+        
         // 设置玩家
         player.position = CGPoint(x: size.width/2, y: foreground.frame.maxY)
         player.setupConstraints(floor: foreground.frame.maxY)
@@ -57,6 +73,30 @@ class GameScene: SKScene {
         player.walk()
         
         spawnMultipleGloops()
+    }
+    
+    func setupLabels() {
+        scoreLabel.name = "score"
+        scoreLabel.fontName = "Nosifer"
+        scoreLabel.fontColor = .yellow
+        scoreLabel.fontSize = 35.0
+        scoreLabel.horizontalAlignmentMode = .right
+        scoreLabel.verticalAlignmentMode = .center
+        scoreLabel.zPosition = Layer.ui.rawValue
+        scoreLabel.position = CGPoint(x: frame.maxX - 50, y: viewTop() - 100)
+        scoreLabel.text = "Score: 0"
+        addChild(scoreLabel)
+     
+        levelLabel.name = "level"
+        levelLabel.fontName = "Nosifer"
+        levelLabel.fontColor = .yellow
+        levelLabel.fontSize = 35.0
+        levelLabel.horizontalAlignmentMode = .left
+        levelLabel.verticalAlignmentMode = .center
+        levelLabel.zPosition = Layer.ui.rawValue
+        levelLabel.position = CGPoint(x: frame.minX + 50, y: viewTop() - 100)
+        levelLabel.text = "Level: \(level)"
+        addChild(levelLabel)
     }
     
     func spawnGloop() {
@@ -70,6 +110,16 @@ class GameScene: SKScene {
         collectible.position = CGPoint(x: randomX, y: player.position.y * 2.5)
         addChild(collectible)
         collectible.drop(dropSpeed: TimeInterval(1.0), floorLevel: player.frame.minY)
+    }
+    
+    func gameOver() {
+        removeAction(forKey: "gloop")
+        print("gameOver")
+        enumerateChildNodes(withName: "co_*") { node, stop in
+            print("------\(String(describing: node.name))")
+            node.removeAction(forKey: "drop")
+            node.physicsBody = nil
+        }
     }
     
     func spawnMultipleGloops() {
@@ -173,6 +223,7 @@ extension GameScene: SKPhysicsContactDelegate {
             let body = contact.bodyA.categoryBitMask == PhysicsCategory.collectible ? contact.bodyA.node : contact.bodyB.node
             if let sprite = body as? Collectible {
                 sprite.collected()
+                score += level
             }
         }
         if collision == PhysicsCategory.foreground | PhysicsCategory.collectible {
@@ -180,6 +231,7 @@ extension GameScene: SKPhysicsContactDelegate {
             let body = contact.bodyA.categoryBitMask == PhysicsCategory.collectible ? contact.bodyA.node : contact.bodyB.node
             if let sprite = body as? Collectible {
                 sprite.missed()
+                gameOver()
             }
         }
     }
