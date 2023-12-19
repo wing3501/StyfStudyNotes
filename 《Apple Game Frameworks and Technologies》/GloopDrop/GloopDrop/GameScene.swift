@@ -89,6 +89,8 @@ class GameScene: SKScene {
 //        player.walk()
         
 //        spawnMultipleGloops()
+        
+        showMessage("Tap to start game")
     }
     
 //    override func update(_ currentTime: TimeInterval) {
@@ -119,6 +121,36 @@ class GameScene: SKScene {
         addChild(levelLabel)
     }
     
+    func showMessage(_ message: String) {
+        let messageLabel = SKLabelNode()
+        messageLabel.name = "message"
+        messageLabel.position = CGPoint(x: frame.midX, y: player.frame.maxY + 100)
+        messageLabel.zPosition = Layer.ui.rawValue
+        
+        messageLabel.numberOfLines = 2
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: SKColor(red: 251.0/255.0, green: 155.0/255.0, blue: 24.0/255.0, alpha: 1.0),
+            .backgroundColor: UIColor.clear,
+            .font: UIFont(name: "Nosifer", size: 45.0)!,
+            .paragraphStyle: paragraph
+        ]
+        
+        messageLabel.attributedText = NSAttributedString(string: message, attributes: attributes)
+        
+        messageLabel.run(SKAction.fadeIn(withDuration: 0.25))
+        addChild(messageLabel)
+    }
+    
+    func hideMessage() {
+        if let messageLabel = childNode(withName: "//message") as? SKLabelNode {
+            messageLabel.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.25),SKAction.removeFromParent()]))
+        }
+    }
+    
     func spawnGloop() {
         let collectible = Collectible(collectibleType: .gloop)
         
@@ -139,6 +171,7 @@ class GameScene: SKScene {
     }
     
     func nextLevel() {
+        showMessage("Get Ready!")
         let wait = SKAction.wait(forDuration: 2.25)
         run(wait) {[unowned self] in 
             self.level += 1
@@ -147,6 +180,8 @@ class GameScene: SKScene {
     }
     
     func gameOver() {
+        showMessage("Game Over\nTap to try again")
+        
         gameInProgress = false
         
         player.die()
@@ -229,6 +264,8 @@ class GameScene: SKScene {
         run(repeatAction, withKey: "gloop")
         
         gameInProgress = true
+        
+        hideMessage()
     }
     
     func touchDown(atPoint pos: CGPoint) {
