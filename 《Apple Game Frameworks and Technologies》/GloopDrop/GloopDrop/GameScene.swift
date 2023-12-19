@@ -7,7 +7,7 @@
 
 import SpriteKit
 import GameplayKit
-
+import AVFoundation
 
 //1. 调用 update（_：） 方法。此方法每帧调用一次，是用于执行游戏逻辑的主要方法。
 //2. SKScene对动作进行评估。此时，您的场景将处理它需要处理的所有操作。
@@ -52,9 +52,15 @@ class GameScene: SKScene {
     var scoreLabel = SKLabelNode()
     var levelLabel = SKLabelNode()
     
+    let musicAudioNode = SKAudioNode(fileNamed: "music.mp3")
+    
     var gameInProgress = false
     
     override func didMove(to view: SKView) {
+        // 设置音乐
+        musicAudioNode.autoplayLooped = true
+        musicAudioNode.isPositional = false //用于根据侦听器节点更改音频
+        addChild(musicAudioNode)
         
         // 设置代理
         physicsWorld.contactDelegate = self

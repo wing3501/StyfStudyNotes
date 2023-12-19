@@ -16,6 +16,9 @@ case gloop
 class Collectible: SKSpriteNode {
     private var collectibleType: CollectibleType = .none
     
+    private let playCollectSound = SKAction.playSoundFileNamed("collect.wav", waitForCompletion: false)// 通过将 waitForCompletion 参数设置为 false，您可以告诉 SpriteKit 忽略音频文件的长度，并认为该操作已立即完成。或者，您可以将此选项设置为 true，使操作的持续时间与音频播放的长度相同。
+    private let playMissSound = SKAction.playSoundFileNamed("miss.wav", waitForCompletion: false)
+    
     init(collectibleType: CollectibleType) {
         var texture: SKTexture!
         self.collectibleType = collectibleType
@@ -61,11 +64,13 @@ class Collectible: SKSpriteNode {
     
     func collected() {
         let removeFromParent = SKAction.removeFromParent()
-        run(removeFromParent)
+        let actionGroup = SKAction.group([playCollectSound, removeFromParent])
+        run(actionGroup)
     }
     
     func missed() {
         let removeFromParent = SKAction.removeFromParent()
-        run(removeFromParent)
+        let actionGroup = SKAction.group([playMissSound, removeFromParent])
+        run(actionGroup)
     }
 }
