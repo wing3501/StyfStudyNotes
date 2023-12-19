@@ -38,6 +38,8 @@ class GameScene: SKScene {
     var scoreLabel = SKLabelNode()
     var levelLabel = SKLabelNode()
     
+    var gameInProgress = false
+    
     override func didMove(to view: SKView) {
         
         // 设置代理
@@ -70,9 +72,9 @@ class GameScene: SKScene {
         player.position = CGPoint(x: size.width/2, y: foreground.frame.maxY)
         player.setupConstraints(floor: foreground.frame.maxY)
         addChild(player)
-        player.walk()
+//        player.walk()
         
-        spawnMultipleGloops()
+//        spawnMultipleGloops()
     }
     
     func setupLabels() {
@@ -113,16 +115,55 @@ class GameScene: SKScene {
     }
     
     func gameOver() {
+        gameInProgress = false
+        
+        player.die()
+        
         removeAction(forKey: "gloop")
-        print("gameOver")
+        
         enumerateChildNodes(withName: "co_*") { node, stop in
             print("------\(String(describing: node.name))")
             node.removeAction(forKey: "drop")
             node.physicsBody = nil
         }
+        
+        resetPlayerPosition()
+        popRemainingDrops()
+    }
+    
+    func resetPlayerPosition() {
+        let resetPoint = CGPoint(x: frame.midX, y: player.position.y)
+        let distance = hypot(resetPoint.x - player.position.x, 0)
+        let calculatedSpeed = TimeInterval(distance / (playerSpeed * 2)) / 255
+        if frame.midX < player.position.x {
+            player.moveToPosition(pos: resetPoint, direction: "L", speed: calculatedSpeed)
+        }else {
+            player.moveToPosition(pos: resetPoint, direction: "R", speed: calculatedSpeed)
+        }
+    }
+    
+    func popRemainingDrops() {
+        var i = 0
+        enumerateChildNodes(withName: "co_*") { node, stop in
+            let initiaWait = SKAction.wait(forDuration: 1.0)
+            let wait = SKAction.wait(forDuration: TimeInterval(0.15 * CGFloat(i)))
+            
+            let removeFromParent = SKAction.removeFromParent()
+            let actionSequence = SKAction.sequence([initiaWait, wait, removeFromParent])
+            node.run(actionSequence)
+            
+            i += 1
+        }
     }
     
     func spawnMultipleGloops() {
+        player.walk()
+        
+        if gameInProgress == false {
+            score = 0
+            level = 1
+        }
+        
         switch level {
         case 1, 2, 3, 4, 5:
             numberOfDrops = level * 10
@@ -151,9 +192,16 @@ class GameScene: SKScene {
         let sequence = SKAction.sequence([wait, spawn])
         let repeatAction = SKAction.repeat(sequence, count: numberOfDrops)
         run(repeatAction, withKey: "gloop")
+        
+        gameInProgress = true
     }
     
     func touchDown(atPoint pos: CGPoint) {
+        if gameInProgress == false {
+            spawnMultipleGloops()
+            return
+        }
+        
         let touchedNode = atPoint(pos)
         if touchedNode.name == "player" {
             movingPlayer = true

@@ -10,17 +10,19 @@ import SpriteKit
 
 enum PlayerAnimationType: String {
 case walk
+case die
 }
 
 class Player: SKSpriteNode {
     private var walkTextures: [SKTexture]?
-    
+    private var dieTextures: [SKTexture]?
     init() {
         let texture = SKTexture(imageNamed: "blob-walk_0")
         
         super.init(texture: texture, color: .clear, size: texture.size())
         
         walkTextures = loadTextures(atlas: "blob", prefix: "blob-walk_", startsAt: 0, stopsAt: 2)
+        dieTextures = loadTextures(atlas: "blob", prefix: "blob-die_", startsAt: 0, stopsAt: 0)
         
         name = "player"
         setScale(1)
@@ -53,7 +55,16 @@ class Player: SKSpriteNode {
         guard let walkTextures else {
             preconditionFailure("找不到纹理")
         }
+        removeAction(forKey: PlayerAnimationType.die.rawValue)
         startAnimation(textures: walkTextures, speed: 0.25, name: PlayerAnimationType.walk.rawValue, count: 0, resize: true, restore: true)
+    }
+    
+    func die() {
+        guard let dieTextures else {
+            preconditionFailure("找不到纹理")
+        }
+        removeAction(forKey: PlayerAnimationType.walk.rawValue)
+        startAnimation(textures: dieTextures, speed: 0.25, name: PlayerAnimationType.die.rawValue, count: 0, resize: true, restore: true)
     }
     
     func moveToPosition(pos: CGPoint, direction: String, speed: TimeInterval) {
