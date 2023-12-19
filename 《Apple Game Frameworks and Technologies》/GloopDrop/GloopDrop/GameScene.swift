@@ -8,6 +8,17 @@
 import SpriteKit
 import GameplayKit
 
+
+//1. 调用 update（_：） 方法。此方法每帧调用一次，是用于执行游戏逻辑的主要方法。
+//2. SKScene对动作进行评估。此时，您的场景将处理它需要处理的所有操作。
+//3. 调用 didEvaluateActions（） 方法。在处理完帧的所有操作后，将调用此方法。
+//4. SKScene模拟物理。此时，您的场景将处理具有附加物理实体的节点上的所有物理场。
+//5. 调用 didSimulatePhysics（） 方法。此方法在处理完帧的所有物理场后调用。
+//6. SKScene 应用约束。此时，场景将处理需要处理的所有约束。
+//7. 调用 didApplyConstraints（） 方法。在处理完帧的所有约束后，将调用此方法。
+//8. 调用 didFinishUpdate（） 方法。处理完所有内容后，将调用此方法。
+//9. SKView终于渲染了场景。
+
 class GameScene: SKScene {
     
     let player = Player()
@@ -27,6 +38,9 @@ class GameScene: SKScene {
     }
     
     var numberOfDrops: Int = 10
+    
+    var dropsExpected = 10
+    var dropsCollected = 0
     
     var dropSpeed: CGFloat = 1.0
     var minDropSpeed: CGFloat = 0.12
@@ -77,6 +91,10 @@ class GameScene: SKScene {
 //        spawnMultipleGloops()
     }
     
+//    override func update(_ currentTime: TimeInterval) {
+//        checkForRemainingDrops()
+//    }
+    
     func setupLabels() {
         scoreLabel.name = "score"
         scoreLabel.fontName = "Nosifer"
@@ -112,6 +130,20 @@ class GameScene: SKScene {
         collectible.position = CGPoint(x: randomX, y: player.position.y * 2.5)
         addChild(collectible)
         collectible.drop(dropSpeed: TimeInterval(1.0), floorLevel: player.frame.minY)
+    }
+    
+    func checkForRemainingDrops() {
+        if dropsCollected == dropsExpected {
+            nextLevel()
+        }
+    }
+    
+    func nextLevel() {
+        let wait = SKAction.wait(forDuration: 2.25)
+        run(wait) {[unowned self] in 
+            self.level += 1
+            self.spawnMultipleGloops()
+        }
     }
     
     func gameOver() {
@@ -176,6 +208,9 @@ class GameScene: SKScene {
         default:
             numberOfDrops = 150
         }
+        
+        dropsCollected = 0
+        dropsExpected = numberOfDrops
         
         // 下落速度
         dropSpeed = 1 / (CGFloat(level) + (CGFloat(level) / CGFloat(numberOfDrops)))
@@ -271,7 +306,9 @@ extension GameScene: SKPhysicsContactDelegate {
             let body = contact.bodyA.categoryBitMask == PhysicsCategory.collectible ? contact.bodyA.node : contact.bodyB.node
             if let sprite = body as? Collectible {
                 sprite.collected()
+                dropsCollected += 1
                 score += level
+                checkForRemainingDrops()
             }
         }
         if collision == PhysicsCategory.foreground | PhysicsCategory.collectible {
