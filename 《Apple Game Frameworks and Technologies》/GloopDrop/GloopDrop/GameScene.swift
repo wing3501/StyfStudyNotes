@@ -104,6 +104,8 @@ class GameScene: SKScene {
 //        spawnMultipleGloops()
         
         showMessage("Tap to start game")
+        
+        setupGloopFlow()
     }
     
 //    override func update(_ currentTime: TimeInterval) {
@@ -279,6 +281,16 @@ class GameScene: SKScene {
         gameInProgress = true
         
         hideMessage()
+    }
+    
+    func setupGloopFlow() {
+        let gloopFlow = SKNode()
+        gloopFlow.name = "gloopFlow"
+        gloopFlow.zPosition = Layer.foreground.rawValue
+        gloopFlow.position = CGPoint(x: 0, y: -60)
+        
+        gloopFlow.setupScrollingView(imageNamed: "flow_1", layer: .foreground, blocks: 3, speed: 30)
+        addChild(gloopFlow)
     }
     
     func touchDown(atPoint pos: CGPoint) {
