@@ -57,10 +57,17 @@ class GameScene: SKScene {
     var gameInProgress = false
     
     override func didMove(to view: SKView) {
+        
+        audioEngine.mainMixerNode.outputVolume = 0
         // 设置音乐
         musicAudioNode.autoplayLooped = true
         musicAudioNode.isPositional = false //用于根据侦听器节点更改音频
         addChild(musicAudioNode)
+        musicAudioNode.run(SKAction.changeVolume(to: 0, duration: 0))
+        run(SKAction.wait(forDuration: 1)) {[unowned self] in
+            audioEngine.mainMixerNode.outputVolume = 1
+            musicAudioNode.run(SKAction.changeVolume(to: 0.75, duration: 2.0))
+        }
         
         // 设置代理
         physicsWorld.contactDelegate = self
