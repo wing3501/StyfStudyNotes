@@ -16,6 +16,7 @@
 		62AE1DBC2B2AEE1C002E13E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62AE1DBA2B2AEE1C002E13E4 /* LaunchScreen.storyboard */; };
 		62AE1DC32B2B0014002E13E4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AE1DC22B2B0014002E13E4 /* Player.swift */; };
 		62AE1DC52B2B0055002E13E4 /* SpriteKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AE1DC42B2B0055002E13E4 /* SpriteKitHelper.swift */; };
+		62C803612B32804C00D2AD60 /* GloopFlow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 62C803602B32804C00D2AD60 /* GloopFlow.sks */; };
 		62F4E8D02B31394E00FC8DA3 /* Nosifer-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62F4E8CF2B31394E00FC8DA3 /* Nosifer-Regular.ttf */; };
 		62F4E8DB2B31879E00FC8DA3 /* bubbles.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62F4E8D52B31879E00FC8DA3 /* bubbles.mp3 */; };
 		62F4E8DC2B31879E00FC8DA3 /* collect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62F4E8D62B31879E00FC8DA3 /* collect.wav */; };
@@ -37,6 +38,7 @@
 		62AE1DBB2B2AEE1C002E13E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62AE1DC22B2B0014002E13E4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		62AE1DC42B2B0055002E13E4 /* SpriteKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitHelper.swift; sourceTree = "<group>"; };
+		62C803602B32804C00D2AD60 /* GloopFlow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GloopFlow.sks; sourceTree = "<group>"; };
 		62F4E8CF2B31394E00FC8DA3 /* Nosifer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nosifer-Regular.ttf"; sourceTree = "<group>"; };
 		62F4E8D12B31397C00FC8DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62F4E8D52B31879E00FC8DA3 /* bubbles.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubbles.mp3; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				62AE1DC22B2B0014002E13E4 /* Player.swift */,
 				62AE1DC42B2B0055002E13E4 /* SpriteKitHelper.swift */,
 				6286E8E82B2C2CC60098CDFE /* Collectible.swift */,
+				62C803602B32804C00D2AD60 /* GloopFlow.sks */,
 				62F4E8E12B31893C00FC8DA3 /* Music */,
 				62F4E8D42B31879E00FC8DA3 /* Sounds */,
 				62F4E8CE2B31394300FC8DA3 /* Fonts */,
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62F4E8D02B31394E00FC8DA3 /* Nosifer-Regular.ttf in Resources */,
+				62C803612B32804C00D2AD60 /* GloopFlow.sks in Resources */,
 				62F4E8DD2B31879E00FC8DA3 /* miss.wav in Resources */,
 				62F4E8DC2B31879E00FC8DA3 /* collect.wav in Resources */,
 				62AE1DB72B2AEE1B002E13E4 /* Main.storyboard in Resources */,

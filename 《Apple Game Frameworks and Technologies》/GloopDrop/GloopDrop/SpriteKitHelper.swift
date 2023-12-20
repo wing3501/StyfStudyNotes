@@ -78,13 +78,32 @@ extension SKScene {
 }
 
 extension SKNode {
-    func setupScrollingView(imageNamed name: String, layer: Layer, blocks: Int, speed: TimeInterval) {
+//    func setupScrollingView(imageNamed name: String, layer: Layer, blocks: Int, speed: TimeInterval) {
+//        for i in 0..<blocks {
+//            let spriteNode = SKSpriteNode(imageNamed: name)
+//            spriteNode.anchorPoint = .zero
+//            spriteNode.position = CGPointMake(CGFloat(i) * spriteNode.size.width, 0)
+//            spriteNode.zPosition = layer.rawValue
+//            spriteNode.name = name
+//            
+//            spriteNode.endlessScroll(speed: speed)
+//            addChild(spriteNode)
+//        }
+//    }
+    // 更新粒子版本
+    func setupScrollingView(imageNamed name: String, layer: Layer,emitterNamed: String?, blocks: Int, speed: TimeInterval) {
         for i in 0..<blocks {
             let spriteNode = SKSpriteNode(imageNamed: name)
             spriteNode.anchorPoint = .zero
             spriteNode.position = CGPointMake(CGFloat(i) * spriteNode.size.width, 0)
             spriteNode.zPosition = layer.rawValue
             spriteNode.name = name
+            
+            if let emitterNamed,
+                let partcles = SKEmitterNode(fileNamed: emitterNamed) {
+                partcles.name = "particles"
+                spriteNode.addChild(partcles)
+            }
             
             spriteNode.endlessScroll(speed: speed)
             addChild(spriteNode)
