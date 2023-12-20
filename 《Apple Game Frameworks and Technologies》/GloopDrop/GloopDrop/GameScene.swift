@@ -53,6 +53,7 @@ class GameScene: SKScene {
     var levelLabel = SKLabelNode()
     
     let musicAudioNode = SKAudioNode(fileNamed: "music.mp3")
+    let bubblesAudioNode = SKAudioNode(fileNamed: "bubbles.mp3")
     
     var gameInProgress = false
     
@@ -67,6 +68,11 @@ class GameScene: SKScene {
         run(SKAction.wait(forDuration: 1)) {[unowned self] in
             audioEngine.mainMixerNode.outputVolume = 1
             musicAudioNode.run(SKAction.changeVolume(to: 0.75, duration: 2.0))
+        }
+        // 设置气泡环境音乐
+        run(SKAction.wait(forDuration: 1.5)) { [unowned self] in
+            bubblesAudioNode.autoplayLooped = true
+            addChild(bubblesAudioNode)
         }
         
         // 设置代理
