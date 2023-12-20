@@ -426,6 +426,27 @@ extension GameScene: SKPhysicsContactDelegate {
                 dropsCollected += 1
                 score += level
                 checkForRemainingDrops()
+                
+                //添加一个收集到的文案
+                let chomp = SKLabelNode(fontNamed: "Nosifer")
+                chomp.name = "chomp"
+                chomp.alpha = 0.0
+                chomp.fontSize = 22.0
+                chomp.text = "gloop"
+                chomp.horizontalAlignmentMode = .center
+                chomp.verticalAlignmentMode = .bottom
+                chomp.position = CGPoint(x: player.position.x, y: player.frame.maxY + 25)
+                chomp.zRotation = CGFloat.random(in: -0.15...0.15)
+                addChild(chomp)
+                
+                let fadeIn = SKAction.fadeAlpha(to: 1.0, duration: 0.05)
+                let fadeOut = SKAction.fadeAlpha(to: 0.0, duration: 0.45)
+                let moveUp = SKAction.moveBy(x: 0, y: 45, duration: 0.45)
+                let groupAction = SKAction.group([fadeOut, moveUp])
+                let removeFromParent = SKAction.removeFromParent()
+                let chompAction = SKAction.sequence([fadeIn, groupAction, removeFromParent])
+                chomp.run(chompAction)
+                
             }
         }
         if collision == PhysicsCategory.foreground | PhysicsCategory.collectible {
