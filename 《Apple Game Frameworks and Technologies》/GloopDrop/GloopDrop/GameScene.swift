@@ -101,8 +101,14 @@ class GameScene: SKScene {
         foreground.physicsBody?.categoryBitMask = PhysicsCategory.foreground
         foreground.physicsBody?.contactTestBitMask = PhysicsCategory.collectible
         foreground.physicsBody?.collisionBitMask = PhysicsCategory.none
-        
         addChild(foreground)
+        
+        // 添加横幅
+        let banner = SKSpriteNode(imageNamed: "banner")
+        banner.zPosition = Layer.background.rawValue + 1
+        banner.position = CGPoint(x: frame.midX, y: viewTop() - 20)
+        banner.anchorPoint = CGPoint(x: 0.5, y: 1)
+        addChild(banner)
         
         setupLabels()
         

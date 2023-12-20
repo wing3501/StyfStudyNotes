@@ -40,6 +40,14 @@ class Collectible: SKSpriteNode {
         physicsBody?.categoryBitMask = PhysicsCategory.collectible
         physicsBody?.contactTestBitMask = PhysicsCategory.player | PhysicsCategory.foreground
         physicsBody?.collisionBitMask = PhysicsCategory.none
+        
+        // 放射效果
+        let effectNode = SKEffectNode()
+        effectNode.shouldRasterize = true
+        addChild(effectNode)
+        effectNode.addChild(SKSpriteNode(texture: texture))
+        effectNode.filter = CIFilter(name: "CIGaussianBlur", parameters: ["inputRadius":40.0])
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
