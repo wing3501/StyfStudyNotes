@@ -199,16 +199,26 @@ class GameScene: SKScene {
         if prevDropLocation < randomX {
             randomX = prevDropLocation + modifier
         }else {
-            randomX = prevDropLocation + modifier
+            randomX = prevDropLocation - modifier
         }
         
         if randomX <= (frame.minX + margin) {
             randomX = frame.minX + margin
-        }else {
+        }else if randomX >= (frame.maxX - margin){
             randomX = frame.maxX - margin
         }
         prevDropLocation = randomX
         
+        // 添加数字
+        let xLabel = SKLabelNode()
+        xLabel.name = "dropNumber"
+        xLabel.fontName = "AvenirNext-DemiBold"
+        xLabel.fontColor = .yellow
+        xLabel.fontSize = 22.0
+        xLabel.text = "\(numberOfDrops)"
+        xLabel.position = CGPoint(x: 0, y: 2) // 添加子节点时，请记住，其位置相对于其父节点，这就是使用 xLabel.position = CGPoint（x： 0， y： 2） 的原因。
+        collectible.addChild(xLabel)
+        numberOfDrops -= 1
         
         collectible.position = CGPoint(x: randomX, y: player.position.y * 2.5)
         addChild(collectible)
