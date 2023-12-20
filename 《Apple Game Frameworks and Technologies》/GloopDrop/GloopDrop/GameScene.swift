@@ -57,6 +57,9 @@ class GameScene: SKScene {
     
     var gameInProgress = false
     
+    /// 前一滴的位置
+    var prevDropLocation: CGFloat = 0.0
+    
     override func didMove(to view: SKView) {
         
         audioEngine.mainMixerNode.outputVolume = 0
@@ -180,7 +183,32 @@ class GameScene: SKScene {
         // 随机位置
         let margin = collectible.size.width * 2
         let dropRange = SKRange(lowerLimit: frame.minX + margin, upperLimit: frame.maxX - margin)
-        let randomX = CGFloat.random(in: dropRange.lowerLimit...dropRange.upperLimit)
+        var randomX = CGFloat.random(in: dropRange.lowerLimit...dropRange.upperLimit)
+        
+        // 蛇形模式
+        let randomModifier = SKRange(lowerLimit: 50 + CGFloat(level), upperLimit: 60 * CGFloat(level))
+        var modifier = CGFloat.random(in: randomModifier.lowerLimit...randomModifier.upperLimit)
+        if modifier > 400 {
+            modifier = 400
+        }
+        
+        if prevDropLocation == 0 {
+            prevDropLocation = randomX
+        }
+        
+        if prevDropLocation < randomX {
+            randomX = prevDropLocation + modifier
+        }else {
+            randomX = prevDropLocation + modifier
+        }
+        
+        if randomX <= (frame.minX + margin) {
+            randomX = frame.minX + margin
+        }else {
+            randomX = frame.maxX - margin
+        }
+        prevDropLocation = randomX
+        
         
         collectible.position = CGPoint(x: randomX, y: player.position.y * 2.5)
         addChild(collectible)
