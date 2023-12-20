@@ -59,6 +59,12 @@ class Player: SKSpriteNode {
         startAnimation(textures: walkTextures, speed: 0.25, name: PlayerAnimationType.walk.rawValue, count: 0, resize: true, restore: true)
     }
     
+    func mumble() {
+        let random = Int.random(in: 1...3)
+        let playSound = SKAction.playSoundFileNamed("blob_mumble-\(random)", waitForCompletion: true)
+        run(playSound, withKey: "mumble")
+    }
+    
     func die() {
         guard let dieTextures else {
             preconditionFailure("找不到纹理")

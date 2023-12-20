@@ -285,6 +285,7 @@ class GameScene: SKScene {
     }
     
     func spawnMultipleGloops() {
+        player.mumble()
         player.walk()
         
         if gameInProgress == false {
