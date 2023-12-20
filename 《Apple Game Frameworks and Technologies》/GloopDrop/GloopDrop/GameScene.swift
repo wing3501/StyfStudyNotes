@@ -80,6 +80,7 @@ class GameScene: SKScene {
         
         // 设置背景
         let background = SKSpriteNode(imageNamed: "background_1")
+        background.name = "background"
         background.position = CGPoint(x: 0, y: 0)
         background.anchorPoint = CGPoint(x: 0, y: 0)
         background.zPosition = Layer.background.rawValue
@@ -87,6 +88,7 @@ class GameScene: SKScene {
         
         // 设置前景
         let foreground = SKSpriteNode(imageNamed: "foreground_1")
+        foreground.name = "foreground"
         foreground.position = CGPoint(x: 0, y: 0)
         foreground.anchorPoint = CGPoint(x: 0, y: 0)
         foreground.zPosition = Layer.foreground.rawValue
@@ -305,10 +307,19 @@ class GameScene: SKScene {
             return
         }
         
-        let touchedNode = atPoint(pos)
-        if touchedNode.name == "player" {
-            movingPlayer = true
+//        let touchedNode = atPoint(pos)
+//        if touchedNode.name == "player" {
+//            movingPlayer = true
+//        }
+        // 解决不能移动问题
+        let touchedNodes = nodes(at: pos)
+        for touchedNode in touchedNodes {
+            print("touchedNode: \(String(describing: touchedNode.name))")
+            if touchedNode.name == "player" {
+                movingPlayer = true
+            }
         }
+        
 //        // 根据当前位置和点击位置计算速度
 //        let distance = hypot(pos.x - player.position.x, pos.y - player.position.y)
 //        let calculatedSpeed = TimeInterval(distance / playerSpeed) / 255
