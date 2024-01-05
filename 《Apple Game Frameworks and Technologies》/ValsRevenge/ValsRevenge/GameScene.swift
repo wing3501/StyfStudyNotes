@@ -36,6 +36,8 @@ class GameScene: SKScene {
             if touchedNode.name?.starts(with: "controller_") == true {
                 let direction = touchedNode.name?.replacingOccurrences(of: "controller_", with: "")
                 player?.move(Direction(rawValue: direction ?? "stop")!)
+            }else if touchedNode.name == "button_attack" {
+                player?.attack()
             }
         }
     }
