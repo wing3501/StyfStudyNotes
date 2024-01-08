@@ -27,6 +27,16 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         player = childNode(withName: "player") as? Player
         player?.move(.stop)
+        
+        setupCamera()
+    }
+    
+    func setupCamera() {
+        guard let player else { return }
+        let distance = SKRange(constantValue: 0)
+        let playerConstaint = SKConstraint.distance(distance, to: player)
+        // 使用约束来保持相机节点牢固地连接到玩家
+        camera?.constraints = [playerConstaint]
     }
     
     
