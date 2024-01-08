@@ -8,7 +8,8 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+
+class GameScene: SKScene, GameViewControllerDelegate {
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
@@ -39,6 +40,16 @@ class GameScene: SKScene {
         camera?.constraints = [playerConstaint]
     }
     
+    func didChangeLayout() {
+        let w = view?.bounds.size.width ?? 1024
+        let h = view?.bounds.size.height ?? 1336
+        if h > w {
+            // 竖屏
+            camera?.setScale(1.0)
+        }else {
+            camera?.setScale(1.25)
+        }
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         let nodeAtPoint = atPoint(pos)
