@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		62533BE12B34356800FE5DD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62533BE02B34356800FE5DD3 /* Player.swift */; };
+		62C2B1E12B4B98910044B06F /* Controller.sks in Resources */ = {isa = PBXBuildFile; fileRef = 62C2B1E02B4B98910044B06F /* Controller.sks */; };
+		62C2B1E32B4B9A600044B06F /* AttackButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 62C2B1E22B4B9A600044B06F /* AttackButton.sks */; };
 		62C8036F2B3304BE00D2AD60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8036E2B3304BE00D2AD60 /* AppDelegate.swift */; };
 		62C803712B3304BE00D2AD60 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 62C803702B3304BE00D2AD60 /* GameScene.sks */; };
 		62C803752B3304BE00D2AD60 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C803742B3304BE00D2AD60 /* GameScene.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		62533BE02B34356800FE5DD3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		62C2B1E02B4B98910044B06F /* Controller.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Controller.sks; sourceTree = "<group>"; };
+		62C2B1E22B4B9A600044B06F /* AttackButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AttackButton.sks; sourceTree = "<group>"; };
 		62C8036B2B3304BE00D2AD60 /* ValsRevenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValsRevenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C8036E2B3304BE00D2AD60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C803702B3304BE00D2AD60 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			children = (
 				62C8036E2B3304BE00D2AD60 /* AppDelegate.swift */,
 				62C803702B3304BE00D2AD60 /* GameScene.sks */,
+				62C2B1E02B4B98910044B06F /* Controller.sks */,
+				62C2B1E22B4B9A600044B06F /* AttackButton.sks */,
 				62C803742B3304BE00D2AD60 /* GameScene.swift */,
 				62C803762B3304BE00D2AD60 /* GameViewController.swift */,
 				62533BE02B34356800FE5DD3 /* Player.swift */,
@@ -131,6 +137,8 @@
 			files = (
 				62C8037A2B3304BE00D2AD60 /* Main.storyboard in Resources */,
 				62C803712B3304BE00D2AD60 /* GameScene.sks in Resources */,
+				62C2B1E12B4B98910044B06F /* Controller.sks in Resources */,
+				62C2B1E32B4B9A600044B06F /* AttackButton.sks in Resources */,
 				62C8037C2B3304BF00D2AD60 /* Assets.xcassets in Resources */,
 				62C8037F2B3304BF00D2AD60 /* LaunchScreen.storyboard in Resources */,
 			);
