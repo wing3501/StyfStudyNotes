@@ -9,7 +9,7 @@ import SpriteKit
 import GameplayKit
 
 
-class GameScene: SKScene, GameViewControllerDelegate {
+class GameScene: SKScene {
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
@@ -17,6 +17,8 @@ class GameScene: SKScene, GameViewControllerDelegate {
     private var lastUpdateTime : TimeInterval = 0
     
     private var player: Player?
+    
+    let margin = 20.0
     
     override func sceneDidLoad() {
 
@@ -38,17 +40,6 @@ class GameScene: SKScene, GameViewControllerDelegate {
         let playerConstaint = SKConstraint.distance(distance, to: player)
         // 使用约束来保持相机节点牢固地连接到玩家
         camera?.constraints = [playerConstaint]
-    }
-    
-    func didChangeLayout() {
-        let w = view?.bounds.size.width ?? 1024
-        let h = view?.bounds.size.height ?? 1336
-        if h > w {
-            // 竖屏
-            camera?.setScale(1.0)
-        }else {
-            camera?.setScale(1.25)
-        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -126,9 +117,8 @@ class GameScene: SKScene, GameViewControllerDelegate {
     
     func updateControllerLocation() {
         let controller = childNode(withName: "//controller")
-        controller?.position = CGPoint(x: viewLeft, y: viewBotton)
-         
+        controller?.position = CGPoint(x: viewLeft + margin + insets.left, y: viewBotton + margin + insets.bottom)
         let attackButton = childNode(withName: "//attackButton")
-        attackButton?.position = CGPoint(x: viewRight, y: viewBotton)
+        attackButton?.position = CGPoint(x: viewRight - margin - insets.right, y: viewBotton + margin + insets.bottom)
     }
 }
