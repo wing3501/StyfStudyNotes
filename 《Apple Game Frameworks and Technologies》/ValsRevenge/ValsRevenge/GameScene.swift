@@ -119,4 +119,16 @@ class GameScene: SKScene, GameViewControllerDelegate {
         
         self.lastUpdateTime = currentTime
     }
+    /// 每当场景完成处理动画所需的所有步骤后需要更新节点或逻辑时，didFinishUpdate（） 方法就会派上用场
+    override func didFinishUpdate() {
+        updateControllerLocation()
+    }
+    
+    func updateControllerLocation() {
+        let controller = childNode(withName: "//controller")
+        controller?.position = CGPoint(x: viewLeft, y: viewBotton)
+         
+        let attackButton = childNode(withName: "//attackButton")
+        attackButton?.position = CGPoint(x: viewRight, y: viewBotton)
+    }
 }
