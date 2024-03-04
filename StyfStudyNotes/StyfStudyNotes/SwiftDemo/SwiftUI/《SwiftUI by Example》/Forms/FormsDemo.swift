@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FormsDemo: View {
     var body: some View {
-        //Table的使用
+        //Table的使用  用 Table 在 SwiftUI 下创建表格  https://zhuanlan.zhihu.com/p/531559004
 //        UsingTable()
         //显示或隐藏某一行
         HidingFormRows()

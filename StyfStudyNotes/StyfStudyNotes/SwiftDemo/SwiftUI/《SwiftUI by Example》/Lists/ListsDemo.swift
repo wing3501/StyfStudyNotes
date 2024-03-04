@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ListsDemo: View {
     var body: some View {
+//       ✅ 深入了解 SwiftUI 5 中 ScrollView 的新功能
+//    https://zhuanlan.zhihu.com/p/636644701
+        
         // ✅ scrollTransitions 给滚动的视图加一点过渡动画
 //        ScrollView(.horizontal) {
 //            Button("Flash") {

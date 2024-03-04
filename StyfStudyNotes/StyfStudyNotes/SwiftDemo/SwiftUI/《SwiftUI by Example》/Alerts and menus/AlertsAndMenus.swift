@@ -11,6 +11,8 @@ import StoreKit
 struct AlertsAndMenus: View {
     var body: some View {
         ScrollView {
+            //带输入框的弹窗
+            AlertWithTextField()
             //Picker显示Menu
             PickerMenu()
             //显示Menu
@@ -30,6 +32,39 @@ struct AlertsAndMenus: View {
         }
     }
 }
+
+// 带输入框的弹窗  https://blog.csdn.net/mydo/article/details/130514831
+struct AlertWithTextField: View {
+    var body: some View {
+        EmptyView()
+//        VStack {
+//            Button(role: .destructive, action: {
+//                isAlert = true
+//            }){
+//                Text("Alert!")
+//            }
+//            .alert("一大波僵尸正在靠近", isPresented: $isAlert, actions: {
+//                // @ViewBuilder 的闭包，可以自由发挥随意组合视图...
+//
+//                // SecureField 与 TextField 在 MacOS 中会被忽略
+//                SecureField("核武器启动密码", text: $pwd)
+//                TextField("当量", text: $power)
+//                        
+//                Button(role: .destructive, action: {}){
+//                    Text("核武器攻击！")
+//                }
+//                
+//                // 仅限 MacOS，iOS 中会被忽略
+//                Toggle("超级模式", isOn: $superMode)
+//                
+//                Button("再等等", role: .cancel, action: {})
+//            }){
+//                Text("距离大本营还有 \(Int.random(in: 0..<10000)) 公里...")
+//            }
+//        }
+    }
+}
+
 //-----------------------------
 
 struct PickerMenu: View {
