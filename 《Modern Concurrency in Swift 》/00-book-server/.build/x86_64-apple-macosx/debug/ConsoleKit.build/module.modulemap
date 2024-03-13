@@ -1,4 +1,0 @@
-module ConsoleKit {
-    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/ConsoleKit.build/ConsoleKit-Swift.h"
-    requires objc
-}

@@ -1,4 +1,0 @@
-module AsyncKit {
-    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/AsyncKit.build/AsyncKit-Swift.h"
-    requires objc
-}

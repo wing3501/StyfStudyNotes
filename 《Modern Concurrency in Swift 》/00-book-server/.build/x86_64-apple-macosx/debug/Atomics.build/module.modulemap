@@ -1,4 +1,0 @@
-module Atomics {
-    header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/x86_64-apple-macosx/debug/Atomics.build/Atomics-Swift.h"
-    requires objc
-}

@@ -1,4 +1,0 @@
-module CNIOSHA1 {
-    umbrella header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio/Sources/CNIOSHA1/include/CNIOSHA1.h"
-    export *
-}

@@ -1,4 +1,0 @@
-module CNIOLLHTTP {
-    umbrella header "/Users/styf/Documents/workspace/StyfStudyNotes/《Modern Concurrency in Swift 》/00-book-server/.build/checkouts/swift-nio/Sources/CNIOLLHTTP/include/CNIOLLHTTP.h"
-    export *
-}
