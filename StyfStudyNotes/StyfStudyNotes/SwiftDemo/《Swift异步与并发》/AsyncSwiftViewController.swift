@@ -992,6 +992,30 @@ class AsyncSwiftViewController: UIViewController {
             }
         }
     }
+    typealias WorkItem = @Sendable () async throws -> Void
+    func testAsyncStream() {
+        let (stream, continuation) = AsyncStream<WorkItem>.makeStream()
+
+        // begin enumerating the sequence with a single Task
+        // hazard 1: this Task will run at a fixed priority
+        Task {
+            // the sequence guarantees order
+            for await workItem in stream {
+                try? await workItem()
+            }
+        }
+
+        // the continuation provides access to an async context
+        // Hazard 2: per-work item cancellation is unsupported
+        continuation.yield({
+            // Hazard 3: thrown errors are invisible
+            try await self.work()
+        })
+    }
+    
+    func work() async throws {
+    }
+    
     //在 10 秒后，timerStream 进入到 diff > 10 的分支，continuation.finish() 被调用，进而触发 onTermination 闭包，且得到的结果为 finished
     //使用
 //    let t = Task {
@@ -1122,3 +1146,96 @@ class AsyncSwiftViewController: UIViewController {
 //        return input + 100
 //    }
 }
+
+// 让协议方法在主线程执行
+protocol MyProtocol {
+    func doThing(argument: Int) -> Void
+}
+
+@MainActor
+class MyClass {
+}
+
+extension MyClass: MyProtocol {
+    func doThing(argument: Int) -> Void {
+        
+    }
+}
+// 让协议方法保持非隔离 1
+//extension MyClass: MyProtocol {
+//    nonisolated func doThing1(argument: Int) -> Void {
+//        // at this point, you likely need to interact with self, so you must satisfy the compiler
+//        // hazard 1: Availability
+//        MainActor.assumeIsolated {
+//            // here you can safely access `self`
+//        }
+//    }
+//}
+
+// 让协议方法异步
+//protocol MyProtocol {
+//    // hazard 1: Async Virality (for other conformances)
+//    func doThing(argument: String) async -> Int
+//}
+//
+//@MainActor
+//class MyClass: MyProtocol {
+//    // hazard 2: Async Virality (for callers)
+//    func doThing(argument: String) async -> Int {
+//        return 42
+//    }
+//}
+
+// 自定义actor实现协议
+
+//protocol NotAsyncFriendly {
+//    func informational()
+//
+//    func takesSendableArguments(_ value: Int)
+//
+//    func takesNonSendableArguments(_ value: NonSendableType)
+//
+//    func expectsReturnValues() -> Int
+//}
+//
+//actor MyActor {
+//    func doIsolatedThings(with value: Int) {
+//        ...
+//    }
+//}
+//
+//extension MyActor: NotAsyncFriendly {
+//    // purely informational calls are the easiest
+//    nonisolated func informational() {
+//        // hazard: ordering
+//        // the order in which these informational messages are delivered may be important, but is now lost
+//        Task {
+//            await self.doIsolatedThings(with: 0)
+//        }
+//    }
+//
+//    nonisolated func takesSendableArguments(_ value: Int) {
+//        // hazard: ordering
+//        Task {
+//            // we can safely capture and/or make use of value here because it is Sendable
+//            await self.doIsolatedThings(with: value)
+//        }
+//    }
+//    
+//    nonisolated func takesNonSendableArguments(_ value: NonSendableType) {
+//        // hazard: sendability
+//
+//        // any action taken would have to either not need the actor's isolated state or `value`.
+//        // That's possible, but starting to get tricky.
+//    }
+//
+//    nonisolated func expectsReturnValues() -> Int {
+//        // hazard: sendability
+//
+//        // Because this function expects a synchronous return value, the actor's isolated state
+//        // must not be needed to generate the return. This is also possible, but is another indication
+//        // that an actor might be the wrong option.
+//        
+//        return 42
+//    }
+//}

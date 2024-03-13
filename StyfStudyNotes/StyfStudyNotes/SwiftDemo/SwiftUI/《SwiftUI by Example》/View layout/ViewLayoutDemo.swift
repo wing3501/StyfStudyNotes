@@ -31,6 +31,39 @@ struct ViewLayoutDemo: View {
             UsingPadding()
             //使用frame
             ViewCustomFrame()
+            
+            if #available(iOS 17.0, *) {
+                // visualEffect：无需使用 GeometryReader 也能获取几何信息
+                UsingVisualEffect()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+}
+
+// GeometryReader ：好东西还是坏东西？ https://fatbobman.com/zh/posts/geometryreader-blessing-or-curse/
+// visualEffect：无需使用 GeometryReader 也能获取几何信息
+// visualEffect 允许开发者在不破坏当前布局的情况下（不改变其祖先和后代）直接在闭包中使用视图的 GeometryProxy，并对视图应用某些特定的 modifier。
+@available(iOS 17.0, *)
+struct UsingVisualEffect: View {
+    var body: some View {
+        HStack {
+            Text("Hello")
+                .font(.title)
+                .border(.gray)
+
+            Text("Hello")
+                .font(.title)
+                .visualEffect { content, proxy in
+                    content
+                        .offset(x: proxy.size.width / 2.0, y: proxy.size.height / 2.0)
+                        .scaleEffect(0.5)
+                }
+                .border(.gray)
+                .foregroundStyle(.red)
+
+            
         }
     }
 }

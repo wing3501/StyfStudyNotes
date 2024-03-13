@@ -53,13 +53,68 @@ struct MixTextImage: View {
 //    }
     
     //----------------------------------------------
-    
+    @State private var wifiSelection = 0
     // 在 Text 中使用 SF Symbols
     var useSFSymbols: some View {
-        Image(systemName: "ladybug")
-            .symbolRenderingMode(.multicolor) // 指定渲染模式，Image 专用修饰器 ，Image 类型不发生改变
-            .symbolVariant(.fill) // 设置变体 ，该修饰器适用于 View 协议，Image 类型发生了改变
-            .font(.largeTitle) // 适用于 View 的修饰器，非 Text 专用版本
+       
+        VStack {
+            Image(systemName: "ladybug")
+                .symbolRenderingMode(.multicolor) // 指定渲染模式，Image 专用修饰器 ，Image 类型不发生改变
+                .symbolVariant(.fill) // 设置变体 ，该修饰器适用于 View 协议，Image 类型发生了改变
+                .font(.largeTitle) // 适用于 View 的修饰器，非 Text 专用版本
+            
+            VStack {
+                HStack {
+                    Image(systemName: "c")
+                    Image(systemName: "o")
+                    Image(systemName: "o")
+                    Image(systemName: "k")
+                }
+                .symbolVariant(.fill.circle)
+                .font(.title)
+            }
+            
+            HStack{
+                Image(systemName: "b.circle.fill")
+                Image(systemName: "o.circle.fill")
+                    .foregroundStyle(.red)
+                Image(systemName: "o.circle.fill")
+                    .imageScale(.large)
+                Image(systemName: "k.circle.fill")
+                    .accessibility(identifier: "Letter K")
+            }
+            .foregroundStyle(.blue)
+            .font(.title)
+            .padding()
+            
+            HStack {
+                Picker("Pick One", selection: $wifiSelection) {
+                    Text("No Wifi").tag(0)
+                    Text("Searching").tag(1)
+                    Text("Wifi On").tag(2)
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 240)
+                .padding(.horizontal)
+                Group {
+                    switch wifiSelection {
+                    case 0:
+                        Image(systemName: "wifi")
+                            .symbolVariant(.slash)
+                    case 1:
+                       Image(systemName: "wifi")
+//                           .symbolEffect(.variableColor.iterative.reversing)
+                    default:
+                       Image(systemName: "wifi")
+                           .foregroundStyle(.blue)
+                    }
+                }
+                .foregroundStyle(.secondary)
+                .font(.title)
+            }
+            .padding()
+        }
+        
     }
     
     // SF Symbols使用插值和加法
