@@ -1,4 +1,5 @@
 import Vapor
+import Leaf
 
 //✅ 安装 arch -arm64 brew install vapor
 //✅ 新工程 vapor new Hello -n
@@ -25,6 +26,13 @@ public func configure(_ app: Application) async throws {
     // app.middleware = .init()
     // 首先添加自定义错误处理中间件。
     // app.middleware.use（MyErrorMiddleware（））
+    
+    // 使用leaf   https://docs.vapor.codes/leaf/getting-started/
+    // 当我们使用 Vapor 时，它将在名为 Resources 的目录中查找 Leaf 页面。此目录必须位于项目级别，因此我可以继续添加一个新文件夹，该文件夹应命名为 Resources。
+    app.views.use(.leaf)
+    
+    // ✅ 默认情况下，Xcode 将从 DerivedData 文件夹运行您的项目。此文件夹与项目的根文件夹（Package.swift 文件所在的位置）不同。这意味着 Vapor 将无法找到 .env 或 Public 等文件和文件夹。
+    // 若要解决此问题，请在 Xcode 方案中为项目设置自定义工作目录。  设置为项目根目录
     
     // register routes
     try routes(app)

@@ -1,10 +1,15 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        "It works!"
-    }
+//    app.get { req async in
+//        "It works!"
+//    }
 
+    //渲染首页
+    app.get { req -> EventLoopFuture<View> in
+        req.view.render("index")
+    }
+    
     app.get("hello") { req async -> String in
         req.logger.info("日志")
         return "Hello, world!"
