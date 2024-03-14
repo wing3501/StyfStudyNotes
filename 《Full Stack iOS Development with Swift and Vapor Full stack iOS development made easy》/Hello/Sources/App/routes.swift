@@ -6,8 +6,16 @@ func routes(_ app: Application) throws {
     }
 
     app.get("hello") { req async -> String in
-        "Hello, world!"
+        req.logger.info("日志")
+        return "Hello, world!"
     }
+    app.logger.info("启动日志")
+    
+    // 日定义日志记录器
+    let logger = Logger(label: "dev.logger.myAppLogs")
+    logger.info("some info log")
+    
+    
     // path写法  http://127.0.0.1:8080/restaurants/speciality/chinese
 //    app.get("restaurants", "speciality", "chinese") { req -> String in
 //        return "restaurants/speciality/chinese"
@@ -17,6 +25,21 @@ func routes(_ app: Application) throws {
     app.get("restaurants", "speciality", ":region") { req -> String in
         guard let region = req.parameters.get("region") else {
             throw Abort(.badRequest)
+            // ✅ Abort的使用
+//            throw Abort(.notFound)
+//            throw Abort(.unauthorized, reason: "Invalid Credentials")
+            
+            // 如果 User.find 返回 nil，则将来将失败，并出现提供的错误.否则，flatMap 将提供一个非可选值。
+//            User.find(id, on: db)
+//            .unwrap(or: Abort(.notFound))
+//            .flatMap
+//            { user in
+//            // Non-optional User supplied to closure.
+//            }
+            // 如果我们使用 async/await，那么我们可以按如下方式处理可选：
+//            guard let user = try await User.find(id, on: db) {
+//                throw Abort(.notFound)
+//            }
         }
         return "restaurants/speciality/\(region)"
     }
