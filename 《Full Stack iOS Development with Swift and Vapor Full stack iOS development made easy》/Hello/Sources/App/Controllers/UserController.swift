@@ -27,6 +27,8 @@ struct UserController: RouteCollection {
         users.get("jsonRes", use: allUsersJson)
         users.get("model", use: allUsersModel)
         users.get("model1", use: allUsersAddrModel)
+        // post
+        users.post("create", use: createUser)
     }
     
     func getAllUsers(request: Request) throws -> String {
@@ -59,5 +61,11 @@ struct UserController: RouteCollection {
         let address = Address(street: "Road 8 Rohini sec 8" , state: "Delhi", zip: "110085")
         let users = [AUser(name: "User1", age: 32, address: address)]
         return users
+    }
+    // post
+    func createUser(request: Request) throws -> HTTPStatus {
+        let user = try request.content.decode(AUser.self) // {"age":32,"name":"User1","address":{"street":"Road 8 Rohini sec 8","state":"Delhi","zip":"110085"}}
+        print(user)
+        return .ok
     }
 }
