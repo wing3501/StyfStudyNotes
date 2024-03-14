@@ -7,7 +7,8 @@ func routes(_ app: Application) throws {
 
     //渲染首页
     app.get { req -> EventLoopFuture<View> in
-        req.view.render("index")
+//        req.view.render("index")
+        req.view.render("index", Movies(name: "Harry Potter and the Philosopher's Ston", releaseYear: "2001"))
     }
     
     app.get("hello") { req async -> String in
