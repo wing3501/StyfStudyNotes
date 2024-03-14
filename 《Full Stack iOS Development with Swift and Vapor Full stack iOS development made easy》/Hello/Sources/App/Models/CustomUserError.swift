@@ -76,4 +76,7 @@ struct CustomUserError1: DebuggableError {
             column: column
         )
     }
+    
+//    默认情况下，Abort 在初始化时捕获当前堆栈跟踪。若要使用自定义错误类型实现此目的，它们需要符合 DebuggableError 并存储 StackTrace.capture()
+    var stackTrace: StackTrace? //过期了？
 }
