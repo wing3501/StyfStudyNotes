@@ -7,6 +7,11 @@
 
 import Foundation
 import Network
+import CoreTelephony
+
+
+
+
 
 final class NetworkMonitor {
     static let shared = NetworkMonitor()
@@ -24,6 +29,28 @@ final class NetworkMonitor {
     
     private init() {
         monitor = NWPathMonitor()
+        
+        
+    }
+    
+    func getNetworkType() -> String {
+        let networkInfo = CTTelephonyNetworkInfo()
+        
+        // 获取当前所有的服务接入技术
+        if let radioAccessTechnology = networkInfo.serviceCurrentRadioAccessTechnology {
+            for (_, accessTechnology) in radioAccessTechnology {
+                switch accessTechnology {
+                case CTRadioAccessTechnologyNRNSA, CTRadioAccessTechnologyNR:
+                    return "5G" // 5G 网络
+                case CTRadioAccessTechnologyLTE:
+                    return "4G" // 4G 网络
+                default:
+                    return "Other" // 其他网络类型
+                }
+            }
+        }
+        
+        return "No Network"
     }
     
     func startMonitoring() {
@@ -37,6 +64,9 @@ final class NetworkMonitor {
             NotificationCenter.default.post(name: .connectivityStatus, object: nil)
         }
         monitor.start(queue: queue)
+        
+        
+       
     }
     
     func stopMonitoring() {
